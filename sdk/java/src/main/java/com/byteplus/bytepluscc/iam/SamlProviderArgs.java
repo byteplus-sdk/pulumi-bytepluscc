@@ -63,14 +63,18 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identity Provider SSO Type 1. Role SSO 2. User SSO
+     * Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
      * 
      */
     @Import(name="ssoType", required=true)
     private Output<Integer> ssoType;
 
     /**
-     * @return Identity Provider SSO Type 1. Role SSO 2. User SSO
+     * @return Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
      * 
      */
     public Output<Integer> ssoType() {
@@ -78,14 +82,20 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+     * Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
      * 
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
-     * @return Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+     * @return Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
      * 
      */
     public Optional<Output<Integer>> status() {
@@ -184,7 +194,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ssoType Identity Provider SSO Type 1. Role SSO 2. User SSO
+         * @param ssoType Identity Provider SSO Type
+         *   1. Role SSO
+         *   2. User SSO
          * 
          * @return builder
          * 
@@ -195,7 +207,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ssoType Identity Provider SSO Type 1. Role SSO 2. User SSO
+         * @param ssoType Identity Provider SSO Type
+         *   1. Role SSO
+         *   2. User SSO
          * 
          * @return builder
          * 
@@ -205,7 +219,10 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+         * @param status Identity Provider Status (User SSO Only)
+         *   1. Enabled
+         *   2. Enabled and other login methods disabled
+         *   3. Disabled
          * 
          * @return builder
          * 
@@ -216,7 +233,10 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+         * @param status Identity Provider Status (User SSO Only)
+         *   1. Enabled
+         *   2. Enabled and other login methods disabled
+         *   3. Disabled
          * 
          * @return builder
          * 

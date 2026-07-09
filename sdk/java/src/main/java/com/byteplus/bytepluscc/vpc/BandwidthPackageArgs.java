@@ -81,9 +81,19 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="eipAddresses")
     private @Nullable Output<List<BandwidthPackageEipAddressArgs>> eipAddresses;
 
+    /**
+     * @return List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<BandwidthPackageEipAddressArgs>>> eipAddresses() {
         return Optional.ofNullable(this.eipAddresses);
     }
@@ -193,9 +203,19 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.securityProtectionTypes);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<BandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<BandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -320,15 +340,36 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
             return description(Output.of(description));
         }
 
+        /**
+         * @param eipAddresses List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder eipAddresses(@Nullable Output<List<BandwidthPackageEipAddressArgs>> eipAddresses) {
             $.eipAddresses = eipAddresses;
             return this;
         }
 
+        /**
+         * @param eipAddresses List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder eipAddresses(List<BandwidthPackageEipAddressArgs> eipAddresses) {
             return eipAddresses(Output.of(eipAddresses));
         }
 
+        /**
+         * @param eipAddresses List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder eipAddresses(BandwidthPackageEipAddressArgs... eipAddresses) {
             return eipAddresses(List.of(eipAddresses));
         }
@@ -490,15 +531,36 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
             return securityProtectionTypes(List.of(securityProtectionTypes));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<BandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<BandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(BandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }

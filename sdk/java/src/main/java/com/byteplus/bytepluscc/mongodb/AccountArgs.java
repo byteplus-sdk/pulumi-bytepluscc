@@ -64,9 +64,19 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.accountPassword);
     }
 
+    /**
+     * List of database permissions currently owned by the account.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="accountPrivileges")
     private @Nullable Output<List<AccountAccountPrivilegeArgs>> accountPrivileges;
 
+    /**
+     * @return List of database permissions currently owned by the account.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AccountAccountPrivilegeArgs>>> accountPrivileges() {
         return Optional.ofNullable(this.accountPrivileges);
     }
@@ -209,15 +219,36 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
             return accountPassword(Output.of(accountPassword));
         }
 
+        /**
+         * @param accountPrivileges List of database permissions currently owned by the account.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accountPrivileges(@Nullable Output<List<AccountAccountPrivilegeArgs>> accountPrivileges) {
             $.accountPrivileges = accountPrivileges;
             return this;
         }
 
+        /**
+         * @param accountPrivileges List of database permissions currently owned by the account.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accountPrivileges(List<AccountAccountPrivilegeArgs> accountPrivileges) {
             return accountPrivileges(Output.of(accountPrivileges));
         }
 
+        /**
+         * @param accountPrivileges List of database permissions currently owned by the account.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accountPrivileges(AccountAccountPrivilegeArgs... accountPrivileges) {
             return accountPrivileges(List.of(accountPrivileges));
         }

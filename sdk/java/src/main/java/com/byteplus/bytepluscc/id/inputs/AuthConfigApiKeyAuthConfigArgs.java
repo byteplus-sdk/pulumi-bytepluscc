@@ -33,9 +33,19 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.apiKey);
     }
 
+    /**
+     * ApiKey Metadata
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="apiKeyMetadatas")
     private @Nullable Output<List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs>> apiKeyMetadatas;
 
+    /**
+     * @return ApiKey Metadata
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs>>> apiKeyMetadatas() {
         return Optional.ofNullable(this.apiKeyMetadatas);
     }
@@ -118,15 +128,36 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
             return apiKey(Output.of(apiKey));
         }
 
+        /**
+         * @param apiKeyMetadatas ApiKey Metadata
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiKeyMetadatas(@Nullable Output<List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs>> apiKeyMetadatas) {
             $.apiKeyMetadatas = apiKeyMetadatas;
             return this;
         }
 
+        /**
+         * @param apiKeyMetadatas ApiKey Metadata
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiKeyMetadatas(List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs> apiKeyMetadatas) {
             return apiKeyMetadatas(Output.of(apiKeyMetadatas));
         }
 
+        /**
+         * @param apiKeyMetadatas ApiKey Metadata
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiKeyMetadatas(AuthConfigApiKeyAuthConfigApiKeyMetadataArgs... apiKeyMetadatas) {
             return apiKeyMetadatas(List.of(apiKeyMetadatas));
         }

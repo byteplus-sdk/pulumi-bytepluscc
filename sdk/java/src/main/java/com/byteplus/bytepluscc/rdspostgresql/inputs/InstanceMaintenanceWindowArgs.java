@@ -32,9 +32,19 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.dayKind);
     }
 
+    /**
+     * Detailed information about the instance&#39;s maintenance window.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="dayOfWeekMaintenanceTimes")
     private @Nullable Output<List<InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs>> dayOfWeekMaintenanceTimes;
 
+    /**
+     * @return Detailed information about the instance&#39;s maintenance window.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs>>> dayOfWeekMaintenanceTimes() {
         return Optional.ofNullable(this.dayOfWeekMaintenanceTimes);
     }
@@ -85,15 +95,36 @@ public final class InstanceMaintenanceWindowArgs extends com.pulumi.resources.Re
             return dayKind(Output.of(dayKind));
         }
 
+        /**
+         * @param dayOfWeekMaintenanceTimes Detailed information about the instance&#39;s maintenance window.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dayOfWeekMaintenanceTimes(@Nullable Output<List<InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs>> dayOfWeekMaintenanceTimes) {
             $.dayOfWeekMaintenanceTimes = dayOfWeekMaintenanceTimes;
             return this;
         }
 
+        /**
+         * @param dayOfWeekMaintenanceTimes Detailed information about the instance&#39;s maintenance window.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dayOfWeekMaintenanceTimes(List<InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs> dayOfWeekMaintenanceTimes) {
             return dayOfWeekMaintenanceTimes(Output.of(dayOfWeekMaintenanceTimes));
         }
 
+        /**
+         * @param dayOfWeekMaintenanceTimes Detailed information about the instance&#39;s maintenance window.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dayOfWeekMaintenanceTimes(InstanceMaintenanceWindowDayOfWeekMaintenanceTimeArgs... dayOfWeekMaintenanceTimes) {
             return dayOfWeekMaintenanceTimes(List.of(dayOfWeekMaintenanceTimes));
         }

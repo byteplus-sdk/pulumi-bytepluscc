@@ -51,9 +51,19 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.createTime);
     }
 
+    /**
+     * Extraction rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="excludePaths")
     private @Nullable Output<List<HostGroupRuleExcludePathArgs>> excludePaths;
 
+    /**
+     * @return Extraction rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<HostGroupRuleExcludePathArgs>>> excludePaths() {
         return Optional.ofNullable(this.excludePaths);
     }
@@ -318,15 +328,36 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
             return createTime(Output.of(createTime));
         }
 
+        /**
+         * @param excludePaths Extraction rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePaths(@Nullable Output<List<HostGroupRuleExcludePathArgs>> excludePaths) {
             $.excludePaths = excludePaths;
             return this;
         }
 
+        /**
+         * @param excludePaths Extraction rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePaths(List<HostGroupRuleExcludePathArgs> excludePaths) {
             return excludePaths(Output.of(excludePaths));
         }
 
+        /**
+         * @param excludePaths Extraction rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePaths(HostGroupRuleExcludePathArgs... excludePaths) {
             return excludePaths(List.of(excludePaths));
         }

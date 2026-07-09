@@ -26,6 +26,73 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.alb.ServerGroup;
+ * import com.byteplus.bytepluscc.alb.ServerGroupArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupHealthCheckArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupStickySessionConfigArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupServerArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var albServergroupDemo = new ServerGroup("albServergroupDemo", ServerGroupArgs.builder()
+ *             .vpcId("vpc-13f8***")
+ *             .serverGroupName("test-servergroup")
+ *             .serverGroupType("instance")
+ *             .protocol("HTTP")
+ *             .scheduler("wrr")
+ *             .crossZoneEnabled("on")
+ *             .healthCheck(ServerGroupHealthCheckArgs.builder()
+ *                 .enabled("on")
+ *                 .port(80)
+ *                 .interval(2)
+ *                 .timeout(5)
+ *                 .healthy_threshold(3)
+ *                 .unhealthy_threshold(3)
+ *                 .method("GET")
+ *                 .http_version("HTTP1.1")
+ *                 .uri("/health")
+ *                 .http_code("http_2xx")
+ *                 .build())
+ *             .stickySessionConfig(ServerGroupStickySessionConfigArgs.builder()
+ *                 .sticky_session_enabled("on")
+ *                 .sticky_session_type("insert")
+ *                 .cookie_timeout(1000)
+ *                 .build())
+ *             .servers(ServerGroupServerArgs.builder()
+ *                 .instance_id("i-ye3***")
+ *                 .type("ecs")
+ *                 .ip("192.168.1.**")
+ *                 .port(80)
+ *                 .weight(10)
+ *                 .build())
+ *             .tags(ServerGroupTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -107,9 +174,19 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     public Output<String> ipAddressType() {
         return this.ipAddressType;
     }
+    /**
+     * Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="listeners", refs={List.class,ServerGroupListener.class}, tree="[0,1]")
     private Output<List<ServerGroupListener>> listeners;
 
+    /**
+     * @return Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServerGroupListener>> listeners() {
         return this.listeners;
     }
@@ -211,9 +288,19 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     public Output<String> serverGroupType() {
         return this.serverGroupType;
     }
+    /**
+     * Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="servers", refs={List.class,ServerGroupServer.class}, tree="[0,1]")
     private Output<List<ServerGroupServer>> servers;
 
+    /**
+     * @return Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServerGroupServer>> servers() {
         return this.servers;
     }
@@ -245,9 +332,19 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     public Output<ServerGroupStickySessionConfig> stickySessionConfig() {
         return this.stickySessionConfig;
     }
+    /**
+     * Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ServerGroupTag.class}, tree="[0,1]")
     private Output<List<ServerGroupTag>> tags;
 
+    /**
+     * @return Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServerGroupTag>> tags() {
         return this.tags;
     }

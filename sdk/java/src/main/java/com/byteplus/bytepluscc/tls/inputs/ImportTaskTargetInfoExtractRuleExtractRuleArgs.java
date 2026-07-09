@@ -64,9 +64,19 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
         return Optional.ofNullable(this.enableNanosecond);
     }
 
+    /**
+     * Filter key regular expression.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="filterKeyRegexes")
     private @Nullable Output<List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes;
 
+    /**
+     * @return Filter key regular expression.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs>>> filterKeyRegexes() {
         return Optional.ofNullable(this.filterKeyRegexes);
     }
@@ -305,15 +315,36 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
             return enableNanosecond(Output.of(enableNanosecond));
         }
 
+        /**
+         * @param filterKeyRegexes Filter key regular expression.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(@Nullable Output<List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes) {
             $.filterKeyRegexes = filterKeyRegexes;
             return this;
         }
 
+        /**
+         * @param filterKeyRegexes Filter key regular expression.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs> filterKeyRegexes) {
             return filterKeyRegexes(Output.of(filterKeyRegexes));
         }
 
+        /**
+         * @param filterKeyRegexes Filter key regular expression.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs... filterKeyRegexes) {
             return filterKeyRegexes(List.of(filterKeyRegexes));
         }

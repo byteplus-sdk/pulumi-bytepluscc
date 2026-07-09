@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vepfs.Fileset;
  * import com.byteplus.bytepluscc.vepfs.FilesetArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -120,14 +120,14 @@ public class Fileset extends com.pulumi.resources.CustomResource {
         return this.createTime;
     }
     /**
-     * File or directory quota. A value of `0` means no file or directory quota is set
+     * File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
      * 
      */
     @Export(name="fileLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> fileLimit;
 
     /**
-     * @return File or directory quota. A value of `0` means no file or directory quota is set
+     * @return File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
      * 
      */
     public Output<Integer> fileLimit() {
@@ -246,18 +246,34 @@ public class Fileset extends com.pulumi.resources.CustomResource {
         return this.maxInodeNum;
     }
     /**
-     * Fileset status. The possible values are: - `Creating`: Creating - `CreateError`: Creation failed - `Running`: Running -
-     * `Updating`: Updating - `UpdateError`: Update failed - `Deleting`: Deleting - `DeleteError`: Deletion failed - `Deleted`:
-     * Deleted - `Error`: Error
+     * Fileset status. The possible values are:
+     * 
+     *     - `Creating`: Creating
+     *     - `CreateError`: Creation failed
+     *     - `Running`: Running
+     *     - `Updating`: Updating
+     *     - `UpdateError`: Update failed
+     *     - `Deleting`: Deleting
+     *     - `DeleteError`: Deletion failed
+     *     - `Deleted`: Deleted
+     *     - `Error`: Error
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Fileset status. The possible values are: - `Creating`: Creating - `CreateError`: Creation failed - `Running`: Running -
-     * `Updating`: Updating - `UpdateError`: Update failed - `Deleting`: Deleting - `DeleteError`: Deletion failed - `Deleted`:
-     * Deleted - `Error`: Error
+     * @return Fileset status. The possible values are:
+     * 
+     *     - `Creating`: Creating
+     *     - `CreateError`: Creation failed
+     *     - `Running`: Running
+     *     - `Updating`: Updating
+     *     - `UpdateError`: Update failed
+     *     - `Deleting`: Deleting
+     *     - `DeleteError`: Deletion failed
+     *     - `Deleted`: Deleted
+     *     - `Error`: Error
      * 
      */
     public Output<String> status() {

@@ -17,16 +17,22 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
     public static final RuleFileArgs Empty = new RuleFileArgs();
 
     /**
-     * Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-     * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
+     * Rule file content in YAML format. Content length limits:
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
      * 
      */
     @Import(name="content", required=true)
     private Output<String> content;
 
     /**
-     * @return Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-     * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
+     * @return Rule file content in YAML format. Content length limits:
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
      * 
      */
     public Output<String> content() {
@@ -34,16 +40,20 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-     * counts as one character.
+     * Rule file description, limited to 0–200 characters.
+     * 
+     *   **Note:** Note
+     *   Each English letter, Chinese character, or symbol counts as one character.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-     * counts as one character.
+     * @return Rule file description, limited to 0–200 characters.
+     * 
+     *   **Note:** Note
+     *   Each English letter, Chinese character, or symbol counts as one character.
      * 
      */
     public Optional<Output<String>> description() {
@@ -51,14 +61,20 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
+     * Rule file name:
+     * 
+     *     - Must be a valid Linux file name and less than 255 characters.
+     *     - Must be unique within the workspace.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
+     * @return Rule file name:
+     * 
+     *     - Must be a valid Linux file name and less than 255 characters.
+     *     - Must be unique within the workspace.
      * 
      */
     public Output<String> name() {
@@ -124,8 +140,11 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param content Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-         * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
+         * @param content Rule file content in YAML format. Content length limits:
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
          * 
          * @return builder
          * 
@@ -136,8 +155,11 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param content Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-         * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
+         * @param content Rule file content in YAML format. Content length limits:
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
          * 
          * @return builder
          * 
@@ -147,8 +169,10 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-         * counts as one character.
+         * @param description Rule file description, limited to 0–200 characters.
+         * 
+         *   **Note:** Note
+         *   Each English letter, Chinese character, or symbol counts as one character.
          * 
          * @return builder
          * 
@@ -159,8 +183,10 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-         * counts as one character.
+         * @param description Rule file description, limited to 0–200 characters.
+         * 
+         *   **Note:** Note
+         *   Each English letter, Chinese character, or symbol counts as one character.
          * 
          * @return builder
          * 
@@ -170,7 +196,10 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
+         * @param name Rule file name:
+         * 
+         *     - Must be a valid Linux file name and less than 255 characters.
+         *     - Must be unique within the workspace.
          * 
          * @return builder
          * 
@@ -181,7 +210,10 @@ public final class RuleFileArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
+         * @param name Rule file name:
+         * 
+         *     - Must be a valid Linux file name and less than 255 characters.
+         *     - Must be unique within the workspace.
          * 
          * @return builder
          * 

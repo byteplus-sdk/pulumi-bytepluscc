@@ -38,9 +38,19 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.containerRule);
     }
 
+    /**
+     * Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="excludePaths")
     private @Nullable Output<List<RuleExcludePathArgs>> excludePaths;
 
+    /**
+     * @return Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleExcludePathArgs>>> excludePaths() {
         return Optional.ofNullable(this.excludePaths);
     }
@@ -60,9 +70,19 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.extractRule);
     }
 
+    /**
+     * Machine group information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="hostGroupInfos")
     private @Nullable Output<List<RuleHostGroupInfoArgs>> hostGroupInfos;
 
+    /**
+     * @return Machine group information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleHostGroupInfoArgs>>> hostGroupInfos() {
         return Optional.ofNullable(this.hostGroupInfos);
     }
@@ -243,15 +263,36 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
             return containerRule(Output.of(containerRule));
         }
 
+        /**
+         * @param excludePaths Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePaths(@Nullable Output<List<RuleExcludePathArgs>> excludePaths) {
             $.excludePaths = excludePaths;
             return this;
         }
 
+        /**
+         * @param excludePaths Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePaths(List<RuleExcludePathArgs> excludePaths) {
             return excludePaths(Output.of(excludePaths));
         }
 
+        /**
+         * @param excludePaths Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePaths(RuleExcludePathArgs... excludePaths) {
             return excludePaths(List.of(excludePaths));
         }
@@ -277,15 +318,36 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
             return extractRule(Output.of(extractRule));
         }
 
+        /**
+         * @param hostGroupInfos Machine group information list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostGroupInfos(@Nullable Output<List<RuleHostGroupInfoArgs>> hostGroupInfos) {
             $.hostGroupInfos = hostGroupInfos;
             return this;
         }
 
+        /**
+         * @param hostGroupInfos Machine group information list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostGroupInfos(List<RuleHostGroupInfoArgs> hostGroupInfos) {
             return hostGroupInfos(Output.of(hostGroupInfos));
         }
 
+        /**
+         * @param hostGroupInfos Machine group information list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder hostGroupInfos(RuleHostGroupInfoArgs... hostGroupInfos) {
             return hostGroupInfos(List.of(hostGroupInfos));
         }

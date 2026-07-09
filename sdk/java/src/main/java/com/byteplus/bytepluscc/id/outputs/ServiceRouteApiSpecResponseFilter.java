@@ -15,6 +15,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ServiceRouteApiSpecResponseFilter {
+    /**
+     * @return Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ServiceRouteApiSpecResponseFilterAttribute> attributes;
     /**
      * @return Array path JSON Pointer
@@ -48,6 +53,11 @@ public final class ServiceRouteApiSpecResponseFilter {
     private @Nullable String resourceType;
 
     private ServiceRouteApiSpecResponseFilter() {}
+    /**
+     * @return Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ServiceRouteApiSpecResponseFilterAttribute> attributes() {
         return this.attributes == null ? List.of() : this.attributes;
     }

@@ -18,9 +18,19 @@ public final class AuthConfigState extends com.pulumi.resources.ResourceArgs {
 
     public static final AuthConfigState Empty = new AuthConfigState();
 
+    /**
+     * ApiKey Authentication Configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="apiKeyAuthConfigs")
     private @Nullable Output<List<AuthConfigApiKeyAuthConfigArgs>> apiKeyAuthConfigs;
 
+    /**
+     * @return ApiKey Authentication Configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AuthConfigApiKeyAuthConfigArgs>>> apiKeyAuthConfigs() {
         return Optional.ofNullable(this.apiKeyAuthConfigs);
     }
@@ -193,15 +203,36 @@ public final class AuthConfigState extends com.pulumi.resources.ResourceArgs {
             $ = new AuthConfigState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param apiKeyAuthConfigs ApiKey Authentication Configuration
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiKeyAuthConfigs(@Nullable Output<List<AuthConfigApiKeyAuthConfigArgs>> apiKeyAuthConfigs) {
             $.apiKeyAuthConfigs = apiKeyAuthConfigs;
             return this;
         }
 
+        /**
+         * @param apiKeyAuthConfigs ApiKey Authentication Configuration
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiKeyAuthConfigs(List<AuthConfigApiKeyAuthConfigArgs> apiKeyAuthConfigs) {
             return apiKeyAuthConfigs(Output.of(apiKeyAuthConfigs));
         }
 
+        /**
+         * @param apiKeyAuthConfigs ApiKey Authentication Configuration
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder apiKeyAuthConfigs(AuthConfigApiKeyAuthConfigArgs... apiKeyAuthConfigs) {
             return apiKeyAuthConfigs(List.of(apiKeyAuthConfigs));
         }

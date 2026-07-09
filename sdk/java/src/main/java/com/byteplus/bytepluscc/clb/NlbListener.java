@@ -34,8 +34,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.clb.NlbListener;
  * import com.byteplus.bytepluscc.clb.NlbListenerArgs;
  * import com.pulumi.bytepluscc.clb.inputs.NlbListenerTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -161,9 +161,19 @@ public class NlbListener extends com.pulumi.resources.CustomResource {
     public Output<Integer> endPort() {
         return this.endPort;
     }
+    /**
+     * Backend instance health check response information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="healths", refs={List.class,NlbListenerHealth.class}, tree="[0,1]")
     private Output<List<NlbListenerHealth>> healths;
 
+    /**
+     * @return Backend instance health check response information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NlbListenerHealth>> healths() {
         return this.healths;
     }
@@ -293,9 +303,19 @@ public class NlbListener extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Resource tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,NlbListenerTag.class}, tree="[0,1]")
     private Output<List<NlbListenerTag>> tags;
 
+    /**
+     * @return Resource tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NlbListenerTag>> tags() {
         return this.tags;
     }

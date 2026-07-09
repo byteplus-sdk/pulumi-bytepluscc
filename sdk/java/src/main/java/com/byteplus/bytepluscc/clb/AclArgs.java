@@ -18,9 +18,19 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AclArgs Empty = new AclArgs();
 
+    /**
+     * Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="aclEntries")
     private @Nullable Output<List<AclAclEntryArgs>> aclEntries;
 
+    /**
+     * @return Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AclAclEntryArgs>>> aclEntries() {
         return Optional.ofNullable(this.aclEntries);
     }
@@ -70,9 +80,19 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<AclTagArgs>> tags;
 
+    /**
+     * @return Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AclTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -105,15 +125,36 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
             $ = new AclArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclEntries(@Nullable Output<List<AclAclEntryArgs>> aclEntries) {
             $.aclEntries = aclEntries;
             return this;
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclEntries(List<AclAclEntryArgs> aclEntries) {
             return aclEntries(Output.of(aclEntries));
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclEntries(AclAclEntryArgs... aclEntries) {
             return aclEntries(List.of(aclEntries));
         }
@@ -181,15 +222,36 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<AclTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<AclTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(AclTagArgs... tags) {
             return tags(List.of(tags));
         }

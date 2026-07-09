@@ -63,16 +63,20 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
+     * Network type of the connection address. Possible values:
+     * 
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
+     * @return Network type of the connection address. Possible values:
+     * 
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -80,16 +84,20 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     * ID of the component associated with the current connection address
+     * 
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      * 
      */
     @Import(name="objectId")
     private @Nullable Output<String> objectId;
 
     /**
-     * @return ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     * @return ID of the component associated with the current connection address
+     * 
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      * 
      */
     public Optional<Output<String>> objectId() {
@@ -208,8 +216,10 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-         * connection address
+         * @param networkType Network type of the connection address. Possible values:
+         * 
+         *     - `Private`: Private connection address
+         *     - `Public`: Public connection address
          * 
          * @return builder
          * 
@@ -220,8 +230,10 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-         * connection address
+         * @param networkType Network type of the connection address. Possible values:
+         * 
+         *     - `Private`: Private connection address
+         *     - `Public`: Public connection address
          * 
          * @return builder
          * 
@@ -231,8 +243,10 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param objectId ID of the component associated with the current connection address **Note:** This parameter is returned only when
-         * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+         * @param objectId ID of the component associated with the current connection address
+         * 
+         *   **Note:**
+         *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
          * 
          * @return builder
          * 
@@ -243,8 +257,10 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param objectId ID of the component associated with the current connection address **Note:** This parameter is returned only when
-         * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+         * @param objectId ID of the component associated with the current connection address
+         * 
+         *   **Note:**
+         *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
          * 
          * @return builder
          * 

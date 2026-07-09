@@ -18,9 +18,19 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BackupArgs Empty = new BackupArgs();
 
+    /**
+     * When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="backupMetas")
     private @Nullable Output<List<BackupBackupMetaArgs>> backupMetas;
 
+    /**
+     * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<BackupBackupMetaArgs>>> backupMetas() {
         return Optional.ofNullable(this.backupMetas);
     }
@@ -97,15 +107,36 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
             $ = new BackupArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backupMetas(@Nullable Output<List<BackupBackupMetaArgs>> backupMetas) {
             $.backupMetas = backupMetas;
             return this;
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backupMetas(List<BackupBackupMetaArgs> backupMetas) {
             return backupMetas(Output.of(backupMetas));
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backupMetas(BackupBackupMetaArgs... backupMetas) {
             return backupMetas(List.of(backupMetas));
         }

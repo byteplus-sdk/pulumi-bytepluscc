@@ -27,6 +27,72 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpn.VpnConnection;
+ * import com.byteplus.bytepluscc.vpn.VpnConnectionArgs;
+ * import com.pulumi.bytepluscc.vpn.inputs.VpnConnectionIkeConfigArgs;
+ * import com.pulumi.bytepluscc.vpn.inputs.VpnConnectionIpsecConfigArgs;
+ * import com.pulumi.bytepluscc.vpn.inputs.VpnConnectionBgpInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vpnVpnConnectionDemo = new VpnConnection("vpnVpnConnectionDemo", VpnConnectionArgs.builder()
+ *             .vpnConnectionName("terraform-test")
+ *             .description("test-rule")
+ *             .vpnGatewayId("vgw-3nqn2s36hu1a89xxxxxxx")
+ *             .projectName("default")
+ *             .logEnabled(true)
+ *             .localSubnets("0.0.0.0/2")
+ *             .remoteSubnets("0.0.0.0/2")
+ *             .customerGatewayId("cgw-vzzoltnuu41s865ykxxxxxx")
+ *             .negotiateInstantly(false)
+ *             .ikeConfig(VpnConnectionIkeConfigArgs.builder()
+ *                 .psk("88888888")
+ *                 .version("ikev1")
+ *                 .mode("aggressive")
+ *                 .auth_alg("sha1")
+ *                 .enc_alg("aes")
+ *                 .dh_group("group2")
+ *                 .lifetime(86400)
+ *                 .local_id("0.0.0.0")
+ *                 .remote_id("0.0.0.0")
+ *                 .build())
+ *             .ipsecConfig(VpnConnectionIpsecConfigArgs.builder()
+ *                 .auth_alg("sha1")
+ *                 .dh_group("group2")
+ *                 .enc_alg("aes")
+ *                 .lifetime(86400)
+ *                 .build())
+ *             .bgpInfo(VpnConnectionBgpInfoArgs.builder()
+ *                 .enable_bgp(true)
+ *                 .tunnel_cidr("169.xxx.30.40/30")
+ *                 .local_bgp_ip("169.xxx.30.41")
+ *                 .build())
+ *             .attachType("VpnGateway")
+ *             .natTraversal(true)
+ *             .dpdAction("restart")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -220,9 +286,19 @@ public class VpnConnection extends com.pulumi.resources.CustomResource {
     public Output<Boolean> enableTunnelsBgp() {
         return this.enableTunnelsBgp;
     }
+    /**
+     * Health check information for the IPsec connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="healthCheckers", refs={List.class,VpnConnectionHealthChecker.class}, tree="[0,1]")
     private Output<List<VpnConnectionHealthChecker>> healthCheckers;
 
+    /**
+     * @return Health check information for the IPsec connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpnConnectionHealthChecker>> healthCheckers() {
         return this.healthCheckers;
     }
@@ -408,9 +484,19 @@ public class VpnConnection extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * All tag information added to the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,VpnConnectionTag.class}, tree="[0,1]")
     private Output<List<VpnConnectionTag>> tags;
 
+    /**
+     * @return All tag information added to the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpnConnectionTag>> tags() {
         return this.tags;
     }
@@ -428,9 +514,19 @@ public class VpnConnection extends com.pulumi.resources.CustomResource {
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
+    /**
+     * Tunnel configuration information for the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tunnelOptions", refs={List.class,VpnConnectionTunnelOption.class}, tree="[0,1]")
     private Output<List<VpnConnectionTunnelOption>> tunnelOptions;
 
+    /**
+     * @return Tunnel configuration information for the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpnConnectionTunnelOption>> tunnelOptions() {
         return this.tunnelOptions;
     }

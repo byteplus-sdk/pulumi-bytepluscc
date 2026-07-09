@@ -18,9 +18,19 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     public static final MountPointState Empty = new MountPointState();
 
+    /**
+     * Client information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="clients")
     private @Nullable Output<List<MountPointClientArgs>> clients;
 
+    /**
+     * @return Client information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<MountPointClientArgs>>> clients() {
         return Optional.ofNullable(this.clients);
     }
@@ -273,15 +283,36 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
             $ = new MountPointState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param clients Client information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clients(@Nullable Output<List<MountPointClientArgs>> clients) {
             $.clients = clients;
             return this;
         }
 
+        /**
+         * @param clients Client information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clients(List<MountPointClientArgs> clients) {
             return clients(Output.of(clients));
         }
 
+        /**
+         * @param clients Client information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clients(MountPointClientArgs... clients) {
             return clients(List.of(clients));
         }

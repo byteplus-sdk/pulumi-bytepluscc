@@ -261,9 +261,19 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="domainExtensions")
     private @Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions;
 
+    /**
+     * @return List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ListenerDomainExtensionArgs>>> domainExtensions() {
         return Optional.ofNullable(this.domainExtensions);
     }
@@ -598,9 +608,19 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.startPort);
     }
 
+    /**
+     * Tag associated with the listener.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ListenerTagArgs>> tags;
 
+    /**
+     * @return Tag associated with the listener.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ListenerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -1014,15 +1034,36 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
             return description(Output.of(description));
         }
 
+        /**
+         * @param domainExtensions List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainExtensions(@Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions) {
             $.domainExtensions = domainExtensions;
             return this;
         }
 
+        /**
+         * @param domainExtensions List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainExtensions(List<ListenerDomainExtensionArgs> domainExtensions) {
             return domainExtensions(Output.of(domainExtensions));
         }
 
+        /**
+         * @param domainExtensions List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainExtensions(ListenerDomainExtensionArgs... domainExtensions) {
             return domainExtensions(List.of(domainExtensions));
         }
@@ -1489,15 +1530,36 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
             return startPort(Output.of(startPort));
         }
 
+        /**
+         * @param tags Tag associated with the listener.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ListenerTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag associated with the listener.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ListenerTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag associated with the listener.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ListenerTagArgs... tags) {
             return tags(List.of(tags));
         }

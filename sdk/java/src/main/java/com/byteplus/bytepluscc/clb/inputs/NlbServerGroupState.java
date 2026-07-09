@@ -291,9 +291,19 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.serverGroupName);
     }
 
+    /**
+     * Information about backend servers to be added to the server group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="servers")
     private @Nullable Output<List<NlbServerGroupServerArgs>> servers;
 
+    /**
+     * @return Information about backend servers to be added to the server group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NlbServerGroupServerArgs>>> servers() {
         return Optional.ofNullable(this.servers);
     }
@@ -343,9 +353,19 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<NlbServerGroupTagArgs>> tags;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NlbServerGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -848,15 +868,36 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
             return serverGroupName(Output.of(serverGroupName));
         }
 
+        /**
+         * @param servers Information about backend servers to be added to the server group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder servers(@Nullable Output<List<NlbServerGroupServerArgs>> servers) {
             $.servers = servers;
             return this;
         }
 
+        /**
+         * @param servers Information about backend servers to be added to the server group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder servers(List<NlbServerGroupServerArgs> servers) {
             return servers(Output.of(servers));
         }
 
+        /**
+         * @param servers Information about backend servers to be added to the server group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder servers(NlbServerGroupServerArgs... servers) {
             return servers(List.of(servers));
         }
@@ -924,15 +965,36 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<NlbServerGroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<NlbServerGroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(NlbServerGroupTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -108,9 +108,19 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpnAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpnAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -383,15 +393,36 @@ public final class VpnAttachmentState extends com.pulumi.resources.ResourceArgs 
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VpnAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VpnAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VpnAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -52,9 +52,19 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.certInfo);
     }
 
+    /**
+     * Indicates the dual certificate to be associated with the acceleration domain name.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="certInfoLists")
     private @Nullable Output<List<DomainHttpsCertInfoListArgs>> certInfoLists;
 
+    /**
+     * @return Indicates the dual certificate to be associated with the acceleration domain name.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainHttpsCertInfoListArgs>>> certInfoLists() {
         return Optional.ofNullable(this.certInfoLists);
     }
@@ -239,15 +249,36 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
             return certInfo(Output.of(certInfo));
         }
 
+        /**
+         * @param certInfoLists Indicates the dual certificate to be associated with the acceleration domain name.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder certInfoLists(@Nullable Output<List<DomainHttpsCertInfoListArgs>> certInfoLists) {
             $.certInfoLists = certInfoLists;
             return this;
         }
 
+        /**
+         * @param certInfoLists Indicates the dual certificate to be associated with the acceleration domain name.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder certInfoLists(List<DomainHttpsCertInfoListArgs> certInfoLists) {
             return certInfoLists(Output.of(certInfoLists));
         }
 
+        /**
+         * @param certInfoLists Indicates the dual certificate to be associated with the acceleration domain name.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder certInfoLists(DomainHttpsCertInfoListArgs... certInfoLists) {
             return certInfoLists(List.of(certInfoLists));
         }

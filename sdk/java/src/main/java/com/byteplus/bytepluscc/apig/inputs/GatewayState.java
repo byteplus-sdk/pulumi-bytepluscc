@@ -84,9 +84,19 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.customLog);
     }
 
+    /**
+     * Event
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="events")
     private @Nullable Output<List<GatewayEventArgs>> events;
 
+    /**
+     * @return Event
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GatewayEventArgs>>> events() {
         return Optional.ofNullable(this.events);
     }
@@ -427,15 +437,36 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
             return customLog(Output.of(customLog));
         }
 
+        /**
+         * @param events Event
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder events(@Nullable Output<List<GatewayEventArgs>> events) {
             $.events = events;
             return this;
         }
 
+        /**
+         * @param events Event
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder events(List<GatewayEventArgs> events) {
             return events(Output.of(events));
         }
 
+        /**
+         * @param events Event
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder events(GatewayEventArgs... events) {
             return events(List.of(events));
         }

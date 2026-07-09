@@ -29,6 +29,72 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.kms.Key;
+ * import com.byteplus.bytepluscc.kms.KeyArgs;
+ * import com.pulumi.bytepluscc.kms.inputs.KeyTagArgs;
+ * import com.pulumi.bytepluscc.kms.inputs.KeyCiphertextArgs;
+ * import com.pulumi.bytepluscc.kms.inputs.KeyReEncryptArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var kMSKeyDemo = new Key("kMSKeyDemo", KeyArgs.builder()
+ *             .keyringName("KMSKeyDemo")
+ *             .keyName("KMSKeyDemoKeyName")
+ *             .keySpec("SYMMETRIC_256")
+ *             .description("description KMSKeyDemo")
+ *             .keyUsage("ENCRYPT_DECRYPT")
+ *             .protectionLevel("HSM")
+ *             .rotateState("Enable")
+ *             .origin("CloudKMS")
+ *             .multiRegion(false)
+ *             .tags(KeyTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .ciphertext(KeyCiphertextArgs.builder()
+ *                 .plaintext("tWB54tTvEu47YjRjuuj+fAt5PskpUaxxxxxx")
+ *                 .encryption_context(serializeJson(
+ *                     jsonObject(
+ *                         jsonProperty("user", "alice"),
+ *                         jsonProperty("path", "path/to/alice/plaintext.txt")
+ *                     )))
+ *                 .build())
+ *             .reEncrypt(KeyReEncryptArgs.builder()
+ *                 .new_keyring_name("terraform-test")
+ *                 .new_key_name("ccapi-terraform")
+ *                 .new_key_id("677a846d-a685-4219-b8c6-xxxxxxxx")
+ *                 .source_ciphertext_blob("jrPUHmpTQaiWWtwU8z9JvwAA6TR2e5xxxxxxxx")
+ *                 .old_encryption_context("")
+ *                 .new_encryption_context(serializeJson(
+ *                     jsonObject(
+ *                         jsonProperty("user", "alice"),
+ *                         jsonProperty("path", "path/to/alice/ccapi.txt")
+ *                     )))
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -418,9 +484,19 @@ public class Key extends com.pulumi.resources.CustomResource {
     public Output<String> scheduleRotationTime() {
         return this.scheduleRotationTime;
     }
+    /**
+     * KMS key label information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,KeyTag.class}, tree="[0,1]")
     private Output<List<KeyTag>> tags;
 
+    /**
+     * @return KMS key label information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<KeyTag>> tags() {
         return this.tags;
     }

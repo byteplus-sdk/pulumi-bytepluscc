@@ -34,9 +34,19 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.associateType);
     }
 
+    /**
+     * List of custom route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="customRouteEntries")
     private @Nullable Output<List<RouteTableCustomRouteEntryArgs>> customRouteEntries;
 
+    /**
+     * @return List of custom route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RouteTableCustomRouteEntryArgs>>> customRouteEntries() {
         return Optional.ofNullable(this.customRouteEntries);
     }
@@ -131,9 +141,19 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subnetIds);
     }
 
+    /**
+     * Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<RouteTableTagArgs>> tags;
 
+    /**
+     * @return Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RouteTableTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -207,15 +227,36 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
             return associateType(Output.of(associateType));
         }
 
+        /**
+         * @param customRouteEntries List of custom route entries associated with the route table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customRouteEntries(@Nullable Output<List<RouteTableCustomRouteEntryArgs>> customRouteEntries) {
             $.customRouteEntries = customRouteEntries;
             return this;
         }
 
+        /**
+         * @param customRouteEntries List of custom route entries associated with the route table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customRouteEntries(List<RouteTableCustomRouteEntryArgs> customRouteEntries) {
             return customRouteEntries(Output.of(customRouteEntries));
         }
 
+        /**
+         * @param customRouteEntries List of custom route entries associated with the route table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customRouteEntries(RouteTableCustomRouteEntryArgs... customRouteEntries) {
             return customRouteEntries(List.of(customRouteEntries));
         }
@@ -356,15 +397,36 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
             return subnetIds(List.of(subnetIds));
         }
 
+        /**
+         * @param tags Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<RouteTableTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<RouteTableTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(RouteTableTagArgs... tags) {
             return tags(List.of(tags));
         }

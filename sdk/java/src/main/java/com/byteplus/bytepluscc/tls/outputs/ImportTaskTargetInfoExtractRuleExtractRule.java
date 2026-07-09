@@ -30,6 +30,11 @@ public final class ImportTaskTargetInfoExtractRuleExtractRule {
      * 
      */
     private @Nullable Boolean enableNanosecond;
+    /**
+     * @return Filter key regular expression.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex> filterKeyRegexes;
     /**
      * @return List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
@@ -99,6 +104,11 @@ public final class ImportTaskTargetInfoExtractRuleExtractRule {
     public Optional<Boolean> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
     }
+    /**
+     * @return Filter key regular expression.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex> filterKeyRegexes() {
         return this.filterKeyRegexes == null ? List.of() : this.filterKeyRegexes;
     }

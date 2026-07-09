@@ -200,9 +200,19 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         return this.securityGroupIds;
     }
 
+    /**
+     * Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<NlbTagArgs>> tags;
 
+    /**
+     * @return Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NlbTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -222,9 +232,19 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
         return this.vpcId;
     }
 
+    /**
+     * Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="zoneMappings", required=true)
     private Output<List<NlbZoneMappingArgs>> zoneMappings;
 
+    /**
+     * @return Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NlbZoneMappingArgs>> zoneMappings() {
         return this.zoneMappings;
     }
@@ -529,15 +549,36 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
             return securityGroupIds(List.of(securityGroupIds));
         }
 
+        /**
+         * @param tags Tag information of the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<NlbTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<NlbTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(NlbTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -563,15 +604,36 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
             return vpcId(Output.of(vpcId));
         }
 
+        /**
+         * @param zoneMappings Availability zone information for the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zoneMappings(Output<List<NlbZoneMappingArgs>> zoneMappings) {
             $.zoneMappings = zoneMappings;
             return this;
         }
 
+        /**
+         * @param zoneMappings Availability zone information for the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zoneMappings(List<NlbZoneMappingArgs> zoneMappings) {
             return zoneMappings(Output.of(zoneMappings));
         }
 
+        /**
+         * @param zoneMappings Availability zone information for the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zoneMappings(NlbZoneMappingArgs... zoneMappings) {
             return zoneMappings(List.of(zoneMappings));
         }

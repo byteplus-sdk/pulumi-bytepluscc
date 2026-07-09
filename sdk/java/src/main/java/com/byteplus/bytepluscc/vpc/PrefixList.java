@@ -36,8 +36,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.vpc.PrefixListArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.PrefixListPrefixListEntryArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.PrefixListTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -94,15 +94,35 @@ public class PrefixList extends com.pulumi.resources.CustomResource {
     public Output<Integer> associationCount() {
         return this.associationCount;
     }
+    /**
+     * Route table information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associationsRouteTables", refs={List.class,PrefixListAssociationsRouteTable.class}, tree="[0,1]")
     private Output<List<PrefixListAssociationsRouteTable>> associationsRouteTables;
 
+    /**
+     * @return Route table information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PrefixListAssociationsRouteTable>> associationsRouteTables() {
         return this.associationsRouteTables;
     }
+    /**
+     * Security group information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associationsSecurityGroups", refs={List.class,PrefixListAssociationsSecurityGroup.class}, tree="[0,1]")
     private Output<List<PrefixListAssociationsSecurityGroup>> associationsSecurityGroups;
 
+    /**
+     * @return Security group information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PrefixListAssociationsSecurityGroup>> associationsSecurityGroups() {
         return this.associationsSecurityGroups;
     }
@@ -162,9 +182,19 @@ public class PrefixList extends com.pulumi.resources.CustomResource {
     public Output<Integer> maxEntries() {
         return this.maxEntries;
     }
+    /**
+     * CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="prefixListEntries", refs={List.class,PrefixListPrefixListEntry.class}, tree="[0,1]")
     private Output<List<PrefixListPrefixListEntry>> prefixListEntries;
 
+    /**
+     * @return CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PrefixListPrefixListEntry>> prefixListEntries() {
         return this.prefixListEntries;
     }
@@ -224,9 +254,19 @@ public class PrefixList extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,PrefixListTag.class}, tree="[0,1]")
     private Output<List<PrefixListTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PrefixListTag>> tags() {
         return this.tags;
     }

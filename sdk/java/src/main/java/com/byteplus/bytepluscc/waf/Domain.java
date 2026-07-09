@@ -26,6 +26,57 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.waf.Domain;
+ * import com.byteplus.bytepluscc.waf.DomainArgs;
+ * import com.pulumi.bytepluscc.waf.inputs.DomainProtocolPortsArgs;
+ * import com.pulumi.bytepluscc.waf.inputs.DomainBackendGroupArgs;
+ * import com.pulumi.bytepluscc.waf.inputs.DomainBackendGroupBackendArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var wafDomainDemo = new Domain("wafDomainDemo", DomainArgs.builder()
+ *             .accessMode(10)
+ *             .domain("www.test.com")
+ *             .lbAlgorithm("wrr")
+ *             .publicRealServer(1)
+ *             .vpcId("")
+ *             .protocolPorts(DomainProtocolPortsArgs.builder()
+ *                 .http(80)
+ *                 .build())
+ *             .protocols("HTTP")
+ *             .backendGroups(DomainBackendGroupArgs.builder()
+ *                 .access_port(Arrays.asList(80))
+ *                 .backends(DomainBackendGroupBackendArgs.builder()
+ *                     .protocol("HTTP")
+ *                     .port(80)
+ *                     .ip("1.1.1.1")
+ *                     .weight(50)
+ *                     .build())
+ *                 .name("default")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -135,9 +186,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<Integer> automaticBlackEnable() {
         return this.automaticBlackEnable;
     }
+    /**
+     * Origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backendGroups", refs={List.class,DomainBackendGroup.class}, tree="[0,1]")
     private Output<List<DomainBackendGroup>> backendGroups;
 
+    /**
+     * @return Origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainBackendGroup>> backendGroups() {
         return this.backendGroups;
     }
@@ -403,9 +464,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<Integer> clientMaxBodySize() {
         return this.clientMaxBodySize;
     }
+    /**
+     * LB access parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="cloudAccessConfigs", refs={List.class,DomainCloudAccessConfig.class}, tree="[0,1]")
     private Output<List<DomainCloudAccessConfig>> cloudAccessConfigs;
 
+    /**
+     * @return LB access parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainCloudAccessConfig>> cloudAccessConfigs() {
         return this.cloudAccessConfigs;
     }
@@ -941,9 +1012,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<Integer> tamperProofEnable() {
         return this.tamperProofEnable;
     }
+    /**
+     * TCP listener configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tcpListenerConfigs", refs={List.class,DomainTcpListenerConfig.class}, tree="[0,1]")
     private Output<List<DomainTcpListenerConfig>> tcpListenerConfigs;
 
+    /**
+     * @return TCP listener configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainTcpListenerConfig>> tcpListenerConfigs() {
         return this.tcpListenerConfigs;
     }

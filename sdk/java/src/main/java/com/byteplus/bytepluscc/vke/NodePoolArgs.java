@@ -127,9 +127,19 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.retainResources);
     }
 
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<NodePoolTagArgs>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NodePoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -322,15 +332,36 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
             return retainResources(List.of(retainResources));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<NodePoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<NodePoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(NodePoolTagArgs... tags) {
             return tags(List.of(tags));
         }

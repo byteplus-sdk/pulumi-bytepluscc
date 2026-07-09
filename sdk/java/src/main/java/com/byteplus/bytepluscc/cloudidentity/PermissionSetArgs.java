@@ -49,9 +49,19 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         return this.name;
     }
 
+    /**
+     * Policy List Under Permission Set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="permissionPolicies")
     private @Nullable Output<List<PermissionSetPermissionPolicyArgs>> permissionPolicies;
 
+    /**
+     * @return Policy List Under Permission Set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PermissionSetPermissionPolicyArgs>>> permissionPolicies() {
         return Optional.ofNullable(this.permissionPolicies);
     }
@@ -156,15 +166,36 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
             return name(Output.of(name));
         }
 
+        /**
+         * @param permissionPolicies Policy List Under Permission Set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder permissionPolicies(@Nullable Output<List<PermissionSetPermissionPolicyArgs>> permissionPolicies) {
             $.permissionPolicies = permissionPolicies;
             return this;
         }
 
+        /**
+         * @param permissionPolicies Policy List Under Permission Set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder permissionPolicies(List<PermissionSetPermissionPolicyArgs> permissionPolicies) {
             return permissionPolicies(Output.of(permissionPolicies));
         }
 
+        /**
+         * @param permissionPolicies Policy List Under Permission Set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder permissionPolicies(PermissionSetPermissionPolicyArgs... permissionPolicies) {
             return permissionPolicies(List.of(permissionPolicies));
         }

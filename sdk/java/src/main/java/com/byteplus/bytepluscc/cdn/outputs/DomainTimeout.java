@@ -18,6 +18,11 @@ public final class DomainTimeout {
      * 
      */
     private @Nullable Boolean switch_;
+    /**
+     * @return Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DomainTimeoutTimeoutRule> timeoutRules;
 
     private DomainTimeout() {}
@@ -28,6 +33,11 @@ public final class DomainTimeout {
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);
     }
+    /**
+     * @return Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DomainTimeoutTimeoutRule> timeoutRules() {
         return this.timeoutRules == null ? List.of() : this.timeoutRules;
     }

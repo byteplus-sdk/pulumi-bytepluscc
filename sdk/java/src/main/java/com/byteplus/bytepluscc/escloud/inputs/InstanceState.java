@@ -607,9 +607,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subInstanceEnable);
     }
 
+    /**
+     * Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="subInstances")
     private @Nullable Output<List<InstanceSubInstanceArgs>> subInstances;
 
+    /**
+     * @return Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceSubInstanceArgs>>> subInstances() {
         return Optional.ofNullable(this.subInstances);
     }
@@ -1570,15 +1580,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return subInstanceEnable(Output.of(subInstanceEnable));
         }
 
+        /**
+         * @param subInstances Enterprise SQL analytics instance configuration information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subInstances(@Nullable Output<List<InstanceSubInstanceArgs>> subInstances) {
             $.subInstances = subInstances;
             return this;
         }
 
+        /**
+         * @param subInstances Enterprise SQL analytics instance configuration information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subInstances(List<InstanceSubInstanceArgs> subInstances) {
             return subInstances(Output.of(subInstances));
         }
 
+        /**
+         * @param subInstances Enterprise SQL analytics instance configuration information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subInstances(InstanceSubInstanceArgs... subInstances) {
             return subInstances(List.of(subInstances));
         }

@@ -17,9 +17,19 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs e
 
     public static final DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs Empty = new DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs();
 
+    /**
+     * Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditionRules")
     private @Nullable Output<List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs>> conditionRules;
 
+    /**
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs>>> conditionRules() {
         return Optional.ofNullable(this.conditionRules);
     }
@@ -64,15 +74,36 @@ public final class DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs e
             $ = new DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(@Nullable Output<List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs>> conditionRules) {
             $.conditionRules = conditionRules;
             return this;
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs> conditionRules) {
             return conditionRules(Output.of(conditionRules));
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(DomainDownloadSpeedLimitDownloadSpeedLimitRuleConditionConditionRuleArgs... conditionRules) {
             return conditionRules(List.of(conditionRules));
         }

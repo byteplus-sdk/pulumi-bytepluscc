@@ -231,9 +231,19 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Resources provided by the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="resources")
     private @Nullable Output<List<EndpointServiceResourceArgs>> resources;
 
+    /**
+     * @return Resources provided by the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EndpointServiceResourceArgs>>> resources() {
         return Optional.ofNullable(this.resources);
     }
@@ -373,9 +383,19 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information of the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<EndpointServiceTagArgs>> tags;
 
+    /**
+     * @return Tag information of the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EndpointServiceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -790,15 +810,36 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param resources Resources provided by the endpoint service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resources(@Nullable Output<List<EndpointServiceResourceArgs>> resources) {
             $.resources = resources;
             return this;
         }
 
+        /**
+         * @param resources Resources provided by the endpoint service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resources(List<EndpointServiceResourceArgs> resources) {
             return resources(Output.of(resources));
         }
 
+        /**
+         * @param resources Resources provided by the endpoint service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resources(EndpointServiceResourceArgs... resources) {
             return resources(List.of(resources));
         }
@@ -992,15 +1033,36 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information of the endpoint service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<EndpointServiceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the endpoint service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<EndpointServiceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the endpoint service.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(EndpointServiceTagArgs... tags) {
             return tags(List.of(tags));
         }

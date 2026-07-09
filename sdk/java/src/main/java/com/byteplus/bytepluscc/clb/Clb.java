@@ -30,6 +30,68 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.clb.Clb;
+ * import com.byteplus.bytepluscc.clb.ClbArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ClbEipArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ClbTagArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ClbAccessLogArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cLBDemo = new Clb("cLBDemo", ClbArgs.builder()
+ *             .loadBalancerName("CLBDemo")
+ *             .loadBalancerSpec("small_1")
+ *             .addressIpVersion("ipv4")
+ *             .bypassSecurityGroupEnabled("off")
+ *             .description("CLBDemo description")
+ *             .loadBalancerBillingType(2.0)
+ *             .masterZoneId("cn-beijing-a")
+ *             .slaveZoneId("cn-beijing-b")
+ *             .modificationProtectionReason("xx")
+ *             .modificationProtectionStatus("xx")
+ *             .period(1.0)
+ *             .periodUnit("Month")
+ *             .projectName("default")
+ *             .subnetId("subnet-rrwqhg3qzxfkv0x57g3xxxx")
+ *             .type("public")
+ *             .vpcId("vpc-rrco37ovjq4gv0x58zfxxxx")
+ *             .eip(ClbEipArgs.builder()
+ *                 .isp("BGP")
+ *                 .bandwidth(1.0)
+ *                 .eip_billing_type(3)
+ *                 .build())
+ *             .tags(ClbTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .accessLog(ClbAccessLogArgs.builder()
+ *                 .bucket_name("ccapi-test")
+ *                 .tls_project_id("5554e74f-0413-4375-ad99-e544xxxxx")
+ *                 .tls_topic_id("7f3bc374-5e1d-4984-83fc-0e5a5xxxxx")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -335,9 +397,19 @@ public class Clb extends com.pulumi.resources.CustomResource {
     public Output<ClbIpv6AddressBandwidth> ipv6AddressBandwidth() {
         return this.ipv6AddressBandwidth;
     }
+    /**
+     * Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="listeners", refs={List.class,ClbListener.class}, tree="[0,1]")
     private Output<List<ClbListener>> listeners;
 
+    /**
+     * @return Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClbListener>> listeners() {
         return this.listeners;
     }
@@ -537,9 +609,19 @@ public class Clb extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="serverGroups", refs={List.class,ClbServerGroup.class}, tree="[0,1]")
     private Output<List<ClbServerGroup>> serverGroups;
 
+    /**
+     * @return Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClbServerGroup>> serverGroups() {
         return this.serverGroups;
     }
@@ -599,9 +681,19 @@ public class Clb extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ClbTag.class}, tree="[0,1]")
     private Output<List<ClbTag>> tags;
 
+    /**
+     * @return CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClbTag>> tags() {
         return this.tags;
     }

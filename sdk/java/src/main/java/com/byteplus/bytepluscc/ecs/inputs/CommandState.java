@@ -140,9 +140,19 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * Custom parameter definition information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="parameterDefinitions")
     private @Nullable Output<List<CommandParameterDefinitionArgs>> parameterDefinitions;
 
+    /**
+     * @return Custom parameter definition information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<CommandParameterDefinitionArgs>>> parameterDefinitions() {
         return Optional.ofNullable(this.parameterDefinitions);
     }
@@ -177,9 +187,19 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.providerName);
     }
 
+    /**
+     * Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<CommandTagArgs>> tags;
 
+    /**
+     * @return Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<CommandTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -467,15 +487,36 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
             return name(Output.of(name));
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameterDefinitions(@Nullable Output<List<CommandParameterDefinitionArgs>> parameterDefinitions) {
             $.parameterDefinitions = parameterDefinitions;
             return this;
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameterDefinitions(List<CommandParameterDefinitionArgs> parameterDefinitions) {
             return parameterDefinitions(Output.of(parameterDefinitions));
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameterDefinitions(CommandParameterDefinitionArgs... parameterDefinitions) {
             return parameterDefinitions(List.of(parameterDefinitions));
         }
@@ -522,15 +563,36 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
             return providerName(Output.of(providerName));
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<CommandTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<CommandTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(CommandTagArgs... tags) {
             return tags(List.of(tags));
         }

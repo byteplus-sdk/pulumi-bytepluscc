@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.cloudmonitor.EventRule;
  * import com.byteplus.bytepluscc.cloudmonitor.EventRuleArgs;
  * import static com.pulumi.codegen.internal.Serialization.*;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -109,30 +109,40 @@ public class EventRule extends com.pulumi.resources.CustomResource {
         return this.createdAt;
     }
     /**
-     * Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-     * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
+     * Rule description
+     *   Must not start with a digit, hyphen (-), or Chinese punctuation
+     *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+     *   Length limit: 0–255 characters
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-     * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
+     * @return Rule description
+     *   Must not start with a digit, hyphen (-), or Chinese punctuation
+     *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+     *   Length limit: 0–255 characters
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * Rule status enable: Rule enabled disable: Rule disabled
+     * Rule status
+     * 
+     *   enable: Rule enabled
+     *   disable: Rule disabled
      * 
      */
     @Export(name="enableState", refs={String.class}, tree="[0]")
     private Output<String> enableState;
 
     /**
-     * @return Rule status enable: Rule enabled disable: Rule disabled
+     * @return Rule status
+     * 
+     *   enable: Rule enabled
+     *   disable: Rule disabled
      * 
      */
     public Output<String> enableState() {
@@ -195,16 +205,14 @@ public class EventRule extends com.pulumi.resources.CustomResource {
         return this.filterPattern;
     }
     /**
-     * Filter mode, also known as event matching rule. Used for creation and modification. Format:
-     * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+     * Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
      * 
      */
     @Export(name="filterPatternInput", refs={String.class}, tree="[0]")
     private Output<String> filterPatternInput;
 
     /**
-     * @return Filter mode, also known as event matching rule. Used for creation and modification. Format:
-     * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+     * @return Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
      * 
      */
     public Output<String> filterPatternInput() {
@@ -253,14 +261,18 @@ public class EventRule extends com.pulumi.resources.CustomResource {
         return this.ruleId;
     }
     /**
-     * Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
+     * Rule name
+     *   Length limit: 1–128 characters
+     *   Must not start with a digit or hyphen (-)
      * 
      */
     @Export(name="ruleName", refs={String.class}, tree="[0]")
     private Output<String> ruleName;
 
     /**
-     * @return Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
+     * @return Rule name
+     *   Length limit: 1–128 characters
+     *   Must not start with a digit or hyphen (-)
      * 
      */
     public Output<String> ruleName() {

@@ -18,6 +18,11 @@ public final class RuleRuleActionForwardGroupConfig {
      * 
      */
     private @Nullable RuleRuleActionForwardGroupConfigServerGroupStickySession serverGroupStickySession;
+    /**
+     * @return ServerGroupTuples
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<RuleRuleActionForwardGroupConfigServerGroupTuple> serverGroupTuples;
 
     private RuleRuleActionForwardGroupConfig() {}
@@ -28,6 +33,11 @@ public final class RuleRuleActionForwardGroupConfig {
     public Optional<RuleRuleActionForwardGroupConfigServerGroupStickySession> serverGroupStickySession() {
         return Optional.ofNullable(this.serverGroupStickySession);
     }
+    /**
+     * @return ServerGroupTuples
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<RuleRuleActionForwardGroupConfigServerGroupTuple> serverGroupTuples() {
         return this.serverGroupTuples == null ? List.of() : this.serverGroupTuples;
     }

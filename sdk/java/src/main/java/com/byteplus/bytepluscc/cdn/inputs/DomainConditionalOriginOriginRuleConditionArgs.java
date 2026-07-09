@@ -18,9 +18,19 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
 
     public static final DomainConditionalOriginOriginRuleConditionArgs Empty = new DomainConditionalOriginOriginRuleConditionArgs();
 
+    /**
+     * ConditionGroups
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditionGroups")
     private @Nullable Output<List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs>> conditionGroups;
 
+    /**
+     * @return ConditionGroups
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs>>> conditionGroups() {
         return Optional.ofNullable(this.conditionGroups);
     }
@@ -81,15 +91,36 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
             $ = new DomainConditionalOriginOriginRuleConditionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionGroups ConditionGroups
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionGroups(@Nullable Output<List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs>> conditionGroups) {
             $.conditionGroups = conditionGroups;
             return this;
         }
 
+        /**
+         * @param conditionGroups ConditionGroups
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionGroups(List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs> conditionGroups) {
             return conditionGroups(Output.of(conditionGroups));
         }
 
+        /**
+         * @param conditionGroups ConditionGroups
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionGroups(DomainConditionalOriginOriginRuleConditionConditionGroupArgs... conditionGroups) {
             return conditionGroups(List.of(conditionGroups));
         }

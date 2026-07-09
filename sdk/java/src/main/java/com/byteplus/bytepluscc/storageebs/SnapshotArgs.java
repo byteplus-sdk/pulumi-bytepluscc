@@ -79,9 +79,19 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         return this.snapshotName;
     }
 
+    /**
+     * Snapshot tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<SnapshotTagArgs>> tags;
 
+    /**
+     * @return Snapshot tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SnapshotTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -214,15 +224,36 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
             return snapshotName(Output.of(snapshotName));
         }
 
+        /**
+         * @param tags Snapshot tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<SnapshotTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Snapshot tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<SnapshotTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Snapshot tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(SnapshotTagArgs... tags) {
             return tags(List.of(tags));
         }

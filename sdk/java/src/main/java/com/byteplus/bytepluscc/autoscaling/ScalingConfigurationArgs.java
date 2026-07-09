@@ -111,9 +111,19 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.instanceName);
     }
 
+    /**
+     * Specification information for preemptible instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="instanceTypeOverrides")
     private @Nullable Output<List<ScalingConfigurationInstanceTypeOverrideArgs>> instanceTypeOverrides;
 
+    /**
+     * @return Specification information for preemptible instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingConfigurationInstanceTypeOverrideArgs>>> instanceTypeOverrides() {
         return Optional.ofNullable(this.instanceTypeOverrides);
     }
@@ -272,9 +282,19 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.spotStrategy);
     }
 
+    /**
+     * Tag key-value pairs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ScalingConfigurationTagArgs>> tags;
 
+    /**
+     * @return Tag key-value pairs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingConfigurationTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -294,9 +314,19 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.userData);
     }
 
+    /**
+     * Cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="volumes")
     private @Nullable Output<List<ScalingConfigurationVolumeArgs>> volumes;
 
+    /**
+     * @return Cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingConfigurationVolumeArgs>>> volumes() {
         return Optional.ofNullable(this.volumes);
     }
@@ -486,15 +516,36 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
             return instanceName(Output.of(instanceName));
         }
 
+        /**
+         * @param instanceTypeOverrides Specification information for preemptible instances
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceTypeOverrides(@Nullable Output<List<ScalingConfigurationInstanceTypeOverrideArgs>> instanceTypeOverrides) {
             $.instanceTypeOverrides = instanceTypeOverrides;
             return this;
         }
 
+        /**
+         * @param instanceTypeOverrides Specification information for preemptible instances
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceTypeOverrides(List<ScalingConfigurationInstanceTypeOverrideArgs> instanceTypeOverrides) {
             return instanceTypeOverrides(Output.of(instanceTypeOverrides));
         }
 
+        /**
+         * @param instanceTypeOverrides Specification information for preemptible instances
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceTypeOverrides(ScalingConfigurationInstanceTypeOverrideArgs... instanceTypeOverrides) {
             return instanceTypeOverrides(List.of(instanceTypeOverrides));
         }
@@ -723,15 +774,36 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
             return spotStrategy(Output.of(spotStrategy));
         }
 
+        /**
+         * @param tags Tag key-value pairs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ScalingConfigurationTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag key-value pairs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ScalingConfigurationTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag key-value pairs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ScalingConfigurationTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -757,15 +829,36 @@ public final class ScalingConfigurationArgs extends com.pulumi.resources.Resourc
             return userData(Output.of(userData));
         }
 
+        /**
+         * @param volumes Cloud disk
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder volumes(@Nullable Output<List<ScalingConfigurationVolumeArgs>> volumes) {
             $.volumes = volumes;
             return this;
         }
 
+        /**
+         * @param volumes Cloud disk
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder volumes(List<ScalingConfigurationVolumeArgs> volumes) {
             return volumes(Output.of(volumes));
         }
 
+        /**
+         * @param volumes Cloud disk
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder volumes(ScalingConfigurationVolumeArgs... volumes) {
             return volumes(List.of(volumes));
         }

@@ -21,9 +21,19 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final TopicArgs Empty = new TopicArgs();
 
+    /**
+     * Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="accessPolicies")
     private @Nullable Output<List<TopicAccessPolicyArgs>> accessPolicies;
 
+    /**
+     * @return Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TopicAccessPolicyArgs>>> accessPolicies() {
         return Optional.ofNullable(this.accessPolicies);
     }
@@ -133,9 +143,19 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.replicaNumber);
     }
 
+    /**
+     * Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<TopicTagArgs>> tags;
 
+    /**
+     * @return Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TopicTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -188,15 +208,36 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
             $ = new TopicArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessPolicies Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessPolicies(@Nullable Output<List<TopicAccessPolicyArgs>> accessPolicies) {
             $.accessPolicies = accessPolicies;
             return this;
         }
 
+        /**
+         * @param accessPolicies Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessPolicies(List<TopicAccessPolicyArgs> accessPolicies) {
             return accessPolicies(Output.of(accessPolicies));
         }
 
+        /**
+         * @param accessPolicies Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessPolicies(TopicAccessPolicyArgs... accessPolicies) {
             return accessPolicies(List.of(accessPolicies));
         }
@@ -358,15 +399,36 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
             return replicaNumber(Output.of(replicaNumber));
         }
 
+        /**
+         * @param tags Topic label information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<TopicTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Topic label information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<TopicTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Topic label information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(TopicTagArgs... tags) {
             return tags(List.of(tags));
         }

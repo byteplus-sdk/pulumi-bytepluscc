@@ -215,9 +215,19 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.smsPasswordlessSignInEnabled);
     }
 
+    /**
+     * User pool tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<UserPoolTagArgs>> tags;
 
+    /**
+     * @return User pool tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UserPoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -568,15 +578,36 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
             return smsPasswordlessSignInEnabled(Output.of(smsPasswordlessSignInEnabled));
         }
 
+        /**
+         * @param tags User pool tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<UserPoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags User pool tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<UserPoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags User pool tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(UserPoolTagArgs... tags) {
             return tags(List.of(tags));
         }

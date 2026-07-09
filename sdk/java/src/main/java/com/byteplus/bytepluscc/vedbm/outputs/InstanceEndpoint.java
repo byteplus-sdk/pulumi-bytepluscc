@@ -15,6 +15,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
@@ -78,6 +83,11 @@ public final class InstanceEndpoint {
     private @Nullable String readWriteMode;
 
     private InstanceEndpoint() {}
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceEndpointAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }

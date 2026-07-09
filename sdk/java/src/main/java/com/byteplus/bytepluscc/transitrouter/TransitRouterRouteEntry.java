@@ -20,6 +20,42 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.transitrouter.TransitRouterRouteEntry;
+ * import com.byteplus.bytepluscc.transitrouter.TransitRouterRouteEntryArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var transitRouterRouteEntryDemo = new TransitRouterRouteEntry("transitRouterRouteEntryDemo", TransitRouterRouteEntryArgs.builder()
+ *             .description("Demo Example")
+ *             .destinationCidrBlock("192.168.1.101/*")
+ *             .transitRouterRouteEntryName("test-Attachmentkua")
+ *             .transitRouterRouteTableId("tr-rtb-mijcn***")
+ *             .transitRouterRouteEntryNextHopId("tr-attach-13fs****")
+ *             .transitRouterRouteEntryNextHopType("Attachment")
+ *             .transitRouterRouteEntryType("Propagated")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

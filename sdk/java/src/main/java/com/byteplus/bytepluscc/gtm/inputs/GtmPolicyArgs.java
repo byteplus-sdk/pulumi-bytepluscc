@@ -79,9 +79,19 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.statistics);
     }
 
+    /**
+     * List of target address pools associated with the scheduling policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="targets")
     private @Nullable Output<List<GtmPolicyTargetArgs>> targets;
 
+    /**
+     * @return List of target address pools associated with the scheduling policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GtmPolicyTargetArgs>>> targets() {
         return Optional.ofNullable(this.targets);
     }
@@ -198,15 +208,36 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
             return statistics(Output.of(statistics));
         }
 
+        /**
+         * @param targets List of target address pools associated with the scheduling policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targets(@Nullable Output<List<GtmPolicyTargetArgs>> targets) {
             $.targets = targets;
             return this;
         }
 
+        /**
+         * @param targets List of target address pools associated with the scheduling policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targets(List<GtmPolicyTargetArgs> targets) {
             return targets(Output.of(targets));
         }
 
+        /**
+         * @param targets List of target address pools associated with the scheduling policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targets(GtmPolicyTargetArgs... targets) {
             return targets(List.of(targets));
         }

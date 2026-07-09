@@ -17,9 +17,19 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     public static final VpnGatewayRouteState Empty = new VpnGatewayRouteState();
 
+    /**
+     * AS path information traversed by the BGP route entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="asPaths")
     private @Nullable Output<List<VpnGatewayRouteAsPathArgs>> asPaths;
 
+    /**
+     * @return AS path information traversed by the BGP route entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpnGatewayRouteAsPathArgs>>> asPaths() {
         return Optional.ofNullable(this.asPaths);
     }
@@ -192,15 +202,36 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
             $ = new VpnGatewayRouteState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param asPaths AS path information traversed by the BGP route entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder asPaths(@Nullable Output<List<VpnGatewayRouteAsPathArgs>> asPaths) {
             $.asPaths = asPaths;
             return this;
         }
 
+        /**
+         * @param asPaths AS path information traversed by the BGP route entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder asPaths(List<VpnGatewayRouteAsPathArgs> asPaths) {
             return asPaths(Output.of(asPaths));
         }
 
+        /**
+         * @param asPaths AS path information traversed by the BGP route entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder asPaths(VpnGatewayRouteAsPathArgs... asPaths) {
             return asPaths(List.of(asPaths));
         }

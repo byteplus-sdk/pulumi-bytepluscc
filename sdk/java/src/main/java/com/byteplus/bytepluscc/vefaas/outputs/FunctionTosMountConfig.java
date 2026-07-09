@@ -24,6 +24,11 @@ public final class FunctionTosMountConfig {
      * 
      */
     private @Nullable Boolean enableTos;
+    /**
+     * @return TOS storage configuration list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<FunctionTosMountConfigMountPoint> mountPoints;
 
     private FunctionTosMountConfig() {}
@@ -41,6 +46,11 @@ public final class FunctionTosMountConfig {
     public Optional<Boolean> enableTos() {
         return Optional.ofNullable(this.enableTos);
     }
+    /**
+     * @return TOS storage configuration list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<FunctionTosMountConfigMountPoint> mountPoints() {
         return this.mountPoints == null ? List.of() : this.mountPoints;
     }

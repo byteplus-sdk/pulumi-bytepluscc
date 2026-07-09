@@ -168,9 +168,19 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TransitRouterAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -547,15 +557,36 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information of the network instance connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<TransitRouterAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the network instance connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<TransitRouterAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the network instance connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(TransitRouterAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }

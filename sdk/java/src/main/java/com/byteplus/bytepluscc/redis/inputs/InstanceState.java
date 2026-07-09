@@ -85,9 +85,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.backupRestore);
     }
 
+    /**
+     * Backup list information for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="backups")
     private @Nullable Output<List<InstanceBackupArgs>> backups;
 
+    /**
+     * @return Backup list information for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceBackupArgs>>> backups() {
         return Optional.ofNullable(this.backups);
     }
@@ -137,9 +147,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.chargeType);
     }
 
+    /**
+     * Set the list of availability zones to which the node belongs.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="configureNodes")
     private @Nullable Output<List<InstanceConfigureNodeArgs>> configureNodes;
 
+    /**
+     * @return Set the list of availability zones to which the node belongs.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceConfigureNodeArgs>>> configureNodes() {
         return Optional.ofNullable(this.configureNodes);
     }
@@ -294,9 +314,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.instanceName);
     }
 
+    /**
+     * Detailed list of all shards in the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="instanceShards")
     private @Nullable Output<List<InstanceInstanceShardArgs>> instanceShards;
 
+    /**
+     * @return Detailed list of all shards in the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceInstanceShardArgs>>> instanceShards() {
         return Optional.ofNullable(this.instanceShards);
     }
@@ -616,9 +646,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Set the tag list for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Set the tag list for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -653,9 +693,19 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.vip);
     }
 
+    /**
+     * Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="visitAddrs")
     private @Nullable Output<List<InstanceVisitAddrArgs>> visitAddrs;
 
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceVisitAddrArgs>>> visitAddrs() {
         return Optional.ofNullable(this.visitAddrs);
     }
@@ -870,15 +920,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return backupRestore(Output.of(backupRestore));
         }
 
+        /**
+         * @param backups Backup list information for the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backups(@Nullable Output<List<InstanceBackupArgs>> backups) {
             $.backups = backups;
             return this;
         }
 
+        /**
+         * @param backups Backup list information for the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backups(List<InstanceBackupArgs> backups) {
             return backups(Output.of(backups));
         }
 
+        /**
+         * @param backups Backup list information for the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backups(InstanceBackupArgs... backups) {
             return backups(List.of(backups));
         }
@@ -946,15 +1017,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return chargeType(Output.of(chargeType));
         }
 
+        /**
+         * @param configureNodes Set the list of availability zones to which the node belongs.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configureNodes(@Nullable Output<List<InstanceConfigureNodeArgs>> configureNodes) {
             $.configureNodes = configureNodes;
             return this;
         }
 
+        /**
+         * @param configureNodes Set the list of availability zones to which the node belongs.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configureNodes(List<InstanceConfigureNodeArgs> configureNodes) {
             return configureNodes(Output.of(configureNodes));
         }
 
+        /**
+         * @param configureNodes Set the list of availability zones to which the node belongs.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder configureNodes(InstanceConfigureNodeArgs... configureNodes) {
             return configureNodes(List.of(configureNodes));
         }
@@ -1169,15 +1261,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return instanceName(Output.of(instanceName));
         }
 
+        /**
+         * @param instanceShards Detailed list of all shards in the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceShards(@Nullable Output<List<InstanceInstanceShardArgs>> instanceShards) {
             $.instanceShards = instanceShards;
             return this;
         }
 
+        /**
+         * @param instanceShards Detailed list of all shards in the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceShards(List<InstanceInstanceShardArgs> instanceShards) {
             return instanceShards(Output.of(instanceShards));
         }
 
+        /**
+         * @param instanceShards Detailed list of all shards in the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceShards(InstanceInstanceShardArgs... instanceShards) {
             return instanceShards(List.of(instanceShards));
         }
@@ -1633,15 +1746,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Set the tag list for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Set the tag list for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Set the tag list for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -1688,15 +1822,36 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return vip(Output.of(vip));
         }
 
+        /**
+         * @param visitAddrs Connection address information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder visitAddrs(@Nullable Output<List<InstanceVisitAddrArgs>> visitAddrs) {
             $.visitAddrs = visitAddrs;
             return this;
         }
 
+        /**
+         * @param visitAddrs Connection address information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder visitAddrs(List<InstanceVisitAddrArgs> visitAddrs) {
             return visitAddrs(Output.of(visitAddrs));
         }
 
+        /**
+         * @param visitAddrs Connection address information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder visitAddrs(InstanceVisitAddrArgs... visitAddrs) {
             return visitAddrs(List.of(visitAddrs));
         }

@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.rdspostgresql.ParameterTemplate;
  * import com.byteplus.bytepluscc.rdspostgresql.ParameterTemplateArgs;
  * import com.pulumi.bytepluscc.rdspostgresql.inputs.ParameterTemplateTemplateParamArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -189,9 +189,19 @@ public class ParameterTemplate extends com.pulumi.resources.CustomResource {
     public Output<String> templateName() {
         return this.templateName;
     }
+    /**
+     * List of parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="templateParams", refs={List.class,ParameterTemplateTemplateParam.class}, tree="[0,1]")
     private Output<List<ParameterTemplateTemplateParam>> templateParams;
 
+    /**
+     * @return List of parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ParameterTemplateTemplateParam>> templateParams() {
         return this.templateParams;
     }

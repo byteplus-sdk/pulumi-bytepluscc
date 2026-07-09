@@ -24,6 +24,63 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.alb.Listener;
+ * import com.byteplus.bytepluscc.alb.ListenerArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ListenerTagArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ListenerDomainExtensionArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var aLBListenerDemo = new Listener("aLBListenerDemo", ListenerArgs.builder()
+ *             .loadBalancerId("alb-bdazuxj87hts8dv40noxxxxx")
+ *             .listenerName("ALBListenerDemo")
+ *             .protocol("HTTPS")
+ *             .port(80)
+ *             .enabled("on")
+ *             .serverGroupId("rsp-1pff7rhpf5e68845wfah2xxxx")
+ *             .aclStatus("on")
+ *             .aclType("black")
+ *             .aclIds("acl-xp8avgtjnmrk54ov5fyoxxxx")
+ *             .customizedCfgId("ccfg-xoblsk63beo054ov5el5xxxx")
+ *             .description("ALBListenerDemo description")
+ *             .tags(ListenerTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .certificateSource("cert_center")
+ *             .certCenterCertificateId("cert-a126f867a19141618ff316a52a50xxxx")
+ *             .caCertificateSource("pca_root")
+ *             .pcaRootCaCertificateId("pca_root_xxxxxx")
+ *             .enableHttp2("on")
+ *             .enableQuic("off")
+ *             .domainExtensions(ListenerDomainExtensionArgs.builder()
+ *                 .cert_center_certificate_id("cert-7718b7e7afa94e4db38ec9092cxxxxxx")
+ *                 .certificate_source("cert_center")
+ *                 .domain("")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -203,9 +260,19 @@ public class Listener extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="domainExtensions", refs={List.class,ListenerDomainExtension.class}, tree="[0,1]")
     private Output<List<ListenerDomainExtension>> domainExtensions;
 
+    /**
+     * @return List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ListenerDomainExtension>> domainExtensions() {
         return this.domainExtensions;
     }
@@ -391,9 +458,19 @@ public class Listener extends com.pulumi.resources.CustomResource {
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
+    /**
+     * All server groups associated with the listener.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="serverGroups", refs={List.class,ListenerServerGroup.class}, tree="[0,1]")
     private Output<List<ListenerServerGroup>> serverGroups;
 
+    /**
+     * @return All server groups associated with the listener.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ListenerServerGroup>> serverGroups() {
         return this.serverGroups;
     }
@@ -411,9 +488,19 @@ public class Listener extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Listener tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ListenerTag.class}, tree="[0,1]")
     private Output<List<ListenerTag>> tags;
 
+    /**
+     * @return Listener tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ListenerTag>> tags() {
         return this.tags;
     }

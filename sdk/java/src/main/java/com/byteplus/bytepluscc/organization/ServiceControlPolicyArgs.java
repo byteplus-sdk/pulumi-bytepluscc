@@ -63,9 +63,19 @@ public final class ServiceControlPolicyArgs extends com.pulumi.resources.Resourc
         return this.statement;
     }
 
+    /**
+     * List of bound target objects.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="targets")
     private @Nullable Output<List<ServiceControlPolicyTargetArgs>> targets;
 
+    /**
+     * @return List of bound target objects.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceControlPolicyTargetArgs>>> targets() {
         return Optional.ofNullable(this.targets);
     }
@@ -160,15 +170,36 @@ public final class ServiceControlPolicyArgs extends com.pulumi.resources.Resourc
             return statement(Output.of(statement));
         }
 
+        /**
+         * @param targets List of bound target objects.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targets(@Nullable Output<List<ServiceControlPolicyTargetArgs>> targets) {
             $.targets = targets;
             return this;
         }
 
+        /**
+         * @param targets List of bound target objects.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targets(List<ServiceControlPolicyTargetArgs> targets) {
             return targets(Output.of(targets));
         }
 
+        /**
+         * @param targets List of bound target objects.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targets(ServiceControlPolicyTargetArgs... targets) {
             return targets(List.of(targets));
         }

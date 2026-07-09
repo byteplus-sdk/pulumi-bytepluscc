@@ -35,9 +35,19 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.applianceModeEnabled);
     }
 
+    /**
+     * Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="attachPoints")
     private @Nullable Output<List<VpcAttachmentAttachPointArgs>> attachPoints;
 
+    /**
+     * @return Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcAttachmentAttachPointArgs>>> attachPoints() {
         return Optional.ofNullable(this.attachPoints);
     }
@@ -132,9 +142,19 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpcAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -272,15 +292,36 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
             return applianceModeEnabled(Output.of(applianceModeEnabled));
         }
 
+        /**
+         * @param attachPoints Network instance connection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachPoints(@Nullable Output<List<VpcAttachmentAttachPointArgs>> attachPoints) {
             $.attachPoints = attachPoints;
             return this;
         }
 
+        /**
+         * @param attachPoints Network instance connection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachPoints(List<VpcAttachmentAttachPointArgs> attachPoints) {
             return attachPoints(Output.of(attachPoints));
         }
 
+        /**
+         * @param attachPoints Network instance connection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachPoints(VpcAttachmentAttachPointArgs... attachPoints) {
             return attachPoints(List.of(attachPoints));
         }
@@ -411,15 +452,36 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VpcAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VpcAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VpcAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }

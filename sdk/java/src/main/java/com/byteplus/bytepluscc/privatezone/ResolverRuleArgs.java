@@ -51,9 +51,19 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.endpointTrn);
     }
 
+    /**
+     * IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="forwardIPs")
     private @Nullable Output<List<ResolverRuleForwardIPArgs>> forwardIPs;
 
+    /**
+     * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ResolverRuleForwardIPArgs>>> forwardIPs() {
         return Optional.ofNullable(this.forwardIPs);
     }
@@ -103,9 +113,19 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * One or more tags associated with the forwarding rule
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ResolverRuleTagArgs>> tags;
 
+    /**
+     * @return One or more tags associated with the forwarding rule
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ResolverRuleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -125,9 +145,19 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         return this.type;
     }
 
+    /**
+     * VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="vpCs")
     private @Nullable Output<List<ResolverRuleVpCArgs>> vpCs;
 
+    /**
+     * @return VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ResolverRuleVpCArgs>>> vpCs() {
         return Optional.ofNullable(this.vpCs);
     }
@@ -238,15 +268,36 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
             return endpointTrn(Output.of(endpointTrn));
         }
 
+        /**
+         * @param forwardIPs IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardIPs(@Nullable Output<List<ResolverRuleForwardIPArgs>> forwardIPs) {
             $.forwardIPs = forwardIPs;
             return this;
         }
 
+        /**
+         * @param forwardIPs IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardIPs(List<ResolverRuleForwardIPArgs> forwardIPs) {
             return forwardIPs(Output.of(forwardIPs));
         }
 
+        /**
+         * @param forwardIPs IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder forwardIPs(ResolverRuleForwardIPArgs... forwardIPs) {
             return forwardIPs(List.of(forwardIPs));
         }
@@ -314,15 +365,36 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags One or more tags associated with the forwarding rule
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ResolverRuleTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags One or more tags associated with the forwarding rule
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ResolverRuleTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags One or more tags associated with the forwarding rule
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ResolverRuleTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -348,15 +420,36 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
             return type(Output.of(type));
         }
 
+        /**
+         * @param vpCs VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpCs(@Nullable Output<List<ResolverRuleVpCArgs>> vpCs) {
             $.vpCs = vpCs;
             return this;
         }
 
+        /**
+         * @param vpCs VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpCs(List<ResolverRuleVpCArgs> vpCs) {
             return vpCs(Output.of(vpCs));
         }
 
+        /**
+         * @param vpCs VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpCs(ResolverRuleVpCArgs... vpCs) {
             return vpCs(List.of(vpCs));
         }

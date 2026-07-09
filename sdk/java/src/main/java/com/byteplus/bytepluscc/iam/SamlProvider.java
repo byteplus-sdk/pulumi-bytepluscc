@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.iam.SamlProvider;
  * import com.byteplus.bytepluscc.iam.SamlProviderArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -81,9 +81,19 @@ public class SamlProvider extends com.pulumi.resources.CustomResource {
     public Output<String> certificateExpireTime() {
         return this.certificateExpireTime;
     }
+    /**
+     * Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="certificates", refs={List.class,SamlProviderCertificate.class}, tree="[0,1]")
     private Output<List<SamlProviderCertificate>> certificates;
 
+    /**
+     * @return Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<SamlProviderCertificate>> certificates() {
         return this.certificates;
     }
@@ -144,28 +154,38 @@ public class SamlProvider extends com.pulumi.resources.CustomResource {
         return this.samlProviderName;
     }
     /**
-     * Identity Provider SSO Type 1. Role SSO 2. User SSO
+     * Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
      * 
      */
     @Export(name="ssoType", refs={Integer.class}, tree="[0]")
     private Output<Integer> ssoType;
 
     /**
-     * @return Identity Provider SSO Type 1. Role SSO 2. User SSO
+     * @return Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
      * 
      */
     public Output<Integer> ssoType() {
         return this.ssoType;
     }
     /**
-     * Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+     * Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
      * 
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
-     * @return Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+     * @return Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
      * 
      */
     public Output<Integer> status() {

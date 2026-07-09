@@ -33,9 +33,19 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
         return Optional.ofNullable(this.requestHeaderComponents);
     }
 
+    /**
+     * Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="requestHeaderInstances")
     private @Nullable Output<List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs>> requestHeaderInstances;
 
+    /**
+     * @return Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs>>> requestHeaderInstances() {
         return Optional.ofNullable(this.requestHeaderInstances);
     }
@@ -102,15 +112,36 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHead
             return requestHeaderComponents(Output.of(requestHeaderComponents));
         }
 
+        /**
+         * @param requestHeaderInstances Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestHeaderInstances(@Nullable Output<List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs>> requestHeaderInstances) {
             $.requestHeaderInstances = requestHeaderInstances;
             return this;
         }
 
+        /**
+         * @param requestHeaderInstances Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestHeaderInstances(List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs> requestHeaderInstances) {
             return requestHeaderInstances(Output.of(requestHeaderInstances));
         }
 
+        /**
+         * @param requestHeaderInstances Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestHeaderInstances(DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstanceArgs... requestHeaderInstances) {
             return requestHeaderInstances(List.of(requestHeaderInstances));
         }

@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AddonStatus {
+    /**
+     * @return Status conditions under the component&#39;s current primary state.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<AddonStatusCondition> conditions;
     /**
      * @return Component status. Parameter values include: Running, Failed, Creating, Deleting, Updating
@@ -21,6 +26,11 @@ public final class AddonStatus {
     private @Nullable String phase;
 
     private AddonStatus() {}
+    /**
+     * @return Status conditions under the component&#39;s current primary state.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<AddonStatusCondition> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }

@@ -17,9 +17,19 @@ public final class DomainCacheKeyConditionArgs extends com.pulumi.resources.Reso
 
     public static final DomainCacheKeyConditionArgs Empty = new DomainCacheKeyConditionArgs();
 
+    /**
+     * Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditionRules")
     private @Nullable Output<List<DomainCacheKeyConditionConditionRuleArgs>> conditionRules;
 
+    /**
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainCacheKeyConditionConditionRuleArgs>>> conditionRules() {
         return Optional.ofNullable(this.conditionRules);
     }
@@ -64,15 +74,36 @@ public final class DomainCacheKeyConditionArgs extends com.pulumi.resources.Reso
             $ = new DomainCacheKeyConditionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(@Nullable Output<List<DomainCacheKeyConditionConditionRuleArgs>> conditionRules) {
             $.conditionRules = conditionRules;
             return this;
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(List<DomainCacheKeyConditionConditionRuleArgs> conditionRules) {
             return conditionRules(Output.of(conditionRules));
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(DomainCacheKeyConditionConditionRuleArgs... conditionRules) {
             return conditionRules(List.of(conditionRules));
         }

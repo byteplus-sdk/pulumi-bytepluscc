@@ -23,6 +23,49 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingPolicy;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingPolicyArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingPolicyScheduledPolicyArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var autoScalingScalingPolicyDemo = new ScalingPolicy("autoScalingScalingPolicyDemo", ScalingPolicyArgs.builder()
+ *             .scalingGroupId("scg-ye9vu9ztco9ht5lxxxxx")
+ *             .scalingPolicyName("AutoScalingScalingPolicyDemo")
+ *             .scalingPolicyType("Scheduled")
+ *             .adjustmentType("PercentChangeInCapacity")
+ *             .adjustmentValue(1)
+ *             .cooldown(86400)
+ *             .scheduledPolicy(ScalingPolicyScheduledPolicyArgs.builder()
+ *                 .launch_time("2025-12-21T11:58Z")
+ *                 .recurrence_end_time("")
+ *                 .recurrence_type("")
+ *                 .recurrence_value("")
+ *                 .build())
+ *             .isEnabledPolicy(false)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

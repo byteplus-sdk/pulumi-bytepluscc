@@ -39,8 +39,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.mongodb.Instance;
  * import com.byteplus.bytepluscc.mongodb.InstanceArgs;
  * import com.pulumi.bytepluscc.mongodb.inputs.InstanceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -195,9 +195,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<Integer> configServerStorageSpaceGb() {
         return this.configServerStorageSpaceGb;
     }
+    /**
+     * ConfigServer information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="configServers", refs={List.class,InstanceConfigServer.class}, tree="[0,1]")
     private Output<List<InstanceConfigServer>> configServers;
 
+    /**
+     * @return ConfigServer information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceConfigServer>> configServers() {
         return this.configServers;
     }
@@ -327,9 +337,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> instanceName() {
         return this.instanceName;
     }
+    /**
+     * Instance parameter list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="instanceParameters", refs={List.class,InstanceInstanceParameter.class}, tree="[0,1]")
     private Output<List<InstanceInstanceParameter>> instanceParameters;
 
+    /**
+     * @return Instance parameter list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceInstanceParameter>> instanceParameters() {
         return this.instanceParameters;
     }
@@ -361,9 +381,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> instanceType() {
         return this.instanceType;
     }
+    /**
+     * Mongos information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="mongos", refs={List.class,InstanceMongo.class}, tree="[0,1]")
     private Output<List<InstanceMongo>> mongos;
 
+    /**
+     * @return Mongos information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceMongo>> mongos() {
         return this.mongos;
     }
@@ -409,9 +439,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> mongosNodeSpec() {
         return this.mongosNodeSpec;
     }
+    /**
+     * Add read-only node information, including the availability zone and quantity of read-only nodes.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodeAvailabilityZones", refs={List.class,InstanceNodeAvailabilityZone.class}, tree="[0,1]")
     private Output<List<InstanceNodeAvailabilityZone>> nodeAvailabilityZones;
 
+    /**
+     * @return Add read-only node information, including the availability zone and quantity of read-only nodes.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceNodeAvailabilityZone>> nodeAvailabilityZones() {
         return this.nodeAvailabilityZones;
     }
@@ -443,9 +483,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
+    /**
+     * Information list for each node in the replica set instance or each node in the sharded cluster shard
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodes", refs={List.class,InstanceNode.class}, tree="[0,1]")
     private Output<List<InstanceNode>> nodes;
 
+    /**
+     * @return Information list for each node in the replica set instance or each node in the sharded cluster shard
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceNode>> nodes() {
         return this.nodes;
     }
@@ -547,9 +597,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<Integer> shardNumber() {
         return this.shardNumber;
     }
+    /**
+     * Shard information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="shards", refs={List.class,InstanceShard.class}, tree="[0,1]")
     private Output<List<InstanceShard>> shards;
 
+    /**
+     * @return Shard information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceShard>> shards() {
         return this.shards;
     }
@@ -623,9 +683,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
+    /**
+     * MongoDB instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return MongoDB instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

@@ -25,6 +25,57 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatelink.EndpointService;
+ * import com.byteplus.bytepluscc.privatelink.EndpointServiceArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.EndpointServiceResourceArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.EndpointServiceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var privateLinkEndpointServiceDemo = new EndpointService("privateLinkEndpointServiceDemo", EndpointServiceArgs.builder()
+ *             .serviceType("Interface")
+ *             .ipAddressVersions("ipv4")
+ *             .serviceResourceType("CLB")
+ *             .resources(EndpointServiceResourceArgs.builder()
+ *                 .resource_id("clb-rr0o8ni4dxxxx58wxxxxx")
+ *                 .zone_ids(Arrays.asList("cn-beijing-c"))
+ *                 .build())
+ *             .autoAcceptEnabled(true)
+ *             .privateDnsEnabled(true)
+ *             .privateDnsType("public")
+ *             .privateDnsName("*.www.example.com")
+ *             .description("PrivateLinkEndpointServiceDemo description")
+ *             .projectName("default")
+ *             .tags(EndpointServiceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .payer("Endpoint")
+ *             .enableVerifyPrivateDns(true)
+ *             .permitAccountIds("*")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -232,9 +283,19 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Resources provided by the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="resources", refs={List.class,EndpointServiceResource.class}, tree="[0,1]")
     private Output<List<EndpointServiceResource>> resources;
 
+    /**
+     * @return Resources provided by the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EndpointServiceResource>> resources() {
         return this.resources;
     }
@@ -364,9 +425,19 @@ public class EndpointService extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,EndpointServiceTag.class}, tree="[0,1]")
     private Output<List<EndpointServiceTag>> tags;
 
+    /**
+     * @return Tag information of the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EndpointServiceTag>> tags() {
         return this.tags;
     }

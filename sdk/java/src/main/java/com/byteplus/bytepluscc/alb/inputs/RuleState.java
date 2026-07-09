@@ -157,16 +157,36 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.ruleAction);
     }
 
+    /**
+     * Standard edition forwarding rule action.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ruleActions")
     private @Nullable Output<List<RuleRuleActionArgs>> ruleActions;
 
+    /**
+     * @return Standard edition forwarding rule action.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleRuleActionArgs>>> ruleActions() {
         return Optional.ofNullable(this.ruleActions);
     }
 
+    /**
+     * Standard edition forwarding rule condition.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ruleConditions")
     private @Nullable Output<List<RuleRuleConditionArgs>> ruleConditions;
 
+    /**
+     * @return Standard edition forwarding rule condition.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleRuleConditionArgs>>> ruleConditions() {
         return Optional.ofNullable(this.ruleConditions);
     }
@@ -474,28 +494,70 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
             return ruleAction(Output.of(ruleAction));
         }
 
+        /**
+         * @param ruleActions Standard edition forwarding rule action.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleActions(@Nullable Output<List<RuleRuleActionArgs>> ruleActions) {
             $.ruleActions = ruleActions;
             return this;
         }
 
+        /**
+         * @param ruleActions Standard edition forwarding rule action.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleActions(List<RuleRuleActionArgs> ruleActions) {
             return ruleActions(Output.of(ruleActions));
         }
 
+        /**
+         * @param ruleActions Standard edition forwarding rule action.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleActions(RuleRuleActionArgs... ruleActions) {
             return ruleActions(List.of(ruleActions));
         }
 
+        /**
+         * @param ruleConditions Standard edition forwarding rule condition.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleConditions(@Nullable Output<List<RuleRuleConditionArgs>> ruleConditions) {
             $.ruleConditions = ruleConditions;
             return this;
         }
 
+        /**
+         * @param ruleConditions Standard edition forwarding rule condition.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleConditions(List<RuleRuleConditionArgs> ruleConditions) {
             return ruleConditions(Output.of(ruleConditions));
         }
 
+        /**
+         * @param ruleConditions Standard edition forwarding rule condition.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ruleConditions(RuleRuleConditionArgs... ruleConditions) {
             return ruleConditions(List.of(ruleConditions));
         }

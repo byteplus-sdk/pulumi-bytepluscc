@@ -23,6 +23,41 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmssql.Backup;
+ * import com.byteplus.bytepluscc.rdsmssql.BackupArgs;
+ * import com.pulumi.bytepluscc.rdsmssql.inputs.BackupBackupMetaArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rDSMsSQLBackupDemo = new Backup("rDSMsSQLBackupDemo", BackupArgs.builder()
+ *             .instanceId("mssql-099bda9abfaf")
+ *             .backupType("Full")
+ *             .backupMetas(BackupBackupMetaArgs.builder()
+ *                 .db_name("user")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -34,9 +69,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:rdsmssql/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
+    /**
+     * Backup information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backupDatabaseDetails", refs={List.class,BackupBackupDatabaseDetail.class}, tree="[0,1]")
     private Output<List<BackupBackupDatabaseDetail>> backupDatabaseDetails;
 
+    /**
+     * @return Backup information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BackupBackupDatabaseDetail>> backupDatabaseDetails() {
         return this.backupDatabaseDetails;
     }
@@ -82,9 +127,19 @@ public class Backup extends com.pulumi.resources.CustomResource {
     public Output<String> backupId() {
         return this.backupId;
     }
+    /**
+     * Backup database information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backupMetas", refs={List.class,BackupBackupMeta.class}, tree="[0,1]")
     private Output<List<BackupBackupMeta>> backupMetas;
 
+    /**
+     * @return Backup database information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BackupBackupMeta>> backupMetas() {
         return this.backupMetas;
     }

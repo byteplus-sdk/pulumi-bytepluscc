@@ -25,6 +25,218 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.Index;
+ * import com.byteplus.bytepluscc.tls.IndexArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexFullTextArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexKeyValueArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexKeyValueValueArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexKeyValueValueJsonKeyArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexKeyValueValueJsonKeyValueArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexUserInnerKeyValueArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexUserInnerKeyValueValueArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexUserInnerKeyValueValueJsonKeyArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.IndexUserInnerKeyValueValueJsonKeyValueArgs;
+ * import com.pulumi.std.StdFunctions;
+ * import com.pulumi.std.inputs.ChompArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
+ *         Pulumi.run(App::stack);
+ *     }}{@code
+ * 
+ *     public static void stack(Context ctx) }{{@code
+ *         var tLSIndexDemo = new Index("tLSIndexDemo", IndexArgs.builder()
+ *             .enableAutoIndex(true)
+ *             .fullText(IndexFullTextArgs.builder()
+ *                 .case_sensitive(true)
+ *                 .delimiter(StdFunctions.chomp(ChompArgs.builder()
+ *                     .input("""
+ * , '";$#!=()[]}{}{@code ?}{@literal @}{@code &<>/:\n\t\r\\%*+-._^`|~QWE
+ *                     """)
+ *                     .build()).result())
+ *                 .include_chinese(true)
+ *                 .build())
+ *             .keyValues(            
+ *                 IndexKeyValueArgs.builder()
+ *                     .key("a")
+ *                     .value(IndexKeyValueValueArgs.builder()
+ *                         .autoIndexFlag(false)
+ *                         .caseSensitive(true)
+ *                         .delimiter(StdFunctions.chomp(ChompArgs.builder()
+ *                             .input("""
+ * , '";$#!=()[]}{}{@code ?}{@literal @}{@code &<>/:\n\t\r\\%*+-._^`|~QWE
+ *                             """)
+ *                             .build()).result())
+ *                         .includeChinese(true)
+ *                         .indexAll(false)
+ *                         .sqlFlag(true)
+ *                         .valueType("text")
+ *                         .indexSqlAll(false)
+ *                         .build())
+ *                     .build(),
+ *                 IndexKeyValueArgs.builder()
+ *                     .key("b")
+ *                     .value(IndexKeyValueValueArgs.builder()
+ *                         .autoIndexFlag(false)
+ *                         .caseSensitive(false)
+ *                         .delimiter("")
+ *                         .includeChinese(false)
+ *                         .indexAll(false)
+ *                         .sqlFlag(true)
+ *                         .valueType("long")
+ *                         .indexSqlAll(false)
+ *                         .build())
+ *                     .build(),
+ *                 IndexKeyValueArgs.builder()
+ *                     .key("c")
+ *                     .value(IndexKeyValueValueArgs.builder()
+ *                         .autoIndexFlag(false)
+ *                         .caseSensitive(false)
+ *                         .delimiter("")
+ *                         .includeChinese(false)
+ *                         .indexAll(false)
+ *                         .sqlFlag(true)
+ *                         .valueType("double")
+ *                         .indexSqlAll(false)
+ *                         .build())
+ *                     .build(),
+ *                 IndexKeyValueArgs.builder()
+ *                     .key("d")
+ *                     .value(IndexKeyValueValueArgs.builder()
+ *                         .autoIndexFlag(false)
+ *                         .caseSensitive(true)
+ *                         .delimiter(StdFunctions.chomp(ChompArgs.builder()
+ *                             .input("""
+ * , '";$#!=()[]}{}{@code ?}{@literal @}{@code &<>/:\n\t\r\\%*+-._^`|~QWE
+ *                             """)
+ *                             .build()).result())
+ *                         .includeChinese(true)
+ *                         .indexAll(false)
+ *                         .indexSqlAll(true)
+ *                         .jsonKeys(                        
+ *                             IndexKeyValueValueJsonKeyArgs.builder()
+ *                                 .key("d1")
+ *                                 .value(IndexKeyValueValueJsonKeyValueArgs.builder()
+ *                                     .indexAll(false)
+ *                                     .sqlFlag(true)
+ *                                     .valueType("text")
+ *                                     .indexSqlAll(false)
+ *                                     .build())
+ *                                 .build(),
+ *                             IndexKeyValueValueJsonKeyArgs.builder()
+ *                                 .key("d2")
+ *                                 .value(IndexKeyValueValueJsonKeyValueArgs.builder()
+ *                                     .indexAll(false)
+ *                                     .sqlFlag(true)
+ *                                     .valueType("long")
+ *                                     .indexSqlAll(false)
+ *                                     .build())
+ *                                 .build(),
+ *                             IndexKeyValueValueJsonKeyArgs.builder()
+ *                                 .key("d3")
+ *                                 .value(IndexKeyValueValueJsonKeyValueArgs.builder()
+ *                                     .indexAll(false)
+ *                                     .sqlFlag(true)
+ *                                     .valueType("double")
+ *                                     .indexSqlAll(false)
+ *                                     .build())
+ *                                 .build())
+ *                         .sqlFlag(true)
+ *                         .valueType("json")
+ *                         .build())
+ *                     .build(),
+ *                 IndexKeyValueArgs.builder()
+ *                     .key("e")
+ *                     .value(IndexKeyValueValueArgs.builder()
+ *                         .autoIndexFlag(false)
+ *                         .caseSensitive(true)
+ *                         .delimiter(StdFunctions.chomp(ChompArgs.builder()
+ *                             .input("""
+ * , '";$#!=()[]}{}{@code ?}{@literal @}{@code &<>/:\n\t\r\\%*+-._^`|~QWE
+ *                             """)
+ *                             .build()).result())
+ *                         .includeChinese(true)
+ *                         .indexAll(true)
+ *                         .indexSqlAll(false)
+ *                         .jsonKeys(IndexKeyValueValueJsonKeyArgs.builder()
+ *                             .key("e1")
+ *                             .value(IndexKeyValueValueJsonKeyValueArgs.builder()
+ *                                 .indexAll(false)
+ *                                 .sqlFlag(true)
+ *                                 .valueType("text")
+ *                                 .indexSqlAll(false)
+ *                                 .build())
+ *                             .build())
+ *                         .sqlFlag(true)
+ *                         .valueType("json")
+ *                         .build())
+ *                     .build())
+ *             .maxTextLen(20480)
+ *             .topicId("7126b1fb-b68a-47a5-8c99-1a226601ed1a")
+ *             .userInnerKeyValues(IndexUserInnerKeyValueArgs.builder()
+ *                 .key("__content__")
+ *                 .value(IndexUserInnerKeyValueValueArgs.builder()
+ *                     .autoIndexFlag(false)
+ *                     .caseSensitive(true)
+ *                     .delimiter(StdFunctions.chomp(ChompArgs.builder()
+ *                         .input("""
+ * , '";$#!=()[]}{}{@code ?}{@literal @}{@code &<>/:\n\t\r\\%*+-._^`|~QWE
+ *                         """)
+ *                         .build()).result())
+ *                     .includeChinese(true)
+ *                     .indexAll(true)
+ *                     .indexSqlAll(false)
+ *                     .jsonKeys(                    
+ *                         IndexUserInnerKeyValueValueJsonKeyArgs.builder()
+ *                             .key("f1")
+ *                             .value(IndexUserInnerKeyValueValueJsonKeyValueArgs.builder()
+ *                                 .indexAll(false)
+ *                                 .sqlFlag(true)
+ *                                 .valueType("text")
+ *                                 .indexSqlAll(false)
+ *                                 .build())
+ *                             .build(),
+ *                         IndexUserInnerKeyValueValueJsonKeyArgs.builder()
+ *                             .key("f2")
+ *                             .value(IndexUserInnerKeyValueValueJsonKeyValueArgs.builder()
+ *                                 .indexAll(false)
+ *                                 .sqlFlag(true)
+ *                                 .valueType("long")
+ *                                 .indexSqlAll(false)
+ *                                 .build())
+ *                             .build(),
+ *                         IndexUserInnerKeyValueValueJsonKeyArgs.builder()
+ *                             .key("f3")
+ *                             .value(IndexUserInnerKeyValueValueJsonKeyValueArgs.builder()
+ *                                 .indexAll(false)
+ *                                 .sqlFlag(true)
+ *                                 .valueType("double")
+ *                                 .indexSqlAll(false)
+ *                                 .build())
+ *                             .build())
+ *                     .sqlFlag(true)
+ *                     .valueType("json")
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }}{@code
+ * }}{@code
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -78,9 +290,19 @@ public class Index extends com.pulumi.resources.CustomResource {
     public Output<IndexFullText> fullText() {
         return this.fullText;
     }
+    /**
+     * Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="keyValues", refs={List.class,IndexKeyValue.class}, tree="[0,1]")
     private Output<List<IndexKeyValue>> keyValues;
 
+    /**
+     * @return Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<IndexKeyValue>> keyValues() {
         return this.keyValues;
     }
@@ -126,9 +348,19 @@ public class Index extends com.pulumi.resources.CustomResource {
     public Output<String> topicId() {
         return this.topicId;
     }
+    /**
+     * Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="userInnerKeyValues", refs={List.class,IndexUserInnerKeyValue.class}, tree="[0,1]")
     private Output<List<IndexUserInnerKeyValue>> userInnerKeyValues;
 
+    /**
+     * @return Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<IndexUserInnerKeyValue>> userInnerKeyValues() {
         return this.userInnerKeyValues;
     }

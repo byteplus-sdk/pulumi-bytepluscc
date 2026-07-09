@@ -34,8 +34,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.filenas.Instance;
  * import com.byteplus.bytepluscc.filenas.InstanceArgs;
  * import com.pulumi.bytepluscc.filenas.inputs.InstanceCapacityArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -269,9 +269,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> storageType() {
         return this.storageType;
     }
+    /**
+     * File system tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return File system tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

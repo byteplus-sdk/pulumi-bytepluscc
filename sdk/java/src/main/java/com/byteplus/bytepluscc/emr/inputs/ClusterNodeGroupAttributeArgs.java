@@ -50,9 +50,19 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.chargeType);
     }
 
+    /**
+     * Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="dataDisks")
     private @Nullable Output<List<ClusterNodeGroupAttributeDataDiskArgs>> dataDisks;
 
+    /**
+     * @return Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterNodeGroupAttributeDataDiskArgs>>> dataDisks() {
         return Optional.ofNullable(this.dataDisks);
     }
@@ -285,15 +295,36 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
             return chargeType(Output.of(chargeType));
         }
 
+        /**
+         * @param dataDisks Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataDisks(@Nullable Output<List<ClusterNodeGroupAttributeDataDiskArgs>> dataDisks) {
             $.dataDisks = dataDisks;
             return this;
         }
 
+        /**
+         * @param dataDisks Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataDisks(List<ClusterNodeGroupAttributeDataDiskArgs> dataDisks) {
             return dataDisks(Output.of(dataDisks));
         }
 
+        /**
+         * @param dataDisks Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataDisks(ClusterNodeGroupAttributeDataDiskArgs... dataDisks) {
             return dataDisks(List.of(dataDisks));
         }

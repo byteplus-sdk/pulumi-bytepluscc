@@ -48,9 +48,19 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
         return Optional.ofNullable(this.condition);
     }
 
+    /**
+     * Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="metas")
     private @Nullable Output<List<RuleDimensionConditionsMetaConditionMetaArgs>> metas;
 
+    /**
+     * @return Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleDimensionConditionsMetaConditionMetaArgs>>> metas() {
         return Optional.ofNullable(this.metas);
     }
@@ -123,15 +133,36 @@ public final class RuleDimensionConditionsMetaConditionArgs extends com.pulumi.r
             return condition(Output.of(condition));
         }
 
+        /**
+         * @param metas Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metas(@Nullable Output<List<RuleDimensionConditionsMetaConditionMetaArgs>> metas) {
             $.metas = metas;
             return this;
         }
 
+        /**
+         * @param metas Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metas(List<RuleDimensionConditionsMetaConditionMetaArgs> metas) {
             return metas(Output.of(metas));
         }
 
+        /**
+         * @param metas Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metas(RuleDimensionConditionsMetaConditionMetaArgs... metas) {
             return metas(List.of(metas));
         }

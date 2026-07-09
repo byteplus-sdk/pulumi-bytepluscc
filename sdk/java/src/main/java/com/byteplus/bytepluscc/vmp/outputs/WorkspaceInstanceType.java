@@ -24,6 +24,11 @@ public final class WorkspaceInstanceType {
      * 
      */
     private @Nullable Integer availabilityZoneReplicas;
+    /**
+     * @return Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams;
     /**
      * @return Downsampling policy
@@ -81,6 +86,11 @@ public final class WorkspaceInstanceType {
     public Optional<Integer> availabilityZoneReplicas() {
         return Optional.ofNullable(this.availabilityZoneReplicas);
     }
+    /**
+     * @return Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams() {
         return this.calculatePriceParams == null ? List.of() : this.calculatePriceParams;
     }

@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.directconnect.VirtualInterface;
  * import com.byteplus.bytepluscc.directconnect.VirtualInterfaceArgs;
  * import com.pulumi.bytepluscc.directconnect.inputs.VirtualInterfaceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -350,9 +350,19 @@ public class VirtualInterface extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * All tag information added to the virtual interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,VirtualInterfaceTag.class}, tree="[0,1]")
     private Output<List<VirtualInterfaceTag>> tags;
 
+    /**
+     * @return All tag information added to the virtual interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VirtualInterfaceTag>> tags() {
         return this.tags;
     }

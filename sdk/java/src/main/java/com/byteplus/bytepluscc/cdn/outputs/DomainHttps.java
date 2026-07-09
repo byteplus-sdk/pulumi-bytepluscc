@@ -28,6 +28,11 @@ public final class DomainHttps {
      * 
      */
     private @Nullable DomainHttpsCertInfo certInfo;
+    /**
+     * @return Indicates the dual certificate to be associated with the acceleration domain name.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DomainHttpsCertInfoList> certInfoLists;
     /**
      * @return Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
@@ -80,6 +85,11 @@ public final class DomainHttps {
     public Optional<DomainHttpsCertInfo> certInfo() {
         return Optional.ofNullable(this.certInfo);
     }
+    /**
+     * @return Indicates the dual certificate to be associated with the acceleration domain name.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DomainHttpsCertInfoList> certInfoLists() {
         return this.certInfoLists == null ? List.of() : this.certInfoLists;
     }

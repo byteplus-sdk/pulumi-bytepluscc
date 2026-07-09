@@ -49,9 +49,19 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
         return this.endpointId;
     }
 
+    /**
+     * Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="resourcesAllocates")
     private @Nullable Output<List<VpcEndpointConnectionResourcesAllocateArgs>> resourcesAllocates;
 
+    /**
+     * @return Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcEndpointConnectionResourcesAllocateArgs>>> resourcesAllocates() {
         return Optional.ofNullable(this.resourcesAllocates);
     }
@@ -156,15 +166,36 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
             return endpointId(Output.of(endpointId));
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourcesAllocates(@Nullable Output<List<VpcEndpointConnectionResourcesAllocateArgs>> resourcesAllocates) {
             $.resourcesAllocates = resourcesAllocates;
             return this;
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourcesAllocates(List<VpcEndpointConnectionResourcesAllocateArgs> resourcesAllocates) {
             return resourcesAllocates(Output.of(resourcesAllocates));
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resourcesAllocates(VpcEndpointConnectionResourcesAllocateArgs... resourcesAllocates) {
             return resourcesAllocates(List.of(resourcesAllocates));
         }

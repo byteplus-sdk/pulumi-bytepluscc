@@ -23,6 +23,66 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.clb.ServerGroup;
+ * import com.byteplus.bytepluscc.clb.ServerGroupArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ServerGroupTagArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ServerGroupServerArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cLBServerGroupDemo = new ServerGroup("cLBServerGroupDemo", ServerGroupArgs.builder()
+ *             .loadBalancerId("clb-mioj49on0zcw5smt1b8rxxxx")
+ *             .serverGroupName("CLBServerGroupDemo")
+ *             .type("instance")
+ *             .description("CLBServerGroupDemo description")
+ *             .addressIpVersion("ipv4")
+ *             .anyPortEnabled("off")
+ *             .tags(ServerGroupTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .servers(            
+ *                 ServerGroupServerArgs.builder()
+ *                     .instance_id("i-ye498lwge85i3z3kxxxx")
+ *                     .type("ecs")
+ *                     .weight(50)
+ *                     .ip("192.168.*.13")
+ *                     .any_port_enabled("off")
+ *                     .port(8080)
+ *                     .description("test")
+ *                     .build(),
+ *                 ServerGroupServerArgs.builder()
+ *                     .instance_id("i-ye48ymyy9s5i3z4pxxxx")
+ *                     .type("ecs")
+ *                     .weight(22)
+ *                     .ip("192.168.*.52")
+ *                     .any_port_enabled("off")
+ *                     .port(91)
+ *                     .description("test")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -90,9 +150,19 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="listeners", refs={List.class,ServerGroupListener.class}, tree="[0,1]")
     private Output<List<ServerGroupListener>> listeners;
 
+    /**
+     * @return Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServerGroupListener>> listeners() {
         return this.listeners;
     }
@@ -138,15 +208,35 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     public Output<String> serverGroupName() {
         return this.serverGroupName;
     }
+    /**
+     * Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="servers", refs={List.class,ServerGroupServer.class}, tree="[0,1]")
     private Output<List<ServerGroupServer>> servers;
 
+    /**
+     * @return Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServerGroupServer>> servers() {
         return this.servers;
     }
+    /**
+     * Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ServerGroupTag.class}, tree="[0,1]")
     private Output<List<ServerGroupTag>> tags;
 
+    /**
+     * @return Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServerGroupTag>> tags() {
         return this.tags;
     }

@@ -18,9 +18,19 @@ public final class AlarmWebhookIntegrationTypeArgs extends com.pulumi.resources.
 
     public static final AlarmWebhookIntegrationTypeArgs Empty = new AlarmWebhookIntegrationTypeArgs();
 
+    /**
+     * Custom Webhook request headers. Required when WebhookType is set to custom
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="webhookHeaders")
     private @Nullable Output<List<AlarmWebhookIntegrationTypeWebhookHeaderArgs>> webhookHeaders;
 
+    /**
+     * @return Custom Webhook request headers. Required when WebhookType is set to custom
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AlarmWebhookIntegrationTypeWebhookHeaderArgs>>> webhookHeaders() {
         return Optional.ofNullable(this.webhookHeaders);
     }
@@ -129,15 +139,36 @@ public final class AlarmWebhookIntegrationTypeArgs extends com.pulumi.resources.
             $ = new AlarmWebhookIntegrationTypeArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param webhookHeaders Custom Webhook request headers. Required when WebhookType is set to custom
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder webhookHeaders(@Nullable Output<List<AlarmWebhookIntegrationTypeWebhookHeaderArgs>> webhookHeaders) {
             $.webhookHeaders = webhookHeaders;
             return this;
         }
 
+        /**
+         * @param webhookHeaders Custom Webhook request headers. Required when WebhookType is set to custom
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder webhookHeaders(List<AlarmWebhookIntegrationTypeWebhookHeaderArgs> webhookHeaders) {
             return webhookHeaders(Output.of(webhookHeaders));
         }
 
+        /**
+         * @param webhookHeaders Custom Webhook request headers. Required when WebhookType is set to custom
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder webhookHeaders(AlarmWebhookIntegrationTypeWebhookHeaderArgs... webhookHeaders) {
             return webhookHeaders(List.of(webhookHeaders));
         }

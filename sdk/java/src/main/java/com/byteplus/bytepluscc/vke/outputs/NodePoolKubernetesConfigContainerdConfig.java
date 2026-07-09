@@ -17,6 +17,11 @@ public final class NodePoolKubernetesConfigContainerdConfig {
      * 
      */
     private @Nullable List<String> insecureRegistries;
+    /**
+     * @return Container image repository proxy configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> registryProxyConfigs;
 
     private NodePoolKubernetesConfigContainerdConfig() {}
@@ -27,6 +32,11 @@ public final class NodePoolKubernetesConfigContainerdConfig {
     public List<String> insecureRegistries() {
         return this.insecureRegistries == null ? List.of() : this.insecureRegistries;
     }
+    /**
+     * @return Container image repository proxy configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> registryProxyConfigs() {
         return this.registryProxyConfigs == null ? List.of() : this.registryProxyConfigs;
     }

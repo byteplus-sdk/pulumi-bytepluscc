@@ -31,6 +31,11 @@ public final class DefaultNodePoolKubernetesConfig {
      * 
      */
     private @Nullable DefaultNodePoolKubernetesConfigKubeletConfig kubeletConfig;
+    /**
+     * @return Kubernetes label information for node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DefaultNodePoolKubernetesConfigLabel> labels;
     /**
      * @return Prefix of the metadata name for node objects in Kubernetes.
@@ -47,6 +52,11 @@ public final class DefaultNodePoolKubernetesConfig {
      * 
      */
     private @Nullable Boolean nameUseHostname;
+    /**
+     * @return Kubernetes taint information for the node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DefaultNodePoolKubernetesConfigTaint> taints;
 
     private DefaultNodePoolKubernetesConfig() {}
@@ -71,6 +81,11 @@ public final class DefaultNodePoolKubernetesConfig {
     public Optional<DefaultNodePoolKubernetesConfigKubeletConfig> kubeletConfig() {
         return Optional.ofNullable(this.kubeletConfig);
     }
+    /**
+     * @return Kubernetes label information for node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DefaultNodePoolKubernetesConfigLabel> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
@@ -95,6 +110,11 @@ public final class DefaultNodePoolKubernetesConfig {
     public Optional<Boolean> nameUseHostname() {
         return Optional.ofNullable(this.nameUseHostname);
     }
+    /**
+     * @return Kubernetes taint information for the node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DefaultNodePoolKubernetesConfigTaint> taints() {
         return this.taints == null ? List.of() : this.taints;
     }

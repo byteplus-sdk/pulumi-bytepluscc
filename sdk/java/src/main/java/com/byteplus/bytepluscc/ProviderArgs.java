@@ -20,16 +20,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
-     * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`
-     * environment variable
+     * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      * 
      */
     @Import(name="accessKey")
     private @Nullable Output<String> accessKey;
 
     /**
-     * @return The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`
-     * environment variable
+     * @return The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      * 
      */
     public Optional<Output<String>> accessKey() {
@@ -37,14 +35,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+     * An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
      * 
      */
     @Import(name="assumeRole", json=true)
     private @Nullable Output<ProviderAssumeRoleArgs> assumeRole;
 
     /**
-     * @return An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+     * @return An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
      * 
      */
     public Optional<Output<ProviderAssumeRoleArgs>> assumeRole() {
@@ -52,16 +50,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and
-     * colons (:) to separate each header key from its corresponding value.
+     * CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
      * 
      */
     @Import(name="customerHeaders")
     private @Nullable Output<String> customerHeaders;
 
     /**
-     * @return CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and
-     * colons (:) to separate each header key from its corresponding value.
+     * @return CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
      * 
      */
     public Optional<Output<String>> customerHeaders() {
@@ -84,14 +80,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
+     * An &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block may be in the configuration.
      * 
      */
     @Import(name="endpoints", json=true)
     private @Nullable Output<ProviderEndpointsArgs> endpoints;
 
     /**
-     * @return An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
+     * @return An &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block may be in the configuration.
      * 
      */
     public Optional<Output<ProviderEndpointsArgs>> endpoints() {
@@ -144,16 +140,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
-     * `ap-southeast-1` when not provided.
+     * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
      * 
      */
     @Import(name="region")
     private @Nullable Output<String> region;
 
     /**
-     * @return The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
-     * `ap-southeast-1` when not provided.
+     * @return The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
      * 
      */
     public Optional<Output<String>> region() {
@@ -161,16 +155,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
-     * environment variable
+     * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      * 
      */
     @Import(name="secretKey")
     private @Nullable Output<String> secretKey;
 
     /**
-     * @return he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
-     * environment variable
+     * @return he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      * 
      */
     public Optional<Output<String>> secretKey() {
@@ -178,16 +170,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
-     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
      * 
      */
     @Import(name="sessionToken")
     private @Nullable Output<String> sessionToken;
 
     /**
-     * @return The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
-     * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+     * @return The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
      * 
      */
     public Optional<Output<String>> sessionToken() {
@@ -229,8 +219,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKey The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`
-         * environment variable
+         * @param accessKey The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
          * 
          * @return builder
          * 
@@ -241,8 +230,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKey The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`
-         * environment variable
+         * @param accessKey The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
          * 
          * @return builder
          * 
@@ -252,7 +240,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param assumeRole An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+         * @param assumeRole An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
          * 
          * @return builder
          * 
@@ -263,7 +251,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param assumeRole An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+         * @param assumeRole An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
          * 
          * @return builder
          * 
@@ -273,8 +261,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customerHeaders CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and
-         * colons (:) to separate each header key from its corresponding value.
+         * @param customerHeaders CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
          * 
          * @return builder
          * 
@@ -285,8 +272,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param customerHeaders CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and
-         * colons (:) to separate each header key from its corresponding value.
+         * @param customerHeaders CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
          * 
          * @return builder
          * 
@@ -317,7 +303,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoints An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
+         * @param endpoints An &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block may be in the configuration.
          * 
          * @return builder
          * 
@@ -328,7 +314,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpoints An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
+         * @param endpoints An &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block may be in the configuration.
          * 
          * @return builder
          * 
@@ -401,8 +387,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
-         * `ap-southeast-1` when not provided.
+         * @param region The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
          * 
          * @return builder
          * 
@@ -413,8 +398,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param region The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
-         * `ap-southeast-1` when not provided.
+         * @param region The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
          * 
          * @return builder
          * 
@@ -424,8 +408,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretKey he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
-         * environment variable
+         * @param secretKey he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
          * 
          * @return builder
          * 
@@ -436,8 +419,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretKey he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
-         * environment variable
+         * @param secretKey he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
          * 
          * @return builder
          * 
@@ -447,8 +429,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sessionToken The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
-         * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+         * @param sessionToken The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
          * 
          * @return builder
          * 
@@ -459,8 +440,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sessionToken The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
-         * from the `BYTEPLUS_SESSION_TOKEN` environment variable
+         * @param sessionToken The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
          * 
          * @return builder
          * 

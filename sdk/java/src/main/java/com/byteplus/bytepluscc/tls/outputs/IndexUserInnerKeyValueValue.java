@@ -44,6 +44,11 @@ public final class IndexUserInnerKeyValueValue {
      * 
      */
     private @Nullable Boolean indexSqlAll;
+    /**
+     * @return When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<IndexUserInnerKeyValueValueJsonKey> jsonKeys;
     /**
      * @return Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
@@ -99,6 +104,11 @@ public final class IndexUserInnerKeyValueValue {
     public Optional<Boolean> indexSqlAll() {
         return Optional.ofNullable(this.indexSqlAll);
     }
+    /**
+     * @return When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<IndexUserInnerKeyValueValueJsonKey> jsonKeys() {
         return this.jsonKeys == null ? List.of() : this.jsonKeys;
     }

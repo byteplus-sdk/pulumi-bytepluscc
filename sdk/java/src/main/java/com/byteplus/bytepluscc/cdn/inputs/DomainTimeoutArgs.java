@@ -32,9 +32,19 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.switch_);
     }
 
+    /**
+     * Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="timeoutRules")
     private @Nullable Output<List<DomainTimeoutTimeoutRuleArgs>> timeoutRules;
 
+    /**
+     * @return Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainTimeoutTimeoutRuleArgs>>> timeoutRules() {
         return Optional.ofNullable(this.timeoutRules);
     }
@@ -85,15 +95,36 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
             return switch_(Output.of(switch_));
         }
 
+        /**
+         * @param timeoutRules Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeoutRules(@Nullable Output<List<DomainTimeoutTimeoutRuleArgs>> timeoutRules) {
             $.timeoutRules = timeoutRules;
             return this;
         }
 
+        /**
+         * @param timeoutRules Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeoutRules(List<DomainTimeoutTimeoutRuleArgs> timeoutRules) {
             return timeoutRules(Output.of(timeoutRules));
         }
 
+        /**
+         * @param timeoutRules Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeoutRules(DomainTimeoutTimeoutRuleArgs... timeoutRules) {
             return timeoutRules(List.of(timeoutRules));
         }

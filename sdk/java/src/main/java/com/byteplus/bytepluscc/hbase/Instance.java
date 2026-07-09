@@ -35,8 +35,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.hbase.Instance;
  * import com.byteplus.bytepluscc.hbase.InstanceArgs;
  * import com.pulumi.bytepluscc.hbase.inputs.InstanceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -202,9 +202,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<Boolean> enableCloudStorage() {
         return this.enableCloudStorage;
     }
+    /**
+     * Connection address information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
 
+    /**
+     * @return Connection address information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
@@ -488,9 +498,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

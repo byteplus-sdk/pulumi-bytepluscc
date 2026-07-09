@@ -17,18 +17,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     public static final EndpointPublicAddressArgs Empty = new EndpointPublicAddressArgs();
 
     /**
-     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     @Import(name="domainPrefix")
     private @Nullable Output<String> domainPrefix;
 
     /**
-     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     public Optional<Output<String>> domainPrefix() {
@@ -124,9 +120,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-         * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-         * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
          * 
          * @return builder
          * 
@@ -137,9 +131,7 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-         * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-         * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
          * 
          * @return builder
          * 

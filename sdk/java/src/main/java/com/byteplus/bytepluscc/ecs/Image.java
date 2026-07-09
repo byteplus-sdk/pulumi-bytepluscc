@@ -37,8 +37,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.ecs.Image;
  * import com.byteplus.bytepluscc.ecs.ImageArgs;
  * import com.pulumi.bytepluscc.ecs.inputs.ImageTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -469,9 +469,19 @@ public class Image extends com.pulumi.resources.CustomResource {
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
+    /**
+     * Information about snapshots associated with the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="snapshots", refs={List.class,ImageSnapshot.class}, tree="[0,1]")
     private Output<List<ImageSnapshot>> snapshots;
 
+    /**
+     * @return Information about snapshots associated with the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ImageSnapshot>> snapshots() {
         return this.snapshots;
     }
@@ -489,9 +499,19 @@ public class Image extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * List of tags bound to the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ImageTag.class}, tree="[0,1]")
     private Output<List<ImageTag>> tags;
 
+    /**
+     * @return List of tags bound to the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ImageTag>> tags() {
         return this.tags;
     }

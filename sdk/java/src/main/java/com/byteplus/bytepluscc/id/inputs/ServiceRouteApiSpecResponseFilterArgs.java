@@ -19,9 +19,19 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     public static final ServiceRouteApiSpecResponseFilterArgs Empty = new ServiceRouteApiSpecResponseFilterArgs();
 
+    /**
+     * Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="attributes")
     private @Nullable Output<List<ServiceRouteApiSpecResponseFilterAttributeArgs>> attributes;
 
+    /**
+     * @return Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceRouteApiSpecResponseFilterAttributeArgs>>> attributes() {
         return Optional.ofNullable(this.attributes);
     }
@@ -146,15 +156,36 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
             $ = new ServiceRouteApiSpecResponseFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attributes Attribute mapping list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attributes(@Nullable Output<List<ServiceRouteApiSpecResponseFilterAttributeArgs>> attributes) {
             $.attributes = attributes;
             return this;
         }
 
+        /**
+         * @param attributes Attribute mapping list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attributes(List<ServiceRouteApiSpecResponseFilterAttributeArgs> attributes) {
             return attributes(Output.of(attributes));
         }
 
+        /**
+         * @param attributes Attribute mapping list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attributes(ServiceRouteApiSpecResponseFilterAttributeArgs... attributes) {
             return attributes(List.of(attributes));
         }

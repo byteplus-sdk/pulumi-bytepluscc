@@ -25,6 +25,71 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.Endpoint;
+ * import com.byteplus.bytepluscc.rdsmysql.EndpointArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.EndpointReadOnlyNodeWeightArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rdsMysqlEndpointDemo = new Endpoint("rdsMysqlEndpointDemo", EndpointArgs.builder()
+ *             .autoAddNewNodes(false)
+ *             .connectionMode("Proxy")
+ *             .connectionPoolType("Transaction")
+ *             .description("this is a description")
+ *             .enableConnectionPersistent(true)
+ *             .endpointName("ccapi-test-1")
+ *             .endpointType("Custom")
+ *             .idleConnectionReclaim(true)
+ *             .implicitTransSplit(true)
+ *             .instanceId("mysql-2e229xxxxxd5")
+ *             .masterNodeRouting(false)
+ *             .masterProtectorTimeout(60)
+ *             .multiStatementsMode("Strict")
+ *             .nodes("Primary,mysql-2e229xxxxxdd5-r442d,mysql-2e2xxxxxdd5-r8d0f")
+ *             .overloadProtection(true)
+ *             .readOnlyNodeDistributionType("RoundRobinCustom")
+ *             .readOnlyNodeMaxDelayTime(30)
+ *             .readOnlyNodeWeights(            
+ *                 EndpointReadOnlyNodeWeightArgs.builder()
+ *                     .node_id("")
+ *                     .node_type("Primary")
+ *                     .weight(100)
+ *                     .build(),
+ *                 EndpointReadOnlyNodeWeightArgs.builder()
+ *                     .node_id("mysql-2e2xxxxx4dd5-r442d")
+ *                     .node_type("ReadOnly")
+ *                     .weight(200)
+ *                     .build(),
+ *                 EndpointReadOnlyNodeWeightArgs.builder()
+ *                     .node_id("mysql-2e22xxxxxdd5-r8d0f")
+ *                     .node_type("ReadOnly")
+ *                     .weight(300)
+ *                     .build())
+ *             .readWriteMode("ReadWrite")
+ *             .readWriteSpliting(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -36,9 +101,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:rdsmysql/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
+    /**
+     * Endpoint address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="addresses", refs={List.class,EndpointAddress.class}, tree="[0,1]")
     private Output<List<EndpointAddress>> addresses;
 
+    /**
+     * @return Endpoint address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EndpointAddress>> addresses() {
         return this.addresses;
     }
@@ -350,9 +425,19 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
     public Output<Integer> readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="readOnlyNodeWeights", refs={List.class,EndpointReadOnlyNodeWeight.class}, tree="[0,1]")
     private Output<List<EndpointReadOnlyNodeWeight>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EndpointReadOnlyNodeWeight>> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }

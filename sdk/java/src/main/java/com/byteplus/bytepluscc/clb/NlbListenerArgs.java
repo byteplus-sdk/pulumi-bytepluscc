@@ -96,9 +96,19 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.endPort);
     }
 
+    /**
+     * Backend instance health check response information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="healths")
     private @Nullable Output<List<NlbListenerHealthArgs>> healths;
 
+    /**
+     * @return Backend instance health check response information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NlbListenerHealthArgs>>> healths() {
         return Optional.ofNullable(this.healths);
     }
@@ -208,9 +218,19 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.startPort);
     }
 
+    /**
+     * Resource tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<NlbListenerTagArgs>> tags;
 
+    /**
+     * @return Resource tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NlbListenerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -357,15 +377,36 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
             return endPort(Output.of(endPort));
         }
 
+        /**
+         * @param healths Backend instance health check response information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healths(@Nullable Output<List<NlbListenerHealthArgs>> healths) {
             $.healths = healths;
             return this;
         }
 
+        /**
+         * @param healths Backend instance health check response information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healths(List<NlbListenerHealthArgs> healths) {
             return healths(Output.of(healths));
         }
 
+        /**
+         * @param healths Backend instance health check response information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healths(NlbListenerHealthArgs... healths) {
             return healths(List.of(healths));
         }
@@ -517,15 +558,36 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
             return startPort(Output.of(startPort));
         }
 
+        /**
+         * @param tags Resource tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<NlbListenerTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Resource tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<NlbListenerTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Resource tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(NlbListenerTagArgs... tags) {
             return tags(List.of(tags));
         }

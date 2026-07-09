@@ -50,9 +50,19 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.comments);
     }
 
+    /**
+     * Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="customDomains")
     private @Nullable Output<List<GatewayServiceCustomDomainArgs>> customDomains;
 
+    /**
+     * @return Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GatewayServiceCustomDomainArgs>>> customDomains() {
         return Optional.ofNullable(this.customDomains);
     }
@@ -221,15 +231,36 @@ public final class GatewayServiceArgs extends com.pulumi.resources.ResourceArgs 
             return comments(Output.of(comments));
         }
 
+        /**
+         * @param customDomains Custom domain list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customDomains(@Nullable Output<List<GatewayServiceCustomDomainArgs>> customDomains) {
             $.customDomains = customDomains;
             return this;
         }
 
+        /**
+         * @param customDomains Custom domain list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customDomains(List<GatewayServiceCustomDomainArgs> customDomains) {
             return customDomains(Output.of(customDomains));
         }
 
+        /**
+         * @param customDomains Custom domain list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customDomains(GatewayServiceCustomDomainArgs... customDomains) {
             return customDomains(List.of(customDomains));
         }

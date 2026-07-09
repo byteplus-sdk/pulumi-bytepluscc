@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GatewayNetworkSpec {
+    /**
+     * @return Subnet configuration information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<GatewayNetworkSpecSubnet> subnets;
     /**
      * @return VPC ID。
@@ -26,6 +31,11 @@ public final class GatewayNetworkSpec {
     private @Nullable String vpcName;
 
     private GatewayNetworkSpec() {}
+    /**
+     * @return Subnet configuration information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<GatewayNetworkSpecSubnet> subnets() {
         return this.subnets == null ? List.of() : this.subnets;
     }

@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.vpc.Ipv6Gateway;
  * import com.byteplus.bytepluscc.vpc.Ipv6GatewayArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.Ipv6GatewayTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -168,9 +168,19 @@ public class Ipv6Gateway extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,Ipv6GatewayTag.class}, tree="[0,1]")
     private Output<List<Ipv6GatewayTag>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<Ipv6GatewayTag>> tags() {
         return this.tags;
     }

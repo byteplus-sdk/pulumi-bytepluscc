@@ -23,6 +23,88 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.iam.Role;
+ * import com.byteplus.bytepluscc.iam.RoleArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.RolePolicyArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.RoleTagArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var roleDemo = new Role("roleDemo", RoleArgs.builder()
+ *             .roleName("RoleDemo")
+ *             .description("role attach policies")
+ *             .maxSessionDuration(3600)
+ *             .trustPolicyDocument(serializeJson(
+ *                 jsonObject(
+ *                     jsonProperty("Statement", jsonArray(jsonObject(
+ *                         jsonProperty("Effect", "Allow"),
+ *                         jsonProperty("Action", jsonArray("sts:AssumeRole")),
+ *                         jsonProperty("Principal", jsonObject(
+ *                             jsonProperty("Service", jsonArray("auto_scaling"))
+ *                         ))
+ *                     )))
+ *                 )))
+ *             .policies(            
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("VPCFullAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("SGFullAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("RTCReadOnlyAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("IAMReadOnlyAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("EIPFullAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("AdministratorAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("SSLAccessCLBRolePolicy")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression),
+ *                     RolePolicyArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                     .tags(RoleTagArgs.builder()
+ *                         .key("env")
+ *                         .value("test")
+ *                         .build())
+ *                     .build());
+ * 
+ *             }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -104,9 +186,19 @@ public class Role extends com.pulumi.resources.CustomResource {
     public Output<Integer> maxSessionDuration() {
         return this.maxSessionDuration;
     }
+    /**
+     * Role Strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="policies", refs={List.class,RolePolicy.class}, tree="[0,1]")
     private Output<List<RolePolicy>> policies;
 
+    /**
+     * @return Role Strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RolePolicy>> policies() {
         return this.policies;
     }
@@ -152,9 +244,19 @@ public class Role extends com.pulumi.resources.CustomResource {
     public Output<String> serviceName() {
         return this.serviceName;
     }
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,RoleTag.class}, tree="[0,1]")
     private Output<List<RoleTag>> tags;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RoleTag>> tags() {
         return this.tags;
     }

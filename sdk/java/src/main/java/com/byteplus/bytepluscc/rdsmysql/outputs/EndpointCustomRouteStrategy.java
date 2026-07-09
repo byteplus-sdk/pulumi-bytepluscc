@@ -11,9 +11,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class EndpointCustomRouteStrategy {
+    /**
+     * @return Custom routing policy list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<EndpointCustomRouteStrategyKeywordRouteStrategy> keywordRouteStrategies;
 
     private EndpointCustomRouteStrategy() {}
+    /**
+     * @return Custom routing policy list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<EndpointCustomRouteStrategyKeywordRouteStrategy> keywordRouteStrategies() {
         return this.keywordRouteStrategies == null ? List.of() : this.keywordRouteStrategies;
     }

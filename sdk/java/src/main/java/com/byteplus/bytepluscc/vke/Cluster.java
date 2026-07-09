@@ -30,6 +30,68 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vke.Cluster;
+ * import com.byteplus.bytepluscc.vke.ClusterArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterClusterConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterPodsConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterServicesConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vKEClusterDemo = new Cluster("vKEClusterDemo", ClusterArgs.builder()
+ *             .projectName("default")
+ *             .name("VKEClusterDemo")
+ *             .description("VKEClusterDemo")
+ *             .deleteProtectionEnabled(true)
+ *             .clusterConfig(ClusterClusterConfigArgs.builder()
+ *                 .subnet_ids(Arrays.asList("subnet-***"))
+ *                 .api_server_public_access_enabled(true)
+ *                 .api_server_public_access_config(Map.of("publicAccessNetworkConfig", Map.ofEntries(
+ *                     Map.entry("billingType", 3),
+ *                     Map.entry("bandwidth", 1),
+ *                     Map.entry("isp", "BGP")
+ *                 )))
+ *                 .resource_public_access_default_enabled(true)
+ *                 .build())
+ *             .podsConfig(ClusterPodsConfigArgs.builder()
+ *                 .pod_network_mode("VpcCniShared")
+ *                 .vpc_cni_config(Map.ofEntries(
+ *                     Map.entry("subnetIds", Arrays.asList("subnet-***")),
+ *                     Map.entry("trunkEniEnabled", false)
+ *                 ))
+ *                 .build())
+ *             .servicesConfig(ClusterServicesConfigArgs.builder()
+ *                 .service_cidrsv_4(Arrays.asList("172.22.xxx.0/22"))
+ *                 .build())
+ *             .tags(ClusterTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .kubernetesVersionCreate("1.30")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -293,9 +355,19 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     public Output<ClusterStatus> status() {
         return this.status;
     }
+    /**
+     * Cluster tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ClusterTag.class}, tree="[0,1]")
     private Output<List<ClusterTag>> tags;
 
+    /**
+     * @return Cluster tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClusterTag>> tags() {
         return this.tags;
     }

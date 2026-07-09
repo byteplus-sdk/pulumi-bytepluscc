@@ -18,9 +18,19 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
     public static final RulePoolSetPoolArgs Empty = new RulePoolSetPoolArgs();
 
+    /**
+     * Address information under the address pool.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="addresses")
     private @Nullable Output<List<RulePoolSetPoolAddressArgs>> addresses;
 
+    /**
+     * @return Address information under the address pool.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RulePoolSetPoolAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
     }
@@ -113,15 +123,36 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
             $ = new RulePoolSetPoolArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addresses Address information under the address pool.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(@Nullable Output<List<RulePoolSetPoolAddressArgs>> addresses) {
             $.addresses = addresses;
             return this;
         }
 
+        /**
+         * @param addresses Address information under the address pool.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(List<RulePoolSetPoolAddressArgs> addresses) {
             return addresses(Output.of(addresses));
         }
 
+        /**
+         * @param addresses Address information under the address pool.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(RulePoolSetPoolAddressArgs... addresses) {
             return addresses(List.of(addresses));
         }

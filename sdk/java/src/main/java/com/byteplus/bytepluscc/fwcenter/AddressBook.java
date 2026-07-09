@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.fwcenter.AddressBook;
  * import com.byteplus.bytepluscc.fwcenter.AddressBookArgs;
  * import com.pulumi.bytepluscc.fwcenter.inputs.AddressBookAddressDetailListArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -78,9 +78,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:fwcenter/addressBook:AddressBook")
 public class AddressBook extends com.pulumi.resources.CustomResource {
+    /**
+     * Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="addressDetailLists", refs={List.class,AddressBookAddressDetailList.class}, tree="[0,1]")
     private Output<List<AddressBookAddressDetailList>> addressDetailLists;
 
+    /**
+     * @return Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AddressBookAddressDetailList>> addressDetailLists() {
         return this.addressDetailLists;
     }
@@ -155,14 +165,14 @@ public class AddressBook extends com.pulumi.resources.CustomResource {
         return this.groupName;
     }
     /**
-     * The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+     * The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
      * 
      */
     @Export(name="groupType", refs={String.class}, tree="[0]")
     private Output<String> groupType;
 
     /**
-     * @return The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+     * @return The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
      * 
      */
     public Output<String> groupType() {
@@ -238,9 +248,19 @@ public class AddressBook extends com.pulumi.resources.CustomResource {
     public Output<String> tagRelation() {
         return this.tagRelation;
     }
+    /**
+     * Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,AddressBookTag.class}, tree="[0,1]")
     private Output<List<AddressBookTag>> tags;
 
+    /**
+     * @return Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AddressBookTag>> tags() {
         return this.tags;
     }

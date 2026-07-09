@@ -14,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class RuleForwardGroupConfig {
+    /**
+     * @return Destination server group list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<RuleForwardGroupConfigServerGroupTuple> serverGroupTuples;
     /**
      * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
@@ -27,6 +32,11 @@ public final class RuleForwardGroupConfig {
     private @Nullable Integer stickySessionTimeout;
 
     private RuleForwardGroupConfig() {}
+    /**
+     * @return Destination server group list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<RuleForwardGroupConfigServerGroupTuple> serverGroupTuples() {
         return this.serverGroupTuples == null ? List.of() : this.serverGroupTuples;
     }

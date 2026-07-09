@@ -424,9 +424,19 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * All tag information added to the VPN gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpnGatewayTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the VPN gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpnGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -1113,15 +1123,36 @@ public final class VpnGatewayState extends com.pulumi.resources.ResourceArgs {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags All tag information added to the VPN gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VpnGatewayTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the VPN gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VpnGatewayTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the VPN gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VpnGatewayTagArgs... tags) {
             return tags(List.of(tags));
         }

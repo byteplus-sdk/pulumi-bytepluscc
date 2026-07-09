@@ -216,9 +216,19 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.searchLatencyOffset);
     }
 
+    /**
+     * Workspace tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<WorkspaceTagArgs>> tags;
 
+    /**
+     * @return Workspace tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<WorkspaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -549,15 +559,36 @@ public final class WorkspaceArgs extends com.pulumi.resources.ResourceArgs {
             return searchLatencyOffset(Output.of(searchLatencyOffset));
         }
 
+        /**
+         * @param tags Workspace tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<WorkspaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Workspace tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<WorkspaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Workspace tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(WorkspaceTagArgs... tags) {
             return tags(List.of(tags));
         }

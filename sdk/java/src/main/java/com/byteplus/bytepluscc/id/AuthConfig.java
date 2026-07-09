@@ -22,6 +22,49 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.id.AuthConfig;
+ * import com.byteplus.bytepluscc.id.AuthConfigArgs;
+ * import com.pulumi.bytepluscc.id.inputs.AuthConfigJwtAuthConfigArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var example = new AuthConfig("example", AuthConfigArgs.builder()
+ *             .configName("测试JWT认证配置")
+ *             .description("用于测试的JWT入站认证配置")
+ *             .instanceId("example")
+ *             .jwtAuthConfig(AuthConfigJwtAuthConfigArgs.builder()
+ *                 .discovery_url("https://example1.com/.well-known/openid-configuration")
+ *                 .allowed_audiences(Arrays.asList(                
+ *                     "api.example.com",
+ *                     "mobile.example.com"))
+ *                 .allowed_clients(Arrays.asList(                
+ *                     "web-client",
+ *                     "app-client"))
+ *                 .build())
+ *             .authType("Jwt")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -33,9 +76,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:id/authConfig:AuthConfig")
 public class AuthConfig extends com.pulumi.resources.CustomResource {
+    /**
+     * ApiKey Authentication Configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="apiKeyAuthConfigs", refs={List.class,AuthConfigApiKeyAuthConfig.class}, tree="[0,1]")
     private Output<List<AuthConfigApiKeyAuthConfig>> apiKeyAuthConfigs;
 
+    /**
+     * @return ApiKey Authentication Configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AuthConfigApiKeyAuthConfig>> apiKeyAuthConfigs() {
         return this.apiKeyAuthConfigs;
     }

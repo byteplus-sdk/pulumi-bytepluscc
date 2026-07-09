@@ -79,9 +79,19 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.internetFirewallId);
     }
 
+    /**
+     * Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="sources")
     private @Nullable Output<List<DnsControlPolicySourceArgs>> sources;
 
+    /**
+     * @return Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DnsControlPolicySourceArgs>>> sources() {
         return Optional.ofNullable(this.sources);
     }
@@ -214,15 +224,36 @@ public final class DnsControlPolicyArgs extends com.pulumi.resources.ResourceArg
             return internetFirewallId(Output.of(internetFirewallId));
         }
 
+        /**
+         * @param sources Access source information, including VPC list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sources(@Nullable Output<List<DnsControlPolicySourceArgs>> sources) {
             $.sources = sources;
             return this;
         }
 
+        /**
+         * @param sources Access source information, including VPC list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sources(List<DnsControlPolicySourceArgs> sources) {
             return sources(Output.of(sources));
         }
 
+        /**
+         * @param sources Access source information, including VPC list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sources(DnsControlPolicySourceArgs... sources) {
             return sources(List.of(sources));
         }

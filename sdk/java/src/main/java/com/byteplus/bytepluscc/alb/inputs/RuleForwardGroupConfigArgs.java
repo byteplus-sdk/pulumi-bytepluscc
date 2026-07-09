@@ -18,9 +18,19 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
     public static final RuleForwardGroupConfigArgs Empty = new RuleForwardGroupConfigArgs();
 
+    /**
+     * Destination server group list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="serverGroupTuples")
     private @Nullable Output<List<RuleForwardGroupConfigServerGroupTupleArgs>> serverGroupTuples;
 
+    /**
+     * @return Destination server group list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleForwardGroupConfigServerGroupTupleArgs>>> serverGroupTuples() {
         return Optional.ofNullable(this.serverGroupTuples);
     }
@@ -81,15 +91,36 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
             $ = new RuleForwardGroupConfigArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param serverGroupTuples Destination server group list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroupTuples(@Nullable Output<List<RuleForwardGroupConfigServerGroupTupleArgs>> serverGroupTuples) {
             $.serverGroupTuples = serverGroupTuples;
             return this;
         }
 
+        /**
+         * @param serverGroupTuples Destination server group list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroupTuples(List<RuleForwardGroupConfigServerGroupTupleArgs> serverGroupTuples) {
             return serverGroupTuples(Output.of(serverGroupTuples));
         }
 
+        /**
+         * @param serverGroupTuples Destination server group list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroupTuples(RuleForwardGroupConfigServerGroupTupleArgs... serverGroupTuples) {
             return serverGroupTuples(List.of(serverGroupTuples));
         }

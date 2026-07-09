@@ -33,9 +33,19 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.nodeNumber);
     }
 
+    /**
+     * Detailed list of all Server nodes in the shard.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="serverNodes")
     private @Nullable Output<List<InstanceInstanceShardServerNodeArgs>> serverNodes;
 
+    /**
+     * @return Detailed list of all Server nodes in the shard.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceInstanceShardServerNodeArgs>>> serverNodes() {
         return Optional.ofNullable(this.serverNodes);
     }
@@ -102,15 +112,36 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
             return nodeNumber(Output.of(nodeNumber));
         }
 
+        /**
+         * @param serverNodes Detailed list of all Server nodes in the shard.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverNodes(@Nullable Output<List<InstanceInstanceShardServerNodeArgs>> serverNodes) {
             $.serverNodes = serverNodes;
             return this;
         }
 
+        /**
+         * @param serverNodes Detailed list of all Server nodes in the shard.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverNodes(List<InstanceInstanceShardServerNodeArgs> serverNodes) {
             return serverNodes(Output.of(serverNodes));
         }
 
+        /**
+         * @param serverNodes Detailed list of all Server nodes in the shard.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverNodes(InstanceInstanceShardServerNodeArgs... serverNodes) {
             return serverNodes(List.of(serverNodes));
         }

@@ -23,6 +23,56 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.Vpc;
+ * import com.byteplus.bytepluscc.vpc.VpcArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.VpcTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vPCDemo = new Vpc("vPCDemo", VpcArgs.builder()
+ *             .cidrBlock("192.168.0.0/24")
+ *             .supportIpv4Gateway(true)
+ *             .vpcName("vpc-demo")
+ *             .description("VpcDemo Example")
+ *             .enableIpv6(false)
+ *             .dnsServers("12.3.x.x")
+ *             .associateCens(Arrays.asList(Map.ofEntries(
+ *                 Map.entry("cen_id", "cen-3re8cx4vwdibk5zsk2xxxx"),
+ *                 Map.entry("cen_owner_id", "200000xxx"),
+ *                 Map.entry("cen_status", "Attaching")
+ *             )))
+ *             .natGatewayIds("ngw-2d6tp1y8zq41s58ozfdxxx")
+ *             .routeTableIds(Arrays.asList("vtb-29mkf8ft83l6o1e1hgixxx"))
+ *             .securityGroupIds(Arrays.asList("sg-29mkx39jb80741e1hgj2bxxx"))
+ *             .projectName("default")
+ *             .userCidrBlocks("10.0.0.0/8")
+ *             .tags(VpcTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -48,9 +98,19 @@ public class Vpc extends com.pulumi.resources.CustomResource {
     public Output<String> accountId() {
         return this.accountId;
     }
+    /**
+     * CEN information associated with the VPC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associateCens", refs={List.class,VpcAssociateCen.class}, tree="[0,1]")
     private Output<List<VpcAssociateCen>> associateCens;
 
+    /**
+     * @return CEN information associated with the VPC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcAssociateCen>> associateCens() {
         return this.associateCens;
     }
@@ -292,9 +352,19 @@ public class Vpc extends com.pulumi.resources.CustomResource {
     public Output<Boolean> supportIpv4Gateway() {
         return this.supportIpv4Gateway;
     }
+    /**
+     * Tags bound to the private network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,VpcTag.class}, tree="[0,1]")
     private Output<List<VpcTag>> tags;
 
+    /**
+     * @return Tags bound to the private network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcTag>> tags() {
         return this.tags;
     }

@@ -27,6 +27,79 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vke.DefaultNodePool;
+ * import com.byteplus.bytepluscc.vke.DefaultNodePoolArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolKubernetesConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolKubernetesConfigLabelArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolKubernetesConfigTaintArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolNodeConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolNodeConfigSecurityArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolNodeConfigSecurityLoginArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolNodeConfigTagArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.DefaultNodePoolTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vkeDefaultNodePoolDemo = new DefaultNodePool("vkeDefaultNodePoolDemo", DefaultNodePoolArgs.builder()
+ *             .clusterId("cd60pbhxxxxxxc4f31a0")
+ *             .kubernetesConfig(DefaultNodePoolKubernetesConfigArgs.builder()
+ *                 .auto_sync_disabled(false)
+ *                 .cordon(false)
+ *                 .labels(DefaultNodePoolKubernetesConfigLabelArgs.builder()
+ *                     .key("env")
+ *                     .value("test")
+ *                     .build())
+ *                 .name_prefix("name-prefix")
+ *                 .name_suffix("name-suffix")
+ *                 .name_use_hostname(false)
+ *                 .taints(DefaultNodePoolKubernetesConfigTaintArgs.builder()
+ *                     .key("taint-key")
+ *                     .value("taint-value")
+ *                     .effect("NoSchedule")
+ *                     .build())
+ *                 .build())
+ *             .nodeConfig(DefaultNodePoolNodeConfigArgs.builder()
+ *                 .initialize_script("YmFzaCBteV9maWxlLnNo")
+ *                 .name_prefix("name-prefix")
+ *                 .security(DefaultNodePoolNodeConfigSecurityArgs.builder()
+ *                     .login(DefaultNodePoolNodeConfigSecurityLoginArgs.builder()
+ *                         .password("RHgxMTIyMzM/")
+ *                         .build())
+ *                     .securityGroupIds("sg-1c0e5jxxxxxx5e8j70agemnk")
+ *                     .securityStrategies("Hids")
+ *                     .build())
+ *                 .tags(DefaultNodePoolNodeConfigTagArgs.builder()
+ *                     .key("env")
+ *                     .value("test")
+ *                     .build())
+ *                 .build())
+ *             .tags(DefaultNodePoolTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -178,9 +251,19 @@ public class DefaultNodePool extends com.pulumi.resources.CustomResource {
     public Output<DefaultNodePoolStatus> status() {
         return this.status;
     }
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,DefaultNodePoolTag.class}, tree="[0,1]")
     private Output<List<DefaultNodePoolTag>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DefaultNodePoolTag>> tags() {
         return this.tags;
     }

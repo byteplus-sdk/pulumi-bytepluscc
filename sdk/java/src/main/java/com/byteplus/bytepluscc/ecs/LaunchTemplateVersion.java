@@ -28,6 +28,91 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ecs.LaunchTemplateVersion;
+ * import com.byteplus.bytepluscc.ecs.LaunchTemplateVersionArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionEipArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionNetworkInterfaceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionScheduledInstanceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionTagArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionVolumeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var ecsLaunchTemplateVersionDemo = new LaunchTemplateVersion("ecsLaunchTemplateVersionDemo", LaunchTemplateVersionArgs.builder()
+ *             .deploymentSetGroupNumber(0)
+ *             .deploymentSetId("dps-ydzc5xxxxxx5b9vu")
+ *             .description("ecs_launch_template_version test")
+ *             .eip(LaunchTemplateVersionEipArgs.builder()
+ *                 .bandwidth(1)
+ *                 .bandwidth_package_id("bwp-1a1fvbxxxxxx8nvepl9jzfmf")
+ *                 .billing_type(0)
+ *                 .isp("BGP")
+ *                 .release_with_instance(true)
+ *                 .security_protection_instance_id(0)
+ *                 .security_protection_types(Arrays.asList("AntiDDoS_Enhanced"))
+ *                 .build())
+ *             .hostName("myname")
+ *             .imageId("image-yzpvmxxxxxxgqcsdamq")
+ *             .imageName("Ubuntu 24.04 with LLM Knowledge Base 64 bit")
+ *             .instanceChargeType("PostPaid")
+ *             .instanceName("test-version")
+ *             .instanceTypeId("ecs.g4i.large")
+ *             .keepImageCredential(false)
+ *             .keyPairName("MigrationKey-job-yecd7dromy38dfaxgxt8")
+ *             .launchTemplateId("lt-yefdzjlbxxxxxxylmkj")
+ *             .networkInterfaces(LaunchTemplateVersionNetworkInterfaceArgs.builder()
+ *                 .security_group_ids(Arrays.asList("sg-1jolcljxxxxxx1n7ampe70vpx"))
+ *                 .subnet_id("subnet-btd4nxxxxxxb2tl1jdsb")
+ *                 .build())
+ *             .projectName("default")
+ *             .scheduledInstance(LaunchTemplateVersionScheduledInstanceArgs.builder()
+ *                 .scheduled_instance_description("test")
+ *                 .scheduled_instance_name("test-template")
+ *                 .build())
+ *             .securityEnhancementStrategy("Active")
+ *             .spotStrategy("NoSpot")
+ *             .suffixIndex(1)
+ *             .tags(LaunchTemplateVersionTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .uniqueSuffix(false)
+ *             .userData("ZWNobyBoZWxsbyBlY3Mh")
+ *             .versionDescription("test")
+ *             .volumes(LaunchTemplateVersionVolumeArgs.builder()
+ *                 .delete_with_instance(true)
+ *                 .extra_performance_iops(0)
+ *                 .extra_performance_throughput_mb(0)
+ *                 .extra_performance_type_id("")
+ *                 .size(50)
+ *                 .snapshot_id("")
+ *                 .volume_type("ESSD_PL0")
+ *                 .build())
+ *             .vpcId("vpc-1jolcldhxxxxxxmq5q7yms")
+ *             .zoneId("cn-beijing-a")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -235,9 +320,19 @@ public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
     public Output<String> launchTemplateId() {
         return this.launchTemplateId;
     }
+    /**
+     * Network interface information attached to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="networkInterfaces", refs={List.class,LaunchTemplateVersionNetworkInterface.class}, tree="[0,1]")
     private Output<List<LaunchTemplateVersionNetworkInterface>> networkInterfaces;
 
+    /**
+     * @return Network interface information attached to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<LaunchTemplateVersionNetworkInterface>> networkInterfaces() {
         return this.networkInterfaces;
     }
@@ -325,9 +420,19 @@ public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
     public Output<Integer> suffixIndex() {
         return this.suffixIndex;
     }
+    /**
+     * Instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,LaunchTemplateVersionTag.class}, tree="[0,1]")
     private Output<List<LaunchTemplateVersionTag>> tags;
 
+    /**
+     * @return Instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<LaunchTemplateVersionTag>> tags() {
         return this.tags;
     }
@@ -387,9 +492,19 @@ public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
     public Output<String> versionNumber() {
         return this.versionNumber;
     }
+    /**
+     * Disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="volumes", refs={List.class,LaunchTemplateVersionVolume.class}, tree="[0,1]")
     private Output<List<LaunchTemplateVersionVolume>> volumes;
 
+    /**
+     * @return Disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<LaunchTemplateVersionVolume>> volumes() {
         return this.volumes;
     }

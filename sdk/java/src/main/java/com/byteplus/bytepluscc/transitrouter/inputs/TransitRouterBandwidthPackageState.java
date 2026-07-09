@@ -34,9 +34,19 @@ public final class TransitRouterBandwidthPackageState extends com.pulumi.resourc
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * Details of the cross-region connection associated with the bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="allocations")
     private @Nullable Output<List<TransitRouterBandwidthPackageAllocationArgs>> allocations;
 
+    /**
+     * @return Details of the cross-region connection associated with the bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TransitRouterBandwidthPackageAllocationArgs>>> allocations() {
         return Optional.ofNullable(this.allocations);
     }
@@ -341,9 +351,19 @@ public final class TransitRouterBandwidthPackageState extends com.pulumi.resourc
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterBandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TransitRouterBandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -463,15 +483,36 @@ public final class TransitRouterBandwidthPackageState extends com.pulumi.resourc
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param allocations Details of the cross-region connection associated with the bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allocations(@Nullable Output<List<TransitRouterBandwidthPackageAllocationArgs>> allocations) {
             $.allocations = allocations;
             return this;
         }
 
+        /**
+         * @param allocations Details of the cross-region connection associated with the bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allocations(List<TransitRouterBandwidthPackageAllocationArgs> allocations) {
             return allocations(Output.of(allocations));
         }
 
+        /**
+         * @param allocations Details of the cross-region connection associated with the bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder allocations(TransitRouterBandwidthPackageAllocationArgs... allocations) {
             return allocations(List.of(allocations));
         }
@@ -896,15 +937,36 @@ public final class TransitRouterBandwidthPackageState extends com.pulumi.resourc
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<TransitRouterBandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<TransitRouterBandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(TransitRouterBandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }

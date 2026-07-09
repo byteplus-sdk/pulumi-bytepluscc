@@ -109,9 +109,19 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.httpMethod);
     }
 
+    /**
+     * Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="httpUsabilityCodes")
     private @Nullable Output<List<GtmProbeHttpUsabilityCodeArgs>> httpUsabilityCodes;
 
+    /**
+     * @return Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GtmProbeHttpUsabilityCodeArgs>>> httpUsabilityCodes() {
         return Optional.ofNullable(this.httpUsabilityCodes);
     }
@@ -432,15 +442,36 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
             return httpMethod(Output.of(httpMethod));
         }
 
+        /**
+         * @param httpUsabilityCodes Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpUsabilityCodes(@Nullable Output<List<GtmProbeHttpUsabilityCodeArgs>> httpUsabilityCodes) {
             $.httpUsabilityCodes = httpUsabilityCodes;
             return this;
         }
 
+        /**
+         * @param httpUsabilityCodes Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpUsabilityCodes(List<GtmProbeHttpUsabilityCodeArgs> httpUsabilityCodes) {
             return httpUsabilityCodes(Output.of(httpUsabilityCodes));
         }
 
+        /**
+         * @param httpUsabilityCodes Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder httpUsabilityCodes(GtmProbeHttpUsabilityCodeArgs... httpUsabilityCodes) {
             return httpUsabilityCodes(List.of(httpUsabilityCodes));
         }

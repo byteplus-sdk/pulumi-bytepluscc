@@ -26,6 +26,169 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.Rule;
+ * import com.byteplus.bytepluscc.tls.RuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleContainerRuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleExcludePathArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleExtractRuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleHostGroupInfoArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRuleAdvancedArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRuleFieldArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRulePluginArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var tLSRuleDemo = new Rule("tLSRuleDemo", RuleArgs.builder()
+ *             .containerRule(RuleContainerRuleArgs.builder()
+ *                 .container_name_regex("ccapi-test")
+ *                 .env_tag(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("val", "v1")
+ *                 )))
+ *                 .exclude_container_env_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k2"),
+ *                     Map.entry("val", "v2")
+ *                 )))
+ *                 .exclude_container_label_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k2"),
+ *                     Map.entry("val", "v2")
+ *                 )))
+ *                 .include_container_env_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("val", "v1")
+ *                 )))
+ *                 .include_container_label_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("val", "v1")
+ *                 )))
+ *                 .kubernetes_rule(Map.ofEntries(
+ *                     Map.entry("annotationTag", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("enableAllLabelTag", true),
+ *                     Map.entry("excludePodAnnotationRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k2"),
+ *                         Map.entry("val", "v2")
+ *                     ))),
+ *                     Map.entry("excludePodLabelRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k2"),
+ *                         Map.entry("val", "v2")
+ *                     ))),
+ *                     Map.entry("includePodAnnotationRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("includePodLabelRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("labelTag", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("namespaceNameRegex", "ccapi"),
+ *                     Map.entry("podNameRegex", "ccapi"),
+ *                     Map.entry("workloadNameRegex", "ccapi"),
+ *                     Map.entry("workloadType", "Deployment")
+ *                 ))
+ *                 .stream("")
+ *                 .build())
+ *             .excludePaths(RuleExcludePathArgs.builder()
+ *                 .type("Path")
+ *                 .value("/test")
+ *                 .build())
+ *             .extractRule(RuleExtractRuleArgs.builder()
+ *                 .begin_regex("")
+ *                 .delimiter(" ")
+ *                 .enable_nanosecond(true)
+ *                 .filter_key_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("regex", "v1")
+ *                 )))
+ *                 .keys("k1")
+ *                 .log_regex("")
+ *                 .log_template(Map.ofEntries(
+ *                     Map.entry("format", ""),
+ *                     Map.entry("type", "")
+ *                 ))
+ *                 .quote("")
+ *                 .time_extract_regex("dsfasdf")
+ *                 .time_format("%Y-%m-%d %H:%M:%S.%f")
+ *                 .time_key("time_key")
+ *                 .time_sample("2006-01-02T15:04:05Z07:00")
+ *                 .time_zone("Etc/GMT+12")
+ *                 .un_match_log_key("LogParseFailed")
+ *                 .un_match_up_load_switch(true)
+ *                 .build())
+ *             .hostGroupInfos(RuleHostGroupInfoArgs.builder()
+ *                 .host_group_id("38feb3b9-xxxxx-de52cxxxxx")
+ *                 .build())
+ *             .inputType(2)
+ *             .logSample("asdfasf")
+ *             .logType("delimiter_log")
+ *             .paths("/test")
+ *             .ruleName("dx-rule-1")
+ *             .topicId("b881e3cd-xxxxx-966f-fe98xxxxxxx")
+ *             .userDefineRule(RuleUserDefineRuleArgs.builder()
+ *                 .advanced(RuleUserDefineRuleAdvancedArgs.builder()
+ *                     .closeEof(false)
+ *                     .closeInactive(10)
+ *                     .closeRemoved(false)
+ *                     .closeRenamed(false)
+ *                     .closeTimeout(0)
+ *                     .noLineTerminatorEofMaxTime(0)
+ *                     .build())
+ *                 .enable_host_group_label(true)
+ *                 .enable_hostname(true)
+ *                 .enable_raw_log(true)
+ *                 .fields(RuleUserDefineRuleFieldArgs.builder()
+ *                     .key("k1")
+ *                     .val("v1")
+ *                     .build())
+ *                 .host_group_label_key("host_group_label")
+ *                 .hostname_key("hostname")
+ *                 .ignore_older(72)
+ *                 .multi_collects_type("RuleID")
+ *                 .parse_path_rule(Map.ofEntries(
+ *                     Map.entry("keys", Arrays.asList(                    
+ *                         "instance-id",
+ *                         "pod-name")),
+ *                     Map.entry("pathSample", "/var/logs/instanceid_any_podname/test.log"),
+ *                     Map.entry("regex", "/var/logs/([a-z]*)_any_([a-z]*)/test.log")
+ *                 ))
+ *                 .plugin(RuleUserDefineRulePluginArgs.builder()
+ *                     .processors("{}")
+ *                     .build())
+ *                 .raw_log_key("raw")
+ *                 .shard_hash_key(Map.of("hashKey", "2342134"))
+ *                 .tail_files(true)
+ *                 .tail_size_kb(10240)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -65,9 +228,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> createTime() {
         return this.createTime;
     }
+    /**
+     * Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="excludePaths", refs={List.class,RuleExcludePath.class}, tree="[0,1]")
     private Output<List<RuleExcludePath>> excludePaths;
 
+    /**
+     * @return Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleExcludePath>> excludePaths() {
         return this.excludePaths;
     }
@@ -85,9 +258,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<RuleExtractRule> extractRule() {
         return this.extractRule;
     }
+    /**
+     * Machine group information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="hostGroupInfos", refs={List.class,RuleHostGroupInfo.class}, tree="[0,1]")
     private Output<List<RuleHostGroupInfo>> hostGroupInfos;
 
+    /**
+     * @return Machine group information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleHostGroupInfo>> hostGroupInfos() {
         return this.hostGroupInfos;
     }

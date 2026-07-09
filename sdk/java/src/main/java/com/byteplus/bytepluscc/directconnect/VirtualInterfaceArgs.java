@@ -260,9 +260,19 @@ public final class VirtualInterfaceArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.routeType);
     }
 
+    /**
+     * All tag information added to the virtual interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VirtualInterfaceTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the virtual interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VirtualInterfaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -675,15 +685,36 @@ public final class VirtualInterfaceArgs extends com.pulumi.resources.ResourceArg
             return routeType(Output.of(routeType));
         }
 
+        /**
+         * @param tags All tag information added to the virtual interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VirtualInterfaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the virtual interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VirtualInterfaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the virtual interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VirtualInterfaceTagArgs... tags) {
             return tags(List.of(tags));
         }

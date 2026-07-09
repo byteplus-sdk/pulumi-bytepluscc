@@ -94,9 +94,19 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<DirectConnectGatewayTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DirectConnectGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -235,15 +245,36 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<DirectConnectGatewayTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<DirectConnectGatewayTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(DirectConnectGatewayTagArgs... tags) {
             return tags(List.of(tags));
         }

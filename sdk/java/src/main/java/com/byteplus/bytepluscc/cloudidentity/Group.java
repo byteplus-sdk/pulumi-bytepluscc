@@ -21,6 +21,47 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cloudidentity.Group;
+ * import com.byteplus.bytepluscc.cloudidentity.GroupArgs;
+ * import com.pulumi.bytepluscc.cloudidentity.inputs.GroupMemberArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cloudIdentityGroupDemo = new Group("cloudIdentityGroupDemo", GroupArgs.builder()
+ *             .description("ccapi-multi-des")
+ *             .displayName("test for ccapi")
+ *             .groupName("ccapi-multi")
+ *             .joinType("Manual")
+ *             .members(            
+ *                 GroupMemberArgs.builder()
+ *                     .user_id("***********")
+ *                     .build(),
+ *                 GroupMemberArgs.builder()
+ *                     .user_id("*************")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -116,9 +157,19 @@ public class Group extends com.pulumi.resources.CustomResource {
     public Output<String> joinType() {
         return this.joinType;
     }
+    /**
+     * User Group Member List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="members", refs={List.class,GroupMember.class}, tree="[0,1]")
     private Output<List<GroupMember>> members;
 
+    /**
+     * @return User Group Member List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<GroupMember>> members() {
         return this.members;
     }

@@ -125,9 +125,19 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.policyName);
     }
 
+    /**
+     * List of roles bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="policyRoles")
     private @Nullable Output<List<PolicyPolicyRoleArgs>> policyRoles;
 
+    /**
+     * @return List of roles bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PolicyPolicyRoleArgs>>> policyRoles() {
         return Optional.ofNullable(this.policyRoles);
     }
@@ -162,16 +172,36 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.policyType);
     }
 
+    /**
+     * List of user groups bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="policyUserGroups")
     private @Nullable Output<List<PolicyPolicyUserGroupArgs>> policyUserGroups;
 
+    /**
+     * @return List of user groups bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PolicyPolicyUserGroupArgs>>> policyUserGroups() {
         return Optional.ofNullable(this.policyUserGroups);
     }
 
+    /**
+     * List of users bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="policyUsers")
     private @Nullable Output<List<PolicyPolicyUserArgs>> policyUsers;
 
+    /**
+     * @return List of users bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PolicyPolicyUserArgs>>> policyUsers() {
         return Optional.ofNullable(this.policyUsers);
     }
@@ -374,15 +404,36 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
             return policyName(Output.of(policyName));
         }
 
+        /**
+         * @param policyRoles List of roles bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyRoles(@Nullable Output<List<PolicyPolicyRoleArgs>> policyRoles) {
             $.policyRoles = policyRoles;
             return this;
         }
 
+        /**
+         * @param policyRoles List of roles bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyRoles(List<PolicyPolicyRoleArgs> policyRoles) {
             return policyRoles(Output.of(policyRoles));
         }
 
+        /**
+         * @param policyRoles List of roles bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyRoles(PolicyPolicyRoleArgs... policyRoles) {
             return policyRoles(List.of(policyRoles));
         }
@@ -429,28 +480,70 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
             return policyType(Output.of(policyType));
         }
 
+        /**
+         * @param policyUserGroups List of user groups bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyUserGroups(@Nullable Output<List<PolicyPolicyUserGroupArgs>> policyUserGroups) {
             $.policyUserGroups = policyUserGroups;
             return this;
         }
 
+        /**
+         * @param policyUserGroups List of user groups bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyUserGroups(List<PolicyPolicyUserGroupArgs> policyUserGroups) {
             return policyUserGroups(Output.of(policyUserGroups));
         }
 
+        /**
+         * @param policyUserGroups List of user groups bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyUserGroups(PolicyPolicyUserGroupArgs... policyUserGroups) {
             return policyUserGroups(List.of(policyUserGroups));
         }
 
+        /**
+         * @param policyUsers List of users bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyUsers(@Nullable Output<List<PolicyPolicyUserArgs>> policyUsers) {
             $.policyUsers = policyUsers;
             return this;
         }
 
+        /**
+         * @param policyUsers List of users bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyUsers(List<PolicyPolicyUserArgs> policyUsers) {
             return policyUsers(Output.of(policyUsers));
         }
 
+        /**
+         * @param policyUsers List of users bound to the policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyUsers(PolicyPolicyUserArgs... policyUsers) {
             return policyUsers(List.of(policyUsers));
         }

@@ -24,6 +24,52 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.transitrouter.VpcAttachment;
+ * import com.byteplus.bytepluscc.transitrouter.VpcAttachmentArgs;
+ * import com.pulumi.bytepluscc.transitrouter.inputs.VpcAttachmentAttachPointArgs;
+ * import com.pulumi.bytepluscc.transitrouter.inputs.VpcAttachmentTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var transitRouterVpcAttachmentDemo = new VpcAttachment("transitRouterVpcAttachmentDemo", VpcAttachmentArgs.builder()
+ *             .applianceModeEnabled(false)
+ *             .attachPoints(VpcAttachmentAttachPointArgs.builder()
+ *                 .subnet_id("subnet-ijifxxxxx8culvzg85")
+ *                 .zone_id("cn-beijing-a")
+ *                 .build())
+ *             .autoPublishRouteEnabled(false)
+ *             .description("test")
+ *             .ipv6Enabled(false)
+ *             .tags(VpcAttachmentTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .transitRouterAttachmentName("ccapi-test-1")
+ *             .transitRouterId("tr-mjl8xxxxxg5smt1boobol4")
+ *             .vpcId("vpc-btg9hmxxxxx0b2tnp1on8")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -49,9 +95,19 @@ public class VpcAttachment extends com.pulumi.resources.CustomResource {
     public Output<Boolean> applianceModeEnabled() {
         return this.applianceModeEnabled;
     }
+    /**
+     * Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="attachPoints", refs={List.class,VpcAttachmentAttachPoint.class}, tree="[0,1]")
     private Output<List<VpcAttachmentAttachPoint>> attachPoints;
 
+    /**
+     * @return Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcAttachmentAttachPoint>> attachPoints() {
         return this.attachPoints;
     }
@@ -139,9 +195,19 @@ public class VpcAttachment extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,VpcAttachmentTag.class}, tree="[0,1]")
     private Output<List<VpcAttachmentTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcAttachmentTag>> tags() {
         return this.tags;
     }

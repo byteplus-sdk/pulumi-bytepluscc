@@ -24,6 +24,53 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdspostgresql.Backup;
+ * import com.byteplus.bytepluscc.rdspostgresql.BackupArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.BackupBackupMetaArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.BackupBackupPolicyArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rDSPostgreSQLBackupDemo = new Backup("rDSPostgreSQLBackupDemo", BackupArgs.builder()
+ *             .backupMethod("Logical")
+ *             .backupScope("Database")
+ *             .instanceId("postgres-09xxxxxxxxx")
+ *             .backupMetas(BackupBackupMetaArgs.builder()
+ *                 .db_name("test_db")
+ *                 .build())
+ *             .backupDescription("逻辑增量库级备份并下载测试")
+ *             .backupPolicy(BackupBackupPolicyArgs.builder()
+ *                 .data_incr_backup_periods("Wednesday")
+ *                 .full_backup_period("Tuesday,Thursday,Saturday")
+ *                 .hourly_incr_backup_enable(true)
+ *                 .full_backup_time("01:00Z-02:00Z")
+ *                 .increment_backup_frequency(2)
+ *                 .backup_retention_period(14)
+ *                 .wal_log_space_limit_enable(true)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -119,9 +166,19 @@ public class Backup extends com.pulumi.resources.CustomResource {
     public Output<String> backupId() {
         return this.backupId;
     }
+    /**
+     * Backup metadata, used to specify the database list for logical backups.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backupMetas", refs={List.class,BackupBackupMeta.class}, tree="[0,1]")
     private Output<List<BackupBackupMeta>> backupMetas;
 
+    /**
+     * @return Backup metadata, used to specify the database list for logical backups.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BackupBackupMeta>> backupMetas() {
         return this.backupMetas;
     }

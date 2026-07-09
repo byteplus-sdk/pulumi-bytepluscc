@@ -229,9 +229,19 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sourceTopicName);
     }
 
+    /**
+     * Information about the output target
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="targetResources")
     private @Nullable Output<List<EtlTargetResourceArgs>> targetResources;
 
+    /**
+     * @return Information about the output target
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EtlTargetResourceArgs>>> targetResources() {
         return Optional.ofNullable(this.targetResources);
     }
@@ -616,15 +626,36 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
             return sourceTopicName(Output.of(sourceTopicName));
         }
 
+        /**
+         * @param targetResources Information about the output target
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetResources(@Nullable Output<List<EtlTargetResourceArgs>> targetResources) {
             $.targetResources = targetResources;
             return this;
         }
 
+        /**
+         * @param targetResources Information about the output target
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetResources(List<EtlTargetResourceArgs> targetResources) {
             return targetResources(Output.of(targetResources));
         }
 
+        /**
+         * @param targetResources Information about the output target
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder targetResources(EtlTargetResourceArgs... targetResources) {
             return targetResources(List.of(targetResources));
         }

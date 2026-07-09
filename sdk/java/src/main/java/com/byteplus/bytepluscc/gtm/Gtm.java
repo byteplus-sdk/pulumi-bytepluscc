@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.gtm.Gtm;
  * import com.byteplus.bytepluscc.gtm.GtmArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -72,14 +72,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:gtm/gtm:Gtm")
 public class Gtm extends com.pulumi.resources.CustomResource {
     /**
-     * Access method for the GTM instance. `cname` means a scheduling domain name is generated and you configure CNAME at your DNS provider; `domain` means Cloud DNS directly resolves the business domain name to the target address
+     * Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
      * 
      */
     @Export(name="accessMode", refs={String.class}, tree="[0]")
     private Output<String> accessMode;
 
     /**
-     * @return Access method for the GTM instance. `cname` means a scheduling domain name is generated and you configure CNAME at your DNS provider; `domain` means Cloud DNS directly resolves the business domain name to the target address
+     * @return Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
      * 
      */
     public Output<String> accessMode() {
@@ -198,14 +198,14 @@ public class Gtm extends com.pulumi.resources.CustomResource {
         return this.policy;
     }
     /**
-     * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+     * Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
      * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
-     * @return Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+     * @return Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
      * 
      */
     public Output<String> policyType() {
@@ -254,28 +254,28 @@ public class Gtm extends com.pulumi.resources.CustomResource {
         return this.remark;
     }
     /**
-     * Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
+     * Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
      * 
      */
     @Export(name="specName", refs={String.class}, tree="[0]")
     private Output<String> specName;
 
     /**
-     * @return Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
+     * @return Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
      * 
      */
     public Output<String> specName() {
         return this.specName;
     }
     /**
-     * Current lifecycle status of the GTM instance, such as `init`: indicates the GTM instance has been successfully created but not yet configured. `configuring_address`: indicates basic rule configuration is complete but target address configuration is not yet finished. `editing`: indicates both basic configuration and target address are completed but the instance is not yet enabled. `running`: indicates the instance is officially enabled
+     * Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return Current lifecycle status of the GTM instance, such as `init`: indicates the GTM instance has been successfully created but not yet configured. `configuring_address`: indicates basic rule configuration is complete but target address configuration is not yet finished. `editing`: indicates both basic configuration and target address are completed but the instance is not yet enabled. `running`: indicates the instance is officially enabled
+     * @return Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
      * 
      */
     public Output<String> state() {

@@ -18,9 +18,19 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     public static final MountServiceState Empty = new MountServiceState();
 
+    /**
+     * Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="attachFileSystems")
     private @Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems;
 
+    /**
+     * @return Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<MountServiceAttachFileSystemArgs>>> attachFileSystems() {
         return Optional.ofNullable(this.attachFileSystems);
     }
@@ -85,9 +95,19 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.nodeType);
     }
 
+    /**
+     * Client management node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="nodes")
     private @Nullable Output<List<MountServiceNodeArgs>> nodes;
 
+    /**
+     * @return Client management node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<MountServiceNodeArgs>>> nodes() {
         return Optional.ofNullable(this.nodes);
     }
@@ -249,15 +269,36 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
             $ = new MountServiceState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachFileSystems(@Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems) {
             $.attachFileSystems = attachFileSystems;
             return this;
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachFileSystems(List<MountServiceAttachFileSystemArgs> attachFileSystems) {
             return attachFileSystems(Output.of(attachFileSystems));
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachFileSystems(MountServiceAttachFileSystemArgs... attachFileSystems) {
             return attachFileSystems(List.of(attachFileSystems));
         }
@@ -346,15 +387,36 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
             return nodeType(Output.of(nodeType));
         }
 
+        /**
+         * @param nodes Client management node list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nodes(@Nullable Output<List<MountServiceNodeArgs>> nodes) {
             $.nodes = nodes;
             return this;
         }
 
+        /**
+         * @param nodes Client management node list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nodes(List<MountServiceNodeArgs> nodes) {
             return nodes(Output.of(nodes));
         }
 
+        /**
+         * @param nodes Client management node list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nodes(MountServiceNodeArgs... nodes) {
             return nodes(List.of(nodes));
         }

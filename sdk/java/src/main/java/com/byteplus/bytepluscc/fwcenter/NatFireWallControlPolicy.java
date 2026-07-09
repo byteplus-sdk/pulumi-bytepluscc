@@ -34,8 +34,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.fwcenter.NatFireWallControlPolicy;
  * import com.byteplus.bytepluscc.fwcenter.NatFireWallControlPolicyArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -156,9 +156,19 @@ public class NatFireWallControlPolicy extends com.pulumi.resources.CustomResourc
     public Output<String> destPortGroupType() {
         return this.destPortGroupType;
     }
+    /**
+     * Destination port list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="destPortListV1s", refs={List.class,NatFireWallControlPolicyDestPortListV1.class}, tree="[0,1]")
     private Output<List<NatFireWallControlPolicyDestPortListV1>> destPortListV1s;
 
+    /**
+     * @return Destination port list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NatFireWallControlPolicyDestPortListV1>> destPortListV1s() {
         return this.destPortListV1s;
     }
@@ -204,9 +214,19 @@ public class NatFireWallControlPolicy extends com.pulumi.resources.CustomResourc
     public Output<String> destination() {
         return this.destination;
     }
+    /**
+     * Destination CIDR list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="destinationCidrListV1s", refs={List.class,NatFireWallControlPolicyDestinationCidrListV1.class}, tree="[0,1]")
     private Output<List<NatFireWallControlPolicyDestinationCidrListV1>> destinationCidrListV1s;
 
+    /**
+     * @return Destination CIDR list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NatFireWallControlPolicyDestinationCidrListV1>> destinationCidrListV1s() {
         return this.destinationCidrListV1s;
     }
@@ -476,9 +496,19 @@ public class NatFireWallControlPolicy extends com.pulumi.resources.CustomResourc
     public Output<String> source() {
         return this.source;
     }
+    /**
+     * Source CIDR list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="sourceCidrListV1s", refs={List.class,NatFireWallControlPolicySourceCidrListV1.class}, tree="[0,1]")
     private Output<List<NatFireWallControlPolicySourceCidrListV1>> sourceCidrListV1s;
 
+    /**
+     * @return Source CIDR list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NatFireWallControlPolicySourceCidrListV1>> sourceCidrListV1s() {
         return this.sourceCidrListV1s;
     }

@@ -93,9 +93,19 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         return this.allowLists;
     }
 
+    /**
+     * Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="associatedInstances")
     private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
 
+    /**
+     * @return Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
         return Optional.ofNullable(this.associatedInstances);
     }
@@ -260,15 +270,36 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
             return allowLists(List.of(allowLists));
         }
 
+        /**
+         * @param associatedInstances Instance information bound to the current allowlist.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
             $.associatedInstances = associatedInstances;
             return this;
         }
 
+        /**
+         * @param associatedInstances Instance information bound to the current allowlist.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
             return associatedInstances(Output.of(associatedInstances));
         }
 
+        /**
+         * @param associatedInstances Instance information bound to the current allowlist.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
             return associatedInstances(List.of(associatedInstances));
         }

@@ -29,6 +29,231 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.emr.Cluster;
+ * import com.byteplus.bytepluscc.emr.ClusterArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterNodeAttributeArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterNodeGroupAttributeArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterApplicationExtraArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterBootstrapScriptArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var eMRClusterDemo = new Cluster("eMRClusterDemo", ClusterArgs.builder()
+ *             .projectName("default")
+ *             .clusterName("ccapi-tftest-1")
+ *             .clusterType("Hadoop")
+ *             .releaseVersion("3.19.0")
+ *             .applicationNames(            
+ *                 "HDFS",
+ *                 "YARN",
+ *                 "SPARK3")
+ *             .deployMode("SIMPLE")
+ *             .securityMode("SIMPLE")
+ *             .chargeType("POST")
+ *             .vpcId("vpc-rrco37ovjq4gv0xxxxxxxxx")
+ *             .securityGroupId("sg-1v9zvjkmx14w51j8xxxxxxxx")
+ *             .historyServerMode("LOCAL")
+ *             .nodeAttribute(ClusterNodeAttributeArgs.builder()
+ *                 .zone_id("cn-beijing-a")
+ *                 .ecs_iam_role("VEECSforEMRRole")
+ *                 .build())
+ *             .nodeGroupAttributes(            
+ *                 ClusterNodeGroupAttributeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxfkv0xxxxxxxx"))
+ *                     .node_group_name("MasterGroup")
+ *                     .ecs_key_pair_name("pln-test")
+ *                     .ecs_password("")
+ *                     .bandwidth(8)
+ *                     .charge_type("POST")
+ *                     .node_group_type("MASTER")
+ *                     .with_public_ip(false)
+ *                     .ecs_instance_types(Arrays.asList("ecs.r1ie.xlarge"))
+ *                     .node_count(1)
+ *                     .system_disk(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 120)
+ *                     ))
+ *                     .data_disks(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80),
+ *                         Map.entry("count", 1)
+ *                     )))
+ *                     .build(),
+ *                 ClusterNodeGroupAttributeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxfkv0x5xxxxxx"))
+ *                     .node_group_name("CoreGroup")
+ *                     .ecs_key_pair_name("pln-test")
+ *                     .ecs_password("")
+ *                     .bandwidth(8)
+ *                     .charge_type("POST")
+ *                     .node_group_type("CORE")
+ *                     .with_public_ip(false)
+ *                     .ecs_instance_types(Arrays.asList("ecs.r1ie.xlarge"))
+ *                     .node_count(2)
+ *                     .system_disk(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80)
+ *                     ))
+ *                     .data_disks(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80),
+ *                         Map.entry("count", 4)
+ *                     )))
+ *                     .build(),
+ *                 ClusterNodeGroupAttributeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxfkv0xxxxxxxx"))
+ *                     .node_group_name("TaskGroup-1")
+ *                     .ecs_key_pair_name("pln-test")
+ *                     .ecs_password("")
+ *                     .bandwidth(8)
+ *                     .charge_type("POST")
+ *                     .node_group_type("TASK")
+ *                     .with_public_ip(false)
+ *                     .ecs_instance_types(Arrays.asList("ecs.r1ie.xlarge"))
+ *                     .node_count(1)
+ *                     .system_disk(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80)
+ *                     ))
+ *                     .data_disks(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80),
+ *                         Map.entry("count", 4)
+ *                     )))
+ *                     .build())
+ *             .applicationExtras(ClusterApplicationExtraArgs.builder()
+ *                 .application_name("HIVE")
+ *                 .connection_type("BUILT_IN_MYSQL")
+ *                 .connection_id("")
+ *                 .application_configs(Arrays.asList(                
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/managed"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.external.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/external"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/managed"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.external.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/external"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     )))
+ *                 .application_component_layouts(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("componentName", ""),
+ *                     Map.entry("effectiveScope", Map.ofEntries(
+ *                         Map.entry("effectiveType", "CLUSTER"),
+ *                         Map.entry("nodeGroupIds", Arrays.asList()),
+ *                         Map.entry("nodeGroupNames", Arrays.asList()),
+ *                         Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                         Map.entry("nodeNames", Arrays.asList()),
+ *                         Map.entry("nodeIds", Arrays.asList()),
+ *                         Map.entry("componentNames", Arrays.asList())
+ *                     ))
+ *                 )))
+ *                 .build())
+ *             .bootstrapScripts(ClusterBootstrapScriptArgs.builder()
+ *                 .script_name("ccapi-test-script")
+ *                 .script_type("BOOTSTRAP")
+ *                 .script_path("tos://ccapi-test-tos-1/managed/")
+ *                 .script_args("")
+ *                 .priority("1")
+ *                 .effective_scope(Map.ofEntries(
+ *                     Map.entry("effectiveType", "CLUSTER"),
+ *                     Map.entry("componentNames", Arrays.asList()),
+ *                     Map.entry("nodeGroupIds", Arrays.asList()),
+ *                     Map.entry("nodeGroupNames", Arrays.asList()),
+ *                     Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                     Map.entry("nodeIds", Arrays.asList()),
+ *                     Map.entry("nodeNames", Arrays.asList())
+ *                 ))
+ *                 .execution_moment("AFTER_APPLICATION_STARTED")
+ *                 .execution_fail_strategy("FAILED_BLOCK")
+ *                 .build())
+ *             .tags(ClusterTagArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                 .build());
+ * 
+ *         }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -54,9 +279,19 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     public Output<Integer> accountId() {
         return this.accountId;
     }
+    /**
+     * Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="applicationExtras", refs={List.class,ClusterApplicationExtra.class}, tree="[0,1]")
     private Output<List<ClusterApplicationExtra>> applicationExtras;
 
+    /**
+     * @return Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClusterApplicationExtra>> applicationExtras() {
         return this.applicationExtras;
     }
@@ -74,15 +309,35 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     public Output<List<String>> applicationNames() {
         return this.applicationNames;
     }
+    /**
+     * Installed service list for cluster. Read-only field.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="applications", refs={List.class,ClusterApplication.class}, tree="[0,1]")
     private Output<List<ClusterApplication>> applications;
 
+    /**
+     * @return Installed service list for cluster. Read-only field.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClusterApplication>> applications() {
         return this.applications;
     }
+    /**
+     * Cluster bootstrap script list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="bootstrapScripts", refs={List.class,ClusterBootstrapScript.class}, tree="[0,1]")
     private Output<List<ClusterBootstrapScript>> bootstrapScripts;
 
+    /**
+     * @return Cluster bootstrap script list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClusterBootstrapScript>> bootstrapScripts() {
         return this.bootstrapScripts;
     }
@@ -296,9 +551,19 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     public Output<ClusterNodeAttribute> nodeAttribute() {
         return this.nodeAttribute;
     }
+    /**
+     * Node group property list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodeGroupAttributes", refs={List.class,ClusterNodeGroupAttribute.class}, tree="[0,1]")
     private Output<List<ClusterNodeGroupAttribute>> nodeGroupAttributes;
 
+    /**
+     * @return Node group property list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClusterNodeGroupAttribute>> nodeGroupAttributes() {
         return this.nodeGroupAttributes;
     }
@@ -386,9 +651,19 @@ public class Cluster extends com.pulumi.resources.CustomResource {
     public Output<ClusterStateChangeReason> stateChangeReason() {
         return this.stateChangeReason;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ClusterTag.class}, tree="[0,1]")
     private Output<List<ClusterTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ClusterTag>> tags() {
         return this.tags;
     }

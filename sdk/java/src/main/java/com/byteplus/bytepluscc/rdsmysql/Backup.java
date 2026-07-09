@@ -34,8 +34,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.rdsmysql.Backup;
  * import com.byteplus.bytepluscc.rdsmysql.BackupArgs;
  * import com.pulumi.bytepluscc.rdsmysql.inputs.BackupBackupMetaArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -127,9 +127,19 @@ public class Backup extends com.pulumi.resources.CustomResource {
     public Output<String> backupId() {
         return this.backupId;
     }
+    /**
+     * When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backupMetas", refs={List.class,BackupBackupMeta.class}, tree="[0,1]")
     private Output<List<BackupBackupMeta>> backupMetas;
 
+    /**
+     * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BackupBackupMeta>> backupMetas() {
         return this.backupMetas;
     }
@@ -259,9 +269,19 @@ public class Backup extends com.pulumi.resources.CustomResource {
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
+    /**
+     * Database and table information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="dbTableInfos", refs={List.class,BackupDbTableInfo.class}, tree="[0,1]")
     private Output<List<BackupDbTableInfo>> dbTableInfos;
 
+    /**
+     * @return Database and table information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BackupDbTableInfo>> dbTableInfos() {
         return this.dbTableInfos;
     }

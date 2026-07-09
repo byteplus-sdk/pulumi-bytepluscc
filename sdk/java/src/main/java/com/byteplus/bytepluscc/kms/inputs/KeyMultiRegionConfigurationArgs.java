@@ -48,9 +48,19 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
         return Optional.ofNullable(this.primaryKey);
     }
 
+    /**
+     * Replica multi-region key transaction record number and region ID.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="replicaKeys")
     private @Nullable Output<List<KeyMultiRegionConfigurationReplicaKeyArgs>> replicaKeys;
 
+    /**
+     * @return Replica multi-region key transaction record number and region ID.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<KeyMultiRegionConfigurationReplicaKeyArgs>>> replicaKeys() {
         return Optional.ofNullable(this.replicaKeys);
     }
@@ -123,15 +133,36 @@ public final class KeyMultiRegionConfigurationArgs extends com.pulumi.resources.
             return primaryKey(Output.of(primaryKey));
         }
 
+        /**
+         * @param replicaKeys Replica multi-region key transaction record number and region ID.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder replicaKeys(@Nullable Output<List<KeyMultiRegionConfigurationReplicaKeyArgs>> replicaKeys) {
             $.replicaKeys = replicaKeys;
             return this;
         }
 
+        /**
+         * @param replicaKeys Replica multi-region key transaction record number and region ID.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder replicaKeys(List<KeyMultiRegionConfigurationReplicaKeyArgs> replicaKeys) {
             return replicaKeys(Output.of(replicaKeys));
         }
 
+        /**
+         * @param replicaKeys Replica multi-region key transaction record number and region ID.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder replicaKeys(KeyMultiRegionConfigurationReplicaKeyArgs... replicaKeys) {
             return replicaKeys(List.of(replicaKeys));
         }

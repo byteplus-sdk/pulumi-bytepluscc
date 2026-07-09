@@ -24,6 +24,49 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vedbm.Endpoint;
+ * import com.byteplus.bytepluscc.vedbm.EndpointArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.EndpointPublicAddressesArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vEDBMEndpointDemo = new Endpoint("vEDBMEndpointDemo", EndpointArgs.builder()
+ *             .publicAddresses(EndpointPublicAddressesArgs.builder()
+ *                 .eip_id("eip-ij2xxxxx74o8cubosgei")
+ *                 .build())
+ *             .autoAddNewNodes(true)
+ *             .consistLevel("Eventual")
+ *             .description("this is a test")
+ *             .distributedTransaction(false)
+ *             .endpointName("ccapi-test-1001")
+ *             .endpointType("Custom")
+ *             .instanceId("vedbm-jxxxxttjdcea")
+ *             .masterAcceptReadRequests(false)
+ *             .nodeIds("vedbm-jxxxxttjdcea-1")
+ *             .readWriteMode("ReadOnly")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

@@ -48,14 +48,14 @@ public final class FilesetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * File or directory quota. A value of `0` means no file or directory quota is set
+     * File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
      * 
      */
     @Import(name="fileLimit")
     private @Nullable Output<Integer> fileLimit;
 
     /**
-     * @return File or directory quota. A value of `0` means no file or directory quota is set
+     * @return File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
      * 
      */
     public Optional<Output<Integer>> fileLimit() {
@@ -195,7 +195,7 @@ public final class FilesetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileLimit File or directory quota. A value of `0` means no file or directory quota is set
+         * @param fileLimit File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class FilesetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param fileLimit File or directory quota. A value of `0` means no file or directory quota is set
+         * @param fileLimit File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
          * 
          * @return builder
          * 

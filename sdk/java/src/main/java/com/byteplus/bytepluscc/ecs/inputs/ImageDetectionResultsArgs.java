@@ -32,9 +32,19 @@ public final class ImageDetectionResultsArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.detectionStatus);
     }
 
+    /**
+     * Details of image check items.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="items")
     private @Nullable Output<List<ImageDetectionResultsItemArgs>> items;
 
+    /**
+     * @return Details of image check items.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ImageDetectionResultsItemArgs>>> items() {
         return Optional.ofNullable(this.items);
     }
@@ -85,15 +95,36 @@ public final class ImageDetectionResultsArgs extends com.pulumi.resources.Resour
             return detectionStatus(Output.of(detectionStatus));
         }
 
+        /**
+         * @param items Details of image check items.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder items(@Nullable Output<List<ImageDetectionResultsItemArgs>> items) {
             $.items = items;
             return this;
         }
 
+        /**
+         * @param items Details of image check items.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder items(List<ImageDetectionResultsItemArgs> items) {
             return items(Output.of(items));
         }
 
+        /**
+         * @param items Details of image check items.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder items(ImageDetectionResultsItemArgs... items) {
             return items(List.of(items));
         }

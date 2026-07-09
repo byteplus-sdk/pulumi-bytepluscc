@@ -34,9 +34,19 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.enableIpList);
     }
 
+    /**
+     * IP allowlist list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ipLists")
     private @Nullable Output<List<AllowedIpAddressIpListArgs>> ipLists;
 
+    /**
+     * @return IP allowlist list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AllowedIpAddressIpListArgs>>> ipLists() {
         return Optional.ofNullable(this.ipLists);
     }
@@ -119,15 +129,36 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
             return enableIpList(Output.of(enableIpList));
         }
 
+        /**
+         * @param ipLists IP allowlist list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipLists(@Nullable Output<List<AllowedIpAddressIpListArgs>> ipLists) {
             $.ipLists = ipLists;
             return this;
         }
 
+        /**
+         * @param ipLists IP allowlist list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipLists(List<AllowedIpAddressIpListArgs> ipLists) {
             return ipLists(Output.of(ipLists));
         }
 
+        /**
+         * @param ipLists IP allowlist list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipLists(AllowedIpAddressIpListArgs... ipLists) {
             return ipLists(List.of(ipLists));
         }

@@ -23,6 +23,57 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.gtm.Pool;
+ * import com.byteplus.bytepluscc.gtm.PoolArgs;
+ * import com.pulumi.bytepluscc.gtm.inputs.PoolAddressArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var gTMPoolDemo = new Pool("gTMPoolDemo", PoolArgs.builder()
+ *             .addresses(            
+ *                 PoolAddressArgs.builder()
+ *                     .rectified_geos(Arrays.asList("cn_telecom_shanghai"))
+ *                     .capacity(20)
+ *                     .mode("auto")
+ *                     .value("2001:db8::2")
+ *                     .weight(20)
+ *                     .build(),
+ *                 PoolAddressArgs.builder()
+ *                     .rectified_geos(Arrays.asList("cn_telecom_beijing"))
+ *                     .capacity(40)
+ *                     .mode("auto")
+ *                     .value("2001:db8::3")
+ *                     .weight(21)
+ *                     .build())
+ *             .gtmId("162ca39d-*******")
+ *             .addrType("ipv6")
+ *             .capacityMode("pool")
+ *             .capacity(90)
+ *             .name("testpool")
+ *             .remark("testdes")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -48,9 +99,19 @@ public class Pool extends com.pulumi.resources.CustomResource {
     public Output<String> addrType() {
         return this.addrType;
     }
+    /**
+     * List of target addresses in the address pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="addresses", refs={List.class,PoolAddress.class}, tree="[0,1]")
     private Output<List<PoolAddress>> addresses;
 
+    /**
+     * @return List of target addresses in the address pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PoolAddress>> addresses() {
         return this.addresses;
     }

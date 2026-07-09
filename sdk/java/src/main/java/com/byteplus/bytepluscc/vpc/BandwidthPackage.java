@@ -24,6 +24,54 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.BandwidthPackage;
+ * import com.byteplus.bytepluscc.vpc.BandwidthPackageArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.BandwidthPackageTagArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.BandwidthPackageEipAddressArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var bandwidthPackageDemo = new BandwidthPackage("bandwidthPackageDemo", BandwidthPackageArgs.builder()
+ *             .period(1)
+ *             .periodUnit(1)
+ *             .protocol("Dual-stack")
+ *             .tags(BandwidthPackageTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .bandwidthPackageName("BandwidthPackageDemo")
+ *             .description("BandwidthPackageDemo")
+ *             .isp("BGP")
+ *             .billingType(2)
+ *             .bandwidth(2)
+ *             .projectName("default")
+ *             .eipAddresses(BandwidthPackageEipAddressArgs.builder()
+ *                 .allocation_id("eip-2f90y2a8sczcw4f4pzzx1xxxx")
+ *                 .eip_address("101.126.*.143")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -147,9 +195,19 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="eipAddresses", refs={List.class,BandwidthPackageEipAddress.class}, tree="[0,1]")
     private Output<List<BandwidthPackageEipAddress>> eipAddresses;
 
+    /**
+     * @return List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BandwidthPackageEipAddress>> eipAddresses() {
         return this.eipAddresses;
     }
@@ -307,9 +365,19 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,BandwidthPackageTag.class}, tree="[0,1]")
     private Output<List<BandwidthPackageTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<BandwidthPackageTag>> tags() {
         return this.tags;
     }

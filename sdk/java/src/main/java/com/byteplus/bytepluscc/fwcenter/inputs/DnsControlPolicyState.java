@@ -95,9 +95,19 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.destinationType);
     }
 
+    /**
+     * Domain list in the domain address book.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="domainListV1s")
     private @Nullable Output<List<DnsControlPolicyDomainListV1Args>> domainListV1s;
 
+    /**
+     * @return Domain list in the domain address book.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DnsControlPolicyDomainListV1Args>>> domainListV1s() {
         return Optional.ofNullable(this.domainListV1s);
     }
@@ -177,9 +187,19 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.ruleId);
     }
 
+    /**
+     * Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="sources")
     private @Nullable Output<List<DnsControlPolicySourceArgs>> sources;
 
+    /**
+     * @return Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DnsControlPolicySourceArgs>>> sources() {
         return Optional.ofNullable(this.sources);
     }
@@ -366,15 +386,36 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
             return destinationType(Output.of(destinationType));
         }
 
+        /**
+         * @param domainListV1s Domain list in the domain address book.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainListV1s(@Nullable Output<List<DnsControlPolicyDomainListV1Args>> domainListV1s) {
             $.domainListV1s = domainListV1s;
             return this;
         }
 
+        /**
+         * @param domainListV1s Domain list in the domain address book.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainListV1s(List<DnsControlPolicyDomainListV1Args> domainListV1s) {
             return domainListV1s(Output.of(domainListV1s));
         }
 
+        /**
+         * @param domainListV1s Domain list in the domain address book.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domainListV1s(DnsControlPolicyDomainListV1Args... domainListV1s) {
             return domainListV1s(List.of(domainListV1s));
         }
@@ -494,15 +535,36 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
             return ruleId(Output.of(ruleId));
         }
 
+        /**
+         * @param sources Access source information, including VPC list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sources(@Nullable Output<List<DnsControlPolicySourceArgs>> sources) {
             $.sources = sources;
             return this;
         }
 
+        /**
+         * @param sources Access source information, including VPC list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sources(List<DnsControlPolicySourceArgs> sources) {
             return sources(Output.of(sources));
         }
 
+        /**
+         * @param sources Access source information, including VPC list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sources(DnsControlPolicySourceArgs... sources) {
             return sources(List.of(sources));
         }

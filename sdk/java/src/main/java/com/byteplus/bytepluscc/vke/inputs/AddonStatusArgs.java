@@ -17,9 +17,19 @@ public final class AddonStatusArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final AddonStatusArgs Empty = new AddonStatusArgs();
 
+    /**
+     * Status conditions under the component&#39;s current primary state.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditions")
     private @Nullable Output<List<AddonStatusConditionArgs>> conditions;
 
+    /**
+     * @return Status conditions under the component&#39;s current primary state.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AddonStatusConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
@@ -64,15 +74,36 @@ public final class AddonStatusArgs extends com.pulumi.resources.ResourceArgs {
             $ = new AddonStatusArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditions Status conditions under the component&#39;s current primary state.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(@Nullable Output<List<AddonStatusConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Status conditions under the component&#39;s current primary state.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(List<AddonStatusConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Status conditions under the component&#39;s current primary state.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(AddonStatusConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }

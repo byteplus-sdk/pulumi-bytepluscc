@@ -108,9 +108,19 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Associated rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="relatedRules")
     private @Nullable Output<List<HostGroupRelatedRuleArgs>> relatedRules;
 
+    /**
+     * @return Associated rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<HostGroupRelatedRuleArgs>>> relatedRules() {
         return Optional.ofNullable(this.relatedRules);
     }
@@ -297,15 +307,36 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param relatedRules Associated rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder relatedRules(@Nullable Output<List<HostGroupRelatedRuleArgs>> relatedRules) {
             $.relatedRules = relatedRules;
             return this;
         }
 
+        /**
+         * @param relatedRules Associated rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder relatedRules(List<HostGroupRelatedRuleArgs> relatedRules) {
             return relatedRules(Output.of(relatedRules));
         }
 
+        /**
+         * @param relatedRules Associated rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder relatedRules(HostGroupRelatedRuleArgs... relatedRules) {
             return relatedRules(List.of(relatedRules));
         }

@@ -27,6 +27,161 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vke.NodePool;
+ * import com.byteplus.bytepluscc.vke.NodePoolArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolAutoScalingArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolKubernetesConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolKubernetesConfigLabelArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolKubernetesConfigTaintArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolManagementArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolNodeConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolNodeConfigSecurityArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolNodeConfigSecurityLoginArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolNodeConfigTagArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.NodePoolTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vKENodePoolDemo = new NodePool("vKENodePoolDemo", NodePoolArgs.builder()
+ *             .autoScaling(NodePoolAutoScalingArgs.builder()
+ *                 .max_replicas(10)
+ *                 .min_replicas(0)
+ *                 .enabled(true)
+ *                 .desired_replicas(0)
+ *                 .priority(10)
+ *                 .subnet_policy("ZoneBalance")
+ *                 .build())
+ *             .clusterId("cd6gojxxxxxxxxxxx")
+ *             .kubernetesConfig(NodePoolKubernetesConfigArgs.builder()
+ *                 .auto_sync_disabled(false)
+ *                 .containerd_config(Map.ofEntries(
+ *                     Map.entry("insecureRegistries", Arrays.asList("example.com")),
+ *                     Map.entry("registryProxyConfigs", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("proxyEndpoints", Arrays.asList("https://example.com:8080")),
+ *                         Map.entry("registry", "example.com:8080")
+ *                     )))
+ *                 ))
+ *                 .cordon(false)
+ *                 .kubelet_config(Map.ofEntries(
+ *                     Map.entry("cpuManagerPolicy", "none"),
+ *                     Map.entry("evictionHard", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "memory.available"),
+ *                         Map.entry("value", "15%")
+ *                     ))),
+ *                     Map.entry("kubeApiBurst", 10),
+ *                     Map.entry("kubeApiQps", 5),
+ *                     Map.entry("kubeReserved", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("name", "memory"),
+ *                         Map.entry("quantity", "200m")
+ *                     ))),
+ *                     Map.entry("maxPods", 110),
+ *                     Map.entry("registryBurst", 10),
+ *                     Map.entry("registryPullQps", 5),
+ *                     Map.entry("serializeImagePulls", true),
+ *                     Map.entry("systemReserved", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("name", "memory"),
+ *                         Map.entry("quantity", "200m")
+ *                     ))),
+ *                     Map.entry("topologyManagerPolicy", "none"),
+ *                     Map.entry("topologyManagerScope", "container")
+ *                 ))
+ *                 .labels(NodePoolKubernetesConfigLabelArgs.builder()
+ *                     .key("label-key")
+ *                     .value("label-value")
+ *                     .build())
+ *                 .name_prefix("name-prefix")
+ *                 .name_suffix("name-suffix")
+ *                 .name_use_hostname(false)
+ *                 .taints(NodePoolKubernetesConfigTaintArgs.builder()
+ *                     .key("taint-key")
+ *                     .value("taint-value")
+ *                     .effect("NoSchedule")
+ *                     .build())
+ *                 .build())
+ *             .management(NodePoolManagementArgs.builder()
+ *                 .enabled(true)
+ *                 .remedy_config(Map.ofEntries(
+ *                     Map.entry("enabled", true),
+ *                     Map.entry("remedyId", "R20260227xxxxxxxxxxx")
+ *                 ))
+ *                 .build())
+ *             .name("test")
+ *             .nodeConfig(NodePoolNodeConfigArgs.builder()
+ *                 .instance_charge_type("PostPaid")
+ *                 .spot_strategy("SpotAsPriceGo")
+ *                 .instances_distribution(Map.ofEntries(
+ *                     Map.entry("capacityRebalance", true),
+ *                     Map.entry("compensateWithOnDemand", true),
+ *                     Map.entry("onDemandBaseCapacity", 0),
+ *                     Map.entry("onDemandPercentageAboveBaseCapacity", 0)
+ *                 ))
+ *                 .security(NodePoolNodeConfigSecurityArgs.builder()
+ *                     .securityGroupIds("sg-1a14cxqxxxxxxxxxx")
+ *                     .securityStrategies("Hids")
+ *                     .login(NodePoolNodeConfigSecurityLoginArgs.builder()
+ *                         .sshKeyPairName("MigrationKey-job-yecd7xxxxxxxxxx")
+ *                         .build())
+ *                     .build())
+ *                 .data_volumes(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("mountPoint", "/dev/vdb"),
+ *                     Map.entry("size", 100),
+ *                     Map.entry("snapshotId", "snap-3wvah8xxxxxxxxxx"),
+ *                     Map.entry("type", "ESSD_PL0")
+ *                 )))
+ *                 .system_volume(Map.ofEntries(
+ *                     Map.entry("size", 40),
+ *                     Map.entry("type", "ESSD_PL0")
+ *                 ))
+ *                 .additional_container_storage_enabled(true)
+ *                 .deployment_set_group_number(0)
+ *                 .deployment_set_id("dps-yedy0wxxxxxxxxxx")
+ *                 .hostname("node-host")
+ *                 .image_id("image-ybqi99xxxxxxxxxxx")
+ *                 .initialize_script("YmFzaCxxxxx9maxxxxx")
+ *                 .instance_name("node")
+ *                 .instance_type_ids(Arrays.asList("ecs.g4il.large"))
+ *                 .name_prefix("name-prefix")
+ *                 .network_traffic_mode("Standard")
+ *                 .project_name("default")
+ *                 .public_access_config(Map.ofEntries(
+ *                     Map.entry("billingType", 2),
+ *                     Map.entry("isp", "BGP"),
+ *                     Map.entry("bandwidth", 5)
+ *                 ))
+ *                 .public_access_enabled(false)
+ *                 .subnet_ids(Arrays.asList("subnet-ijifxxxxxo8cuxxxxx"))
+ *                 .tags(NodePoolNodeConfigTagArgs.builder()
+ *                     .key("key")
+ *                     .value("value")
+ *                     .build())
+ *                 .build())
+ *             .tags(NodePoolTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -192,9 +347,19 @@ public class NodePool extends com.pulumi.resources.CustomResource {
     public Output<NodePoolStatus> status() {
         return this.status;
     }
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,NodePoolTag.class}, tree="[0,1]")
     private Output<List<NodePoolTag>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NodePoolTag>> tags() {
         return this.tags;
     }

@@ -40,9 +40,19 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
         return this.alarmName;
     }
 
+    /**
+     * List of notification groups corresponding to the alert.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="alarmNotifyGroups", required=true)
     private Output<List<AlarmAlarmNotifyGroupArgs>> alarmNotifyGroups;
 
+    /**
+     * @return List of notification groups corresponding to the alert.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmAlarmNotifyGroupArgs>> alarmNotifyGroups() {
         return this.alarmNotifyGroups;
     }
@@ -92,9 +102,19 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.condition);
     }
 
+    /**
+     * Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="joinConfigurations")
     private @Nullable Output<List<AlarmJoinConfigurationArgs>> joinConfigurations;
 
+    /**
+     * @return Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AlarmJoinConfigurationArgs>>> joinConfigurations() {
         return Optional.ofNullable(this.joinConfigurations);
     }
@@ -114,9 +134,19 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
         return this.projectId;
     }
 
+    /**
+     * Monitoring task execution statement.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="queryRequests", required=true)
     private Output<List<AlarmQueryRequestArgs>> queryRequests;
 
+    /**
+     * @return Monitoring task execution statement.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmQueryRequestArgs>> queryRequests() {
         return this.queryRequests;
     }
@@ -181,9 +211,19 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="triggerConditions")
     private @Nullable Output<List<AlarmTriggerConditionArgs>> triggerConditions;
 
+    /**
+     * @return Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AlarmTriggerConditionArgs>>> triggerConditions() {
         return Optional.ofNullable(this.triggerConditions);
     }
@@ -277,15 +317,36 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
             return alarmName(Output.of(alarmName));
         }
 
+        /**
+         * @param alarmNotifyGroups List of notification groups corresponding to the alert.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder alarmNotifyGroups(Output<List<AlarmAlarmNotifyGroupArgs>> alarmNotifyGroups) {
             $.alarmNotifyGroups = alarmNotifyGroups;
             return this;
         }
 
+        /**
+         * @param alarmNotifyGroups List of notification groups corresponding to the alert.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder alarmNotifyGroups(List<AlarmAlarmNotifyGroupArgs> alarmNotifyGroups) {
             return alarmNotifyGroups(Output.of(alarmNotifyGroups));
         }
 
+        /**
+         * @param alarmNotifyGroups List of notification groups corresponding to the alert.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder alarmNotifyGroups(AlarmAlarmNotifyGroupArgs... alarmNotifyGroups) {
             return alarmNotifyGroups(List.of(alarmNotifyGroups));
         }
@@ -353,15 +414,36 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
             return condition(Output.of(condition));
         }
 
+        /**
+         * @param joinConfigurations Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder joinConfigurations(@Nullable Output<List<AlarmJoinConfigurationArgs>> joinConfigurations) {
             $.joinConfigurations = joinConfigurations;
             return this;
         }
 
+        /**
+         * @param joinConfigurations Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder joinConfigurations(List<AlarmJoinConfigurationArgs> joinConfigurations) {
             return joinConfigurations(Output.of(joinConfigurations));
         }
 
+        /**
+         * @param joinConfigurations Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder joinConfigurations(AlarmJoinConfigurationArgs... joinConfigurations) {
             return joinConfigurations(List.of(joinConfigurations));
         }
@@ -387,15 +469,36 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
             return projectId(Output.of(projectId));
         }
 
+        /**
+         * @param queryRequests Monitoring task execution statement.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder queryRequests(Output<List<AlarmQueryRequestArgs>> queryRequests) {
             $.queryRequests = queryRequests;
             return this;
         }
 
+        /**
+         * @param queryRequests Monitoring task execution statement.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder queryRequests(List<AlarmQueryRequestArgs> queryRequests) {
             return queryRequests(Output.of(queryRequests));
         }
 
+        /**
+         * @param queryRequests Monitoring task execution statement.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder queryRequests(AlarmQueryRequestArgs... queryRequests) {
             return queryRequests(List.of(queryRequests));
         }
@@ -484,15 +587,36 @@ public final class AlarmArgs extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param triggerConditions Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder triggerConditions(@Nullable Output<List<AlarmTriggerConditionArgs>> triggerConditions) {
             $.triggerConditions = triggerConditions;
             return this;
         }
 
+        /**
+         * @param triggerConditions Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder triggerConditions(List<AlarmTriggerConditionArgs> triggerConditions) {
             return triggerConditions(Output.of(triggerConditions));
         }
 
+        /**
+         * @param triggerConditions Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder triggerConditions(AlarmTriggerConditionArgs... triggerConditions) {
             return triggerConditions(List.of(triggerConditions));
         }

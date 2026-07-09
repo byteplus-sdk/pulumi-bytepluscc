@@ -18,6 +18,11 @@ public final class InstanceMaintenanceWindow {
      * 
      */
     private @Nullable String dayKind;
+    /**
+     * @return Detailed information about the instance&#39;s maintenance window.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceMaintenanceWindowDayOfWeekMaintenanceTime> dayOfWeekMaintenanceTimes;
 
     private InstanceMaintenanceWindow() {}
@@ -28,6 +33,11 @@ public final class InstanceMaintenanceWindow {
     public Optional<String> dayKind() {
         return Optional.ofNullable(this.dayKind);
     }
+    /**
+     * @return Detailed information about the instance&#39;s maintenance window.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceMaintenanceWindowDayOfWeekMaintenanceTime> dayOfWeekMaintenanceTimes() {
         return this.dayOfWeekMaintenanceTimes == null ? List.of() : this.dayOfWeekMaintenanceTimes;
     }

@@ -24,6 +24,58 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatelink.VpcEndpoint;
+ * import com.byteplus.bytepluscc.privatelink.VpcEndpointArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.VpcEndpointTagArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.VpcEndpointZoneArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var privateLinkVpcEndpointDemo = new VpcEndpoint("privateLinkVpcEndpointDemo", VpcEndpointArgs.builder()
+ *             .description("this is a test")
+ *             .endpointName("ccapi-test-1001")
+ *             .ipAddressVersions(            
+ *                 "ipv4",
+ *                 "ipv6")
+ *             .privateDnsEnabled(true)
+ *             .projectName("default")
+ *             .securityGroupIds("sg-btg9xxxxxc5h0b2u913txw")
+ *             .serviceId("epsvc-13fpxxxxx03n6nu5omuqde")
+ *             .serviceName("com.volces.xxxx.cn-beijing.api-ipv6.ticket")
+ *             .tags(VpcEndpointTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .vpcId("vpc-btg9hmxxxxx5h0b2tnp1on8")
+ *             .zones(VpcEndpointZoneArgs.builder()
+ *                 .private_ip_address("192.168.xxx.xx")
+ *                 .private_ipv_6_address("2406:d440:103:xxxxx:xxxxx:7eef:35c4:8d79")
+ *                 .subnet_id("subnet-ijif1pxxxxx4o8culvzg85")
+ *                 .zone_id("cn-beijing-a")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -329,9 +381,19 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Endpoint user tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,VpcEndpointTag.class}, tree="[0,1]")
     private Output<List<VpcEndpointTag>> tags;
 
+    /**
+     * @return Endpoint user tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcEndpointTag>> tags() {
         return this.tags;
     }
@@ -363,9 +425,19 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     public Output<String> vpcId() {
         return this.vpcId;
     }
+    /**
+     * Availability zone of the endpoint node.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="zones", refs={List.class,VpcEndpointZone.class}, tree="[0,1]")
     private Output<List<VpcEndpointZone>> zones;
 
+    /**
+     * @return Availability zone of the endpoint node.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcEndpointZone>> zones() {
         return this.zones;
     }

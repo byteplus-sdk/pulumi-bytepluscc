@@ -23,6 +23,43 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.gtm.Policy;
+ * import com.byteplus.bytepluscc.gtm.PolicyArgs;
+ * import com.pulumi.bytepluscc.gtm.inputs.PolicyTargetArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var gTMPolicyDemo = new Policy("gTMPolicyDemo", PolicyArgs.builder()
+ *             .gtmId("003cd3af-dc55-xxxxx-xxxxxx-41470d406367")
+ *             .policyType("perf")
+ *             .targets(PolicyTargetArgs.builder()
+ *                 .pool_id("ad65b9fb-e8f5-xxxxx-xxxxxx-bc4f2741cd66")
+ *                 .build())
+ *             .alarmOnly(false)
+ *             .routingMode("geo-lb")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -118,9 +155,19 @@ public class Policy extends com.pulumi.resources.CustomResource {
     public Output<PolicyStatistics> statistics() {
         return this.statistics;
     }
+    /**
+     * Traffic target for intelligent routing strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="targets", refs={List.class,PolicyTarget.class}, tree="[0,1]")
     private Output<List<PolicyTarget>> targets;
 
+    /**
+     * @return Traffic target for intelligent routing strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PolicyTarget>> targets() {
         return this.targets;
     }

@@ -218,9 +218,19 @@ public final class VpnConnectionState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.enableTunnelsBgp);
     }
 
+    /**
+     * Health check information for the IPsec connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="healthCheckers")
     private @Nullable Output<List<VpnConnectionHealthCheckerArgs>> healthCheckers;
 
+    /**
+     * @return Health check information for the IPsec connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpnConnectionHealthCheckerArgs>>> healthCheckers() {
         return Optional.ofNullable(this.healthCheckers);
     }
@@ -420,9 +430,19 @@ public final class VpnConnectionState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * All tag information added to the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpnConnectionTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpnConnectionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -442,9 +462,19 @@ public final class VpnConnectionState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.transitRouterId);
     }
 
+    /**
+     * Tunnel configuration information for the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tunnelOptions")
     private @Nullable Output<List<VpnConnectionTunnelOptionArgs>> tunnelOptions;
 
+    /**
+     * @return Tunnel configuration information for the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpnConnectionTunnelOptionArgs>>> tunnelOptions() {
         return Optional.ofNullable(this.tunnelOptions);
     }
@@ -855,15 +885,36 @@ public final class VpnConnectionState extends com.pulumi.resources.ResourceArgs 
             return enableTunnelsBgp(Output.of(enableTunnelsBgp));
         }
 
+        /**
+         * @param healthCheckers Health check information for the IPsec connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healthCheckers(@Nullable Output<List<VpnConnectionHealthCheckerArgs>> healthCheckers) {
             $.healthCheckers = healthCheckers;
             return this;
         }
 
+        /**
+         * @param healthCheckers Health check information for the IPsec connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healthCheckers(List<VpnConnectionHealthCheckerArgs> healthCheckers) {
             return healthCheckers(Output.of(healthCheckers));
         }
 
+        /**
+         * @param healthCheckers Health check information for the IPsec connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder healthCheckers(VpnConnectionHealthCheckerArgs... healthCheckers) {
             return healthCheckers(List.of(healthCheckers));
         }
@@ -1161,15 +1212,36 @@ public final class VpnConnectionState extends com.pulumi.resources.ResourceArgs 
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags All tag information added to the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VpnConnectionTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VpnConnectionTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VpnConnectionTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -1195,15 +1267,36 @@ public final class VpnConnectionState extends com.pulumi.resources.ResourceArgs 
             return transitRouterId(Output.of(transitRouterId));
         }
 
+        /**
+         * @param tunnelOptions Tunnel configuration information for the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tunnelOptions(@Nullable Output<List<VpnConnectionTunnelOptionArgs>> tunnelOptions) {
             $.tunnelOptions = tunnelOptions;
             return this;
         }
 
+        /**
+         * @param tunnelOptions Tunnel configuration information for the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tunnelOptions(List<VpnConnectionTunnelOptionArgs> tunnelOptions) {
             return tunnelOptions(Output.of(tunnelOptions));
         }
 
+        /**
+         * @param tunnelOptions Tunnel configuration information for the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tunnelOptions(VpnConnectionTunnelOptionArgs... tunnelOptions) {
             return tunnelOptions(List.of(tunnelOptions));
         }

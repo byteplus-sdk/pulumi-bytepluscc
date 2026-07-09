@@ -17,6 +17,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
@@ -38,6 +43,11 @@ public final class InstanceEndpoint {
      * 
      */
     private @Nullable String connectionPoolType;
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceEndpointCustomRouteStrategy> customRouteStrategies;
     /**
      * @return Description of the connection endpoint
@@ -114,6 +124,11 @@ public final class InstanceEndpoint {
      * 
      */
     private @Nullable Integer readOnlyNodeMaxDelayTime;
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only
@@ -122,6 +137,11 @@ public final class InstanceEndpoint {
     private @Nullable String readWriteMode;
 
     private InstanceEndpoint() {}
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceEndpointAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }
@@ -153,6 +173,11 @@ public final class InstanceEndpoint {
     public Optional<String> connectionPoolType() {
         return Optional.ofNullable(this.connectionPoolType);
     }
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceEndpointCustomRouteStrategy> customRouteStrategies() {
         return this.customRouteStrategies == null ? List.of() : this.customRouteStrategies;
     }
@@ -261,6 +286,11 @@ public final class InstanceEndpoint {
     public Optional<Integer> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights == null ? List.of() : this.readOnlyNodeWeights;
     }

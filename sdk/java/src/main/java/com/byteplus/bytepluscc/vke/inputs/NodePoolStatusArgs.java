@@ -17,9 +17,19 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
 
     public static final NodePoolStatusArgs Empty = new NodePoolStatusArgs();
 
+    /**
+     * Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditions")
     private @Nullable Output<List<NodePoolStatusConditionArgs>> conditions;
 
+    /**
+     * @return Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NodePoolStatusConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
@@ -64,15 +74,36 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
             $ = new NodePoolStatusArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditions Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(@Nullable Output<List<NodePoolStatusConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(List<NodePoolStatusConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(NodePoolStatusConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }

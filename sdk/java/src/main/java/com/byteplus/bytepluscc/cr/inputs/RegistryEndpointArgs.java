@@ -18,9 +18,19 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
 
     public static final RegistryEndpointArgs Empty = new RegistryEndpointArgs();
 
+    /**
+     * Public IP allowlist list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="aclPolicies")
     private @Nullable Output<List<RegistryEndpointAclPolicyArgs>> aclPolicies;
 
+    /**
+     * @return Public IP allowlist list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RegistryEndpointAclPolicyArgs>>> aclPolicies() {
         return Optional.ofNullable(this.aclPolicies);
     }
@@ -81,15 +91,36 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
             $ = new RegistryEndpointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param aclPolicies Public IP allowlist list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclPolicies(@Nullable Output<List<RegistryEndpointAclPolicyArgs>> aclPolicies) {
             $.aclPolicies = aclPolicies;
             return this;
         }
 
+        /**
+         * @param aclPolicies Public IP allowlist list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclPolicies(List<RegistryEndpointAclPolicyArgs> aclPolicies) {
             return aclPolicies(Output.of(aclPolicies));
         }
 
+        /**
+         * @param aclPolicies Public IP allowlist list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclPolicies(RegistryEndpointAclPolicyArgs... aclPolicies) {
             return aclPolicies(List.of(aclPolicies));
         }

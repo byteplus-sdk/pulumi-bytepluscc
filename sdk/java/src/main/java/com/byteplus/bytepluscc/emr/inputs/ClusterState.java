@@ -40,9 +40,19 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="applicationExtras")
     private @Nullable Output<List<ClusterApplicationExtraArgs>> applicationExtras;
 
+    /**
+     * @return Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterApplicationExtraArgs>>> applicationExtras() {
         return Optional.ofNullable(this.applicationExtras);
     }
@@ -62,16 +72,36 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.applicationNames);
     }
 
+    /**
+     * Installed service list for cluster. Read-only field.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="applications")
     private @Nullable Output<List<ClusterApplicationArgs>> applications;
 
+    /**
+     * @return Installed service list for cluster. Read-only field.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterApplicationArgs>>> applications() {
         return Optional.ofNullable(this.applications);
     }
 
+    /**
+     * Cluster bootstrap script list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="bootstrapScripts")
     private @Nullable Output<List<ClusterBootstrapScriptArgs>> bootstrapScripts;
 
+    /**
+     * @return Cluster bootstrap script list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterBootstrapScriptArgs>>> bootstrapScripts() {
         return Optional.ofNullable(this.bootstrapScripts);
     }
@@ -301,9 +331,19 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.nodeAttribute);
     }
 
+    /**
+     * Node group property list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="nodeGroupAttributes")
     private @Nullable Output<List<ClusterNodeGroupAttributeArgs>> nodeGroupAttributes;
 
+    /**
+     * @return Node group property list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterNodeGroupAttributeArgs>>> nodeGroupAttributes() {
         return Optional.ofNullable(this.nodeGroupAttributes);
     }
@@ -398,9 +438,19 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.stateChangeReason);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ClusterTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -509,15 +559,36 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param applicationExtras Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationExtras(@Nullable Output<List<ClusterApplicationExtraArgs>> applicationExtras) {
             $.applicationExtras = applicationExtras;
             return this;
         }
 
+        /**
+         * @param applicationExtras Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationExtras(List<ClusterApplicationExtraArgs> applicationExtras) {
             return applicationExtras(Output.of(applicationExtras));
         }
 
+        /**
+         * @param applicationExtras Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationExtras(ClusterApplicationExtraArgs... applicationExtras) {
             return applicationExtras(List.of(applicationExtras));
         }
@@ -553,28 +624,70 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
             return applicationNames(List.of(applicationNames));
         }
 
+        /**
+         * @param applications Installed service list for cluster. Read-only field.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applications(@Nullable Output<List<ClusterApplicationArgs>> applications) {
             $.applications = applications;
             return this;
         }
 
+        /**
+         * @param applications Installed service list for cluster. Read-only field.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applications(List<ClusterApplicationArgs> applications) {
             return applications(Output.of(applications));
         }
 
+        /**
+         * @param applications Installed service list for cluster. Read-only field.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applications(ClusterApplicationArgs... applications) {
             return applications(List.of(applications));
         }
 
+        /**
+         * @param bootstrapScripts Cluster bootstrap script list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bootstrapScripts(@Nullable Output<List<ClusterBootstrapScriptArgs>> bootstrapScripts) {
             $.bootstrapScripts = bootstrapScripts;
             return this;
         }
 
+        /**
+         * @param bootstrapScripts Cluster bootstrap script list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bootstrapScripts(List<ClusterBootstrapScriptArgs> bootstrapScripts) {
             return bootstrapScripts(Output.of(bootstrapScripts));
         }
 
+        /**
+         * @param bootstrapScripts Cluster bootstrap script list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder bootstrapScripts(ClusterBootstrapScriptArgs... bootstrapScripts) {
             return bootstrapScripts(List.of(bootstrapScripts));
         }
@@ -904,15 +1017,36 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
             return nodeAttribute(Output.of(nodeAttribute));
         }
 
+        /**
+         * @param nodeGroupAttributes Node group property list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nodeGroupAttributes(@Nullable Output<List<ClusterNodeGroupAttributeArgs>> nodeGroupAttributes) {
             $.nodeGroupAttributes = nodeGroupAttributes;
             return this;
         }
 
+        /**
+         * @param nodeGroupAttributes Node group property list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nodeGroupAttributes(List<ClusterNodeGroupAttributeArgs> nodeGroupAttributes) {
             return nodeGroupAttributes(Output.of(nodeGroupAttributes));
         }
 
+        /**
+         * @param nodeGroupAttributes Node group property list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder nodeGroupAttributes(ClusterNodeGroupAttributeArgs... nodeGroupAttributes) {
             return nodeGroupAttributes(List.of(nodeGroupAttributes));
         }
@@ -1043,15 +1177,36 @@ public final class ClusterState extends com.pulumi.resources.ResourceArgs {
             return stateChangeReason(Output.of(stateChangeReason));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ClusterTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ClusterTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ClusterTagArgs... tags) {
             return tags(List.of(tags));
         }

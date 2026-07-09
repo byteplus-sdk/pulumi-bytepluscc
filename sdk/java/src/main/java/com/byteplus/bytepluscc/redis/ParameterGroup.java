@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.redis.ParameterGroup;
  * import com.byteplus.bytepluscc.redis.ParameterGroupArgs;
  * import com.pulumi.bytepluscc.redis.inputs.ParameterGroupParamValueArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -146,9 +146,19 @@ public class ParameterGroup extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
+    /**
+     * List of parameter values to set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="paramValues", refs={List.class,ParameterGroupParamValue.class}, tree="[0,1]")
     private Output<List<ParameterGroupParamValue>> paramValues;
 
+    /**
+     * @return List of parameter values to set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ParameterGroupParamValue>> paramValues() {
         return this.paramValues;
     }
@@ -166,9 +176,19 @@ public class ParameterGroup extends com.pulumi.resources.CustomResource {
     public Output<String> parameterGroupId() {
         return this.parameterGroupId;
     }
+    /**
+     * List of parameter details in the parameter group, must be provided when modifying
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="parameters", refs={List.class,ParameterGroupParameter.class}, tree="[0,1]")
     private Output<List<ParameterGroupParameter>> parameters;
 
+    /**
+     * @return List of parameter details in the parameter group, must be provided when modifying
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ParameterGroupParameter>> parameters() {
         return this.parameters;
     }

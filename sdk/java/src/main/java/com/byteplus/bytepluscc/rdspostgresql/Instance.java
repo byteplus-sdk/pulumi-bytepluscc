@@ -28,6 +28,55 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdspostgresql.Instance;
+ * import com.byteplus.bytepluscc.rdspostgresql.InstanceArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.InstanceNodeInfoArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.InstanceChargeDetailArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rDSPostgreSQLInstanceDemo = new Instance("rDSPostgreSQLInstanceDemo", InstanceArgs.builder()
+ *             .dbEngineVersion("PostgreSQL_14")
+ *             .nodeInfos(            
+ *                 InstanceNodeInfoArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .node_spec("rds.postgres.1c2g")
+ *                     .node_type("Primary")
+ *                     .build(),
+ *                 InstanceNodeInfoArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .node_spec("rds.postgres.1c2g")
+ *                     .node_type("Secondary")
+ *                     .build())
+ *             .storageType("LocalSSD")
+ *             .vpcId("vpc-***")
+ *             .subnetId("subnet-***")
+ *             .chargeDetail(InstanceChargeDetailArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -109,9 +158,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
+    /**
+     * Instance connection information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
 
+    /**
+     * @return Instance connection information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
@@ -199,9 +258,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<Double> memory() {
         return this.memory;
     }
+    /**
+     * Instance specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodeInfos", refs={List.class,InstanceNodeInfo.class}, tree="[0,1]")
     private Output<List<InstanceNodeInfo>> nodeInfos;
 
+    /**
+     * @return Instance specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceNodeInfo>> nodeInfos() {
         return this.nodeInfos;
     }
@@ -247,9 +316,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Replication slot list for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="replicationSlots", refs={List.class,InstanceReplicationSlot.class}, tree="[0,1]")
     private Output<List<InstanceReplicationSlot>> replicationSlots;
 
+    /**
+     * @return Replication slot list for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceReplicationSlot>> replicationSlots() {
         return this.replicationSlots;
     }
@@ -379,9 +458,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Tag information of the cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Tag information of the cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

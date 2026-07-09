@@ -199,9 +199,19 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
         return Optional.ofNullable(this.renewType);
     }
 
+    /**
+     * Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterBandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TransitRouterBandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -510,15 +520,36 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
             return renewType(Output.of(renewType));
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<TransitRouterBandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<TransitRouterBandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(TransitRouterBandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }

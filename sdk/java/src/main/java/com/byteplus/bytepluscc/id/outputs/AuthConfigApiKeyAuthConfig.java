@@ -19,6 +19,11 @@ public final class AuthConfigApiKeyAuthConfig {
      * 
      */
     private @Nullable String apiKey;
+    /**
+     * @return ApiKey Metadata
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<AuthConfigApiKeyAuthConfigApiKeyMetadata> apiKeyMetadatas;
     /**
      * @return ApiKey Name
@@ -39,6 +44,11 @@ public final class AuthConfigApiKeyAuthConfig {
     public Optional<String> apiKey() {
         return Optional.ofNullable(this.apiKey);
     }
+    /**
+     * @return ApiKey Metadata
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<AuthConfigApiKeyAuthConfigApiKeyMetadata> apiKeyMetadatas() {
         return this.apiKeyMetadatas == null ? List.of() : this.apiKeyMetadatas;
     }

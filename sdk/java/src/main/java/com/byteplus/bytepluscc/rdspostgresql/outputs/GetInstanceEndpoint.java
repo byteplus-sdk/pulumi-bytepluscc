@@ -82,7 +82,7 @@ public final class GetInstanceEndpoint {
      */
     private Double readWriteProxyConnection;
     /**
-     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
      * 
      */
     private Boolean writeNodeHaltWriting;
@@ -181,7 +181,7 @@ public final class GetInstanceEndpoint {
         return this.readWriteProxyConnection;
     }
     /**
-     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
      * 
      */
     public Boolean writeNodeHaltWriting() {

@@ -30,8 +30,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.mongodb.Endpoint;
  * import com.byteplus.bytepluscc.mongodb.EndpointArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -66,9 +66,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:mongodb/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
+    /**
+     * List of connection address strings
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="dbAddresses", refs={List.class,EndpointDbAddress.class}, tree="[0,1]")
     private Output<List<EndpointDbAddress>> dbAddresses;
 
+    /**
+     * @return List of connection address strings
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EndpointDbAddress>> dbAddresses() {
         return this.dbAddresses;
     }
@@ -115,18 +125,20 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
         return this.endpointStr;
     }
     /**
-     * Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-     * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-     * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+     * Node type corresponding to the connection address. Possible values:
+     * 
+     *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+     *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
      * 
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
-     * @return Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-     * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-     * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+     * @return Node type corresponding to the connection address. Possible values:
+     * 
+     *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+     *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
      * 
      */
     public Output<String> endpointType() {
@@ -161,32 +173,40 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
         return this.mongosNodeIds;
     }
     /**
-     * Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
+     * Network type of the connection address. Possible values:
+     * 
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
      * 
      */
     @Export(name="networkType", refs={String.class}, tree="[0]")
     private Output<String> networkType;
 
     /**
-     * @return Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
+     * @return Network type of the connection address. Possible values:
+     * 
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
      * 
      */
     public Output<String> networkType() {
         return this.networkType;
     }
     /**
-     * ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     * ID of the component associated with the current connection address
+     * 
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      * 
      */
     @Export(name="objectId", refs={String.class}, tree="[0]")
     private Output<String> objectId;
 
     /**
-     * @return ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     * @return ID of the component associated with the current connection address
+     * 
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      * 
      */
     public Output<String> objectId() {

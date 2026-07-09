@@ -30,6 +30,11 @@ public final class HostGroupRuleExtractRule {
      * 
      */
     private @Nullable Boolean enableNanosecond;
+    /**
+     * @return Filter rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<HostGroupRuleExtractRuleFilterKeyRegex> filterKeyRegexes;
     /**
      * @return List of log field names (Keys).
@@ -109,6 +114,11 @@ public final class HostGroupRuleExtractRule {
     public Optional<Boolean> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
     }
+    /**
+     * @return Filter rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<HostGroupRuleExtractRuleFilterKeyRegex> filterKeyRegexes() {
         return this.filterKeyRegexes == null ? List.of() : this.filterKeyRegexes;
     }

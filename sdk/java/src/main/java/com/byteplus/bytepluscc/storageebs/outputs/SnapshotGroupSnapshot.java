@@ -80,6 +80,11 @@ public final class SnapshotGroupSnapshot {
      * 
      */
     private @Nullable String status;
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<SnapshotGroupSnapshotTag> tags;
     /**
      * @return Cloud disk ID
@@ -209,6 +214,11 @@ public final class SnapshotGroupSnapshot {
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<SnapshotGroupSnapshotTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

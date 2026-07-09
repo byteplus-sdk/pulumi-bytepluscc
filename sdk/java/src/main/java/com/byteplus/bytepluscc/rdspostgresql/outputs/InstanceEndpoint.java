@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
@@ -63,6 +68,11 @@ public final class InstanceEndpoint {
      * 
      */
     private @Nullable Double readOnlyNodeMaxDelayTime;
+    /**
+     * @return List of nodes configured for the endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
      * @return Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
@@ -75,12 +85,17 @@ public final class InstanceEndpoint {
      */
     private @Nullable Double readWriteProxyConnection;
     /**
-     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
      * 
      */
     private @Nullable Boolean writeNodeHaltWriting;
 
     private InstanceEndpoint() {}
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceEndpointAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }
@@ -148,6 +163,11 @@ public final class InstanceEndpoint {
     public Optional<Double> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
+    /**
+     * @return List of nodes configured for the endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights == null ? List.of() : this.readOnlyNodeWeights;
     }
@@ -166,7 +186,7 @@ public final class InstanceEndpoint {
         return Optional.ofNullable(this.readWriteProxyConnection);
     }
     /**
-     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
+     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
      * 
      */
     public Optional<Boolean> writeNodeHaltWriting() {

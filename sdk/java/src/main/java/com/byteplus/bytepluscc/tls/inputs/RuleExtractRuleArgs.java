@@ -64,9 +64,19 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.enableNanosecond);
     }
 
+    /**
+     * Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="filterKeyRegexes")
     private @Nullable Output<List<RuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes;
 
+    /**
+     * @return Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleExtractRuleFilterKeyRegexArgs>>> filterKeyRegexes() {
         return Optional.ofNullable(this.filterKeyRegexes);
     }
@@ -337,15 +347,36 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
             return enableNanosecond(Output.of(enableNanosecond));
         }
 
+        /**
+         * @param filterKeyRegexes Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(@Nullable Output<List<RuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes) {
             $.filterKeyRegexes = filterKeyRegexes;
             return this;
         }
 
+        /**
+         * @param filterKeyRegexes Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(List<RuleExtractRuleFilterKeyRegexArgs> filterKeyRegexes) {
             return filterKeyRegexes(Output.of(filterKeyRegexes));
         }
 
+        /**
+         * @param filterKeyRegexes Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(RuleExtractRuleFilterKeyRegexArgs... filterKeyRegexes) {
             return filterKeyRegexes(List.of(filterKeyRegexes));
         }

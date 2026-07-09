@@ -30,6 +30,94 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cloudmonitor.Rule;
+ * import com.byteplus.bytepluscc.cloudmonitor.RuleArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleOriginalDimensionsArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleNoDataArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleLevelConditionArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleLevelConditionConditionArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleConditionArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleRecoveryNotifyArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cloudMonitorRuleDemo = new Rule("cloudMonitorRuleDemo", RuleArgs.builder()
+ *             .ruleName("CloudMonitorRuleDemo")
+ *             .description("this is a description")
+ *             .ruleType("static")
+ *             .namespace("VCM_AgentKitMcp")
+ *             .subNamespace("MCP_Service")
+ *             .originalDimensions(RuleOriginalDimensionsArgs.builder()
+ *                 .key("ResourceID")
+ *                 .values("*")
+ *                 .build())
+ *             .level("warning")
+ *             .evaluationCount(1)
+ *             .enableState("enable")
+ *             .regions("cn-beijing")
+ *             .multipleConditions(false)
+ *             .noData(RuleNoDataArgs.builder()
+ *                 .enable(false)
+ *                 .evaluation_count(4)
+ *                 .build())
+ *             .levelConditions(RuleLevelConditionArgs.builder()
+ *                 .level("warning")
+ *                 .conditions(RuleLevelConditionConditionArgs.builder()
+ *                     .metricName("istio_requests_total")
+ *                     .statistics("sum")
+ *                     .comparisonOperator(">")
+ *                     .threshold("100000")
+ *                     .metricUnit("Count")
+ *                     .build())
+ *                 .build())
+ *             .conditions(RuleConditionArgs.builder()
+ *                 .metric_name("istio_requests_total")
+ *                 .statistics("sum")
+ *                 .comparison_operator(">")
+ *                 .threshold("100000")
+ *                 .metric_unit("Count")
+ *                 .build())
+ *             .conditionOperator("&&")
+ *             .silenceTime(5)
+ *             .recoveryNotify(RuleRecoveryNotifyArgs.builder()
+ *                 .enable(true)
+ *                 .build())
+ *             .projectName("default")
+ *             .tags(RuleTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .alertMethods(            
+ *                 "Email",
+ *                 "Webhook")
+ *             .webhookIds("2005838xxxxx67xxxxx")
+ *             .contactGroupIds("20041xxxxxx06xxxxx")
+ *             .effectStartAt("00:00")
+ *             .effectEndAt("23:59")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -83,9 +171,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> conditionOperator() {
         return this.conditionOperator;
     }
+    /**
+     * Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="conditions", refs={List.class,RuleCondition.class}, tree="[0,1]")
     private Output<List<RuleCondition>> conditions;
 
+    /**
+     * @return Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleCondition>> conditions() {
         return this.conditions;
     }
@@ -215,9 +313,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> level() {
         return this.level;
     }
+    /**
+     * Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="levelConditions", refs={List.class,RuleLevelCondition.class}, tree="[0,1]")
     private Output<List<RuleLevelCondition>> levelConditions;
 
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleLevelCondition>> levelConditions() {
         return this.levelConditions;
     }
@@ -277,9 +385,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> notificationId() {
         return this.notificationId;
     }
+    /**
+     * Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="notifyTemplates", refs={List.class,RuleNotifyTemplate.class}, tree="[0,1]")
     private Output<List<RuleNotifyTemplate>> notifyTemplates;
 
+    /**
+     * @return Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleNotifyTemplate>> notifyTemplates() {
         return this.notifyTemplates;
     }
@@ -423,9 +541,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> subNamespace() {
         return this.subNamespace;
     }
+    /**
+     * Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,RuleTag.class}, tree="[0,1]")
     private Output<List<RuleTag>> tags;
 
+    /**
+     * @return Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleTag>> tags() {
         return this.tags;
     }

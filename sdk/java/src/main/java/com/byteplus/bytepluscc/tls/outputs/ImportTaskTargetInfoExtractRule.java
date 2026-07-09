@@ -19,7 +19,7 @@ public final class ImportTaskTargetInfoExtractRule {
      */
     private @Nullable ImportTaskTargetInfoExtractRuleExtractRule extractRule;
     /**
-     * @return Number of skipped rows. Only valid when the log type is delimiter_log and the import type is tos.
+     * @return Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
      * 
      */
     private @Nullable Integer skipLineCount;
@@ -43,7 +43,7 @@ public final class ImportTaskTargetInfoExtractRule {
         return Optional.ofNullable(this.extractRule);
     }
     /**
-     * @return Number of skipped rows. Only valid when the log type is delimiter_log and the import type is tos.
+     * @return Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
      * 
      */
     public Optional<Integer> skipLineCount() {

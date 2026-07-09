@@ -21,6 +21,61 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.organization.ServiceControlPolicy;
+ * import com.byteplus.bytepluscc.organization.ServiceControlPolicyArgs;
+ * import com.pulumi.bytepluscc.organization.inputs.ServiceControlPolicyTargetArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var organizationServiceControlPolicyDemo = new ServiceControlPolicy("organizationServiceControlPolicyDemo", ServiceControlPolicyArgs.builder()
+ *             .policyName("ccapi-test")
+ *             .description("ccapi-test-desc")
+ *             .statement(serializeJson(
+ *                 jsonObject(
+ *                     jsonProperty("Statement", jsonArray(jsonObject(
+ *                         jsonProperty("Effect", "Deny"),
+ *                         jsonProperty("Action", jsonArray("iam:*")),
+ *                         jsonProperty("Resource", jsonArray("*")),
+ *                         jsonProperty("Condition", jsonObject(
+ *                             jsonProperty("StringNotEqualsIfExists", jsonObject(
+ *                                 jsonProperty("volc:UserName", jsonArray("a"))
+ *                             ))
+ *                         ))
+ *                     )))
+ *                 )))
+ *             .targets(            
+ *                 ServiceControlPolicyTargetArgs.builder()
+ *                     .target_id("212***")
+ *                     .target_type("Account")
+ *                     .build(),
+ *                 ServiceControlPolicyTargetArgs.builder()
+ *                     .target_id("21****")
+ *                     .target_type("Account")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -116,9 +171,19 @@ public class ServiceControlPolicy extends com.pulumi.resources.CustomResource {
     public Output<String> statement() {
         return this.statement;
     }
+    /**
+     * List of bound target objects.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="targets", refs={List.class,ServiceControlPolicyTarget.class}, tree="[0,1]")
     private Output<List<ServiceControlPolicyTarget>> targets;
 
+    /**
+     * @return List of bound target objects.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServiceControlPolicyTarget>> targets() {
         return this.targets;
     }

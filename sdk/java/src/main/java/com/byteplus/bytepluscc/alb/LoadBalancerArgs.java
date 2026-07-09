@@ -265,9 +265,19 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.proxyProtocolEnabled);
     }
 
+    /**
+     * List of tags bound to the instance, used for categorization and billing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<LoadBalancerTagArgs>> tags;
 
+    /**
+     * @return List of tags bound to the instance, used for categorization and billing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<LoadBalancerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -362,9 +372,19 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.wafProtectionEnabled);
     }
 
+    /**
+     * Availability zone mapping list, defines which availability zones the instance provides services in.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="zoneMappings")
     private @Nullable Output<List<LoadBalancerZoneMappingArgs>> zoneMappings;
 
+    /**
+     * @return Availability zone mapping list, defines which availability zones the instance provides services in.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<LoadBalancerZoneMappingArgs>>> zoneMappings() {
         return Optional.ofNullable(this.zoneMappings);
     }
@@ -752,15 +772,36 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
             return proxyProtocolEnabled(Output.of(proxyProtocolEnabled));
         }
 
+        /**
+         * @param tags List of tags bound to the instance, used for categorization and billing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<LoadBalancerTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags List of tags bound to the instance, used for categorization and billing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<LoadBalancerTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags List of tags bound to the instance, used for categorization and billing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(LoadBalancerTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -891,15 +932,36 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
             return wafProtectionEnabled(Output.of(wafProtectionEnabled));
         }
 
+        /**
+         * @param zoneMappings Availability zone mapping list, defines which availability zones the instance provides services in.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zoneMappings(@Nullable Output<List<LoadBalancerZoneMappingArgs>> zoneMappings) {
             $.zoneMappings = zoneMappings;
             return this;
         }
 
+        /**
+         * @param zoneMappings Availability zone mapping list, defines which availability zones the instance provides services in.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zoneMappings(List<LoadBalancerZoneMappingArgs> zoneMappings) {
             return zoneMappings(Output.of(zoneMappings));
         }
 
+        /**
+         * @param zoneMappings Availability zone mapping list, defines which availability zones the instance provides services in.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zoneMappings(LoadBalancerZoneMappingArgs... zoneMappings) {
             return zoneMappings(List.of(zoneMappings));
         }

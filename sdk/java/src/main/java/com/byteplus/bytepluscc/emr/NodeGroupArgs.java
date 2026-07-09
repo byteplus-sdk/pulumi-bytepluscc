@@ -23,9 +23,19 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final NodeGroupArgs Empty = new NodeGroupArgs();
 
+    /**
+     * List of component names that can be deployed in the current node group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="applicationLayouts")
     private @Nullable Output<List<NodeGroupApplicationLayoutArgs>> applicationLayouts;
 
+    /**
+     * @return List of component names that can be deployed in the current node group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NodeGroupApplicationLayoutArgs>>> applicationLayouts() {
         return Optional.ofNullable(this.applicationLayouts);
     }
@@ -75,9 +85,19 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         return this.clusterId;
     }
 
+    /**
+     * Data disk configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="dataDisks")
     private @Nullable Output<List<NodeGroupDataDiskArgs>> dataDisks;
 
+    /**
+     * @return Data disk configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NodeGroupDataDiskArgs>>> dataDisks() {
         return Optional.ofNullable(this.dataDisks);
     }
@@ -254,15 +274,36 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
             $ = new NodeGroupArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param applicationLayouts List of component names that can be deployed in the current node group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationLayouts(@Nullable Output<List<NodeGroupApplicationLayoutArgs>> applicationLayouts) {
             $.applicationLayouts = applicationLayouts;
             return this;
         }
 
+        /**
+         * @param applicationLayouts List of component names that can be deployed in the current node group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationLayouts(List<NodeGroupApplicationLayoutArgs> applicationLayouts) {
             return applicationLayouts(Output.of(applicationLayouts));
         }
 
+        /**
+         * @param applicationLayouts List of component names that can be deployed in the current node group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationLayouts(NodeGroupApplicationLayoutArgs... applicationLayouts) {
             return applicationLayouts(List.of(applicationLayouts));
         }
@@ -330,15 +371,36 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
             return clusterId(Output.of(clusterId));
         }
 
+        /**
+         * @param dataDisks Data disk configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataDisks(@Nullable Output<List<NodeGroupDataDiskArgs>> dataDisks) {
             $.dataDisks = dataDisks;
             return this;
         }
 
+        /**
+         * @param dataDisks Data disk configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataDisks(List<NodeGroupDataDiskArgs> dataDisks) {
             return dataDisks(Output.of(dataDisks));
         }
 
+        /**
+         * @param dataDisks Data disk configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataDisks(NodeGroupDataDiskArgs... dataDisks) {
             return dataDisks(List.of(dataDisks));
         }

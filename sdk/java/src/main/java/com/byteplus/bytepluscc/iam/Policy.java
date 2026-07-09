@@ -24,6 +24,48 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.iam.Policy;
+ * import com.byteplus.bytepluscc.iam.PolicyArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.PolicyPolicyUserArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.PolicyPolicyRoleArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.PolicyPolicyUserGroupArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var policyDemo = new Policy("policyDemo", PolicyArgs.builder()
+ *             .policyName("PolicyDemo")
+ *             .policyType("Custom")
+ *             .description("PolicyDemo description")
+ *             .policyDocument("{\"Statement\":[{\"Action\":[\"clb:DescribeAclAttributes\",\"clb:DescribeHealthCheckLogProjectAttributes\",\"clb:DescribeListenerAttributes\",\"clb:DescribeListenerHealth\",\"clb:DescribeLoadBalancerAttributes\",\"clb:DescribeLoadBalancerHealth\",\"clb:DescribeLoadBalancersBilling\",\"clb:DescribeNLBListenerAttributes\",\"clb:DescribeNLBListenerCertificates\",\"clb:DescribeNLBListenerHealth\",\"clb:DescribeNLBListeners\",\"clb:DescribeNLBServerGroupAttributes\",\"clb:DescribeNLBServerGroups\",\"clb:DescribeNLBZones\",\"clb:DescribeNetworkLoadBalancerAttributes\",\"clb:DescribeNetworkLoadBalancers\",\"clb:DescribeServerGroupAttributes\",\"clb:DescribeZones\",\"clb:ListTagsForNLBResources\",\"clb:DescribeAcls\",\"clb:DescribeCertificates\",\"clb:DescribeHealthCheckLogTopicAttributes\",\"clb:DescribeListeners\",\"clb:DescribeLoadBalancerSpecs\",\"clb:DescribeLoadBalancers\",\"clb:DescribeRules\",\"clb:DescribeServerGroups\",\"clb:ListTagsForResources\",\"clb:TagNLBResources\",\"clb:TagResources\",\"clb:UntagNLBResources\",\"clb:UntagResources\"],\"Effect\":\"Allow\",\"Resource\":[\"*\"]}]}")
+ *             .policyUsers(PolicyPolicyUserArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                 .policyRoles(PolicyPolicyRoleArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                     .policyUserGroups(PolicyPolicyUserGroupArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                         .build());
+ * 
+ *                 }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -133,9 +175,19 @@ public class Policy extends com.pulumi.resources.CustomResource {
     public Output<String> policyName() {
         return this.policyName;
     }
+    /**
+     * List of roles bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="policyRoles", refs={List.class,PolicyPolicyRole.class}, tree="[0,1]")
     private Output<List<PolicyPolicyRole>> policyRoles;
 
+    /**
+     * @return List of roles bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PolicyPolicyRole>> policyRoles() {
         return this.policyRoles;
     }
@@ -167,15 +219,35 @@ public class Policy extends com.pulumi.resources.CustomResource {
     public Output<String> policyType() {
         return this.policyType;
     }
+    /**
+     * List of user groups bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="policyUserGroups", refs={List.class,PolicyPolicyUserGroup.class}, tree="[0,1]")
     private Output<List<PolicyPolicyUserGroup>> policyUserGroups;
 
+    /**
+     * @return List of user groups bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PolicyPolicyUserGroup>> policyUserGroups() {
         return this.policyUserGroups;
     }
+    /**
+     * List of users bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="policyUsers", refs={List.class,PolicyPolicyUser.class}, tree="[0,1]")
     private Output<List<PolicyPolicyUser>> policyUsers;
 
+    /**
+     * @return List of users bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PolicyPolicyUser>> policyUsers() {
         return this.policyUsers;
     }

@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainCustomErrorPage {
+    /**
+     * @return Indicates a set of configuration rules. You can add up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DomainCustomErrorPageErrorPageRule> errorPageRules;
     /**
      * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
@@ -21,6 +26,11 @@ public final class DomainCustomErrorPage {
     private @Nullable Boolean switch_;
 
     private DomainCustomErrorPage() {}
+    /**
+     * @return Indicates a set of configuration rules. You can add up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DomainCustomErrorPageErrorPageRule> errorPageRules() {
         return this.errorPageRules == null ? List.of() : this.errorPageRules;
     }

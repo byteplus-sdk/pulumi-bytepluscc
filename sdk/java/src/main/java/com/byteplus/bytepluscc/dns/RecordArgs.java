@@ -49,14 +49,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Line code corresponding to the DNS record, such as `default`.
+     * Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
      * 
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
      * 
      */
     public Optional<Output<String>> line() {
@@ -228,7 +228,7 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param line Line code corresponding to the DNS record, such as `default`.
+         * @param line Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param line Line code corresponding to the DNS record, such as `default`.
+         * @param line Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
          * 
          * @return builder
          * 

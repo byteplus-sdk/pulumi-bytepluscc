@@ -126,9 +126,19 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.poolSetMode);
     }
 
+    /**
+     * Address pool collection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="poolSets")
     private @Nullable Output<List<RulePoolSetArgs>> poolSets;
 
+    /**
+     * @return Address pool collection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RulePoolSetArgs>>> poolSets() {
         return Optional.ofNullable(this.poolSets);
     }
@@ -391,15 +401,36 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
             return poolSetMode(Output.of(poolSetMode));
         }
 
+        /**
+         * @param poolSets Address pool collection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder poolSets(@Nullable Output<List<RulePoolSetArgs>> poolSets) {
             $.poolSets = poolSets;
             return this;
         }
 
+        /**
+         * @param poolSets Address pool collection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder poolSets(List<RulePoolSetArgs> poolSets) {
             return poolSets(Output.of(poolSets));
         }
 
+        /**
+         * @param poolSets Address pool collection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder poolSets(RulePoolSetArgs... poolSets) {
             return poolSets(List.of(poolSets));
         }

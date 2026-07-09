@@ -20,9 +20,19 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final EndpointArgs Empty = new EndpointArgs();
 
+    /**
+     * Endpoint address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="addresses")
     private @Nullable Output<List<EndpointAddressArgs>> addresses;
 
+    /**
+     * @return Endpoint address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EndpointAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
     }
@@ -297,9 +307,19 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
 
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="readOnlyNodeWeights")
     private @Nullable Output<List<EndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EndpointReadOnlyNodeWeightArgs>>> readOnlyNodeWeights() {
         return Optional.ofNullable(this.readOnlyNodeWeights);
     }
@@ -379,15 +399,36 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
             $ = new EndpointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addresses Endpoint address list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(@Nullable Output<List<EndpointAddressArgs>> addresses) {
             $.addresses = addresses;
             return this;
         }
 
+        /**
+         * @param addresses Endpoint address list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(List<EndpointAddressArgs> addresses) {
             return addresses(Output.of(addresses));
         }
 
+        /**
+         * @param addresses Endpoint address list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(EndpointAddressArgs... addresses) {
             return addresses(List.of(addresses));
         }
@@ -770,15 +811,36 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
             return readOnlyNodeMaxDelayTime(Output.of(readOnlyNodeMaxDelayTime));
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readOnlyNodeWeights(@Nullable Output<List<EndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights) {
             $.readOnlyNodeWeights = readOnlyNodeWeights;
             return this;
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readOnlyNodeWeights(List<EndpointReadOnlyNodeWeightArgs> readOnlyNodeWeights) {
             return readOnlyNodeWeights(Output.of(readOnlyNodeWeights));
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readOnlyNodeWeights(EndpointReadOnlyNodeWeightArgs... readOnlyNodeWeights) {
             return readOnlyNodeWeights(List.of(readOnlyNodeWeights));
         }

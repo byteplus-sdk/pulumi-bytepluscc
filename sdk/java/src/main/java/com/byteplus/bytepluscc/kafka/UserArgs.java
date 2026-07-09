@@ -18,16 +18,18 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     public static final UserArgs Empty = new UserArgs();
 
     /**
-     * Whether the user has default read and write permissions for all Topics - true: This user has read and write permissions
-     * for all Topics - false: This user does not have read and write permissions for all Topics
+     * Whether the user has default read and write permissions for all Topics
+     *     - true: This user has read and write permissions for all Topics
+     *     - false: This user does not have read and write permissions for all Topics
      * 
      */
     @Import(name="allAuthority", required=true)
     private Output<Boolean> allAuthority;
 
     /**
-     * @return Whether the user has default read and write permissions for all Topics - true: This user has read and write permissions
-     * for all Topics - false: This user does not have read and write permissions for all Topics
+     * @return Whether the user has default read and write permissions for all Topics
+     *     - true: This user has read and write permissions for all Topics
+     *     - false: This user does not have read and write permissions for all Topics
      * 
      */
     public Output<Boolean> allAuthority() {
@@ -65,16 +67,24 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SASL user type (password type). Supported types: - Scram: SASL user of SCRAM type - Plain: SASL user of PLAIN type
-     * **Note:** If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
+     * SASL user type (password type). Supported types:
+     *     - Scram: SASL user of SCRAM type
+     *     - Plain: SASL user of PLAIN type
+     * 
+     *   **Note:**
+     *   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
      * 
      */
     @Import(name="passwordType")
     private @Nullable Output<String> passwordType;
 
     /**
-     * @return SASL user type (password type). Supported types: - Scram: SASL user of SCRAM type - Plain: SASL user of PLAIN type
-     * **Note:** If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
+     * @return SASL user type (password type). Supported types:
+     *     - Scram: SASL user of SCRAM type
+     *     - Plain: SASL user of PLAIN type
+     * 
+     *   **Note:**
+     *   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
      * 
      */
     public Optional<Output<String>> passwordType() {
@@ -82,16 +92,22 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SASL username. Must meet the following requirements: - Consists of letters, numbers, hyphens (-), or underscores (_) -
-     * Length: 3–64 characters - Username cannot be set to admin or monitor, and must be unique within the instance
+     * SASL username. Must meet the following requirements:
+     * 
+     *     - Consists of letters, numbers, hyphens (-), or underscores (_)
+     *     - Length: 3–64 characters
+     *     - Username cannot be set to admin or monitor, and must be unique within the instance
      * 
      */
     @Import(name="userName", required=true)
     private Output<String> userName;
 
     /**
-     * @return SASL username. Must meet the following requirements: - Consists of letters, numbers, hyphens (-), or underscores (_) -
-     * Length: 3–64 characters - Username cannot be set to admin or monitor, and must be unique within the instance
+     * @return SASL username. Must meet the following requirements:
+     * 
+     *     - Consists of letters, numbers, hyphens (-), or underscores (_)
+     *     - Length: 3–64 characters
+     *     - Username cannot be set to admin or monitor, and must be unique within the instance
      * 
      */
     public Output<String> userName() {
@@ -99,18 +115,22 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * SASL user password. Must meet the following requirements: - Length: 8–32 characters - Must include at least three of
-     * the following: uppercase letters, lowercase letters, numbers, special characters - Supported special characters:
-     * `!{@literal @}#$%^&amp;*()_+-=`
+     * SASL user password. Must meet the following requirements:
+     * 
+     *     - Length: 8–32 characters
+     *     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
+     *     - Supported special characters: `!{@literal @}#$%^&amp;*()_+-=`
      * 
      */
     @Import(name="userPassword", required=true)
     private Output<String> userPassword;
 
     /**
-     * @return SASL user password. Must meet the following requirements: - Length: 8–32 characters - Must include at least three of
-     * the following: uppercase letters, lowercase letters, numbers, special characters - Supported special characters:
-     * `!{@literal @}#$%^&amp;*()_+-=`
+     * @return SASL user password. Must meet the following requirements:
+     * 
+     *     - Length: 8–32 characters
+     *     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
+     *     - Supported special characters: `!{@literal @}#$%^&amp;*()_+-=`
      * 
      */
     public Output<String> userPassword() {
@@ -147,8 +167,9 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allAuthority Whether the user has default read and write permissions for all Topics - true: This user has read and write permissions
-         * for all Topics - false: This user does not have read and write permissions for all Topics
+         * @param allAuthority Whether the user has default read and write permissions for all Topics
+         *     - true: This user has read and write permissions for all Topics
+         *     - false: This user does not have read and write permissions for all Topics
          * 
          * @return builder
          * 
@@ -159,8 +180,9 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param allAuthority Whether the user has default read and write permissions for all Topics - true: This user has read and write permissions
-         * for all Topics - false: This user does not have read and write permissions for all Topics
+         * @param allAuthority Whether the user has default read and write permissions for all Topics
+         *     - true: This user has read and write permissions for all Topics
+         *     - false: This user does not have read and write permissions for all Topics
          * 
          * @return builder
          * 
@@ -212,8 +234,12 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param passwordType SASL user type (password type). Supported types: - Scram: SASL user of SCRAM type - Plain: SASL user of PLAIN type
-         * **Note:** If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
+         * @param passwordType SASL user type (password type). Supported types:
+         *     - Scram: SASL user of SCRAM type
+         *     - Plain: SASL user of PLAIN type
+         * 
+         *   **Note:**
+         *   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
          * 
          * @return builder
          * 
@@ -224,8 +250,12 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param passwordType SASL user type (password type). Supported types: - Scram: SASL user of SCRAM type - Plain: SASL user of PLAIN type
-         * **Note:** If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
+         * @param passwordType SASL user type (password type). Supported types:
+         *     - Scram: SASL user of SCRAM type
+         *     - Plain: SASL user of PLAIN type
+         * 
+         *   **Note:**
+         *   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
          * 
          * @return builder
          * 
@@ -235,8 +265,11 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName SASL username. Must meet the following requirements: - Consists of letters, numbers, hyphens (-), or underscores (_) -
-         * Length: 3–64 characters - Username cannot be set to admin or monitor, and must be unique within the instance
+         * @param userName SASL username. Must meet the following requirements:
+         * 
+         *     - Consists of letters, numbers, hyphens (-), or underscores (_)
+         *     - Length: 3–64 characters
+         *     - Username cannot be set to admin or monitor, and must be unique within the instance
          * 
          * @return builder
          * 
@@ -247,8 +280,11 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userName SASL username. Must meet the following requirements: - Consists of letters, numbers, hyphens (-), or underscores (_) -
-         * Length: 3–64 characters - Username cannot be set to admin or monitor, and must be unique within the instance
+         * @param userName SASL username. Must meet the following requirements:
+         * 
+         *     - Consists of letters, numbers, hyphens (-), or underscores (_)
+         *     - Length: 3–64 characters
+         *     - Username cannot be set to admin or monitor, and must be unique within the instance
          * 
          * @return builder
          * 
@@ -258,9 +294,11 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userPassword SASL user password. Must meet the following requirements: - Length: 8–32 characters - Must include at least three of
-         * the following: uppercase letters, lowercase letters, numbers, special characters - Supported special characters:
-         * `!{@literal @}#$%^&amp;*()_+-=`
+         * @param userPassword SASL user password. Must meet the following requirements:
+         * 
+         *     - Length: 8–32 characters
+         *     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
+         *     - Supported special characters: `!{@literal @}#$%^&amp;*()_+-=`
          * 
          * @return builder
          * 
@@ -271,9 +309,11 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userPassword SASL user password. Must meet the following requirements: - Length: 8–32 characters - Must include at least three of
-         * the following: uppercase letters, lowercase letters, numbers, special characters - Supported special characters:
-         * `!{@literal @}#$%^&amp;*()_+-=`
+         * @param userPassword SASL user password. Must meet the following requirements:
+         * 
+         *     - Length: 8–32 characters
+         *     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
+         *     - Supported special characters: `!{@literal @}#$%^&amp;*()_+-=`
          * 
          * @return builder
          * 

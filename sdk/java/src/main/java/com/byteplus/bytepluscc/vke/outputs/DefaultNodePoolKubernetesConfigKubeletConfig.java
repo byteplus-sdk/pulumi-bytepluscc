@@ -37,6 +37,11 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfig {
      * 
      */
     private @Nullable Integer kubeApiQps;
+    /**
+     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved> kubeReserveds;
     /**
      * @return Configure the maximum number of Pods supported by kubelet
@@ -58,6 +63,11 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfig {
      * 
      */
     private @Nullable Boolean serializeImagePulls;
+    /**
+     * @return Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved> systemReserveds;
     /**
      * @return Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
@@ -99,6 +109,11 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfig {
     public Optional<Integer> kubeApiQps() {
         return Optional.ofNullable(this.kubeApiQps);
     }
+    /**
+     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved> kubeReserveds() {
         return this.kubeReserveds == null ? List.of() : this.kubeReserveds;
     }
@@ -130,6 +145,11 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfig {
     public Optional<Boolean> serializeImagePulls() {
         return Optional.ofNullable(this.serializeImagePulls);
     }
+    /**
+     * @return Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved> systemReserveds() {
         return this.systemReserveds == null ? List.of() : this.systemReserveds;
     }

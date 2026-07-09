@@ -85,9 +85,19 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.healthCheckType);
     }
 
+    /**
+     * Instance removal policy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="instanceRemovePolicies")
     private @Nullable Output<List<ScalingGroupInstanceRemovePolicyArgs>> instanceRemovePolicies;
 
+    /**
+     * @return Instance removal policy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingGroupInstanceRemovePolicyArgs>>> instanceRemovePolicies() {
         return Optional.ofNullable(this.instanceRemovePolicies);
     }
@@ -107,9 +117,19 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.instanceTerminatePolicy);
     }
 
+    /**
+     * Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="instances")
     private @Nullable Output<List<ScalingGroupInstanceArgs>> instances;
 
+    /**
+     * @return Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingGroupInstanceArgs>>> instances() {
         return Optional.ofNullable(this.instances);
     }
@@ -159,9 +179,19 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.launchTemplateId);
     }
 
+    /**
+     * Instance launch template information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="launchTemplateOverrides")
     private @Nullable Output<List<ScalingGroupLaunchTemplateOverrideArgs>> launchTemplateOverrides;
 
+    /**
+     * @return Instance launch template information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingGroupLaunchTemplateOverrideArgs>>> launchTemplateOverrides() {
         return Optional.ofNullable(this.launchTemplateOverrides);
     }
@@ -271,9 +301,19 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.scalingMode);
     }
 
+    /**
+     * Load balancer information associated with the scaling group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="serverGroupAttributes")
     private @Nullable Output<List<ScalingGroupServerGroupAttributeArgs>> serverGroupAttributes;
 
+    /**
+     * @return Load balancer information associated with the scaling group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingGroupServerGroupAttributeArgs>>> serverGroupAttributes() {
         return Optional.ofNullable(this.serverGroupAttributes);
     }
@@ -308,9 +348,19 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.suspendedProcesses);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ScalingGroupTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ScalingGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -444,15 +494,36 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return healthCheckType(Output.of(healthCheckType));
         }
 
+        /**
+         * @param instanceRemovePolicies Instance removal policy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceRemovePolicies(@Nullable Output<List<ScalingGroupInstanceRemovePolicyArgs>> instanceRemovePolicies) {
             $.instanceRemovePolicies = instanceRemovePolicies;
             return this;
         }
 
+        /**
+         * @param instanceRemovePolicies Instance removal policy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceRemovePolicies(List<ScalingGroupInstanceRemovePolicyArgs> instanceRemovePolicies) {
             return instanceRemovePolicies(Output.of(instanceRemovePolicies));
         }
 
+        /**
+         * @param instanceRemovePolicies Instance removal policy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instanceRemovePolicies(ScalingGroupInstanceRemovePolicyArgs... instanceRemovePolicies) {
             return instanceRemovePolicies(List.of(instanceRemovePolicies));
         }
@@ -478,15 +549,36 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return instanceTerminatePolicy(Output.of(instanceTerminatePolicy));
         }
 
+        /**
+         * @param instances Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instances(@Nullable Output<List<ScalingGroupInstanceArgs>> instances) {
             $.instances = instances;
             return this;
         }
 
+        /**
+         * @param instances Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instances(List<ScalingGroupInstanceArgs> instances) {
             return instances(Output.of(instances));
         }
 
+        /**
+         * @param instances Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder instances(ScalingGroupInstanceArgs... instances) {
             return instances(List.of(instances));
         }
@@ -554,15 +646,36 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return launchTemplateId(Output.of(launchTemplateId));
         }
 
+        /**
+         * @param launchTemplateOverrides Instance launch template information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder launchTemplateOverrides(@Nullable Output<List<ScalingGroupLaunchTemplateOverrideArgs>> launchTemplateOverrides) {
             $.launchTemplateOverrides = launchTemplateOverrides;
             return this;
         }
 
+        /**
+         * @param launchTemplateOverrides Instance launch template information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder launchTemplateOverrides(List<ScalingGroupLaunchTemplateOverrideArgs> launchTemplateOverrides) {
             return launchTemplateOverrides(Output.of(launchTemplateOverrides));
         }
 
+        /**
+         * @param launchTemplateOverrides Instance launch template information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder launchTemplateOverrides(ScalingGroupLaunchTemplateOverrideArgs... launchTemplateOverrides) {
             return launchTemplateOverrides(List.of(launchTemplateOverrides));
         }
@@ -714,15 +827,36 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return scalingMode(Output.of(scalingMode));
         }
 
+        /**
+         * @param serverGroupAttributes Load balancer information associated with the scaling group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroupAttributes(@Nullable Output<List<ScalingGroupServerGroupAttributeArgs>> serverGroupAttributes) {
             $.serverGroupAttributes = serverGroupAttributes;
             return this;
         }
 
+        /**
+         * @param serverGroupAttributes Load balancer information associated with the scaling group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroupAttributes(List<ScalingGroupServerGroupAttributeArgs> serverGroupAttributes) {
             return serverGroupAttributes(Output.of(serverGroupAttributes));
         }
 
+        /**
+         * @param serverGroupAttributes Load balancer information associated with the scaling group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroupAttributes(ScalingGroupServerGroupAttributeArgs... serverGroupAttributes) {
             return serverGroupAttributes(List.of(serverGroupAttributes));
         }
@@ -789,15 +923,36 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
             return suspendedProcesses(List.of(suspendedProcesses));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ScalingGroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ScalingGroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ScalingGroupTagArgs... tags) {
             return tags(List.of(tags));
         }

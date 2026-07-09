@@ -22,6 +22,50 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cen.Cen;
+ * import com.byteplus.bytepluscc.cen.CenArgs;
+ * import com.pulumi.bytepluscc.cen.inputs.CenTagArgs;
+ * import com.pulumi.bytepluscc.cen.inputs.CenInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cENCENDemo = new Cen("cENCENDemo", CenArgs.builder()
+ *             .cenName("CENCENDemo")
+ *             .description("CENCENDemo descripiton")
+ *             .projectName("iac")
+ *             .tags(CenTagArgs.builder()
+ *                 .key("dev")
+ *                 .value("test")
+ *                 .build())
+ *             .instances(CenInstanceArgs.builder()
+ *                 .instance_id("vpc-3psq16gaiw4qo6csxyv***")
+ *                 .instance_owner_id("21074****")
+ *                 .instance_region_id("ap-southeast-1")
+ *                 .instance_type("VPC")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -117,9 +161,19 @@ public class Cen extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * List of associated network instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="instances", refs={List.class,CenInstance.class}, tree="[0,1]")
     private Output<List<CenInstance>> instances;
 
+    /**
+     * @return List of associated network instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<CenInstance>> instances() {
         return this.instances;
     }
@@ -151,9 +205,19 @@ public class Cen extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,CenTag.class}, tree="[0,1]")
     private Output<List<CenTag>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<CenTag>> tags() {
         return this.tags;
     }

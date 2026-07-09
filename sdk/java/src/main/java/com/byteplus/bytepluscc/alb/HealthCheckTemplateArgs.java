@@ -214,9 +214,19 @@ public final class HealthCheckTemplateArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * List of tags associated with the health check template.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<HealthCheckTemplateTagArgs>> tags;
 
+    /**
+     * @return List of tags associated with the health check template.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<HealthCheckTemplateTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -547,15 +557,36 @@ public final class HealthCheckTemplateArgs extends com.pulumi.resources.Resource
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags List of tags associated with the health check template.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<HealthCheckTemplateTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags List of tags associated with the health check template.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<HealthCheckTemplateTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags List of tags associated with the health check template.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(HealthCheckTemplateTagArgs... tags) {
             return tags(List.of(tags));
         }

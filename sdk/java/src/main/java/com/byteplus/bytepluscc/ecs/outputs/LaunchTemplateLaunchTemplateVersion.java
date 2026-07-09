@@ -85,6 +85,11 @@ public final class LaunchTemplateLaunchTemplateVersion {
      * 
      */
     private @Nullable String keyPairName;
+    /**
+     * @return Network interface information mounted to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<LaunchTemplateLaunchTemplateVersionNetworkInterface> networkInterfaces;
     /**
      * @return Project associated with the instance.
@@ -116,6 +121,11 @@ public final class LaunchTemplateLaunchTemplateVersion {
      * 
      */
     private @Nullable Integer suffixIndex;
+    /**
+     * @return Tag information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<LaunchTemplateLaunchTemplateVersionTag> tags;
     /**
      * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
@@ -132,6 +142,11 @@ public final class LaunchTemplateLaunchTemplateVersion {
      * 
      */
     private @Nullable String versionDescription;
+    /**
+     * @return Cloud disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<LaunchTemplateLaunchTemplateVersionVolume> volumes;
     /**
      * @return Private network ID.
@@ -236,6 +251,11 @@ public final class LaunchTemplateLaunchTemplateVersion {
     public Optional<String> keyPairName() {
         return Optional.ofNullable(this.keyPairName);
     }
+    /**
+     * @return Network interface information mounted to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<LaunchTemplateLaunchTemplateVersionNetworkInterface> networkInterfaces() {
         return this.networkInterfaces == null ? List.of() : this.networkInterfaces;
     }
@@ -281,6 +301,11 @@ public final class LaunchTemplateLaunchTemplateVersion {
     public Optional<Integer> suffixIndex() {
         return Optional.ofNullable(this.suffixIndex);
     }
+    /**
+     * @return Tag information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<LaunchTemplateLaunchTemplateVersionTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
@@ -305,6 +330,11 @@ public final class LaunchTemplateLaunchTemplateVersion {
     public Optional<String> versionDescription() {
         return Optional.ofNullable(this.versionDescription);
     }
+    /**
+     * @return Cloud disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<LaunchTemplateLaunchTemplateVersionVolume> volumes() {
         return this.volumes == null ? List.of() : this.volumes;
     }

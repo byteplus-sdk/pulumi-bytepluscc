@@ -153,9 +153,19 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Topic list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="topicInfos")
     private @Nullable Output<List<GroupTopicInfoArgs>> topicInfos;
 
+    /**
+     * @return Topic list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupTopicInfoArgs>>> topicInfos() {
         return Optional.ofNullable(this.topicInfos);
     }
@@ -382,15 +392,36 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param topicInfos Topic list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder topicInfos(@Nullable Output<List<GroupTopicInfoArgs>> topicInfos) {
             $.topicInfos = topicInfos;
             return this;
         }
 
+        /**
+         * @param topicInfos Topic list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder topicInfos(List<GroupTopicInfoArgs> topicInfos) {
             return topicInfos(Output.of(topicInfos));
         }
 
+        /**
+         * @param topicInfos Topic list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder topicInfos(GroupTopicInfoArgs... topicInfos) {
             return topicInfos(List.of(topicInfos));
         }

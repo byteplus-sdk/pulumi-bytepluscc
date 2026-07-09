@@ -23,6 +23,100 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ecs.LaunchTemplate;
+ * import com.byteplus.bytepluscc.ecs.LaunchTemplateArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateLaunchTemplateVersionArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateLaunchTemplateVersionEipArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateLaunchTemplateVersionTagArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateLaunchTemplateVersionVolumeArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateLaunchTemplateTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var ecsLaunchTemplateDemo = new LaunchTemplate("ecsLaunchTemplateDemo", LaunchTemplateArgs.builder()
+ *             .launchTemplateVersion(LaunchTemplateLaunchTemplateVersionArgs.builder()
+ *                 .deployment_set_group_number(0)
+ *                 .deployment_set_id("dps-ydzc5xxxxxxkak3c5b9vu")
+ *                 .description("ecs_launch_template test")
+ *                 .eip(LaunchTemplateLaunchTemplateVersionEipArgs.builder()
+ *                     .bandwidth(1)
+ *                     .bandwidthPackageId("bwp-1a1fvbxxxxxxvepl9jzfmf")
+ *                     .billingType(0)
+ *                     .isp("BGP")
+ *                     .releaseWithInstance(true)
+ *                     .securityProtectionInstanceId(0)
+ *                     .securityProtectionTypes("AntiDDoS_Enhanced")
+ *                     .build())
+ *                 .host_name("myname")
+ *                 .hpc_cluster_id("")
+ *                 .image_id("image-yzpvmk9xxxxxxgqcsdamq")
+ *                 .image_name("Ubuntu 24.04 with LLM Knowledge Base 64 bit")
+ *                 .instance_charge_type("PostPaid")
+ *                 .instance_name("ccapi-dx-0")
+ *                 .instance_type_id("ecs.g4i.large")
+ *                 .keep_image_credential(false)
+ *                 .key_pair_name("MigrationKey-job-yecd7dromy38dfaxgxt8")
+ *                 .network_interfaces(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("securityGroupIds", Arrays.asList("sg-1jolcljxxxxxxpe70vpx")),
+ *                     Map.entry("subnetId", "subnet-btd4nhxxxxxxb2tl1jdsb")
+ *                 )))
+ *                 .project_name("default")
+ *                 .scheduled_instance(Map.ofEntries(
+ *                     Map.entry("scheduledInstanceDescription", "test"),
+ *                     Map.entry("scheduledInstanceName", "test-template")
+ *                 ))
+ *                 .security_enhancement_strategy("Active")
+ *                 .spot_price_limit(0)
+ *                 .spot_strategy("NoSpot")
+ *                 .suffix_index(1)
+ *                 .tags(LaunchTemplateLaunchTemplateVersionTagArgs.builder()
+ *                     .key("env")
+ *                     .value("test")
+ *                     .build())
+ *                 .unique_suffix(false)
+ *                 .user_data("ZWNobyBoZWxsbyBlY3Mh")
+ *                 .version_description("test")
+ *                 .volumes(LaunchTemplateLaunchTemplateVersionVolumeArgs.builder()
+ *                     .deleteWithInstance(true)
+ *                     .extraPerformanceIops(0)
+ *                     .extraPerformanceThroughputMb(0)
+ *                     .extraPerformanceTypeId("")
+ *                     .size(50)
+ *                     .snapshotId("")
+ *                     .volumeType("ESSD_PL0")
+ *                     .build())
+ *                 .vpc_id("vpc-1jolcldhxxxxxxq7yms")
+ *                 .zone_id("cn-beijing-a")
+ *                 .build())
+ *             .launchTemplateName("test")
+ *             .launchTemplateProjectName("default")
+ *             .launchTemplateTags(LaunchTemplateLaunchTemplateTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -118,9 +212,19 @@ public class LaunchTemplate extends com.pulumi.resources.CustomResource {
     public Output<String> launchTemplateProjectName() {
         return this.launchTemplateProjectName;
     }
+    /**
+     * Instance launch template tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="launchTemplateTags", refs={List.class,LaunchTemplateLaunchTemplateTag.class}, tree="[0,1]")
     private Output<List<LaunchTemplateLaunchTemplateTag>> launchTemplateTags;
 
+    /**
+     * @return Instance launch template tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<LaunchTemplateLaunchTemplateTag>> launchTemplateTags() {
         return this.launchTemplateTags;
     }

@@ -27,6 +27,11 @@ public final class HostGroupRule {
      * 
      */
     private @Nullable String createTime;
+    /**
+     * @return Extraction rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<HostGroupRuleExcludePath> excludePaths;
     /**
      * @return Extraction rules
@@ -104,6 +109,11 @@ public final class HostGroupRule {
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
     }
+    /**
+     * @return Extraction rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<HostGroupRuleExcludePath> excludePaths() {
         return this.excludePaths == null ? List.of() : this.excludePaths;
     }

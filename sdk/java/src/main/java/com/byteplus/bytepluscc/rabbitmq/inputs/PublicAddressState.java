@@ -126,9 +126,19 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.eipId);
     }
 
+    /**
+     * Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="endpoints")
     private @Nullable Output<List<PublicAddressEndpointArgs>> endpoints;
 
+    /**
+     * @return Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PublicAddressEndpointArgs>>> endpoints() {
         return Optional.ofNullable(this.endpoints);
     }
@@ -253,9 +263,19 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<PublicAddressTagArgs>> tags;
 
+    /**
+     * @return Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PublicAddressTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -543,15 +563,36 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
             return eipId(Output.of(eipId));
         }
 
+        /**
+         * @param endpoints Instance connection information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoints(@Nullable Output<List<PublicAddressEndpointArgs>> endpoints) {
             $.endpoints = endpoints;
             return this;
         }
 
+        /**
+         * @param endpoints Instance connection information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoints(List<PublicAddressEndpointArgs> endpoints) {
             return endpoints(Output.of(endpoints));
         }
 
+        /**
+         * @param endpoints Instance connection information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder endpoints(PublicAddressEndpointArgs... endpoints) {
             return endpoints(List.of(endpoints));
         }
@@ -724,15 +765,36 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Tags bound to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<PublicAddressTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags bound to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<PublicAddressTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags bound to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(PublicAddressTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -97,9 +97,19 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.ipAddressType);
     }
 
+    /**
+     * Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="listeners")
     private @Nullable Output<List<ServerGroupListenerArgs>> listeners;
 
+    /**
+     * @return Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServerGroupListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
     }
@@ -209,9 +219,19 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.serverGroupType);
     }
 
+    /**
+     * Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="servers")
     private @Nullable Output<List<ServerGroupServerArgs>> servers;
 
+    /**
+     * @return Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServerGroupServerArgs>>> servers() {
         return Optional.ofNullable(this.servers);
     }
@@ -246,9 +266,19 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.stickySessionConfig);
     }
 
+    /**
+     * Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ServerGroupTagArgs>> tags;
 
+    /**
+     * @return Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServerGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -430,15 +460,36 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
             return ipAddressType(Output.of(ipAddressType));
         }
 
+        /**
+         * @param listeners Listener information associated with the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(@Nullable Output<List<ServerGroupListenerArgs>> listeners) {
             $.listeners = listeners;
             return this;
         }
 
+        /**
+         * @param listeners Listener information associated with the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(List<ServerGroupListenerArgs> listeners) {
             return listeners(Output.of(listeners));
         }
 
+        /**
+         * @param listeners Listener information associated with the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(ServerGroupListenerArgs... listeners) {
             return listeners(List.of(listeners));
         }
@@ -590,15 +641,36 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
             return serverGroupType(Output.of(serverGroupType));
         }
 
+        /**
+         * @param servers Information about servers in the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder servers(@Nullable Output<List<ServerGroupServerArgs>> servers) {
             $.servers = servers;
             return this;
         }
 
+        /**
+         * @param servers Information about servers in the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder servers(List<ServerGroupServerArgs> servers) {
             return servers(Output.of(servers));
         }
 
+        /**
+         * @param servers Information about servers in the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder servers(ServerGroupServerArgs... servers) {
             return servers(List.of(servers));
         }
@@ -645,15 +717,36 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
             return stickySessionConfig(Output.of(stickySessionConfig));
         }
 
+        /**
+         * @param tags Tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ServerGroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ServerGroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ServerGroupTagArgs... tags) {
             return tags(List.of(tags));
         }

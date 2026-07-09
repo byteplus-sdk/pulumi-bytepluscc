@@ -17,9 +17,19 @@ public final class DomainCacheHostArgs extends com.pulumi.resources.ResourceArgs
 
     public static final DomainCacheHostArgs Empty = new DomainCacheHostArgs();
 
+    /**
+     * Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="cacheHostRules")
     private @Nullable Output<List<DomainCacheHostCacheHostRuleArgs>> cacheHostRules;
 
+    /**
+     * @return Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainCacheHostCacheHostRuleArgs>>> cacheHostRules() {
         return Optional.ofNullable(this.cacheHostRules);
     }
@@ -64,15 +74,36 @@ public final class DomainCacheHostArgs extends com.pulumi.resources.ResourceArgs
             $ = new DomainCacheHostArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cacheHostRules Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheHostRules(@Nullable Output<List<DomainCacheHostCacheHostRuleArgs>> cacheHostRules) {
             $.cacheHostRules = cacheHostRules;
             return this;
         }
 
+        /**
+         * @param cacheHostRules Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheHostRules(List<DomainCacheHostCacheHostRuleArgs> cacheHostRules) {
             return cacheHostRules(Output.of(cacheHostRules));
         }
 
+        /**
+         * @param cacheHostRules Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheHostRules(DomainCacheHostCacheHostRuleArgs... cacheHostRules) {
             return cacheHostRules(List.of(cacheHostRules));
         }

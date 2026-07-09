@@ -27,6 +27,58 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmssql.Instance;
+ * import com.byteplus.bytepluscc.rdsmssql.InstanceArgs;
+ * import com.pulumi.bytepluscc.rdsmssql.inputs.InstanceChargeInfoArgs;
+ * import com.pulumi.bytepluscc.rdsmssql.inputs.InstanceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rDSMsSQLInstanceDemo = new Instance("rDSMsSQLInstanceDemo", InstanceArgs.builder()
+ *             .nodeSpec("rds.mssql.3il.x8.medium.s1")
+ *             .zoneId("cn-beijing-a")
+ *             .subnetId("subnet-1a0zgr5e7hslc8nvepxxxxx")
+ *             .dbEngineVersion("SQLServer_2019_Std")
+ *             .instanceType("Basic")
+ *             .storageSpace(20)
+ *             .vpcId("vpc-3nqt4kq87xn2893xxxxx")
+ *             .instanceName("RDSMsSQLInstanceDemo")
+ *             .superAccountPassword("********")
+ *             .serverCollation("Chinese_PRC_CI_AS")
+ *             .timeZone("China Standard Time")
+ *             .chargeInfo(InstanceChargeInfoArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .projectName("default")
+ *             .maintenanceTime("18:00Z-21:59Z")
+ *             .allowListIds("acl-03f197e136c843b29e47de74e9xxxxx")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -94,9 +146,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<InstanceChargeInfo> chargeInfo() {
         return this.chargeInfo;
     }
+    /**
+     * Connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="connectionInfos", refs={List.class,InstanceConnectionInfo.class}, tree="[0,1]")
     private Output<List<InstanceConnectionInfo>> connectionInfos;
 
+    /**
+     * @return Connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceConnectionInfo>> connectionInfos() {
         return this.connectionInfos;
     }
@@ -254,9 +316,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<Integer> memory() {
         return this.memory;
     }
+    /**
+     * Instance node information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodeDetailInfos", refs={List.class,InstanceNodeDetailInfo.class}, tree="[0,1]")
     private Output<List<InstanceNodeDetailInfo>> nodeDetailInfos;
 
+    /**
+     * @return Instance node information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceNodeDetailInfo>> nodeDetailInfos() {
         return this.nodeDetailInfos;
     }
@@ -442,9 +514,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

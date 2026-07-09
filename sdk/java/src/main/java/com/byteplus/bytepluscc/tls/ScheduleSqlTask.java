@@ -21,6 +21,54 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.ScheduleSqlTask;
+ * import com.byteplus.bytepluscc.tls.ScheduleSqlTaskArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ScheduleSqlTaskRequestCycleArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
+ *         Pulumi.run(App::stack);
+ *     }}{@code
+ * 
+ *     public static void stack(Context ctx) }{{@code
+ *         var tLSScheduleSqlTaskDemo = new ScheduleSqlTask("tLSScheduleSqlTaskDemo", ScheduleSqlTaskArgs.builder()
+ *             .description("testdesc")
+ *             .destRegion("cn-beijing")
+ *             .destTopicId("42fedbb3-2c2a-4822-bc30-9c5cc****")
+ *             .processEndTime(0)
+ *             .processSqlDelay(60)
+ *             .taskType(0)
+ *             .processStartTime(1773072000)
+ *             .processTimeWindow("}{@literal @}{@code m-15m,}{@literal @}{@code m")
+ *             .query("* | SELECT * limit 10")
+ *             .requestCycle(ScheduleSqlTaskRequestCycleArgs.builder()
+ *                 .cron_tab("0 19 * * *")
+ *                 .cron_time_zone("GMT+08:00")
+ *                 .time(2)
+ *                 .type("Fixed")
+ *                 .build())
+ *             .sourceTopicId("22fca26e-a776-4925-a3ca-a9bb6d***")
+ *             .status(1)
+ *             .taskName("test")
+ *             .build());
+ * 
+ *     }}{@code
+ * }}{@code
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

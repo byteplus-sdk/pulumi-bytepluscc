@@ -31,6 +31,105 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vefaas.Function;
+ * import com.byteplus.bytepluscc.vefaas.FunctionArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionVpcConfigArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionNasStorageArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionTosMountConfigArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionTosMountConfigCredentialsArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionEnvArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionAsyncTaskConfigArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.FunctionTlsConfigArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vefaasFunctionDemo = new Function("vefaasFunctionDemo", FunctionArgs.builder()
+ *             .name("VefaasFunction1001")
+ *             .runtime("native/v1")
+ *             .exclusiveMode(false)
+ *             .maxConcurrency(10)
+ *             .memoryMb(512)
+ *             .requestTimeout(30)
+ *             .port(8000)
+ *             .vpcConfig(FunctionVpcConfigArgs.builder()
+ *                 .enable_vpc(true)
+ *                 .vpc_id("vpc-rrco37ovjq4gxxxxxxx")
+ *                 .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxxxxxxxx"))
+ *                 .security_group_ids(Arrays.asList("sg-rrco3fkzzy0wxxxxxxxxxxxx"))
+ *                 .enable_shared_internet_access(true)
+ *                 .build())
+ *             .command("./run.sh")
+ *             .enableApmplus(false)
+ *             .projectName("default")
+ *             .nasStorage(FunctionNasStorageArgs.builder()
+ *                 .enable_nas(true)
+ *                 .nas_configs(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("remotePath", "/"),
+ *                     Map.entry("localMountPath", "/mnt/nas"),
+ *                     Map.entry("mountPointId", "mount-xxxxxxx"),
+ *                     Map.entry("fileSystemId", "enas-cnbja0bxxxxxxx"),
+ *                     Map.entry("gid", 1000),
+ *                     Map.entry("uid", 1000)
+ *                 )))
+ *                 .build())
+ *             .tosMountConfig(FunctionTosMountConfigArgs.builder()
+ *                 .enable_tos(true)
+ *                 .credentials(FunctionTosMountConfigCredentialsArgs.builder()
+ *                     .accessKeyId("AK**************")
+ *                     .secretAccessKey("*****************==")
+ *                     .build())
+ *                 .mount_points(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("bucketPath", "/"),
+ *                     Map.entry("localMountPath", "/mnt/tos"),
+ *                     Map.entry("readOnly", false),
+ *                     Map.entry("bucketName", "ccapi-register-test"),
+ *                     Map.entry("endpoint", "http://tos-cn-beijing.ivolces.com")
+ *                 )))
+ *                 .build())
+ *             .envs(FunctionEnvArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .asyncTaskConfig(FunctionAsyncTaskConfigArgs.builder()
+ *                 .enable_async_task(true)
+ *                 .max_retry(2)
+ *                 .destination_config(Map.ofEntries(
+ *                     Map.entry("onFailure", Map.of("destination", "https://ccapi-failure.com")),
+ *                     Map.entry("onSuccess", Map.of("destination", "https://ccapi-success.com"))
+ *                 ))
+ *                 .build())
+ *             .role("trn:iam::*******:role/xxxxxxx")
+ *             .tlsConfig(FunctionTlsConfigArgs.builder()
+ *                 .enable_log(true)
+ *                 .tls_project_id("9248d829-21b0-43e2-a2f6-xxxxxxxxx")
+ *                 .tls_topic_id("84baf7cf-0f60-44e0-a5f6-xxxxxxxxx")
+ *                 .build())
+ *             .source("https://vefaas-prod-xxxxxxxxxPAYLOAD&X-Tos-Credential=AKxxxxxxxxxxxxFtos-cn-beijing.volces.com%2Ftos%2Frequest&X-Tos-Date=20260327T080542Z&X-Tos-Expires=1800&X-Tos-SignedHeaders=host&X-Tos-Signature=5a60f816def2be59baxxxxxxxxxxxxx")
+ *             .sourceType("tos")
+ *             .enableDependencyInstall(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -182,9 +281,19 @@ public class Function extends com.pulumi.resources.CustomResource {
     public Output<Boolean> enableDependencyInstall() {
         return this.enableDependencyInstall;
     }
+    /**
+     * Environment variables.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="envs", refs={List.class,FunctionEnv.class}, tree="[0,1]")
     private Output<List<FunctionEnv>> envs;
 
+    /**
+     * @return Environment variables.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<FunctionEnv>> envs() {
         return this.envs;
     }
@@ -440,9 +549,19 @@ public class Function extends com.pulumi.resources.CustomResource {
     public Output<String> sourceType() {
         return this.sourceType;
     }
+    /**
+     * Function tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,FunctionTag.class}, tree="[0,1]")
     private Output<List<FunctionTag>> tags;
 
+    /**
+     * @return Function tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<FunctionTag>> tags() {
         return this.tags;
     }

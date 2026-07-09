@@ -17,9 +17,19 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
 
     public static final RuleLevelConditionArgs Empty = new RuleLevelConditionArgs();
 
+    /**
+     * Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditions")
     private @Nullable Output<List<RuleLevelConditionConditionArgs>> conditions;
 
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleLevelConditionConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
@@ -64,15 +74,36 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
             $ = new RuleLevelConditionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(@Nullable Output<List<RuleLevelConditionConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(List<RuleLevelConditionConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(RuleLevelConditionConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }

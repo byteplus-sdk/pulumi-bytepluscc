@@ -154,9 +154,19 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.serviceName);
     }
 
+    /**
+     * Endpoint user tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpcEndpointTagArgs>> tags;
 
+    /**
+     * @return Endpoint user tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -176,9 +186,19 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.vpcId);
     }
 
+    /**
+     * Availability zone of the endpoint node.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="zones")
     private @Nullable Output<List<VpcEndpointZoneArgs>> zones;
 
+    /**
+     * @return Availability zone of the endpoint node.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcEndpointZoneArgs>>> zones() {
         return Optional.ofNullable(this.zones);
     }
@@ -427,15 +447,36 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
             return serviceName(Output.of(serviceName));
         }
 
+        /**
+         * @param tags Endpoint user tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VpcEndpointTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Endpoint user tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VpcEndpointTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Endpoint user tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VpcEndpointTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -461,15 +502,36 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
             return vpcId(Output.of(vpcId));
         }
 
+        /**
+         * @param zones Availability zone of the endpoint node.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zones(@Nullable Output<List<VpcEndpointZoneArgs>> zones) {
             $.zones = zones;
             return this;
         }
 
+        /**
+         * @param zones Availability zone of the endpoint node.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zones(List<VpcEndpointZoneArgs> zones) {
             return zones(Output.of(zones));
         }
 
+        /**
+         * @param zones Availability zone of the endpoint node.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder zones(VpcEndpointZoneArgs... zones) {
             return zones(List.of(zones));
         }

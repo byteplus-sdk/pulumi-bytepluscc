@@ -25,6 +25,95 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingConfiguration;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingConfigurationArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationEipArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationInstanceTypeOverrideArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationVolumeArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var autoScalingDemo = new ScalingConfiguration("autoScalingDemo", ScalingConfigurationArgs.builder()
+ *             .instanceName("AutoScalingDemo")
+ *             .scalingConfigurationName("AutoScalingDemo")
+ *             .hostName("AutoScalingDemo")
+ *             .scalingGroupId("scg-ye43d97gsvkxgganxxxx")
+ *             .securityGroupIds("sg-rrco3fkzzy0wv0x589wxxxx")
+ *             .eip(ScalingConfigurationEipArgs.builder()
+ *                 .bandwidth(1)
+ *                 .billing_type("PostPaidByBandwidth")
+ *                 .isp("BGP")
+ *                 .bandwidth_package_id("bwp-btgl56gbli4g5h0b2v7ixxxx")
+ *                 .release_with_instance(true)
+ *                 .build())
+ *             .ipv6AddressCount(1)
+ *             .spotStrategy("SpotWithPriceLimit")
+ *             .instanceTypeOverrides(ScalingConfigurationInstanceTypeOverrideArgs.builder()
+ *                 .instance_type("ecs.g4il.large")
+ *                 .price_limit(0.5)
+ *                 .build())
+ *             .imageId("image-aagd56zrvqjtdripxxxx")
+ *             .securityEnhancementStrategy("Active")
+ *             .volumes(            
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(40)
+ *                     .volume_type("ESSD_PL0")
+ *                     .build(),
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(500)
+ *                     .volume_type("ESSD_FlexPL")
+ *                     .extra_performance_iops(3)
+ *                     .extra_performance_type_id("Balance")
+ *                     .build(),
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(510)
+ *                     .volume_type("ESSD_FlexPL")
+ *                     .extra_performance_iops(2)
+ *                     .extra_performance_type_id("IOPS")
+ *                     .build(),
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(520)
+ *                     .volume_type("ESSD_FlexPL")
+ *                     .extra_performance_throughput_mb(2)
+ *                     .extra_performance_type_id("Throughput")
+ *                     .build())
+ *             .projectName("default")
+ *             .keyPairName("test")
+ *             .password("test")
+ *             .instanceDescription("Web server configuration")
+ *             .zoneId("cn-test")
+ *             .tags(ScalingConfigurationTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -148,9 +237,19 @@ public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
     public Output<String> instanceName() {
         return this.instanceName;
     }
+    /**
+     * Specification information for preemptible instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="instanceTypeOverrides", refs={List.class,ScalingConfigurationInstanceTypeOverride.class}, tree="[0,1]")
     private Output<List<ScalingConfigurationInstanceTypeOverride>> instanceTypeOverrides;
 
+    /**
+     * @return Specification information for preemptible instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ScalingConfigurationInstanceTypeOverride>> instanceTypeOverrides() {
         return this.instanceTypeOverrides;
     }
@@ -326,9 +425,19 @@ public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
     public Output<String> spotStrategy() {
         return this.spotStrategy;
     }
+    /**
+     * Tag key-value pairs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ScalingConfigurationTag.class}, tree="[0,1]")
     private Output<List<ScalingConfigurationTag>> tags;
 
+    /**
+     * @return Tag key-value pairs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ScalingConfigurationTag>> tags() {
         return this.tags;
     }
@@ -360,9 +469,19 @@ public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
     public Output<String> userData() {
         return this.userData;
     }
+    /**
+     * Cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="volumes", refs={List.class,ScalingConfigurationVolume.class}, tree="[0,1]")
     private Output<List<ScalingConfigurationVolume>> volumes;
 
+    /**
+     * @return Cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ScalingConfigurationVolume>> volumes() {
         return this.volumes;
     }

@@ -34,8 +34,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.rabbitmq.PublicAddress;
  * import com.byteplus.bytepluscc.rabbitmq.PublicAddressArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -165,9 +165,19 @@ public class PublicAddress extends com.pulumi.resources.CustomResource {
     public Output<String> eipId() {
         return this.eipId;
     }
+    /**
+     * Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="endpoints", refs={List.class,PublicAddressEndpoint.class}, tree="[0,1]")
     private Output<List<PublicAddressEndpoint>> endpoints;
 
+    /**
+     * @return Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PublicAddressEndpoint>> endpoints() {
         return this.endpoints;
     }
@@ -283,9 +293,19 @@ public class PublicAddress extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,PublicAddressTag.class}, tree="[0,1]")
     private Output<List<PublicAddressTag>> tags;
 
+    /**
+     * @return Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PublicAddressTag>> tags() {
         return this.tags;
     }

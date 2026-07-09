@@ -4,8 +4,8 @@
 package com.byteplus.bytepluscc.cdn.outputs;
 
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainAreaAccessRule;
-import com.byteplus.bytepluscc.cdn.outputs.GetDomainBrowserCach;
-import com.byteplus.bytepluscc.cdn.outputs.GetDomainCach;
+import com.byteplus.bytepluscc.cdn.outputs.GetDomainBrowserCache;
+import com.byteplus.bytepluscc.cdn.outputs.GetDomainCache;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainCacheHost;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainCacheKey;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainCompression;
@@ -20,7 +20,7 @@ import com.byteplus.bytepluscc.cdn.outputs.GetDomainIPv6;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainIpAccessRule;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainMethodDeniedRule;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainMultiRange;
-import com.byteplus.bytepluscc.cdn.outputs.GetDomainNegativeCach;
+import com.byteplus.bytepluscc.cdn.outputs.GetDomainNegativeCache;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainOfflineCache;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainOrigin;
 import com.byteplus.bytepluscc.cdn.outputs.GetDomainOriginAccessRule;
@@ -68,7 +68,7 @@ public final class GetDomainResult {
      * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
-    private List<GetDomainBrowserCach> browserCaches;
+    private List<GetDomainBrowserCache> browserCaches;
     /**
      * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
      * 
@@ -93,7 +93,7 @@ public final class GetDomainResult {
      * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
-    private List<GetDomainCach> caches;
+    private List<GetDomainCache> caches;
     /**
      * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
      * 
@@ -193,7 +193,7 @@ public final class GetDomainResult {
      * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
      * 
      */
-    private List<GetDomainNegativeCach> negativeCaches;
+    private List<GetDomainNegativeCache> negativeCaches;
     /**
      * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
      * 
@@ -379,7 +379,7 @@ public final class GetDomainResult {
      * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
-    public List<GetDomainBrowserCach> browserCaches() {
+    public List<GetDomainBrowserCache> browserCaches() {
         return this.browserCaches;
     }
     /**
@@ -414,7 +414,7 @@ public final class GetDomainResult {
      * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
      * 
      */
-    public List<GetDomainCach> caches() {
+    public List<GetDomainCache> caches() {
         return this.caches;
     }
     /**
@@ -554,7 +554,7 @@ public final class GetDomainResult {
      * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
      * 
      */
-    public List<GetDomainNegativeCach> negativeCaches() {
+    public List<GetDomainNegativeCache> negativeCaches() {
         return this.negativeCaches;
     }
     /**
@@ -800,12 +800,12 @@ public final class GetDomainResult {
     public static final class Builder {
         private GetDomainAreaAccessRule areaAccessRule;
         private List<String> backupOrigins;
-        private List<GetDomainBrowserCach> browserCaches;
+        private List<GetDomainBrowserCache> browserCaches;
         private GetDomainCacheHost cacheHost;
         private List<GetDomainCacheKey> cacheKeys;
         private String cacheShared;
         private String cacheSharedTargetHost;
-        private List<GetDomainCach> caches;
+        private List<GetDomainCache> caches;
         private String cname;
         private GetDomainCompression compression;
         private GetDomainConditionalOrigin conditionalOrigin;
@@ -825,7 +825,7 @@ public final class GetDomainResult {
         private String lockStatus;
         private GetDomainMethodDeniedRule methodDeniedRule;
         private GetDomainMultiRange multiRange;
-        private List<GetDomainNegativeCach> negativeCaches;
+        private List<GetDomainNegativeCache> negativeCaches;
         private GetDomainOfflineCache offlineCache;
         private GetDomainOriginAccessRule originAccessRule;
         private List<GetDomainOriginArg> originArgs;
@@ -945,14 +945,14 @@ public final class GetDomainResult {
             return backupOrigins(List.of(backupOrigins));
         }
         @CustomType.Setter
-        public Builder browserCaches(List<GetDomainBrowserCach> browserCaches) {
+        public Builder browserCaches(List<GetDomainBrowserCache> browserCaches) {
             if (browserCaches == null) {
               throw new MissingRequiredPropertyException("GetDomainResult", "browserCaches");
             }
             this.browserCaches = browserCaches;
             return this;
         }
-        public Builder browserCaches(GetDomainBrowserCach... browserCaches) {
+        public Builder browserCaches(GetDomainBrowserCache... browserCaches) {
             return browserCaches(List.of(browserCaches));
         }
         @CustomType.Setter
@@ -991,14 +991,14 @@ public final class GetDomainResult {
             return this;
         }
         @CustomType.Setter
-        public Builder caches(List<GetDomainCach> caches) {
+        public Builder caches(List<GetDomainCache> caches) {
             if (caches == null) {
               throw new MissingRequiredPropertyException("GetDomainResult", "caches");
             }
             this.caches = caches;
             return this;
         }
-        public Builder caches(GetDomainCach... caches) {
+        public Builder caches(GetDomainCache... caches) {
             return caches(List.of(caches));
         }
         @CustomType.Setter
@@ -1154,14 +1154,14 @@ public final class GetDomainResult {
             return this;
         }
         @CustomType.Setter
-        public Builder negativeCaches(List<GetDomainNegativeCach> negativeCaches) {
+        public Builder negativeCaches(List<GetDomainNegativeCache> negativeCaches) {
             if (negativeCaches == null) {
               throw new MissingRequiredPropertyException("GetDomainResult", "negativeCaches");
             }
             this.negativeCaches = negativeCaches;
             return this;
         }
-        public Builder negativeCaches(GetDomainNegativeCach... negativeCaches) {
+        public Builder negativeCaches(GetDomainNegativeCache... negativeCaches) {
             return negativeCaches(List.of(negativeCaches));
         }
         @CustomType.Setter

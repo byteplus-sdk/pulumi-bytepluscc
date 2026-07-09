@@ -32,8 +32,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.tls.Project;
  * import com.byteplus.bytepluscc.tls.ProjectArgs;
  * import com.pulumi.bytepluscc.tls.inputs.ProjectTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -154,9 +154,19 @@ public class Project extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ProjectTag.class}, tree="[0,1]")
     private Output<List<ProjectTag>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ProjectTag>> tags() {
         return this.tags;
     }

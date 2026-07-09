@@ -7,8 +7,8 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.cdn.DomainArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainState;
 import com.byteplus.bytepluscc.cdn.outputs.DomainAreaAccessRule;
-import com.byteplus.bytepluscc.cdn.outputs.DomainBrowserCach;
-import com.byteplus.bytepluscc.cdn.outputs.DomainCach;
+import com.byteplus.bytepluscc.cdn.outputs.DomainBrowserCache;
+import com.byteplus.bytepluscc.cdn.outputs.DomainCache;
 import com.byteplus.bytepluscc.cdn.outputs.DomainCacheHost;
 import com.byteplus.bytepluscc.cdn.outputs.DomainCacheKey;
 import com.byteplus.bytepluscc.cdn.outputs.DomainCompression;
@@ -23,7 +23,7 @@ import com.byteplus.bytepluscc.cdn.outputs.DomainIPv6;
 import com.byteplus.bytepluscc.cdn.outputs.DomainIpAccessRule;
 import com.byteplus.bytepluscc.cdn.outputs.DomainMethodDeniedRule;
 import com.byteplus.bytepluscc.cdn.outputs.DomainMultiRange;
-import com.byteplus.bytepluscc.cdn.outputs.DomainNegativeCach;
+import com.byteplus.bytepluscc.cdn.outputs.DomainNegativeCache;
 import com.byteplus.bytepluscc.cdn.outputs.DomainOfflineCache;
 import com.byteplus.bytepluscc.cdn.outputs.DomainOrigin;
 import com.byteplus.bytepluscc.cdn.outputs.DomainOriginAccessRule;
@@ -63,6 +63,472 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cdn.Domain;
+ * import com.byteplus.bytepluscc.cdn.DomainArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainAreaAccessRuleArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCacheArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCacheConditionArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCacheKeyArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCacheKeyConditionArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCompressionArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainConditionalOriginArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCustomErrorPageArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainCustomizeAccessRuleArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainDownloadSpeedLimitArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainHttpsArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainHttpsHstsArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainHttpForcedRedirectArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainIPv6Args;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainMethodDeniedRuleArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainMultiRangeArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOfflineCacheArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginArgArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginArgConditionArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginCertCheckArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginRetryArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginRewriteArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainOriginSniArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainPageOptimizationArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainRedirectionRewriteArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainRemoteAuthArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainRequestBlockRuleArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainRewriteHlsArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainTagArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainTimeoutArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainUrlNormalizeArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.DomainVideoDragArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cDNDomainDemo = new Domain("cDNDomainDemo", DomainArgs.builder()
+ *             .areaAccessRule(DomainAreaAccessRuleArgs.builder()
+ *                 .rule_type("")
+ *                 .switch_(false)
+ *                 .build())
+ *             .caches(            
+ *                 DomainCacheArgs.builder()
+ *                     .cache_action(Map.ofEntries(
+ *                         Map.entry("action", "cache"),
+ *                         Map.entry("defaultPolicy", "force_cache"),
+ *                         Map.entry("ttl", 2)
+ *                     ))
+ *                     .condition(DomainCacheConditionArgs.builder()
+ *                         .conditionRule(Arrays.asList(Map.ofEntries(
+ *                             Map.entry("name", ""),
+ *                             Map.entry("object", "path"),
+ *                             Map.entry("operator", "match"),
+ *                             Map.entry("type", "url"),
+ *                             Map.entry("value", "/index.shtml;/index.html;/index.php;/index.aspx;/index.htm;/;/C")
+ *                         )))
+ *                         .connective("OR")
+ *                         .build())
+ *                     .build(),
+ *                 DomainCacheArgs.builder()
+ *                     .cache_action(Map.ofEntries(
+ *                         Map.entry("action", "cache"),
+ *                         Map.entry("defaultPolicy", "default"),
+ *                         Map.entry("ttl", 0)
+ *                     ))
+ *                     .condition(DomainCacheConditionArgs.builder()
+ *                         .conditionRule(Arrays.asList(Map.ofEntries(
+ *                             Map.entry("name", ""),
+ *                             Map.entry("object", "filetype"),
+ *                             Map.entry("operator", "match"),
+ *                             Map.entry("type", "url"),
+ *                             Map.entry("value", "php;jsp;asp;aspx")
+ *                         )))
+ *                         .connective("OR")
+ *                         .build())
+ *                     .build(),
+ *                 DomainCacheArgs.builder()
+ *                     .cache_action(Map.ofEntries(
+ *                         Map.entry("action", "cache"),
+ *                         Map.entry("defaultPolicy", "default"),
+ *                         Map.entry("ttl", 2592000)
+ *                     ))
+ *                     .condition(DomainCacheConditionArgs.builder()
+ *                         .conditionRule(Arrays.asList(Map.ofEntries(
+ *                             Map.entry("name", ""),
+ *                             Map.entry("object", "directory"),
+ *                             Map.entry("operator", "match"),
+ *                             Map.entry("type", "url"),
+ *                             Map.entry("value", "/")
+ *                         )))
+ *                         .connective("OR")
+ *                         .build())
+ *                     .build())
+ *             .cacheKeys(            
+ *                 DomainCacheKeyArgs.builder()
+ *                     .cache_key_action(Map.of("cacheKeyComponents", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("action", "exclude"),
+ *                         Map.entry("ignoreCase", false),
+ *                         Map.entry("object", "queryString"),
+ *                         Map.entry("subobject", "*")
+ *                     ))))
+ *                     .condition(DomainCacheKeyConditionArgs.builder()
+ *                         .conditionRule(Arrays.asList(Map.ofEntries(
+ *                             Map.entry("name", ""),
+ *                             Map.entry("object", "path"),
+ *                             Map.entry("operator", "match"),
+ *                             Map.entry("type", "url"),
+ *                             Map.entry("value", "/A")
+ *                         )))
+ *                         .connective("OR")
+ *                         .build())
+ *                     .build(),
+ *                 DomainCacheKeyArgs.builder()
+ *                     .cache_key_action(Map.of("cacheKeyComponents", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("action", "includePart"),
+ *                         Map.entry("ignoreCase", true),
+ *                         Map.entry("object", "queryString"),
+ *                         Map.entry("subobject", "A")
+ *                     ))))
+ *                     .condition(DomainCacheKeyConditionArgs.builder()
+ *                         .conditionRule(Arrays.asList(Map.ofEntries(
+ *                             Map.entry("name", ""),
+ *                             Map.entry("object", "filetype"),
+ *                             Map.entry("operator", "match"),
+ *                             Map.entry("type", "url"),
+ *                             Map.entry("value", "jpg;jpeg;png;gif;webp;bmp;ico;tiff;htm;shtml;html;css;js;xml;json;bin;zip;rar;ipa;apk;sis;xap;msi;exe;cab;7z;txt;wmv;mp3;wma;ogg;flv;mp4;avi;mpg;mpeg;f4v;hlv;rmvb;rm;3pg;img;m3u8;ts;swf;A")
+ *                         )))
+ *                         .connective("OR")
+ *                         .build())
+ *                     .build(),
+ *                 DomainCacheKeyArgs.builder()
+ *                     .cache_key_action(Map.of("cacheKeyComponents", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("action", "include"),
+ *                         Map.entry("ignoreCase", false),
+ *                         Map.entry("object", "queryString"),
+ *                         Map.entry("subobject", "*")
+ *                     ))))
+ *                     .condition(DomainCacheKeyConditionArgs.builder()
+ *                         .conditionRule(Arrays.asList(Map.ofEntries(
+ *                             Map.entry("name", ""),
+ *                             Map.entry("object", "directory"),
+ *                             Map.entry("operator", "match"),
+ *                             Map.entry("type", "url"),
+ *                             Map.entry("value", "/")
+ *                         )))
+ *                         .connective("OR")
+ *                         .build())
+ *                     .build())
+ *             .compression(DomainCompressionArgs.builder()
+ *                 .compression_rules(Arrays.asList(                
+ *                     Map.ofEntries(
+ *                         Map.entry("compressionAction", Map.ofEntries(
+ *                             Map.entry("compressionFormat", "all"),
+ *                             Map.entry("compressionTarget", "*"),
+ *                             Map.entry("compressionType", Arrays.asList(                            
+ *                                 "gzip",
+ *                                 "br")),
+ *                             Map.entry("maxFileSizeKb", 2048),
+ *                             Map.entry("minFileSizeKb", 0)
+ *                         )),
+ *                         Map.entry("condition", Map.ofEntries(
+ *                             Map.entry("conditionRule", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("name", ""),
+ *                                 Map.entry("object", "path"),
+ *                                 Map.entry("operator", "match"),
+ *                                 Map.entry("type", "url"),
+ *                                 Map.entry("value", "/F")
+ *                             ))),
+ *                             Map.entry("connective", "OR")
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("compressionAction", Map.ofEntries(
+ *                             Map.entry("compressionFormat", "all"),
+ *                             Map.entry("compressionTarget", "*"),
+ *                             Map.entry("compressionType", Arrays.asList(                            
+ *                                 "gzip",
+ *                                 "br")),
+ *                             Map.entry("maxFileSizeKb", 2048),
+ *                             Map.entry("minFileSizeKb", 0)
+ *                         )),
+ *                         Map.entry("condition", Map.ofEntries(
+ *                             Map.entry("conditionRule", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("name", ""),
+ *                                 Map.entry("object", "directory"),
+ *                                 Map.entry("operator", "match"),
+ *                                 Map.entry("type", "url"),
+ *                                 Map.entry("value", "/E/")
+ *                             ))),
+ *                             Map.entry("connective", "OR")
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("compressionAction", Map.ofEntries(
+ *                             Map.entry("compressionFormat", "all"),
+ *                             Map.entry("compressionTarget", "*"),
+ *                             Map.entry("compressionType", Arrays.asList(                            
+ *                                 "gzip",
+ *                                 "br")),
+ *                             Map.entry("maxFileSizeKb", 2048),
+ *                             Map.entry("minFileSizeKb", 0)
+ *                         )),
+ *                         Map.entry("condition", Map.ofEntries(
+ *                             Map.entry("conditionRule", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("name", ""),
+ *                                 Map.entry("object", "filetype"),
+ *                                 Map.entry("operator", "match"),
+ *                                 Map.entry("type", "url"),
+ *                                 Map.entry("value", "D")
+ *                             ))),
+ *                             Map.entry("connective", "OR")
+ *                         ))
+ *                     ),
+ *                     Map.of("compressionAction", Map.ofEntries(
+ *                         Map.entry("compressionFormat", "default"),
+ *                         Map.entry("compressionTarget", "*"),
+ *                         Map.entry("compressionType", Arrays.asList("gzip")),
+ *                         Map.entry("maxFileSizeKb", 2048),
+ *                         Map.entry("minFileSizeKb", 0)
+ *                     ))))
+ *                 .switch_(true)
+ *                 .build())
+ *             .conditionalOrigin(DomainConditionalOriginArgs.builder()
+ *                 .origin_rules(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("actions", Map.of("originLines", Arrays.asList(                    
+ *                         Map.ofEntries(
+ *                             Map.entry("address", "192.168.0.4"),
+ *                             Map.entry("httpPort", "80"),
+ *                             Map.entry("httpsPort", "443"),
+ *                             Map.entry("instanceType", "ip"),
+ *                             Map.entry("originHost", "192.168.0.5")
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("address", "192.168.0.5"),
+ *                             Map.entry("httpPort", "80"),
+ *                             Map.entry("httpsPort", "443"),
+ *                             Map.entry("instanceType", "ip"),
+ *                             Map.entry("originHost", "192.168.0.6")
+ *                         )))),
+ *                     Map.entry("condition", Map.ofEntries(
+ *                         Map.entry("conditionGroups", Arrays.asList(                        
+ *                             Map.of("condition", Map.ofEntries(
+ *                                 Map.entry("object", "path"),
+ *                                 Map.entry("operator", "equal"),
+ *                                 Map.entry("value", Arrays.asList("/a"))
+ *                             )),
+ *                             Map.of("condition", Map.ofEntries(
+ *                                 Map.entry("object", "directory"),
+ *                                 Map.entry("operator", "equal"),
+ *                                 Map.entry("value", Arrays.asList("/b/"))
+ *                             )),
+ *                             Map.of("condition", Map.ofEntries(
+ *                                 Map.entry("object", "filetype"),
+ *                                 Map.entry("operator", "equal"),
+ *                                 Map.entry("value", Arrays.asList("c"))
+ *                             )),
+ *                             Map.of("condition", Map.ofEntries(
+ *                                 Map.entry("object", "client_ip"),
+ *                                 Map.entry("operator", "equal"),
+ *                                 Map.entry("value", Arrays.asList("192.168.0.3"))
+ *                             )),
+ *                             Map.of("condition", Map.ofEntries(
+ *                                 Map.entry("object", "client_ip_operator"),
+ *                                 Map.entry("operator", "belong"),
+ *                                 Map.entry("value", Arrays.asList(                                
+ *                                     "CT",
+ *                                     "CM",
+ *                                     "CU",
+ *                                     "CMTIETONG",
+ *                                     "CBN",
+ *                                     "CERNET",
+ *                                     "DRPENG"))
+ *                             )))),
+ *                         Map.entry("connective", "and"),
+ *                         Map.entry("isGroup", true)
+ *                     ))
+ *                 )))
+ *                 .switch_(true)
+ *                 .build())
+ *             .customErrorPage(DomainCustomErrorPageArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .customizeAccessRule(DomainCustomizeAccessRuleArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .domain("ccapi-test-web.com")
+ *             .downloadSpeedLimit(DomainDownloadSpeedLimitArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .followRedirect(true)
+ *             .https(DomainHttpsArgs.builder()
+ *                 .disable_http(false)
+ *                 .forced_redirect(Map.ofEntries(
+ *                     Map.entry("enableForcedRedirect", false),
+ *                     Map.entry("statusCode", "301")
+ *                 ))
+ *                 .http2(false)
+ *                 .hsts(DomainHttpsHstsArgs.builder()
+ *                     .switch_(false)
+ *                     .ttl(0)
+ *                     .build())
+ *                 .ocsp(false)
+ *                 .switch_(false)
+ *                 .build())
+ *             .httpForcedRedirect(DomainHttpForcedRedirectArgs.builder()
+ *                 .enable_forced_redirect(false)
+ *                 .status_code("301")
+ *                 .build())
+ *             .iPv6(DomainIPv6Args.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .methodDeniedRule(DomainMethodDeniedRuleArgs.builder()
+ *                 .methods("")
+ *                 .switch_(false)
+ *                 .build())
+ *             .multiRange(DomainMultiRangeArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .offlineCache(DomainOfflineCacheArgs.builder()
+ *                 .object("")
+ *                 .status_code("")
+ *                 .switch_(false)
+ *                 .build())
+ *             .origins(DomainOriginArgs.builder()
+ *                 .origin_action(Map.of("originLines", Arrays.asList(                
+ *                     Map.ofEntries(
+ *                         Map.entry("address", "192.168.0.1"),
+ *                         Map.entry("httpPort", "80"),
+ *                         Map.entry("httpsPort", "443"),
+ *                         Map.entry("instanceType", "ip"),
+ *                         Map.entry("originHost", "a.com"),
+ *                         Map.entry("originType", "primary"),
+ *                         Map.entry("privateBucketAccess", false),
+ *                         Map.entry("weight", "1")
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("address", "b.com"),
+ *                         Map.entry("httpPort", "80"),
+ *                         Map.entry("httpsPort", "443"),
+ *                         Map.entry("instanceType", "domain"),
+ *                         Map.entry("originHost", "c.com"),
+ *                         Map.entry("originType", "primary"),
+ *                         Map.entry("privateBucketAccess", false),
+ *                         Map.entry("weight", "1")
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("address", "ccapi-test-red.tos-cn-beijing.volces.com"),
+ *                         Map.entry("httpPort", ""),
+ *                         Map.entry("httpsPort", ""),
+ *                         Map.entry("instanceType", "tos"),
+ *                         Map.entry("originHost", "ccapi-test-red.tos-cn-beijing.volces.com"),
+ *                         Map.entry("originType", "primary"),
+ *                         Map.entry("privateBucketAccess", true),
+ *                         Map.entry("privateBucketAuth", Map.ofEntries(
+ *                             Map.entry("authType", "tos"),
+ *                             Map.entry("switch", true)
+ *                         )),
+ *                         Map.entry("weight", "1")
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("address", "192.168.0.2"),
+ *                         Map.entry("httpPort", "80"),
+ *                         Map.entry("httpsPort", "443"),
+ *                         Map.entry("instanceType", "ip"),
+ *                         Map.entry("originHost", "d.com"),
+ *                         Map.entry("originType", "backup"),
+ *                         Map.entry("privateBucketAccess", false),
+ *                         Map.entry("weight", "1")
+ *                     ))))
+ *                 .build())
+ *             .originArgs(DomainOriginArgArgs.builder()
+ *                 .condition(DomainOriginArgConditionArgs.builder()
+ *                     .conditionRule(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("name", ""),
+ *                         Map.entry("object", "directory"),
+ *                         Map.entry("operator", "match"),
+ *                         Map.entry("type", "url"),
+ *                         Map.entry("value", "/")
+ *                     )))
+ *                     .connective("OR")
+ *                     .build())
+ *                 .origin_arg_action(Map.of("originArgComponents", Arrays.asList(Map.ofEntries(
+ *                     Map.entry("action", "include"),
+ *                     Map.entry("object", "queryString"),
+ *                     Map.entry("subobject", "*")
+ *                 ))))
+ *                 .build())
+ *             .originCertCheck(DomainOriginCertCheckArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .originHost("")
+ *             .originIPv6("followclient")
+ *             .originProtocol("followclient")
+ *             .originRange(true)
+ *             .originRetry(DomainOriginRetryArgs.builder()
+ *                 .status_code("")
+ *                 .switch_(false)
+ *                 .build())
+ *             .originRewrite(DomainOriginRewriteArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .originSni(DomainOriginSniArgs.builder()
+ *                 .sni_domain("")
+ *                 .switch_(false)
+ *                 .build())
+ *             .pageOptimization(DomainPageOptimizationArgs.builder()
+ *                 .optimization_type(Arrays.asList(                
+ *                     "html",
+ *                     "js",
+ *                     "css"))
+ *                 .switch_(true)
+ *                 .build())
+ *             .project("default")
+ *             .redirectionRewrite(DomainRedirectionRewriteArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .remoteAuth(DomainRemoteAuthArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .requestBlockRule(DomainRequestBlockRuleArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .rewriteHls(DomainRewriteHlsArgs.builder()
+ *                 .sign_name("")
+ *                 .switch_(false)
+ *                 .build())
+ *             .serviceRegion("outside_chinese_mainland")
+ *             .serviceType("web")
+ *             .tags(DomainTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .timeout(DomainTimeoutArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .urlNormalize(DomainUrlNormalizeArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .videoDrag(DomainVideoDragArgs.builder()
+ *                 .switch_(false)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -102,10 +568,20 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<List<String>> backupOrigins() {
         return this.backupOrigins;
     }
-    @Export(name="browserCaches", refs={List.class,DomainBrowserCach.class}, tree="[0,1]")
-    private Output<List<DomainBrowserCach>> browserCaches;
+    /**
+     * Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="browserCaches", refs={List.class,DomainBrowserCache.class}, tree="[0,1]")
+    private Output<List<DomainBrowserCache>> browserCaches;
 
-    public Output<List<DomainBrowserCach>> browserCaches() {
+    /**
+     * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<DomainBrowserCache>> browserCaches() {
         return this.browserCaches;
     }
     /**
@@ -122,9 +598,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<DomainCacheHost> cacheHost() {
         return this.cacheHost;
     }
+    /**
+     * Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="cacheKeys", refs={List.class,DomainCacheKey.class}, tree="[0,1]")
     private Output<List<DomainCacheKey>> cacheKeys;
 
+    /**
+     * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainCacheKey>> cacheKeys() {
         return this.cacheKeys;
     }
@@ -156,10 +642,20 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<String> cacheSharedTargetHost() {
         return this.cacheSharedTargetHost;
     }
-    @Export(name="caches", refs={List.class,DomainCach.class}, tree="[0,1]")
-    private Output<List<DomainCach>> caches;
+    /**
+     * Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="caches", refs={List.class,DomainCache.class}, tree="[0,1]")
+    private Output<List<DomainCache>> caches;
 
-    public Output<List<DomainCach>> caches() {
+    /**
+     * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<DomainCache>> caches() {
         return this.caches;
     }
     /**
@@ -414,10 +910,20 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<DomainMultiRange> multiRange() {
         return this.multiRange;
     }
-    @Export(name="negativeCaches", refs={List.class,DomainNegativeCach.class}, tree="[0,1]")
-    private Output<List<DomainNegativeCach>> negativeCaches;
+    /**
+     * Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="negativeCaches", refs={List.class,DomainNegativeCache.class}, tree="[0,1]")
+    private Output<List<DomainNegativeCache>> negativeCaches;
 
-    public Output<List<DomainNegativeCach>> negativeCaches() {
+    /**
+     * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<DomainNegativeCache>> negativeCaches() {
         return this.negativeCaches;
     }
     /**
@@ -448,9 +954,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<DomainOriginAccessRule> originAccessRule() {
         return this.originAccessRule;
     }
+    /**
+     * Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="originArgs", refs={List.class,DomainOriginArg.class}, tree="[0,1]")
     private Output<List<DomainOriginArg>> originArgs;
 
+    /**
+     * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainOriginArg>> originArgs() {
         return this.originArgs;
     }
@@ -566,9 +1082,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<DomainOriginSni> originSni() {
         return this.originSni;
     }
+    /**
+     * Indicates the basic origin configuration module.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="origins", refs={List.class,DomainOrigin.class}, tree="[0,1]")
     private Output<List<DomainOrigin>> origins;
 
+    /**
+     * @return Indicates the basic origin configuration module.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainOrigin>> origins() {
         return this.origins;
     }
@@ -684,15 +1210,35 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<DomainRequestBlockRule> requestBlockRule() {
         return this.requestBlockRule;
     }
+    /**
+     * Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="requestHeaders", refs={List.class,DomainRequestHeader.class}, tree="[0,1]")
     private Output<List<DomainRequestHeader>> requestHeaders;
 
+    /**
+     * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainRequestHeader>> requestHeaders() {
         return this.requestHeaders;
     }
+    /**
+     * Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="responseHeaders", refs={List.class,DomainResponseHeader.class}, tree="[0,1]")
     private Output<List<DomainResponseHeader>> responseHeaders;
 
+    /**
+     * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainResponseHeader>> responseHeaders() {
         return this.responseHeaders;
     }
@@ -766,9 +1312,19 @@ public class Domain extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,DomainTag.class}, tree="[0,1]")
     private Output<List<DomainTag>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DomainTag>> tags() {
         return this.tags;
     }

@@ -79,9 +79,19 @@ public final class PeerAttachmentArgs extends com.pulumi.resources.ResourceArgs 
         return this.peerTransitRouterRegionId;
     }
 
+    /**
+     * Tag list for the cross-region connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<PeerAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag list for the cross-region connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PeerAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -246,15 +256,36 @@ public final class PeerAttachmentArgs extends com.pulumi.resources.ResourceArgs 
             return peerTransitRouterRegionId(Output.of(peerTransitRouterRegionId));
         }
 
+        /**
+         * @param tags Tag list for the cross-region connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<PeerAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list for the cross-region connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<PeerAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list for the cross-region connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(PeerAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }

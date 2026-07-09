@@ -25,6 +25,55 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.clb.Nlb;
+ * import com.byteplus.bytepluscc.clb.NlbArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.NlbZoneMappingArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.NlbTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var nLBDemo = new Nlb("nLBDemo", NlbArgs.builder()
+ *             .ipv4NetworkType("intranet")
+ *             .securityGroupIds("sg-13fg4nslwnwu83n6nu5a7xxxx")
+ *             .vpcId("vpc-13ffun9olqz9c3n6nu43bxxxx")
+ *             .loadBalancerName("NLBDemo")
+ *             .description("NLBDemom")
+ *             .projectName("default")
+ *             .ipAddressVersion("ipv4")
+ *             .crossZoneEnabled(false)
+ *             .zoneMappings(NlbZoneMappingArgs.builder()
+ *                 .subnet_id("subnet-mjoyynjt59ts5smt1bncxxxx")
+ *                 .zone_id("cn-beijing-a")
+ *                 .ipv_4_address("192.168.xx.2")
+ *                 .build())
+ *             .modificationProtectionStatus("ConsoleProtection")
+ *             .tags(NlbTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -358,9 +407,19 @@ public class Nlb extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,NlbTag.class}, tree="[0,1]")
     private Output<List<NlbTag>> tags;
 
+    /**
+     * @return Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NlbTag>> tags() {
         return this.tags;
     }
@@ -392,9 +451,19 @@ public class Nlb extends com.pulumi.resources.CustomResource {
     public Output<String> vpcId() {
         return this.vpcId;
     }
+    /**
+     * Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="zoneMappings", refs={List.class,NlbZoneMapping.class}, tree="[0,1]")
     private Output<List<NlbZoneMapping>> zoneMappings;
 
+    /**
+     * @return Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NlbZoneMapping>> zoneMappings() {
         return this.zoneMappings;
     }

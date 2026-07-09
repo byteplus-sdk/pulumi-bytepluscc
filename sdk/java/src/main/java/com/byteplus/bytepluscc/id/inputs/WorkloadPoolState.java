@@ -78,9 +78,19 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<WorkloadPoolTagArgs>> tags;
 
+    /**
+     * @return Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<WorkloadPoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -293,15 +303,36 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<WorkloadPoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<WorkloadPoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(WorkloadPoolTagArgs... tags) {
             return tags(List.of(tags));
         }

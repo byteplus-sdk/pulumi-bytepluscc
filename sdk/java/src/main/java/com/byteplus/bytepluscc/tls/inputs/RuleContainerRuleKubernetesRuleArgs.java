@@ -23,9 +23,19 @@ public final class RuleContainerRuleKubernetesRuleArgs extends com.pulumi.resour
 
     public static final RuleContainerRuleKubernetesRuleArgs Empty = new RuleContainerRuleKubernetesRuleArgs();
 
+    /**
+     * Whether to add Kubernetes Annotations as log tags to the original log data. When enabled, the log service will add fields related to Kubernetes Pod Annotations to the logs. Setting multiple key-value pairs means adding multiple fields. For example, if you set Key to sink and Value to data_sink, and the Pod contains the annotation sink=ck, a new field **tag**data_sink_*: ck will be added to the log.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="annotationTags")
     private @Nullable Output<List<RuleContainerRuleKubernetesRuleAnnotationTagArgs>> annotationTags;
 
+    /**
+     * @return Whether to add Kubernetes Annotations as log tags to the original log data. When enabled, the log service will add fields related to Kubernetes Pod Annotations to the logs. Setting multiple key-value pairs means adding multiple fields. For example, if you set Key to sink and Value to data_sink, and the Pod contains the annotation sink=ck, a new field **tag**data_sink_*: ck will be added to the log.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleContainerRuleKubernetesRuleAnnotationTagArgs>>> annotationTags() {
         return Optional.ofNullable(this.annotationTags);
     }
@@ -45,37 +55,87 @@ public final class RuleContainerRuleKubernetesRuleArgs extends com.pulumi.resour
         return Optional.ofNullable(this.enableAllLabelTag);
     }
 
+    /**
+     * Pod Annotation Denylist is used to specify containers that are not collected. If you need to set a Pod Annotation Denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the specified Key are excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the specified Value are excluded. By default, Value uses string matching, meaning it only matches when Value and the Pod Annotation value are exactly the same. If the value starts with ^ and ends with $, it is treated as a regular expression. For example, if Key is set to app and Value is set to ^(test1|test2)$, it matches containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning a Pod Annotation that matches any pair will be excluded from the collection scope. When enabling the Pod Annotation Denylist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="excludePodAnnotationRegexes")
     private @Nullable Output<List<RuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs>> excludePodAnnotationRegexes;
 
+    /**
+     * @return Pod Annotation Denylist is used to specify containers that are not collected. If you need to set a Pod Annotation Denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the specified Key are excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the specified Value are excluded. By default, Value uses string matching, meaning it only matches when Value and the Pod Annotation value are exactly the same. If the value starts with ^ and ends with $, it is treated as a regular expression. For example, if Key is set to app and Value is set to ^(test1|test2)$, it matches containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning a Pod Annotation that matches any pair will be excluded from the collection scope. When enabling the Pod Annotation Denylist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs>>> excludePodAnnotationRegexes() {
         return Optional.ofNullable(this.excludePodAnnotationRegexes);
     }
 
+    /**
+     * Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the Value in their Pod Label are excluded. Value supports regular expressions. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR. Any Pod Label matching any Key-Value pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches any string starting with http
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="excludePodLabelRegexes")
     private @Nullable Output<List<RuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs>> excludePodLabelRegexes;
 
+    /**
+     * @return Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the Value in their Pod Label are excluded. Value supports regular expressions. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR. Any Pod Label matching any Key-Value pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches any string starting with http
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs>>> excludePodLabelRegexes() {
         return Optional.ofNullable(this.excludePodLabelRegexes);
     }
 
+    /**
+     * Pod Annotation Allowlist is used to specify containers to be collected. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers under Pods that contain the Key in Pod Annotation will match. If Value is not empty, only containers under Pods that contain the Key and whose value matches Value in Pod Annotation will match. Value defaults to string matching, meaning only when Value and the Pod Annotation value are exactly the same will they match. If the value starts with ^ and ends with $, it is a regex match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as Pod Annotation matches any pair, it will be included in the collection scope. When enabling Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="includePodAnnotationRegexes")
     private @Nullable Output<List<RuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs>> includePodAnnotationRegexes;
 
+    /**
+     * @return Pod Annotation Allowlist is used to specify containers to be collected. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers under Pods that contain the Key in Pod Annotation will match. If Value is not empty, only containers under Pods that contain the Key and whose value matches Value in Pod Annotation will match. Value defaults to string matching, meaning only when Value and the Pod Annotation value are exactly the same will they match. If the value starts with ^ and ends with $, it is a regex match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as Pod Annotation matches any pair, it will be included in the collection scope. When enabling Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs>>> includePodAnnotationRegexes() {
         return Optional.ofNullable(this.includePodAnnotationRegexes);
     }
 
+    /**
+     * Pod Label Allowlist is used to specify which containers to collect. If Pod Label Allowlist is not enabled, all containers will be collected. If you need to set a Pod Label Allowlist, Key is required: if Value is empty, all containers with the Key in their Pod Label will be collected. If Value is not empty, only containers with the Key in their Pod Label and a Value matching the specified pattern will be collected; regular expression matching is supported. For example, if you set Key to module and Value to ^(tcp|udp)$, only containers with module:tcp or module:udp in their Pod Label will be collected. Note: The logical relationship between multiple key-value pairs is OR, meaning any Pod Label matching any key-value pair will be included in the collection scope. When enabling Pod Label Allowlist, Keys cannot be duplicated. For fuzzy regular expression matching, you must add .*, for example, ^(http.*)$ matches strings starting with http.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="includePodLabelRegexes")
     private @Nullable Output<List<RuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs>> includePodLabelRegexes;
 
+    /**
+     * @return Pod Label Allowlist is used to specify which containers to collect. If Pod Label Allowlist is not enabled, all containers will be collected. If you need to set a Pod Label Allowlist, Key is required: if Value is empty, all containers with the Key in their Pod Label will be collected. If Value is not empty, only containers with the Key in their Pod Label and a Value matching the specified pattern will be collected; regular expression matching is supported. For example, if you set Key to module and Value to ^(tcp|udp)$, only containers with module:tcp or module:udp in their Pod Label will be collected. Note: The logical relationship between multiple key-value pairs is OR, meaning any Pod Label matching any key-value pair will be included in the collection scope. When enabling Pod Label Allowlist, Keys cannot be duplicated. For fuzzy regular expression matching, you must add .*, for example, ^(http.*)$ matches strings starting with http.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs>>> includePodLabelRegexes() {
         return Optional.ofNullable(this.includePodLabelRegexes);
     }
 
+    /**
+     * Whether to add Kubernetes labels as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, if you set Key to source and Value to data_source, and the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="labelTags")
     private @Nullable Output<List<RuleContainerRuleKubernetesRuleLabelTagArgs>> labelTags;
 
+    /**
+     * @return Whether to add Kubernetes labels as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, if you set Key to source and Value to data_source, and the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleContainerRuleKubernetesRuleLabelTagArgs>>> labelTags() {
         return Optional.ofNullable(this.labelTags);
     }
@@ -174,15 +234,36 @@ public final class RuleContainerRuleKubernetesRuleArgs extends com.pulumi.resour
             $ = new RuleContainerRuleKubernetesRuleArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param annotationTags Whether to add Kubernetes Annotations as log tags to the original log data. When enabled, the log service will add fields related to Kubernetes Pod Annotations to the logs. Setting multiple key-value pairs means adding multiple fields. For example, if you set Key to sink and Value to data_sink, and the Pod contains the annotation sink=ck, a new field **tag**data_sink_*: ck will be added to the log.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder annotationTags(@Nullable Output<List<RuleContainerRuleKubernetesRuleAnnotationTagArgs>> annotationTags) {
             $.annotationTags = annotationTags;
             return this;
         }
 
+        /**
+         * @param annotationTags Whether to add Kubernetes Annotations as log tags to the original log data. When enabled, the log service will add fields related to Kubernetes Pod Annotations to the logs. Setting multiple key-value pairs means adding multiple fields. For example, if you set Key to sink and Value to data_sink, and the Pod contains the annotation sink=ck, a new field **tag**data_sink_*: ck will be added to the log.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder annotationTags(List<RuleContainerRuleKubernetesRuleAnnotationTagArgs> annotationTags) {
             return annotationTags(Output.of(annotationTags));
         }
 
+        /**
+         * @param annotationTags Whether to add Kubernetes Annotations as log tags to the original log data. When enabled, the log service will add fields related to Kubernetes Pod Annotations to the logs. Setting multiple key-value pairs means adding multiple fields. For example, if you set Key to sink and Value to data_sink, and the Pod contains the annotation sink=ck, a new field **tag**data_sink_*: ck will be added to the log.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder annotationTags(RuleContainerRuleKubernetesRuleAnnotationTagArgs... annotationTags) {
             return annotationTags(List.of(annotationTags));
         }
@@ -208,67 +289,172 @@ public final class RuleContainerRuleKubernetesRuleArgs extends com.pulumi.resour
             return enableAllLabelTag(Output.of(enableAllLabelTag));
         }
 
+        /**
+         * @param excludePodAnnotationRegexes Pod Annotation Denylist is used to specify containers that are not collected. If you need to set a Pod Annotation Denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the specified Key are excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the specified Value are excluded. By default, Value uses string matching, meaning it only matches when Value and the Pod Annotation value are exactly the same. If the value starts with ^ and ends with $, it is treated as a regular expression. For example, if Key is set to app and Value is set to ^(test1|test2)$, it matches containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning a Pod Annotation that matches any pair will be excluded from the collection scope. When enabling the Pod Annotation Denylist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePodAnnotationRegexes(@Nullable Output<List<RuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs>> excludePodAnnotationRegexes) {
             $.excludePodAnnotationRegexes = excludePodAnnotationRegexes;
             return this;
         }
 
+        /**
+         * @param excludePodAnnotationRegexes Pod Annotation Denylist is used to specify containers that are not collected. If you need to set a Pod Annotation Denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the specified Key are excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the specified Value are excluded. By default, Value uses string matching, meaning it only matches when Value and the Pod Annotation value are exactly the same. If the value starts with ^ and ends with $, it is treated as a regular expression. For example, if Key is set to app and Value is set to ^(test1|test2)$, it matches containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning a Pod Annotation that matches any pair will be excluded from the collection scope. When enabling the Pod Annotation Denylist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePodAnnotationRegexes(List<RuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs> excludePodAnnotationRegexes) {
             return excludePodAnnotationRegexes(Output.of(excludePodAnnotationRegexes));
         }
 
+        /**
+         * @param excludePodAnnotationRegexes Pod Annotation Denylist is used to specify containers that are not collected. If you need to set a Pod Annotation Denylist, Key is required and Value is optional. If Value is empty, all containers under Pods whose Pod Annotation contains the specified Key are excluded. If Value is not empty, only containers under Pods whose Pod Annotation contains the Key and whose value matches the specified Value are excluded. By default, Value uses string matching, meaning it only matches when Value and the Pod Annotation value are exactly the same. If the value starts with ^ and ends with $, it is treated as a regular expression. For example, if Key is set to app and Value is set to ^(test1|test2)$, it matches containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning a Pod Annotation that matches any pair will be excluded from the collection scope. When enabling the Pod Annotation Denylist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePodAnnotationRegexes(RuleContainerRuleKubernetesRuleExcludePodAnnotationRegexArgs... excludePodAnnotationRegexes) {
             return excludePodAnnotationRegexes(List.of(excludePodAnnotationRegexes));
         }
 
+        /**
+         * @param excludePodLabelRegexes Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the Value in their Pod Label are excluded. Value supports regular expressions. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR. Any Pod Label matching any Key-Value pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches any string starting with http
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePodLabelRegexes(@Nullable Output<List<RuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs>> excludePodLabelRegexes) {
             $.excludePodLabelRegexes = excludePodLabelRegexes;
             return this;
         }
 
+        /**
+         * @param excludePodLabelRegexes Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the Value in their Pod Label are excluded. Value supports regular expressions. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR. Any Pod Label matching any Key-Value pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches any string starting with http
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePodLabelRegexes(List<RuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs> excludePodLabelRegexes) {
             return excludePodLabelRegexes(Output.of(excludePodLabelRegexes));
         }
 
+        /**
+         * @param excludePodLabelRegexes Specify containers to exclude from collection using the Pod Label denylist. If not enabled, all containers are collected. To set a Pod Label denylist, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their Pod Label are excluded from collection. If Value is not empty, only containers with the specified Key and a Value matching the Value in their Pod Label are excluded. Value supports regular expressions. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their Pod Label. Note: The logical relationship between multiple Key-Value pairs is OR. Any Pod Label matching any Key-Value pair will be excluded from collection. When enabling the Pod Label denylist, Keys must not be duplicated. For fuzzy regular expression matching, you must add .*. For example, ^(http.*)$ matches any string starting with http
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder excludePodLabelRegexes(RuleContainerRuleKubernetesRuleExcludePodLabelRegexArgs... excludePodLabelRegexes) {
             return excludePodLabelRegexes(List.of(excludePodLabelRegexes));
         }
 
+        /**
+         * @param includePodAnnotationRegexes Pod Annotation Allowlist is used to specify containers to be collected. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers under Pods that contain the Key in Pod Annotation will match. If Value is not empty, only containers under Pods that contain the Key and whose value matches Value in Pod Annotation will match. Value defaults to string matching, meaning only when Value and the Pod Annotation value are exactly the same will they match. If the value starts with ^ and ends with $, it is a regex match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as Pod Annotation matches any pair, it will be included in the collection scope. When enabling Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includePodAnnotationRegexes(@Nullable Output<List<RuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs>> includePodAnnotationRegexes) {
             $.includePodAnnotationRegexes = includePodAnnotationRegexes;
             return this;
         }
 
+        /**
+         * @param includePodAnnotationRegexes Pod Annotation Allowlist is used to specify containers to be collected. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers under Pods that contain the Key in Pod Annotation will match. If Value is not empty, only containers under Pods that contain the Key and whose value matches Value in Pod Annotation will match. Value defaults to string matching, meaning only when Value and the Pod Annotation value are exactly the same will they match. If the value starts with ^ and ends with $, it is a regex match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as Pod Annotation matches any pair, it will be included in the collection scope. When enabling Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includePodAnnotationRegexes(List<RuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs> includePodAnnotationRegexes) {
             return includePodAnnotationRegexes(Output.of(includePodAnnotationRegexes));
         }
 
+        /**
+         * @param includePodAnnotationRegexes Pod Annotation Allowlist is used to specify containers to be collected. If you need to set a Pod Annotation Allowlist, Key is required and Value is optional. If Value is empty, all containers under Pods that contain the Key in Pod Annotation will match. If Value is not empty, only containers under Pods that contain the Key and whose value matches Value in Pod Annotation will match. Value defaults to string matching, meaning only when Value and the Pod Annotation value are exactly the same will they match. If the value starts with ^ and ends with $, it is a regex match. For example, set Key to app and Value to ^(test1|test2)$ to match containers under Pods with Pod Annotation app:test1 or app:test2. Note: The logical relationship between multiple Key-Value pairs is OR, meaning as long as Pod Annotation matches any pair, it will be included in the collection scope. When enabling Pod Annotation Allowlist, Keys must not be duplicated. For regex fuzzy matching, you must add .*. For example, ^(http.*)$ matches strings starting with http.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includePodAnnotationRegexes(RuleContainerRuleKubernetesRuleIncludePodAnnotationRegexArgs... includePodAnnotationRegexes) {
             return includePodAnnotationRegexes(List.of(includePodAnnotationRegexes));
         }
 
+        /**
+         * @param includePodLabelRegexes Pod Label Allowlist is used to specify which containers to collect. If Pod Label Allowlist is not enabled, all containers will be collected. If you need to set a Pod Label Allowlist, Key is required: if Value is empty, all containers with the Key in their Pod Label will be collected. If Value is not empty, only containers with the Key in their Pod Label and a Value matching the specified pattern will be collected; regular expression matching is supported. For example, if you set Key to module and Value to ^(tcp|udp)$, only containers with module:tcp or module:udp in their Pod Label will be collected. Note: The logical relationship between multiple key-value pairs is OR, meaning any Pod Label matching any key-value pair will be included in the collection scope. When enabling Pod Label Allowlist, Keys cannot be duplicated. For fuzzy regular expression matching, you must add .*, for example, ^(http.*)$ matches strings starting with http.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includePodLabelRegexes(@Nullable Output<List<RuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs>> includePodLabelRegexes) {
             $.includePodLabelRegexes = includePodLabelRegexes;
             return this;
         }
 
+        /**
+         * @param includePodLabelRegexes Pod Label Allowlist is used to specify which containers to collect. If Pod Label Allowlist is not enabled, all containers will be collected. If you need to set a Pod Label Allowlist, Key is required: if Value is empty, all containers with the Key in their Pod Label will be collected. If Value is not empty, only containers with the Key in their Pod Label and a Value matching the specified pattern will be collected; regular expression matching is supported. For example, if you set Key to module and Value to ^(tcp|udp)$, only containers with module:tcp or module:udp in their Pod Label will be collected. Note: The logical relationship between multiple key-value pairs is OR, meaning any Pod Label matching any key-value pair will be included in the collection scope. When enabling Pod Label Allowlist, Keys cannot be duplicated. For fuzzy regular expression matching, you must add .*, for example, ^(http.*)$ matches strings starting with http.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includePodLabelRegexes(List<RuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs> includePodLabelRegexes) {
             return includePodLabelRegexes(Output.of(includePodLabelRegexes));
         }
 
+        /**
+         * @param includePodLabelRegexes Pod Label Allowlist is used to specify which containers to collect. If Pod Label Allowlist is not enabled, all containers will be collected. If you need to set a Pod Label Allowlist, Key is required: if Value is empty, all containers with the Key in their Pod Label will be collected. If Value is not empty, only containers with the Key in their Pod Label and a Value matching the specified pattern will be collected; regular expression matching is supported. For example, if you set Key to module and Value to ^(tcp|udp)$, only containers with module:tcp or module:udp in their Pod Label will be collected. Note: The logical relationship between multiple key-value pairs is OR, meaning any Pod Label matching any key-value pair will be included in the collection scope. When enabling Pod Label Allowlist, Keys cannot be duplicated. For fuzzy regular expression matching, you must add .*, for example, ^(http.*)$ matches strings starting with http.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder includePodLabelRegexes(RuleContainerRuleKubernetesRuleIncludePodLabelRegexArgs... includePodLabelRegexes) {
             return includePodLabelRegexes(List.of(includePodLabelRegexes));
         }
 
+        /**
+         * @param labelTags Whether to add Kubernetes labels as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, if you set Key to source and Value to data_source, and the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labelTags(@Nullable Output<List<RuleContainerRuleKubernetesRuleLabelTagArgs>> labelTags) {
             $.labelTags = labelTags;
             return this;
         }
 
+        /**
+         * @param labelTags Whether to add Kubernetes labels as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, if you set Key to source and Value to data_source, and the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labelTags(List<RuleContainerRuleKubernetesRuleLabelTagArgs> labelTags) {
             return labelTags(Output.of(labelTags));
         }
 
+        /**
+         * @param labelTags Whether to add Kubernetes labels as log tags to the raw log data. When enabled, the log service adds Kubernetes Pod label fields to the logs. Setting multiple key-value pairs adds multiple fields. For example, if you set Key to source and Value to data_source, and the Pod contains the label source=DC, the log will include the field **tag**data_source_*: DC.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labelTags(RuleContainerRuleKubernetesRuleLabelTagArgs... labelTags) {
             return labelTags(List.of(labelTags));
         }

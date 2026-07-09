@@ -23,6 +23,47 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatelink.VpcEndpointConnection;
+ * import com.byteplus.bytepluscc.privatelink.VpcEndpointConnectionArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.VpcEndpointConnectionResourcesAllocateArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var privateLinkVpcEndpointConnectionDemo = new VpcEndpointConnection("privateLinkVpcEndpointConnectionDemo", VpcEndpointConnectionArgs.builder()
+ *             .endpointId("ep-2rxb5wrxxxxxxxukcknq")
+ *             .serviceId("epsvc-1mg2xrmsxxxxxxxxconsso")
+ *             .resourcesAllocates(            
+ *                 VpcEndpointConnectionResourcesAllocateArgs.builder()
+ *                     .resource_id("clb-13g8lgxxxxxxx6nu5ajtpp2")
+ *                     .zone_id("cn-beijing-c")
+ *                     .build(),
+ *                 VpcEndpointConnectionResourcesAllocateArgs.builder()
+ *                     .resource_id("clb-13fx74xxxxxxxnu4g85ggo")
+ *                     .zone_id("cn-beijing-b")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -146,9 +187,19 @@ public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     public Output<String> replacingResource() {
         return this.replacingResource;
     }
+    /**
+     * Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="resourcesAllocates", refs={List.class,VpcEndpointConnectionResourcesAllocate.class}, tree="[0,1]")
     private Output<List<VpcEndpointConnectionResourcesAllocate>> resourcesAllocates;
 
+    /**
+     * @return Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcEndpointConnectionResourcesAllocate>> resourcesAllocates() {
         return this.resourcesAllocates;
     }
@@ -194,9 +245,19 @@ public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     public Output<String> zoneId() {
         return this.zoneId;
     }
+    /**
+     * Details of the endpoint zone
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="zones", refs={List.class,VpcEndpointConnectionZone.class}, tree="[0,1]")
     private Output<List<VpcEndpointConnectionZone>> zones;
 
+    /**
+     * @return Details of the endpoint zone
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpcEndpointConnectionZone>> zones() {
         return this.zones;
     }

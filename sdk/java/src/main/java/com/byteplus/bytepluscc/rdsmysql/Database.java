@@ -21,6 +21,45 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.Database;
+ * import com.byteplus.bytepluscc.rdsmysql.DatabaseArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.DatabaseDatabasePrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var databaseDemo = new Database("databaseDemo", DatabaseArgs.builder()
+ *             .characterSetName("utf8")
+ *             .databasePrivileges(DatabaseDatabasePrivilegeArgs.builder()
+ *                 .account_name("a***")
+ *                 .account_privilege("ReadOnly")
+ *                 .host("%")
+ *                 .build())
+ *             .description("Demo Example")
+ *             .instanceId("mysql-779***")
+ *             .name("rdstest")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -46,9 +85,19 @@ public class Database extends com.pulumi.resources.CustomResource {
     public Output<String> characterSetName() {
         return this.characterSetName;
     }
+    /**
+     * Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="databasePrivileges", refs={List.class,DatabaseDatabasePrivilege.class}, tree="[0,1]")
     private Output<List<DatabaseDatabasePrivilege>> databasePrivileges;
 
+    /**
+     * @return Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DatabaseDatabasePrivilege>> databasePrivileges() {
         return this.databasePrivileges;
     }

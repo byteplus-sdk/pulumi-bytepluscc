@@ -24,6 +24,61 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ecs.Command;
+ * import com.byteplus.bytepluscc.ecs.CommandArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.CommandParameterDefinitionArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.CommandTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var commandDemo = new Command("commandDemo", CommandArgs.builder()
+ *             .commandContent("IyEvYmluL2Jhc2gKCm1rZGlyIHt7ZGxxxxx")
+ *             .description("CommandDemo Example")
+ *             .enableParameter(true)
+ *             .name("commandtest")
+ *             .parameterDefinitions(CommandParameterDefinitionArgs.builder()
+ *                 .type("Digit")
+ *                 .name("dirname")
+ *                 .required(true)
+ *                 .default_value("10")
+ *                 .min_length(0)
+ *                 .max_length(0)
+ *                 .min_value("5")
+ *                 .max_value("100")
+ *                 .decimal_precision(0)
+ *                 .build())
+ *             .projectName("default")
+ *             .tags(CommandTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .timeout(60)
+ *             .type("Shell")
+ *             .username("rxxxx")
+ *             .workingDir("/home")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -147,9 +202,19 @@ public class Command extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
+    /**
+     * Custom parameter definition information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="parameterDefinitions", refs={List.class,CommandParameterDefinition.class}, tree="[0,1]")
     private Output<List<CommandParameterDefinition>> parameterDefinitions;
 
+    /**
+     * @return Custom parameter definition information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<CommandParameterDefinition>> parameterDefinitions() {
         return this.parameterDefinitions;
     }
@@ -181,9 +246,19 @@ public class Command extends com.pulumi.resources.CustomResource {
     public Output<String> providerName() {
         return this.providerName;
     }
+    /**
+     * Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,CommandTag.class}, tree="[0,1]")
     private Output<List<CommandTag>> tags;
 
+    /**
+     * @return Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<CommandTag>> tags() {
         return this.tags;
     }

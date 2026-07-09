@@ -24,6 +24,11 @@ public final class ScalingPolicyAlarmPolicy {
      * 
      */
     private @Nullable String conditionOperator;
+    /**
+     * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ScalingPolicyAlarmPolicyCondition> conditions;
     /**
      * @return The effective period for the alarm task.
@@ -56,6 +61,11 @@ public final class ScalingPolicyAlarmPolicy {
     public Optional<String> conditionOperator() {
         return Optional.ofNullable(this.conditionOperator);
     }
+    /**
+     * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ScalingPolicyAlarmPolicyCondition> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }

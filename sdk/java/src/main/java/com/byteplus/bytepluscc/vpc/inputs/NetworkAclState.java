@@ -37,16 +37,36 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.createdTime);
     }
 
+    /**
+     * Default outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="defaultEgressAclEntries")
     private @Nullable Output<List<NetworkAclDefaultEgressAclEntryArgs>> defaultEgressAclEntries;
 
+    /**
+     * @return Default outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NetworkAclDefaultEgressAclEntryArgs>>> defaultEgressAclEntries() {
         return Optional.ofNullable(this.defaultEgressAclEntries);
     }
 
+    /**
+     * Default inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="defaultIngressAclEntries")
     private @Nullable Output<List<NetworkAclDefaultIngressAclEntryArgs>> defaultIngressAclEntries;
 
+    /**
+     * @return Default inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NetworkAclDefaultIngressAclEntryArgs>>> defaultIngressAclEntries() {
         return Optional.ofNullable(this.defaultIngressAclEntries);
     }
@@ -66,16 +86,36 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="egressAclEntries")
     private @Nullable Output<List<NetworkAclEgressAclEntryArgs>> egressAclEntries;
 
+    /**
+     * @return Outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NetworkAclEgressAclEntryArgs>>> egressAclEntries() {
         return Optional.ofNullable(this.egressAclEntries);
     }
 
+    /**
+     * Inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ingressAclEntries")
     private @Nullable Output<List<NetworkAclIngressAclEntryArgs>> ingressAclEntries;
 
+    /**
+     * @return Inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NetworkAclIngressAclEntryArgs>>> ingressAclEntries() {
         return Optional.ofNullable(this.ingressAclEntries);
     }
@@ -125,9 +165,19 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Associated resource list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="resources")
     private @Nullable Output<List<NetworkAclResourceArgs>> resources;
 
+    /**
+     * @return Associated resource list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NetworkAclResourceArgs>>> resources() {
         return Optional.ofNullable(this.resources);
     }
@@ -147,9 +197,19 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<NetworkAclTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<NetworkAclTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -242,28 +302,70 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
             return createdTime(Output.of(createdTime));
         }
 
+        /**
+         * @param defaultEgressAclEntries Default outbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultEgressAclEntries(@Nullable Output<List<NetworkAclDefaultEgressAclEntryArgs>> defaultEgressAclEntries) {
             $.defaultEgressAclEntries = defaultEgressAclEntries;
             return this;
         }
 
+        /**
+         * @param defaultEgressAclEntries Default outbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultEgressAclEntries(List<NetworkAclDefaultEgressAclEntryArgs> defaultEgressAclEntries) {
             return defaultEgressAclEntries(Output.of(defaultEgressAclEntries));
         }
 
+        /**
+         * @param defaultEgressAclEntries Default outbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultEgressAclEntries(NetworkAclDefaultEgressAclEntryArgs... defaultEgressAclEntries) {
             return defaultEgressAclEntries(List.of(defaultEgressAclEntries));
         }
 
+        /**
+         * @param defaultIngressAclEntries Default inbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultIngressAclEntries(@Nullable Output<List<NetworkAclDefaultIngressAclEntryArgs>> defaultIngressAclEntries) {
             $.defaultIngressAclEntries = defaultIngressAclEntries;
             return this;
         }
 
+        /**
+         * @param defaultIngressAclEntries Default inbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultIngressAclEntries(List<NetworkAclDefaultIngressAclEntryArgs> defaultIngressAclEntries) {
             return defaultIngressAclEntries(Output.of(defaultIngressAclEntries));
         }
 
+        /**
+         * @param defaultIngressAclEntries Default inbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder defaultIngressAclEntries(NetworkAclDefaultIngressAclEntryArgs... defaultIngressAclEntries) {
             return defaultIngressAclEntries(List.of(defaultIngressAclEntries));
         }
@@ -289,28 +391,70 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
             return description(Output.of(description));
         }
 
+        /**
+         * @param egressAclEntries Outbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder egressAclEntries(@Nullable Output<List<NetworkAclEgressAclEntryArgs>> egressAclEntries) {
             $.egressAclEntries = egressAclEntries;
             return this;
         }
 
+        /**
+         * @param egressAclEntries Outbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder egressAclEntries(List<NetworkAclEgressAclEntryArgs> egressAclEntries) {
             return egressAclEntries(Output.of(egressAclEntries));
         }
 
+        /**
+         * @param egressAclEntries Outbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder egressAclEntries(NetworkAclEgressAclEntryArgs... egressAclEntries) {
             return egressAclEntries(List.of(egressAclEntries));
         }
 
+        /**
+         * @param ingressAclEntries Inbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ingressAclEntries(@Nullable Output<List<NetworkAclIngressAclEntryArgs>> ingressAclEntries) {
             $.ingressAclEntries = ingressAclEntries;
             return this;
         }
 
+        /**
+         * @param ingressAclEntries Inbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ingressAclEntries(List<NetworkAclIngressAclEntryArgs> ingressAclEntries) {
             return ingressAclEntries(Output.of(ingressAclEntries));
         }
 
+        /**
+         * @param ingressAclEntries Inbound ACL rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ingressAclEntries(NetworkAclIngressAclEntryArgs... ingressAclEntries) {
             return ingressAclEntries(List.of(ingressAclEntries));
         }
@@ -378,15 +522,36 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param resources Associated resource list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resources(@Nullable Output<List<NetworkAclResourceArgs>> resources) {
             $.resources = resources;
             return this;
         }
 
+        /**
+         * @param resources Associated resource list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resources(List<NetworkAclResourceArgs> resources) {
             return resources(Output.of(resources));
         }
 
+        /**
+         * @param resources Associated resource list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder resources(NetworkAclResourceArgs... resources) {
             return resources(List.of(resources));
         }
@@ -412,15 +577,36 @@ public final class NetworkAclState extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<NetworkAclTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<NetworkAclTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(NetworkAclTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -21,9 +21,19 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     public static final AclState Empty = new AclState();
 
+    /**
+     * Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="aclEntries")
     private @Nullable Output<List<AclAclEntryArgs>> aclEntries;
 
+    /**
+     * @return Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AclAclEntryArgs>>> aclEntries() {
         return Optional.ofNullable(this.aclEntries);
     }
@@ -103,9 +113,19 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="listeners")
     private @Nullable Output<List<AclListenerArgs>> listeners;
 
+    /**
+     * @return Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AclListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
     }
@@ -155,9 +175,19 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<AclTagArgs>> tags;
 
+    /**
+     * @return Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AclTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -212,15 +242,36 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
             $ = new AclState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclEntries(@Nullable Output<List<AclAclEntryArgs>> aclEntries) {
             $.aclEntries = aclEntries;
             return this;
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclEntries(List<AclAclEntryArgs> aclEntries) {
             return aclEntries(Output.of(aclEntries));
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder aclEntries(AclAclEntryArgs... aclEntries) {
             return aclEntries(List.of(aclEntries));
         }
@@ -330,15 +381,36 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
             return description(Output.of(description));
         }
 
+        /**
+         * @param listeners Detailed information about listeners associated with the access control policy group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(@Nullable Output<List<AclListenerArgs>> listeners) {
             $.listeners = listeners;
             return this;
         }
 
+        /**
+         * @param listeners Detailed information about listeners associated with the access control policy group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(List<AclListenerArgs> listeners) {
             return listeners(Output.of(listeners));
         }
 
+        /**
+         * @param listeners Detailed information about listeners associated with the access control policy group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(AclListenerArgs... listeners) {
             return listeners(List.of(listeners));
         }
@@ -406,15 +478,36 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<AclTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<AclTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(AclTagArgs... tags) {
             return tags(List.of(tags));
         }

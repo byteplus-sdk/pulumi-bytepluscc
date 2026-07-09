@@ -27,6 +27,60 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vedbm.Instance;
+ * import com.byteplus.bytepluscc.vedbm.InstanceArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.InstanceTagArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.InstanceChargeDetailArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vEDBMInstanceDemo = new Instance("vEDBMInstanceDemo", InstanceArgs.builder()
+ *             .instanceName("VEDBMInstanceDemo")
+ *             .dbEngineVersion("MySQL_8_0")
+ *             .dbMinorVersion("3.0")
+ *             .nodeSpec("vedb.mysql.x4.medium")
+ *             .zoneIds("cn-beijing-a")
+ *             .nodeNumber(2)
+ *             .vpcId("vpc-1a1vgeoxxxccg8nvepjykjnuw")
+ *             .subnetId("subnet-3nrd6xxx3log0931ech3re2r")
+ *             .port(3306)
+ *             .superAccountName("username")
+ *             .superAccountPassword("*******")
+ *             .timeZone("UTC +08:00")
+ *             .lowerCaseTableNames("1")
+ *             .projectName("default")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("dev")
+ *                 .value("test")
+ *                 .build())
+ *             .deletionProtection("enabled")
+ *             .number(1)
+ *             .chargeDetail(InstanceChargeDetailArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -122,9 +176,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> deletionProtection() {
         return this.deletionProtection;
     }
+    /**
+     * Endpoint details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
 
+    /**
+     * @return Endpoint details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
@@ -226,9 +290,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
+    /**
+     * Instance node details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodes", refs={List.class,InstanceNode.class}, tree="[0,1]")
     private Output<List<InstanceNode>> nodes;
 
+    /**
+     * @return Instance node details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceNode>> nodes() {
         return this.nodes;
     }
@@ -372,9 +446,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
+    /**
+     * Array object of tag keys and tag values bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Array object of tag keys and tag values bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

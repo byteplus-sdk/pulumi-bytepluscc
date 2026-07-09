@@ -231,9 +231,19 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.invocationName);
     }
 
+    /**
+     * Result of command execution on a single instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="invocationResults")
     private @Nullable Output<List<InvocationInvocationResultArgs>> invocationResults;
 
+    /**
+     * @return Result of command execution on a single instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InvocationInvocationResultArgs>>> invocationResults() {
         return Optional.ofNullable(this.invocationResults);
     }
@@ -268,9 +278,19 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.launchTime);
     }
 
+    /**
+     * Custom parameter definition for the command triggered by the task.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="parameterDefinitions")
     private @Nullable Output<List<InvocationParameterDefinitionArgs>> parameterDefinitions;
 
+    /**
+     * @return Custom parameter definition for the command triggered by the task.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InvocationParameterDefinitionArgs>>> parameterDefinitions() {
         return Optional.ofNullable(this.parameterDefinitions);
     }
@@ -350,9 +370,19 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.startTime);
     }
 
+    /**
+     * Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<InvocationTagArgs>> tags;
 
+    /**
+     * @return Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InvocationTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -772,15 +802,36 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
             return invocationName(Output.of(invocationName));
         }
 
+        /**
+         * @param invocationResults Result of command execution on a single instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder invocationResults(@Nullable Output<List<InvocationInvocationResultArgs>> invocationResults) {
             $.invocationResults = invocationResults;
             return this;
         }
 
+        /**
+         * @param invocationResults Result of command execution on a single instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder invocationResults(List<InvocationInvocationResultArgs> invocationResults) {
             return invocationResults(Output.of(invocationResults));
         }
 
+        /**
+         * @param invocationResults Result of command execution on a single instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder invocationResults(InvocationInvocationResultArgs... invocationResults) {
             return invocationResults(List.of(invocationResults));
         }
@@ -827,15 +878,36 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
             return launchTime(Output.of(launchTime));
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition for the command triggered by the task.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameterDefinitions(@Nullable Output<List<InvocationParameterDefinitionArgs>> parameterDefinitions) {
             $.parameterDefinitions = parameterDefinitions;
             return this;
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition for the command triggered by the task.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameterDefinitions(List<InvocationParameterDefinitionArgs> parameterDefinitions) {
             return parameterDefinitions(Output.of(parameterDefinitions));
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition for the command triggered by the task.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder parameterDefinitions(InvocationParameterDefinitionArgs... parameterDefinitions) {
             return parameterDefinitions(List.of(parameterDefinitions));
         }
@@ -945,15 +1017,36 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
             return startTime(Output.of(startTime));
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<InvocationTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<InvocationTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(InvocationTagArgs... tags) {
             return tags(List.of(tags));
         }

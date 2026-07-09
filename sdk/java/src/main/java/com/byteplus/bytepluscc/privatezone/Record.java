@@ -32,8 +32,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.privatezone.Record;
  * import com.byteplus.bytepluscc.privatezone.RecordArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -156,9 +156,19 @@ public class Record extends com.pulumi.resources.CustomResource {
     public Output<String> recordId() {
         return this.recordId;
     }
+    /**
+     * Record set list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="recordSets", refs={List.class,RecordRecordSet.class}, tree="[0,1]")
     private Output<List<RecordRecordSet>> recordSets;
 
+    /**
+     * @return Record set list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RecordRecordSet>> recordSets() {
         return this.recordSets;
     }

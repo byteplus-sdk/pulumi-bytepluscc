@@ -28,6 +28,48 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.iam.User;
+ * import com.byteplus.bytepluscc.iam.UserArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.UserPolicyArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.UserTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var userDemo = new User("userDemo", UserArgs.builder()
+ *             .userName("UserDemo")
+ *             .description("user description")
+ *             .groups("UserGroupDemo")
+ *             .policies(UserPolicyArgs.builder()
+ *                 .policy_name("TOSReadOnlyAccess")
+ *                 .policy_type("System")
+ *                 .build())
+ *             .tags(UserTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -39,9 +81,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:iam/user:User")
 public class User extends com.pulumi.resources.CustomResource {
+    /**
+     * Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="accessKeys", refs={List.class,UserAccessKey.class}, tree="[0,1]")
     private Output<List<UserAccessKey>> accessKeys;
 
+    /**
+     * @return Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<UserAccessKey>> accessKeys() {
         return this.accessKeys;
     }
@@ -185,9 +237,19 @@ public class User extends com.pulumi.resources.CustomResource {
     public Output<Boolean> mobilePhoneIsVerify() {
         return this.mobilePhoneIsVerify;
     }
+    /**
+     * Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="policies", refs={List.class,UserPolicy.class}, tree="[0,1]")
     private Output<List<UserPolicy>> policies;
 
+    /**
+     * @return Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<UserPolicy>> policies() {
         return this.policies;
     }
@@ -205,9 +267,19 @@ public class User extends com.pulumi.resources.CustomResource {
     public Output<UserSecurityConfig> securityConfig() {
         return this.securityConfig;
     }
+    /**
+     * Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,UserTag.class}, tree="[0,1]")
     private Output<List<UserTag>> tags;
 
+    /**
+     * @return Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<UserTag>> tags() {
         return this.tags;
     }

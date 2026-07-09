@@ -23,6 +23,51 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.ParameterTemplate;
+ * import com.byteplus.bytepluscc.rdsmysql.ParameterTemplateArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.ParameterTemplateTemplateParamArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rDSMySQLParameterTemplateDemo = new ParameterTemplate("rDSMySQLParameterTemplateDemo", ParameterTemplateArgs.builder()
+ *             .templateName("test-parametertemplate")
+ *             .templateType("Mysql")
+ *             .templateTypeVersion("MySQL_5_7")
+ *             .templateParams(            
+ *                 ParameterTemplateTemplateParamArgs.builder()
+ *                     .name("auto_increment_increment")
+ *                     .running_value("33")
+ *                     .build(),
+ *                 ParameterTemplateTemplateParamArgs.builder()
+ *                     .name("automatic_sp_privileges")
+ *                     .running_value("on")
+ *                     .build())
+ *             .templateDesc("测试参数模板")
+ *             .engineType("InnoDB")
+ *             .projectName("default")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -174,9 +219,19 @@ public class ParameterTemplate extends com.pulumi.resources.CustomResource {
     public Output<String> templateName() {
         return this.templateName;
     }
+    /**
+     * Parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="templateParams", refs={List.class,ParameterTemplateTemplateParam.class}, tree="[0,1]")
     private Output<List<ParameterTemplateTemplateParam>> templateParams;
 
+    /**
+     * @return Parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ParameterTemplateTemplateParam>> templateParams() {
         return this.templateParams;
     }

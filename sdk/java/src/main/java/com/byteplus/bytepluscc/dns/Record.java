@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.dns.Record;
  * import com.byteplus.bytepluscc.dns.RecordArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -128,14 +128,14 @@ public class Record extends com.pulumi.resources.CustomResource {
         return this.host;
     }
     /**
-     * Line code corresponding to the DNS record, such as `default`.
+     * Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
      * 
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
      * 
      */
     public Output<String> line() {

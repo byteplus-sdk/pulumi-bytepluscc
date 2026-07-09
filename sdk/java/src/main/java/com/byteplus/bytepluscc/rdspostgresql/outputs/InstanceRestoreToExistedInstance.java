@@ -18,6 +18,11 @@ public final class InstanceRestoreToExistedInstance {
      * 
      */
     private @Nullable String backupId;
+    /**
+     * @return List of databases to restore
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceRestoreToExistedInstanceDatabase> databases;
     /**
      * @return Source instance ID
@@ -38,6 +43,11 @@ public final class InstanceRestoreToExistedInstance {
     public Optional<String> backupId() {
         return Optional.ofNullable(this.backupId);
     }
+    /**
+     * @return List of databases to restore
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceRestoreToExistedInstanceDatabase> databases() {
         return this.databases == null ? List.of() : this.databases;
     }

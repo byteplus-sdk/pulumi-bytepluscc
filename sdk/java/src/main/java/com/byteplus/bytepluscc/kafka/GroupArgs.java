@@ -63,9 +63,19 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         return this.instanceId;
     }
 
+    /**
+     * Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<GroupTagArgs>> tags;
 
+    /**
+     * @return Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -160,15 +170,36 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
             return instanceId(Output.of(instanceId));
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<GroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<GroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(GroupTagArgs... tags) {
             return tags(List.of(tags));
         }

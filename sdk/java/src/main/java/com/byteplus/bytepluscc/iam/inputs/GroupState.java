@@ -34,9 +34,19 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * Policy information bound to the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="attachedPolicies")
     private @Nullable Output<List<GroupAttachedPolicyArgs>> attachedPolicies;
 
+    /**
+     * @return Policy information bound to the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupAttachedPolicyArgs>>> attachedPolicies() {
         return Optional.ofNullable(this.attachedPolicies);
     }
@@ -131,9 +141,19 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.userGroupName);
     }
 
+    /**
+     * User information associated with the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="users")
     private @Nullable Output<List<GroupUserArgs>> users;
 
+    /**
+     * @return User information associated with the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupUserArgs>>> users() {
         return Optional.ofNullable(this.users);
     }
@@ -191,15 +211,36 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachedPolicies(@Nullable Output<List<GroupAttachedPolicyArgs>> attachedPolicies) {
             $.attachedPolicies = attachedPolicies;
             return this;
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachedPolicies(List<GroupAttachedPolicyArgs> attachedPolicies) {
             return attachedPolicies(Output.of(attachedPolicies));
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachedPolicies(GroupAttachedPolicyArgs... attachedPolicies) {
             return attachedPolicies(List.of(attachedPolicies));
         }
@@ -330,15 +371,36 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
             return userGroupName(Output.of(userGroupName));
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder users(@Nullable Output<List<GroupUserArgs>> users) {
             $.users = users;
             return this;
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder users(List<GroupUserArgs> users) {
             return users(Output.of(users));
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder users(GroupUserArgs... users) {
             return users(List.of(users));
         }

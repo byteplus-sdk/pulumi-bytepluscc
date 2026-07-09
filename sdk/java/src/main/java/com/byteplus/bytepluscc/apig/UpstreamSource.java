@@ -22,6 +22,48 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.apig.UpstreamSource;
+ * import com.byteplus.bytepluscc.apig.UpstreamSourceArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamSourceSourceSpecArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var upstreamSourceNacosDemo = new UpstreamSource("upstreamSourceNacosDemo", UpstreamSourceArgs.builder()
+ *             .gatewayId("gd3s9vbk7npja181xxxxx")
+ *             .comments("upstreamSourceNacosDemo")
+ *             .sourceType("Nacos")
+ *             .sourceSpec(UpstreamSourceSourceSpecArgs.builder()
+ *                 .nacos_source(Map.ofEntries(
+ *                     Map.entry("nacosId", "nd3thmnjdl46p917xxxxx"),
+ *                     Map.entry("authConfig", Map.of("basic", Map.ofEntries(
+ *                         Map.entry("username", "nacos"),
+ *                         Map.entry("password", "******")
+ *                     )))
+ *                 ))
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

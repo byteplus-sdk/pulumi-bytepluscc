@@ -23,9 +23,19 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     public static final UpstreamState Empty = new UpstreamState();
 
+    /**
+     * Backend node. Not valid when the upstream source type is VeFaas
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="backendTargets")
     private @Nullable Output<List<UpstreamBackendTargetArgs>> backendTargets;
 
+    /**
+     * @return Backend node. Not valid when the upstream source type is VeFaas
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UpstreamBackendTargetArgs>>> backendTargets() {
         return Optional.ofNullable(this.backendTargets);
     }
@@ -225,9 +235,19 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.upstreamSpec);
     }
 
+    /**
+     * Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="versionDetails")
     private @Nullable Output<List<UpstreamVersionDetailArgs>> versionDetails;
 
+    /**
+     * @return Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UpstreamVersionDetailArgs>>> versionDetails() {
         return Optional.ofNullable(this.versionDetails);
     }
@@ -270,15 +290,36 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
             $ = new UpstreamState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param backendTargets Backend node. Not valid when the upstream source type is VeFaas
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backendTargets(@Nullable Output<List<UpstreamBackendTargetArgs>> backendTargets) {
             $.backendTargets = backendTargets;
             return this;
         }
 
+        /**
+         * @param backendTargets Backend node. Not valid when the upstream source type is VeFaas
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backendTargets(List<UpstreamBackendTargetArgs> backendTargets) {
             return backendTargets(Output.of(backendTargets));
         }
 
+        /**
+         * @param backendTargets Backend node. Not valid when the upstream source type is VeFaas
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backendTargets(UpstreamBackendTargetArgs... backendTargets) {
             return backendTargets(List.of(backendTargets));
         }
@@ -556,15 +597,36 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
             return upstreamSpec(Output.of(upstreamSpec));
         }
 
+        /**
+         * @param versionDetails Upstream version, only valid when the upstream source type is K8S
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionDetails(@Nullable Output<List<UpstreamVersionDetailArgs>> versionDetails) {
             $.versionDetails = versionDetails;
             return this;
         }
 
+        /**
+         * @param versionDetails Upstream version, only valid when the upstream source type is K8S
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionDetails(List<UpstreamVersionDetailArgs> versionDetails) {
             return versionDetails(Output.of(versionDetails));
         }
 
+        /**
+         * @param versionDetails Upstream version, only valid when the upstream source type is K8S
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder versionDetails(UpstreamVersionDetailArgs... versionDetails) {
             return versionDetails(List.of(versionDetails));
         }

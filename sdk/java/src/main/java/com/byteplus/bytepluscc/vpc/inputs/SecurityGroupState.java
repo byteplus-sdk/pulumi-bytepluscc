@@ -50,16 +50,36 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="egressPermissions")
     private @Nullable Output<List<SecurityGroupEgressPermissionArgs>> egressPermissions;
 
+    /**
+     * @return Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SecurityGroupEgressPermissionArgs>>> egressPermissions() {
         return Optional.ofNullable(this.egressPermissions);
     }
 
+    /**
+     * Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ingressPermissions")
     private @Nullable Output<List<SecurityGroupIngressPermissionArgs>> ingressPermissions;
 
+    /**
+     * @return Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SecurityGroupIngressPermissionArgs>>> ingressPermissions() {
         return Optional.ofNullable(this.ingressPermissions);
     }
@@ -139,9 +159,19 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<SecurityGroupTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SecurityGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -253,28 +283,70 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
             return description(Output.of(description));
         }
 
+        /**
+         * @param egressPermissions Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder egressPermissions(@Nullable Output<List<SecurityGroupEgressPermissionArgs>> egressPermissions) {
             $.egressPermissions = egressPermissions;
             return this;
         }
 
+        /**
+         * @param egressPermissions Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder egressPermissions(List<SecurityGroupEgressPermissionArgs> egressPermissions) {
             return egressPermissions(Output.of(egressPermissions));
         }
 
+        /**
+         * @param egressPermissions Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder egressPermissions(SecurityGroupEgressPermissionArgs... egressPermissions) {
             return egressPermissions(List.of(egressPermissions));
         }
 
+        /**
+         * @param ingressPermissions Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ingressPermissions(@Nullable Output<List<SecurityGroupIngressPermissionArgs>> ingressPermissions) {
             $.ingressPermissions = ingressPermissions;
             return this;
         }
 
+        /**
+         * @param ingressPermissions Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ingressPermissions(List<SecurityGroupIngressPermissionArgs> ingressPermissions) {
             return ingressPermissions(Output.of(ingressPermissions));
         }
 
+        /**
+         * @param ingressPermissions Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ingressPermissions(SecurityGroupIngressPermissionArgs... ingressPermissions) {
             return ingressPermissions(List.of(ingressPermissions));
         }
@@ -384,15 +456,36 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<SecurityGroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<SecurityGroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(SecurityGroupTagArgs... tags) {
             return tags(List.of(tags));
         }

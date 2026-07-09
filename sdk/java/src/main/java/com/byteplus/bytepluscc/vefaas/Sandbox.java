@@ -26,6 +26,66 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vefaas.Sandbox;
+ * import com.byteplus.bytepluscc.vefaas.SandboxArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.SandboxMetadataArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.SandboxInstanceImageInfoArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.SandboxInstanceTosMountConfigArgs;
+ * import com.pulumi.bytepluscc.vefaas.inputs.SandboxEnvArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vefaasSandboxDemo = new Sandbox("vefaasSandboxDemo", SandboxArgs.builder()
+ *             .functionId("n5hcs3y5****")
+ *             .timeout(50)
+ *             .memoryMb(2048)
+ *             .cpuMilli(1000)
+ *             .requestTimeout(30)
+ *             .maxConcurrency(100)
+ *             .metadatas(SandboxMetadataArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .instanceImageInfo(SandboxInstanceImageInfoArgs.builder()
+ *                 .image("enterprise-public-cn-beijing.cr.volces.com/xxxxxx/all-in-one-sandbox:xxxxxx")
+ *                 .command("/opt/gem/run.sh")
+ *                 .port(8080)
+ *                 .image_id("3ewzg8x5h1***")
+ *                 .build())
+ *             .instanceTosMountConfig(SandboxInstanceTosMountConfigArgs.builder()
+ *                 .enable(true)
+ *                 .tos_mount_points(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("bucketPath", "/mnt/tos"),
+ *                     Map.entry("localMountPath", "/mnt/tos")
+ *                 )))
+ *                 .build())
+ *             .envs(SandboxEnvArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -79,9 +139,19 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * Sandbox instance environment variables
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="envs", refs={List.class,SandboxEnv.class}, tree="[0,1]")
     private Output<List<SandboxEnv>> envs;
 
+    /**
+     * @return Sandbox instance environment variables
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<SandboxEnv>> envs() {
         return this.envs;
     }
@@ -211,9 +281,19 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     public Output<Integer> memoryMb() {
         return this.memoryMb;
     }
+    /**
+     * Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="metadatas", refs={List.class,SandboxMetadata.class}, tree="[0,1]")
     private Output<List<SandboxMetadata>> metadatas;
 
+    /**
+     * @return Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<SandboxMetadata>> metadatas() {
         return this.metadatas;
     }

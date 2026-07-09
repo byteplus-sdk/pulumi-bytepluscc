@@ -24,6 +24,71 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.Shipper;
+ * import com.byteplus.bytepluscc.tls.ShipperArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ShipperContentInfoArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ShipperKafkaShipperInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var tLSShipperDemo = new Shipper("tLSShipperDemo", ShipperArgs.builder()
+ *             .contentInfo(ShipperContentInfoArgs.builder()
+ *                 .format("json")
+ *                 .json_info(Map.ofEntries(
+ *                     Map.entry("enable", true),
+ *                     Map.entry("escape", true),
+ *                     Map.entry("keys", Arrays.asList(                    
+ *                         "__content__",
+ *                         "__source__",
+ *                         "__path__",
+ *                         "__time__",
+ *                         "__time_ns_part__",
+ *                         "__image_name__",
+ *                         "__container_name__",
+ *                         "__container_ip__",
+ *                         "__container_source__",
+ *                         "__pod_ip__",
+ *                         "__pod_name__",
+ *                         "__pod_uid__",
+ *                         "__namespace__",
+ *                         "__tag____client_ip__",
+ *                         "__tag____receive_time__"))
+ *                 ))
+ *                 .build())
+ *             .kafkaShipperInfo(ShipperKafkaShipperInfoArgs.builder()
+ *                 .compress("gzip")
+ *                 .end_time(1777538948000)
+ *                 .instance("kafka-cnngsl83xxxxxxxx")
+ *                 .kafka_topic("topic1")
+ *                 .build())
+ *             .shipperEndTime(1777538948000)
+ *             .shipperName("ccapi-test-kaf-1001")
+ *             .shipperType("kafka")
+ *             .topicId("b75fffd8-1986-460c-9cca-5axxxxxxx")
+ *             .status(false)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

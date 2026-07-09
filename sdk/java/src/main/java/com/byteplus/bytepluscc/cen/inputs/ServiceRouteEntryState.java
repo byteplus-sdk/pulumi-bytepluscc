@@ -92,9 +92,19 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.publishMode);
     }
 
+    /**
+     * List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="publishToInstances")
     private @Nullable Output<List<ServiceRouteEntryPublishToInstanceArgs>> publishToInstances;
 
+    /**
+     * @return List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceRouteEntryPublishToInstanceArgs>>> publishToInstances() {
         return Optional.ofNullable(this.publishToInstances);
     }
@@ -281,15 +291,36 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
             return publishMode(Output.of(publishMode));
         }
 
+        /**
+         * @param publishToInstances List of network instances associated with batch route publishing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder publishToInstances(@Nullable Output<List<ServiceRouteEntryPublishToInstanceArgs>> publishToInstances) {
             $.publishToInstances = publishToInstances;
             return this;
         }
 
+        /**
+         * @param publishToInstances List of network instances associated with batch route publishing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder publishToInstances(List<ServiceRouteEntryPublishToInstanceArgs> publishToInstances) {
             return publishToInstances(Output.of(publishToInstances));
         }
 
+        /**
+         * @param publishToInstances List of network instances associated with batch route publishing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder publishToInstances(ServiceRouteEntryPublishToInstanceArgs... publishToInstances) {
             return publishToInstances(List.of(publishToInstances));
         }

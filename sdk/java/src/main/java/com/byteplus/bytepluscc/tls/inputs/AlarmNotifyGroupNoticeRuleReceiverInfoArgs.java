@@ -138,9 +138,19 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
         return Optional.ofNullable(this.generalWebhookBody);
     }
 
+    /**
+     * Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="generalWebhookHeaders")
     private @Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs>> generalWebhookHeaders;
 
+    /**
+     * @return Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs>>> generalWebhookHeaders() {
         return Optional.ofNullable(this.generalWebhookHeaders);
     }
@@ -461,15 +471,36 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
             return generalWebhookBody(Output.of(generalWebhookBody));
         }
 
+        /**
+         * @param generalWebhookHeaders Custom callback request headers for the interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder generalWebhookHeaders(@Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs>> generalWebhookHeaders) {
             $.generalWebhookHeaders = generalWebhookHeaders;
             return this;
         }
 
+        /**
+         * @param generalWebhookHeaders Custom callback request headers for the interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder generalWebhookHeaders(List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs> generalWebhookHeaders) {
             return generalWebhookHeaders(Output.of(generalWebhookHeaders));
         }
 
+        /**
+         * @param generalWebhookHeaders Custom callback request headers for the interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder generalWebhookHeaders(AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs... generalWebhookHeaders) {
             return generalWebhookHeaders(List.of(generalWebhookHeaders));
         }

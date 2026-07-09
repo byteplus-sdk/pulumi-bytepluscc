@@ -17,9 +17,19 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     public static final EndpointState Empty = new EndpointState();
 
+    /**
+     * List of connection address strings
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="dbAddresses")
     private @Nullable Output<List<EndpointDbAddressArgs>> dbAddresses;
 
+    /**
+     * @return List of connection address strings
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EndpointDbAddressArgs>>> dbAddresses() {
         return Optional.ofNullable(this.dbAddresses);
     }
@@ -70,18 +80,20 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-     * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-     * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+     * Node type corresponding to the connection address. Possible values:
+     * 
+     *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+     *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
      * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
-     * @return Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-     * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-     * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+     * @return Node type corresponding to the connection address. Possible values:
+     * 
+     *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+     *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
      * 
      */
     public Optional<Output<String>> endpointType() {
@@ -119,16 +131,20 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
+     * Network type of the connection address. Possible values:
+     * 
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
      * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
+     * @return Network type of the connection address. Possible values:
+     * 
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -136,16 +152,20 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     * ID of the component associated with the current connection address
+     * 
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      * 
      */
     @Import(name="objectId")
     private @Nullable Output<String> objectId;
 
     /**
-     * @return ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     * @return ID of the component associated with the current connection address
+     * 
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      * 
      */
     public Optional<Output<String>> objectId() {
@@ -216,15 +236,36 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
             $ = new EndpointState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param dbAddresses List of connection address strings
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbAddresses(@Nullable Output<List<EndpointDbAddressArgs>> dbAddresses) {
             $.dbAddresses = dbAddresses;
             return this;
         }
 
+        /**
+         * @param dbAddresses List of connection address strings
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbAddresses(List<EndpointDbAddressArgs> dbAddresses) {
             return dbAddresses(Output.of(dbAddresses));
         }
 
+        /**
+         * @param dbAddresses List of connection address strings
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbAddresses(EndpointDbAddressArgs... dbAddresses) {
             return dbAddresses(List.of(dbAddresses));
         }
@@ -303,9 +344,10 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointType Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-         * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-         * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+         * @param endpointType Node type corresponding to the connection address. Possible values:
+         * 
+         *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+         *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
          * 
          * @return builder
          * 
@@ -316,9 +358,10 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param endpointType Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-         * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-         * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+         * @param endpointType Node type corresponding to the connection address. Possible values:
+         * 
+         *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+         *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
          * 
          * @return builder
          * 
@@ -380,8 +423,10 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-         * connection address
+         * @param networkType Network type of the connection address. Possible values:
+         * 
+         *     - `Private`: Private connection address
+         *     - `Public`: Public connection address
          * 
          * @return builder
          * 
@@ -392,8 +437,10 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-         * connection address
+         * @param networkType Network type of the connection address. Possible values:
+         * 
+         *     - `Private`: Private connection address
+         *     - `Public`: Public connection address
          * 
          * @return builder
          * 
@@ -403,8 +450,10 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param objectId ID of the component associated with the current connection address **Note:** This parameter is returned only when
-         * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+         * @param objectId ID of the component associated with the current connection address
+         * 
+         *   **Note:**
+         *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
          * 
          * @return builder
          * 
@@ -415,8 +464,10 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param objectId ID of the component associated with the current connection address **Note:** This parameter is returned only when
-         * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+         * @param objectId ID of the component associated with the current connection address
+         * 
+         *   **Note:**
+         *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
          * 
          * @return builder
          * 

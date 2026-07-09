@@ -27,6 +27,77 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.apig.Upstream;
+ * import com.byteplus.bytepluscc.apig.UpstreamArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamCircuitBreakingSettingsArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamConnectionPoolSettingsArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamLoadBalancerSettingsArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamTlsSettingsArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecDomainArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var aPIGUpstreamAIProviderDemo = new Upstream("aPIGUpstreamAIProviderDemo", UpstreamArgs.builder()
+ *             .circuitBreakingSettings(UpstreamCircuitBreakingSettingsArgs.builder()
+ *                 .base_ejection_time(30)
+ *                 .consecutive_errors(5)
+ *                 .enable(true)
+ *                 .interval(10)
+ *                 .max_ejection_percent(20)
+ *                 .min_health_percent(60)
+ *                 .build())
+ *             .comments("this is a test")
+ *             .connectionPoolSettings(UpstreamConnectionPoolSettingsArgs.builder()
+ *                 .enable(true)
+ *                 .http_1_max_pending_requests(1000)
+ *                 .idle_timeout(1000)
+ *                 .max_connections(1000)
+ *                 .build())
+ *             .gatewayId("gd6hagxxxxxkh7is70")
+ *             .loadBalancerSettings(UpstreamLoadBalancerSettingsArgs.builder()
+ *                 .lb_policy("SimpleLB")
+ *                 .simple_lb("LEAST_CONN")
+ *                 .warmup_duration(5)
+ *                 .build())
+ *             .name("test-7")
+ *             .protocol("HTTP")
+ *             .tlsSettings(UpstreamTlsSettingsArgs.builder()
+ *                 .sni("")
+ *                 .tls_mode("DISABLE")
+ *                 .build())
+ *             .sourceType("Domain")
+ *             .upstreamSpec(UpstreamUpstreamSpecArgs.builder()
+ *                 .domain(UpstreamUpstreamSpecDomainArgs.builder()
+ *                     .domainList(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("domain", "www.test7.com"),
+ *                         Map.entry("port", 5566)
+ *                     )))
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -38,9 +109,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:apig/upstream:Upstream")
 public class Upstream extends com.pulumi.resources.CustomResource {
+    /**
+     * Backend node. Not valid when the upstream source type is VeFaas
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backendTargets", refs={List.class,UpstreamBackendTarget.class}, tree="[0,1]")
     private Output<List<UpstreamBackendTarget>> backendTargets;
 
+    /**
+     * @return Backend node. Not valid when the upstream source type is VeFaas
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<UpstreamBackendTarget>> backendTargets() {
         return this.backendTargets;
     }
@@ -226,9 +307,19 @@ public class Upstream extends com.pulumi.resources.CustomResource {
     public Output<UpstreamUpstreamSpec> upstreamSpec() {
         return this.upstreamSpec;
     }
+    /**
+     * Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="versionDetails", refs={List.class,UpstreamVersionDetail.class}, tree="[0,1]")
     private Output<List<UpstreamVersionDetail>> versionDetails;
 
+    /**
+     * @return Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<UpstreamVersionDetail>> versionDetails() {
         return this.versionDetails;
     }

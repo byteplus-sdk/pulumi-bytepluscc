@@ -81,16 +81,36 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.remark);
     }
 
+    /**
+     * One or more tags associated with the domain. A resource can be associated with up to 50 tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<PrivateZoneTagArgs>> tags;
 
+    /**
+     * @return One or more tags associated with the domain. A resource can be associated with up to 50 tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PrivateZoneTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
+    /**
+     * One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="vpcs")
     private @Nullable Output<List<PrivateZoneVpcArgs>> vpcs;
 
+    /**
+     * @return One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PrivateZoneVpcArgs>>> vpcs() {
         return Optional.ofNullable(this.vpcs);
     }
@@ -224,28 +244,70 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
             return remark(Output.of(remark));
         }
 
+        /**
+         * @param tags One or more tags associated with the domain. A resource can be associated with up to 50 tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<PrivateZoneTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags One or more tags associated with the domain. A resource can be associated with up to 50 tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<PrivateZoneTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags One or more tags associated with the domain. A resource can be associated with up to 50 tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(PrivateZoneTagArgs... tags) {
             return tags(List.of(tags));
         }
 
+        /**
+         * @param vpcs One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpcs(@Nullable Output<List<PrivateZoneVpcArgs>> vpcs) {
             $.vpcs = vpcs;
             return this;
         }
 
+        /**
+         * @param vpcs One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpcs(List<PrivateZoneVpcArgs> vpcs) {
             return vpcs(Output.of(vpcs));
         }
 
+        /**
+         * @param vpcs One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpcs(PrivateZoneVpcArgs... vpcs) {
             return vpcs(List.of(vpcs));
         }

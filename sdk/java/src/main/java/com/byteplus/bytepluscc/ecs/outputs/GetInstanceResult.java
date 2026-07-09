@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.ecs.outputs;
 
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceCpuMemory;
+import com.byteplus.bytepluscc.ecs.outputs.GetInstanceDataVolume;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceEipAddress;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceImage;
 import com.byteplus.bytepluscc.ecs.outputs.GetInstanceKeyPair;
@@ -36,6 +37,7 @@ public final class GetInstanceResult {
     private GetInstanceCpuMemory cpuMemory;
     private String createdAt;
     private String creditSpecification;
+    private List<GetInstanceDataVolume> dataVolumes;
     private Boolean deletionProtection;
     private Integer deploymentSetGroupNumber;
     private String deploymentSetId;
@@ -106,6 +108,9 @@ public final class GetInstanceResult {
     }
     public String creditSpecification() {
         return this.creditSpecification;
+    }
+    public List<GetInstanceDataVolume> dataVolumes() {
+        return this.dataVolumes;
     }
     public Boolean deletionProtection() {
         return this.deletionProtection;
@@ -252,6 +257,7 @@ public final class GetInstanceResult {
         private GetInstanceCpuMemory cpuMemory;
         private String createdAt;
         private String creditSpecification;
+        private List<GetInstanceDataVolume> dataVolumes;
         private Boolean deletionProtection;
         private Integer deploymentSetGroupNumber;
         private String deploymentSetId;
@@ -306,6 +312,7 @@ public final class GetInstanceResult {
     	      this.cpuMemory = defaults.cpuMemory;
     	      this.createdAt = defaults.createdAt;
     	      this.creditSpecification = defaults.creditSpecification;
+    	      this.dataVolumes = defaults.dataVolumes;
     	      this.deletionProtection = defaults.deletionProtection;
     	      this.deploymentSetGroupNumber = defaults.deploymentSetGroupNumber;
     	      this.deploymentSetId = defaults.deploymentSetId;
@@ -421,6 +428,17 @@ public final class GetInstanceResult {
             }
             this.creditSpecification = creditSpecification;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataVolumes(List<GetInstanceDataVolume> dataVolumes) {
+            if (dataVolumes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "dataVolumes");
+            }
+            this.dataVolumes = dataVolumes;
+            return this;
+        }
+        public Builder dataVolumes(GetInstanceDataVolume... dataVolumes) {
+            return dataVolumes(List.of(dataVolumes));
         }
         @CustomType.Setter
         public Builder deletionProtection(Boolean deletionProtection) {
@@ -787,6 +805,7 @@ public final class GetInstanceResult {
             _resultValue.cpuMemory = cpuMemory;
             _resultValue.createdAt = createdAt;
             _resultValue.creditSpecification = creditSpecification;
+            _resultValue.dataVolumes = dataVolumes;
             _resultValue.deletionProtection = deletionProtection;
             _resultValue.deploymentSetGroupNumber = deploymentSetGroupNumber;
             _resultValue.deploymentSetId = deploymentSetId;

@@ -39,7 +39,7 @@ public final class GetRecordResult {
      */
     private String id;
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
      * 
      */
     private String line;
@@ -141,7 +141,7 @@ public final class GetRecordResult {
         return this.id;
     }
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
      * 
      */
     public String line() {

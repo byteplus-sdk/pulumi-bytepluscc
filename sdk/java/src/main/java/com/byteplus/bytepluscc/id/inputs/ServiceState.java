@@ -170,9 +170,19 @@ public final class ServiceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.routeCount);
     }
 
+    /**
+     * List of routes created simultaneously. This field is only written at creation, not returned by read interface
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="routes")
     private @Nullable Output<List<ServiceRouteArgs>> routes;
 
+    /**
+     * @return List of routes created simultaneously. This field is only written at creation, not returned by read interface
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceRouteArgs>>> routes() {
         return Optional.ofNullable(this.routes);
     }
@@ -222,9 +232,19 @@ public final class ServiceState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Service tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ServiceTagArgs>> tags;
 
+    /**
+     * @return Service tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -525,15 +545,36 @@ public final class ServiceState extends com.pulumi.resources.ResourceArgs {
             return routeCount(Output.of(routeCount));
         }
 
+        /**
+         * @param routes List of routes created simultaneously. This field is only written at creation, not returned by read interface
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder routes(@Nullable Output<List<ServiceRouteArgs>> routes) {
             $.routes = routes;
             return this;
         }
 
+        /**
+         * @param routes List of routes created simultaneously. This field is only written at creation, not returned by read interface
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder routes(List<ServiceRouteArgs> routes) {
             return routes(Output.of(routes));
         }
 
+        /**
+         * @param routes List of routes created simultaneously. This field is only written at creation, not returned by read interface
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder routes(ServiceRouteArgs... routes) {
             return routes(List.of(routes));
         }
@@ -601,15 +642,36 @@ public final class ServiceState extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Service tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ServiceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Service tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ServiceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Service tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ServiceTagArgs... tags) {
             return tags(List.of(tags));
         }

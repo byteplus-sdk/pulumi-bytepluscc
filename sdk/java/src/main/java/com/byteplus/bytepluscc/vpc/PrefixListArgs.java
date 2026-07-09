@@ -65,9 +65,19 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         return this.maxEntries;
     }
 
+    /**
+     * CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="prefixListEntries")
     private @Nullable Output<List<PrefixListPrefixListEntryArgs>> prefixListEntries;
 
+    /**
+     * @return CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PrefixListPrefixListEntryArgs>>> prefixListEntries() {
         return Optional.ofNullable(this.prefixListEntries);
     }
@@ -102,9 +112,19 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<PrefixListTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PrefixListTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -202,15 +222,36 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
             return maxEntries(Output.of(maxEntries));
         }
 
+        /**
+         * @param prefixListEntries CIDR of the prefix list entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefixListEntries(@Nullable Output<List<PrefixListPrefixListEntryArgs>> prefixListEntries) {
             $.prefixListEntries = prefixListEntries;
             return this;
         }
 
+        /**
+         * @param prefixListEntries CIDR of the prefix list entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefixListEntries(List<PrefixListPrefixListEntryArgs> prefixListEntries) {
             return prefixListEntries(Output.of(prefixListEntries));
         }
 
+        /**
+         * @param prefixListEntries CIDR of the prefix list entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder prefixListEntries(PrefixListPrefixListEntryArgs... prefixListEntries) {
             return prefixListEntries(List.of(prefixListEntries));
         }
@@ -257,15 +298,36 @@ public final class PrefixListArgs extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<PrefixListTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<PrefixListTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(PrefixListTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -4,8 +4,8 @@
 package com.byteplus.bytepluscc.cdn.inputs;
 
 import com.byteplus.bytepluscc.cdn.inputs.DomainAreaAccessRuleArgs;
-import com.byteplus.bytepluscc.cdn.inputs.DomainBrowserCachArgs;
-import com.byteplus.bytepluscc.cdn.inputs.DomainCachArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainBrowserCacheArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainCacheArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainCacheHostArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainCacheKeyArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainCompressionArgs;
@@ -20,7 +20,7 @@ import com.byteplus.bytepluscc.cdn.inputs.DomainIPv6Args;
 import com.byteplus.bytepluscc.cdn.inputs.DomainIpAccessRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainMethodDeniedRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainMultiRangeArgs;
-import com.byteplus.bytepluscc.cdn.inputs.DomainNegativeCachArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainNegativeCacheArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainOfflineCacheArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainOriginAccessRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainOriginArgArgs;
@@ -89,10 +89,20 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.backupOrigins);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="browserCaches")
-    private @Nullable Output<List<DomainBrowserCachArgs>> browserCaches;
+    private @Nullable Output<List<DomainBrowserCacheArgs>> browserCaches;
 
-    public Optional<Output<List<DomainBrowserCachArgs>>> browserCaches() {
+    /**
+     * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<DomainBrowserCacheArgs>>> browserCaches() {
         return Optional.ofNullable(this.browserCaches);
     }
 
@@ -111,9 +121,19 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.cacheHost);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="cacheKeys")
     private @Nullable Output<List<DomainCacheKeyArgs>> cacheKeys;
 
+    /**
+     * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainCacheKeyArgs>>> cacheKeys() {
         return Optional.ofNullable(this.cacheKeys);
     }
@@ -148,10 +168,20 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.cacheSharedTargetHost);
     }
 
+    /**
+     * Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="caches")
-    private @Nullable Output<List<DomainCachArgs>> caches;
+    private @Nullable Output<List<DomainCacheArgs>> caches;
 
-    public Optional<Output<List<DomainCachArgs>>> caches() {
+    /**
+     * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<DomainCacheArgs>>> caches() {
         return Optional.ofNullable(this.caches);
     }
 
@@ -425,10 +455,20 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.multiRange);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="negativeCaches")
-    private @Nullable Output<List<DomainNegativeCachArgs>> negativeCaches;
+    private @Nullable Output<List<DomainNegativeCacheArgs>> negativeCaches;
 
-    public Optional<Output<List<DomainNegativeCachArgs>>> negativeCaches() {
+    /**
+     * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<DomainNegativeCacheArgs>>> negativeCaches() {
         return Optional.ofNullable(this.negativeCaches);
     }
 
@@ -462,9 +502,19 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.originAccessRule);
     }
 
+    /**
+     * Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="originArgs")
     private @Nullable Output<List<DomainOriginArgArgs>> originArgs;
 
+    /**
+     * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainOriginArgArgs>>> originArgs() {
         return Optional.ofNullable(this.originArgs);
     }
@@ -589,9 +639,19 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.originSni);
     }
 
+    /**
+     * Indicates the basic origin configuration module.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="origins")
     private @Nullable Output<List<DomainOriginArgs>> origins;
 
+    /**
+     * @return Indicates the basic origin configuration module.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainOriginArgs>>> origins() {
         return Optional.ofNullable(this.origins);
     }
@@ -716,16 +776,36 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.requestBlockRule);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="requestHeaders")
     private @Nullable Output<List<DomainRequestHeaderArgs>> requestHeaders;
 
+    /**
+     * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainRequestHeaderArgs>>> requestHeaders() {
         return Optional.ofNullable(this.requestHeaders);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="responseHeaders")
     private @Nullable Output<List<DomainResponseHeaderArgs>> responseHeaders;
 
+    /**
+     * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainResponseHeaderArgs>>> responseHeaders() {
         return Optional.ofNullable(this.responseHeaders);
     }
@@ -805,9 +885,19 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<DomainTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -1022,16 +1112,37 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return backupOrigins(List.of(backupOrigins));
         }
 
-        public Builder browserCaches(@Nullable Output<List<DomainBrowserCachArgs>> browserCaches) {
+        /**
+         * @param browserCaches Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder browserCaches(@Nullable Output<List<DomainBrowserCacheArgs>> browserCaches) {
             $.browserCaches = browserCaches;
             return this;
         }
 
-        public Builder browserCaches(List<DomainBrowserCachArgs> browserCaches) {
+        /**
+         * @param browserCaches Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder browserCaches(List<DomainBrowserCacheArgs> browserCaches) {
             return browserCaches(Output.of(browserCaches));
         }
 
-        public Builder browserCaches(DomainBrowserCachArgs... browserCaches) {
+        /**
+         * @param browserCaches Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder browserCaches(DomainBrowserCacheArgs... browserCaches) {
             return browserCaches(List.of(browserCaches));
         }
 
@@ -1056,15 +1167,36 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return cacheHost(Output.of(cacheHost));
         }
 
+        /**
+         * @param cacheKeys Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheKeys(@Nullable Output<List<DomainCacheKeyArgs>> cacheKeys) {
             $.cacheKeys = cacheKeys;
             return this;
         }
 
+        /**
+         * @param cacheKeys Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheKeys(List<DomainCacheKeyArgs> cacheKeys) {
             return cacheKeys(Output.of(cacheKeys));
         }
 
+        /**
+         * @param cacheKeys Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cacheKeys(DomainCacheKeyArgs... cacheKeys) {
             return cacheKeys(List.of(cacheKeys));
         }
@@ -1111,16 +1243,37 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return cacheSharedTargetHost(Output.of(cacheSharedTargetHost));
         }
 
-        public Builder caches(@Nullable Output<List<DomainCachArgs>> caches) {
+        /**
+         * @param caches Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caches(@Nullable Output<List<DomainCacheArgs>> caches) {
             $.caches = caches;
             return this;
         }
 
-        public Builder caches(List<DomainCachArgs> caches) {
+        /**
+         * @param caches Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caches(List<DomainCacheArgs> caches) {
             return caches(Output.of(caches));
         }
 
-        public Builder caches(DomainCachArgs... caches) {
+        /**
+         * @param caches Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caches(DomainCacheArgs... caches) {
             return caches(List.of(caches));
         }
 
@@ -1502,16 +1655,37 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return multiRange(Output.of(multiRange));
         }
 
-        public Builder negativeCaches(@Nullable Output<List<DomainNegativeCachArgs>> negativeCaches) {
+        /**
+         * @param negativeCaches Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder negativeCaches(@Nullable Output<List<DomainNegativeCacheArgs>> negativeCaches) {
             $.negativeCaches = negativeCaches;
             return this;
         }
 
-        public Builder negativeCaches(List<DomainNegativeCachArgs> negativeCaches) {
+        /**
+         * @param negativeCaches Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder negativeCaches(List<DomainNegativeCacheArgs> negativeCaches) {
             return negativeCaches(Output.of(negativeCaches));
         }
 
-        public Builder negativeCaches(DomainNegativeCachArgs... negativeCaches) {
+        /**
+         * @param negativeCaches Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder negativeCaches(DomainNegativeCacheArgs... negativeCaches) {
             return negativeCaches(List.of(negativeCaches));
         }
 
@@ -1557,15 +1731,36 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return originAccessRule(Output.of(originAccessRule));
         }
 
+        /**
+         * @param originArgs Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originArgs(@Nullable Output<List<DomainOriginArgArgs>> originArgs) {
             $.originArgs = originArgs;
             return this;
         }
 
+        /**
+         * @param originArgs Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originArgs(List<DomainOriginArgArgs> originArgs) {
             return originArgs(Output.of(originArgs));
         }
 
+        /**
+         * @param originArgs Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder originArgs(DomainOriginArgArgs... originArgs) {
             return originArgs(List.of(originArgs));
         }
@@ -1738,15 +1933,36 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return originSni(Output.of(originSni));
         }
 
+        /**
+         * @param origins Indicates the basic origin configuration module.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder origins(@Nullable Output<List<DomainOriginArgs>> origins) {
             $.origins = origins;
             return this;
         }
 
+        /**
+         * @param origins Indicates the basic origin configuration module.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder origins(List<DomainOriginArgs> origins) {
             return origins(Output.of(origins));
         }
 
+        /**
+         * @param origins Indicates the basic origin configuration module.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder origins(DomainOriginArgs... origins) {
             return origins(List.of(origins));
         }
@@ -1929,28 +2145,70 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return requestBlockRule(Output.of(requestBlockRule));
         }
 
+        /**
+         * @param requestHeaders Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestHeaders(@Nullable Output<List<DomainRequestHeaderArgs>> requestHeaders) {
             $.requestHeaders = requestHeaders;
             return this;
         }
 
+        /**
+         * @param requestHeaders Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestHeaders(List<DomainRequestHeaderArgs> requestHeaders) {
             return requestHeaders(Output.of(requestHeaders));
         }
 
+        /**
+         * @param requestHeaders Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder requestHeaders(DomainRequestHeaderArgs... requestHeaders) {
             return requestHeaders(List.of(requestHeaders));
         }
 
+        /**
+         * @param responseHeaders Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseHeaders(@Nullable Output<List<DomainResponseHeaderArgs>> responseHeaders) {
             $.responseHeaders = responseHeaders;
             return this;
         }
 
+        /**
+         * @param responseHeaders Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseHeaders(List<DomainResponseHeaderArgs> responseHeaders) {
             return responseHeaders(Output.of(responseHeaders));
         }
 
+        /**
+         * @param responseHeaders Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseHeaders(DomainResponseHeaderArgs... responseHeaders) {
             return responseHeaders(List.of(responseHeaders));
         }
@@ -2060,15 +2318,36 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<DomainTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<DomainTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(DomainTagArgs... tags) {
             return tags(List.of(tags));
         }

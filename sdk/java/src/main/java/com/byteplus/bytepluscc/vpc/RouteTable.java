@@ -23,6 +23,51 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.RouteTable;
+ * import com.byteplus.bytepluscc.vpc.RouteTableArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.RouteTableCustomRouteEntryArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.RouteTableTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var routeTableDemo = new RouteTable("routeTableDemo", RouteTableArgs.builder()
+ *             .vpcId("vpc-xxxxx")
+ *             .routeTableName("routeTableDemo")
+ *             .description("routeTableDemo description")
+ *             .projectName("default")
+ *             .subnetIds("subnet-rrxxxxxx")
+ *             .customRouteEntries(RouteTableCustomRouteEntryArgs.builder()
+ *                 .destination_cidr_block("192.168.x.0/30")
+ *                 .next_hop_type("Instance")
+ *                 .next_hop_id("i-xxxx")
+ *                 .build())
+ *             .tags(RouteTableTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -76,9 +121,19 @@ public class RouteTable extends com.pulumi.resources.CustomResource {
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * List of custom route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="customRouteEntries", refs={List.class,RouteTableCustomRouteEntry.class}, tree="[0,1]")
     private Output<List<RouteTableCustomRouteEntry>> customRouteEntries;
 
+    /**
+     * @return List of custom route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RouteTableCustomRouteEntry>> customRouteEntries() {
         return this.customRouteEntries;
     }
@@ -194,15 +249,35 @@ public class RouteTable extends com.pulumi.resources.CustomResource {
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
+    /**
+     * List of system default route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="systemRouteEntries", refs={List.class,RouteTableSystemRouteEntry.class}, tree="[0,1]")
     private Output<List<RouteTableSystemRouteEntry>> systemRouteEntries;
 
+    /**
+     * @return List of system default route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RouteTableSystemRouteEntry>> systemRouteEntries() {
         return this.systemRouteEntries;
     }
+    /**
+     * Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,RouteTableTag.class}, tree="[0,1]")
     private Output<List<RouteTableTag>> tags;
 
+    /**
+     * @return Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RouteTableTag>> tags() {
         return this.tags;
     }

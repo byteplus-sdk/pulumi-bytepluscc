@@ -25,6 +25,53 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatezone.ResolverRule;
+ * import com.byteplus.bytepluscc.privatezone.ResolverRuleArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.ResolverRuleTagArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.ResolverRuleVpCArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var privateZoneResolverRuleDemo = new ResolverRule("privateZoneResolverRuleDemo", ResolverRuleArgs.builder()
+ *             .line("电信")
+ *             .name("PrivateZoneResolverRuleDemo")
+ *             .tags(ResolverRuleTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .type("LINE")
+ *             .vpCs(            
+ *                 ResolverRuleVpCArgs.builder()
+ *                     .region("cn-beijing")
+ *                     .vpc_id("vpc-3nqt4kq87xn28931eclihh90****")
+ *                     .build(),
+ *                 ResolverRuleVpCArgs.builder()
+ *                     .region("cn-beijing")
+ *                     .vpc_id("vpc-1a10aeq5vr2tc8nvepkauwljx****")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -92,9 +139,19 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
     public Output<String> endpointTrn() {
         return this.endpointTrn;
     }
+    /**
+     * IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="forwardIPs", refs={List.class,ResolverRuleForwardIP.class}, tree="[0,1]")
     private Output<List<ResolverRuleForwardIP>> forwardIPs;
 
+    /**
+     * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ResolverRuleForwardIP>> forwardIPs() {
         return this.forwardIPs;
     }
@@ -168,9 +225,19 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
     public Output<String> ruleId() {
         return this.ruleId;
     }
+    /**
+     * One or more tags associated with the forwarding rule
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ResolverRuleTag.class}, tree="[0,1]")
     private Output<List<ResolverRuleTag>> tags;
 
+    /**
+     * @return One or more tags associated with the forwarding rule
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ResolverRuleTag>> tags() {
         return this.tags;
     }
@@ -202,9 +269,19 @@ public class ResolverRule extends com.pulumi.resources.CustomResource {
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
+    /**
+     * VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="vpCs", refs={List.class,ResolverRuleVpC.class}, tree="[0,1]")
     private Output<List<ResolverRuleVpC>> vpCs;
 
+    /**
+     * @return VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ResolverRuleVpC>> vpCs() {
         return this.vpCs;
     }

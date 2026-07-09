@@ -17,9 +17,19 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
 
     public static final DomainSignedUrlAuthArgs Empty = new DomainSignedUrlAuthArgs();
 
+    /**
+     * Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="signedUrlAuthRules")
     private @Nullable Output<List<DomainSignedUrlAuthSignedUrlAuthRuleArgs>> signedUrlAuthRules;
 
+    /**
+     * @return Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainSignedUrlAuthSignedUrlAuthRuleArgs>>> signedUrlAuthRules() {
         return Optional.ofNullable(this.signedUrlAuthRules);
     }
@@ -64,15 +74,36 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
             $ = new DomainSignedUrlAuthArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param signedUrlAuthRules Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder signedUrlAuthRules(@Nullable Output<List<DomainSignedUrlAuthSignedUrlAuthRuleArgs>> signedUrlAuthRules) {
             $.signedUrlAuthRules = signedUrlAuthRules;
             return this;
         }
 
+        /**
+         * @param signedUrlAuthRules Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder signedUrlAuthRules(List<DomainSignedUrlAuthSignedUrlAuthRuleArgs> signedUrlAuthRules) {
             return signedUrlAuthRules(Output.of(signedUrlAuthRules));
         }
 
+        /**
+         * @param signedUrlAuthRules Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder signedUrlAuthRules(DomainSignedUrlAuthSignedUrlAuthRuleArgs... signedUrlAuthRules) {
             return signedUrlAuthRules(List.of(signedUrlAuthRules));
         }

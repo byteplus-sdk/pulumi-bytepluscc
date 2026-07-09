@@ -18,9 +18,19 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
     public static final ClusterMonitoringConfigArgs Empty = new ClusterMonitoringConfigArgs();
 
+    /**
+     * List of monitoring component configurations.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="componentConfigs")
     private @Nullable Output<List<ClusterMonitoringConfigComponentConfigArgs>> componentConfigs;
 
+    /**
+     * @return List of monitoring component configurations.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterMonitoringConfigComponentConfigArgs>>> componentConfigs() {
         return Optional.ofNullable(this.componentConfigs);
     }
@@ -81,15 +91,36 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
             $ = new ClusterMonitoringConfigArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param componentConfigs List of monitoring component configurations.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder componentConfigs(@Nullable Output<List<ClusterMonitoringConfigComponentConfigArgs>> componentConfigs) {
             $.componentConfigs = componentConfigs;
             return this;
         }
 
+        /**
+         * @param componentConfigs List of monitoring component configurations.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder componentConfigs(List<ClusterMonitoringConfigComponentConfigArgs> componentConfigs) {
             return componentConfigs(Output.of(componentConfigs));
         }
 
+        /**
+         * @param componentConfigs List of monitoring component configurations.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder componentConfigs(ClusterMonitoringConfigComponentConfigArgs... componentConfigs) {
             return componentConfigs(List.of(componentConfigs));
         }

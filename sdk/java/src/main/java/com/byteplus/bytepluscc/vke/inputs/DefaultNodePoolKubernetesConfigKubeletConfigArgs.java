@@ -81,9 +81,19 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         return Optional.ofNullable(this.kubeApiQps);
     }
 
+    /**
+     * Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="kubeReserveds")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds;
 
+    /**
+     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs>>> kubeReserveds() {
         return Optional.ofNullable(this.kubeReserveds);
     }
@@ -148,9 +158,19 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         return Optional.ofNullable(this.serializeImagePulls);
     }
 
+    /**
+     * Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="systemReserveds")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds;
 
+    /**
+     * @return Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs>>> systemReserveds() {
         return Optional.ofNullable(this.systemReserveds);
     }
@@ -304,15 +324,36 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
             return kubeApiQps(Output.of(kubeApiQps));
         }
 
+        /**
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder kubeReserveds(@Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds) {
             $.kubeReserveds = kubeReserveds;
             return this;
         }
 
+        /**
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder kubeReserveds(List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs> kubeReserveds) {
             return kubeReserveds(Output.of(kubeReserveds));
         }
 
+        /**
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder kubeReserveds(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs... kubeReserveds) {
             return kubeReserveds(List.of(kubeReserveds));
         }
@@ -401,15 +442,36 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
             return serializeImagePulls(Output.of(serializeImagePulls));
         }
 
+        /**
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemReserveds(@Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds) {
             $.systemReserveds = systemReserveds;
             return this;
         }
 
+        /**
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemReserveds(List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs> systemReserveds) {
             return systemReserveds(Output.of(systemReserveds));
         }
 
+        /**
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder systemReserveds(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs... systemReserveds) {
             return systemReserveds(List.of(systemReserveds));
         }

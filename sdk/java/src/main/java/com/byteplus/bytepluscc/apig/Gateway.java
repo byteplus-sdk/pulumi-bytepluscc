@@ -28,6 +28,75 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.apig.Gateway;
+ * import com.byteplus.bytepluscc.apig.GatewayArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayResourceSpecArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayMonitorSpecArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayLogSpecArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayTraceSpecArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var aPIGGatewayDemo = new Gateway("aPIGGatewayDemo", GatewayArgs.builder()
+ *             .name("APIGGatewayDemo")
+ *             .type("standard")
+ *             .comments("APIGGatewayDemo comments")
+ *             .vpcId("vpc-13f8k4dwdsydc3n6nu5rxxxxx")
+ *             .subnetIds(            
+ *                 "subnet-***",
+ *                 "subnet-***")
+ *             .resourceSpec(GatewayResourceSpecArgs.builder()
+ *                 .instance_spec_code("1c2g")
+ *                 .replicas(2)
+ *                 .clb_spec_code("small_1")
+ *                 .public_network_bandwidth(1)
+ *                 .public_network_billing_type("bandwidth")
+ *                 .network_type(Map.ofEntries(
+ *                     Map.entry("enablePublicNetwork", true),
+ *                     Map.entry("enablePrivateNetwork", true)
+ *                 ))
+ *                 .build())
+ *             .monitorSpec(GatewayMonitorSpecArgs.builder()
+ *                 .enable(true)
+ *                 .workspace_id("***")
+ *                 .build())
+ *             .logSpec(GatewayLogSpecArgs.builder()
+ *                 .enable(true)
+ *                 .project_id("***")
+ *                 .topic_id("***")
+ *                 .build())
+ *             .traceSpec(GatewayTraceSpecArgs.builder()
+ *                 .enable(true)
+ *                 .trace_type("tls")
+ *                 .tls_trace_spec(Map.ofEntries(
+ *                     Map.entry("projectId", "***"),
+ *                     Map.entry("iamUserAk", "***"),
+ *                     Map.entry("iamUserSk", "***")
+ *                 ))
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -95,9 +164,19 @@ public class Gateway extends com.pulumi.resources.CustomResource {
     public Output<GatewayCustomLog> customLog() {
         return this.customLog;
     }
+    /**
+     * Event
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="events", refs={List.class,GatewayEvent.class}, tree="[0,1]")
     private Output<List<GatewayEvent>> events;
 
+    /**
+     * @return Event
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<GatewayEvent>> events() {
         return this.events;
     }

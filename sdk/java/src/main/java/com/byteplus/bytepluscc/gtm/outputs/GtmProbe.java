@@ -45,6 +45,11 @@ public final class GtmProbe {
      * 
      */
     private @Nullable String httpMethod;
+    /**
+     * @return Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<GtmProbeHttpUsabilityCode> httpUsabilityCodes;
     /**
      * @return Interval between each health check, in seconds.
@@ -140,6 +145,11 @@ public final class GtmProbe {
     public Optional<String> httpMethod() {
         return Optional.ofNullable(this.httpMethod);
     }
+    /**
+     * @return Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<GtmProbeHttpUsabilityCode> httpUsabilityCodes() {
         return this.httpUsabilityCodes == null ? List.of() : this.httpUsabilityCodes;
     }

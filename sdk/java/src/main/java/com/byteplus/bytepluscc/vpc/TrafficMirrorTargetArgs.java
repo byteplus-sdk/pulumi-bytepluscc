@@ -78,9 +78,19 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag information of the mirror target.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<TrafficMirrorTargetTagArgs>> tags;
 
+    /**
+     * @return Tag information of the mirror target.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<TrafficMirrorTargetTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -213,15 +223,36 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag information of the mirror target.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<TrafficMirrorTargetTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the mirror target.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<TrafficMirrorTargetTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the mirror target.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(TrafficMirrorTargetTagArgs... tags) {
             return tags(List.of(tags));
         }

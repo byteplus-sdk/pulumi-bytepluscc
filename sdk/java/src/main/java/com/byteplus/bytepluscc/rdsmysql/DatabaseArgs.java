@@ -33,9 +33,19 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.characterSetName);
     }
 
+    /**
+     * Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="databasePrivileges")
     private @Nullable Output<List<DatabaseDatabasePrivilegeArgs>> databasePrivileges;
 
+    /**
+     * @return Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DatabaseDatabasePrivilegeArgs>>> databasePrivileges() {
         return Optional.ofNullable(this.databasePrivileges);
     }
@@ -134,15 +144,36 @@ public final class DatabaseArgs extends com.pulumi.resources.ResourceArgs {
             return characterSetName(Output.of(characterSetName));
         }
 
+        /**
+         * @param databasePrivileges Database privilege authorization information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databasePrivileges(@Nullable Output<List<DatabaseDatabasePrivilegeArgs>> databasePrivileges) {
             $.databasePrivileges = databasePrivileges;
             return this;
         }
 
+        /**
+         * @param databasePrivileges Database privilege authorization information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databasePrivileges(List<DatabaseDatabasePrivilegeArgs> databasePrivileges) {
             return databasePrivileges(Output.of(databasePrivileges));
         }
 
+        /**
+         * @param databasePrivileges Database privilege authorization information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databasePrivileges(DatabaseDatabasePrivilegeArgs... databasePrivileges) {
             return databasePrivileges(List.of(databasePrivileges));
         }

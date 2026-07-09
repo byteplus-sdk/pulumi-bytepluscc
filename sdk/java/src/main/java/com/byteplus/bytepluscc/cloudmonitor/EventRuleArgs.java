@@ -18,16 +18,20 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final EventRuleArgs Empty = new EventRuleArgs();
 
     /**
-     * Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-     * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
+     * Rule description
+     *   Must not start with a digit, hyphen (-), or Chinese punctuation
+     *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+     *   Length limit: 0–255 characters
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-     * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
+     * @return Rule description
+     *   Must not start with a digit, hyphen (-), or Chinese punctuation
+     *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+     *   Length limit: 0–255 characters
      * 
      */
     public Optional<Output<String>> description() {
@@ -35,14 +39,20 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Rule status enable: Rule enabled disable: Rule disabled
+     * Rule status
+     * 
+     *   enable: Rule enabled
+     *   disable: Rule disabled
      * 
      */
     @Import(name="enableState")
     private @Nullable Output<String> enableState;
 
     /**
-     * @return Rule status enable: Rule enabled disable: Rule disabled
+     * @return Rule status
+     * 
+     *   enable: Rule enabled
+     *   disable: Rule disabled
      * 
      */
     public Optional<Output<String>> enableState() {
@@ -95,16 +105,14 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Filter mode, also known as event matching rule. Used for creation and modification. Format:
-     * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+     * Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
      * 
      */
     @Import(name="filterPatternInput")
     private @Nullable Output<String> filterPatternInput;
 
     /**
-     * @return Filter mode, also known as event matching rule. Used for creation and modification. Format:
-     * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+     * @return Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
      * 
      */
     public Optional<Output<String>> filterPatternInput() {
@@ -142,14 +150,18 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
+     * Rule name
+     *   Length limit: 1–128 characters
+     *   Must not start with a digit or hyphen (-)
      * 
      */
     @Import(name="ruleName", required=true)
     private Output<String> ruleName;
 
     /**
-     * @return Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
+     * @return Rule name
+     *   Length limit: 1–128 characters
+     *   Must not start with a digit or hyphen (-)
      * 
      */
     public Output<String> ruleName() {
@@ -189,8 +201,10 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-         * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
+         * @param description Rule description
+         *   Must not start with a digit, hyphen (-), or Chinese punctuation
+         *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+         *   Length limit: 0–255 characters
          * 
          * @return builder
          * 
@@ -201,8 +215,10 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-         * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
+         * @param description Rule description
+         *   Must not start with a digit, hyphen (-), or Chinese punctuation
+         *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+         *   Length limit: 0–255 characters
          * 
          * @return builder
          * 
@@ -212,7 +228,10 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableState Rule status enable: Rule enabled disable: Rule disabled
+         * @param enableState Rule status
+         * 
+         *   enable: Rule enabled
+         *   disable: Rule disabled
          * 
          * @return builder
          * 
@@ -223,7 +242,10 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableState Rule status enable: Rule enabled disable: Rule disabled
+         * @param enableState Rule status
+         * 
+         *   enable: Rule enabled
+         *   disable: Rule disabled
          * 
          * @return builder
          * 
@@ -306,8 +328,7 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format:
-         * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
          * 
          * @return builder
          * 
@@ -318,8 +339,7 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format:
-         * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
          * 
          * @return builder
          * 
@@ -371,7 +391,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
+         * @param ruleName Rule name
+         *   Length limit: 1–128 characters
+         *   Must not start with a digit or hyphen (-)
          * 
          * @return builder
          * 
@@ -382,7 +404,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
+         * @param ruleName Rule name
+         *   Length limit: 1–128 characters
+         *   Must not start with a digit or hyphen (-)
          * 
          * @return builder
          * 

@@ -24,6 +24,82 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.gtm.Rule;
+ * import com.byteplus.bytepluscc.gtm.RuleArgs;
+ * import com.pulumi.bytepluscc.gtm.inputs.RulePoolSetArgs;
+ * import com.pulumi.bytepluscc.gtm.inputs.RulePoolSetPoolArgs;
+ * import com.pulumi.bytepluscc.gtm.inputs.RuleProbeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var gTMRuleDemo = new Rule("gTMRuleDemo", RuleArgs.builder()
+ *             .disable(false)
+ *             .effectivePoolSetIndex(0)
+ *             .gtmId("gtm_id_xxxxx")
+ *             .line("default")
+ *             .name("Protocol-https")
+ *             .policyType("policy_type_xxxxx")
+ *             .poolSetMode("manual")
+ *             .poolSets(RulePoolSetArgs.builder()
+ *                 .name("主地址池集")
+ *                 .active_addr_thr(1)
+ *                 .pools(RulePoolSetPoolArgs.builder()
+ *                     .poolId("pool_id_xxxxx")
+ *                     .weight(1)
+ *                     .build())
+ *                 .build())
+ *             .probe(RuleProbeArgs.builder()
+ *                 .advised_node_count(8)
+ *                 .disable(false)
+ *                 .failed_count(3)
+ *                 .protocol("https")
+ *                 .port(443)
+ *                 .url("/content/pages")
+ *                 .host("www.example.com")
+ *                 .http_method("GET")
+ *                 .http_usability_codes(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("operator", "interval"),
+ *                     Map.entry("codes", Arrays.asList(                    
+ *                         100,
+ *                         200))
+ *                 )))
+ *                 .ping_count(0)
+ *                 .ping_loss_percent(0)
+ *                 .interval(60)
+ *                 .is_manual_nodes(false)
+ *                 .nodes(                
+ *                     "China-North lq Bytedance",
+ *                     "China-North lf Bytedance",
+ *                     "China-North hl Bytedance")
+ *                 .timeout(5)
+ *                 .build())
+ *             .remark("test for create")
+ *             .useRuleProbeConfig(true)
+ *             .usePolicyProbeNodes(false)
+ *             .weight(1)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -147,9 +223,19 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> poolSetMode() {
         return this.poolSetMode;
     }
+    /**
+     * Address pool collection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="poolSets", refs={List.class,RulePoolSet.class}, tree="[0,1]")
     private Output<List<RulePoolSet>> poolSets;
 
+    /**
+     * @return Address pool collection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RulePoolSet>> poolSets() {
         return this.poolSets;
     }

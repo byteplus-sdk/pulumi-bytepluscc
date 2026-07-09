@@ -69,9 +69,19 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.autoRenewPeriod);
     }
 
+    /**
+     * Data disk configuration for the node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="dataVolumes")
     private @Nullable Output<List<DefaultNodePoolNodeConfigDataVolumeArgs>> dataVolumes;
 
+    /**
+     * @return Data disk configuration for the node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DefaultNodePoolNodeConfigDataVolumeArgs>>> dataVolumes() {
         return Optional.ofNullable(this.dataVolumes);
     }
@@ -391,9 +401,19 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.systemVolume);
     }
 
+    /**
+     * Label information configured for the node pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<DefaultNodePoolNodeConfigTagArgs>> tags;
 
+    /**
+     * @return Label information configured for the node pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DefaultNodePoolNodeConfigTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -510,15 +530,36 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
             return autoRenewPeriod(Output.of(autoRenewPeriod));
         }
 
+        /**
+         * @param dataVolumes Data disk configuration for the node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataVolumes(@Nullable Output<List<DefaultNodePoolNodeConfigDataVolumeArgs>> dataVolumes) {
             $.dataVolumes = dataVolumes;
             return this;
         }
 
+        /**
+         * @param dataVolumes Data disk configuration for the node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataVolumes(List<DefaultNodePoolNodeConfigDataVolumeArgs> dataVolumes) {
             return dataVolumes(Output.of(dataVolumes));
         }
 
+        /**
+         * @param dataVolumes Data disk configuration for the node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dataVolumes(DefaultNodePoolNodeConfigDataVolumeArgs... dataVolumes) {
             return dataVolumes(List.of(dataVolumes));
         }
@@ -994,15 +1035,36 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
             return systemVolume(Output.of(systemVolume));
         }
 
+        /**
+         * @param tags Label information configured for the node pool
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<DefaultNodePoolNodeConfigTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Label information configured for the node pool
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<DefaultNodePoolNodeConfigTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Label information configured for the node pool
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(DefaultNodePoolNodeConfigTagArgs... tags) {
             return tags(List.of(tags));
         }

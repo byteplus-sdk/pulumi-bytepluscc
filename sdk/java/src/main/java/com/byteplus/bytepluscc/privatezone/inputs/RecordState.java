@@ -109,9 +109,19 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.recordId);
     }
 
+    /**
+     * Record set list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="recordSets")
     private @Nullable Output<List<RecordRecordSetArgs>> recordSets;
 
+    /**
+     * @return Record set list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RecordRecordSetArgs>>> recordSets() {
         return Optional.ofNullable(this.recordSets);
     }
@@ -400,15 +410,36 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
             return recordId(Output.of(recordId));
         }
 
+        /**
+         * @param recordSets Record set list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder recordSets(@Nullable Output<List<RecordRecordSetArgs>> recordSets) {
             $.recordSets = recordSets;
             return this;
         }
 
+        /**
+         * @param recordSets Record set list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder recordSets(List<RecordRecordSetArgs> recordSets) {
             return recordSets(Output.of(recordSets));
         }
 
+        /**
+         * @param recordSets Record set list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder recordSets(RecordRecordSetArgs... recordSets) {
             return recordSets(List.of(recordSets));
         }

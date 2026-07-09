@@ -22,6 +22,69 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cloudidentity.PermissionSet;
+ * import com.byteplus.bytepluscc.cloudidentity.PermissionSetArgs;
+ * import com.pulumi.bytepluscc.cloudidentity.inputs.PermissionSetPermissionPolicyArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cloudIdentityPermissionSetDemo = new PermissionSet("cloudIdentityPermissionSetDemo", PermissionSetArgs.builder()
+ *             .description("cc-test")
+ *             .name("cctest-test")
+ *             .relayState("https://console.xxxxx.com/xxxxx")
+ *             .sessionDuration(3600)
+ *             .permissionPolicies(            
+ *                 PermissionSetPermissionPolicyArgs.builder()
+ *                     .permission_policy_name("AdministratorAccess")
+ *                     .permission_policy_type("System")
+ *                     .permission_policy_document("")
+ *                     .build(),
+ *                 PermissionSetPermissionPolicyArgs.builder()
+ *                     .permission_policy_name("IAMFullAccess")
+ *                     .permission_policy_type("System")
+ *                     .permission_policy_document("")
+ *                     .build(),
+ *                 PermissionSetPermissionPolicyArgs.builder()
+ *                     .permission_policy_name("InlinePolicy")
+ *                     .permission_policy_type("Inline")
+ *                     .permission_policy_document("""
+ * {
+ *     "Statement": [
+ *         {
+ *             "Effect": "Allow",
+ *             "Action": [
+ *                 "vpc:*"
+ *             ],
+ *             "Resource": [
+ *                 "*"
+ *             ]
+ *         }
+ *     ]
+ * }                    """)
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -75,9 +138,19 @@ public class PermissionSet extends com.pulumi.resources.CustomResource {
     public Output<String> name() {
         return this.name;
     }
+    /**
+     * Policy List Under Permission Set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="permissionPolicies", refs={List.class,PermissionSetPermissionPolicy.class}, tree="[0,1]")
     private Output<List<PermissionSetPermissionPolicy>> permissionPolicies;
 
+    /**
+     * @return Policy List Under Permission Set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PermissionSetPermissionPolicy>> permissionPolicies() {
         return this.permissionPolicies;
     }

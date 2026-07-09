@@ -24,6 +24,78 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.id.Service;
+ * import com.byteplus.bytepluscc.id.ServiceArgs;
+ * import com.pulumi.bytepluscc.id.inputs.ServiceBackendArgs;
+ * import com.pulumi.bytepluscc.id.inputs.ServiceRouteArgs;
+ * import com.pulumi.bytepluscc.id.inputs.ServiceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var iDServiceDemo = new Service("iDServiceDemo", ServiceArgs.builder()
+ *             .permissionSpaceId("fd46c764-e94e-4c94-ba69-6bfxxxxxxxx")
+ *             .backend(ServiceBackendArgs.builder()
+ *                 .timeout_seconds(60)
+ *                 .enable_tls(false)
+ *                 .backend_port(80)
+ *                 .backend_domain("api.internal.com")
+ *                 .protocol("HTTP")
+ *                 .build())
+ *             .description("测试枚举分支覆盖")
+ *             .serviceName("test-other-service")
+ *             .routes(ServiceRouteArgs.builder()
+ *                 .path("/api/v1/orders")
+ *                 .priority(20)
+ *                 .api_spec(Map.ofEntries(
+ *                     Map.entry("extractors", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("path", "/orderId"),
+ *                         Map.entry("isAuth", false),
+ *                         Map.entry("resourceType", "Order"),
+ *                         Map.entry("source", 2)
+ *                     ))),
+ *                     Map.entry("actionType", "write"),
+ *                     Map.entry("actionValue", "query"),
+ *                     Map.entry("responseFilters", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("mode", 2),
+ *                         Map.entry("isAuth", false),
+ *                         Map.entry("resourceType", "Order")
+ *                     ))),
+ *                     Map.entry("identifierValue", "/order/id"),
+ *                     Map.entry("identifierType", 2)
+ *                 ))
+ *                 .route_name("order-query")
+ *                 .resource_type("Collection")
+ *                 .method("GET")
+ *                 .auth_resource_type("Order")
+ *                 .path_match_type("Prefix")
+ *                 .build())
+ *             .tags(ServiceTagArgs.builder()
+ *                 .value("env")
+ *                 .key("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -175,9 +247,19 @@ public class Service extends com.pulumi.resources.CustomResource {
     public Output<Integer> routeCount() {
         return this.routeCount;
     }
+    /**
+     * List of routes created simultaneously. This field is only written at creation, not returned by read interface
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="routes", refs={List.class,ServiceRoute.class}, tree="[0,1]")
     private Output<List<ServiceRoute>> routes;
 
+    /**
+     * @return List of routes created simultaneously. This field is only written at creation, not returned by read interface
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServiceRoute>> routes() {
         return this.routes;
     }
@@ -223,9 +305,19 @@ public class Service extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Service tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ServiceTag.class}, tree="[0,1]")
     private Output<List<ServiceTag>> tags;
 
+    /**
+     * @return Service tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServiceTag>> tags() {
         return this.tags;
     }

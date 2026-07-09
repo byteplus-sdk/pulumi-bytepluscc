@@ -17,9 +17,19 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
     public static final WorkspaceInstanceTypeCalculatePriceParamArgs Empty = new WorkspaceInstanceTypeCalculatePriceParamArgs();
 
+    /**
+     * Billing item list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="calChargeItemLists")
     private @Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs>> calChargeItemLists;
 
+    /**
+     * @return Billing item list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs>>> calChargeItemLists() {
         return Optional.ofNullable(this.calChargeItemLists);
     }
@@ -80,15 +90,36 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
             $ = new WorkspaceInstanceTypeCalculatePriceParamArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param calChargeItemLists Billing item list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder calChargeItemLists(@Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs>> calChargeItemLists) {
             $.calChargeItemLists = calChargeItemLists;
             return this;
         }
 
+        /**
+         * @param calChargeItemLists Billing item list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder calChargeItemLists(List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs> calChargeItemLists) {
             return calChargeItemLists(Output.of(calChargeItemLists));
         }
 
+        /**
+         * @param calChargeItemLists Billing item list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder calChargeItemLists(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs... calChargeItemLists) {
             return calChargeItemLists(List.of(calChargeItemLists));
         }

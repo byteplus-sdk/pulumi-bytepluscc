@@ -35,8 +35,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.ecs.Invocation;
  * import com.byteplus.bytepluscc.ecs.InvocationArgs;
  * import com.pulumi.bytepluscc.ecs.inputs.InvocationTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -280,9 +280,19 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     public Output<String> invocationName() {
         return this.invocationName;
     }
+    /**
+     * Result of command execution on a single instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="invocationResults", refs={List.class,InvocationInvocationResult.class}, tree="[0,1]")
     private Output<List<InvocationInvocationResult>> invocationResults;
 
+    /**
+     * @return Result of command execution on a single instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InvocationInvocationResult>> invocationResults() {
         return this.invocationResults;
     }
@@ -314,9 +324,19 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     public Output<String> launchTime() {
         return this.launchTime;
     }
+    /**
+     * Custom parameter definition for the command triggered by the task.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="parameterDefinitions", refs={List.class,InvocationParameterDefinition.class}, tree="[0,1]")
     private Output<List<InvocationParameterDefinition>> parameterDefinitions;
 
+    /**
+     * @return Custom parameter definition for the command triggered by the task.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InvocationParameterDefinition>> parameterDefinitions() {
         return this.parameterDefinitions;
     }
@@ -390,9 +410,19 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     public Output<String> startTime() {
         return this.startTime;
     }
+    /**
+     * Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InvocationTag.class}, tree="[0,1]")
     private Output<List<InvocationTag>> tags;
 
+    /**
+     * @return Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InvocationTag>> tags() {
         return this.tags;
     }

@@ -64,6 +64,11 @@ public final class TransitRouterAttachment {
      * 
      */
     private @Nullable String status;
+    /**
+     * @return Tag information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<TransitRouterAttachmentTag> tags;
     /**
      * @return Network instance connection ID.
@@ -177,6 +182,11 @@ public final class TransitRouterAttachment {
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
+    /**
+     * @return Tag information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<TransitRouterAttachmentTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

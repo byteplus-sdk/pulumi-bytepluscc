@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.tls.AlarmWebhookIntegrationType;
  * import com.byteplus.bytepluscc.tls.AlarmWebhookIntegrationTypeArgs;
  * import com.pulumi.bytepluscc.tls.inputs.AlarmWebhookIntegrationTypeWebhookHeaderArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -104,9 +104,19 @@ public class AlarmWebhookIntegrationType extends com.pulumi.resources.CustomReso
     public Output<String> modifyTime() {
         return this.modifyTime;
     }
+    /**
+     * Custom Webhook request headers. Required when WebhookType is set to custom
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="webhookHeaders", refs={List.class,AlarmWebhookIntegrationTypeWebhookHeader.class}, tree="[0,1]")
     private Output<List<AlarmWebhookIntegrationTypeWebhookHeader>> webhookHeaders;
 
+    /**
+     * @return Custom Webhook request headers. Required when WebhookType is set to custom
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmWebhookIntegrationTypeWebhookHeader>> webhookHeaders() {
         return this.webhookHeaders;
     }

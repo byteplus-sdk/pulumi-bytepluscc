@@ -107,9 +107,19 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.joinType);
     }
 
+    /**
+     * User Group Member List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="members")
     private @Nullable Output<List<GroupMemberArgs>> members;
 
+    /**
+     * @return User Group Member List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupMemberArgs>>> members() {
         return Optional.ofNullable(this.members);
     }
@@ -302,15 +312,36 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
             return joinType(Output.of(joinType));
         }
 
+        /**
+         * @param members User Group Member List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder members(@Nullable Output<List<GroupMemberArgs>> members) {
             $.members = members;
             return this;
         }
 
+        /**
+         * @param members User Group Member List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder members(List<GroupMemberArgs> members) {
             return members(Output.of(members));
         }
 
+        /**
+         * @param members User Group Member List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder members(GroupMemberArgs... members) {
             return members(List.of(members));
         }

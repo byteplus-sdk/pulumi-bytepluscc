@@ -35,8 +35,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.natgateway.Ngw;
  * import com.byteplus.bytepluscc.natgateway.NgwArgs;
  * import com.pulumi.bytepluscc.natgateway.inputs.NgwTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -176,9 +176,19 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     public Output<List<String>> dnatEntryIds() {
         return this.dnatEntryIds;
     }
+    /**
+     * Information about the public IP bound to the NAT Gateway
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="eipAddresses", refs={List.class,NgwEipAddress.class}, tree="[0,1]")
     private Output<List<NgwEipAddress>> eipAddresses;
 
+    /**
+     * @return Information about the public IP bound to the NAT Gateway
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NgwEipAddress>> eipAddresses() {
         return this.eipAddresses;
     }
@@ -238,9 +248,19 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     public Output<String> natGatewayName() {
         return this.natGatewayName;
     }
+    /**
+     * Transit IP list for private NAT instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="natIpAddresses", refs={List.class,NgwNatIpAddress.class}, tree="[0,1]")
     private Output<List<NgwNatIpAddress>> natIpAddresses;
 
+    /**
+     * @return Transit IP list for private NAT instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NgwNatIpAddress>> natIpAddresses() {
         return this.natIpAddresses;
     }
@@ -412,9 +432,19 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,NgwTag.class}, tree="[0,1]")
     private Output<List<NgwTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NgwTag>> tags() {
         return this.tags;
     }

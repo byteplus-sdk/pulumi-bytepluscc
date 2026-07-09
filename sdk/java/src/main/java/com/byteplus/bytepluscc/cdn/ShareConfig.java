@@ -25,6 +25,48 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cdn.ShareConfig;
+ * import com.byteplus.bytepluscc.cdn.ShareConfigArgs;
+ * import com.pulumi.bytepluscc.cdn.inputs.ShareConfigAllowRefererAccessRuleArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cDNShareConfigDemo = new ShareConfig("cDNShareConfigDemo", ShareConfigArgs.builder()
+ *             .configName("CDNShareConfigDemo")
+ *             .configType("allow_referer_access_rule")
+ *             .project("default")
+ *             .allowRefererAccessRule(ShareConfigAllowRefererAccessRuleArgs.builder()
+ *                 .allow_empty(true)
+ *                 .common_type(Map.ofEntries(
+ *                     Map.entry("ignoreCase", true),
+ *                     Map.entry("rules", Arrays.asList(                    
+ *                         "139.x.x.1",
+ *                         "139.x.x.2"))
+ *                 ))
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

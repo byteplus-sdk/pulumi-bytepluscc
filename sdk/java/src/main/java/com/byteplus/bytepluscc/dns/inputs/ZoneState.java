@@ -274,9 +274,19 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subDomainHost);
     }
 
+    /**
+     * Tags for the domain. Default is empty.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ZoneTagArgs>> tags;
 
+    /**
+     * @return Tags for the domain. Default is empty.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ZoneTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -763,15 +773,36 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
             return subDomainHost(Output.of(subDomainHost));
         }
 
+        /**
+         * @param tags Tags for the domain. Default is empty.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ZoneTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags for the domain. Default is empty.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ZoneTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags for the domain. Default is empty.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ZoneTagArgs... tags) {
             return tags(List.of(tags));
         }

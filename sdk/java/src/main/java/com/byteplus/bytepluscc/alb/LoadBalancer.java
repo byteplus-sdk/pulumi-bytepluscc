@@ -28,6 +28,89 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.alb.LoadBalancer;
+ * import com.byteplus.bytepluscc.alb.LoadBalancerArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.LoadBalancerEipBillingConfigArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.LoadBalancerZoneMappingArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.LoadBalancerIpv6EipBillingConfigArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.LoadBalancerTagArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.LoadBalancerTlsAccessLogArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.LoadBalancerHealthLogArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var aLBLoadBalancerDemo = new LoadBalancer("aLBLoadBalancerDemo", LoadBalancerArgs.builder()
+ *             .type("public")
+ *             .addressIpVersion("DualStack")
+ *             .loadBalancerName("ccapi-alb-4")
+ *             .description("Create by ccaip")
+ *             .vpcId("vpc-rrco37ovjq4gv0x5xxxxx")
+ *             .loadBalancerBillingType(1)
+ *             .deleteProtection("off")
+ *             .bandwidthPackageId("bwp-1a1i9jjnawidc8nvexxxxx")
+ *             .ipv6BandwidthPackageId("bwp-1a1i9jjnawidc8nvxxxxx")
+ *             .eipBillingConfig(LoadBalancerEipBillingConfigArgs.builder()
+ *                 .isp("BGP")
+ *                 .billing_type(3)
+ *                 .bandwidth(1)
+ *                 .security_protection_types("AntiDDoS_Enhanced")
+ *                 .security_protection_instance_id(743)
+ *                 .build())
+ *             .zoneMappings(            
+ *                 LoadBalancerZoneMappingArgs.builder()
+ *                     .subnet_id("subnet-rrwqhg3qzxfkv0xxxxxx")
+ *                     .zone_id("cn-beijing-a")
+ *                     .build(),
+ *                 LoadBalancerZoneMappingArgs.builder()
+ *                     .subnet_id("subnet-btnzu3hrc0005h0xxxxx")
+ *                     .zone_id("cn-beijing-b")
+ *                     .build())
+ *             .ipv6EipBillingConfig(LoadBalancerIpv6EipBillingConfigArgs.builder()
+ *                 .isp("BGP")
+ *                 .billing_type(3)
+ *                 .bandwidth(1)
+ *                 .build())
+ *             .projectName("default")
+ *             .modificationProtectionStatus("NonProtection")
+ *             .loadBalancerEdition("Standard")
+ *             .wafProtectionEnabled("off")
+ *             .tags(LoadBalancerTagArgs.builder()
+ *                 .key("test")
+ *                 .value("env")
+ *                 .build())
+ *             .tlsAccessLog(LoadBalancerTlsAccessLogArgs.builder()
+ *                 .enabled(true)
+ *                 .project_id("90xxxx7774-01ee-4948-89af-90xxxx7774")
+ *                 .topic_id("90xxxx7774-a776-4925-a3ca-90xxxx7774")
+ *                 .build())
+ *             .healthLog(LoadBalancerHealthLogArgs.builder()
+ *                 .enabled(true)
+ *                 .project_id("90xxxx7774-34af-4ce5-866e-90xxxx7774")
+ *                 .topic_id("90xxxx7774-7f7e-462e-8afb-90xxxx7774")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -375,9 +458,19 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * List of tags bound to the instance, used for categorization and billing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,LoadBalancerTag.class}, tree="[0,1]")
     private Output<List<LoadBalancerTag>> tags;
 
+    /**
+     * @return List of tags bound to the instance, used for categorization and billing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<LoadBalancerTag>> tags() {
         return this.tags;
     }
@@ -479,9 +572,19 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     public Output<String> wafProtectionEnabled() {
         return this.wafProtectionEnabled;
     }
+    /**
+     * Availability zone mapping list, defines which availability zones the instance provides services in.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="zoneMappings", refs={List.class,LoadBalancerZoneMapping.class}, tree="[0,1]")
     private Output<List<LoadBalancerZoneMapping>> zoneMappings;
 
+    /**
+     * @return Availability zone mapping list, defines which availability zones the instance provides services in.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<LoadBalancerZoneMapping>> zoneMappings() {
         return this.zoneMappings;
     }

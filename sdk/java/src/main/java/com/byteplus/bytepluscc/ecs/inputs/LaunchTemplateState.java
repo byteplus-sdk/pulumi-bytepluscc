@@ -109,9 +109,19 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.launchTemplateProjectName);
     }
 
+    /**
+     * Instance launch template tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="launchTemplateTags")
     private @Nullable Output<List<LaunchTemplateLaunchTemplateTagArgs>> launchTemplateTags;
 
+    /**
+     * @return Instance launch template tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<LaunchTemplateLaunchTemplateTagArgs>>> launchTemplateTags() {
         return Optional.ofNullable(this.launchTemplateTags);
     }
@@ -304,15 +314,36 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
             return launchTemplateProjectName(Output.of(launchTemplateProjectName));
         }
 
+        /**
+         * @param launchTemplateTags Instance launch template tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder launchTemplateTags(@Nullable Output<List<LaunchTemplateLaunchTemplateTagArgs>> launchTemplateTags) {
             $.launchTemplateTags = launchTemplateTags;
             return this;
         }
 
+        /**
+         * @param launchTemplateTags Instance launch template tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder launchTemplateTags(List<LaunchTemplateLaunchTemplateTagArgs> launchTemplateTags) {
             return launchTemplateTags(Output.of(launchTemplateTags));
         }
 
+        /**
+         * @param launchTemplateTags Instance launch template tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder launchTemplateTags(LaunchTemplateLaunchTemplateTagArgs... launchTemplateTags) {
             return launchTemplateTags(List.of(launchTemplateTags));
         }

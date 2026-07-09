@@ -67,9 +67,19 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.createdTime);
     }
 
+    /**
+     * Sandbox instance environment variables
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="envs")
     private @Nullable Output<List<SandboxEnvArgs>> envs;
 
+    /**
+     * @return Sandbox instance environment variables
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SandboxEnvArgs>>> envs() {
         return Optional.ofNullable(this.envs);
     }
@@ -209,9 +219,19 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.memoryMb);
     }
 
+    /**
+     * Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="metadatas")
     private @Nullable Output<List<SandboxMetadataArgs>> metadatas;
 
+    /**
+     * @return Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SandboxMetadataArgs>>> metadatas() {
         return Optional.ofNullable(this.metadatas);
     }
@@ -412,15 +432,36 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
             return createdTime(Output.of(createdTime));
         }
 
+        /**
+         * @param envs Sandbox instance environment variables
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder envs(@Nullable Output<List<SandboxEnvArgs>> envs) {
             $.envs = envs;
             return this;
         }
 
+        /**
+         * @param envs Sandbox instance environment variables
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder envs(List<SandboxEnvArgs> envs) {
             return envs(Output.of(envs));
         }
 
+        /**
+         * @param envs Sandbox instance environment variables
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder envs(SandboxEnvArgs... envs) {
             return envs(List.of(envs));
         }
@@ -614,15 +655,36 @@ public final class SandboxState extends com.pulumi.resources.ResourceArgs {
             return memoryMb(Output.of(memoryMb));
         }
 
+        /**
+         * @param metadatas Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metadatas(@Nullable Output<List<SandboxMetadataArgs>> metadatas) {
             $.metadatas = metadatas;
             return this;
         }
 
+        /**
+         * @param metadatas Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metadatas(List<SandboxMetadataArgs> metadatas) {
             return metadatas(Output.of(metadatas));
         }
 
+        /**
+         * @param metadatas Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder metadatas(SandboxMetadataArgs... metadatas) {
             return metadatas(List.of(metadatas));
         }

@@ -116,9 +116,19 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.enableDependencyInstall);
     }
 
+    /**
+     * Environment variables.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="envs")
     private @Nullable Output<List<FunctionEnvArgs>> envs;
 
+    /**
+     * @return Environment variables.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<FunctionEnvArgs>>> envs() {
         return Optional.ofNullable(this.envs);
     }
@@ -333,9 +343,19 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.sourceType);
     }
 
+    /**
+     * Function tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<FunctionTagArgs>> tags;
 
+    /**
+     * @return Function tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<FunctionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -559,15 +579,36 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
             return enableDependencyInstall(Output.of(enableDependencyInstall));
         }
 
+        /**
+         * @param envs Environment variables.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder envs(@Nullable Output<List<FunctionEnvArgs>> envs) {
             $.envs = envs;
             return this;
         }
 
+        /**
+         * @param envs Environment variables.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder envs(List<FunctionEnvArgs> envs) {
             return envs(Output.of(envs));
         }
 
+        /**
+         * @param envs Environment variables.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder envs(FunctionEnvArgs... envs) {
             return envs(List.of(envs));
         }
@@ -866,15 +907,36 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
             return sourceType(Output.of(sourceType));
         }
 
+        /**
+         * @param tags Function tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<FunctionTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Function tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<FunctionTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Function tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(FunctionTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -51,9 +51,19 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.domain);
     }
 
+    /**
+     * Cloud server
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ecsInstances")
     private @Nullable Output<List<UpstreamUpstreamSpecEcsInstanceArgs>> ecsInstances;
 
+    /**
+     * @return Cloud server
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UpstreamUpstreamSpecEcsInstanceArgs>>> ecsInstances() {
         return Optional.ofNullable(this.ecsInstances);
     }
@@ -174,15 +184,36 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
             return domain(Output.of(domain));
         }
 
+        /**
+         * @param ecsInstances Cloud server
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecsInstances(@Nullable Output<List<UpstreamUpstreamSpecEcsInstanceArgs>> ecsInstances) {
             $.ecsInstances = ecsInstances;
             return this;
         }
 
+        /**
+         * @param ecsInstances Cloud server
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecsInstances(List<UpstreamUpstreamSpecEcsInstanceArgs> ecsInstances) {
             return ecsInstances(Output.of(ecsInstances));
         }
 
+        /**
+         * @param ecsInstances Cloud server
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ecsInstances(UpstreamUpstreamSpecEcsInstanceArgs... ecsInstances) {
             return ecsInstances(List.of(ecsInstances));
         }

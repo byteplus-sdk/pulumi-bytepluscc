@@ -28,6 +28,11 @@ public final class KeyReplicateKey {
      * 
      */
     private @Nullable String replicaRegion;
+    /**
+     * @return Replica key label.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<KeyReplicateKeyTag> tags;
 
     private KeyReplicateKey() {}
@@ -52,6 +57,11 @@ public final class KeyReplicateKey {
     public Optional<String> replicaRegion() {
         return Optional.ofNullable(this.replicaRegion);
     }
+    /**
+     * @return Replica key label.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<KeyReplicateKeyTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

@@ -49,9 +49,19 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.endpointType);
     }
 
+    /**
+     * Availability zone, subnet, and IP configuration for the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="ipConfigs")
     private @Nullable Output<List<ResolverEndpointIpConfigArgs>> ipConfigs;
 
+    /**
+     * @return Availability zone, subnet, and IP configuration for the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ResolverEndpointIpConfigArgs>>> ipConfigs() {
         return Optional.ofNullable(this.ipConfigs);
     }
@@ -86,9 +96,19 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ResolverEndpointTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ResolverEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -196,15 +216,36 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
             return endpointType(Output.of(endpointType));
         }
 
+        /**
+         * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipConfigs(@Nullable Output<List<ResolverEndpointIpConfigArgs>> ipConfigs) {
             $.ipConfigs = ipConfigs;
             return this;
         }
 
+        /**
+         * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipConfigs(List<ResolverEndpointIpConfigArgs> ipConfigs) {
             return ipConfigs(Output.of(ipConfigs));
         }
 
+        /**
+         * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder ipConfigs(ResolverEndpointIpConfigArgs... ipConfigs) {
             return ipConfigs(List.of(ipConfigs));
         }
@@ -251,15 +292,36 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ResolverEndpointTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ResolverEndpointTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ResolverEndpointTagArgs... tags) {
             return tags(List.of(tags));
         }

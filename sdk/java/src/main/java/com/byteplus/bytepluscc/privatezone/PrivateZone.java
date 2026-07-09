@@ -24,6 +24,50 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatezone.PrivateZone;
+ * import com.byteplus.bytepluscc.privatezone.PrivateZoneArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.PrivateZoneVpcArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.PrivateZoneTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var privateZoneDemo = new PrivateZone("privateZoneDemo", PrivateZoneArgs.builder()
+ *             .zoneName("new.example.com")
+ *             .vpcs(PrivateZoneVpcArgs.builder()
+ *                 .vpc_id("vpc-btgxxxxx0b2tnxxxxx")
+ *                 .region("cn-beijing")
+ *                 .build())
+ *             .projectName("default")
+ *             .lineMode(1)
+ *             .recursionMode(true)
+ *             .tags(PrivateZoneTagArgs.builder()
+ *                 .value("test")
+ *                 .key("env")
+ *                 .build())
+ *             .remark("测试域名")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -133,9 +177,19 @@ public class PrivateZone extends com.pulumi.resources.CustomResource {
     public Output<String> remark() {
         return this.remark;
     }
+    /**
+     * One or more tags associated with the domain. A resource can be associated with up to 50 tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,PrivateZoneTag.class}, tree="[0,1]")
     private Output<List<PrivateZoneTag>> tags;
 
+    /**
+     * @return One or more tags associated with the domain. A resource can be associated with up to 50 tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PrivateZoneTag>> tags() {
         return this.tags;
     }
@@ -153,9 +207,19 @@ public class PrivateZone extends com.pulumi.resources.CustomResource {
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
+    /**
+     * One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="vpcs", refs={List.class,PrivateZoneVpc.class}, tree="[0,1]")
     private Output<List<PrivateZoneVpc>> vpcs;
 
+    /**
+     * @return One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<PrivateZoneVpc>> vpcs() {
         return this.vpcs;
     }

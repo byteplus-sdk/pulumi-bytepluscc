@@ -18,16 +18,36 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
     public static final ClusterApplicationExtraArgs Empty = new ClusterApplicationExtraArgs();
 
+    /**
+     * Custom deployment topology list for service components.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="applicationComponentLayouts")
     private @Nullable Output<List<ClusterApplicationExtraApplicationComponentLayoutArgs>> applicationComponentLayouts;
 
+    /**
+     * @return Custom deployment topology list for service components.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterApplicationExtraApplicationComponentLayoutArgs>>> applicationComponentLayouts() {
         return Optional.ofNullable(this.applicationComponentLayouts);
     }
 
+    /**
+     * Custom configuration parameter list for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="applicationConfigs")
     private @Nullable Output<List<ClusterApplicationExtraApplicationConfigArgs>> applicationConfigs;
 
+    /**
+     * @return Custom configuration parameter list for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterApplicationExtraApplicationConfigArgs>>> applicationConfigs() {
         return Optional.ofNullable(this.applicationConfigs);
     }
@@ -105,28 +125,70 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
             $ = new ClusterApplicationExtraArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param applicationComponentLayouts Custom deployment topology list for service components.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationComponentLayouts(@Nullable Output<List<ClusterApplicationExtraApplicationComponentLayoutArgs>> applicationComponentLayouts) {
             $.applicationComponentLayouts = applicationComponentLayouts;
             return this;
         }
 
+        /**
+         * @param applicationComponentLayouts Custom deployment topology list for service components.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationComponentLayouts(List<ClusterApplicationExtraApplicationComponentLayoutArgs> applicationComponentLayouts) {
             return applicationComponentLayouts(Output.of(applicationComponentLayouts));
         }
 
+        /**
+         * @param applicationComponentLayouts Custom deployment topology list for service components.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationComponentLayouts(ClusterApplicationExtraApplicationComponentLayoutArgs... applicationComponentLayouts) {
             return applicationComponentLayouts(List.of(applicationComponentLayouts));
         }
 
+        /**
+         * @param applicationConfigs Custom configuration parameter list for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationConfigs(@Nullable Output<List<ClusterApplicationExtraApplicationConfigArgs>> applicationConfigs) {
             $.applicationConfigs = applicationConfigs;
             return this;
         }
 
+        /**
+         * @param applicationConfigs Custom configuration parameter list for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationConfigs(List<ClusterApplicationExtraApplicationConfigArgs> applicationConfigs) {
             return applicationConfigs(Output.of(applicationConfigs));
         }
 
+        /**
+         * @param applicationConfigs Custom configuration parameter list for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder applicationConfigs(ClusterApplicationExtraApplicationConfigArgs... applicationConfigs) {
             return applicationConfigs(List.of(applicationConfigs));
         }

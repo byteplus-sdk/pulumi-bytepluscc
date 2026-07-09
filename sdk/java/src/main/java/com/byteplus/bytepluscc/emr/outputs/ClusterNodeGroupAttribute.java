@@ -26,6 +26,11 @@ public final class ClusterNodeGroupAttribute {
      * 
      */
     private @Nullable String chargeType;
+    /**
+     * @return Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ClusterNodeGroupAttributeDataDisk> dataDisks;
     /**
      * @return Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
@@ -93,6 +98,11 @@ public final class ClusterNodeGroupAttribute {
     public Optional<String> chargeType() {
         return Optional.ofNullable(this.chargeType);
     }
+    /**
+     * @return Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ClusterNodeGroupAttributeDataDisk> dataDisks() {
         return this.dataDisks == null ? List.of() : this.dataDisks;
     }

@@ -18,6 +18,11 @@ public final class RuleDimensionConditionsTagCondition {
      * 
      */
     private @Nullable String condition;
+    /**
+     * @return Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<RuleDimensionConditionsTagConditionTag> tags;
 
     private RuleDimensionConditionsTagCondition() {}
@@ -28,6 +33,11 @@ public final class RuleDimensionConditionsTagCondition {
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
+    /**
+     * @return Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<RuleDimensionConditionsTagConditionTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

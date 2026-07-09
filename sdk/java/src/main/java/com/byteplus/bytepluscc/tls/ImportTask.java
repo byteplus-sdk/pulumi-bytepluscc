@@ -23,6 +23,87 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.ImportTask;
+ * import com.byteplus.bytepluscc.tls.ImportTaskArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ImportTaskImportSourceInfoArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ImportTaskTargetInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var tLSImportTaskDemo = new ImportTask("tLSImportTaskDemo", ImportTaskArgs.builder()
+ *             .description("ccapi-test-kafka")
+ *             .importSourceInfo(ImportTaskImportSourceInfoArgs.builder()
+ *                 .kafka_source_info(Map.ofEntries(
+ *                     Map.entry("host", "kafka-cnngsl83xxxxx.kafka.cn-beijing.ivolces.com:9092"),
+ *                     Map.entry("group", "group1"),
+ *                     Map.entry("topic", "topic1"),
+ *                     Map.entry("encode", "UTF-8"),
+ *                     Map.entry("password", ""),
+ *                     Map.entry("protocol", ""),
+ *                     Map.entry("username", ""),
+ *                     Map.entry("mechanism", ""),
+ *                     Map.entry("instanceId", "kafka-cnngsl83e6xxxxx"),
+ *                     Map.entry("isNeedAuth", false),
+ *                     Map.entry("initialOffset", 0),
+ *                     Map.entry("timeSourceDefault", 1)
+ *                 ))
+ *                 .build())
+ *             .projectId("4f1af9e7-34af-4ce5-866e-xxxxxxx")
+ *             .sourceType("kafka")
+ *             .targetInfo(ImportTaskTargetInfoArgs.builder()
+ *                 .region("cn-beijing")
+ *                 .log_type("json_log")
+ *                 .log_sample("")
+ *                 .extract_rule(Map.ofEntries(
+ *                     Map.entry("extractRule", Map.ofEntries(
+ *                         Map.entry("beginRegex", ""),
+ *                         Map.entry("delimiter", ""),
+ *                         Map.entry("logRegex", ""),
+ *                         Map.entry("logTemplate", Map.ofEntries(
+ *                             Map.entry("format", ""),
+ *                             Map.entry("type", "")
+ *                         )),
+ *                         Map.entry("quote", ""),
+ *                         Map.entry("timeFormat", "%Y-%m-%d %H:%M:%S,%f"),
+ *                         Map.entry("timeKey", "time"),
+ *                         Map.entry("timeSample", ""),
+ *                         Map.entry("unMatchLogKey", "LogParseFailed"),
+ *                         Map.entry("unMatchUpLoadSwitch", true),
+ *                         Map.entry("filterKeyRegex", Arrays.asList(Map.ofEntries(
+ *                             Map.entry("key", "user_id"),
+ *                             Map.entry("regex", "^[0-9]+$")
+ *                         )))
+ *                     )),
+ *                     Map.entry("skipLineCount", 0),
+ *                     Map.entry("timeExtractRegex", "[0-9]{0,2}\\/[0-9a-zA-Z]+\\/[0-9:,]+"),
+ *                     Map.entry("timeZone", "Asia/Shanghai")
+ *                 ))
+ *                 .build())
+ *             .taskName("ccapi-test-kafka-1001")
+ *             .topicId("b75fffd8-1986-460c-9cca-xxxxxxx")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

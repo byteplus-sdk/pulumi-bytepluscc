@@ -18,9 +18,19 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MountServiceArgs Empty = new MountServiceArgs();
 
+    /**
+     * Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="attachFileSystems")
     private @Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems;
 
+    /**
+     * @return Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<MountServiceAttachFileSystemArgs>>> attachFileSystems() {
         return Optional.ofNullable(this.attachFileSystems);
     }
@@ -145,15 +155,36 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
             $ = new MountServiceArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachFileSystems(@Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems) {
             $.attachFileSystems = attachFileSystems;
             return this;
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachFileSystems(List<MountServiceAttachFileSystemArgs> attachFileSystems) {
             return attachFileSystems(Output.of(attachFileSystems));
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder attachFileSystems(MountServiceAttachFileSystemArgs... attachFileSystems) {
             return attachFileSystems(List.of(attachFileSystems));
         }

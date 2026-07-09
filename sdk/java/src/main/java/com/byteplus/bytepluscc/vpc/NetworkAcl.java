@@ -26,6 +26,66 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.NetworkAcl;
+ * import com.byteplus.bytepluscc.vpc.NetworkAclArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclIngressAclEntryArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclEgressAclEntryArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclResourceArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var networkAclDemo = new NetworkAcl("networkAclDemo", NetworkAclArgs.builder()
+ *             .vpcId("vpc-rrco37ovjq4gv0x58xxxxxx")
+ *             .networkAclName("NetworkAclDemo")
+ *             .description("NetworkAclDemo-Description")
+ *             .projectName("default")
+ *             .ingressAclEntries(NetworkAclIngressAclEntryArgs.builder()
+ *                 .cidr_ip("10.0.1.0/24")
+ *                 .description("test-rule")
+ *                 .network_acl_entry_name("test-entries")
+ *                 .policy("drop")
+ *                 .port("80/80")
+ *                 .protocol("tcp")
+ *                 .build())
+ *             .egressAclEntries(NetworkAclEgressAclEntryArgs.builder()
+ *                 .cidr_ip("0.0.0.0/0")
+ *                 .description("test-rule")
+ *                 .network_acl_entry_name("test-entries")
+ *                 .policy("accept")
+ *                 .port("-1/-1")
+ *                 .protocol("all")
+ *                 .build())
+ *             .resources(NetworkAclResourceArgs.builder()
+ *                 .resource_id("subnet-3nrjlvvxo4gsg931ebxxxxxx")
+ *                 .build())
+ *             .tags(NetworkAclTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -51,15 +111,35 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * Default outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="defaultEgressAclEntries", refs={List.class,NetworkAclDefaultEgressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclDefaultEgressAclEntry>> defaultEgressAclEntries;
 
+    /**
+     * @return Default outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NetworkAclDefaultEgressAclEntry>> defaultEgressAclEntries() {
         return this.defaultEgressAclEntries;
     }
+    /**
+     * Default inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="defaultIngressAclEntries", refs={List.class,NetworkAclDefaultIngressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclDefaultIngressAclEntry>> defaultIngressAclEntries;
 
+    /**
+     * @return Default inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NetworkAclDefaultIngressAclEntry>> defaultIngressAclEntries() {
         return this.defaultIngressAclEntries;
     }
@@ -77,15 +157,35 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="egressAclEntries", refs={List.class,NetworkAclEgressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclEgressAclEntry>> egressAclEntries;
 
+    /**
+     * @return Outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NetworkAclEgressAclEntry>> egressAclEntries() {
         return this.egressAclEntries;
     }
+    /**
+     * Inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="ingressAclEntries", refs={List.class,NetworkAclIngressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclIngressAclEntry>> ingressAclEntries;
 
+    /**
+     * @return Inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NetworkAclIngressAclEntry>> ingressAclEntries() {
         return this.ingressAclEntries;
     }
@@ -131,9 +231,19 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Associated resource list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="resources", refs={List.class,NetworkAclResource.class}, tree="[0,1]")
     private Output<List<NetworkAclResource>> resources;
 
+    /**
+     * @return Associated resource list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NetworkAclResource>> resources() {
         return this.resources;
     }
@@ -151,9 +261,19 @@ public class NetworkAcl extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,NetworkAclTag.class}, tree="[0,1]")
     private Output<List<NetworkAclTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NetworkAclTag>> tags() {
         return this.tags;
     }

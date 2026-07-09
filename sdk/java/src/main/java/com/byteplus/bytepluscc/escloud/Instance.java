@@ -26,6 +26,102 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.escloud.Instance;
+ * import com.byteplus.bytepluscc.escloud.InstanceArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationVpcArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationSubnetArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var eSCloudInstanceDemo = new Instance("eSCloudInstanceDemo", InstanceArgs.builder()
+ *             .instanceConfiguration(InstanceInstanceConfigurationArgs.builder()
+ *                 .vpc(InstanceInstanceConfigurationVpcArgs.builder()
+ *                     .vpcId("vpc-1a1vgeo93xxxg8nvepjyxxxxx")
+ *                     .vpcName("ESCloudInstanceDemo-vpc")
+ *                     .build())
+ *                 .subnet(InstanceInstanceConfigurationSubnetArgs.builder()
+ *                     .subnetId("subnet-3nrb3atxxxf40931eb4xxxxx")
+ *                     .subnetName("ESCloudInstanceDemo-Subnet")
+ *                     .build())
+ *                 .zone_id("cn-beijing-d")
+ *                 .version("V7_10")
+ *                 .region_id("cn-beijing")
+ *                 .charge_type("PostPaid")
+ *                 .enable_https(true)
+ *                 .project_name("default")
+ *                 .instance_name("ESCloudInstanceDemo")
+ *                 .enable_pure_master(true)
+ *                 .node_specs_assigns(Arrays.asList(                
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Hot"),
+ *                         Map.entry("number", 1),
+ *                         Map.entry("storageSize", 100),
+ *                         Map.entry("storageSpecName", "es.volume.essd.pl0"),
+ *                         Map.entry("resourceSpecName", "es.x2.medium"),
+ *                         Map.entry("extraPerformance", Map.of("throughput", 0))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Master"),
+ *                         Map.entry("number", 3),
+ *                         Map.entry("storageSize", 20),
+ *                         Map.entry("storageSpecName", "es.volume.essd.pl0"),
+ *                         Map.entry("resourceSpecName", "es.x2.medium"),
+ *                         Map.entry("extraPerformance", Map.of("throughput", 0))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Kibana"),
+ *                         Map.entry("number", 1),
+ *                         Map.entry("storageSize", 0),
+ *                         Map.entry("storageSpecName", ""),
+ *                         Map.entry("resourceSpecName", "kibana.x2.small"),
+ *                         Map.entry("extraPerformance", Map.of("throughput", 0))
+ *                     )))
+ *                 .configuration_code("es.standard")
+ *                 .deletion_protection(true)
+ *                 .network_specs(Arrays.asList(                
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Elasticsearch"),
+ *                         Map.entry("bandwidth", 1),
+ *                         Map.entry("isOpen", true),
+ *                         Map.entry("specName", "es.eip.bgp_fixed_bandwidth")
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Kibana"),
+ *                         Map.entry("bandwidth", 1),
+ *                         Map.entry("isOpen", true),
+ *                         Map.entry("specName", "es.eip.bgp_fixed_bandwidth")
+ *                     )))
+ *                 .admin_password("********")
+ *                 .tags(InstanceInstanceConfigurationTagArgs.builder()
+ *                     .key("env")
+ *                     .value("test")
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -583,9 +679,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> subInstanceEnable() {
         return this.subInstanceEnable;
     }
+    /**
+     * Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="subInstances", refs={List.class,InstanceSubInstance.class}, tree="[0,1]")
     private Output<List<InstanceSubInstance>> subInstances;
 
+    /**
+     * @return Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceSubInstance>> subInstances() {
         return this.subInstances;
     }

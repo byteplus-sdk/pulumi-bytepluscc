@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.filenas.MountPoint;
  * import com.byteplus.bytepluscc.filenas.MountPointArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -67,9 +67,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:filenas/mountPoint:MountPoint")
 public class MountPoint extends com.pulumi.resources.CustomResource {
+    /**
+     * Client information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="clients", refs={List.class,MountPointClient.class}, tree="[0,1]")
     private Output<List<MountPointClient>> clients;
 
+    /**
+     * @return Client information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<MountPointClient>> clients() {
         return this.clients;
     }

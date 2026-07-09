@@ -25,6 +25,51 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.Eni;
+ * import com.byteplus.bytepluscc.vpc.EniArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.EniPrimaryIpAddressArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.EniTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var eniDemo = new Eni("eniDemo", EniArgs.builder()
+ *             .networkInterfaceName("EniDemo")
+ *             .subnetId("vpc_subnet-xxxx")
+ *             .securityGroupIds("vpc_security_group-xxxx")
+ *             .instanceId("i-ye498lwge85i3z3kxxxx")
+ *             .projectName("default")
+ *             .primaryIpAddress(EniPrimaryIpAddressArgs.builder()
+ *                 .private_ip_address("192.168.x.130")
+ *                 .associated_elastic_ip(Map.of("allocationId", "eip-2f80zqjduo6ps4f4pzzcxxxxx"))
+ *                 .build())
+ *             .secondaryPrivateIpAddressCount(2)
+ *             .tags(EniTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -204,9 +249,19 @@ public class Eni extends com.pulumi.resources.CustomResource {
     public Output<EniPrimaryIpAddress> primaryIpAddress() {
         return this.primaryIpAddress;
     }
+    /**
+     * List of private IPv4 addresses for the network interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="privateIpSets", refs={List.class,EniPrivateIpSet.class}, tree="[0,1]")
     private Output<List<EniPrivateIpSet>> privateIpSets;
 
+    /**
+     * @return List of private IPv4 addresses for the network interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EniPrivateIpSet>> privateIpSets() {
         return this.privateIpSets;
     }
@@ -294,9 +349,19 @@ public class Eni extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,EniTag.class}, tree="[0,1]")
     private Output<List<EniTag>> tags;
 
+    /**
+     * @return Tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EniTag>> tags() {
         return this.tags;
     }

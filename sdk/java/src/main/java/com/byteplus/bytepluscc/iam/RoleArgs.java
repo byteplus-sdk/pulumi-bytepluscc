@@ -79,9 +79,19 @@ public final class RoleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.maxSessionDuration);
     }
 
+    /**
+     * Role Strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="policies")
     private @Nullable Output<List<RolePolicyArgs>> policies;
 
+    /**
+     * @return Role Strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RolePolicyArgs>>> policies() {
         return Optional.ofNullable(this.policies);
     }
@@ -116,9 +126,19 @@ public final class RoleArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.serviceName);
     }
 
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<RoleTagArgs>> tags;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RoleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -254,15 +274,36 @@ public final class RoleArgs extends com.pulumi.resources.ResourceArgs {
             return maxSessionDuration(Output.of(maxSessionDuration));
         }
 
+        /**
+         * @param policies Role Strategy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policies(@Nullable Output<List<RolePolicyArgs>> policies) {
             $.policies = policies;
             return this;
         }
 
+        /**
+         * @param policies Role Strategy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policies(List<RolePolicyArgs> policies) {
             return policies(Output.of(policies));
         }
 
+        /**
+         * @param policies Role Strategy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policies(RolePolicyArgs... policies) {
             return policies(List.of(policies));
         }
@@ -309,15 +350,36 @@ public final class RoleArgs extends com.pulumi.resources.ResourceArgs {
             return serviceName(Output.of(serviceName));
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<RoleTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<RoleTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(RoleTagArgs... tags) {
             return tags(List.of(tags));
         }

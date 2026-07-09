@@ -83,9 +83,19 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.enableRawLog);
     }
 
+    /**
+     * Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="fields")
     private @Nullable Output<List<RuleUserDefineRuleFieldArgs>> fields;
 
+    /**
+     * @return Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleUserDefineRuleFieldArgs>>> fields() {
         return Optional.ofNullable(this.fields);
     }
@@ -362,15 +372,36 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
             return enableRawLog(Output.of(enableRawLog));
         }
 
+        /**
+         * @param fields Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fields(@Nullable Output<List<RuleUserDefineRuleFieldArgs>> fields) {
             $.fields = fields;
             return this;
         }
 
+        /**
+         * @param fields Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fields(List<RuleUserDefineRuleFieldArgs> fields) {
             return fields(Output.of(fields));
         }
 
+        /**
+         * @param fields Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder fields(RuleUserDefineRuleFieldArgs... fields) {
             return fields(List.of(fields));
         }

@@ -54,6 +54,11 @@ public final class AlarmNotifyGroupReceiver {
      * 
      */
     private @Nullable String generalWebhookBody;
+    /**
+     * @return Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<AlarmNotifyGroupReceiverGeneralWebhookHeader> generalWebhookHeaders;
     /**
      * @return Custom callback method for the interface. Only POST or PUT is supported.
@@ -143,6 +148,11 @@ public final class AlarmNotifyGroupReceiver {
     public Optional<String> generalWebhookBody() {
         return Optional.ofNullable(this.generalWebhookBody);
     }
+    /**
+     * @return Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<AlarmNotifyGroupReceiverGeneralWebhookHeader> generalWebhookHeaders() {
         return this.generalWebhookHeaders == null ? List.of() : this.generalWebhookHeaders;
     }

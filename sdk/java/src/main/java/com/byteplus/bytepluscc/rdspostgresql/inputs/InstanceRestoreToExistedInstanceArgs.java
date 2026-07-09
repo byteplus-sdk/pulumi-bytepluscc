@@ -32,9 +32,19 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
         return Optional.ofNullable(this.backupId);
     }
 
+    /**
+     * List of databases to restore
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="databases")
     private @Nullable Output<List<InstanceRestoreToExistedInstanceDatabaseArgs>> databases;
 
+    /**
+     * @return List of databases to restore
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceRestoreToExistedInstanceDatabaseArgs>>> databases() {
         return Optional.ofNullable(this.databases);
     }
@@ -117,15 +127,36 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
             return backupId(Output.of(backupId));
         }
 
+        /**
+         * @param databases List of databases to restore
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databases(@Nullable Output<List<InstanceRestoreToExistedInstanceDatabaseArgs>> databases) {
             $.databases = databases;
             return this;
         }
 
+        /**
+         * @param databases List of databases to restore
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databases(List<InstanceRestoreToExistedInstanceDatabaseArgs> databases) {
             return databases(Output.of(databases));
         }
 
+        /**
+         * @param databases List of databases to restore
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder databases(InstanceRestoreToExistedInstanceDatabaseArgs... databases) {
             return databases(List.of(databases));
         }

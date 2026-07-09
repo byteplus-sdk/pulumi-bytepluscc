@@ -24,6 +24,11 @@ public final class AlarmNotifyGroupNoticeRule {
      * 
      */
     private @Nullable Boolean hasNext;
+    /**
+     * @return Notification channel information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<AlarmNotifyGroupNoticeRuleReceiverInfo> receiverInfos;
     /**
      * @return Rule node. JSON format.
@@ -46,6 +51,11 @@ public final class AlarmNotifyGroupNoticeRule {
     public Optional<Boolean> hasNext() {
         return Optional.ofNullable(this.hasNext);
     }
+    /**
+     * @return Notification channel information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<AlarmNotifyGroupNoticeRuleReceiverInfo> receiverInfos() {
         return this.receiverInfos == null ? List.of() : this.receiverInfos;
     }

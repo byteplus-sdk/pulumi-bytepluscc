@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.storageebs.Snapshot;
  * import com.byteplus.bytepluscc.storageebs.SnapshotArgs;
  * import com.pulumi.bytepluscc.storageebs.inputs.SnapshotTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -254,9 +254,19 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Snapshot tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,SnapshotTag.class}, tree="[0,1]")
     private Output<List<SnapshotTag>> tags;
 
+    /**
+     * @return Snapshot tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<SnapshotTag>> tags() {
         return this.tags;
     }

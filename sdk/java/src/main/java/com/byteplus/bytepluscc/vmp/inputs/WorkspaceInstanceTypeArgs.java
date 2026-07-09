@@ -48,9 +48,19 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.availabilityZoneReplicas);
     }
 
+    /**
+     * Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="calculatePriceParams")
     private @Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>> calculatePriceParams;
 
+    /**
+     * @return Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>>> calculatePriceParams() {
         return Optional.ofNullable(this.calculatePriceParams);
     }
@@ -251,15 +261,36 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
             return availabilityZoneReplicas(Output.of(availabilityZoneReplicas));
         }
 
+        /**
+         * @param calculatePriceParams Billing parameter list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder calculatePriceParams(@Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>> calculatePriceParams) {
             $.calculatePriceParams = calculatePriceParams;
             return this;
         }
 
+        /**
+         * @param calculatePriceParams Billing parameter list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder calculatePriceParams(List<WorkspaceInstanceTypeCalculatePriceParamArgs> calculatePriceParams) {
             return calculatePriceParams(Output.of(calculatePriceParams));
         }
 
+        /**
+         * @param calculatePriceParams Billing parameter list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder calculatePriceParams(WorkspaceInstanceTypeCalculatePriceParamArgs... calculatePriceParams) {
             return calculatePriceParams(List.of(calculatePriceParams));
         }

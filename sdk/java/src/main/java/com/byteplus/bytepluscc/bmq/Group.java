@@ -22,6 +22,46 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.bmq.Group;
+ * import com.byteplus.bytepluscc.bmq.GroupArgs;
+ * import com.pulumi.bytepluscc.bmq.inputs.GroupResetInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var bMQGroupDemo = new Group("bMQGroupDemo", GroupArgs.builder()
+ *             .description("this is test group")
+ *             .groupName("cBMQGroupDemo")
+ *             .instanceId("bmq-4ld4vpjzd32tq1gxxxxx")
+ *             .resetInfo(GroupResetInfoArgs.builder()
+ *                 .topic_id("5f81fcab96cb46c7955659fdxxxxx")
+ *                 .reset_by("OFFSET")
+ *                 .offset_type("LATEST")
+ *                 .reset_value(4)
+ *                 .partition_id(1)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -159,9 +199,19 @@ public class Group extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Topic list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="topicInfos", refs={List.class,GroupTopicInfo.class}, tree="[0,1]")
     private Output<List<GroupTopicInfo>> topicInfos;
 
+    /**
+     * @return Topic list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<GroupTopicInfo>> topicInfos() {
         return this.topicInfos;
     }

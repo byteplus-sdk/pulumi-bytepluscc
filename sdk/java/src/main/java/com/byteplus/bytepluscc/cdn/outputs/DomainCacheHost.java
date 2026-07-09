@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainCacheHost {
+    /**
+     * @return Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DomainCacheHostCacheHostRule> cacheHostRules;
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
@@ -21,6 +26,11 @@ public final class DomainCacheHost {
     private @Nullable Boolean switch_;
 
     private DomainCacheHost() {}
+    /**
+     * @return Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DomainCacheHostCacheHostRule> cacheHostRules() {
         return this.cacheHostRules == null ? List.of() : this.cacheHostRules;
     }

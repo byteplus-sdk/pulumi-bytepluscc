@@ -45,7 +45,7 @@ public final class GetAddressBookResult {
      */
     private String groupName;
     /**
-     * @return The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+     * @return The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
      * 
      */
     private String groupType;
@@ -134,7 +134,7 @@ public final class GetAddressBookResult {
         return this.groupName;
     }
     /**
-     * @return The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+     * @return The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
      * 
      */
     public String groupType() {

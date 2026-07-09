@@ -24,6 +24,69 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.clb.Listener;
+ * import com.byteplus.bytepluscc.clb.ListenerArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ListenerHealthCheckArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ListenerTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var clbListenerDemo = new Listener("clbListenerDemo", ListenerArgs.builder()
+ *             .aclIds("acl-mjd01crvppts5smt1bsxxxxx")
+ *             .aclStatus("on")
+ *             .aclType("black")
+ *             .connectionDrainEnabled("on")
+ *             .connectionDrainTimeout(900)
+ *             .description("ClbListenerDemo description")
+ *             .enabled("on")
+ *             .establishedTimeout(300)
+ *             .serverGroupId("rsp-rs11ie8u6neov0x58bxxxxx")
+ *             .healthCheck(ListenerHealthCheckArgs.builder()
+ *                 .enabled("on")
+ *                 .healthy_threshold(3)
+ *                 .interval(5)
+ *                 .timeout(2)
+ *                 .unhealthy_threshold(3)
+ *                 .port(0)
+ *                 .udp_request("test")
+ *                 .udp_expect("test")
+ *                 .build())
+ *             .listenerName("ClbListenerDemo")
+ *             .loadBalancerId("clb-rs1187938g00v0x58nxxxxx")
+ *             .persistenceTimeout(1000)
+ *             .persistenceType("source_ip")
+ *             .protocol("UDP")
+ *             .port(5001)
+ *             .scheduler("wrr")
+ *             .bandwidth(1)
+ *             .proxyProtocolType("standard")
+ *             .tags(ListenerTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -273,9 +336,19 @@ public class Listener extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="domainExtensions", refs={List.class,ListenerDomainExtension.class}, tree="[0,1]")
     private Output<List<ListenerDomainExtension>> domainExtensions;
 
+    /**
+     * @return List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ListenerDomainExtension>> domainExtensions() {
         return this.domainExtensions;
     }
@@ -629,9 +702,19 @@ public class Listener extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag associated with the listener.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ListenerTag.class}, tree="[0,1]")
     private Output<List<ListenerTag>> tags;
 
+    /**
+     * @return Tag associated with the listener.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ListenerTag>> tags() {
         return this.tags;
     }

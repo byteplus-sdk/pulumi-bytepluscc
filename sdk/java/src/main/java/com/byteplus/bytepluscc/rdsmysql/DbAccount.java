@@ -22,6 +22,63 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.DbAccount;
+ * import com.byteplus.bytepluscc.rdsmysql.DbAccountArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.DbAccountAccountPrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rDSMySQLDBAccountDemo = new DbAccount("rDSMySQLDBAccountDemo", DbAccountArgs.builder()
+ *             .accountDesc("RDSMySQLDBAccountDemo desc")
+ *             .instanceId("mysql-a5b5caexxxxx")
+ *             .accountName("RDSMySQLDBAccountDemo")
+ *             .accountPassword("********")
+ *             .accountType("Normal")
+ *             .accountPrivileges(            
+ *                 DbAccountAccountPrivilegeArgs.builder()
+ *                     .account_privilege("Custom")
+ *                     .account_privilege_detail(Arrays.asList(                    
+ *                         "CREATE",
+ *                         "DROP",
+ *                         "REFERENCES",
+ *                         "INDEX"))
+ *                     .db_name("test")
+ *                     .build(),
+ *                 DbAccountAccountPrivilegeArgs.builder()
+ *                     .account_privilege("Global")
+ *                     .account_privilege_detail(Arrays.asList(                    
+ *                         "PROCESS",
+ *                         "REPLICATION SLAVE",
+ *                         "REPLICATION CLIENT",
+ *                         "DROP",
+ *                         "ALTER"))
+ *                     .db_name("")
+ *                     .build())
+ *             .host("%")
+ *             .tableColumnPrivileges()
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -75,9 +132,19 @@ public class DbAccount extends com.pulumi.resources.CustomResource {
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
+    /**
+     * Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="accountPrivileges", refs={List.class,DbAccountAccountPrivilege.class}, tree="[0,1]")
     private Output<List<DbAccountAccountPrivilege>> accountPrivileges;
 
+    /**
+     * @return Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DbAccountAccountPrivilege>> accountPrivileges() {
         return this.accountPrivileges;
     }
@@ -165,9 +232,19 @@ public class DbAccount extends com.pulumi.resources.CustomResource {
     public Output<String> instanceId() {
         return this.instanceId;
     }
+    /**
+     * Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tableColumnPrivileges", refs={List.class,DbAccountTableColumnPrivilege.class}, tree="[0,1]")
     private Output<List<DbAccountTableColumnPrivilege>> tableColumnPrivileges;
 
+    /**
+     * @return Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DbAccountTableColumnPrivilege>> tableColumnPrivileges() {
         return this.tableColumnPrivileges;
     }

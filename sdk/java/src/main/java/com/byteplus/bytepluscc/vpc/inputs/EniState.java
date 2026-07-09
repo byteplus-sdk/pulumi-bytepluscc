@@ -201,9 +201,19 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.primaryIpAddress);
     }
 
+    /**
+     * List of private IPv4 addresses for the network interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="privateIpSets")
     private @Nullable Output<List<EniPrivateIpSetArgs>> privateIpSets;
 
+    /**
+     * @return List of private IPv4 addresses for the network interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EniPrivateIpSetArgs>>> privateIpSets() {
         return Optional.ofNullable(this.privateIpSets);
     }
@@ -298,9 +308,19 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<EniTagArgs>> tags;
 
+    /**
+     * @return Tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<EniTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -690,15 +710,36 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
             return primaryIpAddress(Output.of(primaryIpAddress));
         }
 
+        /**
+         * @param privateIpSets List of private IPv4 addresses for the network interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateIpSets(@Nullable Output<List<EniPrivateIpSetArgs>> privateIpSets) {
             $.privateIpSets = privateIpSets;
             return this;
         }
 
+        /**
+         * @param privateIpSets List of private IPv4 addresses for the network interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateIpSets(List<EniPrivateIpSetArgs> privateIpSets) {
             return privateIpSets(Output.of(privateIpSets));
         }
 
+        /**
+         * @param privateIpSets List of private IPv4 addresses for the network interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder privateIpSets(EniPrivateIpSetArgs... privateIpSets) {
             return privateIpSets(List.of(privateIpSets));
         }
@@ -839,15 +880,36 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<EniTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<EniTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(EniTagArgs... tags) {
             return tags(List.of(tags));
         }

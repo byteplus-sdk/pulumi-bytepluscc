@@ -11,9 +11,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainResponseHeaderResponseHeaderAction {
+    /**
+     * @return Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DomainResponseHeaderResponseHeaderActionResponseHeaderInstance> responseHeaderInstances;
 
     private DomainResponseHeaderResponseHeaderAction() {}
+    /**
+     * @return Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DomainResponseHeaderResponseHeaderActionResponseHeaderInstance> responseHeaderInstances() {
         return this.responseHeaderInstances == null ? List.of() : this.responseHeaderInstances;
     }

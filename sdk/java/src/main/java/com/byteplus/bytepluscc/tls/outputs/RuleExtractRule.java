@@ -30,6 +30,11 @@ public final class RuleExtractRule {
      * 
      */
     private @Nullable Boolean enableNanosecond;
+    /**
+     * @return Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<RuleExtractRuleFilterKeyRegex> filterKeyRegexes;
     /**
      * @return List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
@@ -109,6 +114,11 @@ public final class RuleExtractRule {
     public Optional<Boolean> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
     }
+    /**
+     * @return Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<RuleExtractRuleFilterKeyRegex> filterKeyRegexes() {
         return this.filterKeyRegexes == null ? List.of() : this.filterKeyRegexes;
     }

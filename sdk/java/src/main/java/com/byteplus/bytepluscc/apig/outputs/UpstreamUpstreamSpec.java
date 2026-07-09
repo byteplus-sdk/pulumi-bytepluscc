@@ -27,6 +27,11 @@ public final class UpstreamUpstreamSpec {
      * 
      */
     private @Nullable UpstreamUpstreamSpecDomain domain;
+    /**
+     * @return Cloud server
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<UpstreamUpstreamSpecEcsInstance> ecsInstances;
     /**
      * @return Container Service
@@ -59,6 +64,11 @@ public final class UpstreamUpstreamSpec {
     public Optional<UpstreamUpstreamSpecDomain> domain() {
         return Optional.ofNullable(this.domain);
     }
+    /**
+     * @return Cloud server
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<UpstreamUpstreamSpecEcsInstance> ecsInstances() {
         return this.ecsInstances == null ? List.of() : this.ecsInstances;
     }

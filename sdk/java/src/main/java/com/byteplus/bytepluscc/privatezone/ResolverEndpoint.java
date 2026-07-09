@@ -22,6 +22,58 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatezone.ResolverEndpoint;
+ * import com.byteplus.bytepluscc.privatezone.ResolverEndpointArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.ResolverEndpointIpConfigArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.ResolverEndpointTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var privateZoneResolverEndpointDemo = new ResolverEndpoint("privateZoneResolverEndpointDemo", ResolverEndpointArgs.builder()
+ *             .name("PrivateZoneResolverEndpointDemo")
+ *             .vpcId("vpc-3nrh1tqschwcg931eaqxxxxx")
+ *             .endpointType("IPv4")
+ *             .ipConfigs(            
+ *                 ResolverEndpointIpConfigArgs.builder()
+ *                     .az_id("cn-beijing-a")
+ *                     .subnet_id("subnet-bt50na0bf6kg5h0b2u1xxxxx")
+ *                     .ip("192.168.xx.44")
+ *                     .build(),
+ *                 ResolverEndpointIpConfigArgs.builder()
+ *                     .az_id("cn-beijing-b")
+ *                     .subnet_id("subnet-1a14u8n59jdvk8nvepjyxxxxx")
+ *                     .ip("192.168.xx.154")
+ *                     .build())
+ *             .projectName("default")
+ *             .tags(ResolverEndpointTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .vpcRegion("cn-beijing")
+ *             .direction("OUTBOUND")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -89,9 +141,19 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     public Output<String> endpointType() {
         return this.endpointType;
     }
+    /**
+     * Availability zone, subnet, and IP configuration for the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="ipConfigs", refs={List.class,ResolverEndpointIpConfig.class}, tree="[0,1]")
     private Output<List<ResolverEndpointIpConfig>> ipConfigs;
 
+    /**
+     * @return Availability zone, subnet, and IP configuration for the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ResolverEndpointIpConfig>> ipConfigs() {
         return this.ipConfigs;
     }
@@ -151,9 +213,19 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,ResolverEndpointTag.class}, tree="[0,1]")
     private Output<List<ResolverEndpointTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ResolverEndpointTag>> tags() {
         return this.tags;
     }

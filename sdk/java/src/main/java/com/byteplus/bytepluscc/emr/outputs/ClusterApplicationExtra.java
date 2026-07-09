@@ -14,7 +14,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ClusterApplicationExtra {
+    /**
+     * @return Custom deployment topology list for service components.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts;
+    /**
+     * @return Custom configuration parameter list for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ClusterApplicationExtraApplicationConfig> applicationConfigs;
     /**
      * @return Application name.
@@ -33,9 +43,19 @@ public final class ClusterApplicationExtra {
     private @Nullable String connectionType;
 
     private ClusterApplicationExtra() {}
+    /**
+     * @return Custom deployment topology list for service components.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts() {
         return this.applicationComponentLayouts == null ? List.of() : this.applicationComponentLayouts;
     }
+    /**
+     * @return Custom configuration parameter list for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ClusterApplicationExtraApplicationConfig> applicationConfigs() {
         return this.applicationConfigs == null ? List.of() : this.applicationConfigs;
     }

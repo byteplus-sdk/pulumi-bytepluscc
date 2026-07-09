@@ -24,6 +24,64 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.id.UserPool;
+ * import com.byteplus.bytepluscc.id.UserPoolArgs;
+ * import com.pulumi.bytepluscc.id.inputs.UserPoolBrandArgs;
+ * import com.pulumi.bytepluscc.id.inputs.UserPoolTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var example = new UserPool("example", UserPoolArgs.builder()
+ *             .name("禁用开关的用户池")
+ *             .description("这是一个禁用开关的用户池")
+ *             .brand(UserPoolBrandArgs.builder()
+ *                 .logo_uri("https://example.com/logo.png")
+ *                 .name("测试品牌")
+ *                 .build())
+ *             .passwordSignInEnabled(false)
+ *             .smsAnonymousSignUpEnabled(false)
+ *             .emailPasswordlessSignInEnabled(false)
+ *             .selfSignUpEnabled(false)
+ *             .signInAttributes(            
+ *                 "preferred_username",
+ *                 "phone_number",
+ *                 "email")
+ *             .requiredSignUpAttributes(            
+ *                 "preferred_username",
+ *                 "phone_number",
+ *                 "email")
+ *             .projectName("default")
+ *             .signUpAutoVerificationEnabled(false)
+ *             .selfAccountRecoveryEnabled(false)
+ *             .unconfirmedUserSignInEnabled(false)
+ *             .smsPasswordlessSignInEnabled(false)
+ *             .tags(UserPoolTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -371,9 +429,19 @@ public class UserPool extends com.pulumi.resources.CustomResource {
     public Output<Boolean> smsPasswordlessSignInEnabled() {
         return this.smsPasswordlessSignInEnabled;
     }
+    /**
+     * User pool tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,UserPoolTag.class}, tree="[0,1]")
     private Output<List<UserPoolTag>> tags;
 
+    /**
+     * @return User pool tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<UserPoolTag>> tags() {
         return this.tags;
     }

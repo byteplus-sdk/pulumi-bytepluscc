@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class UpstreamVersionDetail {
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<UpstreamVersionDetailLabel> labels;
     /**
      * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
@@ -26,6 +31,11 @@ public final class UpstreamVersionDetail {
     private @Nullable String updateTime;
 
     private UpstreamVersionDetail() {}
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<UpstreamVersionDetailLabel> labels() {
         return this.labels == null ? List.of() : this.labels;
     }

@@ -137,9 +137,19 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<GatewayEndpointTagArgs>> tags;
 
+    /**
+     * @return Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GatewayEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -392,15 +402,36 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<GatewayEndpointTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<GatewayEndpointTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(GatewayEndpointTagArgs... tags) {
             return tags(List.of(tags));
         }

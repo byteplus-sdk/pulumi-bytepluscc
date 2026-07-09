@@ -17,9 +17,19 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
 
     public static final UpstreamVersionDetailArgs Empty = new UpstreamVersionDetailArgs();
 
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="labels")
     private @Nullable Output<List<UpstreamVersionDetailLabelArgs>> labels;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UpstreamVersionDetailLabelArgs>>> labels() {
         return Optional.ofNullable(this.labels);
     }
@@ -80,15 +90,36 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
             $ = new UpstreamVersionDetailArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param labels Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labels(@Nullable Output<List<UpstreamVersionDetailLabelArgs>> labels) {
             $.labels = labels;
             return this;
         }
 
+        /**
+         * @param labels Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labels(List<UpstreamVersionDetailLabelArgs> labels) {
             return labels(Output.of(labels));
         }
 
+        /**
+         * @param labels Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labels(UpstreamVersionDetailLabelArgs... labels) {
             return labels(List.of(labels));
         }

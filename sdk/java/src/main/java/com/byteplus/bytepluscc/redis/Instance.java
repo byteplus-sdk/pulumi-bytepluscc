@@ -40,8 +40,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.redis.InstanceArgs;
  * import com.pulumi.bytepluscc.redis.inputs.InstanceConfigureNodeArgs;
  * import com.pulumi.bytepluscc.redis.inputs.InstanceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -158,9 +158,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<InstanceBackupRestore> backupRestore() {
         return this.backupRestore;
     }
+    /**
+     * Backup list information for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="backups", refs={List.class,InstanceBackup.class}, tree="[0,1]")
     private Output<List<InstanceBackup>> backups;
 
+    /**
+     * @return Backup list information for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceBackup>> backups() {
         return this.backups;
     }
@@ -206,9 +216,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> chargeType() {
         return this.chargeType;
     }
+    /**
+     * Set the list of availability zones to which the node belongs.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="configureNodes", refs={List.class,InstanceConfigureNode.class}, tree="[0,1]")
     private Output<List<InstanceConfigureNode>> configureNodes;
 
+    /**
+     * @return Set the list of availability zones to which the node belongs.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceConfigureNode>> configureNodes() {
         return this.configureNodes;
     }
@@ -352,9 +372,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> instanceName() {
         return this.instanceName;
     }
+    /**
+     * Detailed list of all shards in the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="instanceShards", refs={List.class,InstanceInstanceShard.class}, tree="[0,1]")
     private Output<List<InstanceInstanceShard>> instanceShards;
 
+    /**
+     * @return Detailed list of all shards in the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceInstanceShard>> instanceShards() {
         return this.instanceShards;
     }
@@ -652,9 +682,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Set the tag list for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Set the tag list for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
@@ -686,9 +726,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> vip() {
         return this.vip;
     }
+    /**
+     * Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="visitAddrs", refs={List.class,InstanceVisitAddr.class}, tree="[0,1]")
     private Output<List<InstanceVisitAddr>> visitAddrs;
 
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceVisitAddr>> visitAddrs() {
         return this.visitAddrs;
     }

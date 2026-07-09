@@ -26,6 +26,55 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ark.Endpoint;
+ * import com.byteplus.bytepluscc.ark.EndpointArgs;
+ * import com.pulumi.bytepluscc.ark.inputs.EndpointModelReferenceArgs;
+ * import com.pulumi.bytepluscc.ark.inputs.EndpointTagArgs;
+ * import com.pulumi.bytepluscc.ark.inputs.EndpointRateLimitArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var endpointDemo = new Endpoint("endpointDemo", EndpointArgs.builder()
+ *             .name("EndpointDemo")
+ *             .description("endpoint description")
+ *             .modelReference(EndpointModelReferenceArgs.builder()
+ *                 .foundation_model(Map.ofEntries(
+ *                     Map.entry("name", "doubao-1-5-thinking-***"),
+ *                     Map.entry("modelVersion", "250428")
+ *                 ))
+ *                 .build())
+ *             .tags(EndpointTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .projectName("default")
+ *             .rateLimit(EndpointRateLimitArgs.builder()
+ *                 .tpm(5)
+ *                 .rpm(10)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -289,9 +338,19 @@ public class Endpoint extends com.pulumi.resources.CustomResource {
     public Output<Boolean> supportScaleTier() {
         return this.supportScaleTier;
     }
+    /**
+     * Tags bound to the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,EndpointTag.class}, tree="[0,1]")
     private Output<List<EndpointTag>> tags;
 
+    /**
+     * @return Tags bound to the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<EndpointTag>> tags() {
         return this.tags;
     }

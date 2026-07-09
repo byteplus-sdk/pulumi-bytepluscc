@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConnectionInfo {
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceConnectionInfoAddress> addresses;
     /**
      * @return Description.
@@ -36,6 +41,11 @@ public final class InstanceConnectionInfo {
     private @Nullable String endpointType;
 
     private InstanceConnectionInfo() {}
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceConnectionInfoAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }

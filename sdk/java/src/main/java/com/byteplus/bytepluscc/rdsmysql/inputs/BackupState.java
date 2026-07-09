@@ -80,9 +80,19 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.backupId);
     }
 
+    /**
+     * When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="backupMetas")
     private @Nullable Output<List<BackupBackupMetaArgs>> backupMetas;
 
+    /**
+     * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<BackupBackupMetaArgs>>> backupMetas() {
         return Optional.ofNullable(this.backupMetas);
     }
@@ -222,9 +232,19 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.dbEngineVersion);
     }
 
+    /**
+     * Database and table information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="dbTableInfos")
     private @Nullable Output<List<BackupDbTableInfoArgs>> dbTableInfos;
 
+    /**
+     * @return Database and table information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<BackupDbTableInfoArgs>>> dbTableInfos() {
         return Optional.ofNullable(this.dbTableInfos);
     }
@@ -463,15 +483,36 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
             return backupId(Output.of(backupId));
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backupMetas(@Nullable Output<List<BackupBackupMetaArgs>> backupMetas) {
             $.backupMetas = backupMetas;
             return this;
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backupMetas(List<BackupBackupMetaArgs> backupMetas) {
             return backupMetas(Output.of(backupMetas));
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backupMetas(BackupBackupMetaArgs... backupMetas) {
             return backupMetas(List.of(backupMetas));
         }
@@ -665,15 +706,36 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
             return dbEngineVersion(Output.of(dbEngineVersion));
         }
 
+        /**
+         * @param dbTableInfos Database and table information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbTableInfos(@Nullable Output<List<BackupDbTableInfoArgs>> dbTableInfos) {
             $.dbTableInfos = dbTableInfos;
             return this;
         }
 
+        /**
+         * @param dbTableInfos Database and table information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbTableInfos(List<BackupDbTableInfoArgs> dbTableInfos) {
             return dbTableInfos(Output.of(dbTableInfos));
         }
 
+        /**
+         * @param dbTableInfos Database and table information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbTableInfos(BackupDbTableInfoArgs... dbTableInfos) {
             return dbTableInfos(List.of(dbTableInfos));
         }

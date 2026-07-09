@@ -17,9 +17,19 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ClusterStatusArgs Empty = new ClusterStatusArgs();
 
+    /**
+     * Status condition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditions")
     private @Nullable Output<List<ClusterStatusConditionArgs>> conditions;
 
+    /**
+     * @return Status condition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClusterStatusConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
@@ -64,15 +74,36 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
             $ = new ClusterStatusArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditions Status condition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(@Nullable Output<List<ClusterStatusConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Status condition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(List<ClusterStatusConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Status condition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(ClusterStatusConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }

@@ -17,9 +17,19 @@ public final class DomainCacheHostCacheHostRuleConditionArgs extends com.pulumi.
 
     public static final DomainCacheHostCacheHostRuleConditionArgs Empty = new DomainCacheHostCacheHostRuleConditionArgs();
 
+    /**
+     * Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditionRules")
     private @Nullable Output<List<DomainCacheHostCacheHostRuleConditionConditionRuleArgs>> conditionRules;
 
+    /**
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainCacheHostCacheHostRuleConditionConditionRuleArgs>>> conditionRules() {
         return Optional.ofNullable(this.conditionRules);
     }
@@ -64,15 +74,36 @@ public final class DomainCacheHostCacheHostRuleConditionArgs extends com.pulumi.
             $ = new DomainCacheHostCacheHostRuleConditionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(@Nullable Output<List<DomainCacheHostCacheHostRuleConditionConditionRuleArgs>> conditionRules) {
             $.conditionRules = conditionRules;
             return this;
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(List<DomainCacheHostCacheHostRuleConditionConditionRuleArgs> conditionRules) {
             return conditionRules(Output.of(conditionRules));
         }
 
+        /**
+         * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditionRules(DomainCacheHostCacheHostRuleConditionConditionRuleArgs... conditionRules) {
             return conditionRules(List.of(conditionRules));
         }

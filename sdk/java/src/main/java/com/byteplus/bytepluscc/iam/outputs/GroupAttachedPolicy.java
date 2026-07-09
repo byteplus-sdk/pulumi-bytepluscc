@@ -18,6 +18,11 @@ public final class GroupAttachedPolicy {
      * 
      */
     private @Nullable String policyName;
+    /**
+     * @return Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<GroupAttachedPolicyPolicyScope> policyScopes;
     /**
      * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
@@ -33,6 +38,11 @@ public final class GroupAttachedPolicy {
     public Optional<String> policyName() {
         return Optional.ofNullable(this.policyName);
     }
+    /**
+     * @return Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<GroupAttachedPolicyPolicyScope> policyScopes() {
         return this.policyScopes == null ? List.of() : this.policyScopes;
     }

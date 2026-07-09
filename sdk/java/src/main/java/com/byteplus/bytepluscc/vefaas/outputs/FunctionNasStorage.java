@@ -18,6 +18,11 @@ public final class FunctionNasStorage {
      * 
      */
     private @Nullable Boolean enableNas;
+    /**
+     * @return NAS storage configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<FunctionNasStorageNasConfig> nasConfigs;
 
     private FunctionNasStorage() {}
@@ -28,6 +33,11 @@ public final class FunctionNasStorage {
     public Optional<Boolean> enableNas() {
         return Optional.ofNullable(this.enableNas);
     }
+    /**
+     * @return NAS storage configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<FunctionNasStorageNasConfig> nasConfigs() {
         return this.nasConfigs == null ? List.of() : this.nasConfigs;
     }

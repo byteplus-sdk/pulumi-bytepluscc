@@ -32,8 +32,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.transitrouter.VpnAttachment;
  * import com.byteplus.bytepluscc.transitrouter.VpnAttachmentArgs;
  * import com.pulumi.bytepluscc.transitrouter.inputs.VpnAttachmentTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -157,9 +157,19 @@ public class VpnAttachment extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,VpnAttachmentTag.class}, tree="[0,1]")
     private Output<List<VpnAttachmentTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpnAttachmentTag>> tags() {
         return this.tags;
     }

@@ -48,9 +48,19 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.hasNext);
     }
 
+    /**
+     * Notification channel information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="receiverInfos")
     private @Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs>> receiverInfos;
 
+    /**
+     * @return Notification channel information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs>>> receiverInfos() {
         return Optional.ofNullable(this.receiverInfos);
     }
@@ -139,15 +149,36 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
             return hasNext(Output.of(hasNext));
         }
 
+        /**
+         * @param receiverInfos Notification channel information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder receiverInfos(@Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs>> receiverInfos) {
             $.receiverInfos = receiverInfos;
             return this;
         }
 
+        /**
+         * @param receiverInfos Notification channel information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder receiverInfos(List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs> receiverInfos) {
             return receiverInfos(Output.of(receiverInfos));
         }
 
+        /**
+         * @param receiverInfos Notification channel information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder receiverInfos(AlarmNotifyGroupNoticeRuleReceiverInfoArgs... receiverInfos) {
             return receiverInfos(List.of(receiverInfos));
         }

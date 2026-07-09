@@ -19,9 +19,19 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     public static final InstanceEndpointArgs Empty = new InstanceEndpointArgs();
 
+    /**
+     * Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="addresses")
     private @Nullable Output<List<InstanceEndpointAddressArgs>> addresses;
 
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceEndpointAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
     }
@@ -242,15 +252,36 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
             $ = new InstanceEndpointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addresses Connection address information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(@Nullable Output<List<InstanceEndpointAddressArgs>> addresses) {
             $.addresses = addresses;
             return this;
         }
 
+        /**
+         * @param addresses Connection address information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(List<InstanceEndpointAddressArgs> addresses) {
             return addresses(Output.of(addresses));
         }
 
+        /**
+         * @param addresses Connection address information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addresses(InstanceEndpointAddressArgs... addresses) {
             return addresses(List.of(addresses));
         }

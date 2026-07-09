@@ -38,8 +38,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsPublicArgs;
  * import com.pulumi.bytepluscc.bmq.inputs.InstanceEndpointsOverlayArgs;
  * import com.pulumi.bytepluscc.bmq.inputs.InstanceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -287,9 +287,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Instance resource tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="resourceTags", refs={List.class,InstanceResourceTag.class}, tree="[0,1]")
     private Output<List<InstanceResourceTag>> resourceTags;
 
+    /**
+     * @return Instance resource tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceResourceTag>> resourceTags() {
         return this.resourceTags;
     }
@@ -363,9 +373,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<List<String>> subnetIdLists() {
         return this.subnetIdLists;
     }
+    /**
+     * Instance resource tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Instance resource tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

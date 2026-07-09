@@ -145,7 +145,17 @@ public final class InstanceInstanceConfiguration {
      * 
      */
     private @Nullable InstanceInstanceConfigurationMasterNodeStorageSpec masterNodeStorageSpec;
+    /**
+     * @return Instance public network specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceInstanceConfigurationNetworkSpec> networkSpecs;
+    /**
+     * @return Configuration of node counts and specifications in the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceInstanceConfigurationNodeSpecsAssign> nodeSpecsAssigns;
     /**
      * @return Subscription instance purchase duration, in months.
@@ -167,6 +177,11 @@ public final class InstanceInstanceConfiguration {
      * 
      */
     private @Nullable InstanceInstanceConfigurationSubnet subnet;
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceInstanceConfigurationTag> tags;
     /**
      * @return API version. Value: 2023-01-01.
@@ -366,9 +381,19 @@ public final class InstanceInstanceConfiguration {
     public Optional<InstanceInstanceConfigurationMasterNodeStorageSpec> masterNodeStorageSpec() {
         return Optional.ofNullable(this.masterNodeStorageSpec);
     }
+    /**
+     * @return Instance public network specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceInstanceConfigurationNetworkSpec> networkSpecs() {
         return this.networkSpecs == null ? List.of() : this.networkSpecs;
     }
+    /**
+     * @return Configuration of node counts and specifications in the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceInstanceConfigurationNodeSpecsAssign> nodeSpecsAssigns() {
         return this.nodeSpecsAssigns == null ? List.of() : this.nodeSpecsAssigns;
     }
@@ -400,6 +425,11 @@ public final class InstanceInstanceConfiguration {
     public Optional<InstanceInstanceConfigurationSubnet> subnet() {
         return Optional.ofNullable(this.subnet);
     }
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceInstanceConfigurationTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

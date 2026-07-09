@@ -174,9 +174,19 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.exclusiveClusterId);
     }
 
+    /**
+     * Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="listeners")
     private @Nullable Output<List<ClbListenerArgs>> listeners;
 
+    /**
+     * @return Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClbListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
     }
@@ -346,9 +356,19 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="serverGroups")
     private @Nullable Output<List<ClbServerGroupArgs>> serverGroups;
 
+    /**
+     * @return Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClbServerGroupArgs>>> serverGroups() {
         return Optional.ofNullable(this.serverGroups);
     }
@@ -383,9 +403,19 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ClbTagArgs>> tags;
 
+    /**
+     * @return CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ClbTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -707,15 +737,36 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
             return exclusiveClusterId(Output.of(exclusiveClusterId));
         }
 
+        /**
+         * @param listeners Listener information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(@Nullable Output<List<ClbListenerArgs>> listeners) {
             $.listeners = listeners;
             return this;
         }
 
+        /**
+         * @param listeners Listener information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(List<ClbListenerArgs> listeners) {
             return listeners(Output.of(listeners));
         }
 
+        /**
+         * @param listeners Listener information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder listeners(ClbListenerArgs... listeners) {
             return listeners(List.of(listeners));
         }
@@ -951,15 +1002,36 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param serverGroups Backend server group information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroups(@Nullable Output<List<ClbServerGroupArgs>> serverGroups) {
             $.serverGroups = serverGroups;
             return this;
         }
 
+        /**
+         * @param serverGroups Backend server group information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroups(List<ClbServerGroupArgs> serverGroups) {
             return serverGroups(Output.of(serverGroups));
         }
 
+        /**
+         * @param serverGroups Backend server group information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serverGroups(ClbServerGroupArgs... serverGroups) {
             return serverGroups(List.of(serverGroups));
         }
@@ -1006,15 +1078,36 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags CLB instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ClbTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags CLB instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ClbTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags CLB instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ClbTagArgs... tags) {
             return tags(List.of(tags));
         }

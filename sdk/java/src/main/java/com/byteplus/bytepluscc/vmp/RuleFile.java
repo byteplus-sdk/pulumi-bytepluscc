@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vmp.RuleFile;
  * import com.byteplus.bytepluscc.vmp.RuleFileArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -71,16 +71,22 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:vmp/ruleFile:RuleFile")
 public class RuleFile extends com.pulumi.resources.CustomResource {
     /**
-     * Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-     * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
+     * Rule file content in YAML format. Content length limits:
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
      * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
-     * @return Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-     * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
+     * @return Rule file content in YAML format. Content length limits:
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
      * 
      */
     public Output<String> content() {
@@ -101,16 +107,20 @@ public class RuleFile extends com.pulumi.resources.CustomResource {
         return this.createTime;
     }
     /**
-     * Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-     * counts as one character.
+     * Rule file description, limited to 0–200 characters.
+     * 
+     *   **Note:** Note
+     *   Each English letter, Chinese character, or symbol counts as one character.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-     * counts as one character.
+     * @return Rule file description, limited to 0–200 characters.
+     * 
+     *   **Note:** Note
+     *   Each English letter, Chinese character, or symbol counts as one character.
      * 
      */
     public Output<String> description() {
@@ -131,14 +141,20 @@ public class RuleFile extends com.pulumi.resources.CustomResource {
         return this.lastUpdateTime;
     }
     /**
-     * Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
+     * Rule file name:
+     * 
+     *     - Must be a valid Linux file name and less than 255 characters.
+     *     - Must be unique within the workspace.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
+     * @return Rule file name:
+     * 
+     *     - Must be a valid Linux file name and less than 255 characters.
+     *     - Must be unique within the workspace.
      * 
      */
     public Output<String> name() {
@@ -173,16 +189,26 @@ public class RuleFile extends com.pulumi.resources.CustomResource {
         return this.ruleFileId;
     }
     /**
-     * Rule file status: - **Creating**: Creating - **Running**: Running - **Updating**: Updating - **OverdueSuspended**:
-     * Suspended due to overdue payment - **Resuming**: Resuming
+     * Rule file status:
+     * 
+     *     - **Creating**: Creating
+     *     - **Running**: Running
+     *     - **Updating**: Updating
+     *     - **OverdueSuspended**: Suspended due to overdue payment
+     *     - **Resuming**: Resuming
      * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Rule file status: - **Creating**: Creating - **Running**: Running - **Updating**: Updating - **OverdueSuspended**:
-     * Suspended due to overdue payment - **Resuming**: Resuming
+     * @return Rule file status:
+     * 
+     *     - **Creating**: Creating
+     *     - **Running**: Running
+     *     - **Updating**: Updating
+     *     - **OverdueSuspended**: Suspended due to overdue payment
+     *     - **Resuming**: Resuming
      * 
      */
     public Output<String> status() {

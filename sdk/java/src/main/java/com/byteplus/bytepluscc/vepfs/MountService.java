@@ -22,6 +22,46 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vepfs.MountService;
+ * import com.byteplus.bytepluscc.vepfs.MountServiceArgs;
+ * import com.pulumi.bytepluscc.vepfs.inputs.MountServiceAttachFileSystemArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vEPFSMountServiceDemo = new MountService("vEPFSMountServiceDemo", MountServiceArgs.builder()
+ *             .mountServiceName("test")
+ *             .project("default")
+ *             .nodeType("ecs.g4i.large")
+ *             .subnetId("subnet-1a185dj3sh1q8*****")
+ *             .vpcId("vpc-1a17v350xa8lc8n*****")
+ *             .zoneId("cn-beijing-a")
+ *             .attachFileSystems(MountServiceAttachFileSystemArgs.builder()
+ *                 .file_system_id("vepfs-cnbj607*****")
+ *                 .customer_path("/vepfs-cnbj*****")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -33,9 +73,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:vepfs/mountService:MountService")
 public class MountService extends com.pulumi.resources.CustomResource {
+    /**
+     * Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="attachFileSystems", refs={List.class,MountServiceAttachFileSystem.class}, tree="[0,1]")
     private Output<List<MountServiceAttachFileSystem>> attachFileSystems;
 
+    /**
+     * @return Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<MountServiceAttachFileSystem>> attachFileSystems() {
         return this.attachFileSystems;
     }
@@ -95,9 +145,19 @@ public class MountService extends com.pulumi.resources.CustomResource {
     public Output<String> nodeType() {
         return this.nodeType;
     }
+    /**
+     * Client management node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodes", refs={List.class,MountServiceNode.class}, tree="[0,1]")
     private Output<List<MountServiceNode>> nodes;
 
+    /**
+     * @return Client management node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<MountServiceNode>> nodes() {
         return this.nodes;
     }

@@ -32,9 +32,19 @@ public final class GroupAttachedPolicyArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.policyName);
     }
 
+    /**
+     * Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="policyScopes")
     private @Nullable Output<List<GroupAttachedPolicyPolicyScopeArgs>> policyScopes;
 
+    /**
+     * @return Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupAttachedPolicyPolicyScopeArgs>>> policyScopes() {
         return Optional.ofNullable(this.policyScopes);
     }
@@ -101,15 +111,36 @@ public final class GroupAttachedPolicyArgs extends com.pulumi.resources.Resource
             return policyName(Output.of(policyName));
         }
 
+        /**
+         * @param policyScopes Scope of policy authorization, specifically the project scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyScopes(@Nullable Output<List<GroupAttachedPolicyPolicyScopeArgs>> policyScopes) {
             $.policyScopes = policyScopes;
             return this;
         }
 
+        /**
+         * @param policyScopes Scope of policy authorization, specifically the project scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyScopes(List<GroupAttachedPolicyPolicyScopeArgs> policyScopes) {
             return policyScopes(Output.of(policyScopes));
         }
 
+        /**
+         * @param policyScopes Scope of policy authorization, specifically the project scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policyScopes(GroupAttachedPolicyPolicyScopeArgs... policyScopes) {
             return policyScopes(List.of(policyScopes));
         }

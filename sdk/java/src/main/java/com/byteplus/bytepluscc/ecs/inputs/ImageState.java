@@ -443,9 +443,19 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.snapshotId);
     }
 
+    /**
+     * Information about snapshots associated with the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="snapshots")
     private @Nullable Output<List<ImageSnapshotArgs>> snapshots;
 
+    /**
+     * @return Information about snapshots associated with the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ImageSnapshotArgs>>> snapshots() {
         return Optional.ofNullable(this.snapshots);
     }
@@ -465,9 +475,19 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * List of tags bound to the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ImageTagArgs>> tags;
 
+    /**
+     * @return List of tags bound to the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ImageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -1172,15 +1192,36 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
             return snapshotId(Output.of(snapshotId));
         }
 
+        /**
+         * @param snapshots Information about snapshots associated with the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder snapshots(@Nullable Output<List<ImageSnapshotArgs>> snapshots) {
             $.snapshots = snapshots;
             return this;
         }
 
+        /**
+         * @param snapshots Information about snapshots associated with the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder snapshots(List<ImageSnapshotArgs> snapshots) {
             return snapshots(Output.of(snapshots));
         }
 
+        /**
+         * @param snapshots Information about snapshots associated with the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder snapshots(ImageSnapshotArgs... snapshots) {
             return snapshots(List.of(snapshots));
         }
@@ -1206,15 +1247,36 @@ public final class ImageState extends com.pulumi.resources.ResourceArgs {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags List of tags bound to the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ImageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags List of tags bound to the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ImageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags List of tags bound to the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ImageTagArgs... tags) {
             return tags(List.of(tags));
         }

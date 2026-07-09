@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.privatelink.GatewayEndpoint;
  * import com.byteplus.bytepluscc.privatelink.GatewayEndpointArgs;
  * import com.pulumi.bytepluscc.privatelink.inputs.GatewayEndpointTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -184,9 +184,19 @@ public class GatewayEndpoint extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,GatewayEndpointTag.class}, tree="[0,1]")
     private Output<List<GatewayEndpointTag>> tags;
 
+    /**
+     * @return Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<GatewayEndpointTag>> tags() {
         return this.tags;
     }

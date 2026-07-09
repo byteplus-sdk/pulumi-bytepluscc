@@ -63,9 +63,19 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.accountPassword);
     }
 
+    /**
+     * Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="accountPrivileges")
     private @Nullable Output<List<DbAccountAccountPrivilegeArgs>> accountPrivileges;
 
+    /**
+     * @return Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DbAccountAccountPrivilegeArgs>>> accountPrivileges() {
         return Optional.ofNullable(this.accountPrivileges);
     }
@@ -160,9 +170,19 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.instanceId);
     }
 
+    /**
+     * Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tableColumnPrivileges")
     private @Nullable Output<List<DbAccountTableColumnPrivilegeArgs>> tableColumnPrivileges;
 
+    /**
+     * @return Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DbAccountTableColumnPrivilegeArgs>>> tableColumnPrivileges() {
         return Optional.ofNullable(this.tableColumnPrivileges);
     }
@@ -264,15 +284,36 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
             return accountPassword(Output.of(accountPassword));
         }
 
+        /**
+         * @param accountPrivileges Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accountPrivileges(@Nullable Output<List<DbAccountAccountPrivilegeArgs>> accountPrivileges) {
             $.accountPrivileges = accountPrivileges;
             return this;
         }
 
+        /**
+         * @param accountPrivileges Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accountPrivileges(List<DbAccountAccountPrivilegeArgs> accountPrivileges) {
             return accountPrivileges(Output.of(accountPrivileges));
         }
 
+        /**
+         * @param accountPrivileges Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accountPrivileges(DbAccountAccountPrivilegeArgs... accountPrivileges) {
             return accountPrivileges(List.of(accountPrivileges));
         }
@@ -423,15 +464,36 @@ public final class DbAccountState extends com.pulumi.resources.ResourceArgs {
             return instanceId(Output.of(instanceId));
         }
 
+        /**
+         * @param tableColumnPrivileges Account table column permission settings.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tableColumnPrivileges(@Nullable Output<List<DbAccountTableColumnPrivilegeArgs>> tableColumnPrivileges) {
             $.tableColumnPrivileges = tableColumnPrivileges;
             return this;
         }
 
+        /**
+         * @param tableColumnPrivileges Account table column permission settings.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tableColumnPrivileges(List<DbAccountTableColumnPrivilegeArgs> tableColumnPrivileges) {
             return tableColumnPrivileges(Output.of(tableColumnPrivileges));
         }
 
+        /**
+         * @param tableColumnPrivileges Account table column permission settings.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tableColumnPrivileges(DbAccountTableColumnPrivilegeArgs... tableColumnPrivileges) {
             return tableColumnPrivileges(List.of(tableColumnPrivileges));
         }

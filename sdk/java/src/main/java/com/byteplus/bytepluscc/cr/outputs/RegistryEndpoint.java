@@ -14,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class RegistryEndpoint {
+    /**
+     * @return Public IP allowlist list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<RegistryEndpointAclPolicy> aclPolicies;
     /**
      * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
@@ -27,6 +32,11 @@ public final class RegistryEndpoint {
     private @Nullable String status;
 
     private RegistryEndpoint() {}
+    /**
+     * @return Public IP allowlist list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<RegistryEndpointAclPolicy> aclPolicies() {
         return this.aclPolicies == null ? List.of() : this.aclPolicies;
     }

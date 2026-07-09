@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.ecs.Keypair;
  * import com.byteplus.bytepluscc.ecs.KeypairArgs;
  * import com.pulumi.bytepluscc.ecs.inputs.KeypairTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -181,9 +181,19 @@ public class Keypair extends com.pulumi.resources.CustomResource {
     public Output<String> publicKey() {
         return this.publicKey;
     }
+    /**
+     * Tags of the key pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,KeypairTag.class}, tree="[0,1]")
     private Output<List<KeypairTag>> tags;
 
+    /**
+     * @return Tags of the key pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<KeypairTag>> tags() {
         return this.tags;
     }

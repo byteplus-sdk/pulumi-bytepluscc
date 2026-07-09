@@ -64,9 +64,19 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
         return Optional.ofNullable(this.enableNanosecond);
     }
 
+    /**
+     * Filter rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="filterKeyRegexes")
     private @Nullable Output<List<HostGroupRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes;
 
+    /**
+     * @return Filter rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<HostGroupRuleExtractRuleFilterKeyRegexArgs>>> filterKeyRegexes() {
         return Optional.ofNullable(this.filterKeyRegexes);
     }
@@ -337,15 +347,36 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
             return enableNanosecond(Output.of(enableNanosecond));
         }
 
+        /**
+         * @param filterKeyRegexes Filter rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(@Nullable Output<List<HostGroupRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes) {
             $.filterKeyRegexes = filterKeyRegexes;
             return this;
         }
 
+        /**
+         * @param filterKeyRegexes Filter rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(List<HostGroupRuleExtractRuleFilterKeyRegexArgs> filterKeyRegexes) {
             return filterKeyRegexes(Output.of(filterKeyRegexes));
         }
 
+        /**
+         * @param filterKeyRegexes Filter rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder filterKeyRegexes(HostGroupRuleExtractRuleFilterKeyRegexArgs... filterKeyRegexes) {
             return filterKeyRegexes(List.of(filterKeyRegexes));
         }

@@ -29,8 +29,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.rdsmysql.EndpointPublicAddress;
  * import com.byteplus.bytepluscc.rdsmysql.EndpointPublicAddressArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -66,14 +66,16 @@ import javax.annotation.Nullable;
 @ResourceType(type="bytepluscc:rdsmysql/endpointPublicAddress:EndpointPublicAddress")
 public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
     /**
-     * - false: private network resolution (default) - true: private and public network resolution
+     * - false: private network resolution (default)
+     *     - true: private and public network resolution
      * 
      */
     @Export(name="dnsVisibility", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dnsVisibility;
 
     /**
-     * @return - false: private network resolution (default) - true: private and public network resolution
+     * @return - false: private network resolution (default)
+     *     - true: private and public network resolution
      * 
      */
     public Output<Boolean> dnsVisibility() {
@@ -94,18 +96,14 @@ public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
         return this.domain;
     }
     /**
-     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     @Export(name="domainPrefix", refs={String.class}, tree="[0]")
     private Output<String> domainPrefix;
 
     /**
-     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
      * 
      */
     public Output<String> domainPrefix() {
@@ -126,14 +124,18 @@ public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
         return this.eipId;
     }
     /**
-     * Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values: - true: Yes - false: No
+     * Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
+     *     - true: Yes
+     *     - false: No
      * 
      */
     @Export(name="eipLocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> eipLocked;
 
     /**
-     * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values: - true: Yes - false: No
+     * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
+     *     - true: Yes
+     *     - false: No
      * 
      */
     public Output<Boolean> eipLocked() {

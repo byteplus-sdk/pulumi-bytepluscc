@@ -295,9 +295,19 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.rotateInterval);
     }
 
+    /**
+     * KMS key label information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<KeyTagArgs>> tags;
 
+    /**
+     * @return KMS key label information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<KeyTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -722,15 +732,36 @@ public final class KeyArgs extends com.pulumi.resources.ResourceArgs {
             return rotateInterval(Output.of(rotateInterval));
         }
 
+        /**
+         * @param tags KMS key label information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<KeyTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags KMS key label information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<KeyTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags KMS key label information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(KeyTagArgs... tags) {
             return tags(List.of(tags));
         }

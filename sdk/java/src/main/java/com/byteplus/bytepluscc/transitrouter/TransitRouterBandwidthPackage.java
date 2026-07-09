@@ -33,8 +33,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.transitrouter.TransitRouterBandwidthPackage;
  * import com.byteplus.bytepluscc.transitrouter.TransitRouterBandwidthPackageArgs;
  * import com.pulumi.bytepluscc.transitrouter.inputs.TransitRouterBandwidthPackageTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -92,9 +92,19 @@ public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomRe
     public Output<String> accountId() {
         return this.accountId;
     }
+    /**
+     * Details of the cross-region connection associated with the bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="allocations", refs={List.class,TransitRouterBandwidthPackageAllocation.class}, tree="[0,1]")
     private Output<List<TransitRouterBandwidthPackageAllocation>> allocations;
 
+    /**
+     * @return Details of the cross-region connection associated with the bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<TransitRouterBandwidthPackageAllocation>> allocations() {
         return this.allocations;
     }
@@ -378,9 +388,19 @@ public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomRe
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,TransitRouterBandwidthPackageTag.class}, tree="[0,1]")
     private Output<List<TransitRouterBandwidthPackageTag>> tags;
 
+    /**
+     * @return Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<TransitRouterBandwidthPackageTag>> tags() {
         return this.tags;
     }

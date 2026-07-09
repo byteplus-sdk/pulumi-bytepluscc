@@ -23,6 +23,50 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.organization.Account;
+ * import com.byteplus.bytepluscc.organization.AccountArgs;
+ * import com.pulumi.bytepluscc.organization.inputs.AccountSecureContactInfoArgs;
+ * import com.pulumi.bytepluscc.organization.inputs.AccountTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var organizationAccountDemo = new Account("organizationAccountDemo", AccountArgs.builder()
+ *             .accountName("testdemo")
+ *             .description("test-desc")
+ *             .orgUnitId("7538034613*****190")
+ *             .showName("test-show-name")
+ *             .allowConsole(1)
+ *             .secureContactInfo(AccountSecureContactInfoArgs.builder()
+ *                 .new_email("")
+ *                 .new_phone("*********")
+ *                 .build())
+ *             .tags(AccountTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -342,9 +386,19 @@ public class Account extends com.pulumi.resources.CustomResource {
     public Output<String> showName() {
         return this.showName;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,AccountTag.class}, tree="[0,1]")
     private Output<List<AccountTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AccountTag>> tags() {
         return this.tags;
     }

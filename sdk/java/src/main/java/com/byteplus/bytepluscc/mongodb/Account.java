@@ -22,6 +22,50 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.mongodb.Account;
+ * import com.byteplus.bytepluscc.mongodb.AccountArgs;
+ * import com.pulumi.bytepluscc.mongodb.inputs.AccountAccountPrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var mongoDBAccountDemo = new Account("mongoDBAccountDemo", AccountArgs.builder()
+ *             .accountDesc("this is a test")
+ *             .accountName("ccapi-test")
+ *             .accountPassword("QWExxxxzxc")
+ *             .accountPrivileges(            
+ *                 AccountAccountPrivilegeArgs.builder()
+ *                     .db_name("admin")
+ *                     .role_name("read")
+ *                     .build(),
+ *                 AccountAccountPrivilegeArgs.builder()
+ *                     .db_name("admin")
+ *                     .role_name("userAdmin")
+ *                     .build())
+ *             .authDb("admin")
+ *             .instanceId("mongo-replica-xxxxxxxx")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -75,9 +119,19 @@ public class Account extends com.pulumi.resources.CustomResource {
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
+    /**
+     * List of database permissions currently owned by the account.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="accountPrivileges", refs={List.class,AccountAccountPrivilege.class}, tree="[0,1]")
     private Output<List<AccountAccountPrivilege>> accountPrivileges;
 
+    /**
+     * @return List of database permissions currently owned by the account.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AccountAccountPrivilege>> accountPrivileges() {
         return this.accountPrivileges;
     }

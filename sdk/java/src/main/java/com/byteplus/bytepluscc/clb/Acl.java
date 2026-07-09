@@ -36,8 +36,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.clb.AclArgs;
  * import com.pulumi.bytepluscc.clb.inputs.AclAclEntryArgs;
  * import com.pulumi.bytepluscc.clb.inputs.AclTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -83,9 +83,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:clb/acl:Acl")
 public class Acl extends com.pulumi.resources.CustomResource {
+    /**
+     * Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="aclEntries", refs={List.class,AclAclEntry.class}, tree="[0,1]")
     private Output<List<AclAclEntry>> aclEntries;
 
+    /**
+     * @return Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AclAclEntry>> aclEntries() {
         return this.aclEntries;
     }
@@ -159,9 +169,19 @@ public class Acl extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="listeners", refs={List.class,AclListener.class}, tree="[0,1]")
     private Output<List<AclListener>> listeners;
 
+    /**
+     * @return Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AclListener>> listeners() {
         return this.listeners;
     }
@@ -207,9 +227,19 @@ public class Acl extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,AclTag.class}, tree="[0,1]")
     private Output<List<AclTag>> tags;
 
+    /**
+     * @return Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AclTag>> tags() {
         return this.tags;
     }

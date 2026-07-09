@@ -25,6 +25,11 @@ public final class ServiceRouteApiSpec {
      * 
      */
     private @Nullable String actionValue;
+    /**
+     * @return Attribute extractor list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ServiceRouteApiSpecExtractor> extractors;
     /**
      * @return Resource identifier type
@@ -36,6 +41,11 @@ public final class ServiceRouteApiSpec {
      * 
      */
     private @Nullable String identifierValue;
+    /**
+     * @return Response filter list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<ServiceRouteApiSpecResponseFilter> responseFilters;
 
     private ServiceRouteApiSpec() {}
@@ -53,6 +63,11 @@ public final class ServiceRouteApiSpec {
     public Optional<String> actionValue() {
         return Optional.ofNullable(this.actionValue);
     }
+    /**
+     * @return Attribute extractor list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ServiceRouteApiSpecExtractor> extractors() {
         return this.extractors == null ? List.of() : this.extractors;
     }
@@ -70,6 +85,11 @@ public final class ServiceRouteApiSpec {
     public Optional<String> identifierValue() {
         return Optional.ofNullable(this.identifierValue);
     }
+    /**
+     * @return Response filter list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<ServiceRouteApiSpecResponseFilter> responseFilters() {
         return this.responseFilters == null ? List.of() : this.responseFilters;
     }

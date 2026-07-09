@@ -25,6 +25,69 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.kafka.Instance;
+ * import com.byteplus.bytepluscc.kafka.InstanceArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.InstanceChargeInfoArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.InstanceTagArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var kafkaInstanceDemo = new Instance("kafkaInstanceDemo", InstanceArgs.builder()
+ *             .chargeInfo(InstanceChargeInfoArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .computeSpec("kafka.20xrate.hw")
+ *             .eipId("eip-****")
+ *             .instanceDescription("CCAPI-TEST")
+ *             .instanceName("CCAPI-TEST")
+ *             .subnetId("subnet-****")
+ *             .ipWhiteLists("acl-****")
+ *             .parameters(serializeJson(
+ *                 jsonObject(
+ *                     jsonProperty("MessageMaxByte", "10"),
+ *                     jsonProperty("LogRetentionHours", "72"),
+ *                     jsonProperty("OffsetRetentionMinutes", "4320"),
+ *                     jsonProperty("MessageTimestampType", "CreateTime"),
+ *                     jsonProperty("AutoDeleteGroup", "true"),
+ *                     jsonProperty("LogAutoDeletion", "true"),
+ *                     jsonProperty("LogAutoDeletionPercent", "90"),
+ *                     jsonProperty("TransactionDisabled", "false")
+ *                 )))
+ *             .partitionNumber(350)
+ *             .storageSpace(300)
+ *             .storageType("ESSD_PL0")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .version("2.8.2")
+ *             .vpcId("vpc-****")
+ *             .zoneId("cn-beijing-a")
+ *             .projectName("default")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -78,9 +141,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> computeSpec() {
         return this.computeSpec;
     }
+    /**
+     * Connection information for the Kafka instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="connectionInfos", refs={List.class,InstanceConnectionInfo.class}, tree="[0,1]")
     private Output<List<InstanceConnectionInfo>> connectionInfos;
 
+    /**
+     * @return Connection information for the Kafka instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceConnectionInfo>> connectionInfos() {
         return this.connectionInfos;
     }
@@ -294,9 +367,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

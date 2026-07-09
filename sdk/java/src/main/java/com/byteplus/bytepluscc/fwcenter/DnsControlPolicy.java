@@ -24,6 +24,44 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.fwcenter.DnsControlPolicy;
+ * import com.byteplus.bytepluscc.fwcenter.DnsControlPolicyArgs;
+ * import com.pulumi.bytepluscc.fwcenter.inputs.DnsControlPolicySourceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var fWCenterDnsControlPolicyDemo = new DnsControlPolicy("fWCenterDnsControlPolicyDemo", DnsControlPolicyArgs.builder()
+ *             .description("FWCenterDnsControlPolicyDemo test")
+ *             .destination("www.xxxx.com")
+ *             .destinationType("domain")
+ *             .internetFirewallId("ifw-yebxxxxx0iac7gxxxxx")
+ *             .sources(DnsControlPolicySourceArgs.builder()
+ *                 .region("ap-southeast-1")
+ *                 .vpc_id("vpc-3rehw4xxxxk2ixxxxx")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -105,9 +143,19 @@ public class DnsControlPolicy extends com.pulumi.resources.CustomResource {
     public Output<String> destinationType() {
         return this.destinationType;
     }
+    /**
+     * Domain list in the domain address book.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="domainListV1s", refs={List.class,DnsControlPolicyDomainListV1.class}, tree="[0,1]")
     private Output<List<DnsControlPolicyDomainListV1>> domainListV1s;
 
+    /**
+     * @return Domain list in the domain address book.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DnsControlPolicyDomainListV1>> domainListV1s() {
         return this.domainListV1s;
     }
@@ -181,9 +229,19 @@ public class DnsControlPolicy extends com.pulumi.resources.CustomResource {
     public Output<String> ruleId() {
         return this.ruleId;
     }
+    /**
+     * Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="sources", refs={List.class,DnsControlPolicySource.class}, tree="[0,1]")
     private Output<List<DnsControlPolicySource>> sources;
 
+    /**
+     * @return Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DnsControlPolicySource>> sources() {
         return this.sources;
     }

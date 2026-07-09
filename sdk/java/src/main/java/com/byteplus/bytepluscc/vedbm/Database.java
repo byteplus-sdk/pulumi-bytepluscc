@@ -21,6 +21,48 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vedbm.Database;
+ * import com.byteplus.bytepluscc.vedbm.DatabaseArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.DatabaseDatabasesPrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var vEDBMDatabaseDemo = new Database("vEDBMDatabaseDemo", DatabaseArgs.builder()
+ *             .dbName("testdb-tf")
+ *             .instanceId("vedbm-ls2ehotj2***")
+ *             .characterSetName("utf8mb4")
+ *             .dbDesc("desctest")
+ *             .databasesPrivileges(DatabaseDatabasesPrivilegeArgs.builder()
+ *                 .account_name("test")
+ *                 .account_privilege("Custom")
+ *                 .account_privilege_detail(Arrays.asList(                
+ *                     "SELECT",
+ *                     "UPDATE",
+ *                     "INSERT"))
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -46,9 +88,19 @@ public class Database extends com.pulumi.resources.CustomResource {
     public Output<String> characterSetName() {
         return this.characterSetName;
     }
+    /**
+     * Database permission information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="databasesPrivileges", refs={List.class,DatabaseDatabasesPrivilege.class}, tree="[0,1]")
     private Output<List<DatabaseDatabasesPrivilege>> databasesPrivileges;
 
+    /**
+     * @return Database permission information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DatabaseDatabasesPrivilege>> databasesPrivileges() {
         return this.databasesPrivileges;
     }

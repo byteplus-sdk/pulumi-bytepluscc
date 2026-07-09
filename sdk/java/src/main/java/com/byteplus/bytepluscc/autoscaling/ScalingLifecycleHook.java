@@ -21,6 +21,45 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingLifecycleHook;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingLifecycleHookArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingLifecycleHookLifecycleCommandArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var scalingLifecycleHookDemo = new ScalingLifecycleHook("scalingLifecycleHookDemo", ScalingLifecycleHookArgs.builder()
+ *             .scalingGroupId("scg-yexxxxxxv6yn56hnvlm")
+ *             .lifecycleHookName("ccapi-dx-1")
+ *             .lifecycleHookType("SCALE_IN")
+ *             .lifecycleHookTimeout(1800)
+ *             .lifecycleHookPolicy("CONTINUE")
+ *             .lifecycleCommand(ScalingLifecycleHookLifecycleCommandArgs.builder()
+ *                 .command_id("cmd-ybv3xxxxxxx51qxnx")
+ *                 .parameters("{\"KEY_PAIR_ID\":\"1024\",\"KEY_PAIR_TIMEOUT\":\"360\"}")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

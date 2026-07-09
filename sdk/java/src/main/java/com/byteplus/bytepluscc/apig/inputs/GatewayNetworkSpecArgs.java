@@ -17,9 +17,19 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
     public static final GatewayNetworkSpecArgs Empty = new GatewayNetworkSpecArgs();
 
+    /**
+     * Subnet configuration information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="subnets")
     private @Nullable Output<List<GatewayNetworkSpecSubnetArgs>> subnets;
 
+    /**
+     * @return Subnet configuration information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GatewayNetworkSpecSubnetArgs>>> subnets() {
         return Optional.ofNullable(this.subnets);
     }
@@ -80,15 +90,36 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
             $ = new GatewayNetworkSpecArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param subnets Subnet configuration information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnets(@Nullable Output<List<GatewayNetworkSpecSubnetArgs>> subnets) {
             $.subnets = subnets;
             return this;
         }
 
+        /**
+         * @param subnets Subnet configuration information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnets(List<GatewayNetworkSpecSubnetArgs> subnets) {
             return subnets(Output.of(subnets));
         }
 
+        /**
+         * @param subnets Subnet configuration information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder subnets(GatewayNetworkSpecSubnetArgs... subnets) {
             return subnets(List.of(subnets));
         }

@@ -25,6 +25,56 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rabbitmq.Instance;
+ * import com.byteplus.bytepluscc.rabbitmq.InstanceArgs;
+ * import com.pulumi.bytepluscc.rabbitmq.inputs.InstanceChargeDetailArgs;
+ * import com.pulumi.bytepluscc.rabbitmq.inputs.InstanceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rabbitMQInstanceDemo = new Instance("rabbitMQInstanceDemo", InstanceArgs.builder()
+ *             .zoneId("cn-beijing-a")
+ *             .userName("RabbitMQInstanceDemo")
+ *             .computeSpec("rabbitmq.n1.x4.small")
+ *             .version("3.12")
+ *             .userPassword("********")
+ *             .storageSpace(100)
+ *             .instanceDescription("RabbitMQInstanceDemo")
+ *             .vpcId("vpc-1a1vgeo93yxxx8nvepjxxxxx")
+ *             .chargeDetail(InstanceChargeDetailArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .subnetId("subnet-ij9s4hxxxs3k74o8cuxxxxx")
+ *             .eipId("eip-1c0qhbjo7xxxw5e8j70axxxxx")
+ *             .instanceName("RabbitMQInstanceDemo")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .projectName("default")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -134,9 +184,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> eipId() {
         return this.eipId;
     }
+    /**
+     * Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
 
+    /**
+     * @return Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
@@ -252,9 +312,19 @@ public class Instance extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }

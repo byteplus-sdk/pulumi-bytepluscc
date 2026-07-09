@@ -67,9 +67,19 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.autoCcEnable);
     }
 
+    /**
+     * Origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="backendGroups")
     private @Nullable Output<List<DomainBackendGroupArgs>> backendGroups;
 
+    /**
+     * @return Origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainBackendGroupArgs>>> backendGroups() {
         return Optional.ofNullable(this.backendGroups);
     }
@@ -278,9 +288,19 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.clientMaxBodySize);
     }
 
+    /**
+     * LB access parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="cloudAccessConfigs")
     private @Nullable Output<List<DomainCloudAccessConfigArgs>> cloudAccessConfigs;
 
+    /**
+     * @return LB access parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainCloudAccessConfigArgs>>> cloudAccessConfigs() {
         return Optional.ofNullable(this.cloudAccessConfigs);
     }
@@ -994,15 +1014,36 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
             return autoCcEnable(Output.of(autoCcEnable));
         }
 
+        /**
+         * @param backendGroups Origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backendGroups(@Nullable Output<List<DomainBackendGroupArgs>> backendGroups) {
             $.backendGroups = backendGroups;
             return this;
         }
 
+        /**
+         * @param backendGroups Origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backendGroups(List<DomainBackendGroupArgs> backendGroups) {
             return backendGroups(Output.of(backendGroups));
         }
 
+        /**
+         * @param backendGroups Origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder backendGroups(DomainBackendGroupArgs... backendGroups) {
             return backendGroups(List.of(backendGroups));
         }
@@ -1283,15 +1324,36 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
             return clientMaxBodySize(Output.of(clientMaxBodySize));
         }
 
+        /**
+         * @param cloudAccessConfigs LB access parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudAccessConfigs(@Nullable Output<List<DomainCloudAccessConfigArgs>> cloudAccessConfigs) {
             $.cloudAccessConfigs = cloudAccessConfigs;
             return this;
         }
 
+        /**
+         * @param cloudAccessConfigs LB access parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudAccessConfigs(List<DomainCloudAccessConfigArgs> cloudAccessConfigs) {
             return cloudAccessConfigs(Output.of(cloudAccessConfigs));
         }
 
+        /**
+         * @param cloudAccessConfigs LB access parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder cloudAccessConfigs(DomainCloudAccessConfigArgs... cloudAccessConfigs) {
             return cloudAccessConfigs(List.of(cloudAccessConfigs));
         }

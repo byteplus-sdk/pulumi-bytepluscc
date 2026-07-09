@@ -234,9 +234,19 @@ public final class LaunchTemplateVersionArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.launchTemplateId);
     }
 
+    /**
+     * Network interface information attached to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="networkInterfaces")
     private @Nullable Output<List<LaunchTemplateVersionNetworkInterfaceArgs>> networkInterfaces;
 
+    /**
+     * @return Network interface information attached to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<LaunchTemplateVersionNetworkInterfaceArgs>>> networkInterfaces() {
         return Optional.ofNullable(this.networkInterfaces);
     }
@@ -331,9 +341,19 @@ public final class LaunchTemplateVersionArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.suffixIndex);
     }
 
+    /**
+     * Instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<LaunchTemplateVersionTagArgs>> tags;
 
+    /**
+     * @return Instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<LaunchTemplateVersionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -383,9 +403,19 @@ public final class LaunchTemplateVersionArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.versionDescription);
     }
 
+    /**
+     * Disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="volumes")
     private @Nullable Output<List<LaunchTemplateVersionVolumeArgs>> volumes;
 
+    /**
+     * @return Disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<LaunchTemplateVersionVolumeArgs>>> volumes() {
         return Optional.ofNullable(this.volumes);
     }
@@ -765,15 +795,36 @@ public final class LaunchTemplateVersionArgs extends com.pulumi.resources.Resour
             return launchTemplateId(Output.of(launchTemplateId));
         }
 
+        /**
+         * @param networkInterfaces Network interface information attached to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder networkInterfaces(@Nullable Output<List<LaunchTemplateVersionNetworkInterfaceArgs>> networkInterfaces) {
             $.networkInterfaces = networkInterfaces;
             return this;
         }
 
+        /**
+         * @param networkInterfaces Network interface information attached to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder networkInterfaces(List<LaunchTemplateVersionNetworkInterfaceArgs> networkInterfaces) {
             return networkInterfaces(Output.of(networkInterfaces));
         }
 
+        /**
+         * @param networkInterfaces Network interface information attached to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder networkInterfaces(LaunchTemplateVersionNetworkInterfaceArgs... networkInterfaces) {
             return networkInterfaces(List.of(networkInterfaces));
         }
@@ -904,15 +955,36 @@ public final class LaunchTemplateVersionArgs extends com.pulumi.resources.Resour
             return suffixIndex(Output.of(suffixIndex));
         }
 
+        /**
+         * @param tags Instance tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<LaunchTemplateVersionTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Instance tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<LaunchTemplateVersionTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Instance tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(LaunchTemplateVersionTagArgs... tags) {
             return tags(List.of(tags));
         }
@@ -980,15 +1052,36 @@ public final class LaunchTemplateVersionArgs extends com.pulumi.resources.Resour
             return versionDescription(Output.of(versionDescription));
         }
 
+        /**
+         * @param volumes Disk information bound to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder volumes(@Nullable Output<List<LaunchTemplateVersionVolumeArgs>> volumes) {
             $.volumes = volumes;
             return this;
         }
 
+        /**
+         * @param volumes Disk information bound to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder volumes(List<LaunchTemplateVersionVolumeArgs> volumes) {
             return volumes(Output.of(volumes));
         }
 
+        /**
+         * @param volumes Disk information bound to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder volumes(LaunchTemplateVersionVolumeArgs... volumes) {
             return volumes(List.of(volumes));
         }

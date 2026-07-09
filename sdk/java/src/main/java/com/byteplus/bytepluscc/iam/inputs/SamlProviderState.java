@@ -33,9 +33,19 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.certificateExpireTime);
     }
 
+    /**
+     * Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="certificates")
     private @Nullable Output<List<SamlProviderCertificateArgs>> certificates;
 
+    /**
+     * @return Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SamlProviderCertificateArgs>>> certificates() {
         return Optional.ofNullable(this.certificates);
     }
@@ -101,14 +111,18 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identity Provider SSO Type 1. Role SSO 2. User SSO
+     * Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
      * 
      */
     @Import(name="ssoType")
     private @Nullable Output<Integer> ssoType;
 
     /**
-     * @return Identity Provider SSO Type 1. Role SSO 2. User SSO
+     * @return Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
      * 
      */
     public Optional<Output<Integer>> ssoType() {
@@ -116,14 +130,20 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+     * Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
      * 
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
-     * @return Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+     * @return Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
      * 
      */
     public Optional<Output<Integer>> status() {
@@ -214,15 +234,36 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
             return certificateExpireTime(Output.of(certificateExpireTime));
         }
 
+        /**
+         * @param certificates Certificate List
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder certificates(@Nullable Output<List<SamlProviderCertificateArgs>> certificates) {
             $.certificates = certificates;
             return this;
         }
 
+        /**
+         * @param certificates Certificate List
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder certificates(List<SamlProviderCertificateArgs> certificates) {
             return certificates(Output.of(certificates));
         }
 
+        /**
+         * @param certificates Certificate List
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder certificates(SamlProviderCertificateArgs... certificates) {
             return certificates(List.of(certificates));
         }
@@ -312,7 +353,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ssoType Identity Provider SSO Type 1. Role SSO 2. User SSO
+         * @param ssoType Identity Provider SSO Type
+         *   1. Role SSO
+         *   2. User SSO
          * 
          * @return builder
          * 
@@ -323,7 +366,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ssoType Identity Provider SSO Type 1. Role SSO 2. User SSO
+         * @param ssoType Identity Provider SSO Type
+         *   1. Role SSO
+         *   2. User SSO
          * 
          * @return builder
          * 
@@ -333,7 +378,10 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+         * @param status Identity Provider Status (User SSO Only)
+         *   1. Enabled
+         *   2. Enabled and other login methods disabled
+         *   3. Disabled
          * 
          * @return builder
          * 
@@ -344,7 +392,10 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
+         * @param status Identity Provider Status (User SSO Only)
+         *   1. Enabled
+         *   2. Enabled and other login methods disabled
+         *   3. Disabled
          * 
          * @return builder
          * 

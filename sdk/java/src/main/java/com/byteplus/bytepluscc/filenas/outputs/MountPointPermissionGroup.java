@@ -34,6 +34,11 @@ public final class MountPointPermissionGroup {
      * 
      */
     private @Nullable String fileSystemType;
+    /**
+     * @return Information about mount points that use this permission group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<MountPointPermissionGroupMountPoint> mountPoints;
     /**
      * @return Permission group name.
@@ -75,6 +80,11 @@ public final class MountPointPermissionGroup {
     public Optional<String> fileSystemType() {
         return Optional.ofNullable(this.fileSystemType);
     }
+    /**
+     * @return Information about mount points that use this permission group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<MountPointPermissionGroupMountPoint> mountPoints() {
         return this.mountPoints == null ? List.of() : this.mountPoints;
     }

@@ -22,6 +22,52 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.mongodb.AllowList;
+ * import com.byteplus.bytepluscc.mongodb.AllowListArgs;
+ * import com.pulumi.bytepluscc.mongodb.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var mongoDBAllowListDemo = new AllowList("mongoDBAllowListDemo", AllowListArgs.builder()
+ *             .allowListName("mongodb_allowlist-1")
+ *             .allowListType("IPv4")
+ *             .projectName("default")
+ *             .allowListDesc("test")
+ *             .allowListCategory("Ordinary")
+ *             .allowLists(            
+ *                 "0.0.0.0/0",
+ *                 "127.0.0.1",
+ *                 "192.168.1.0/24")
+ *             .associatedInstances(            
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("mongo-shard-d838exxxxx")
+ *                     .build(),
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("mongo-replica-63axxxxx")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -145,9 +191,19 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }

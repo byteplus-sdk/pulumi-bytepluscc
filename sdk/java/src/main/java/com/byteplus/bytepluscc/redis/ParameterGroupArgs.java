@@ -63,9 +63,19 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
         return this.name;
     }
 
+    /**
+     * List of parameter values to set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="paramValues", required=true)
     private Output<List<ParameterGroupParamValueArgs>> paramValues;
 
+    /**
+     * @return List of parameter values to set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ParameterGroupParamValueArgs>> paramValues() {
         return this.paramValues;
     }
@@ -160,15 +170,36 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
             return name(Output.of(name));
         }
 
+        /**
+         * @param paramValues List of parameter values to set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder paramValues(Output<List<ParameterGroupParamValueArgs>> paramValues) {
             $.paramValues = paramValues;
             return this;
         }
 
+        /**
+         * @param paramValues List of parameter values to set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder paramValues(List<ParameterGroupParamValueArgs> paramValues) {
             return paramValues(Output.of(paramValues));
         }
 
+        /**
+         * @param paramValues List of parameter values to set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder paramValues(ParameterGroupParamValueArgs... paramValues) {
             return paramValues(List.of(paramValues));
         }

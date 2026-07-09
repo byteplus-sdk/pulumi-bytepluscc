@@ -260,9 +260,19 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.snapshotId);
     }
 
+    /**
+     * List of tags bound to the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<ImageTagArgs>> tags;
 
+    /**
+     * @return List of tags bound to the image.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ImageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -653,15 +663,36 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
             return snapshotId(Output.of(snapshotId));
         }
 
+        /**
+         * @param tags List of tags bound to the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<ImageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags List of tags bound to the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<ImageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags List of tags bound to the image.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(ImageTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -110,9 +110,19 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.associatedInstanceNum);
     }
 
+    /**
+     * Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="associatedInstances")
     private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
 
+    /**
+     * @return Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
         return Optional.ofNullable(this.associatedInstances);
     }
@@ -177,9 +187,19 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="securityGroupBindInfos")
     private @Nullable Output<List<AllowListSecurityGroupBindInfoArgs>> securityGroupBindInfos;
 
+    /**
+     * @return Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AllowListSecurityGroupBindInfoArgs>>> securityGroupBindInfos() {
         return Optional.ofNullable(this.securityGroupBindInfos);
     }
@@ -403,15 +423,36 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
             return associatedInstanceNum(Output.of(associatedInstanceNum));
         }
 
+        /**
+         * @param associatedInstances Instance information bound to the current allowlist.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
             $.associatedInstances = associatedInstances;
             return this;
         }
 
+        /**
+         * @param associatedInstances Instance information bound to the current allowlist.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
             return associatedInstances(Output.of(associatedInstances));
         }
 
+        /**
+         * @param associatedInstances Instance information bound to the current allowlist.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
             return associatedInstances(List.of(associatedInstances));
         }
@@ -500,15 +541,36 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param securityGroupBindInfos Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder securityGroupBindInfos(@Nullable Output<List<AllowListSecurityGroupBindInfoArgs>> securityGroupBindInfos) {
             $.securityGroupBindInfos = securityGroupBindInfos;
             return this;
         }
 
+        /**
+         * @param securityGroupBindInfos Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder securityGroupBindInfos(List<AllowListSecurityGroupBindInfoArgs> securityGroupBindInfos) {
             return securityGroupBindInfos(Output.of(securityGroupBindInfos));
         }
 
+        /**
+         * @param securityGroupBindInfos Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder securityGroupBindInfos(AllowListSecurityGroupBindInfoArgs... securityGroupBindInfos) {
             return securityGroupBindInfos(List.of(securityGroupBindInfos));
         }

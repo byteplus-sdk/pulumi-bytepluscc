@@ -27,6 +27,56 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.emr.NodeGroup;
+ * import com.byteplus.bytepluscc.emr.NodeGroupArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.NodeGroupSystemDiskArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.NodeGroupDataDiskArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var eMRNodeGroupDemo = new NodeGroup("eMRNodeGroupDemo", NodeGroupArgs.builder()
+ *             .clusterId("emr-cluster-123456789xxxxx")
+ *             .zoneId("ap-southeast-1a")
+ *             .nodeGroupName("CoreGroup-1002")
+ *             .nodeGroupType("CORE")
+ *             .withPublicIp(false)
+ *             .targetDiskSize(120)
+ *             .nodeCount(2)
+ *             .chargeType("POST")
+ *             .ecsInstanceTypes("ecs.r1ie.xlarge")
+ *             .subnetIds("subnet-rrwqhg3qzxfkv0xxxxxxx")
+ *             .systemDisk(NodeGroupSystemDiskArgs.builder()
+ *                 .volume_type("ESSD_FlexPL")
+ *                 .size(120)
+ *                 .build())
+ *             .dataDisks(NodeGroupDataDiskArgs.builder()
+ *                 .volume_type("ESSD_FlexPL")
+ *                 .size(80)
+ *                 .count(1)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -38,9 +88,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:emr/nodeGroup:NodeGroup")
 public class NodeGroup extends com.pulumi.resources.CustomResource {
+    /**
+     * List of component names that can be deployed in the current node group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="applicationLayouts", refs={List.class,NodeGroupApplicationLayout.class}, tree="[0,1]")
     private Output<List<NodeGroupApplicationLayout>> applicationLayouts;
 
+    /**
+     * @return List of component names that can be deployed in the current node group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NodeGroupApplicationLayout>> applicationLayouts() {
         return this.applicationLayouts;
     }
@@ -100,9 +160,19 @@ public class NodeGroup extends com.pulumi.resources.CustomResource {
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
+    /**
+     * Data disk configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="dataDisks", refs={List.class,NodeGroupDataDisk.class}, tree="[0,1]")
     private Output<List<NodeGroupDataDisk>> dataDisks;
 
+    /**
+     * @return Data disk configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NodeGroupDataDisk>> dataDisks() {
         return this.dataDisks;
     }
@@ -204,9 +274,19 @@ public class NodeGroup extends com.pulumi.resources.CustomResource {
     public Output<String> nodeGroupType() {
         return this.nodeGroupType;
     }
+    /**
+     * Node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="nodes", refs={List.class,NodeGroupNode.class}, tree="[0,1]")
     private Output<List<NodeGroupNode>> nodes;
 
+    /**
+     * @return Node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<NodeGroupNode>> nodes() {
         return this.nodes;
     }

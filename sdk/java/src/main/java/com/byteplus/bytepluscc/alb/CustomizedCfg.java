@@ -32,8 +32,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.alb.CustomizedCfg;
  * import com.byteplus.bytepluscc.alb.CustomizedCfgArgs;
  * import com.pulumi.bytepluscc.alb.inputs.CustomizedCfgTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -157,9 +157,19 @@ public class CustomizedCfg extends com.pulumi.resources.CustomResource {
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * List of listeners associated with the personalized configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="listeners", refs={List.class,CustomizedCfgListener.class}, tree="[0,1]")
     private Output<List<CustomizedCfgListener>> listeners;
 
+    /**
+     * @return List of listeners associated with the personalized configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<CustomizedCfgListener>> listeners() {
         return this.listeners;
     }
@@ -191,9 +201,19 @@ public class CustomizedCfg extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,CustomizedCfgTag.class}, tree="[0,1]")
     private Output<List<CustomizedCfgTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<CustomizedCfgTag>> tags() {
         return this.tags;
     }

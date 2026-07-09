@@ -35,6 +35,11 @@ public final class DefaultNodePoolNodeConfig {
      * 
      */
     private @Nullable Integer autoRenewPeriod;
+    /**
+     * @return Data disk configuration for the node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DefaultNodePoolNodeConfigDataVolume> dataVolumes;
     /**
      * @return Group number of the instance in the deployment set. 0 means not set
@@ -141,6 +146,11 @@ public final class DefaultNodePoolNodeConfig {
      * 
      */
     private @Nullable DefaultNodePoolNodeConfigSystemVolume systemVolume;
+    /**
+     * @return Label information configured for the node pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DefaultNodePoolNodeConfigTag> tags;
 
     private DefaultNodePoolNodeConfig() {}
@@ -165,6 +175,11 @@ public final class DefaultNodePoolNodeConfig {
     public Optional<Integer> autoRenewPeriod() {
         return Optional.ofNullable(this.autoRenewPeriod);
     }
+    /**
+     * @return Data disk configuration for the node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DefaultNodePoolNodeConfigDataVolume> dataVolumes() {
         return this.dataVolumes == null ? List.of() : this.dataVolumes;
     }
@@ -315,6 +330,11 @@ public final class DefaultNodePoolNodeConfig {
     public Optional<DefaultNodePoolNodeConfigSystemVolume> systemVolume() {
         return Optional.ofNullable(this.systemVolume);
     }
+    /**
+     * @return Label information configured for the node pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DefaultNodePoolNodeConfigTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

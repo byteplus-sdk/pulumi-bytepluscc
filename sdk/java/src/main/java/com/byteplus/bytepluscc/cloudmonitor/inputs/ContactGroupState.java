@@ -47,9 +47,19 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.contactGroupId);
     }
 
+    /**
+     * Contact information in the contact group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="contacts")
     private @Nullable Output<List<ContactGroupContactArgs>> contacts;
 
+    /**
+     * @return Contact information in the contact group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ContactGroupContactArgs>>> contacts() {
         return Optional.ofNullable(this.contacts);
     }
@@ -186,15 +196,36 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
             return contactGroupId(Output.of(contactGroupId));
         }
 
+        /**
+         * @param contacts Contact information in the contact group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contacts(@Nullable Output<List<ContactGroupContactArgs>> contacts) {
             $.contacts = contacts;
             return this;
         }
 
+        /**
+         * @param contacts Contact information in the contact group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contacts(List<ContactGroupContactArgs> contacts) {
             return contacts(Output.of(contacts));
         }
 
+        /**
+         * @param contacts Contact information in the contact group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder contacts(ContactGroupContactArgs... contacts) {
             return contacts(List.of(contacts));
         }

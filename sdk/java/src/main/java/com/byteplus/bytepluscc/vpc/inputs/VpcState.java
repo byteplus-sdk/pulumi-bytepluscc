@@ -34,9 +34,19 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * CEN information associated with the VPC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="associateCens")
     private @Nullable Output<List<VpcAssociateCenArgs>> associateCens;
 
+    /**
+     * @return CEN information associated with the VPC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcAssociateCenArgs>>> associateCens() {
         return Optional.ofNullable(this.associateCens);
     }
@@ -296,9 +306,19 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.supportIpv4Gateway);
     }
 
+    /**
+     * Tags bound to the private network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpcTagArgs>> tags;
 
+    /**
+     * @return Tags bound to the private network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<VpcTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -431,15 +451,36 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param associateCens CEN information associated with the VPC.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associateCens(@Nullable Output<List<VpcAssociateCenArgs>> associateCens) {
             $.associateCens = associateCens;
             return this;
         }
 
+        /**
+         * @param associateCens CEN information associated with the VPC.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associateCens(List<VpcAssociateCenArgs> associateCens) {
             return associateCens(Output.of(associateCens));
         }
 
+        /**
+         * @param associateCens CEN information associated with the VPC.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associateCens(VpcAssociateCenArgs... associateCens) {
             return associateCens(List.of(associateCens));
         }
@@ -861,15 +902,36 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
             return supportIpv4Gateway(Output.of(supportIpv4Gateway));
         }
 
+        /**
+         * @param tags Tags bound to the private network.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<VpcTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags bound to the private network.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<VpcTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags bound to the private network.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(VpcTagArgs... tags) {
             return tags(List.of(tags));
         }

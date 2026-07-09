@@ -14,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class RulePoolSetPool {
+    /**
+     * @return Address information under the address pool.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<RulePoolSetPoolAddress> addresses;
     /**
      * @return The number of unavailable addresses in the address pool.
@@ -37,6 +42,11 @@ public final class RulePoolSetPool {
     private @Nullable Integer weight;
 
     private RulePoolSetPool() {}
+    /**
+     * @return Address information under the address pool.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<RulePoolSetPoolAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }

@@ -25,6 +25,64 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.kafka.Topic;
+ * import com.byteplus.bytepluscc.kafka.TopicArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.TopicAccessPolicyArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.TopicTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var kafkaTopicDemo = new Topic("kafkaTopicDemo", TopicArgs.builder()
+ *             .accessPolicies(            
+ *                 TopicAccessPolicyArgs.builder()
+ *                     .user_name("KafkaTopicDemo-A")
+ *                     .access_policy("Pub")
+ *                     .build(),
+ *                 TopicAccessPolicyArgs.builder()
+ *                     .user_name("KafkaTopicDemo-B")
+ *                     .access_policy("Sub")
+ *                     .build(),
+ *                 TopicAccessPolicyArgs.builder()
+ *                     .user_name("KafkaTopicDemo-C")
+ *                     .access_policy("PubSub")
+ *                     .build())
+ *             .allAuthority(true)
+ *             .cleanupPolicies(            
+ *                 "delete",
+ *                 "compact")
+ *             .description("KafkaTopicDemo")
+ *             .instanceId("kafka-c****f")
+ *             .parameters("{\"LogRetentionHours\":\"3\",\"MessageMaxByte\":\"2\",\"MinInsyncReplicaNumber\":\"1\"}")
+ *             .partitionNumber(1)
+ *             .replicaNumber(1)
+ *             .topicName("KafkaTopicDemo")
+ *             .tags(TopicTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -36,9 +94,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:kafka/topic:Topic")
 public class Topic extends com.pulumi.resources.CustomResource {
+    /**
+     * Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="accessPolicies", refs={List.class,TopicAccessPolicy.class}, tree="[0,1]")
     private Output<List<TopicAccessPolicy>> accessPolicies;
 
+    /**
+     * @return Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<TopicAccessPolicy>> accessPolicies() {
         return this.accessPolicies;
     }
@@ -182,9 +250,19 @@ public class Topic extends com.pulumi.resources.CustomResource {
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,TopicTag.class}, tree="[0,1]")
     private Output<List<TopicTag>> tags;
 
+    /**
+     * @return Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<TopicTag>> tags() {
         return this.tags;
     }

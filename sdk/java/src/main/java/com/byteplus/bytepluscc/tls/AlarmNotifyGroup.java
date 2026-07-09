@@ -22,6 +22,253 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.AlarmNotifyGroup;
+ * import com.byteplus.bytepluscc.tls.AlarmNotifyGroupArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmNotifyGroupNoticeRuleArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var tLSAlarmNotifyGroupDemo = new AlarmNotifyGroup("tLSAlarmNotifyGroupDemo", AlarmNotifyGroupArgs.builder()
+ *             .alarmNotifyGroupName("ccapi-test")
+ *             .iamProjectName("default")
+ *             .noticeRules(            
+ *                 AlarmNotifyGroupNoticeRuleArgs.builder()
+ *                     .rule_node("{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"notice\\\"]\"]},{\"Type\":\"Condition\",\"Value\":[\"Duration\",\">=\",\"5\"]}]},{\"Type\":\"Condition\",\"Value\":[\"NotifyTime\",\"in\",\"[\\\"1776669310\\\",\\\"1777014911\\\"]\"]}]},{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"warning\\\",\\\"critical\\\"]\"]}]}")
+ *                     .receiver_infos(Arrays.asList(                    
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "User"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxx",
+ *                                 "xxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
+ *                                 "Email",
+ *                                 "Sms",
+ *                                 "Phone",
+ *                                 "GeneralWebhook")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "aa6d01cd-5cf4-449d-a944-xxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList("xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "User"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList("Lark")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "abc47ee4-9ad3-4c25-803f-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "飞书test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList("xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "UserGroup"),
+ *                             Map.entry("receiverNames", Arrays.asList("xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
+ *                                 "Email",
+ *                                 "Phone",
+ *                                 "GeneralWebhook")),
+ *                             Map.entry("startTime", "00:30:00"),
+ *                             Map.entry("endTime", "23:30:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "aa6d01cd-5cf4-449d-a944-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList("xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         )))
+ *                     .has_next(true)
+ *                     .has_end_node(true)
+ *                     .build(),
+ *                 AlarmNotifyGroupNoticeRuleArgs.builder()
+ *                     .rule_node("{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"notice\\\"]\"]},{\"Type\":\"Condition\",\"Value\":[\"Alarm\",\"in\",\"[\\\"test1\\\"]\"]}]},{\"Type\":\"Condition\",\"Value\":[\"AlarmID\",\"in\",\"[\\\"66fff5a0-af57-43d1-a40d-f2d32605aa61\\\"]\"]}]},{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Duration\",\"==\",\"5\"]},{\"Type\":\"Condition\",\"Value\":[\"NotifyTime\",\"in\",\"[\\\"1776653008\\\",\\\"1776998606\\\"]\"]}]}]}")
+ *                     .receiver_infos(Arrays.asList(                    
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "User"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
+ *                                 "Email",
+ *                                 "Sms",
+ *                                 "Phone")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(                            
+ *                                 Map.ofEntries(
+ *                                     Map.entry("key", "Content-Type"),
+ *                                     Map.entry("value", "application/json")
+ *                                 ),
+ *                                 Map.ofEntries(
+ *                                     Map.entry("key", "env"),
+ *                                     Map.entry("value", "test")
+ *                                 ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "aa6d01cd-5cf4-449d-a944-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "UserGroup"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
+ *                                 "Email",
+ *                                 "Sms",
+ *                                 "Phone")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "aa6d01cd-5cf4-449d-a944-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "User"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList("Lark")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "abc47ee4-9ad3-4c25-803f-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "飞书test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "User"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList("DingTalk")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "3eaaef0a-134a-4d62-bf48-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "钉钉test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         ),
+ *                         Map.ofEntries(
+ *                             Map.entry("receiverType", "User"),
+ *                             Map.entry("receiverNames", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("receiverChannels", Arrays.asList("WeChat")),
+ *                             Map.entry("startTime", "00:00:00"),
+ *                             Map.entry("endTime", "23:59:59"),
+ *                             Map.entry("generalWebhookUrl", ""),
+ *                             Map.entry("generalWebhookMethod", ""),
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(Map.ofEntries(
+ *                                 Map.entry("key", "Content-Type"),
+ *                                 Map.entry("value", "application/json")
+ *                             ))),
+ *                             Map.entry("generalWebhookBody", ""),
+ *                             Map.entry("alarmContentTemplateId", "default-template"),
+ *                             Map.entry("alarmWebhookIntegrationId", "c0454fd5-6597-4fc9-ad53-xxxxxxxxx"),
+ *                             Map.entry("alarmWebhookIntegrationName", "企业微信test"),
+ *                             Map.entry("alarmWebhookIsAtAll", false),
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
+ *                                 "xxxxxxxxx",
+ *                                 "xxxxxxxxx")),
+ *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
+ *                         )))
+ *                     .has_next(false)
+ *                     .has_end_node(false)
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -89,9 +336,19 @@ public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     public Output<String> iamProjectName() {
         return this.iamProjectName;
     }
+    /**
+     * Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="noticeRules", refs={List.class,AlarmNotifyGroupNoticeRule.class}, tree="[0,1]")
     private Output<List<AlarmNotifyGroupNoticeRule>> noticeRules;
 
+    /**
+     * @return Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmNotifyGroupNoticeRule>> noticeRules() {
         return this.noticeRules;
     }
@@ -109,9 +366,19 @@ public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     public Output<List<String>> notifyTypes() {
         return this.notifyTypes;
     }
+    /**
+     * IAM user list to receive alarms. You can set 1–10 IAM users.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="receivers", refs={List.class,AlarmNotifyGroupReceiver.class}, tree="[0,1]")
     private Output<List<AlarmNotifyGroupReceiver>> receivers;
 
+    /**
+     * @return IAM user list to receive alarms. You can set 1–10 IAM users.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmNotifyGroupReceiver>> receivers() {
         return this.receivers;
     }

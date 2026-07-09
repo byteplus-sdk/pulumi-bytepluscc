@@ -24,6 +24,11 @@ public final class KeyMultiRegionConfiguration {
      * 
      */
     private @Nullable KeyMultiRegionConfigurationPrimaryKey primaryKey;
+    /**
+     * @return Replica multi-region key transaction record number and region ID.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<KeyMultiRegionConfigurationReplicaKey> replicaKeys;
 
     private KeyMultiRegionConfiguration() {}
@@ -41,6 +46,11 @@ public final class KeyMultiRegionConfiguration {
     public Optional<KeyMultiRegionConfigurationPrimaryKey> primaryKey() {
         return Optional.ofNullable(this.primaryKey);
     }
+    /**
+     * @return Replica multi-region key transaction record number and region ID.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<KeyMultiRegionConfigurationReplicaKey> replicaKeys() {
         return this.replicaKeys == null ? List.of() : this.replicaKeys;
     }

@@ -29,6 +29,11 @@ public final class GroupTopicInfo {
      * 
      */
     private @Nullable Integer lag;
+    /**
+     * @return Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<GroupTopicInfoPartitionInfo> partitionInfos;
     /**
      * @return Number of Topic partitions
@@ -78,6 +83,11 @@ public final class GroupTopicInfo {
     public Optional<Integer> lag() {
         return Optional.ofNullable(this.lag);
     }
+    /**
+     * @return Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<GroupTopicInfoPartitionInfo> partitionInfos() {
         return this.partitionInfos == null ? List.of() : this.partitionInfos;
     }

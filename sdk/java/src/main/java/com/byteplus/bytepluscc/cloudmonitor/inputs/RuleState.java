@@ -71,9 +71,19 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.conditionOperator);
     }
 
+    /**
+     * Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="conditions")
     private @Nullable Output<List<RuleConditionArgs>> conditions;
 
+    /**
+     * @return Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
@@ -213,9 +223,19 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.level);
     }
 
+    /**
+     * Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="levelConditions")
     private @Nullable Output<List<RuleLevelConditionArgs>> levelConditions;
 
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleLevelConditionArgs>>> levelConditions() {
         return Optional.ofNullable(this.levelConditions);
     }
@@ -280,9 +300,19 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.notificationId);
     }
 
+    /**
+     * Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="notifyTemplates")
     private @Nullable Output<List<RuleNotifyTemplateArgs>> notifyTemplates;
 
+    /**
+     * @return Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleNotifyTemplateArgs>>> notifyTemplates() {
         return Optional.ofNullable(this.notifyTemplates);
     }
@@ -437,9 +467,19 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.subNamespace);
     }
 
+    /**
+     * Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<RuleTagArgs>> tags;
 
+    /**
+     * @return Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<RuleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -618,15 +658,36 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
             return conditionOperator(Output.of(conditionOperator));
         }
 
+        /**
+         * @param conditions Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(@Nullable Output<List<RuleConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(List<RuleConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder conditions(RuleConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }
@@ -830,15 +891,36 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
             return level(Output.of(level));
         }
 
+        /**
+         * @param levelConditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder levelConditions(@Nullable Output<List<RuleLevelConditionArgs>> levelConditions) {
             $.levelConditions = levelConditions;
             return this;
         }
 
+        /**
+         * @param levelConditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder levelConditions(List<RuleLevelConditionArgs> levelConditions) {
             return levelConditions(Output.of(levelConditions));
         }
 
+        /**
+         * @param levelConditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder levelConditions(RuleLevelConditionArgs... levelConditions) {
             return levelConditions(List.of(levelConditions));
         }
@@ -927,15 +1009,36 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
             return notificationId(Output.of(notificationId));
         }
 
+        /**
+         * @param notifyTemplates Notification template configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder notifyTemplates(@Nullable Output<List<RuleNotifyTemplateArgs>> notifyTemplates) {
             $.notifyTemplates = notifyTemplates;
             return this;
         }
 
+        /**
+         * @param notifyTemplates Notification template configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder notifyTemplates(List<RuleNotifyTemplateArgs> notifyTemplates) {
             return notifyTemplates(Output.of(notifyTemplates));
         }
 
+        /**
+         * @param notifyTemplates Notification template configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder notifyTemplates(RuleNotifyTemplateArgs... notifyTemplates) {
             return notifyTemplates(List.of(notifyTemplates));
         }
@@ -1160,15 +1263,36 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
             return subNamespace(Output.of(subNamespace));
         }
 
+        /**
+         * @param tags Bind alert policy to Tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<RuleTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Bind alert policy to Tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<RuleTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Bind alert policy to Tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(RuleTagArgs... tags) {
             return tags(List.of(tags));
         }

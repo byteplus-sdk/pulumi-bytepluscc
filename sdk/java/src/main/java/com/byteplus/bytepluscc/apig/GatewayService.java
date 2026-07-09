@@ -25,6 +25,52 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.apig.GatewayService;
+ * import com.byteplus.bytepluscc.apig.GatewayServiceArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayServiceAuthSpecArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayServiceServiceNetworkSpecArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var apigGatewayServiceDemo = new GatewayService("apigGatewayServiceDemo", GatewayServiceArgs.builder()
+ *             .serviceName("ccapi-terraform-1")
+ *             .gatewayId("gd6l9lbilgrmdxxxxxx")
+ *             .protocols(            
+ *                 "HTTP",
+ *                 "HTTPS")
+ *             .authSpec(GatewayServiceAuthSpecArgs.builder()
+ *                 .enable(true)
+ *                 .build())
+ *             .comments("test")
+ *             .serviceType("AIProvider")
+ *             .serviceNetworkSpec(GatewayServiceServiceNetworkSpecArgs.builder()
+ *                 .enable_public_network(true)
+ *                 .enable_private_network(false)
+ *                 .private_network_ip(Arrays.asList())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -78,9 +124,19 @@ public class GatewayService extends com.pulumi.resources.CustomResource {
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="customDomains", refs={List.class,GatewayServiceCustomDomain.class}, tree="[0,1]")
     private Output<List<GatewayServiceCustomDomain>> customDomains;
 
+    /**
+     * @return Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<GatewayServiceCustomDomain>> customDomains() {
         return this.customDomains;
     }
@@ -112,9 +168,19 @@ public class GatewayService extends com.pulumi.resources.CustomResource {
     public Output<String> domainType() {
         return this.domainType;
     }
+    /**
+     * Default domain.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="domains", refs={List.class,GatewayServiceDomain.class}, tree="[0,1]")
     private Output<List<GatewayServiceDomain>> domains;
 
+    /**
+     * @return Default domain.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<GatewayServiceDomain>> domains() {
         return this.domains;
     }

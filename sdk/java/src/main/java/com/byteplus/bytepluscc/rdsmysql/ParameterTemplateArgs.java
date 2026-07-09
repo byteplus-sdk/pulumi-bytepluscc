@@ -78,9 +78,19 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         return this.templateName;
     }
 
+    /**
+     * Parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="templateParams", required=true)
     private Output<List<ParameterTemplateTemplateParamArgs>> templateParams;
 
+    /**
+     * @return Parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ParameterTemplateTemplateParamArgs>> templateParams() {
         return this.templateParams;
     }
@@ -229,15 +239,36 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
             return templateName(Output.of(templateName));
         }
 
+        /**
+         * @param templateParams Parameters included in the parameter template
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateParams(Output<List<ParameterTemplateTemplateParamArgs>> templateParams) {
             $.templateParams = templateParams;
             return this;
         }
 
+        /**
+         * @param templateParams Parameters included in the parameter template
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateParams(List<ParameterTemplateTemplateParamArgs> templateParams) {
             return templateParams(Output.of(templateParams));
         }
 
+        /**
+         * @param templateParams Parameters included in the parameter template
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder templateParams(ParameterTemplateTemplateParamArgs... templateParams) {
             return templateParams(List.of(templateParams));
         }

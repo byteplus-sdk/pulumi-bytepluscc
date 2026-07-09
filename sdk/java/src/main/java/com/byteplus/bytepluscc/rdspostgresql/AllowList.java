@@ -24,6 +24,60 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdspostgresql.AllowList;
+ * import com.byteplus.bytepluscc.rdspostgresql.AllowListArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.AllowListSecurityGroupBindInfoArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rdsPostgresqlAllowListDemo = new AllowList("rdsPostgresqlAllowListDemo", AllowListArgs.builder()
+ *             .allowListCategory("Default")
+ *             .allowListDesc("test")
+ *             .allowListName("ccapi-dx-2")
+ *             .allowListType("IPv4")
+ *             .securityGroupBindInfos(            
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("AssociateEcsIp")
+ *                     .security_group_id("sg-w06pxxxxx5yk9xgrubx")
+ *                     .build(),
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("IngressDirectionIp")
+ *                     .ip_list(Arrays.asList(                    
+ *                         "100.70.0.0/16",
+ *                         "100.72.0.0/16",
+ *                         "100.73.0.0/16"))
+ *                     .security_group_id("sg-1v9zvjxxxxxj8e73vhtg8")
+ *                     .build())
+ *             .userAllowList("1.2.4.0/24")
+ *             .associatedInstances(AllowListAssociatedInstanceArgs.builder()
+ *                 .instance_id("postgres-cxxxx3b95")
+ *                 .build())
+ *             .instanceId("postgres-60xxxxx5ed9")
+ *             .upgradeAllowListVersion(true)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -147,9 +201,19 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * List of instances bound to this allowlist, including instance ID and instance name.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return List of instances bound to this allowlist, including instance ID and instance name.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
@@ -195,9 +259,19 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     public Output<String> modifyMode() {
         return this.modifyMode;
     }
+    /**
+     * List of security groups bound to this allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="securityGroupBindInfos", refs={List.class,AllowListSecurityGroupBindInfo.class}, tree="[0,1]")
     private Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos;
 
+    /**
+     * @return List of security groups bound to this allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos() {
         return this.securityGroupBindInfos;
     }

@@ -26,6 +26,44 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdspostgresql.DbEndpoint;
+ * import com.byteplus.bytepluscc.rdspostgresql.DbEndpointArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.DbEndpointPublicAddressesArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var rdsPostgresqlDbEndpointDemo = new DbEndpoint("rdsPostgresqlDbEndpointDemo", DbEndpointArgs.builder()
+ *             .endpointName("ccapi-test-1")
+ *             .endpointType("Custom")
+ *             .instanceId("postgres-9dxxxxxd")
+ *             .nodes("Primary")
+ *             .readWriteMode("ReadWrite")
+ *             .publicAddresses(DbEndpointPublicAddressesArgs.builder()
+ *                 .eip_id("eip-0xxxxx8c45")
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -233,9 +271,19 @@ public class DbEndpoint extends com.pulumi.resources.CustomResource {
     public Output<Integer> readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="readOnlyNodeWeights", refs={List.class,DbEndpointReadOnlyNodeWeight.class}, tree="[0,1]")
     private Output<List<DbEndpointReadOnlyNodeWeight>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DbEndpointReadOnlyNodeWeight>> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }

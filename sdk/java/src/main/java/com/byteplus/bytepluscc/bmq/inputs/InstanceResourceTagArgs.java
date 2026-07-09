@@ -17,9 +17,19 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
 
     public static final InstanceResourceTagArgs Empty = new InstanceResourceTagArgs();
 
+    /**
+     * Tag key-value pair
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tagKvs")
     private @Nullable Output<List<InstanceResourceTagTagKvArgs>> tagKvs;
 
+    /**
+     * @return Tag key-value pair
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<InstanceResourceTagTagKvArgs>>> tagKvs() {
         return Optional.ofNullable(this.tagKvs);
     }
@@ -64,15 +74,36 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
             $ = new InstanceResourceTagArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param tagKvs Tag key-value pair
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tagKvs(@Nullable Output<List<InstanceResourceTagTagKvArgs>> tagKvs) {
             $.tagKvs = tagKvs;
             return this;
         }
 
+        /**
+         * @param tagKvs Tag key-value pair
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tagKvs(List<InstanceResourceTagTagKvArgs> tagKvs) {
             return tagKvs(Output.of(tagKvs));
         }
 
+        /**
+         * @param tagKvs Tag key-value pair
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tagKvs(InstanceResourceTagTagKvArgs... tagKvs) {
             return tagKvs(List.of(tagKvs));
         }

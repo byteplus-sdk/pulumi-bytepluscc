@@ -23,6 +23,57 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.redis.AllowList;
+ * import com.byteplus.bytepluscc.redis.AllowListArgs;
+ * import com.pulumi.bytepluscc.redis.inputs.AllowListSecurityGroupBindInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var redisAllowListDemo = new AllowList("redisAllowListDemo", AllowListArgs.builder()
+ *             .allowList("127.0.0.1,0.0.0.0/0,192.168.0.0/24")
+ *             .allowListName("ccapi_test")
+ *             .allowListDesc("this is a test")
+ *             .allowListCategory("Ordinary")
+ *             .projectName("default")
+ *             .securityGroupBindInfos(            
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("AssociateEcsIp")
+ *                     .security_group_id("sg-w06pxjgvtds0865yxxxxxx")
+ *                     .build(),
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("AssociateEcsIp")
+ *                     .security_group_id("sg-rrco3fkzzy0wv0x5xxxxxx")
+ *                     .build(),
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("IngressDirectionIp")
+ *                     .security_group_id("sg-w07syi789s74865yxxxxxx")
+ *                     .build())
+ *             .instanceIds(            
+ *                 "redis-cnlfwpqoohxxxxxx",
+ *                 "redis-cnlfenhsypxxxxxx")
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -132,9 +183,19 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * List of instances currently bound to this allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return List of instances currently bound to this allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
@@ -166,9 +227,19 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="securityGroupBindInfos", refs={List.class,AllowListSecurityGroupBindInfo.class}, tree="[0,1]")
     private Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos;
 
+    /**
+     * @return Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos() {
         return this.securityGroupBindInfos;
     }

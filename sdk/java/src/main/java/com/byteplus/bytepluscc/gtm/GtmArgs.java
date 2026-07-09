@@ -18,14 +18,14 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
     public static final GtmArgs Empty = new GtmArgs();
 
     /**
-     * Access method for the GTM instance. `cname` means a scheduling domain name is generated and you configure CNAME at your DNS provider; `domain` means Cloud DNS directly resolves the business domain name to the target address
+     * Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
      * 
      */
     @Import(name="accessMode", required=true)
     private Output<String> accessMode;
 
     /**
-     * @return Access method for the GTM instance. `cname` means a scheduling domain name is generated and you configure CNAME at your DNS provider; `domain` means Cloud DNS directly resolves the business domain name to the target address
+     * @return Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
      * 
      */
     public Output<String> accessMode() {
@@ -78,14 +78,14 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+     * Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
      * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
-     * @return Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+     * @return Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
      * 
      */
     public Optional<Output<String>> policyType() {
@@ -123,14 +123,14 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
+     * Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
      * 
      */
     @Import(name="specName")
     private @Nullable Output<String> specName;
 
     /**
-     * @return Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
+     * @return Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
      * 
      */
     public Optional<Output<String>> specName() {
@@ -185,7 +185,7 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessMode Access method for the GTM instance. `cname` means a scheduling domain name is generated and you configure CNAME at your DNS provider; `domain` means Cloud DNS directly resolves the business domain name to the target address
+         * @param accessMode Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessMode Access method for the GTM instance. `cname` means a scheduling domain name is generated and you configure CNAME at your DNS provider; `domain` means Cloud DNS directly resolves the business domain name to the target address
+         * @param accessMode Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+         * @param policyType Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
          * 
          * @return builder
          * 
@@ -280,7 +280,7 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param policyType Routing policy type. `geo` indicates basic routing policy, `perf` indicates intelligent routing policy
+         * @param policyType Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
          * 
          * @return builder
          * 
@@ -332,7 +332,7 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param specName Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
+         * @param specName Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class GtmArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param specName Feature version of the GTM instance. `ultimate` indicates flagship edition, `standard` indicates standard edition
+         * @param specName Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
          * 
          * @return builder
          * 

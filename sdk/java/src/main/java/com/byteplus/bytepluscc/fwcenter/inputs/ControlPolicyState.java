@@ -96,9 +96,19 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.destPortGroupType);
     }
 
+    /**
+     * Destination port list (structured)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="destPortListV1s")
     private @Nullable Output<List<ControlPolicyDestPortListV1Args>> destPortListV1s;
 
+    /**
+     * @return Destination port list (structured)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ControlPolicyDestPortListV1Args>>> destPortListV1s() {
         return Optional.ofNullable(this.destPortListV1s);
     }
@@ -148,9 +158,19 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.destination);
     }
 
+    /**
+     * Destination CIDR list (structured)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="destinationCidrListV1s")
     private @Nullable Output<List<ControlPolicyDestinationCidrListV1Args>> destinationCidrListV1s;
 
+    /**
+     * @return Destination CIDR list (structured)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ControlPolicyDestinationCidrListV1Args>>> destinationCidrListV1s() {
         return Optional.ofNullable(this.destinationCidrListV1s);
     }
@@ -440,9 +460,19 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.source);
     }
 
+    /**
+     * Source CIDR list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="sourceCidrListV1s")
     private @Nullable Output<List<ControlPolicySourceCidrListV1Args>> sourceCidrListV1s;
 
+    /**
+     * @return Source CIDR list (structured).
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ControlPolicySourceCidrListV1Args>>> sourceCidrListV1s() {
         return Optional.ofNullable(this.sourceCidrListV1s);
     }
@@ -717,15 +747,36 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
             return destPortGroupType(Output.of(destPortGroupType));
         }
 
+        /**
+         * @param destPortListV1s Destination port list (structured)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destPortListV1s(@Nullable Output<List<ControlPolicyDestPortListV1Args>> destPortListV1s) {
             $.destPortListV1s = destPortListV1s;
             return this;
         }
 
+        /**
+         * @param destPortListV1s Destination port list (structured)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destPortListV1s(List<ControlPolicyDestPortListV1Args> destPortListV1s) {
             return destPortListV1s(Output.of(destPortListV1s));
         }
 
+        /**
+         * @param destPortListV1s Destination port list (structured)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destPortListV1s(ControlPolicyDestPortListV1Args... destPortListV1s) {
             return destPortListV1s(List.of(destPortListV1s));
         }
@@ -803,15 +854,36 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
             return destination(Output.of(destination));
         }
 
+        /**
+         * @param destinationCidrListV1s Destination CIDR list (structured)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationCidrListV1s(@Nullable Output<List<ControlPolicyDestinationCidrListV1Args>> destinationCidrListV1s) {
             $.destinationCidrListV1s = destinationCidrListV1s;
             return this;
         }
 
+        /**
+         * @param destinationCidrListV1s Destination CIDR list (structured)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationCidrListV1s(List<ControlPolicyDestinationCidrListV1Args> destinationCidrListV1s) {
             return destinationCidrListV1s(Output.of(destinationCidrListV1s));
         }
 
+        /**
+         * @param destinationCidrListV1s Destination CIDR list (structured)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder destinationCidrListV1s(ControlPolicyDestinationCidrListV1Args... destinationCidrListV1s) {
             return destinationCidrListV1s(List.of(destinationCidrListV1s));
         }
@@ -1245,15 +1317,36 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
             return source(Output.of(source));
         }
 
+        /**
+         * @param sourceCidrListV1s Source CIDR list (structured).
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceCidrListV1s(@Nullable Output<List<ControlPolicySourceCidrListV1Args>> sourceCidrListV1s) {
             $.sourceCidrListV1s = sourceCidrListV1s;
             return this;
         }
 
+        /**
+         * @param sourceCidrListV1s Source CIDR list (structured).
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceCidrListV1s(List<ControlPolicySourceCidrListV1Args> sourceCidrListV1s) {
             return sourceCidrListV1s(Output.of(sourceCidrListV1s));
         }
 
+        /**
+         * @param sourceCidrListV1s Source CIDR list (structured).
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceCidrListV1s(ControlPolicySourceCidrListV1Args... sourceCidrListV1s) {
             return sourceCidrListV1s(List.of(sourceCidrListV1s));
         }

@@ -36,9 +36,19 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * Associated CEN information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="associateCens")
     private @Nullable Output<List<DirectConnectGatewayAssociateCenArgs>> associateCens;
 
+    /**
+     * @return Associated CEN information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DirectConnectGatewayAssociateCenArgs>>> associateCens() {
         return Optional.ofNullable(this.associateCens);
     }
@@ -238,9 +248,19 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<DirectConnectGatewayTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DirectConnectGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -321,15 +341,36 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param associateCens Associated CEN information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associateCens(@Nullable Output<List<DirectConnectGatewayAssociateCenArgs>> associateCens) {
             $.associateCens = associateCens;
             return this;
         }
 
+        /**
+         * @param associateCens Associated CEN information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associateCens(List<DirectConnectGatewayAssociateCenArgs> associateCens) {
             return associateCens(Output.of(associateCens));
         }
 
+        /**
+         * @param associateCens Associated CEN information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder associateCens(DirectConnectGatewayAssociateCenArgs... associateCens) {
             return associateCens(List.of(associateCens));
         }
@@ -607,15 +648,36 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<DirectConnectGatewayTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<DirectConnectGatewayTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(DirectConnectGatewayTagArgs... tags) {
             return tags(List.of(tags));
         }

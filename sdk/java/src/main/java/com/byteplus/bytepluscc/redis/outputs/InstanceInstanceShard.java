@@ -19,6 +19,11 @@ public final class InstanceInstanceShard {
      * 
      */
     private @Nullable Integer nodeNumber;
+    /**
+     * @return Detailed list of all Server nodes in the shard.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<InstanceInstanceShardServerNode> serverNodes;
     /**
      * @return Shard ID.
@@ -34,6 +39,11 @@ public final class InstanceInstanceShard {
     public Optional<Integer> nodeNumber() {
         return Optional.ofNullable(this.nodeNumber);
     }
+    /**
+     * @return Detailed list of all Server nodes in the shard.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<InstanceInstanceShardServerNode> serverNodes() {
         return this.serverNodes == null ? List.of() : this.serverNodes;
     }

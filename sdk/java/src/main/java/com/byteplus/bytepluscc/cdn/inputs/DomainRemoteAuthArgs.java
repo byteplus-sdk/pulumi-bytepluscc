@@ -17,9 +17,19 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
 
     public static final DomainRemoteAuthArgs Empty = new DomainRemoteAuthArgs();
 
+    /**
+     * Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="remoteAuthRules")
     private @Nullable Output<List<DomainRemoteAuthRemoteAuthRuleArgs>> remoteAuthRules;
 
+    /**
+     * @return Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainRemoteAuthRemoteAuthRuleArgs>>> remoteAuthRules() {
         return Optional.ofNullable(this.remoteAuthRules);
     }
@@ -64,15 +74,36 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
             $ = new DomainRemoteAuthArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param remoteAuthRules Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder remoteAuthRules(@Nullable Output<List<DomainRemoteAuthRemoteAuthRuleArgs>> remoteAuthRules) {
             $.remoteAuthRules = remoteAuthRules;
             return this;
         }
 
+        /**
+         * @param remoteAuthRules Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder remoteAuthRules(List<DomainRemoteAuthRemoteAuthRuleArgs> remoteAuthRules) {
             return remoteAuthRules(Output.of(remoteAuthRules));
         }
 
+        /**
+         * @param remoteAuthRules Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder remoteAuthRules(DomainRemoteAuthRemoteAuthRuleArgs... remoteAuthRules) {
             return remoteAuthRules(List.of(remoteAuthRules));
         }

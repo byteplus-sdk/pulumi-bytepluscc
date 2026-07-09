@@ -32,9 +32,19 @@ public final class SandboxInstanceTosMountConfigArgs extends com.pulumi.resource
         return Optional.ofNullable(this.enable);
     }
 
+    /**
+     * Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tosMountPoints")
     private @Nullable Output<List<SandboxInstanceTosMountConfigTosMountPointArgs>> tosMountPoints;
 
+    /**
+     * @return Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<SandboxInstanceTosMountConfigTosMountPointArgs>>> tosMountPoints() {
         return Optional.ofNullable(this.tosMountPoints);
     }
@@ -85,15 +95,36 @@ public final class SandboxInstanceTosMountConfigArgs extends com.pulumi.resource
             return enable(Output.of(enable));
         }
 
+        /**
+         * @param tosMountPoints Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tosMountPoints(@Nullable Output<List<SandboxInstanceTosMountConfigTosMountPointArgs>> tosMountPoints) {
             $.tosMountPoints = tosMountPoints;
             return this;
         }
 
+        /**
+         * @param tosMountPoints Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tosMountPoints(List<SandboxInstanceTosMountConfigTosMountPointArgs> tosMountPoints) {
             return tosMountPoints(Output.of(tosMountPoints));
         }
 
+        /**
+         * @param tosMountPoints Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tosMountPoints(SandboxInstanceTosMountConfigTosMountPointArgs... tosMountPoints) {
             return tosMountPoints(List.of(tosMountPoints));
         }

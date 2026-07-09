@@ -78,9 +78,19 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
         return Optional.ofNullable(this.fileSystemType);
     }
 
+    /**
+     * Information about mount points that use this permission group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="mountPoints")
     private @Nullable Output<List<MountPointPermissionGroupMountPointArgs>> mountPoints;
 
+    /**
+     * @return Information about mount points that use this permission group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<MountPointPermissionGroupMountPointArgs>>> mountPoints() {
         return Optional.ofNullable(this.mountPoints);
     }
@@ -229,15 +239,36 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
             return fileSystemType(Output.of(fileSystemType));
         }
 
+        /**
+         * @param mountPoints Information about mount points that use this permission group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mountPoints(@Nullable Output<List<MountPointPermissionGroupMountPointArgs>> mountPoints) {
             $.mountPoints = mountPoints;
             return this;
         }
 
+        /**
+         * @param mountPoints Information about mount points that use this permission group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mountPoints(List<MountPointPermissionGroupMountPointArgs> mountPoints) {
             return mountPoints(Output.of(mountPoints));
         }
 
+        /**
+         * @param mountPoints Information about mount points that use this permission group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder mountPoints(MountPointPermissionGroupMountPointArgs... mountPoints) {
             return mountPoints(List.of(mountPoints));
         }

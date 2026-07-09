@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainTimeoutTimeoutRuleCondition {
+    /**
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DomainTimeoutTimeoutRuleConditionConditionRule> conditionRules;
     /**
      * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
@@ -21,6 +26,11 @@ public final class DomainTimeoutTimeoutRuleCondition {
     private @Nullable String connective;
 
     private DomainTimeoutTimeoutRuleCondition() {}
+    /**
+     * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DomainTimeoutTimeoutRuleConditionConditionRule> conditionRules() {
         return this.conditionRules == null ? List.of() : this.conditionRules;
     }

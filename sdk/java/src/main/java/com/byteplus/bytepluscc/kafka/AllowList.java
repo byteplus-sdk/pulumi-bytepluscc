@@ -22,6 +22,47 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.kafka.AllowList;
+ * import com.byteplus.bytepluscc.kafka.AllowListArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var kafkaAllowListDemo = new AllowList("kafkaAllowListDemo", AllowListArgs.builder()
+ *             .allowList("127.0.0.2")
+ *             .allowListDesc("test")
+ *             .allowListName("ccapi-text")
+ *             .associatedInstances(            
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("kafka-cnng9x9s***")
+ *                     .build(),
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("kafka-cnnghf99**")
+ *                     .build())
+ *             .applyInstanceNum(2)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -131,9 +172,19 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * Information about the instance bound to the allowlist
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return Information about the instance bound to the allowlist
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }

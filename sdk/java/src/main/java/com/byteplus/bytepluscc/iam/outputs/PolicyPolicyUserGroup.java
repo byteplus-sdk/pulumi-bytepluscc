@@ -18,6 +18,11 @@ public final class PolicyPolicyUserGroup {
      * 
      */
     private @Nullable String name;
+    /**
+     * @return List of projects bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<PolicyPolicyUserGroupPolicyScope> policyScopes;
 
     private PolicyPolicyUserGroup() {}
@@ -28,6 +33,11 @@ public final class PolicyPolicyUserGroup {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return List of projects bound to the policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<PolicyPolicyUserGroupPolicyScope> policyScopes() {
         return this.policyScopes == null ? List.of() : this.policyScopes;
     }

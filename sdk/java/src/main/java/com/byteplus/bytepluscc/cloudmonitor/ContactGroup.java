@@ -21,6 +21,48 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cloudmonitor.ContactGroup;
+ * import com.byteplus.bytepluscc.cloudmonitor.ContactGroupArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.ContactGroupContactArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cloudMonitorContactGroupDemo = new ContactGroup("cloudMonitorContactGroupDemo", ContactGroupArgs.builder()
+ *             .name("TestContactGroup")
+ *             .description("TestContactGroup Description")
+ *             .contacts(            
+ *                 ContactGroupContactArgs.builder()
+ *                     .contact_id("20562729774143xxxx")
+ *                     .build(),
+ *                 ContactGroupContactArgs.builder()
+ *                     .contact_id("20562729184541xxxx")
+ *                     .build(),
+ *                 ContactGroupContactArgs.builder()
+ *                     .contact_id("20562728672541xxxx")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -60,9 +102,19 @@ public class ContactGroup extends com.pulumi.resources.CustomResource {
     public Output<String> contactGroupId() {
         return this.contactGroupId;
     }
+    /**
+     * Contact information in the contact group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="contacts", refs={List.class,ContactGroupContact.class}, tree="[0,1]")
     private Output<List<ContactGroupContact>> contacts;
 
+    /**
+     * @return Contact information in the contact group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ContactGroupContact>> contacts() {
         return this.contacts;
     }

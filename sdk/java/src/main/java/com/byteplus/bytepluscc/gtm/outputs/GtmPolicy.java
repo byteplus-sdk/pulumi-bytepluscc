@@ -35,6 +35,11 @@ public final class GtmPolicy {
      * 
      */
     private @Nullable GtmPolicyStatistics statistics;
+    /**
+     * @return List of target address pools associated with the scheduling policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<GtmPolicyTarget> targets;
 
     private GtmPolicy() {}
@@ -66,6 +71,11 @@ public final class GtmPolicy {
     public Optional<GtmPolicyStatistics> statistics() {
         return Optional.ofNullable(this.statistics);
     }
+    /**
+     * @return List of target address pools associated with the scheduling policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<GtmPolicyTarget> targets() {
         return this.targets == null ? List.of() : this.targets;
     }

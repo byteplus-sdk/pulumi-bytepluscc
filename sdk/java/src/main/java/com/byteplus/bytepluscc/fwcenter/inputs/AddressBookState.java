@@ -19,9 +19,19 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
 
     public static final AddressBookState Empty = new AddressBookState();
 
+    /**
+     * Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="addressDetailLists")
     private @Nullable Output<List<AddressBookAddressDetailListArgs>> addressDetailLists;
 
+    /**
+     * @return Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AddressBookAddressDetailListArgs>>> addressDetailLists() {
         return Optional.ofNullable(this.addressDetailLists);
     }
@@ -102,14 +112,14 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+     * The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
      * 
      */
     @Import(name="groupType")
     private @Nullable Output<String> groupType;
 
     /**
-     * @return The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+     * @return The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
      * 
      */
     public Optional<Output<String>> groupType() {
@@ -191,9 +201,19 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.tagRelation);
     }
 
+    /**
+     * Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<AddressBookTagArgs>> tags;
 
+    /**
+     * @return Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<AddressBookTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -250,15 +270,36 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
             $ = new AddressBookState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addressDetailLists Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressDetailLists(@Nullable Output<List<AddressBookAddressDetailListArgs>> addressDetailLists) {
             $.addressDetailLists = addressDetailLists;
             return this;
         }
 
+        /**
+         * @param addressDetailLists Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressDetailLists(List<AddressBookAddressDetailListArgs> addressDetailLists) {
             return addressDetailLists(Output.of(addressDetailLists));
         }
 
+        /**
+         * @param addressDetailLists Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder addressDetailLists(AddressBookAddressDetailListArgs... addressDetailLists) {
             return addressDetailLists(List.of(addressDetailLists));
         }
@@ -379,7 +420,7 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupType The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+         * @param groupType The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
          * 
          * @return builder
          * 
@@ -390,7 +431,7 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param groupType The type of the address book, used to specify the type of addresses stored in the address book. `ip`: IPv4 address; `ipv6`: IPv6 address; `port`: port information; `domain`: domain name information.
+         * @param groupType The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
          * 
          * @return builder
          * 
@@ -514,15 +555,36 @@ public final class AddressBookState extends com.pulumi.resources.ResourceArgs {
             return tagRelation(Output.of(tagRelation));
         }
 
+        /**
+         * @param tags Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<AddressBookTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<AddressBookTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(AddressBookTagArgs... tags) {
             return tags(List.of(tags));
         }

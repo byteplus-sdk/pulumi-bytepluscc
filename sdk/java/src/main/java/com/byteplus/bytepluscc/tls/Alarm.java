@@ -28,6 +28,135 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.Alarm;
+ * import com.byteplus.bytepluscc.tls.AlarmArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmQueryRequestArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmRequestCycleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmAlarmPeriodDetailArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmAlarmNotifyGroupArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmJoinConfigurationArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.AlarmTriggerConditionArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var tLSAlarmDemo = new Alarm("tLSAlarmDemo", AlarmArgs.builder()
+ *             .alarmName("ccapi-test")
+ *             .projectId("project_id_xxxx")
+ *             .status(false)
+ *             .queryRequests(            
+ *                 AlarmQueryRequestArgs.builder()
+ *                     .end_time_offset(-1)
+ *                     .end_time_offset_unit("")
+ *                     .query("raw:\"error\" | SELECT __time__, hostname, raw ORDER BY __time__ DESC LIMIT 5")
+ *                     .start_time_offset(-11)
+ *                     .start_time_offset_unit("")
+ *                     .time_span_type("")
+ *                     .topic_id("topic_id_xxxx")
+ *                     .topic_name("topic_name_xxxx")
+ *                     .truncated_time("")
+ *                     .build(),
+ *                 AlarmQueryRequestArgs.builder()
+ *                     .end_time_offset(-5)
+ *                     .end_time_offset_unit("")
+ *                     .query("test")
+ *                     .start_time_offset(-15)
+ *                     .start_time_offset_unit("")
+ *                     .time_span_type("")
+ *                     .topic_id("topic_id_xxxx")
+ *                     .topic_name("topic_name_xxxx")
+ *                     .truncated_time("")
+ *                     .build(),
+ *                 AlarmQueryRequestArgs.builder()
+ *                     .end_time_offset(-60)
+ *                     .end_time_offset_unit("")
+ *                     .query("demo")
+ *                     .start_time_offset(-120)
+ *                     .start_time_offset_unit("")
+ *                     .time_span_type("")
+ *                     .topic_id("topic_id_xxxx")
+ *                     .topic_name("topic_name_xxxx")
+ *                     .truncated_time("")
+ *                     .build())
+ *             .requestCycle(AlarmRequestCycleArgs.builder()
+ *                 .cron_tab("0 0/1 * * *")
+ *                 .time(0)
+ *                 .type("CronTab")
+ *                 .cron_time_zone("Asia/Shanghai")
+ *                 .build())
+ *             .triggerPeriod(10)
+ *             .alarmPeriod(1440)
+ *             .alarmPeriodDetail(AlarmAlarmPeriodDetailArgs.builder()
+ *                 .email(1440)
+ *                 .phone(1440)
+ *                 .sms(1440)
+ *                 .general_webhook(1440)
+ *                 .build())
+ *             .alarmNotifyGroups(            
+ *                 AlarmAlarmNotifyGroupArgs.builder()
+ *                     .alarm_notify_group_id("notify_group_id_xxxx")
+ *                     .build(),
+ *                 AlarmAlarmNotifyGroupArgs.builder()
+ *                     .alarm_notify_group_id("notify_group_id_xxxx")
+ *                     .build())
+ *             .userDefineMsg("{{toJson(QueryResult)}}{{UserName}}{{ProjectName}}{{Region}}{{Alarm}}{{AlarmID}}{{Topics|join:\",\"}}{{toJson(Results[0].RawResultsCount)}}")
+ *             .joinConfigurations(            
+ *                 AlarmJoinConfigurationArgs.builder()
+ *                     .set_operation_type("CrossJoin")
+ *                     .condition("")
+ *                     .build(),
+ *                 AlarmJoinConfigurationArgs.builder()
+ *                     .set_operation_type("InnerJoin")
+ *                     .condition("$1. >= $3.")
+ *                     .build())
+ *             .sendResolved(false)
+ *             .triggerConditions(            
+ *                 AlarmTriggerConditionArgs.builder()
+ *                     .condition("")
+ *                     .count_condition("__count__ == 2")
+ *                     .no_data(false)
+ *                     .severity("warning")
+ *                     .build(),
+ *                 AlarmTriggerConditionArgs.builder()
+ *                     .condition("$1.")
+ *                     .count_condition("")
+ *                     .no_data(false)
+ *                     .severity("critical")
+ *                     .build(),
+ *                 AlarmTriggerConditionArgs.builder()
+ *                     .condition("$2.")
+ *                     .count_condition("__count__ == 4")
+ *                     .no_data(false)
+ *                     .severity("warning")
+ *                     .build(),
+ *                 AlarmTriggerConditionArgs.builder()
+ *                     .condition("")
+ *                     .count_condition("")
+ *                     .no_data(true)
+ *                     .severity("critical")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -67,9 +196,19 @@ public class Alarm extends com.pulumi.resources.CustomResource {
     public Output<String> alarmName() {
         return this.alarmName;
     }
+    /**
+     * List of notification groups corresponding to the alert.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="alarmNotifyGroups", refs={List.class,AlarmAlarmNotifyGroup.class}, tree="[0,1]")
     private Output<List<AlarmAlarmNotifyGroup>> alarmNotifyGroups;
 
+    /**
+     * @return List of notification groups corresponding to the alert.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmAlarmNotifyGroup>> alarmNotifyGroups() {
         return this.alarmNotifyGroups;
     }
@@ -129,9 +268,19 @@ public class Alarm extends com.pulumi.resources.CustomResource {
     public Output<String> createTime() {
         return this.createTime;
     }
+    /**
+     * Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="joinConfigurations", refs={List.class,AlarmJoinConfiguration.class}, tree="[0,1]")
     private Output<List<AlarmJoinConfiguration>> joinConfigurations;
 
+    /**
+     * @return Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmJoinConfiguration>> joinConfigurations() {
         return this.joinConfigurations;
     }
@@ -163,9 +312,19 @@ public class Alarm extends com.pulumi.resources.CustomResource {
     public Output<String> projectId() {
         return this.projectId;
     }
+    /**
+     * Monitoring task execution statement.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="queryRequests", refs={List.class,AlarmQueryRequest.class}, tree="[0,1]")
     private Output<List<AlarmQueryRequest>> queryRequests;
 
+    /**
+     * @return Monitoring task execution statement.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmQueryRequest>> queryRequests() {
         return this.queryRequests;
     }
@@ -225,9 +384,19 @@ public class Alarm extends com.pulumi.resources.CustomResource {
     public Output<Boolean> status() {
         return this.status;
     }
+    /**
+     * Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="triggerConditions", refs={List.class,AlarmTriggerCondition.class}, tree="[0,1]")
     private Output<List<AlarmTriggerCondition>> triggerConditions;
 
+    /**
+     * @return Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<AlarmTriggerCondition>> triggerConditions() {
         return this.triggerConditions;
     }

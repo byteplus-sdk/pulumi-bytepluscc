@@ -63,9 +63,19 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.lag);
     }
 
+    /**
+     * Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="partitionInfos")
     private @Nullable Output<List<GroupTopicInfoPartitionInfoArgs>> partitionInfos;
 
+    /**
+     * @return Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GroupTopicInfoPartitionInfoArgs>>> partitionInfos() {
         return Optional.ofNullable(this.partitionInfos);
     }
@@ -240,15 +250,36 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
             return lag(Output.of(lag));
         }
 
+        /**
+         * @param partitionInfos Partition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder partitionInfos(@Nullable Output<List<GroupTopicInfoPartitionInfoArgs>> partitionInfos) {
             $.partitionInfos = partitionInfos;
             return this;
         }
 
+        /**
+         * @param partitionInfos Partition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder partitionInfos(List<GroupTopicInfoPartitionInfoArgs> partitionInfos) {
             return partitionInfos(Output.of(partitionInfos));
         }
 
+        /**
+         * @param partitionInfos Partition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder partitionInfos(GroupTopicInfoPartitionInfoArgs... partitionInfos) {
             return partitionInfos(List.of(partitionInfos));
         }

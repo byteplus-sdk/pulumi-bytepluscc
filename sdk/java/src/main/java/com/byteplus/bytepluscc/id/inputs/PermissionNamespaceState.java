@@ -107,9 +107,19 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<PermissionNamespaceTagArgs>> tags;
 
+    /**
+     * @return Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<PermissionNamespaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -312,15 +322,36 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<PermissionNamespaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<PermissionNamespaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(PermissionNamespaceTagArgs... tags) {
             return tags(List.of(tags));
         }

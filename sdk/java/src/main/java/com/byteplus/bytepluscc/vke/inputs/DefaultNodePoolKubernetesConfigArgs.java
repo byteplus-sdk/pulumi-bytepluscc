@@ -65,9 +65,19 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         return Optional.ofNullable(this.kubeletConfig);
     }
 
+    /**
+     * Kubernetes label information for node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="labels")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigLabelArgs>> labels;
 
+    /**
+     * @return Kubernetes label information for node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigLabelArgs>>> labels() {
         return Optional.ofNullable(this.labels);
     }
@@ -117,9 +127,19 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         return Optional.ofNullable(this.nameUseHostname);
     }
 
+    /**
+     * Kubernetes taint information for the node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="taints")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigTaintArgs>> taints;
 
+    /**
+     * @return Kubernetes taint information for the node pool/node
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigTaintArgs>>> taints() {
         return Optional.ofNullable(this.taints);
     }
@@ -218,15 +238,36 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
             return kubeletConfig(Output.of(kubeletConfig));
         }
 
+        /**
+         * @param labels Kubernetes label information for node pool/node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labels(@Nullable Output<List<DefaultNodePoolKubernetesConfigLabelArgs>> labels) {
             $.labels = labels;
             return this;
         }
 
+        /**
+         * @param labels Kubernetes label information for node pool/node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labels(List<DefaultNodePoolKubernetesConfigLabelArgs> labels) {
             return labels(Output.of(labels));
         }
 
+        /**
+         * @param labels Kubernetes label information for node pool/node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder labels(DefaultNodePoolKubernetesConfigLabelArgs... labels) {
             return labels(List.of(labels));
         }
@@ -294,15 +335,36 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
             return nameUseHostname(Output.of(nameUseHostname));
         }
 
+        /**
+         * @param taints Kubernetes taint information for the node pool/node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder taints(@Nullable Output<List<DefaultNodePoolKubernetesConfigTaintArgs>> taints) {
             $.taints = taints;
             return this;
         }
 
+        /**
+         * @param taints Kubernetes taint information for the node pool/node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder taints(List<DefaultNodePoolKubernetesConfigTaintArgs> taints) {
             return taints(Output.of(taints));
         }
 
+        /**
+         * @param taints Kubernetes taint information for the node pool/node
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder taints(DefaultNodePoolKubernetesConfigTaintArgs... taints) {
             return taints(List.of(taints));
         }

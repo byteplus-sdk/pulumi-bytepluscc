@@ -66,9 +66,19 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.createdTime);
     }
 
+    /**
+     * Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="customDomains")
     private @Nullable Output<List<GatewayServiceCustomDomainArgs>> customDomains;
 
+    /**
+     * @return Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GatewayServiceCustomDomainArgs>>> customDomains() {
         return Optional.ofNullable(this.customDomains);
     }
@@ -103,9 +113,19 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.domainType);
     }
 
+    /**
+     * Default domain.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="domains")
     private @Nullable Output<List<GatewayServiceDomainArgs>> domains;
 
+    /**
+     * @return Default domain.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<GatewayServiceDomainArgs>>> domains() {
         return Optional.ofNullable(this.domains);
     }
@@ -347,15 +367,36 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
             return createdTime(Output.of(createdTime));
         }
 
+        /**
+         * @param customDomains Custom domain list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customDomains(@Nullable Output<List<GatewayServiceCustomDomainArgs>> customDomains) {
             $.customDomains = customDomains;
             return this;
         }
 
+        /**
+         * @param customDomains Custom domain list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customDomains(List<GatewayServiceCustomDomainArgs> customDomains) {
             return customDomains(Output.of(customDomains));
         }
 
+        /**
+         * @param customDomains Custom domain list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder customDomains(GatewayServiceCustomDomainArgs... customDomains) {
             return customDomains(List.of(customDomains));
         }
@@ -402,15 +443,36 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
             return domainType(Output.of(domainType));
         }
 
+        /**
+         * @param domains Default domain.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domains(@Nullable Output<List<GatewayServiceDomainArgs>> domains) {
             $.domains = domains;
             return this;
         }
 
+        /**
+         * @param domains Default domain.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domains(List<GatewayServiceDomainArgs> domains) {
             return domains(Output.of(domains));
         }
 
+        /**
+         * @param domains Default domain.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder domains(GatewayServiceDomainArgs... domains) {
             return domains(List.of(domains));
         }

@@ -232,9 +232,19 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
 
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="readOnlyNodeWeights")
     private @Nullable Output<List<DbEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DbEndpointReadOnlyNodeWeightArgs>>> readOnlyNodeWeights() {
         return Optional.ofNullable(this.readOnlyNodeWeights);
     }
@@ -619,15 +629,36 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
             return readOnlyNodeMaxDelayTime(Output.of(readOnlyNodeMaxDelayTime));
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readOnlyNodeWeights(@Nullable Output<List<DbEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights) {
             $.readOnlyNodeWeights = readOnlyNodeWeights;
             return this;
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readOnlyNodeWeights(List<DbEndpointReadOnlyNodeWeightArgs> readOnlyNodeWeights) {
             return readOnlyNodeWeights(Output.of(readOnlyNodeWeights));
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder readOnlyNodeWeights(DbEndpointReadOnlyNodeWeightArgs... readOnlyNodeWeights) {
             return readOnlyNodeWeights(List.of(readOnlyNodeWeights));
         }

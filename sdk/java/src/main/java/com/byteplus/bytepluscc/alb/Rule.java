@@ -26,6 +26,61 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.alb.Rule;
+ * import com.byteplus.bytepluscc.alb.RuleArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.RuleRewriteConfigArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.RuleForwardGroupConfigArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var albRuleDemo = new Rule("albRuleDemo", RuleArgs.builder()
+ *             .description("test-rewrite")
+ *             .domain("www.xxxx.test.com")
+ *             .listenerId("lsn-bdwhrmgvcyyo8dv4xxxxxx")
+ *             .rewriteConfig(RuleRewriteConfigArgs.builder()
+ *                 .rewrite_path("/test")
+ *                 .build())
+ *             .rewriteEnabled("on")
+ *             .ruleAction("")
+ *             .trafficLimitEnabled("off")
+ *             .trafficLimitQps(0)
+ *             .url("/")
+ *             .forwardGroupConfig(RuleForwardGroupConfigArgs.builder()
+ *                 .server_group_tuples(Arrays.asList(                
+ *                     Map.ofEntries(
+ *                         Map.entry("serverGroupId", "rsp-1pf4pgyq8zitc845wfxxxxxx"),
+ *                         Map.entry("weight", 100)
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("serverGroupId", "rsp-1pf4pgyq8zitc845wfxxxxxx"),
+ *                         Map.entry("weight", 100)
+ *                     )))
+ *                 .sticky_session_enabled("on")
+ *                 .sticky_session_timeout(2000)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -163,15 +218,35 @@ public class Rule extends com.pulumi.resources.CustomResource {
     public Output<String> ruleAction() {
         return this.ruleAction;
     }
+    /**
+     * Standard edition forwarding rule action.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="ruleActions", refs={List.class,RuleRuleAction.class}, tree="[0,1]")
     private Output<List<RuleRuleAction>> ruleActions;
 
+    /**
+     * @return Standard edition forwarding rule action.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleRuleAction>> ruleActions() {
         return this.ruleActions;
     }
+    /**
+     * Standard edition forwarding rule condition.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="ruleConditions", refs={List.class,RuleRuleCondition.class}, tree="[0,1]")
     private Output<List<RuleRuleCondition>> ruleConditions;
 
+    /**
+     * @return Standard edition forwarding rule condition.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RuleRuleCondition>> ruleConditions() {
         return this.ruleConditions;
     }

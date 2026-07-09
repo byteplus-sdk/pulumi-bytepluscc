@@ -30,8 +30,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vpn.VpnGatewayRoute;
  * import com.byteplus.bytepluscc.vpn.VpnGatewayRouteArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -64,9 +64,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute")
 public class VpnGatewayRoute extends com.pulumi.resources.CustomResource {
+    /**
+     * AS path information traversed by the BGP route entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="asPaths", refs={List.class,VpnGatewayRouteAsPath.class}, tree="[0,1]")
     private Output<List<VpnGatewayRouteAsPath>> asPaths;
 
+    /**
+     * @return AS path information traversed by the BGP route entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<VpnGatewayRouteAsPath>> asPaths() {
         return this.asPaths;
     }

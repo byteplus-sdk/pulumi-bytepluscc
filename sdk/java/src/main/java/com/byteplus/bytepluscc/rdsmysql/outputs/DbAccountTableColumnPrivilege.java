@@ -14,15 +14,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DbAccountTableColumnPrivilege {
+    /**
+     * @return Account column permission information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DbAccountTableColumnPrivilegeColumnPrivilege> columnPrivileges;
     /**
      * @return Name of the database to which the table belongs for setting permissions for the account.
      * 
      */
     private @Nullable String dbName;
+    /**
+     * @return Account table permission information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<DbAccountTableColumnPrivilegeTablePrivilege> tablePrivileges;
 
     private DbAccountTableColumnPrivilege() {}
+    /**
+     * @return Account column permission information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DbAccountTableColumnPrivilegeColumnPrivilege> columnPrivileges() {
         return this.columnPrivileges == null ? List.of() : this.columnPrivileges;
     }
@@ -33,6 +48,11 @@ public final class DbAccountTableColumnPrivilege {
     public Optional<String> dbName() {
         return Optional.ofNullable(this.dbName);
     }
+    /**
+     * @return Account table permission information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<DbAccountTableColumnPrivilegeTablePrivilege> tablePrivileges() {
         return this.tablePrivileges == null ? List.of() : this.tablePrivileges;
     }

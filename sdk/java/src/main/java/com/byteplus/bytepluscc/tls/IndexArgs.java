@@ -52,9 +52,19 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.fullText);
     }
 
+    /**
+     * Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="keyValues")
     private @Nullable Output<List<IndexKeyValueArgs>> keyValues;
 
+    /**
+     * @return Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<IndexKeyValueArgs>>> keyValues() {
         return Optional.ofNullable(this.keyValues);
     }
@@ -89,9 +99,19 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
         return this.topicId;
     }
 
+    /**
+     * Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="userInnerKeyValues")
     private @Nullable Output<List<IndexUserInnerKeyValueArgs>> userInnerKeyValues;
 
+    /**
+     * @return Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<IndexUserInnerKeyValueArgs>>> userInnerKeyValues() {
         return Optional.ofNullable(this.userInnerKeyValues);
     }
@@ -167,15 +187,36 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
             return fullText(Output.of(fullText));
         }
 
+        /**
+         * @param keyValues Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder keyValues(@Nullable Output<List<IndexKeyValueArgs>> keyValues) {
             $.keyValues = keyValues;
             return this;
         }
 
+        /**
+         * @param keyValues Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder keyValues(List<IndexKeyValueArgs> keyValues) {
             return keyValues(Output.of(keyValues));
         }
 
+        /**
+         * @param keyValues Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder keyValues(IndexKeyValueArgs... keyValues) {
             return keyValues(List.of(keyValues));
         }
@@ -222,15 +263,36 @@ public final class IndexArgs extends com.pulumi.resources.ResourceArgs {
             return topicId(Output.of(topicId));
         }
 
+        /**
+         * @param userInnerKeyValues Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userInnerKeyValues(@Nullable Output<List<IndexUserInnerKeyValueArgs>> userInnerKeyValues) {
             $.userInnerKeyValues = userInnerKeyValues;
             return this;
         }
 
+        /**
+         * @param userInnerKeyValues Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userInnerKeyValues(List<IndexUserInnerKeyValueArgs> userInnerKeyValues) {
             return userInnerKeyValues(Output.of(userInnerKeyValues));
         }
 
+        /**
+         * @param userInnerKeyValues Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder userInnerKeyValues(IndexUserInnerKeyValueArgs... userInnerKeyValues) {
             return userInnerKeyValues(List.of(userInnerKeyValues));
         }

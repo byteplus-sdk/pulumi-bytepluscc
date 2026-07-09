@@ -24,9 +24,19 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     public static final UserState Empty = new UserState();
 
+    /**
+     * Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="accessKeys")
     private @Nullable Output<List<UserAccessKeyArgs>> accessKeys;
 
+    /**
+     * @return Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UserAccessKeyArgs>>> accessKeys() {
         return Optional.ofNullable(this.accessKeys);
     }
@@ -181,9 +191,19 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.mobilePhoneIsVerify);
     }
 
+    /**
+     * Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="policies")
     private @Nullable Output<List<UserPolicyArgs>> policies;
 
+    /**
+     * @return Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UserPolicyArgs>>> policies() {
         return Optional.ofNullable(this.policies);
     }
@@ -203,9 +223,19 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.securityConfig);
     }
 
+    /**
+     * Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="tags")
     private @Nullable Output<List<UserTagArgs>> tags;
 
+    /**
+     * @return Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<UserTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -311,15 +341,36 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
             $ = new UserState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessKeys Sub-user&#39;s access key.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeys(@Nullable Output<List<UserAccessKeyArgs>> accessKeys) {
             $.accessKeys = accessKeys;
             return this;
         }
 
+        /**
+         * @param accessKeys Sub-user&#39;s access key.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeys(List<UserAccessKeyArgs> accessKeys) {
             return accessKeys(Output.of(accessKeys));
         }
 
+        /**
+         * @param accessKeys Sub-user&#39;s access key.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder accessKeys(UserAccessKeyArgs... accessKeys) {
             return accessKeys(List.of(accessKeys));
         }
@@ -544,15 +595,36 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
             return mobilePhoneIsVerify(Output.of(mobilePhoneIsVerify));
         }
 
+        /**
+         * @param policies Sub-user&#39;s permission policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policies(@Nullable Output<List<UserPolicyArgs>> policies) {
             $.policies = policies;
             return this;
         }
 
+        /**
+         * @param policies Sub-user&#39;s permission policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policies(List<UserPolicyArgs> policies) {
             return policies(Output.of(policies));
         }
 
+        /**
+         * @param policies Sub-user&#39;s permission policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder policies(UserPolicyArgs... policies) {
             return policies(List.of(policies));
         }
@@ -578,15 +650,36 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
             return securityConfig(Output.of(securityConfig));
         }
 
+        /**
+         * @param tags Sub-user&#39;s resource tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(@Nullable Output<List<UserTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Sub-user&#39;s resource tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(List<UserTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Sub-user&#39;s resource tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder tags(UserTagArgs... tags) {
             return tags(List.of(tags));
         }

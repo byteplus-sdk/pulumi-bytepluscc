@@ -18,9 +18,19 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     public static final DeploymentSetState Empty = new DeploymentSetState();
 
+    /**
+     * Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="capacities")
     private @Nullable Output<List<DeploymentSetCapacityArgs>> capacities;
 
+    /**
+     * @return Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DeploymentSetCapacityArgs>>> capacities() {
         return Optional.ofNullable(this.capacities);
     }
@@ -209,15 +219,36 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
             $ = new DeploymentSetState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param capacities Instance launch template version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacities(@Nullable Output<List<DeploymentSetCapacityArgs>> capacities) {
             $.capacities = capacities;
             return this;
         }
 
+        /**
+         * @param capacities Instance launch template version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacities(List<DeploymentSetCapacityArgs> capacities) {
             return capacities(Output.of(capacities));
         }
 
+        /**
+         * @param capacities Instance launch template version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder capacities(DeploymentSetCapacityArgs... capacities) {
             return capacities(List.of(capacities));
         }

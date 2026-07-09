@@ -21,6 +21,52 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cen.ServiceRouteEntry;
+ * import com.byteplus.bytepluscc.cen.ServiceRouteEntryArgs;
+ * import com.pulumi.bytepluscc.cen.inputs.ServiceRouteEntryPublishToInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var cENServiceRouteEntryDemo = new ServiceRouteEntry("cENServiceRouteEntryDemo", ServiceRouteEntryArgs.builder()
+ *             .cenId("cen-2v73nw1h8a03k6x7exxxxxx")
+ *             .destinationCidrBlock("100.x.0.0/11")
+ *             .serviceVpcId("vpc-iirjlwem73eo74o8cxxxxx")
+ *             .description("ccapi-test")
+ *             .publishMode("Custom")
+ *             .publishToInstances(            
+ *                 ServiceRouteEntryPublishToInstanceArgs.builder()
+ *                     .instance_region_id("cn-hongkong")
+ *                     .instance_type("VPC")
+ *                     .instance_id("vpc-2uzvkdpoof7cw17q7y2xxxxx")
+ *                     .build(),
+ *                 ServiceRouteEntryPublishToInstanceArgs.builder()
+ *                     .instance_region_id("cn-shanghai")
+ *                     .instance_type("VPC")
+ *                     .instance_id("vpc-33glll2z1gem86k70bxxxxx")
+ *                     .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -102,9 +148,19 @@ public class ServiceRouteEntry extends com.pulumi.resources.CustomResource {
     public Output<String> publishMode() {
         return this.publishMode;
     }
+    /**
+     * List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="publishToInstances", refs={List.class,ServiceRouteEntryPublishToInstance.class}, tree="[0,1]")
     private Output<List<ServiceRouteEntryPublishToInstance>> publishToInstances;
 
+    /**
+     * @return List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<ServiceRouteEntryPublishToInstance>> publishToInstances() {
         return this.publishToInstances;
     }

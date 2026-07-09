@@ -49,9 +49,19 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.actionValue);
     }
 
+    /**
+     * Attribute extractor list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="extractors")
     private @Nullable Output<List<ServiceRouteApiSpecExtractorArgs>> extractors;
 
+    /**
+     * @return Attribute extractor list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceRouteApiSpecExtractorArgs>>> extractors() {
         return Optional.ofNullable(this.extractors);
     }
@@ -86,9 +96,19 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.identifierValue);
     }
 
+    /**
+     * Response filter list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="responseFilters")
     private @Nullable Output<List<ServiceRouteApiSpecResponseFilterArgs>> responseFilters;
 
+    /**
+     * @return Response filter list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<ServiceRouteApiSpecResponseFilterArgs>>> responseFilters() {
         return Optional.ofNullable(this.responseFilters);
     }
@@ -164,15 +184,36 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
             return actionValue(Output.of(actionValue));
         }
 
+        /**
+         * @param extractors Attribute extractor list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractors(@Nullable Output<List<ServiceRouteApiSpecExtractorArgs>> extractors) {
             $.extractors = extractors;
             return this;
         }
 
+        /**
+         * @param extractors Attribute extractor list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractors(List<ServiceRouteApiSpecExtractorArgs> extractors) {
             return extractors(Output.of(extractors));
         }
 
+        /**
+         * @param extractors Attribute extractor list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder extractors(ServiceRouteApiSpecExtractorArgs... extractors) {
             return extractors(List.of(extractors));
         }
@@ -219,15 +260,36 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
             return identifierValue(Output.of(identifierValue));
         }
 
+        /**
+         * @param responseFilters Response filter list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseFilters(@Nullable Output<List<ServiceRouteApiSpecResponseFilterArgs>> responseFilters) {
             $.responseFilters = responseFilters;
             return this;
         }
 
+        /**
+         * @param responseFilters Response filter list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseFilters(List<ServiceRouteApiSpecResponseFilterArgs> responseFilters) {
             return responseFilters(Output.of(responseFilters));
         }
 
+        /**
+         * @param responseFilters Response filter list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder responseFilters(ServiceRouteApiSpecResponseFilterArgs... responseFilters) {
             return responseFilters(List.of(responseFilters));
         }

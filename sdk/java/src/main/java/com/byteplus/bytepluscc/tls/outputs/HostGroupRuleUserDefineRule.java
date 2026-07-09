@@ -39,6 +39,11 @@ public final class HostGroupRuleUserDefineRule {
      * 
      */
     private @Nullable Boolean enableRawLog;
+    /**
+     * @return Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     private @Nullable List<HostGroupRuleUserDefineRuleField> fields;
     /**
      * @return Field name used to store machine group label information.
@@ -120,6 +125,11 @@ public final class HostGroupRuleUserDefineRule {
     public Optional<Boolean> enableRawLog() {
         return Optional.ofNullable(this.enableRawLog);
     }
+    /**
+     * @return Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public List<HostGroupRuleUserDefineRuleField> fields() {
         return this.fields == null ? List.of() : this.fields;
     }

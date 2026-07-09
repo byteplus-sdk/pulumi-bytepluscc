@@ -31,8 +31,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.ecs.DeploymentSet;
  * import com.byteplus.bytepluscc.ecs.DeploymentSetArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -68,9 +68,19 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="bytepluscc:ecs/deploymentSet:DeploymentSet")
 public class DeploymentSet extends com.pulumi.resources.CustomResource {
+    /**
+     * Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="capacities", refs={List.class,DeploymentSetCapacity.class}, tree="[0,1]")
     private Output<List<DeploymentSetCapacity>> capacities;
 
+    /**
+     * @return Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<DeploymentSetCapacity>> capacities() {
         return this.capacities;
     }

@@ -17,9 +17,19 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
 
     public static final DomainCustomErrorPageArgs Empty = new DomainCustomErrorPageArgs();
 
+    /**
+     * Indicates a set of configuration rules. You can add up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Import(name="errorPageRules")
     private @Nullable Output<List<DomainCustomErrorPageErrorPageRuleArgs>> errorPageRules;
 
+    /**
+     * @return Indicates a set of configuration rules. You can add up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Optional<Output<List<DomainCustomErrorPageErrorPageRuleArgs>>> errorPageRules() {
         return Optional.ofNullable(this.errorPageRules);
     }
@@ -64,15 +74,36 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
             $ = new DomainCustomErrorPageArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param errorPageRules Indicates a set of configuration rules. You can add up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errorPageRules(@Nullable Output<List<DomainCustomErrorPageErrorPageRuleArgs>> errorPageRules) {
             $.errorPageRules = errorPageRules;
             return this;
         }
 
+        /**
+         * @param errorPageRules Indicates a set of configuration rules. You can add up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errorPageRules(List<DomainCustomErrorPageErrorPageRuleArgs> errorPageRules) {
             return errorPageRules(Output.of(errorPageRules));
         }
 
+        /**
+         * @param errorPageRules Indicates a set of configuration rules. You can add up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
         public Builder errorPageRules(DomainCustomErrorPageErrorPageRuleArgs... errorPageRules) {
             return errorPageRules(List.of(errorPageRules));
         }

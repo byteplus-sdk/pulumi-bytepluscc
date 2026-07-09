@@ -36,8 +36,8 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.cr.RegistryArgs;
  * import com.pulumi.bytepluscc.cr.inputs.RegistryEndpointArgs;
  * import com.pulumi.bytepluscc.cr.inputs.RegistryTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
@@ -217,9 +217,19 @@ public class Registry extends com.pulumi.resources.CustomResource {
     public Output<RegistryStatus> status() {
         return this.status;
     }
+    /**
+     * Instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     @Export(name="tags", refs={List.class,RegistryTag.class}, tree="[0,1]")
     private Output<List<RegistryTag>> tags;
 
+    /**
+     * @return Instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
     public Output<List<RegistryTag>> tags() {
         return this.tags;
     }
