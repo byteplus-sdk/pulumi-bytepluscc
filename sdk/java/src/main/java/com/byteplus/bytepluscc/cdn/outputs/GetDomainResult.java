@@ -56,734 +56,734 @@ import java.util.Objects;
 public final class GetDomainResult {
     /**
      * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainAreaAccessRule areaAccessRule;
     /**
      * @return Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
-     *
+     * 
      */
     private List<String> backupOrigins;
     /**
      * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
-     *
+     * 
      */
     private List<GetDomainBrowserCache> browserCaches;
     /**
      * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainCacheHost cacheHost;
     /**
      * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
-     *
+     * 
      */
     private List<GetDomainCacheKey> cacheKeys;
     /**
      * @return Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
-     *
+     * 
      */
     private String cacheShared;
     /**
      * @return If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
-     *
+     * 
      */
     private String cacheSharedTargetHost;
     /**
      * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
-     *
+     * 
      */
     private List<GetDomainCache> caches;
     /**
      * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
-     *
+     * 
      */
     private String cname;
     /**
      * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainCompression compression;
     /**
      * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-     *
+     * 
      */
     private GetDomainConditionalOrigin conditionalOrigin;
     /**
      * @return Indicates the creation time of this accelerated domain name, in Unix timestamp format.
-     *
+     * 
      */
     private Integer createdTime;
     /**
      * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainCustomErrorPage customErrorPage;
     /**
      * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainCustomizeAccessRule customizeAccessRule;
     /**
      * @return Indicates the acceleration domain name.
-     *
+     * 
      */
     private String domain;
     /**
      * @return Indicates the lock status of this domain name.
-     *
+     * 
      */
     private GetDomainDomainLock domainLock;
     /**
      * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainDownloadSpeedLimit downloadSpeedLimit;
     /**
      * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-     *
+     * 
      */
     private Boolean followRedirect;
     /**
      * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainHttpForcedRedirect httpForcedRedirect;
     /**
      * @return Indicates the HTTPS configuration module. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainHttps https;
     /**
      * @return Indicates the configuration module for the IPv6 feature.
-     *
+     * 
      */
     private GetDomainIPv6 iPv6;
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     private String id;
     /**
      * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-     *
+     * 
      */
     private GetDomainIpAccessRule ipAccessRule;
     /**
      * @return Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
-     *
+     * 
      */
     private Boolean isConflictDomain;
     /**
      * @return Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
-     *
+     * 
      */
     private String lockStatus;
     /**
      * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainMethodDeniedRule methodDeniedRule;
     /**
      * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
-     *
+     * 
      */
     private GetDomainMultiRange multiRange;
     /**
      * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
-     *
+     * 
      */
     private List<GetDomainNegativeCache> negativeCaches;
     /**
      * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
-     *
+     * 
      */
     private GetDomainOfflineCache offlineCache;
     /**
      * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainOriginAccessRule originAccessRule;
     /**
      * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
-     *
+     * 
      */
     private List<GetDomainOriginArg> originArgs;
     /**
      * @return Origin certificate validation
-     *
+     * 
      */
     private GetDomainOriginCertCheck originCertCheck;
     /**
      * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-     *
+     * 
      */
     private String originHost;
     /**
      * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-     *
+     * 
      */
     private String originIPv6;
     /**
      * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-     *
+     * 
      */
     private String originProtocol;
     /**
      * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     *
+     * 
      */
     private Boolean originRange;
     /**
      * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-     *
+     * 
      */
     private GetDomainOriginRetry originRetry;
     /**
      * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-     *
+     * 
      */
     private GetDomainOriginRewrite originRewrite;
     /**
      * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
-     *
+     * 
      */
     private GetDomainOriginSni originSni;
     /**
      * @return Indicates the basic origin configuration module.
-     *
+     * 
      */
     private List<GetDomainOrigin> origins;
     /**
      * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
-     *
+     * 
      */
     private GetDomainPageOptimization pageOptimization;
     /**
      * @return Indicates the list of primary origin servers configured for this domain name.
-     *
+     * 
      */
     private List<String> primaryOrigins;
     /**
      * @return Indicates the project to which the acceleration domain belongs
-     *
+     * 
      */
     private String project;
     /**
      * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainQuic quic;
     /**
      * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainRedirectionRewrite redirectionRewrite;
     /**
      * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainRefererAccessRule refererAccessRule;
     /**
      * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainRemoteAuth remoteAuth;
     /**
      * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     private GetDomainRequestBlockRule requestBlockRule;
     /**
      * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private List<GetDomainRequestHeader> requestHeaders;
     /**
      * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private List<GetDomainResponseHeader> responseHeaders;
     /**
      * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainRewriteHls rewriteHls;
     /**
      * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-     *
+     * 
      */
     private String serviceRegion;
     /**
      * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-     *
+     * 
      */
     private String serviceType;
     /**
      * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     private GetDomainSignedUrlAuth signedUrlAuth;
     /**
      * @return Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
-     *
+     * 
      */
     private String status;
     /**
      * @return Tag information
-     *
+     * 
      */
     private List<GetDomainTag> tags;
     /**
      * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainTimeout timeout;
     /**
      * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainUaAccessRule uaAccessRule;
     /**
      * @return Indicates the most recent update time for this domain configuration, in Unix timestamp format.
-     *
+     * 
      */
     private Integer updatedTime;
     /**
      * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainUrlNormalize urlNormalize;
     /**
      * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     private GetDomainVideoDrag videoDrag;
 
     private GetDomainResult() {}
     /**
      * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainAreaAccessRule areaAccessRule() {
         return this.areaAccessRule;
     }
     /**
      * @return Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
-     *
+     * 
      */
     public List<String> backupOrigins() {
         return this.backupOrigins;
     }
     /**
      * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
-     *
+     * 
      */
     public List<GetDomainBrowserCache> browserCaches() {
         return this.browserCaches;
     }
     /**
      * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainCacheHost cacheHost() {
         return this.cacheHost;
     }
     /**
      * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
-     *
+     * 
      */
     public List<GetDomainCacheKey> cacheKeys() {
         return this.cacheKeys;
     }
     /**
      * @return Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
-     *
+     * 
      */
     public String cacheShared() {
         return this.cacheShared;
     }
     /**
      * @return If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
-     *
+     * 
      */
     public String cacheSharedTargetHost() {
         return this.cacheSharedTargetHost;
     }
     /**
      * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
-     *
+     * 
      */
     public List<GetDomainCache> caches() {
         return this.caches;
     }
     /**
      * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
-     *
+     * 
      */
     public String cname() {
         return this.cname;
     }
     /**
      * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainCompression compression() {
         return this.compression;
     }
     /**
      * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-     *
+     * 
      */
     public GetDomainConditionalOrigin conditionalOrigin() {
         return this.conditionalOrigin;
     }
     /**
      * @return Indicates the creation time of this accelerated domain name, in Unix timestamp format.
-     *
+     * 
      */
     public Integer createdTime() {
         return this.createdTime;
     }
     /**
      * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainCustomErrorPage customErrorPage() {
         return this.customErrorPage;
     }
     /**
      * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainCustomizeAccessRule customizeAccessRule() {
         return this.customizeAccessRule;
     }
     /**
      * @return Indicates the acceleration domain name.
-     *
+     * 
      */
     public String domain() {
         return this.domain;
     }
     /**
      * @return Indicates the lock status of this domain name.
-     *
+     * 
      */
     public GetDomainDomainLock domainLock() {
         return this.domainLock;
     }
     /**
      * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainDownloadSpeedLimit downloadSpeedLimit() {
         return this.downloadSpeedLimit;
     }
     /**
      * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-     *
+     * 
      */
     public Boolean followRedirect() {
         return this.followRedirect;
     }
     /**
      * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainHttpForcedRedirect httpForcedRedirect() {
         return this.httpForcedRedirect;
     }
     /**
      * @return Indicates the HTTPS configuration module. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainHttps https() {
         return this.https;
     }
     /**
      * @return Indicates the configuration module for the IPv6 feature.
-     *
+     * 
      */
     public GetDomainIPv6 iPv6() {
         return this.iPv6;
     }
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     public String id() {
         return this.id;
     }
     /**
      * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-     *
+     * 
      */
     public GetDomainIpAccessRule ipAccessRule() {
         return this.ipAccessRule;
     }
     /**
      * @return Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
-     *
+     * 
      */
     public Boolean isConflictDomain() {
         return this.isConflictDomain;
     }
     /**
      * @return Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
-     *
+     * 
      */
     public String lockStatus() {
         return this.lockStatus;
     }
     /**
      * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainMethodDeniedRule methodDeniedRule() {
         return this.methodDeniedRule;
     }
     /**
      * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
-     *
+     * 
      */
     public GetDomainMultiRange multiRange() {
         return this.multiRange;
     }
     /**
      * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
-     *
+     * 
      */
     public List<GetDomainNegativeCache> negativeCaches() {
         return this.negativeCaches;
     }
     /**
      * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
-     *
+     * 
      */
     public GetDomainOfflineCache offlineCache() {
         return this.offlineCache;
     }
     /**
      * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainOriginAccessRule originAccessRule() {
         return this.originAccessRule;
     }
     /**
      * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
-     *
+     * 
      */
     public List<GetDomainOriginArg> originArgs() {
         return this.originArgs;
     }
     /**
      * @return Origin certificate validation
-     *
+     * 
      */
     public GetDomainOriginCertCheck originCertCheck() {
         return this.originCertCheck;
     }
     /**
      * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-     *
+     * 
      */
     public String originHost() {
         return this.originHost;
     }
     /**
      * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-     *
+     * 
      */
     public String originIPv6() {
         return this.originIPv6;
     }
     /**
      * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-     *
+     * 
      */
     public String originProtocol() {
         return this.originProtocol;
     }
     /**
      * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     *
+     * 
      */
     public Boolean originRange() {
         return this.originRange;
     }
     /**
      * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-     *
+     * 
      */
     public GetDomainOriginRetry originRetry() {
         return this.originRetry;
     }
     /**
      * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-     *
+     * 
      */
     public GetDomainOriginRewrite originRewrite() {
         return this.originRewrite;
     }
     /**
      * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
-     *
+     * 
      */
     public GetDomainOriginSni originSni() {
         return this.originSni;
     }
     /**
      * @return Indicates the basic origin configuration module.
-     *
+     * 
      */
     public List<GetDomainOrigin> origins() {
         return this.origins;
     }
     /**
      * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
-     *
+     * 
      */
     public GetDomainPageOptimization pageOptimization() {
         return this.pageOptimization;
     }
     /**
      * @return Indicates the list of primary origin servers configured for this domain name.
-     *
+     * 
      */
     public List<String> primaryOrigins() {
         return this.primaryOrigins;
     }
     /**
      * @return Indicates the project to which the acceleration domain belongs
-     *
+     * 
      */
     public String project() {
         return this.project;
     }
     /**
      * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainQuic quic() {
         return this.quic;
     }
     /**
      * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainRedirectionRewrite redirectionRewrite() {
         return this.redirectionRewrite;
     }
     /**
      * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainRefererAccessRule refererAccessRule() {
         return this.refererAccessRule;
     }
     /**
      * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainRemoteAuth remoteAuth() {
         return this.remoteAuth;
     }
     /**
      * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     public GetDomainRequestBlockRule requestBlockRule() {
         return this.requestBlockRule;
     }
     /**
      * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public List<GetDomainRequestHeader> requestHeaders() {
         return this.requestHeaders;
     }
     /**
      * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public List<GetDomainResponseHeader> responseHeaders() {
         return this.responseHeaders;
     }
     /**
      * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainRewriteHls rewriteHls() {
         return this.rewriteHls;
     }
     /**
      * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-     *
+     * 
      */
     public String serviceRegion() {
         return this.serviceRegion;
     }
     /**
      * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-     *
+     * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
      * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     public GetDomainSignedUrlAuth signedUrlAuth() {
         return this.signedUrlAuth;
     }
     /**
      * @return Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
-     *
+     * 
      */
     public String status() {
         return this.status;
     }
     /**
      * @return Tag information
-     *
+     * 
      */
     public List<GetDomainTag> tags() {
         return this.tags;
     }
     /**
      * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainTimeout timeout() {
         return this.timeout;
     }
     /**
      * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainUaAccessRule uaAccessRule() {
         return this.uaAccessRule;
     }
     /**
      * @return Indicates the most recent update time for this domain configuration, in Unix timestamp format.
-     *
+     * 
      */
     public Integer updatedTime() {
         return this.updatedTime;
     }
     /**
      * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainUrlNormalize urlNormalize() {
         return this.urlNormalize;
     }
     /**
      * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public GetDomainVideoDrag videoDrag() {
         return this.videoDrag;

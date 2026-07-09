@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Add a route entry to the VPN gateway.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,38 +36,38 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vpnGatewayRouteDemo = new VpnGatewayRoute("vpnGatewayRouteDemo", VpnGatewayRouteArgs.builder()
  *             .destinationCidrBlock("192.168.0.0/25")
  *             .nextHopId("vgc-****")
  *             .vpnGatewayId("vgw-****")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute example &#34;vpn_gateway_route_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute")
 public class VpnGatewayRoute extends com.pulumi.resources.CustomResource {
     /**
      * AS path information traversed by the BGP route entry.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="asPaths", refs={List.class,VpnGatewayRouteAsPath.class}, tree="[0,1]")
     private Output<List<VpnGatewayRouteAsPath>> asPaths;
@@ -75,133 +75,133 @@ public class VpnGatewayRoute extends com.pulumi.resources.CustomResource {
     /**
      * @return AS path information traversed by the BGP route entry.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpnGatewayRouteAsPath>> asPaths() {
         return this.asPaths;
     }
     /**
      * Time when the VPN gateway route entry was created.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the VPN gateway route entry was created.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Destination network segment of the VPN gateway route entry.
-     *
+     * 
      */
     @Export(name="destinationCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> destinationCidrBlock;
 
     /**
      * @return Destination network segment of the VPN gateway route entry.
-     *
+     * 
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
      * ID of the IPsec connection for the route&#39;s next hop. You can call DescribeVpnConnections to query the IPsec connection ID.
-     *
+     * 
      */
     @Export(name="nextHopId", refs={String.class}, tree="[0]")
     private Output<String> nextHopId;
 
     /**
      * @return ID of the IPsec connection for the route&#39;s next hop. You can call DescribeVpnConnections to query the IPsec connection ID.
-     *
+     * 
      */
     public Output<String> nextHopId() {
         return this.nextHopId;
     }
     /**
      * Next hop tunnel ID. This parameter is returned only for VPN gateways in dual-tunnel mode.
-     *
+     * 
      */
     @Export(name="nextTunnelId", refs={String.class}, tree="[0]")
     private Output<String> nextTunnelId;
 
     /**
      * @return Next hop tunnel ID. This parameter is returned only for VPN gateways in dual-tunnel mode.
-     *
+     * 
      */
     public Output<String> nextTunnelId() {
         return this.nextTunnelId;
     }
     /**
      * Route type. Static: static route; BGP: BGP route; Cloud: VPC route in the cloud. Note: Route types synchronized from transit routers (TR) are not currently supported for display.
-     *
+     * 
      */
     @Export(name="routeType", refs={String.class}, tree="[0]")
     private Output<String> routeType;
 
     /**
      * @return Route type. Static: static route; BGP: BGP route; Cloud: VPC route in the cloud. Note: Route types synchronized from transit routers (TR) are not currently supported for display.
-     *
+     * 
      */
     public Output<String> routeType() {
         return this.routeType;
     }
     /**
      * Status of the VPN gateway route entry. Creating: being created; Deleting: being deleted; Pending: being configured; Available: preferred route in effect; Conflicted: not preferred or not in effect. Note: When route prefixes are the same, the route priority is Cloud &gt; Static route &gt; BGP route. Therefore, there may be multiple routes with the same prefix, some with status Available and others with status Conflicted.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the VPN gateway route entry. Creating: being created; Deleting: being deleted; Pending: being configured; Available: preferred route in effect; Conflicted: not preferred or not in effect. Note: When route prefixes are the same, the route priority is Cloud &gt; Static route &gt; BGP route. Therefore, there may be multiple routes with the same prefix, some with status Available and others with status Conflicted.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Time when the VPN gateway route entry was modified.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the VPN gateway route entry was modified.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the VPN gateway for the route entry to be added.
-     *
+     * 
      */
     @Export(name="vpnGatewayId", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayId;
 
     /**
      * @return ID of the VPN gateway for the route entry to be added.
-     *
+     * 
      */
     public Output<String> vpnGatewayId() {
         return this.vpnGatewayId;
     }
     /**
      * ID of the VPN gateway route entry.
-     *
+     * 
      */
     @Export(name="vpnGatewayRouteId", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayRouteId;
 
     /**
      * @return ID of the VPN gateway route entry.
-     *
+     * 
      */
     public Output<String> vpnGatewayRouteId() {
         return this.vpnGatewayRouteId;

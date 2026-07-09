@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
 {
     /// <summary>
     /// NAT border firewall access control policy.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Fwcenter.NatFireWallControlPolicy("Example", new()
     ///     {
@@ -49,12 +49,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     ///         EndTime = 1782921540,
     ///         Status = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy example "nat_firewall_id|direction|rule_id"
     /// ```

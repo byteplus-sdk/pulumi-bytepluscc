@@ -19,14 +19,14 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
 
     /**
      * ServerGroupStickySession
-     *
+     * 
      */
     @Import(name="serverGroupStickySession")
     private @Nullable Output<RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs> serverGroupStickySession;
 
     /**
      * @return ServerGroupStickySession
-     *
+     * 
      */
     public Optional<Output<RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs>> serverGroupStickySession() {
         return Optional.ofNullable(this.serverGroupStickySession);
@@ -35,7 +35,7 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
     /**
      * ServerGroupTuples
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="serverGroupTuples")
     private @Nullable Output<List<RuleRuleActionForwardGroupConfigServerGroupTupleArgs>> serverGroupTuples;
@@ -43,7 +43,7 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
     /**
      * @return ServerGroupTuples
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleRuleActionForwardGroupConfigServerGroupTupleArgs>>> serverGroupTuples() {
         return Optional.ofNullable(this.serverGroupTuples);
@@ -76,9 +76,9 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
 
         /**
          * @param serverGroupStickySession ServerGroupStickySession
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupStickySession(@Nullable Output<RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs> serverGroupStickySession) {
             $.serverGroupStickySession = serverGroupStickySession;
@@ -87,9 +87,9 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
 
         /**
          * @param serverGroupStickySession ServerGroupStickySession
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupStickySession(RuleRuleActionForwardGroupConfigServerGroupStickySessionArgs serverGroupStickySession) {
             return serverGroupStickySession(Output.of(serverGroupStickySession));
@@ -98,9 +98,9 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
         /**
          * @param serverGroupTuples ServerGroupTuples
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupTuples(@Nullable Output<List<RuleRuleActionForwardGroupConfigServerGroupTupleArgs>> serverGroupTuples) {
             $.serverGroupTuples = serverGroupTuples;
@@ -110,9 +110,9 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
         /**
          * @param serverGroupTuples ServerGroupTuples
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupTuples(List<RuleRuleActionForwardGroupConfigServerGroupTupleArgs> serverGroupTuples) {
             return serverGroupTuples(Output.of(serverGroupTuples));
@@ -121,9 +121,9 @@ public final class RuleRuleActionForwardGroupConfigArgs extends com.pulumi.resou
         /**
          * @param serverGroupTuples ServerGroupTuples
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupTuples(RuleRuleActionForwardGroupConfigServerGroupTupleArgs... serverGroupTuples) {
             return serverGroupTuples(List.of(serverGroupTuples));

@@ -20,14 +20,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
-     *
+     * 
      */
     @Import(name="allowList")
     private @Nullable Output<String> allowList;
 
     /**
      * @return IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
-     *
+     * 
      */
     public Optional<Output<String>> allowList() {
         return Optional.ofNullable(this.allowList);
@@ -35,14 +35,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist description.
-     *
+     * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
      * @return Allowlist description.
-     *
+     * 
      */
     public Optional<Output<String>> allowListDesc() {
         return Optional.ofNullable(this.allowListDesc);
@@ -50,14 +50,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist name.
-     *
+     * 
      */
     @Import(name="allowListName", required=true)
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name.
-     *
+     * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
@@ -65,14 +65,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type in the allowlist. Only IPv4 is currently supported.
-     *
+     * 
      */
     @Import(name="allowListType")
     private @Nullable Output<String> allowListType;
 
     /**
      * @return IP address type in the allowlist. Only IPv4 is currently supported.
-     *
+     * 
      */
     public Optional<Output<String>> allowListType() {
         return Optional.ofNullable(this.allowListType);
@@ -81,7 +81,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of bound instances.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="associatedInstances")
     private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
@@ -89,7 +89,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of bound instances.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
         return Optional.ofNullable(this.associatedInstances);
@@ -97,14 +97,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-     *
+     * 
      */
     @Import(name="modifyMode")
     private @Nullable Output<String> modifyMode;
 
     /**
      * @return How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-     *
+     * 
      */
     public Optional<Output<String>> modifyMode() {
         return Optional.ofNullable(this.modifyMode);
@@ -112,14 +112,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -157,9 +157,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowList(@Nullable Output<String> allowList) {
             $.allowList = allowList;
@@ -168,9 +168,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowList(String allowList) {
             return allowList(Output.of(allowList));
@@ -178,9 +178,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListDesc(@Nullable Output<String> allowListDesc) {
             $.allowListDesc = allowListDesc;
@@ -189,9 +189,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListDesc(String allowListDesc) {
             return allowListDesc(Output.of(allowListDesc));
@@ -199,9 +199,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListName(Output<String> allowListName) {
             $.allowListName = allowListName;
@@ -210,9 +210,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListName(String allowListName) {
             return allowListName(Output.of(allowListName));
@@ -220,9 +220,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListType IP address type in the allowlist. Only IPv4 is currently supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListType(@Nullable Output<String> allowListType) {
             $.allowListType = allowListType;
@@ -231,9 +231,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListType IP address type in the allowlist. Only IPv4 is currently supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListType(String allowListType) {
             return allowListType(Output.of(allowListType));
@@ -242,9 +242,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances List of bound instances.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
             $.associatedInstances = associatedInstances;
@@ -254,9 +254,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances List of bound instances.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
             return associatedInstances(Output.of(associatedInstances));
@@ -265,9 +265,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances List of bound instances.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
             return associatedInstances(List.of(associatedInstances));
@@ -275,9 +275,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyMode How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyMode(@Nullable Output<String> modifyMode) {
             $.modifyMode = modifyMode;
@@ -286,9 +286,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyMode How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyMode(String modifyMode) {
             return modifyMode(Output.of(modifyMode));
@@ -296,9 +296,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -307,9 +307,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));

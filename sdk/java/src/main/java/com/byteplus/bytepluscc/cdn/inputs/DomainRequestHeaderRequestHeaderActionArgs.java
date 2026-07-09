@@ -19,7 +19,7 @@ public final class DomainRequestHeaderRequestHeaderActionArgs extends com.pulumi
     /**
      * Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="requestHeaderInstances")
     private @Nullable Output<List<DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs>> requestHeaderInstances;
@@ -27,7 +27,7 @@ public final class DomainRequestHeaderRequestHeaderActionArgs extends com.pulumi
     /**
      * @return Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs>>> requestHeaderInstances() {
         return Optional.ofNullable(this.requestHeaderInstances);
@@ -60,9 +60,9 @@ public final class DomainRequestHeaderRequestHeaderActionArgs extends com.pulumi
         /**
          * @param requestHeaderInstances Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestHeaderInstances(@Nullable Output<List<DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs>> requestHeaderInstances) {
             $.requestHeaderInstances = requestHeaderInstances;
@@ -72,9 +72,9 @@ public final class DomainRequestHeaderRequestHeaderActionArgs extends com.pulumi
         /**
          * @param requestHeaderInstances Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestHeaderInstances(List<DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs> requestHeaderInstances) {
             return requestHeaderInstances(Output.of(requestHeaderInstances));
@@ -83,9 +83,9 @@ public final class DomainRequestHeaderRequestHeaderActionArgs extends com.pulumi
         /**
          * @param requestHeaderInstances Indicates a list of configuration rules for request headers. Each rule includes settings for header-related operations. You can add up to 50 rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestHeaderInstances(DomainRequestHeaderRequestHeaderActionRequestHeaderInstanceArgs... requestHeaderInstances) {
             return requestHeaderInstances(List.of(requestHeaderInstances));

@@ -22,14 +22,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the account to which the subnet belongs
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return ID of the account to which the subnet belongs
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -37,14 +37,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of available IP addresses in the subnet
-     *
+     * 
      */
     @Import(name="availableIpAddressCount")
     private @Nullable Output<Integer> availableIpAddressCount;
 
     /**
      * @return Number of available IP addresses in the subnet
-     *
+     * 
      */
     public Optional<Output<Integer>> availableIpAddressCount() {
         return Optional.ofNullable(this.availableIpAddressCount);
@@ -52,14 +52,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet IPv4 CIDR block
-     *
+     * 
      */
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
      * @return Subnet IPv4 CIDR block
-     *
+     * 
      */
     public Optional<Output<String>> cidrBlock() {
         return Optional.ofNullable(this.cidrBlock);
@@ -67,14 +67,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Subnet creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -82,14 +82,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -97,14 +97,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-     *
+     * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
      * @return Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableIpv6() {
         return Optional.ofNullable(this.enableIpv6);
@@ -112,14 +112,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-     *
+     * 
      */
     @Import(name="ipv6CidrBlock")
     private @Nullable Output<String> ipv6CidrBlock;
 
     /**
      * @return Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-     *
+     * 
      */
     public Optional<Output<String>> ipv6CidrBlock() {
         return Optional.ofNullable(this.ipv6CidrBlock);
@@ -127,14 +127,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
-     *
+     * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
      * @return Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
-     *
+     * 
      */
     public Optional<Output<Boolean>> isDefault() {
         return Optional.ofNullable(this.isDefault);
@@ -142,14 +142,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the network ACL associated with the subnet
-     *
+     * 
      */
     @Import(name="networkAclId")
     private @Nullable Output<String> networkAclId;
 
     /**
      * @return ID of the network ACL associated with the subnet
-     *
+     * 
      */
     public Optional<Output<String>> networkAclId() {
         return Optional.ofNullable(this.networkAclId);
@@ -157,14 +157,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project associated with the VPC instance where the subnet resides
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project associated with the VPC instance where the subnet resides
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -172,14 +172,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Read-only field, subnet IPv6 CIDR block
-     *
+     * 
      */
     @Import(name="readIpv6CidrBlock")
     private @Nullable Output<String> readIpv6CidrBlock;
 
     /**
      * @return Read-only field, subnet IPv6 CIDR block
-     *
+     * 
      */
     public Optional<Output<String>> readIpv6CidrBlock() {
         return Optional.ofNullable(this.readIpv6CidrBlock);
@@ -187,14 +187,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route table information
-     *
+     * 
      */
     @Import(name="routeTable")
     private @Nullable Output<SubnetRouteTableArgs> routeTable;
 
     /**
      * @return Route table information
-     *
+     * 
      */
     public Optional<Output<SubnetRouteTableArgs>> routeTable() {
         return Optional.ofNullable(this.routeTable);
@@ -202,14 +202,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet status. 1. Pending: Configuring. 2. Available: Available
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Subnet status. 1. Pending: Configuring. 2. Available: Available
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -217,14 +217,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the subnet whose information is to be modified
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return ID of the subnet whose information is to be modified
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -232,14 +232,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-     *
+     * 
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
      * @return Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-     *
+     * 
      */
     public Optional<Output<String>> subnetName() {
         return Optional.ofNullable(this.subnetName);
@@ -248,7 +248,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     /**
      * Subnet tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SubnetTagArgs>> tags;
@@ -256,7 +256,7 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Subnet tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SubnetTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -264,14 +264,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total number of available IPs in the subnet
-     *
+     * 
      */
     @Import(name="totalIpv4Count")
     private @Nullable Output<Integer> totalIpv4Count;
 
     /**
      * @return Total number of available IPs in the subnet
-     *
+     * 
      */
     public Optional<Output<Integer>> totalIpv4Count() {
         return Optional.ofNullable(this.totalIpv4Count);
@@ -279,14 +279,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet update time
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Subnet update time
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -294,14 +294,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the VPC to which the subnet belongs
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the subnet belongs
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -309,14 +309,14 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -367,9 +367,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId ID of the account to which the subnet belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -378,9 +378,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId ID of the account to which the subnet belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -388,9 +388,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param availableIpAddressCount Number of available IP addresses in the subnet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder availableIpAddressCount(@Nullable Output<Integer> availableIpAddressCount) {
             $.availableIpAddressCount = availableIpAddressCount;
@@ -399,9 +399,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param availableIpAddressCount Number of available IP addresses in the subnet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder availableIpAddressCount(Integer availableIpAddressCount) {
             return availableIpAddressCount(Output.of(availableIpAddressCount));
@@ -409,9 +409,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cidrBlock Subnet IPv4 CIDR block
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cidrBlock(@Nullable Output<String> cidrBlock) {
             $.cidrBlock = cidrBlock;
@@ -420,9 +420,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cidrBlock Subnet IPv4 CIDR block
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cidrBlock(String cidrBlock) {
             return cidrBlock(Output.of(cidrBlock));
@@ -430,9 +430,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Subnet creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -441,9 +441,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Subnet creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -451,9 +451,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -462,9 +462,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -472,9 +472,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableIpv6(@Nullable Output<Boolean> enableIpv6) {
             $.enableIpv6 = enableIpv6;
@@ -483,9 +483,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableIpv6(Boolean enableIpv6) {
             return enableIpv6(Output.of(enableIpv6));
@@ -493,9 +493,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6CidrBlock Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6CidrBlock(@Nullable Output<String> ipv6CidrBlock) {
             $.ipv6CidrBlock = ipv6CidrBlock;
@@ -504,9 +504,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6CidrBlock Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             return ipv6CidrBlock(Output.of(ipv6CidrBlock));
@@ -514,9 +514,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isDefault Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isDefault(@Nullable Output<Boolean> isDefault) {
             $.isDefault = isDefault;
@@ -525,9 +525,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isDefault Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isDefault(Boolean isDefault) {
             return isDefault(Output.of(isDefault));
@@ -535,9 +535,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkAclId ID of the network ACL associated with the subnet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkAclId(@Nullable Output<String> networkAclId) {
             $.networkAclId = networkAclId;
@@ -546,9 +546,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkAclId ID of the network ACL associated with the subnet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkAclId(String networkAclId) {
             return networkAclId(Output.of(networkAclId));
@@ -556,9 +556,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project associated with the VPC instance where the subnet resides
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -567,9 +567,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project associated with the VPC instance where the subnet resides
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -577,9 +577,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readIpv6CidrBlock Read-only field, subnet IPv6 CIDR block
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readIpv6CidrBlock(@Nullable Output<String> readIpv6CidrBlock) {
             $.readIpv6CidrBlock = readIpv6CidrBlock;
@@ -588,9 +588,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readIpv6CidrBlock Read-only field, subnet IPv6 CIDR block
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readIpv6CidrBlock(String readIpv6CidrBlock) {
             return readIpv6CidrBlock(Output.of(readIpv6CidrBlock));
@@ -598,9 +598,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTable Route table information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTable(@Nullable Output<SubnetRouteTableArgs> routeTable) {
             $.routeTable = routeTable;
@@ -609,9 +609,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTable Route table information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTable(SubnetRouteTableArgs routeTable) {
             return routeTable(Output.of(routeTable));
@@ -619,9 +619,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Subnet status. 1. Pending: Configuring. 2. Available: Available
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -630,9 +630,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Subnet status. 1. Pending: Configuring. 2. Available: Available
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -640,9 +640,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet whose information is to be modified
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -651,9 +651,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet whose information is to be modified
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -661,9 +661,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetName Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetName(@Nullable Output<String> subnetName) {
             $.subnetName = subnetName;
@@ -672,9 +672,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetName Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetName(String subnetName) {
             return subnetName(Output.of(subnetName));
@@ -683,9 +683,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Subnet tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SubnetTagArgs>> tags) {
             $.tags = tags;
@@ -695,9 +695,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Subnet tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SubnetTagArgs> tags) {
             return tags(Output.of(tags));
@@ -706,9 +706,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Subnet tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SubnetTagArgs... tags) {
             return tags(List.of(tags));
@@ -716,9 +716,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalIpv4Count Total number of available IPs in the subnet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder totalIpv4Count(@Nullable Output<Integer> totalIpv4Count) {
             $.totalIpv4Count = totalIpv4Count;
@@ -727,9 +727,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalIpv4Count Total number of available IPs in the subnet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder totalIpv4Count(Integer totalIpv4Count) {
             return totalIpv4Count(Output.of(totalIpv4Count));
@@ -737,9 +737,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Subnet update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -748,9 +748,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Subnet update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -758,9 +758,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the subnet belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -769,9 +769,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the subnet belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -779,9 +779,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -790,9 +790,9 @@ public final class SubnetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

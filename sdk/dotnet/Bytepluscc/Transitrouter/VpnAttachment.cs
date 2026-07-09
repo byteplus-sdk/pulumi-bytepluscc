@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// By establishing a connection between the IPsec connection of the VPN and the transit router, you can enable communication between the VPN-connected network and the private network of the transit router.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterVpnAttachmentDemo = new Bytepluscc.Transitrouter.VpnAttachment("TransitRouterVpnAttachmentDemo", new()
     ///     {
@@ -40,12 +40,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///         VpnConnectionId = "vgc-ij0yxxxxx474o8cux0n08t",
     ///         ZoneId = "cn-beijing-a",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/vpnAttachment:VpnAttachment example "transit_router_id|transit_router_attachment_id"
     /// ```

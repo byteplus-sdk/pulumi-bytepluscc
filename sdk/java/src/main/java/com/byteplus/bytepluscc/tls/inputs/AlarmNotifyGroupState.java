@@ -20,14 +20,14 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
     /**
      * Alarm notification group ID.
-     *
+     * 
      */
     @Import(name="alarmNotifyGroupId")
     private @Nullable Output<String> alarmNotifyGroupId;
 
     /**
      * @return Alarm notification group ID.
-     *
+     * 
      */
     public Optional<Output<String>> alarmNotifyGroupId() {
         return Optional.ofNullable(this.alarmNotifyGroupId);
@@ -35,14 +35,14 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
     /**
      * Alarm notification group name. Refer to the resource naming rules.
-     *
+     * 
      */
     @Import(name="alarmNotifyGroupName")
     private @Nullable Output<String> alarmNotifyGroupName;
 
     /**
      * @return Alarm notification group name. Refer to the resource naming rules.
-     *
+     * 
      */
     public Optional<Output<String>> alarmNotifyGroupName() {
         return Optional.ofNullable(this.alarmNotifyGroupName);
@@ -50,14 +50,14 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
     /**
      * Time when the alarm notification group was created.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Time when the alarm notification group was created.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -65,14 +65,14 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
     /**
      * Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-     *
+     * 
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
      * @return Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-     *
+     * 
      */
     public Optional<Output<String>> iamProjectName() {
         return Optional.ofNullable(this.iamProjectName);
@@ -81,7 +81,7 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
     /**
      * Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="noticeRules")
     private @Nullable Output<List<AlarmNotifyGroupNoticeRuleArgs>> noticeRules;
@@ -89,7 +89,7 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
     /**
      * @return Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmNotifyGroupNoticeRuleArgs>>> noticeRules() {
         return Optional.ofNullable(this.noticeRules);
@@ -97,14 +97,14 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
     /**
      * Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-     *
+     * 
      */
     @Import(name="notifyTypes")
     private @Nullable Output<List<String>> notifyTypes;
 
     /**
      * @return Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-     *
+     * 
      */
     public Optional<Output<List<String>>> notifyTypes() {
         return Optional.ofNullable(this.notifyTypes);
@@ -113,7 +113,7 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
     /**
      * IAM user list to receive alarms. You can set 1–10 IAM users.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="receivers")
     private @Nullable Output<List<AlarmNotifyGroupReceiverArgs>> receivers;
@@ -121,7 +121,7 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
     /**
      * @return IAM user list to receive alarms. You can set 1–10 IAM users.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmNotifyGroupReceiverArgs>>> receivers() {
         return Optional.ofNullable(this.receivers);
@@ -129,14 +129,14 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
     /**
      * Time when the alarm notification group was modified.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Time when the alarm notification group was modified.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -175,9 +175,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param alarmNotifyGroupId Alarm notification group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroupId(@Nullable Output<String> alarmNotifyGroupId) {
             $.alarmNotifyGroupId = alarmNotifyGroupId;
@@ -186,9 +186,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param alarmNotifyGroupId Alarm notification group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroupId(String alarmNotifyGroupId) {
             return alarmNotifyGroupId(Output.of(alarmNotifyGroupId));
@@ -196,9 +196,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param alarmNotifyGroupName Alarm notification group name. Refer to the resource naming rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroupName(@Nullable Output<String> alarmNotifyGroupName) {
             $.alarmNotifyGroupName = alarmNotifyGroupName;
@@ -207,9 +207,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param alarmNotifyGroupName Alarm notification group name. Refer to the resource naming rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroupName(String alarmNotifyGroupName) {
             return alarmNotifyGroupName(Output.of(alarmNotifyGroupName));
@@ -217,9 +217,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param createdTime Time when the alarm notification group was created.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -228,9 +228,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param createdTime Time when the alarm notification group was created.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -238,9 +238,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param iamProjectName Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iamProjectName(@Nullable Output<String> iamProjectName) {
             $.iamProjectName = iamProjectName;
@@ -249,9 +249,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param iamProjectName Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iamProjectName(String iamProjectName) {
             return iamProjectName(Output.of(iamProjectName));
@@ -260,9 +260,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
         /**
          * @param noticeRules Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder noticeRules(@Nullable Output<List<AlarmNotifyGroupNoticeRuleArgs>> noticeRules) {
             $.noticeRules = noticeRules;
@@ -272,9 +272,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
         /**
          * @param noticeRules Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder noticeRules(List<AlarmNotifyGroupNoticeRuleArgs> noticeRules) {
             return noticeRules(Output.of(noticeRules));
@@ -283,9 +283,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
         /**
          * @param noticeRules Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder noticeRules(AlarmNotifyGroupNoticeRuleArgs... noticeRules) {
             return noticeRules(List.of(noticeRules));
@@ -293,9 +293,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param notifyTypes Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder notifyTypes(@Nullable Output<List<String>> notifyTypes) {
             $.notifyTypes = notifyTypes;
@@ -304,9 +304,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param notifyTypes Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder notifyTypes(List<String> notifyTypes) {
             return notifyTypes(Output.of(notifyTypes));
@@ -314,9 +314,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param notifyTypes Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder notifyTypes(String... notifyTypes) {
             return notifyTypes(List.of(notifyTypes));
@@ -325,9 +325,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
         /**
          * @param receivers IAM user list to receive alarms. You can set 1–10 IAM users.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receivers(@Nullable Output<List<AlarmNotifyGroupReceiverArgs>> receivers) {
             $.receivers = receivers;
@@ -337,9 +337,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
         /**
          * @param receivers IAM user list to receive alarms. You can set 1–10 IAM users.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receivers(List<AlarmNotifyGroupReceiverArgs> receivers) {
             return receivers(Output.of(receivers));
@@ -348,9 +348,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
         /**
          * @param receivers IAM user list to receive alarms. You can set 1–10 IAM users.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receivers(AlarmNotifyGroupReceiverArgs... receivers) {
             return receivers(List.of(receivers));
@@ -358,9 +358,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updatedTime Time when the alarm notification group was modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -369,9 +369,9 @@ public final class AlarmNotifyGroupState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updatedTime Time when the alarm notification group was modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

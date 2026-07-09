@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * Table Database HBase Edition is a fully managed NoSQL service based on Apache HBase, compatible with the standard HBase access protocol, offering advantages such as low-cost storage and high scalability throughput.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var hBaseInstanceDemo = new Instance("hBaseInstanceDemo", InstanceArgs.builder()
  *             .regionId("cn-beijing")
@@ -74,130 +74,130 @@ import javax.annotation.Nullable;
  *             .storageType("HdfsSsd")
  *             .enableAuth(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:hbase/instance:Instance example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:hbase/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-     *
+     * 
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
      * @return Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-     *
+     * 
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
     }
     /**
      * Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
-     *
+     * 
      */
     @Export(name="chargeStatus", refs={String.class}, tree="[0]")
     private Output<String> chargeStatus;
 
     /**
      * @return Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
-     *
+     * 
      */
     public Output<String> chargeStatus() {
         return this.chargeStatus;
     }
     /**
      * Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-     *
+     * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-     *
+     * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
      * Total capacity-type storage space for the instance, in GiB.
-     *
+     * 
      */
     @Export(name="coldStorage", refs={Integer.class}, tree="[0]")
     private Output<Integer> coldStorage;
 
     /**
      * @return Total capacity-type storage space for the instance, in GiB.
-     *
+     * 
      */
     public Output<Integer> coldStorage() {
         return this.coldStorage;
     }
     /**
      * Instance creation time (UTC).
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Instance creation time (UTC).
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-     *
+     * 
      */
     @Export(name="deletionProtection", refs={String.class}, tree="[0]")
     private Output<String> deletionProtection;
 
     /**
      * @return Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-     *
+     * 
      */
     public Output<String> deletionProtection() {
         return this.deletionProtection;
     }
     /**
      * Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-     *
+     * 
      */
     @Export(name="enableAuth", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableAuth;
 
     /**
      * @return Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-     *
+     * 
      */
     public Output<Boolean> enableAuth() {
         return this.enableAuth;
     }
     /**
      * Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-     *
+     * 
      */
     @Export(name="enableCloudStorage", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableCloudStorage;
 
     /**
      * @return Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-     *
+     * 
      */
     public Output<Boolean> enableCloudStorage() {
         return this.enableCloudStorage;
@@ -205,7 +205,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Connection address information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
@@ -213,287 +213,287 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Connection address information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
     /**
      * HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-     *
+     * 
      */
     @Export(name="engineVersion", refs={String.class}, tree="[0]")
     private Output<String> engineVersion;
 
     /**
      * @return HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-     *
+     * 
      */
     public Output<String> engineVersion() {
         return this.engineVersion;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name
-     *
+     * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name
-     *
+     * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance type. Currently, only Standard is supported. The default value is Standard
-     *
+     * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Instance type. Currently, only Standard is supported. The default value is Standard
-     *
+     * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
-     *
+     * 
      */
     @Export(name="masterCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> masterCount;
 
     /**
      * @return Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
-     *
+     * 
      */
     public Output<Integer> masterCount() {
         return this.masterCount;
     }
     /**
      * Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-     *
+     * 
      */
     @Export(name="masterSpec", refs={String.class}, tree="[0]")
     private Output<String> masterSpec;
 
     /**
      * @return Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-     *
+     * 
      */
     public Output<String> masterSpec() {
         return this.masterSpec;
     }
     /**
      * Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-     *
+     * 
      */
     @Export(name="multiAz", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multiAz;
 
     /**
      * @return Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-     *
+     * 
      */
     public Output<Boolean> multiAz() {
         return this.multiAz;
     }
     /**
      * Real-time primary availability zone subnet ID.
-     *
+     * 
      */
     @Export(name="primarySubnetId", refs={String.class}, tree="[0]")
     private Output<String> primarySubnetId;
 
     /**
      * @return Real-time primary availability zone subnet ID.
-     *
+     * 
      */
     public Output<String> primarySubnetId() {
         return this.primarySubnetId;
     }
     /**
      * Real-time primary zone ID
-     *
+     * 
      */
     @Export(name="primaryZoneId", refs={String.class}, tree="[0]")
     private Output<String> primaryZoneId;
 
     /**
      * @return Real-time primary zone ID
-     *
+     * 
      */
     public Output<String> primaryZoneId() {
         return this.primaryZoneId;
     }
     /**
      * Project name of the instance
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name of the instance
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-     *
+     * 
      */
     @Export(name="purchaseMonths", refs={Integer.class}, tree="[0]")
     private Output<Integer> purchaseMonths;
 
     /**
      * @return Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-     *
+     * 
      */
     public Output<Integer> purchaseMonths() {
         return this.purchaseMonths;
     }
     /**
      * Region ID of the instance.
-     *
+     * 
      */
     @Export(name="regionId", refs={String.class}, tree="[0]")
     private Output<String> regionId;
 
     /**
      * @return Region ID of the instance.
-     *
+     * 
      */
     public Output<String> regionId() {
         return this.regionId;
     }
     /**
      * Number of RegionServer nodes
-     *
+     * 
      */
     @Export(name="rsCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> rsCount;
 
     /**
      * @return Number of RegionServer nodes
-     *
+     * 
      */
     public Output<Integer> rsCount() {
         return this.rsCount;
     }
     /**
      * RegionServer node specification code.
-     *
+     * 
      */
     @Export(name="rsSpec", refs={String.class}, tree="[0]")
     private Output<String> rsSpec;
 
     /**
      * @return RegionServer node specification code.
-     *
+     * 
      */
     public Output<String> rsSpec() {
         return this.rsSpec;
     }
     /**
      * Real-time standby availability zone subnet ID.
-     *
+     * 
      */
     @Export(name="standbySubnetId", refs={String.class}, tree="[0]")
     private Output<String> standbySubnetId;
 
     /**
      * @return Real-time standby availability zone subnet ID.
-     *
+     * 
      */
     public Output<String> standbySubnetId() {
         return this.standbySubnetId;
     }
     /**
      * Real-time standby zone ID
-     *
+     * 
      */
     @Export(name="standbyZoneId", refs={String.class}, tree="[0]")
     private Output<String> standbyZoneId;
 
     /**
      * @return Real-time standby zone ID
-     *
+     * 
      */
     public Output<String> standbyZoneId() {
         return this.standbyZoneId;
     }
     /**
      * Current status of the instance. For more details about instance status, see Instance Status Description
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Current status of the instance. For more details about instance status, see Instance Status Description
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Total storage capacity of the instance, unit: GiB.
-     *
+     * 
      */
     @Export(name="storageCapacity", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageCapacity;
 
     /**
      * @return Total storage capacity of the instance, unit: GiB.
-     *
+     * 
      */
     public Output<Integer> storageCapacity() {
         return this.storageCapacity;
     }
     /**
      * Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-     *
+     * 
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-     *
+     * 
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
      * Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -501,7 +501,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -509,91 +509,91 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Capacity-type storage space used by the instance, in MiB
-     *
+     * 
      */
     @Export(name="usedColdStorage", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedColdStorage;
 
     /**
      * @return Capacity-type storage space used by the instance, in MiB
-     *
+     * 
      */
     public Output<Integer> usedColdStorage() {
         return this.usedColdStorage;
     }
     /**
      * Storage capacity used by the primary instance, in MiB
-     *
+     * 
      */
     @Export(name="usedStorage", refs={Double.class}, tree="[0]")
     private Output<Double> usedStorage;
 
     /**
      * @return Storage capacity used by the primary instance, in MiB
-     *
+     * 
      */
     public Output<Double> usedStorage() {
         return this.usedStorage;
     }
     /**
      * Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Name of the private network to which the instance belongs.
-     *
+     * 
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
      * @return Name of the private network to which the instance belongs.
-     *
+     * 
      */
     public Output<String> vpcName() {
         return this.vpcName;
     }
     /**
      * Zone ID of the instance
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Zone ID of the instance
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
      * Name of the availability zone to which the instance belongs.
-     *
+     * 
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Name of the availability zone to which the instance belongs.
-     *
+     * 
      */
     public Output<String> zoneName() {
         return this.zoneName;

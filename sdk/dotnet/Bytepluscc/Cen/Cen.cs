@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
 {
     /// <summary>
     /// Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cENCENDemo = new Bytepluscc.Cen.Cen("CENCENDemo", new()
     ///     {
@@ -47,12 +47,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cen/cen:Cen example "cen_id"
     /// ```

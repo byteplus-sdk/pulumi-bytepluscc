@@ -26,7 +26,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="applicationExtras")
     private @Nullable Output<List<ClusterApplicationExtraArgs>> applicationExtras;
@@ -34,7 +34,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ClusterApplicationExtraArgs>>> applicationExtras() {
         return Optional.ofNullable(this.applicationExtras);
@@ -42,14 +42,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of service names installed in the cluster. Creation-related field.
-     *
+     * 
      */
     @Import(name="applicationNames")
     private @Nullable Output<List<String>> applicationNames;
 
     /**
      * @return List of service names installed in the cluster. Creation-related field.
-     *
+     * 
      */
     public Optional<Output<List<String>>> applicationNames() {
         return Optional.ofNullable(this.applicationNames);
@@ -58,7 +58,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Cluster bootstrap script list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="bootstrapScripts")
     private @Nullable Output<List<ClusterBootstrapScriptArgs>> bootstrapScripts;
@@ -66,7 +66,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Cluster bootstrap script list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ClusterBootstrapScriptArgs>>> bootstrapScripts() {
         return Optional.ofNullable(this.bootstrapScripts);
@@ -74,14 +74,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Monthly subscription configuration parameters. Required when chargeType=PRE.
-     *
+     * 
      */
     @Import(name="chargePreConfig")
     private @Nullable Output<ClusterChargePreConfigArgs> chargePreConfig;
 
     /**
      * @return Monthly subscription configuration parameters. Required when chargeType=PRE.
-     *
+     * 
      */
     public Optional<Output<ClusterChargePreConfigArgs>> chargePreConfig() {
         return Optional.ofNullable(this.chargePreConfig);
@@ -89,14 +89,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
-     *
+     * 
      */
     @Import(name="chargeType", required=true)
     private Output<String> chargeType;
 
     /**
      * @return Payment type. PRE means monthly subscription, POST means pay-as-you-go.
-     *
+     * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
@@ -104,14 +104,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster name.
-     *
+     * 
      */
     @Import(name="clusterName", required=true)
     private Output<String> clusterName;
 
     /**
      * @return Cluster name.
-     *
+     * 
      */
     public Output<String> clusterName() {
         return this.clusterName;
@@ -119,14 +119,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster type.
-     *
+     * 
      */
     @Import(name="clusterType", required=true)
     private Output<String> clusterType;
 
     /**
      * @return Cluster type.
-     *
+     * 
      */
     public Output<String> clusterType() {
         return this.clusterType;
@@ -134,14 +134,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
-     *
+     * 
      */
     @Import(name="deployMode")
     private @Nullable Output<String> deployMode;
 
     /**
      * @return Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
-     *
+     * 
      */
     public Optional<Output<String>> deployMode() {
         return Optional.ofNullable(this.deployMode);
@@ -149,14 +149,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
-     *
+     * 
      */
     @Import(name="historyServerMode")
     private @Nullable Output<String> historyServerMode;
 
     /**
      * @return HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
-     *
+     * 
      */
     public Optional<Output<String>> historyServerMode() {
         return Optional.ofNullable(this.historyServerMode);
@@ -164,14 +164,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster global node information.
-     *
+     * 
      */
     @Import(name="nodeAttribute", required=true)
     private Output<ClusterNodeAttributeArgs> nodeAttribute;
 
     /**
      * @return Cluster global node information.
-     *
+     * 
      */
     public Output<ClusterNodeAttributeArgs> nodeAttribute() {
         return this.nodeAttribute;
@@ -180,7 +180,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Node group property list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nodeGroupAttributes")
     private @Nullable Output<List<ClusterNodeGroupAttributeArgs>> nodeGroupAttributes;
@@ -188,7 +188,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Node group property list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ClusterNodeGroupAttributeArgs>>> nodeGroupAttributes() {
         return Optional.ofNullable(this.nodeGroupAttributes);
@@ -196,14 +196,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -211,14 +211,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster version.
-     *
+     * 
      */
     @Import(name="releaseVersion", required=true)
     private Output<String> releaseVersion;
 
     /**
      * @return Cluster version.
-     *
+     * 
      */
     public Output<String> releaseVersion() {
         return this.releaseVersion;
@@ -226,14 +226,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster global security group ID. All ECS in node groups will join this security group.
-     *
+     * 
      */
     @Import(name="securityGroupId", required=true)
     private Output<String> securityGroupId;
 
     /**
      * @return Cluster global security group ID. All ECS in node groups will join this security group.
-     *
+     * 
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
@@ -241,14 +241,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Security mode.
-     *
+     * 
      */
     @Import(name="securityMode")
     private @Nullable Output<String> securityMode;
 
     /**
      * @return Security mode.
-     *
+     * 
      */
     public Optional<Output<String>> securityMode() {
         return Optional.ofNullable(this.securityMode);
@@ -257,7 +257,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ClusterTagArgs>> tags;
@@ -265,7 +265,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ClusterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -273,14 +273,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Vpc ID。
-     *
+     * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return Vpc ID。
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -329,9 +329,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param applicationExtras Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationExtras(@Nullable Output<List<ClusterApplicationExtraArgs>> applicationExtras) {
             $.applicationExtras = applicationExtras;
@@ -341,9 +341,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param applicationExtras Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationExtras(List<ClusterApplicationExtraArgs> applicationExtras) {
             return applicationExtras(Output.of(applicationExtras));
@@ -352,9 +352,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param applicationExtras Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationExtras(ClusterApplicationExtraArgs... applicationExtras) {
             return applicationExtras(List.of(applicationExtras));
@@ -362,9 +362,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applicationNames List of service names installed in the cluster. Creation-related field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationNames(@Nullable Output<List<String>> applicationNames) {
             $.applicationNames = applicationNames;
@@ -373,9 +373,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applicationNames List of service names installed in the cluster. Creation-related field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationNames(List<String> applicationNames) {
             return applicationNames(Output.of(applicationNames));
@@ -383,9 +383,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applicationNames List of service names installed in the cluster. Creation-related field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationNames(String... applicationNames) {
             return applicationNames(List.of(applicationNames));
@@ -394,9 +394,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param bootstrapScripts Cluster bootstrap script list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bootstrapScripts(@Nullable Output<List<ClusterBootstrapScriptArgs>> bootstrapScripts) {
             $.bootstrapScripts = bootstrapScripts;
@@ -406,9 +406,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param bootstrapScripts Cluster bootstrap script list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bootstrapScripts(List<ClusterBootstrapScriptArgs> bootstrapScripts) {
             return bootstrapScripts(Output.of(bootstrapScripts));
@@ -417,9 +417,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param bootstrapScripts Cluster bootstrap script list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bootstrapScripts(ClusterBootstrapScriptArgs... bootstrapScripts) {
             return bootstrapScripts(List.of(bootstrapScripts));
@@ -427,9 +427,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargePreConfig Monthly subscription configuration parameters. Required when chargeType=PRE.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargePreConfig(@Nullable Output<ClusterChargePreConfigArgs> chargePreConfig) {
             $.chargePreConfig = chargePreConfig;
@@ -438,9 +438,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargePreConfig Monthly subscription configuration parameters. Required when chargeType=PRE.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargePreConfig(ClusterChargePreConfigArgs chargePreConfig) {
             return chargePreConfig(Output.of(chargePreConfig));
@@ -448,9 +448,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Payment type. PRE means monthly subscription, POST means pay-as-you-go.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -459,9 +459,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Payment type. PRE means monthly subscription, POST means pay-as-you-go.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -469,9 +469,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterName Cluster name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clusterName(Output<String> clusterName) {
             $.clusterName = clusterName;
@@ -480,9 +480,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterName Cluster name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clusterName(String clusterName) {
             return clusterName(Output.of(clusterName));
@@ -490,9 +490,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterType Cluster type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clusterType(Output<String> clusterType) {
             $.clusterType = clusterType;
@@ -501,9 +501,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterType Cluster type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clusterType(String clusterType) {
             return clusterType(Output.of(clusterType));
@@ -511,9 +511,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deployMode Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deployMode(@Nullable Output<String> deployMode) {
             $.deployMode = deployMode;
@@ -522,9 +522,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deployMode Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deployMode(String deployMode) {
             return deployMode(Output.of(deployMode));
@@ -532,9 +532,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param historyServerMode HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder historyServerMode(@Nullable Output<String> historyServerMode) {
             $.historyServerMode = historyServerMode;
@@ -543,9 +543,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param historyServerMode HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder historyServerMode(String historyServerMode) {
             return historyServerMode(Output.of(historyServerMode));
@@ -553,9 +553,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeAttribute Cluster global node information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeAttribute(Output<ClusterNodeAttributeArgs> nodeAttribute) {
             $.nodeAttribute = nodeAttribute;
@@ -564,9 +564,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeAttribute Cluster global node information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeAttribute(ClusterNodeAttributeArgs nodeAttribute) {
             return nodeAttribute(Output.of(nodeAttribute));
@@ -575,9 +575,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeGroupAttributes Node group property list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupAttributes(@Nullable Output<List<ClusterNodeGroupAttributeArgs>> nodeGroupAttributes) {
             $.nodeGroupAttributes = nodeGroupAttributes;
@@ -587,9 +587,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeGroupAttributes Node group property list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupAttributes(List<ClusterNodeGroupAttributeArgs> nodeGroupAttributes) {
             return nodeGroupAttributes(Output.of(nodeGroupAttributes));
@@ -598,9 +598,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeGroupAttributes Node group property list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupAttributes(ClusterNodeGroupAttributeArgs... nodeGroupAttributes) {
             return nodeGroupAttributes(List.of(nodeGroupAttributes));
@@ -608,9 +608,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -619,9 +619,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -629,9 +629,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param releaseVersion Cluster version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder releaseVersion(Output<String> releaseVersion) {
             $.releaseVersion = releaseVersion;
@@ -640,9 +640,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param releaseVersion Cluster version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder releaseVersion(String releaseVersion) {
             return releaseVersion(Output.of(releaseVersion));
@@ -650,9 +650,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupId Cluster global security group ID. All ECS in node groups will join this security group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(Output<String> securityGroupId) {
             $.securityGroupId = securityGroupId;
@@ -661,9 +661,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupId Cluster global security group ID. All ECS in node groups will join this security group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(String securityGroupId) {
             return securityGroupId(Output.of(securityGroupId));
@@ -671,9 +671,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityMode Security mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityMode(@Nullable Output<String> securityMode) {
             $.securityMode = securityMode;
@@ -682,9 +682,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityMode Security mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityMode(String securityMode) {
             return securityMode(Output.of(securityMode));
@@ -693,9 +693,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ClusterTagArgs>> tags) {
             $.tags = tags;
@@ -705,9 +705,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ClusterTagArgs> tags) {
             return tags(Output.of(tags));
@@ -716,9 +716,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ClusterTagArgs... tags) {
             return tags(List.of(tags));
@@ -726,9 +726,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Vpc ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -737,9 +737,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Vpc ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

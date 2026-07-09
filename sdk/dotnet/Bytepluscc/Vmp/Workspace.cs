@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 {
     /// <summary>
     /// Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var workspaceDemo = new Bytepluscc.Vmp.Workspace("WorkspaceDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vmp/workspace:Workspace example "workspace_id"
     /// ```

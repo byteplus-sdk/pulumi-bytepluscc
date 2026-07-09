@@ -21,7 +21,7 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
     /**
      * Destination server group list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="serverGroupTuples")
     private @Nullable Output<List<RuleForwardGroupConfigServerGroupTupleArgs>> serverGroupTuples;
@@ -29,7 +29,7 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
     /**
      * @return Destination server group list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleForwardGroupConfigServerGroupTupleArgs>>> serverGroupTuples() {
         return Optional.ofNullable(this.serverGroupTuples);
@@ -37,14 +37,14 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
     /**
      * Whether to enable inter-group session persistence. on: enabled. off: disabled.
-     *
+     * 
      */
     @Import(name="stickySessionEnabled")
     private @Nullable Output<String> stickySessionEnabled;
 
     /**
      * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
-     *
+     * 
      */
     public Optional<Output<String>> stickySessionEnabled() {
         return Optional.ofNullable(this.stickySessionEnabled);
@@ -52,14 +52,14 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
     /**
      * Component session stickiness timeout. Unit: seconds.
-     *
+     * 
      */
     @Import(name="stickySessionTimeout")
     private @Nullable Output<Integer> stickySessionTimeout;
 
     /**
      * @return Component session stickiness timeout. Unit: seconds.
-     *
+     * 
      */
     public Optional<Output<Integer>> stickySessionTimeout() {
         return Optional.ofNullable(this.stickySessionTimeout);
@@ -94,9 +94,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         /**
          * @param serverGroupTuples Destination server group list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupTuples(@Nullable Output<List<RuleForwardGroupConfigServerGroupTupleArgs>> serverGroupTuples) {
             $.serverGroupTuples = serverGroupTuples;
@@ -106,9 +106,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         /**
          * @param serverGroupTuples Destination server group list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupTuples(List<RuleForwardGroupConfigServerGroupTupleArgs> serverGroupTuples) {
             return serverGroupTuples(Output.of(serverGroupTuples));
@@ -117,9 +117,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
         /**
          * @param serverGroupTuples Destination server group list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupTuples(RuleForwardGroupConfigServerGroupTupleArgs... serverGroupTuples) {
             return serverGroupTuples(List.of(serverGroupTuples));
@@ -127,9 +127,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param stickySessionEnabled Whether to enable inter-group session persistence. on: enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder stickySessionEnabled(@Nullable Output<String> stickySessionEnabled) {
             $.stickySessionEnabled = stickySessionEnabled;
@@ -138,9 +138,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param stickySessionEnabled Whether to enable inter-group session persistence. on: enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder stickySessionEnabled(String stickySessionEnabled) {
             return stickySessionEnabled(Output.of(stickySessionEnabled));
@@ -148,9 +148,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param stickySessionTimeout Component session stickiness timeout. Unit: seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder stickySessionTimeout(@Nullable Output<Integer> stickySessionTimeout) {
             $.stickySessionTimeout = stickySessionTimeout;
@@ -159,9 +159,9 @@ public final class RuleForwardGroupConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param stickySessionTimeout Component session stickiness timeout. Unit: seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder stickySessionTimeout(Integer stickySessionTimeout) {
             return stickySessionTimeout(Output.of(stickySessionTimeout));

@@ -20,14 +20,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the DNS record.
-     *
+     * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Creation time of the DNS record.
-     *
+     * 
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -35,14 +35,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the DNS record is enabled; if disabled, the record is inactive.
-     *
+     * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
      * @return Whether the DNS record is enabled; if disabled, the record is inactive.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enable() {
         return Optional.ofNullable(this.enable);
@@ -50,14 +50,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-     *
+     * 
      */
     @Import(name="fqdn")
     private @Nullable Output<String> fqdn;
 
     /**
      * @return Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-     *
+     * 
      */
     public Optional<Output<String>> fqdn() {
         return Optional.ofNullable(this.fqdn);
@@ -65,14 +65,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     *
+     * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
      * @return Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     *
+     * 
      */
     public Optional<Output<String>> host() {
         return Optional.ofNullable(this.host);
@@ -80,14 +80,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-     *
+     * 
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
      * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-     *
+     * 
      */
     public Optional<Output<String>> line() {
         return Optional.ofNullable(this.line);
@@ -95,14 +95,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of account IDs that recently operated on this DNS record.
-     *
+     * 
      */
     @Import(name="operators")
     private @Nullable Output<List<String>> operators;
 
     /**
      * @return List of account IDs that recently operated on this DNS record.
-     *
+     * 
      */
     public Optional<Output<List<String>>> operators() {
         return Optional.ofNullable(this.operators);
@@ -110,14 +110,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-     *
+     * 
      */
     @Import(name="pqdn")
     private @Nullable Output<String> pqdn;
 
     /**
      * @return Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-     *
+     * 
      */
     public Optional<Output<String>> pqdn() {
         return Optional.ofNullable(this.pqdn);
@@ -125,14 +125,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Unique ID of the DNS record.
-     *
+     * 
      */
     @Import(name="recordId")
     private @Nullable Output<String> recordId;
 
     /**
      * @return Unique ID of the DNS record.
-     *
+     * 
      */
     public Optional<Output<String>> recordId() {
         return Optional.ofNullable(this.recordId);
@@ -140,14 +140,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-     *
+     * 
      */
     @Import(name="recordSetId")
     private @Nullable Output<String> recordSetId;
 
     /**
      * @return ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-     *
+     * 
      */
     public Optional<Output<String>> recordSetId() {
         return Optional.ofNullable(this.recordSetId);
@@ -155,14 +155,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     *
+     * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     *
+     * 
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -170,14 +170,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<String>> tags;
 
     /**
      * @return Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-     *
+     * 
      */
     public Optional<Output<List<String>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -185,14 +185,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expiration time of the DNS record, in seconds.
-     *
+     * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return Expiration time of the DNS record, in seconds.
-     *
+     * 
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -200,14 +200,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -215,14 +215,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last updated time of the DNS record.
-     *
+     * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Last updated time of the DNS record.
-     *
+     * 
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -230,14 +230,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Record value of the DNS record.
-     *
+     * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return Record value of the DNS record.
-     *
+     * 
      */
     public Optional<Output<String>> value() {
         return Optional.ofNullable(this.value);
@@ -245,14 +245,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     *
+     * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
      * @return Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     *
+     * 
      */
     public Optional<Output<Integer>> weight() {
         return Optional.ofNullable(this.weight);
@@ -260,14 +260,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name ID, can be obtained via interfaces such as `ListZones`.
-     *
+     * 
      */
     @Import(name="zid")
     private @Nullable Output<String> zid;
 
     /**
      * @return Domain name ID, can be obtained via interfaces such as `ListZones`.
-     *
+     * 
      */
     public Optional<Output<String>> zid() {
         return Optional.ofNullable(this.zid);
@@ -315,9 +315,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -326,9 +326,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -336,9 +336,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Whether the DNS record is enabled; if disabled, the record is inactive.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enable(@Nullable Output<Boolean> enable) {
             $.enable = enable;
@@ -347,9 +347,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Whether the DNS record is enabled; if disabled, the record is inactive.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enable(Boolean enable) {
             return enable(Output.of(enable));
@@ -357,9 +357,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fqdn Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fqdn(@Nullable Output<String> fqdn) {
             $.fqdn = fqdn;
@@ -368,9 +368,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fqdn Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fqdn(String fqdn) {
             return fqdn(Output.of(fqdn));
@@ -378,9 +378,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder host(@Nullable Output<String> host) {
             $.host = host;
@@ -389,9 +389,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder host(String host) {
             return host(Output.of(host));
@@ -399,9 +399,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder line(@Nullable Output<String> line) {
             $.line = line;
@@ -410,9 +410,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder line(String line) {
             return line(Output.of(line));
@@ -420,9 +420,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param operators List of account IDs that recently operated on this DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder operators(@Nullable Output<List<String>> operators) {
             $.operators = operators;
@@ -431,9 +431,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param operators List of account IDs that recently operated on this DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder operators(List<String> operators) {
             return operators(Output.of(operators));
@@ -441,9 +441,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param operators List of account IDs that recently operated on this DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder operators(String... operators) {
             return operators(List.of(operators));
@@ -451,9 +451,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pqdn Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pqdn(@Nullable Output<String> pqdn) {
             $.pqdn = pqdn;
@@ -462,9 +462,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pqdn Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pqdn(String pqdn) {
             return pqdn(Output.of(pqdn));
@@ -472,9 +472,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordId Unique ID of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder recordId(@Nullable Output<String> recordId) {
             $.recordId = recordId;
@@ -483,9 +483,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordId Unique ID of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder recordId(String recordId) {
             return recordId(Output.of(recordId));
@@ -493,9 +493,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordSetId ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder recordSetId(@Nullable Output<String> recordSetId) {
             $.recordSetId = recordSetId;
@@ -504,9 +504,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordSetId ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder recordSetId(String recordSetId) {
             return recordSetId(Output.of(recordSetId));
@@ -514,9 +514,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -525,9 +525,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -535,9 +535,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tags Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<String>> tags) {
             $.tags = tags;
@@ -546,9 +546,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tags Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<String> tags) {
             return tags(Output.of(tags));
@@ -556,9 +556,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tags Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(String... tags) {
             return tags(List.of(tags));
@@ -566,9 +566,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Expiration time of the DNS record, in seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -577,9 +577,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Expiration time of the DNS record, in seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));
@@ -587,9 +587,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -598,9 +598,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -608,9 +608,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Last updated time of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -619,9 +619,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Last updated time of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -629,9 +629,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value Record value of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder value(@Nullable Output<String> value) {
             $.value = value;
@@ -640,9 +640,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value Record value of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder value(String value) {
             return value(Output.of(value));
@@ -650,9 +650,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Weight of the DNS record, effective only when load balancing is enabled for the record set.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder weight(@Nullable Output<Integer> weight) {
             $.weight = weight;
@@ -661,9 +661,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Weight of the DNS record, effective only when load balancing is enabled for the record set.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder weight(Integer weight) {
             return weight(Output.of(weight));
@@ -671,9 +671,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain name ID, can be obtained via interfaces such as `ListZones`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zid(@Nullable Output<String> zid) {
             $.zid = zid;
@@ -682,9 +682,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain name ID, can be obtained via interfaces such as `ListZones`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zid(String zid) {
             return zid(Output.of(zid));

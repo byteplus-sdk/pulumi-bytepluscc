@@ -22,14 +22,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account name. 5–20 characters
-     *
+     * 
      */
     @Import(name="accountName", required=true)
     private Output<String> accountName;
 
     /**
      * @return Account name. 5–20 characters
-     *
+     * 
      */
     public Output<String> accountName() {
         return this.accountName;
@@ -37,14 +37,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allow console access: 1. Allowed, 2. Not allowed
-     *
+     * 
      */
     @Import(name="allowConsole")
     private @Nullable Output<Integer> allowConsole;
 
     /**
      * @return Allow console access: 1. Allowed, 2. Not allowed
-     *
+     * 
      */
     public Optional<Output<Integer>> allowConsole() {
         return Optional.ofNullable(this.allowConsole);
@@ -52,14 +52,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allow exit: 1. Allowed, 2. Not allowed
-     *
+     * 
      */
     @Import(name="allowExit")
     private @Nullable Output<Integer> allowExit;
 
     /**
      * @return Allow exit: 1. Allowed, 2. Not allowed
-     *
+     * 
      */
     public Optional<Output<Integer>> allowExit() {
         return Optional.ofNullable(this.allowExit);
@@ -67,14 +67,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Deletion flag
-     *
+     * 
      */
     @Import(name="deleteUk")
     private @Nullable Output<String> deleteUk;
 
     /**
      * @return Deletion flag
-     *
+     * 
      */
     public Optional<Output<String>> deleteUk() {
         return Optional.ofNullable(this.deleteUk);
@@ -82,14 +82,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -97,14 +97,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Organizational unit ID. Enter 0 to join the root unit
-     *
+     * 
      */
     @Import(name="orgUnitId")
     private @Nullable Output<String> orgUnitId;
 
     /**
      * @return Organizational unit ID. Enter 0 to join the root unit
-     *
+     * 
      */
     public Optional<Output<String>> orgUnitId() {
         return Optional.ofNullable(this.orgUnitId);
@@ -112,14 +112,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account password
-     *
+     * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return Account password
-     *
+     * 
      */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
@@ -127,14 +127,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Security contact information
-     *
+     * 
      */
     @Import(name="secureContactInfo")
     private @Nullable Output<AccountSecureContactInfoArgs> secureContactInfo;
 
     /**
      * @return Security contact information
-     *
+     * 
      */
     public Optional<Output<AccountSecureContactInfoArgs>> secureContactInfo() {
         return Optional.ofNullable(this.secureContactInfo);
@@ -142,14 +142,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Display name
-     *
+     * 
      */
     @Import(name="showName", required=true)
     private Output<String> showName;
 
     /**
      * @return Display name
-     *
+     * 
      */
     public Output<String> showName() {
         return this.showName;
@@ -158,7 +158,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<AccountTagArgs>> tags;
@@ -166,7 +166,7 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AccountTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -174,14 +174,14 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
-     *
+     * 
      */
     @Import(name="verificationRelationId")
     private @Nullable Output<String> verificationRelationId;
 
     /**
      * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
-     *
+     * 
      */
     public Optional<Output<String>> verificationRelationId() {
         return Optional.ofNullable(this.verificationRelationId);
@@ -223,9 +223,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountName Account name. 5–20 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountName(Output<String> accountName) {
             $.accountName = accountName;
@@ -234,9 +234,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountName Account name. 5–20 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountName(String accountName) {
             return accountName(Output.of(accountName));
@@ -244,9 +244,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowConsole Allow console access: 1. Allowed, 2. Not allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowConsole(@Nullable Output<Integer> allowConsole) {
             $.allowConsole = allowConsole;
@@ -255,9 +255,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowConsole Allow console access: 1. Allowed, 2. Not allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowConsole(Integer allowConsole) {
             return allowConsole(Output.of(allowConsole));
@@ -265,9 +265,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowExit Allow exit: 1. Allowed, 2. Not allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowExit(@Nullable Output<Integer> allowExit) {
             $.allowExit = allowExit;
@@ -276,9 +276,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowExit Allow exit: 1. Allowed, 2. Not allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowExit(Integer allowExit) {
             return allowExit(Output.of(allowExit));
@@ -286,9 +286,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteUk Deletion flag
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deleteUk(@Nullable Output<String> deleteUk) {
             $.deleteUk = deleteUk;
@@ -297,9 +297,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteUk Deletion flag
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deleteUk(String deleteUk) {
             return deleteUk(Output.of(deleteUk));
@@ -307,9 +307,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -318,9 +318,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -328,9 +328,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param orgUnitId Organizational unit ID. Enter 0 to join the root unit
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder orgUnitId(@Nullable Output<String> orgUnitId) {
             $.orgUnitId = orgUnitId;
@@ -339,9 +339,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param orgUnitId Organizational unit ID. Enter 0 to join the root unit
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder orgUnitId(String orgUnitId) {
             return orgUnitId(Output.of(orgUnitId));
@@ -349,9 +349,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password Account password
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
@@ -360,9 +360,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password Account password
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder password(String password) {
             return password(Output.of(password));
@@ -370,9 +370,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secureContactInfo Security contact information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secureContactInfo(@Nullable Output<AccountSecureContactInfoArgs> secureContactInfo) {
             $.secureContactInfo = secureContactInfo;
@@ -381,9 +381,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secureContactInfo Security contact information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secureContactInfo(AccountSecureContactInfoArgs secureContactInfo) {
             return secureContactInfo(Output.of(secureContactInfo));
@@ -391,9 +391,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param showName Display name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder showName(Output<String> showName) {
             $.showName = showName;
@@ -402,9 +402,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param showName Display name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder showName(String showName) {
             return showName(Output.of(showName));
@@ -413,9 +413,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<AccountTagArgs>> tags) {
             $.tags = tags;
@@ -425,9 +425,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<AccountTagArgs> tags) {
             return tags(Output.of(tags));
@@ -436,9 +436,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(AccountTagArgs... tags) {
             return tags(List.of(tags));
@@ -446,9 +446,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param verificationRelationId Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder verificationRelationId(@Nullable Output<String> verificationRelationId) {
             $.verificationRelationId = verificationRelationId;
@@ -457,9 +457,9 @@ public final class AccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param verificationRelationId Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder verificationRelationId(String verificationRelationId) {
             return verificationRelationId(Output.of(verificationRelationId));

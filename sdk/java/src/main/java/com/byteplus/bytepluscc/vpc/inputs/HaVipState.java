@@ -19,14 +19,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address of the public IP bound to the HAVIP
-     *
+     * 
      */
     @Import(name="associatedEipAddress")
     private @Nullable Output<String> associatedEipAddress;
 
     /**
      * @return IP address of the public IP bound to the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> associatedEipAddress() {
         return Optional.ofNullable(this.associatedEipAddress);
@@ -34,14 +34,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the public IP bound to the HAVIP
-     *
+     * 
      */
     @Import(name="associatedEipId")
     private @Nullable Output<String> associatedEipId;
 
     /**
      * @return ID of the public IP bound to the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> associatedEipId() {
         return Optional.ofNullable(this.associatedEipId);
@@ -49,14 +49,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of instance IDs bound to the HAVIP
-     *
+     * 
      */
     @Import(name="associatedInstanceIds")
     private @Nullable Output<List<String>> associatedInstanceIds;
 
     /**
      * @return List of instance IDs bound to the HAVIP
-     *
+     * 
      */
     public Optional<Output<List<String>>> associatedInstanceIds() {
         return Optional.ofNullable(this.associatedInstanceIds);
@@ -64,14 +64,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-     *
+     * 
      */
     @Import(name="associatedInstanceType")
     private @Nullable Output<String> associatedInstanceType;
 
     /**
      * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-     *
+     * 
      */
     public Optional<Output<String>> associatedInstanceType() {
         return Optional.ofNullable(this.associatedInstanceType);
@@ -79,14 +79,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the HAVIP
-     *
+     * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Creation time of the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -94,14 +94,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the HAVIP. Length limit: 0–255 characters
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the HAVIP. Length limit: 0–255 characters
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -109,14 +109,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the HAVIP
-     *
+     * 
      */
     @Import(name="haVipId")
     private @Nullable Output<String> haVipId;
 
     /**
      * @return ID of the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> haVipId() {
         return Optional.ofNullable(this.haVipId);
@@ -124,14 +124,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-     *
+     * 
      */
     @Import(name="haVipName")
     private @Nullable Output<String> haVipName;
 
     /**
      * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-     *
+     * 
      */
     public Optional<Output<String>> haVipName() {
         return Optional.ofNullable(this.haVipName);
@@ -139,14 +139,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address of the HAVIP
-     *
+     * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
      * @return IP address of the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
@@ -154,14 +154,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the primary instance bound to the HAVIP
-     *
+     * 
      */
     @Import(name="masterInstanceId")
     private @Nullable Output<String> masterInstanceId;
 
     /**
      * @return ID of the primary instance bound to the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> masterInstanceId() {
         return Optional.ofNullable(this.masterInstanceId);
@@ -169,14 +169,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name of the HAVIP
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name of the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -184,14 +184,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -199,14 +199,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID to which the HAVIP belongs
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID to which the HAVIP belongs
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -215,7 +215,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags associated with the HAVIP
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<HaVipTagArgs>> tags;
@@ -223,7 +223,7 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags associated with the HAVIP
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<HaVipTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -231,14 +231,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last modification time of the HAVIP
-     *
+     * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Last modification time of the HAVIP
-     *
+     * 
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -246,14 +246,14 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID to which the HAVIP belongs
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID to which the HAVIP belongs
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -300,9 +300,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedEipAddress IP address of the public IP bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedEipAddress(@Nullable Output<String> associatedEipAddress) {
             $.associatedEipAddress = associatedEipAddress;
@@ -311,9 +311,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedEipAddress IP address of the public IP bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedEipAddress(String associatedEipAddress) {
             return associatedEipAddress(Output.of(associatedEipAddress));
@@ -321,9 +321,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedEipId ID of the public IP bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedEipId(@Nullable Output<String> associatedEipId) {
             $.associatedEipId = associatedEipId;
@@ -332,9 +332,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedEipId ID of the public IP bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedEipId(String associatedEipId) {
             return associatedEipId(Output.of(associatedEipId));
@@ -342,9 +342,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceIds List of instance IDs bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceIds(@Nullable Output<List<String>> associatedInstanceIds) {
             $.associatedInstanceIds = associatedInstanceIds;
@@ -353,9 +353,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceIds List of instance IDs bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceIds(List<String> associatedInstanceIds) {
             return associatedInstanceIds(Output.of(associatedInstanceIds));
@@ -363,9 +363,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceIds List of instance IDs bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceIds(String... associatedInstanceIds) {
             return associatedInstanceIds(List.of(associatedInstanceIds));
@@ -373,9 +373,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceType Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceType(@Nullable Output<String> associatedInstanceType) {
             $.associatedInstanceType = associatedInstanceType;
@@ -384,9 +384,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceType Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceType(String associatedInstanceType) {
             return associatedInstanceType(Output.of(associatedInstanceType));
@@ -394,9 +394,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -405,9 +405,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -415,9 +415,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the HAVIP. Length limit: 0–255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -426,9 +426,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the HAVIP. Length limit: 0–255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -436,9 +436,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param haVipId ID of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder haVipId(@Nullable Output<String> haVipId) {
             $.haVipId = haVipId;
@@ -447,9 +447,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param haVipId ID of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder haVipId(String haVipId) {
             return haVipId(Output.of(haVipId));
@@ -457,9 +457,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param haVipName Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder haVipName(@Nullable Output<String> haVipName) {
             $.haVipName = haVipName;
@@ -468,9 +468,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param haVipName Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder haVipName(String haVipName) {
             return haVipName(Output.of(haVipName));
@@ -478,9 +478,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress IP address of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddress(@Nullable Output<String> ipAddress) {
             $.ipAddress = ipAddress;
@@ -489,9 +489,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress IP address of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
@@ -499,9 +499,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterInstanceId ID of the primary instance bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterInstanceId(@Nullable Output<String> masterInstanceId) {
             $.masterInstanceId = masterInstanceId;
@@ -510,9 +510,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterInstanceId ID of the primary instance bound to the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterInstanceId(String masterInstanceId) {
             return masterInstanceId(Output.of(masterInstanceId));
@@ -520,9 +520,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -531,9 +531,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -541,9 +541,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -552,9 +552,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -562,9 +562,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID to which the HAVIP belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -573,9 +573,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID to which the HAVIP belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -584,9 +584,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags associated with the HAVIP
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<HaVipTagArgs>> tags) {
             $.tags = tags;
@@ -596,9 +596,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags associated with the HAVIP
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<HaVipTagArgs> tags) {
             return tags(Output.of(tags));
@@ -607,9 +607,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags associated with the HAVIP
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(HaVipTagArgs... tags) {
             return tags(List.of(tags));
@@ -617,9 +617,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Last modification time of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -628,9 +628,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Last modification time of the HAVIP
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -638,9 +638,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID to which the HAVIP belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -649,9 +649,9 @@ public final class HaVipState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID to which the HAVIP belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

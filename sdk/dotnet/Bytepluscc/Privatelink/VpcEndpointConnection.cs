@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
 {
     /// <summary>
     /// Unidirectional, private network connection established between the endpoint and the endpoint service
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var privateLinkVpcEndpointConnectionDemo = new Bytepluscc.Privatelink.VpcEndpointConnection("PrivateLinkVpcEndpointConnectionDemo", new()
     ///     {
@@ -41,12 +41,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection example "service_id|endpoint_id"
     /// ```

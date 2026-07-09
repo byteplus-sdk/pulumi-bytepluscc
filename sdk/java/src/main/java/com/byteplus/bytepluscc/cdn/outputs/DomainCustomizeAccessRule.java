@@ -16,12 +16,12 @@ public final class DomainCustomizeAccessRule {
     /**
      * @return Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainCustomizeAccessRuleCustomizeInstance> customizeInstances;
     /**
      * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
-     *
+     * 
      */
     private @Nullable Boolean switch_;
 
@@ -29,14 +29,14 @@ public final class DomainCustomizeAccessRule {
     /**
      * @return Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainCustomizeAccessRuleCustomizeInstance> customizeInstances() {
         return this.customizeInstances == null ? List.of() : this.customizeInstances;
     }
     /**
      * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
-     *
+     * 
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

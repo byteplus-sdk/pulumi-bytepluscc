@@ -19,14 +19,14 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
     /**
      * Basic content of log extraction rules.
-     *
+     * 
      */
     @Import(name="extractRule")
     private @Nullable Output<ImportTaskTargetInfoExtractRuleExtractRuleArgs> extractRule;
 
     /**
      * @return Basic content of log extraction rules.
-     *
+     * 
      */
     public Optional<Output<ImportTaskTargetInfoExtractRuleExtractRuleArgs>> extractRule() {
         return Optional.ofNullable(this.extractRule);
@@ -34,14 +34,14 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
     /**
      * Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
-     *
+     * 
      */
     @Import(name="skipLineCount")
     private @Nullable Output<Integer> skipLineCount;
 
     /**
      * @return Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
-     *
+     * 
      */
     public Optional<Output<Integer>> skipLineCount() {
         return Optional.ofNullable(this.skipLineCount);
@@ -49,14 +49,14 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
     /**
      * Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
-     *
+     * 
      */
     @Import(name="timeExtractRegex")
     private @Nullable Output<String> timeExtractRegex;
 
     /**
      * @return Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
-     *
+     * 
      */
     public Optional<Output<String>> timeExtractRegex() {
         return Optional.ofNullable(this.timeExtractRegex);
@@ -64,14 +64,14 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
     /**
      * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     *
+     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     *
+     * 
      */
     public Optional<Output<String>> timeZone() {
         return Optional.ofNullable(this.timeZone);
@@ -106,9 +106,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param extractRule Basic content of log extraction rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractRule(@Nullable Output<ImportTaskTargetInfoExtractRuleExtractRuleArgs> extractRule) {
             $.extractRule = extractRule;
@@ -117,9 +117,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param extractRule Basic content of log extraction rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractRule(ImportTaskTargetInfoExtractRuleExtractRuleArgs extractRule) {
             return extractRule(Output.of(extractRule));
@@ -127,9 +127,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param skipLineCount Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder skipLineCount(@Nullable Output<Integer> skipLineCount) {
             $.skipLineCount = skipLineCount;
@@ -138,9 +138,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param skipLineCount Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder skipLineCount(Integer skipLineCount) {
             return skipLineCount(Output.of(skipLineCount));
@@ -148,9 +148,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param timeExtractRegex Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeExtractRegex(@Nullable Output<String> timeExtractRegex) {
             $.timeExtractRegex = timeExtractRegex;
@@ -159,9 +159,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param timeExtractRegex Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeExtractRegex(String timeExtractRegex) {
             return timeExtractRegex(Output.of(timeExtractRegex));
@@ -169,9 +169,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param timeZone Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeZone(@Nullable Output<String> timeZone) {
             $.timeZone = timeZone;
@@ -180,9 +180,9 @@ public final class ImportTaskTargetInfoExtractRuleArgs extends com.pulumi.resour
 
         /**
          * @param timeZone Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));

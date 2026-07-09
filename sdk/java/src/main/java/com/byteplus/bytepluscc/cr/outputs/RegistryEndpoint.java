@@ -17,17 +17,17 @@ public final class RegistryEndpoint {
     /**
      * @return Public IP allowlist list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<RegistryEndpointAclPolicy> aclPolicies;
     /**
      * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
-     *
+     * 
      */
     private @Nullable Boolean enabled;
     /**
      * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
-     *
+     * 
      */
     private @Nullable String status;
 
@@ -35,21 +35,21 @@ public final class RegistryEndpoint {
     /**
      * @return Public IP allowlist list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<RegistryEndpointAclPolicy> aclPolicies() {
         return this.aclPolicies == null ? List.of() : this.aclPolicies;
     }
     /**
      * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
-     *
+     * 
      */
     public Optional<Boolean> enabled() {
         return Optional.ofNullable(this.enabled);
     }
     /**
      * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
-     *
+     * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);

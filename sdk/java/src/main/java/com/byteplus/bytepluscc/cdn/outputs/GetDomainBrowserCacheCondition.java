@@ -14,26 +14,26 @@ import java.util.Objects;
 public final class GetDomainBrowserCacheCondition {
     /**
      * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
-     *
+     * 
      */
     private List<GetDomainBrowserCacheConditionConditionRule> conditionRules;
     /**
      * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
-     *
+     * 
      */
     private String connective;
 
     private GetDomainBrowserCacheCondition() {}
     /**
      * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
-     *
+     * 
      */
     public List<GetDomainBrowserCacheConditionConditionRule> conditionRules() {
         return this.conditionRules;
     }
     /**
      * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
-     *
+     * 
      */
     public String connective() {
         return this.connective;

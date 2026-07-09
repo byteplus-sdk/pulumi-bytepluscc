@@ -22,14 +22,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ASN of the VPN gateway.
-     *
+     * 
      */
     @Import(name="asn")
     private @Nullable Output<Integer> asn;
 
     /**
      * @return ASN of the VPN gateway.
-     *
+     * 
      */
     public Optional<Output<Integer>> asn() {
         return Optional.ofNullable(this.asn);
@@ -37,14 +37,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPN gateway bandwidth specification.
-     *
+     * 
      */
     @Import(name="bandwidth", required=true)
     private Output<Integer> bandwidth;
 
     /**
      * @return VPN gateway bandwidth specification.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
@@ -52,14 +52,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
-     *
+     * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
-     *
+     * 
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -67,14 +67,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the VPN gateway.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the VPN gateway.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -82,14 +82,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
-     *
+     * 
      */
     @Import(name="dualTunnelEnabled")
     private @Nullable Output<Boolean> dualTunnelEnabled;
 
     /**
      * @return Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> dualTunnelEnabled() {
         return Optional.ofNullable(this.dualTunnelEnabled);
@@ -97,14 +97,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
-     *
+     * 
      */
     @Import(name="ipStackType")
     private @Nullable Output<String> ipStackType;
 
     /**
      * @return VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
-     *
+     * 
      */
     public Optional<Output<String>> ipStackType() {
         return Optional.ofNullable(this.ipStackType);
@@ -112,14 +112,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
-     *
+     * 
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
      * @return IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
-     *
+     * 
      */
     public Optional<Output<String>> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
@@ -127,14 +127,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable IPSec feature. true: enabled false: disabled
-     *
+     * 
      */
     @Import(name="ipsecEnabled")
     private @Nullable Output<Boolean> ipsecEnabled;
 
     /**
      * @return Enable IPSec feature. true: enabled false: disabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> ipsecEnabled() {
         return Optional.ofNullable(this.ipsecEnabled);
@@ -142,14 +142,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
-     *
+     * 
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -157,14 +157,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
-     *
+     * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
-     *
+     * 
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -172,14 +172,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -187,14 +187,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-     *
+     * 
      */
     @Import(name="secondarySubnetId")
     private @Nullable Output<String> secondarySubnetId;
 
     /**
      * @return ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-     *
+     * 
      */
     public Optional<Output<String>> secondarySubnetId() {
         return Optional.ofNullable(this.secondarySubnetId);
@@ -202,14 +202,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable SSL VPN feature. true: enabled false: disabled
-     *
+     * 
      */
     @Import(name="sslEnabled")
     private @Nullable Output<Boolean> sslEnabled;
 
     /**
      * @return Enable SSL VPN feature. true: enabled false: disabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> sslEnabled() {
         return Optional.ofNullable(this.sslEnabled);
@@ -217,14 +217,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum SSL connections for the VPN gateway.
-     *
+     * 
      */
     @Import(name="sslMaxConnections")
     private @Nullable Output<Integer> sslMaxConnections;
 
     /**
      * @return Maximum SSL connections for the VPN gateway.
-     *
+     * 
      */
     public Optional<Output<Integer>> sslMaxConnections() {
         return Optional.ofNullable(this.sslMaxConnections);
@@ -232,14 +232,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the subnet to which the port used by the VPN gateway belongs.
-     *
+     * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return ID of the subnet to which the port used by the VPN gateway belongs.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -248,7 +248,7 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * All tag information added to the VPN gateway.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<VpnGatewayTagArgs>> tags;
@@ -256,7 +256,7 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return All tag information added to the VPN gateway.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<VpnGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -264,14 +264,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID where the VPN gateway is located.
-     *
+     * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return VPC ID where the VPN gateway is located.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -279,14 +279,14 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the VPN gateway.
-     *
+     * 
      */
     @Import(name="vpnGatewayName")
     private @Nullable Output<String> vpnGatewayName;
 
     /**
      * @return Name of the VPN gateway.
-     *
+     * 
      */
     public Optional<Output<String>> vpnGatewayName() {
         return Optional.ofNullable(this.vpnGatewayName);
@@ -335,9 +335,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asn ASN of the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asn(@Nullable Output<Integer> asn) {
             $.asn = asn;
@@ -346,9 +346,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asn ASN of the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asn(Integer asn) {
             return asn(Output.of(asn));
@@ -356,9 +356,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth VPN gateway bandwidth specification.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -367,9 +367,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth VPN gateway bandwidth specification.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -377,9 +377,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -388,9 +388,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -398,9 +398,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -409,9 +409,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -419,9 +419,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dualTunnelEnabled Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dualTunnelEnabled(@Nullable Output<Boolean> dualTunnelEnabled) {
             $.dualTunnelEnabled = dualTunnelEnabled;
@@ -430,9 +430,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dualTunnelEnabled Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dualTunnelEnabled(Boolean dualTunnelEnabled) {
             return dualTunnelEnabled(Output.of(dualTunnelEnabled));
@@ -440,9 +440,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipStackType VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipStackType(@Nullable Output<String> ipStackType) {
             $.ipStackType = ipStackType;
@@ -451,9 +451,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipStackType VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipStackType(String ipStackType) {
             return ipStackType(Output.of(ipStackType));
@@ -461,9 +461,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipVersion IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipVersion(@Nullable Output<String> ipVersion) {
             $.ipVersion = ipVersion;
@@ -472,9 +472,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipVersion IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipVersion(String ipVersion) {
             return ipVersion(Output.of(ipVersion));
@@ -482,9 +482,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipsecEnabled Enable IPSec feature. true: enabled false: disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipsecEnabled(@Nullable Output<Boolean> ipsecEnabled) {
             $.ipsecEnabled = ipsecEnabled;
@@ -493,9 +493,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipsecEnabled Enable IPSec feature. true: enabled false: disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipsecEnabled(Boolean ipsecEnabled) {
             return ipsecEnabled(Output.of(ipsecEnabled));
@@ -503,9 +503,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -514,9 +514,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -524,9 +524,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -535,9 +535,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -545,9 +545,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -556,9 +556,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -566,9 +566,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondarySubnetId ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondarySubnetId(@Nullable Output<String> secondarySubnetId) {
             $.secondarySubnetId = secondarySubnetId;
@@ -577,9 +577,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondarySubnetId ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondarySubnetId(String secondarySubnetId) {
             return secondarySubnetId(Output.of(secondarySubnetId));
@@ -587,9 +587,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslEnabled Enable SSL VPN feature. true: enabled false: disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslEnabled(@Nullable Output<Boolean> sslEnabled) {
             $.sslEnabled = sslEnabled;
@@ -598,9 +598,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslEnabled Enable SSL VPN feature. true: enabled false: disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslEnabled(Boolean sslEnabled) {
             return sslEnabled(Output.of(sslEnabled));
@@ -608,9 +608,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslMaxConnections Maximum SSL connections for the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslMaxConnections(@Nullable Output<Integer> sslMaxConnections) {
             $.sslMaxConnections = sslMaxConnections;
@@ -619,9 +619,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslMaxConnections Maximum SSL connections for the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslMaxConnections(Integer sslMaxConnections) {
             return sslMaxConnections(Output.of(sslMaxConnections));
@@ -629,9 +629,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet to which the port used by the VPN gateway belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -640,9 +640,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet to which the port used by the VPN gateway belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -651,9 +651,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags All tag information added to the VPN gateway.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<VpnGatewayTagArgs>> tags) {
             $.tags = tags;
@@ -663,9 +663,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags All tag information added to the VPN gateway.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<VpnGatewayTagArgs> tags) {
             return tags(Output.of(tags));
@@ -674,9 +674,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags All tag information added to the VPN gateway.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(VpnGatewayTagArgs... tags) {
             return tags(List.of(tags));
@@ -684,9 +684,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID where the VPN gateway is located.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -695,9 +695,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID where the VPN gateway is located.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -705,9 +705,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnGatewayName Name of the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpnGatewayName(@Nullable Output<String> vpnGatewayName) {
             $.vpnGatewayName = vpnGatewayName;
@@ -716,9 +716,9 @@ public final class VpnGatewayArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnGatewayName Name of the VPN gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpnGatewayName(String vpnGatewayName) {
             return vpnGatewayName(Output.of(vpnGatewayName));

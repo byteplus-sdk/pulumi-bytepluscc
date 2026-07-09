@@ -14,50 +14,50 @@ import java.util.Objects;
 public final class GetDomainCacheCacheAction {
     /**
      * @return Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     private String action;
     /**
      * @return This parameter is shared by multiple CDN features.
-     *
+     * 
      */
     private String defaultPolicy;
     /**
      * @return Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-     *
+     * 
      */
     private Boolean ignoreCase;
     /**
      * @return Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-     *
+     * 
      */
     private Integer ttl;
 
     private GetDomainCacheCacheAction() {}
     /**
      * @return Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     public String action() {
         return this.action;
     }
     /**
      * @return This parameter is shared by multiple CDN features.
-     *
+     * 
      */
     public String defaultPolicy() {
         return this.defaultPolicy;
     }
     /**
      * @return Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-     *
+     * 
      */
     public Boolean ignoreCase() {
         return this.ignoreCase;
     }
     /**
      * @return Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-     *
+     * 
      */
     public Integer ttl() {
         return this.ttl;

@@ -11026,6 +11026,48 @@ export namespace ecs {
         threadsPerCore: number;
     }
 
+    export interface GetInstanceDataVolume {
+        /**
+         * Whether the attached resources are deleted along with the instance.
+         */
+        deleteWithInstance: boolean;
+        /**
+         * Additional performance IOPS for the instance
+         */
+        extraPerformanceIops: number;
+        /**
+         * The additional performance throughput of the instance, in MB.
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * Type of additional performance. Values:
+         *   Balance: Balanced additional performance
+         *   IOPS: IOPS additional performance
+         *   Throughput: Throughput additional performance
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * Instance size, in GiB
+         */
+        size: number;
+        /**
+         * Instance snapshot ID
+         */
+        snapshotId: string;
+        /**
+         * Instance volume ID.
+         */
+        volumeId: string;
+        /**
+         * Cloud disk type. Values:
+         *   PTSSD: Performance SSD.
+         *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+         *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+         *   TSSD_TL0: Throughput SSD disk.
+         */
+        volumeType: string;
+    }
+
     export interface GetInstanceEipAddress {
         /**
          * Instance allocation ID
@@ -11052,7 +11094,7 @@ export namespace ecs {
          *     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
          *     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
          *     - PrePaid: Subscription.
-         *
+         *   
          *   **Note:**
          *   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
          */
@@ -11848,6 +11890,48 @@ export namespace ecs {
         threadsPerCore: number;
     }
 
+    export interface InstanceDataVolume {
+        /**
+         * Whether the attached resources are deleted along with the instance.
+         */
+        deleteWithInstance: boolean;
+        /**
+         * Additional performance IOPS for the instance
+         */
+        extraPerformanceIops: number;
+        /**
+         * The additional performance throughput of the instance, in MB.
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * Type of additional performance. Values:
+         *   Balance: Balanced additional performance
+         *   IOPS: IOPS additional performance
+         *   Throughput: Throughput additional performance
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * Instance size, in GiB
+         */
+        size: number;
+        /**
+         * Instance snapshot ID
+         */
+        snapshotId: string;
+        /**
+         * Instance volume ID.
+         */
+        volumeId: string;
+        /**
+         * Cloud disk type. Values:
+         *   PTSSD: Performance SSD.
+         *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+         *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+         *   TSSD_TL0: Throughput SSD disk.
+         */
+        volumeType: string;
+    }
+
     export interface InstanceEipAddress {
         /**
          * Instance allocation ID
@@ -11874,7 +11958,7 @@ export namespace ecs {
          *     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
          *     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
          *     - PrePaid: Subscription.
-         *
+         *   
          *   **Note:**
          *   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
          */
@@ -17888,21 +17972,21 @@ export namespace mongodb {
         addressPort: string;
         /**
          * Connection address type of the node. Possible values:
-         *
+         *   
          *   Primary: Primary node connection address
          *   Secondary: Secondary node connection address
          *   Hidden: Hidden node connection address
          *   ReadOnly: Read-only node connection address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
          */
         addressType: string;
         /**
          * EIP ID bound to the instance's public address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
          */
@@ -17954,8 +18038,8 @@ export namespace mongodb {
         addressDomain: string;
         /**
          * IP corresponding to the connection address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
          */
@@ -17966,21 +18050,21 @@ export namespace mongodb {
         addressPort: string;
         /**
          * Connection address type of the node. Possible values:
-         *
+         *   
          *   Primary: Primary node connection address
          *   Secondary: Secondary node connection address
          *   Hidden: Hidden node connection address
          *   ReadOnly: Read-only node connection address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
          */
         addressType: string;
         /**
          * EIP ID bound to the instance's public address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
          */

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 {
     /// <summary>
     /// Key Management Service (KMS) key material resource. Used to import user-provided (BYOK) encrypted key material into a specified master key with Origin=External. Users must obtain import parameters, encrypt the key material, and provide EncryptedKeyMaterial and ImportToken to the resource. The Provider then calls ImportKeyMaterial to complete the import.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Kms.KeyMaterial("Example", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
     ///         ExpirationModel = "KEY_MATERIAL_EXPIRES",
     ///         ValidTo = 1814313600,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:kms/keyMaterial:KeyMaterial example "key_id"
     /// ```

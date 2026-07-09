@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
     /// The OCI artifact repository is used to store container images, Helm Charts, and other OCI (Open Container Initiative) artifacts that comply with open container standards.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var repositoryDemo = new Bytepluscc.Cr.Repository("RepositoryDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     ///         Description = "RepositoryDemo description",
     ///         AccessLevel = "Public",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cr/repository:Repository example "registry|namespace|name"
     /// ```

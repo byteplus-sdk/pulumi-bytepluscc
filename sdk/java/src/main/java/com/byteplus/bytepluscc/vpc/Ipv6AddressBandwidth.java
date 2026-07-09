@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * IPv6 public traffic bandwidth determines the public communication capability of the IPv6 address. If the IPv6 address does not have IPv6 public bandwidth enabled, it only supports private network communication. You can enable IPv6 public bandwidth for the IPv6 address as needed to allow public network communication.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vPCIpv6AddressBandwidthDemo = new Ipv6AddressBandwidth("vPCIpv6AddressBandwidthDemo", Ipv6AddressBandwidthArgs.builder()
  *             .bandwidth(200)
@@ -57,270 +57,270 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth example &#34;allocation_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth")
 public class Ipv6AddressBandwidth extends com.pulumi.resources.CustomResource {
     /**
      * IPv6 public bandwidth ID
-     *
+     * 
      */
     @Export(name="allocationId", refs={String.class}, tree="[0]")
     private Output<String> allocationId;
 
     /**
      * @return IPv6 public bandwidth ID
-     *
+     * 
      */
     public Output<String> allocationId() {
         return this.allocationId;
     }
     /**
      * IPv6 public bandwidth cap
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return IPv6 public bandwidth cap
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * IPv6 shared bandwidth package ID
-     *
+     * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
      * @return IPv6 shared bandwidth package ID
-     *
+     * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
      * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * IPv6 public bandwidth activation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return IPv6 public bandwidth activation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * IPv6 public bandwidth deletion time
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return IPv6 public bandwidth deletion time
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Instance ID associated with IPv6 public bandwidth
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID associated with IPv6 public bandwidth
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
-     *
+     * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
-     *
+     * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * IPv6 address
-     *
+     * 
      */
     @Export(name="ipv6Address", refs={String.class}, tree="[0]")
     private Output<String> ipv6Address;
 
     /**
      * @return IPv6 address
-     *
+     * 
      */
     public Output<String> ipv6Address() {
         return this.ipv6Address;
     }
     /**
      * IPv6 gateway ID
-     *
+     * 
      */
     @Export(name="ipv6GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv6GatewayId;
 
     /**
      * @return IPv6 gateway ID
-     *
+     * 
      */
     public Output<String> ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
      * IPv6 public bandwidth line type. BGP: BGP (multi-line).
-     *
+     * 
      */
     @Export(name="isp", refs={String.class}, tree="[0]")
     private Output<String> isp;
 
     /**
      * @return IPv6 public bandwidth line type. BGP: BGP (multi-line).
-     *
+     * 
      */
     public Output<String> isp() {
         return this.isp;
     }
     /**
      * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
-     *
+     * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
-     *
+     * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
-     *
+     * 
      */
     @Export(name="networkType", refs={String.class}, tree="[0]")
     private Output<String> networkType;
 
     /**
      * @return IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
-     *
+     * 
      */
     public Output<String> networkType() {
         return this.networkType;
     }
     /**
      * IPv6 public bandwidth deactivation time due to overdue payment
-     *
+     * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return IPv6 public bandwidth deactivation time due to overdue payment
-     *
+     * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * IPv6 public bandwidth project
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return IPv6 public bandwidth project
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Service hosting status
-     *
+     * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Service hosting status
-     *
+     * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * IPv6 public bandwidth status. Creating: Creating. Available: Available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return IPv6 public bandwidth status. Creating: Creating. Available: Available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -328,7 +328,7 @@ public class Ipv6AddressBandwidth extends com.pulumi.resources.CustomResource {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,Ipv6AddressBandwidthTag.class}, tree="[0,1]")
     private Output<List<Ipv6AddressBandwidthTag>> tags;
@@ -336,21 +336,21 @@ public class Ipv6AddressBandwidth extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<Ipv6AddressBandwidthTag>> tags() {
         return this.tags;
     }
     /**
      * IPv6 public bandwidth last operation time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return IPv6 public bandwidth last operation time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

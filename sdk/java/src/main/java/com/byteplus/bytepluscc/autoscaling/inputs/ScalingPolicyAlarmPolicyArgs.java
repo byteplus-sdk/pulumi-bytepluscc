@@ -20,14 +20,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
     /**
      * Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
-     *
+     * 
      */
     @Import(name="condition")
     private @Nullable Output<ScalingPolicyAlarmPolicyConditionArgs> condition;
 
     /**
      * @return Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
-     *
+     * 
      */
     public Optional<Output<ScalingPolicyAlarmPolicyConditionArgs>> condition() {
         return Optional.ofNullable(this.condition);
@@ -35,14 +35,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
     /**
      * Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
-     *
+     * 
      */
     @Import(name="conditionOperator")
     private @Nullable Output<String> conditionOperator;
 
     /**
      * @return Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
-     *
+     * 
      */
     public Optional<Output<String>> conditionOperator() {
         return Optional.ofNullable(this.conditionOperator);
@@ -51,7 +51,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     /**
      * Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="conditions")
     private @Nullable Output<List<ScalingPolicyAlarmPolicyConditionArgs>> conditions;
@@ -59,7 +59,7 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
     /**
      * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ScalingPolicyAlarmPolicyConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
@@ -67,14 +67,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
     /**
      * The effective period for the alarm task.
-     *
+     * 
      */
     @Import(name="effective")
     private @Nullable Output<String> effective;
 
     /**
      * @return The effective period for the alarm task.
-     *
+     * 
      */
     public Optional<Output<String>> effective() {
         return Optional.ofNullable(this.effective);
@@ -82,14 +82,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
     /**
      * Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
-     *
+     * 
      */
     @Import(name="evaluationCount")
     private @Nullable Output<Integer> evaluationCount;
 
     /**
      * @return Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
-     *
+     * 
      */
     public Optional<Output<Integer>> evaluationCount() {
         return Optional.ofNullable(this.evaluationCount);
@@ -97,14 +97,14 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
     /**
      * Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
-     *
+     * 
      */
     @Import(name="ruleType")
     private @Nullable Output<String> ruleType;
 
     /**
      * @return Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
-     *
+     * 
      */
     public Optional<Output<String>> ruleType() {
         return Optional.ofNullable(this.ruleType);
@@ -141,9 +141,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param condition Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(@Nullable Output<ScalingPolicyAlarmPolicyConditionArgs> condition) {
             $.condition = condition;
@@ -152,9 +152,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param condition Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(ScalingPolicyAlarmPolicyConditionArgs condition) {
             return condition(Output.of(condition));
@@ -162,9 +162,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param conditionOperator Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditionOperator(@Nullable Output<String> conditionOperator) {
             $.conditionOperator = conditionOperator;
@@ -173,9 +173,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param conditionOperator Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditionOperator(String conditionOperator) {
             return conditionOperator(Output.of(conditionOperator));
@@ -184,9 +184,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         /**
          * @param conditions Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(@Nullable Output<List<ScalingPolicyAlarmPolicyConditionArgs>> conditions) {
             $.conditions = conditions;
@@ -196,9 +196,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         /**
          * @param conditions Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(List<ScalingPolicyAlarmPolicyConditionArgs> conditions) {
             return conditions(Output.of(conditions));
@@ -207,9 +207,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
         /**
          * @param conditions Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(ScalingPolicyAlarmPolicyConditionArgs... conditions) {
             return conditions(List.of(conditions));
@@ -217,9 +217,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param effective The effective period for the alarm task.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effective(@Nullable Output<String> effective) {
             $.effective = effective;
@@ -228,9 +228,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param effective The effective period for the alarm task.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effective(String effective) {
             return effective(Output.of(effective));
@@ -238,9 +238,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param evaluationCount Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder evaluationCount(@Nullable Output<Integer> evaluationCount) {
             $.evaluationCount = evaluationCount;
@@ -249,9 +249,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param evaluationCount Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder evaluationCount(Integer evaluationCount) {
             return evaluationCount(Output.of(evaluationCount));
@@ -259,9 +259,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param ruleType Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleType(@Nullable Output<String> ruleType) {
             $.ruleType = ruleType;
@@ -270,9 +270,9 @@ public final class ScalingPolicyAlarmPolicyArgs extends com.pulumi.resources.Res
 
         /**
          * @param ruleType Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleType(String ruleType) {
             return ruleType(Output.of(ruleType));

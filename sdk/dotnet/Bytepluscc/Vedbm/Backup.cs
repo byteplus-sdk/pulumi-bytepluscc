@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
     /// Cloud Database veDB Backup Management
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vedbmbackupDemo = new Bytepluscc.Vedbm.Backup("vedbmbackupDemo", new()
     ///     {
@@ -32,12 +32,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     ///         FullBackupPeriod = "Sunday",
     ///         BackupRetentionPeriod = 11,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vedbm/backup:Backup example "instance_id|backup_id"
     /// ```

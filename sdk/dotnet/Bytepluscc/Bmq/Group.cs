@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
 {
     /// <summary>
     /// A group of consumers with the same Group ID. When multiple consumers in the same Group consume a Topic, each message is delivered to only one consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var bMQGroupDemo = new Bytepluscc.Bmq.Group("BMQGroupDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Bmq
     ///             Partition_id = 1,
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:bmq/group:Group example "group_id"
     /// ```

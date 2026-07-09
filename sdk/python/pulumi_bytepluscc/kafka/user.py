@@ -33,12 +33,12 @@ class UserArgs:
                    - false: This user does not have read and write permissions for all Topics
         :param pulumi.Input[_builtins.str] instance_id: Instance ID to which the user belongs
         :param pulumi.Input[_builtins.str] user_name: SASL username. Must meet the following requirements:
-
+                 
                    - Consists of letters, numbers, hyphens (-), or underscores (_)
                    - Length: 3–64 characters
                    - Username cannot be set to admin or monitor, and must be unique within the instance
         :param pulumi.Input[_builtins.str] user_password: SASL user password. Must meet the following requirements:
-
+                 
                    - Length: 8–32 characters
                    - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
                    - Supported special characters: `!@#$%^&*()_+-=`
@@ -46,7 +46,7 @@ class UserArgs:
         :param pulumi.Input[_builtins.str] password_type: SASL user type (password type). Supported types:
                    - Scram: SASL user of SCRAM type
                    - Plain: SASL user of PLAIN type
-
+                 
                  **Note:**
                  If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         """
@@ -90,7 +90,7 @@ class UserArgs:
     def user_name(self) -> pulumi.Input[_builtins.str]:
         """
         SASL username. Must meet the following requirements:
-
+          
             - Consists of letters, numbers, hyphens (-), or underscores (_)
             - Length: 3–64 characters
             - Username cannot be set to admin or monitor, and must be unique within the instance
@@ -106,7 +106,7 @@ class UserArgs:
     def user_password(self) -> pulumi.Input[_builtins.str]:
         """
         SASL user password. Must meet the following requirements:
-
+          
             - Length: 8–32 characters
             - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
             - Supported special characters: `!@#$%^&*()_+-=`
@@ -136,7 +136,7 @@ class UserArgs:
         SASL user type (password type). Supported types:
             - Scram: SASL user of SCRAM type
             - Plain: SASL user of PLAIN type
-
+          
           **Note:**
           If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         """
@@ -169,16 +169,16 @@ class _UserState:
         :param pulumi.Input[_builtins.str] password_type: SASL user type (password type). Supported types:
                    - Scram: SASL user of SCRAM type
                    - Plain: SASL user of PLAIN type
-
+                 
                  **Note:**
                  If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         :param pulumi.Input[_builtins.str] user_name: SASL username. Must meet the following requirements:
-
+                 
                    - Consists of letters, numbers, hyphens (-), or underscores (_)
                    - Length: 3–64 characters
                    - Username cannot be set to admin or monitor, and must be unique within the instance
         :param pulumi.Input[_builtins.str] user_password: SASL user password. Must meet the following requirements:
-
+                 
                    - Length: 8–32 characters
                    - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
                    - Supported special characters: `!@#$%^&*()_+-=`
@@ -255,7 +255,7 @@ class _UserState:
         SASL user type (password type). Supported types:
             - Scram: SASL user of SCRAM type
             - Plain: SASL user of PLAIN type
-
+          
           **Note:**
           If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         """
@@ -270,7 +270,7 @@ class _UserState:
     def user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SASL username. Must meet the following requirements:
-
+          
             - Consists of letters, numbers, hyphens (-), or underscores (_)
             - Length: 3–64 characters
             - Username cannot be set to admin or monitor, and must be unique within the instance
@@ -286,7 +286,7 @@ class _UserState:
     def user_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         SASL user password. Must meet the following requirements:
-
+          
             - Length: 8–32 characters
             - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
             - Supported special characters: `!@#$%^&*()_+-=`
@@ -345,16 +345,16 @@ class User(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password_type: SASL user type (password type). Supported types:
                    - Scram: SASL user of SCRAM type
                    - Plain: SASL user of PLAIN type
-
+                 
                  **Note:**
                  If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         :param pulumi.Input[_builtins.str] user_name: SASL username. Must meet the following requirements:
-
+                 
                    - Consists of letters, numbers, hyphens (-), or underscores (_)
                    - Length: 3–64 characters
                    - Username cannot be set to admin or monitor, and must be unique within the instance
         :param pulumi.Input[_builtins.str] user_password: SASL user password. Must meet the following requirements:
-
+                 
                    - Length: 8–32 characters
                    - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
                    - Supported special characters: `!@#$%^&*()_+-=`
@@ -467,16 +467,16 @@ class User(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] password_type: SASL user type (password type). Supported types:
                    - Scram: SASL user of SCRAM type
                    - Plain: SASL user of PLAIN type
-
+                 
                  **Note:**
                  If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         :param pulumi.Input[_builtins.str] user_name: SASL username. Must meet the following requirements:
-
+                 
                    - Consists of letters, numbers, hyphens (-), or underscores (_)
                    - Length: 3–64 characters
                    - Username cannot be set to admin or monitor, and must be unique within the instance
         :param pulumi.Input[_builtins.str] user_password: SASL user password. Must meet the following requirements:
-
+                 
                    - Length: 8–32 characters
                    - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
                    - Supported special characters: `!@#$%^&*()_+-=`
@@ -535,7 +535,7 @@ class User(pulumi.CustomResource):
         SASL user type (password type). Supported types:
             - Scram: SASL user of SCRAM type
             - Plain: SASL user of PLAIN type
-
+          
           **Note:**
           If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         """
@@ -546,7 +546,7 @@ class User(pulumi.CustomResource):
     def user_name(self) -> pulumi.Output[_builtins.str]:
         """
         SASL username. Must meet the following requirements:
-
+          
             - Consists of letters, numbers, hyphens (-), or underscores (_)
             - Length: 3–64 characters
             - Username cannot be set to admin or monitor, and must be unique within the instance
@@ -558,7 +558,7 @@ class User(pulumi.CustomResource):
     def user_password(self) -> pulumi.Output[_builtins.str]:
         """
         SASL user password. Must meet the following requirements:
-
+          
             - Length: 8–32 characters
             - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
             - Supported special characters: `!@#$%^&*()_+-=`

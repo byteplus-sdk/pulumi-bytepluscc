@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 {
     /// <summary>
     /// Enable public network access so that devices outside the VPC can access the Redis instance.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var redisEndpointPublicAddressDemo = new Bytepluscc.Redis.EndpointPublicAddress("RedisEndpointPublicAddressDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     ///         Port = 6379,
     ///         EipId = "eip-w08rcc38bsw0865yxxxxx",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress example "instance_id|eip_id"
     /// ```

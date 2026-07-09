@@ -24,14 +24,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
-     *
+     * 
      */
     @Import(name="certCheck")
     private @Nullable Output<DomainHttpsCertCheckArgs> certCheck;
 
     /**
      * @return Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
-     *
+     * 
      */
     public Optional<Output<DomainHttpsCertCheckArgs>> certCheck() {
         return Optional.ofNullable(this.certCheck);
@@ -39,14 +39,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the single certificate to be associated with the acceleration domain name.
-     *
+     * 
      */
     @Import(name="certInfo")
     private @Nullable Output<DomainHttpsCertInfoArgs> certInfo;
 
     /**
      * @return Indicates the single certificate to be associated with the acceleration domain name.
-     *
+     * 
      */
     public Optional<Output<DomainHttpsCertInfoArgs>> certInfo() {
         return Optional.ofNullable(this.certInfo);
@@ -55,7 +55,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Indicates the dual certificate to be associated with the acceleration domain name.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="certInfoLists")
     private @Nullable Output<List<DomainHttpsCertInfoListArgs>> certInfoLists;
@@ -63,7 +63,7 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Indicates the dual certificate to be associated with the acceleration domain name.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainHttpsCertInfoListArgs>>> certInfoLists() {
         return Optional.ofNullable(this.certInfoLists);
@@ -71,14 +71,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
-     *
+     * 
      */
     @Import(name="disableHttp")
     private @Nullable Output<Boolean> disableHttp;
 
     /**
      * @return Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
-     *
+     * 
      */
     public Optional<Output<Boolean>> disableHttp() {
         return Optional.ofNullable(this.disableHttp);
@@ -86,14 +86,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Import(name="forcedRedirect")
     private @Nullable Output<DomainHttpsForcedRedirectArgs> forcedRedirect;
 
     /**
      * @return Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Optional<Output<DomainHttpsForcedRedirectArgs>> forcedRedirect() {
         return Optional.ofNullable(this.forcedRedirect);
@@ -101,14 +101,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the HSTS feature. This feature is disabled by default.
-     *
+     * 
      */
     @Import(name="hsts")
     private @Nullable Output<DomainHttpsHstsArgs> hsts;
 
     /**
      * @return Indicates the configuration module for the HSTS feature. This feature is disabled by default.
-     *
+     * 
      */
     public Optional<Output<DomainHttpsHstsArgs>> hsts() {
         return Optional.ofNullable(this.hsts);
@@ -116,14 +116,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
-     *
+     * 
      */
     @Import(name="http2")
     private @Nullable Output<Boolean> http2;
 
     /**
      * @return HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
-     *
+     * 
      */
     public Optional<Output<Boolean>> http2() {
         return Optional.ofNullable(this.http2);
@@ -131,14 +131,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
-     *
+     * 
      */
     @Import(name="ocsp")
     private @Nullable Output<Boolean> ocsp;
 
     /**
      * @return Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
-     *
+     * 
      */
     public Optional<Output<Boolean>> ocsp() {
         return Optional.ofNullable(this.ocsp);
@@ -146,14 +146,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
-     *
+     * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
-     *
+     * 
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -161,14 +161,14 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-     *
+     * 
      */
     @Import(name="tlsVersions")
     private @Nullable Output<List<String>> tlsVersions;
 
     /**
      * @return Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-     *
+     * 
      */
     public Optional<Output<List<String>>> tlsVersions() {
         return Optional.ofNullable(this.tlsVersions);
@@ -209,9 +209,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certCheck Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certCheck(@Nullable Output<DomainHttpsCertCheckArgs> certCheck) {
             $.certCheck = certCheck;
@@ -220,9 +220,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certCheck Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certCheck(DomainHttpsCertCheckArgs certCheck) {
             return certCheck(Output.of(certCheck));
@@ -230,9 +230,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certInfo Indicates the single certificate to be associated with the acceleration domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certInfo(@Nullable Output<DomainHttpsCertInfoArgs> certInfo) {
             $.certInfo = certInfo;
@@ -241,9 +241,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certInfo Indicates the single certificate to be associated with the acceleration domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certInfo(DomainHttpsCertInfoArgs certInfo) {
             return certInfo(Output.of(certInfo));
@@ -252,9 +252,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param certInfoLists Indicates the dual certificate to be associated with the acceleration domain name.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certInfoLists(@Nullable Output<List<DomainHttpsCertInfoListArgs>> certInfoLists) {
             $.certInfoLists = certInfoLists;
@@ -264,9 +264,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param certInfoLists Indicates the dual certificate to be associated with the acceleration domain name.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certInfoLists(List<DomainHttpsCertInfoListArgs> certInfoLists) {
             return certInfoLists(Output.of(certInfoLists));
@@ -275,9 +275,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param certInfoLists Indicates the dual certificate to be associated with the acceleration domain name.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certInfoLists(DomainHttpsCertInfoListArgs... certInfoLists) {
             return certInfoLists(List.of(certInfoLists));
@@ -285,9 +285,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param disableHttp Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder disableHttp(@Nullable Output<Boolean> disableHttp) {
             $.disableHttp = disableHttp;
@@ -296,9 +296,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param disableHttp Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder disableHttp(Boolean disableHttp) {
             return disableHttp(Output.of(disableHttp));
@@ -306,9 +306,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param forcedRedirect Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forcedRedirect(@Nullable Output<DomainHttpsForcedRedirectArgs> forcedRedirect) {
             $.forcedRedirect = forcedRedirect;
@@ -317,9 +317,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param forcedRedirect Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forcedRedirect(DomainHttpsForcedRedirectArgs forcedRedirect) {
             return forcedRedirect(Output.of(forcedRedirect));
@@ -327,9 +327,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hsts Indicates the configuration module for the HSTS feature. This feature is disabled by default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hsts(@Nullable Output<DomainHttpsHstsArgs> hsts) {
             $.hsts = hsts;
@@ -338,9 +338,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hsts Indicates the configuration module for the HSTS feature. This feature is disabled by default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hsts(DomainHttpsHstsArgs hsts) {
             return hsts(Output.of(hsts));
@@ -348,9 +348,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param http2 HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder http2(@Nullable Output<Boolean> http2) {
             $.http2 = http2;
@@ -359,9 +359,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param http2 HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder http2(Boolean http2) {
             return http2(Output.of(http2));
@@ -369,9 +369,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ocsp Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ocsp(@Nullable Output<Boolean> ocsp) {
             $.ocsp = ocsp;
@@ -380,9 +380,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ocsp Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ocsp(Boolean ocsp) {
             return ocsp(Output.of(ocsp));
@@ -390,9 +390,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param switch_ Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -401,9 +401,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param switch_ Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));
@@ -411,9 +411,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsVersions Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsVersions(@Nullable Output<List<String>> tlsVersions) {
             $.tlsVersions = tlsVersions;
@@ -422,9 +422,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsVersions Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsVersions(List<String> tlsVersions) {
             return tlsVersions(Output.of(tlsVersions));
@@ -432,9 +432,9 @@ public final class DomainHttpsArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsVersions Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsVersions(String... tlsVersions) {
             return tlsVersions(List.of(tlsVersions));

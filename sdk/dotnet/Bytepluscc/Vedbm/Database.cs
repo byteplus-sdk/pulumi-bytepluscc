@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
     /// Cloud Database Management
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vEDBMDatabaseDemo = new Bytepluscc.Vedbm.Database("VEDBMDatabaseDemo", new()
     ///     {
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vedbm/database:Database example "instance_id|db_name"
     /// ```

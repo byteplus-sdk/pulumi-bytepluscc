@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 {
     /// <summary>
     /// After you create a MongoDB document database instance, you can set an allowlist for the instance to permit external devices to access it. This article describes how to set an allowlist in the console.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var mongoDBAllowListDemo = new Bytepluscc.Mongodb.AllowList("MongoDBAllowListDemo", new()
     ///     {
@@ -48,12 +48,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:mongodb/allowList:AllowList example "allow_list_id"
     /// ```

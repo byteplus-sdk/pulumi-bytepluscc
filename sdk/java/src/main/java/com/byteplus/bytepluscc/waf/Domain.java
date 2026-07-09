@@ -22,14 +22,14 @@ import javax.annotation.Nullable;
 
 /**
  * Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -44,12 +44,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var wafDomainDemo = new Domain("wafDomainDemo", DomainArgs.builder()
  *             .accessMode(10)
@@ -72,116 +72,116 @@ import javax.annotation.Nullable;
  *                 .name("default")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:waf/domain:Domain example &#34;domain&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:waf/domain:Domain")
 public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
-     *
+     * 
      */
     @Export(name="accessMode", refs={Integer.class}, tree="[0]")
     private Output<Integer> accessMode;
 
     /**
      * @return Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
-     *
+     * 
      */
     public Output<Integer> accessMode() {
         return this.accessMode;
     }
     /**
      * High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
-     *
+     * 
      */
     @Export(name="advancedDefenseIp", refs={String.class}, tree="[0]")
     private Output<String> advancedDefenseIp;
 
     /**
      * @return High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
-     *
+     * 
      */
     public Output<String> advancedDefenseIp() {
         return this.advancedDefenseIp;
     }
     /**
      * High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
-     *
+     * 
      */
     @Export(name="advancedDefenseIpv6", refs={String.class}, tree="[0]")
     private Output<String> advancedDefenseIpv6;
 
     /**
      * @return High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
-     *
+     * 
      */
     public Output<String> advancedDefenseIpv6() {
         return this.advancedDefenseIpv6;
     }
     /**
      * API protection policy enabled. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="apiEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> apiEnable;
 
     /**
      * @return API protection policy enabled. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> apiEnable() {
         return this.apiEnable;
     }
     /**
      * Attack status. 0: No attack detected, 1: Attack detected.
-     *
+     * 
      */
     @Export(name="attackStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> attackStatus;
 
     /**
      * @return Attack status. 0: No attack detected, 1: Attack detected.
-     *
+     * 
      */
     public Output<Integer> attackStatus() {
         return this.attackStatus;
     }
     /**
      * Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
-     *
+     * 
      */
     @Export(name="autoCcEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoCcEnable;
 
     /**
      * @return Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
-     *
+     * 
      */
     public Output<Integer> autoCcEnable() {
         return this.autoCcEnable;
     }
     /**
      * Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
-     *
+     * 
      */
     @Export(name="automaticBlackEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> automaticBlackEnable;
 
     /**
      * @return Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
-     *
+     * 
      */
     public Output<Integer> automaticBlackEnable() {
         return this.automaticBlackEnable;
@@ -189,7 +189,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Origin configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="backendGroups", refs={List.class,DomainBackendGroup.class}, tree="[0,1]")
     private Output<List<DomainBackendGroup>> backendGroups;
@@ -197,49 +197,49 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Origin configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainBackendGroup>> backendGroups() {
         return this.backendGroups;
     }
     /**
      * Denylist policy enabled. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="blackIpEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> blackIpEnable;
 
     /**
      * @return Denylist policy enabled. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> blackIpEnable() {
         return this.blackIpEnable;
     }
     /**
      * Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
-     *
+     * 
      */
     @Export(name="blackLctEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> blackLctEnable;
 
     /**
      * @return Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
-     *
+     * 
      */
     public Output<Integer> blackLctEnable() {
         return this.blackLctEnable;
     }
     /**
      * Dynamic token protection enabled
-     *
+     * 
      */
     @Export(name="botDytokenEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botDytokenEnable;
 
     /**
      * @return Dynamic token protection enabled
-     *
+     * 
      */
     public Output<Integer> botDytokenEnable() {
         return this.botDytokenEnable;
@@ -248,7 +248,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Bot rate limit policy enabled.
      * 0: Off
      * 1: On
-     *
+     * 
      */
     @Export(name="botFrequencyEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botFrequencyEnable;
@@ -257,7 +257,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * @return Bot rate limit policy enabled.
      * 0: Off
      * 1: On
-     *
+     * 
      */
     public Output<Integer> botFrequencyEnable() {
         return this.botFrequencyEnable;
@@ -266,7 +266,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Bot statistics protection policy enabled.
      * 0: Off
      * 1: On
-     *
+     * 
      */
     @Export(name="botRepeatEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botRepeatEnable;
@@ -275,7 +275,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * @return Bot statistics protection policy enabled.
      * 0: Off
      * 1: On
-     *
+     * 
      */
     public Output<Integer> botRepeatEnable() {
         return this.botRepeatEnable;
@@ -286,7 +286,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 2: Intercept
      * 6: JS Challenge
      * 7: CAPTCHA.
-     *
+     * 
      */
     @Export(name="botSequenceDefaultAction", refs={Integer.class}, tree="[0]")
     private Output<Integer> botSequenceDefaultAction;
@@ -297,7 +297,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 2: Intercept
      * 6: JS Challenge
      * 7: CAPTCHA.
-     *
+     * 
      */
     public Output<Integer> botSequenceDefaultAction() {
         return this.botSequenceDefaultAction;
@@ -306,7 +306,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Whether to enable bot behavior map.
      * 0: Off
      * 1: On.
-     *
+     * 
      */
     @Export(name="botSequenceEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> botSequenceEnable;
@@ -315,7 +315,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * @return Whether to enable bot behavior map.
      * 0: Off
      * 1: On.
-     *
+     * 
      */
     public Output<Integer> botSequenceEnable() {
         return this.botSequenceEnable;
@@ -324,7 +324,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * Whether to enable CC protection policy.
      * 0: Disabled
      * 1: Enabled.
-     *
+     * 
      */
     @Export(name="ccEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> ccEnable;
@@ -333,133 +333,133 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * @return Whether to enable CC protection policy.
      * 0: Disabled
      * 1: Enabled.
-     *
+     * 
      */
     public Output<Integer> ccEnable() {
         return this.ccEnable;
     }
     /**
      * Certificate ID managed in Certificate Center
-     *
+     * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return Certificate ID managed in Certificate Center
-     *
+     * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * Certificate name. Displayed when protocol type includes HTTPS.
-     *
+     * 
      */
     @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
      * @return Certificate name. Displayed when protocol type includes HTTPS.
-     *
+     * 
      */
     public Output<String> certificateName() {
         return this.certificateName;
     }
     /**
      * Certificate hosting platform: waf/certificate_service.
-     *
+     * 
      */
     @Export(name="certificatePlatform", refs={String.class}, tree="[0]")
     private Output<String> certificatePlatform;
 
     /**
      * @return Certificate hosting platform: waf/certificate_service.
-     *
+     * 
      */
     public Output<String> certificatePlatform() {
         return this.certificatePlatform;
     }
     /**
      * CLB instance ID.
-     *
+     * 
      */
     @Export(name="clbInstanceIds", refs={String.class}, tree="[0]")
     private Output<String> clbInstanceIds;
 
     /**
      * @return CLB instance ID.
-     *
+     * 
      */
     public Output<String> clbInstanceIds() {
         return this.clbInstanceIds;
     }
     /**
      * CLB listener ID.
-     *
+     * 
      */
     @Export(name="clbListenerId", refs={String.class}, tree="[0]")
     private Output<String> clbListenerId;
 
     /**
      * @return CLB listener ID.
-     *
+     * 
      */
     public Output<String> clbListenerId() {
         return this.clbListenerId;
     }
     /**
      * CLB backend server group ID.
-     *
+     * 
      */
     @Export(name="clbPoolId", refs={String.class}, tree="[0]")
     private Output<String> clbPoolId;
 
     /**
      * @return CLB backend server group ID.
-     *
+     * 
      */
     public Output<String> clbPoolId() {
         return this.clbPoolId;
     }
     /**
      * CLB backend server ID
-     *
+     * 
      */
     @Export(name="clbServerId", refs={String.class}, tree="[0]")
     private Output<String> clbServerId;
 
     /**
      * @return CLB backend server ID
-     *
+     * 
      */
     public Output<String> clbServerId() {
         return this.clbServerId;
     }
     /**
      * Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
-     *
+     * 
      */
     @Export(name="clientIpLocation", refs={Integer.class}, tree="[0]")
     private Output<Integer> clientIpLocation;
 
     /**
      * @return Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
-     *
+     * 
      */
     public Output<Integer> clientIpLocation() {
         return this.clientIpLocation;
     }
     /**
      * Maximum client request body size (MB).
-     *
+     * 
      */
     @Export(name="clientMaxBodySize", refs={Integer.class}, tree="[0]")
     private Output<Integer> clientMaxBodySize;
 
     /**
      * @return Maximum client request body size (MB).
-     *
+     * 
      */
     public Output<Integer> clientMaxBodySize() {
         return this.clientMaxBodySize;
@@ -467,7 +467,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * LB access parameters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="cloudAccessConfigs", refs={List.class,DomainCloudAccessConfig.class}, tree="[0,1]")
     private Output<List<DomainCloudAccessConfig>> cloudAccessConfigs;
@@ -475,77 +475,77 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return LB access parameters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainCloudAccessConfig>> cloudAccessConfigs() {
         return this.cloudAccessConfigs;
     }
     /**
      * CNAME record.
-     *
+     * 
      */
     @Export(name="cname", refs={String.class}, tree="[0]")
     private Output<String> cname;
 
     /**
      * @return CNAME record.
-     *
+     * 
      */
     public Output<String> cname() {
         return this.cname;
     }
     /**
      * Whether to enable custom bot protection.
-     *
+     * 
      */
     @Export(name="customBotEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> customBotEnable;
 
     /**
      * @return Whether to enable custom bot protection.
-     *
+     * 
      */
     public Output<Integer> customBotEnable() {
         return this.customBotEnable;
     }
     /**
      * Custom header.
-     *
+     * 
      */
     @Export(name="customHeaders", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> customHeaders;
 
     /**
      * @return Custom header.
-     *
+     * 
      */
     public Output<List<String>> customHeaders() {
         return this.customHeaders;
     }
     /**
      * Whether to enable custom response.
-     *
+     * 
      */
     @Export(name="customRspEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> customRspEnable;
 
     /**
      * @return Whether to enable custom response.
-     *
+     * 
      */
     public Output<Integer> customRspEnable() {
         return this.customRspEnable;
     }
     /**
      * Custom SNI.
-     *
+     * 
      */
     @Export(name="customSni", refs={String.class}, tree="[0]")
     private Output<String> customSni;
 
     /**
      * @return Custom SNI.
-     *
+     * 
      */
     public Output<String> customSni() {
         return this.customSni;
@@ -559,7 +559,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
      * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
      * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
-     *
+     * 
      */
     @Export(name="defenceMode", refs={Integer.class}, tree="[0]")
     private Output<Integer> defenceMode;
@@ -573,441 +573,441 @@ public class Domain extends com.pulumi.resources.CustomResource {
      * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
      * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
      * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
-     *
+     * 
      */
     public Output<Integer> defenceMode() {
         return this.defenceMode;
     }
     /**
      * Data leakage protection enabled
-     *
+     * 
      */
     @Export(name="dlpEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> dlpEnable;
 
     /**
      * @return Data leakage protection enabled
-     *
+     * 
      */
     public Output<Integer> dlpEnable() {
         return this.dlpEnable;
     }
     /**
      * Protected domain information. Supports wildcard and exact domains
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Protected domain information. Supports wildcard and exact domains
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * User-defined redirection enabled. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="enableCustomRedirect", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableCustomRedirect;
 
     /**
      * @return User-defined redirection enabled. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> enableCustomRedirect() {
         return this.enableCustomRedirect;
     }
     /**
      * Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
-     *
+     * 
      */
     @Export(name="enableHttp2", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableHttp2;
 
     /**
      * @return Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
-     *
+     * 
      */
     public Output<Integer> enableHttp2() {
         return this.enableHttp2;
     }
     /**
      * IPv6 request protection supported. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="enableIpv6", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableIpv6;
 
     /**
      * @return IPv6 request protection supported. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> enableIpv6() {
         return this.enableIpv6;
     }
     /**
      * Whether to enable SNI configuration. 0: Off, 1: On.
-     *
+     * 
      */
     @Export(name="enableSni", refs={Integer.class}, tree="[0]")
     private Output<Integer> enableSni;
 
     /**
      * @return Whether to enable SNI configuration. 0: Off, 1: On.
-     *
+     * 
      */
     public Output<Integer> enableSni() {
         return this.enableSni;
     }
     /**
      * Persistent connection reuse count
-     *
+     * 
      */
     @Export(name="keepAliveRequest", refs={Integer.class}, tree="[0]")
     private Output<Integer> keepAliveRequest;
 
     /**
      * @return Persistent connection reuse count
-     *
+     * 
      */
     public Output<Integer> keepAliveRequest() {
         return this.keepAliveRequest;
     }
     /**
      * Persistent connection keep-alive time (seconds)
-     *
+     * 
      */
     @Export(name="keepAliveTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> keepAliveTimeout;
 
     /**
      * @return Persistent connection keep-alive time (seconds)
-     *
+     * 
      */
     public Output<Integer> keepAliveTimeout() {
         return this.keepAliveTimeout;
     }
     /**
      * Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
-     *
+     * 
      */
     @Export(name="lbAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> lbAlgorithm;
 
     /**
      * @return Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
-     *
+     * 
      */
     public Output<String> lbAlgorithm() {
         return this.lbAlgorithm;
     }
     /**
      * Port number
-     *
+     * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Port number
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Project name.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Protocol following enabled. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="protocolFollow", refs={Integer.class}, tree="[0]")
     private Output<Integer> protocolFollow;
 
     /**
      * @return Protocol following enabled. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> protocolFollow() {
         return this.protocolFollow;
     }
     /**
      * Access port information
-     *
+     * 
      */
     @Export(name="protocolPorts", refs={DomainProtocolPorts.class}, tree="[0]")
     private Output<DomainProtocolPorts> protocolPorts;
 
     /**
      * @return Access port information
-     *
+     * 
      */
     public Output<DomainProtocolPorts> protocolPorts() {
         return this.protocolPorts;
     }
     /**
      * Access protocol type: supports HTTP/HTTPS
-     *
+     * 
      */
     @Export(name="protocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> protocols;
 
     /**
      * @return Access protocol type: supports HTTP/HTTPS
-     *
+     * 
      */
     public Output<List<String>> protocols() {
         return this.protocols;
     }
     /**
      * Proxy configuration enabled. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="proxyConfig", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyConfig;
 
     /**
      * @return Proxy configuration enabled. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> proxyConfig() {
         return this.proxyConfig;
     }
     /**
      * Connection timeout between WAF and backend server (seconds).
-     *
+     * 
      */
     @Export(name="proxyConnectTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyConnectTimeout;
 
     /**
      * @return Connection timeout between WAF and backend server (seconds).
-     *
+     * 
      */
     public Output<Integer> proxyConnectTimeout() {
         return this.proxyConnectTimeout;
     }
     /**
      * Number of reusable WAF origin persistent connections.
-     *
+     * 
      */
     @Export(name="proxyKeepAlive", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyKeepAlive;
 
     /**
      * @return Number of reusable WAF origin persistent connections.
-     *
+     * 
      */
     public Output<Integer> proxyKeepAlive() {
         return this.proxyKeepAlive;
     }
     /**
      * Idle persistent connection timeout (seconds)
-     *
+     * 
      */
     @Export(name="proxyKeepAliveTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyKeepAliveTimeout;
 
     /**
      * @return Idle persistent connection timeout (seconds)
-     *
+     * 
      */
     public Output<Integer> proxyKeepAliveTimeout() {
         return this.proxyKeepAliveTimeout;
     }
     /**
      * Timeout for WAF to read response from backend server (seconds).
-     *
+     * 
      */
     @Export(name="proxyReadTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyReadTimeout;
 
     /**
      * @return Timeout for WAF to read response from backend server (seconds).
-     *
+     * 
      */
     public Output<Integer> proxyReadTimeout() {
         return this.proxyReadTimeout;
     }
     /**
      * WAF origin retry count.
-     *
+     * 
      */
     @Export(name="proxyRetry", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyRetry;
 
     /**
      * @return WAF origin retry count.
-     *
+     * 
      */
     public Output<Integer> proxyRetry() {
         return this.proxyRetry;
     }
     /**
      * Timeout for WAF to transmit request to backend server (seconds).
-     *
+     * 
      */
     @Export(name="proxyWriteTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyWriteTimeout;
 
     /**
      * @return Timeout for WAF to transmit request to backend server (seconds).
-     *
+     * 
      */
     public Output<Integer> proxyWriteTimeout() {
         return this.proxyWriteTimeout;
     }
     /**
      * CNAME access origin method. 0: Private network origin, 1: Public network origin.
-     *
+     * 
      */
     @Export(name="publicRealServer", refs={Integer.class}, tree="[0]")
     private Output<Integer> publicRealServer;
 
     /**
      * @return CNAME access origin method. 0: Private network origin, 1: Public network origin.
-     *
+     * 
      */
     public Output<Integer> publicRealServer() {
         return this.publicRealServer;
     }
     /**
      * Whether to enable abnormal response protection.
-     *
+     * 
      */
     @Export(name="rspAbnormalEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> rspAbnormalEnable;
 
     /**
      * @return Whether to enable abnormal response protection.
-     *
+     * 
      */
     public Output<Integer> rspAbnormalEnable() {
         return this.rspAbnormalEnable;
     }
     /**
      * Service IP
-     *
+     * 
      */
     @Export(name="serverIps", refs={String.class}, tree="[0]")
     private Output<String> serverIps;
 
     /**
      * @return Service IP
-     *
+     * 
      */
     public Output<String> serverIps() {
         return this.serverIps;
     }
     /**
      * WAF origin IP.
-     *
+     * 
      */
     @Export(name="srcIps", refs={String.class}, tree="[0]")
     private Output<String> srcIps;
 
     /**
      * @return WAF origin IP.
-     *
+     * 
      */
     public Output<String> srcIps() {
         return this.srcIps;
     }
     /**
      * Origin protocol.
-     *
+     * 
      */
     @Export(name="srcProtocol", refs={String.class}, tree="[0]")
     private Output<String> srcProtocol;
 
     /**
      * @return Origin protocol.
-     *
+     * 
      */
     public Output<String> srcProtocol() {
         return this.srcProtocol;
     }
     /**
      * Cipher suite
-     *
+     * 
      */
     @Export(name="sslCiphers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sslCiphers;
 
     /**
      * @return Cipher suite
-     *
+     * 
      */
     public Output<List<String>> sslCiphers() {
         return this.sslCiphers;
     }
     /**
      * TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-     *
+     * 
      */
     @Export(name="sslProtocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sslProtocols;
 
     /**
      * @return TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-     *
+     * 
      */
     public Output<List<String>> sslProtocols() {
         return this.sslProtocols;
     }
     /**
      * Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
-     *
+     * 
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
      * @return Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
-     *
+     * 
      */
     public Output<Integer> status() {
         return this.status;
     }
     /**
      * Whether to enable managed bot protection.
-     *
+     * 
      */
     @Export(name="systemBotEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> systemBotEnable;
 
     /**
      * @return Whether to enable managed bot protection.
-     *
+     * 
      */
     public Output<Integer> systemBotEnable() {
         return this.systemBotEnable;
     }
     /**
      * Whether to enable anti-tampering.
-     *
+     * 
      */
     @Export(name="tamperProofEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> tamperProofEnable;
 
     /**
      * @return Whether to enable anti-tampering.
-     *
+     * 
      */
     public Output<Integer> tamperProofEnable() {
         return this.tamperProofEnable;
@@ -1015,7 +1015,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * TCP listener configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tcpListenerConfigs", refs={List.class,DomainTcpListenerConfig.class}, tree="[0,1]")
     private Output<List<DomainTcpListenerConfig>> tcpListenerConfigs;
@@ -1023,119 +1023,119 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return TCP listener configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainTcpListenerConfig>> tcpListenerConfigs() {
         return this.tcpListenerConfigs;
     }
     /**
      * Log service enabled. 0: Off, 1: On
-     *
+     * 
      */
     @Export(name="tlsEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> tlsEnable;
 
     /**
      * @return Log service enabled. 0: Off, 1: On
-     *
+     * 
      */
     public Output<Integer> tlsEnable() {
         return this.tlsEnable;
     }
     /**
      * Log field configuration details
-     *
+     * 
      */
     @Export(name="tlsFieldsConfig", refs={DomainTlsFieldsConfig.class}, tree="[0]")
     private Output<DomainTlsFieldsConfig> tlsFieldsConfig;
 
     /**
      * @return Log field configuration details
-     *
+     * 
      */
     public Output<DomainTlsFieldsConfig> tlsFieldsConfig() {
         return this.tlsFieldsConfig;
     }
     /**
      * Update time
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Update time
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * VPC ID。
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID。
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * WAF protection enabled
-     *
+     * 
      */
     @Export(name="wafEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> wafEnable;
 
     /**
      * @return WAF protection enabled
-     *
+     * 
      */
     public Output<Integer> wafEnable() {
         return this.wafEnable;
     }
     /**
      * Allowlist request protection enabled
-     *
+     * 
      */
     @Export(name="wafWhiteReqEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> wafWhiteReqEnable;
 
     /**
      * @return Allowlist request protection enabled
-     *
+     * 
      */
     public Output<Integer> wafWhiteReqEnable() {
         return this.wafWhiteReqEnable;
     }
     /**
      * Whether to enable allowlist protection.
-     *
+     * 
      */
     @Export(name="whiteEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> whiteEnable;
 
     /**
      * @return Whether to enable allowlist protection.
-     *
+     * 
      */
     public Output<Integer> whiteEnable() {
         return this.whiteEnable;
     }
     /**
      * Field allowlist protection enabled
-     *
+     * 
      */
     @Export(name="whiteFieldEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> whiteFieldEnable;
 
     /**
      * @return Field allowlist protection enabled
-     *
+     * 
      */
     public Output<Integer> whiteFieldEnable() {
         return this.whiteFieldEnable;

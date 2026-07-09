@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * A backend server group is a collection of backend servers.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cLBServerGroupDemo = new ServerGroup("cLBServerGroupDemo", ServerGroupArgs.builder()
  *             .loadBalancerId("clb-mioj49on0zcw5smt1b8rxxxx")
@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *                 .key("env")
  *                 .value("test")
  *                 .build())
- *             .servers(
+ *             .servers(            
  *                 ServerGroupServerArgs.builder()
  *                     .instance_id("i-ye498lwge85i3z3kxxxx")
  *                     .type("ecs")
@@ -78,74 +78,74 @@ import javax.annotation.Nullable;
  *                     .description("test")
  *                     .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/serverGroup:ServerGroup example &#34;server_group_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/serverGroup:ServerGroup")
 public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
-     *
+     * 
      */
     @Export(name="addressIpVersion", refs={String.class}, tree="[0]")
     private Output<String> addressIpVersion;
 
     /**
      * @return IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
-     *
+     * 
      */
     public Output<String> addressIpVersion() {
         return this.addressIpVersion;
     }
     /**
      * Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
-     *
+     * 
      */
     @Export(name="anyPortEnabled", refs={String.class}, tree="[0]")
     private Output<String> anyPortEnabled;
 
     /**
      * @return Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
-     *
+     * 
      */
     public Output<String> anyPortEnabled() {
         return this.anyPortEnabled;
     }
     /**
      * Creation time of the backend server group.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the backend server group.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -153,7 +153,7 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Listener information associated with the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="listeners", refs={List.class,ServerGroupListener.class}, tree="[0,1]")
     private Output<List<ServerGroupListener>> listeners;
@@ -161,49 +161,49 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Listener information associated with the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ServerGroupListener>> listeners() {
         return this.listeners;
     }
     /**
      * CLB instance ID to which the backend server group belongs.
-     *
+     * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return CLB instance ID to which the backend server group belongs.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Backend server group ID.
-     *
+     * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return Backend server group ID.
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
      * Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
-     *
+     * 
      */
     @Export(name="serverGroupName", refs={String.class}, tree="[0]")
     private Output<String> serverGroupName;
 
     /**
      * @return Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
-     *
+     * 
      */
     public Output<String> serverGroupName() {
         return this.serverGroupName;
@@ -211,7 +211,7 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Information about servers in the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="servers", refs={List.class,ServerGroupServer.class}, tree="[0,1]")
     private Output<List<ServerGroupServer>> servers;
@@ -219,7 +219,7 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about servers in the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ServerGroupServer>> servers() {
         return this.servers;
@@ -227,7 +227,7 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ServerGroupTag.class}, tree="[0,1]")
     private Output<List<ServerGroupTag>> tags;
@@ -235,35 +235,35 @@ public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ServerGroupTag>> tags() {
         return this.tags;
     }
     /**
      * Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Last operation time of the backend server group.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the backend server group.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

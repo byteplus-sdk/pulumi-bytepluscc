@@ -20,14 +20,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-     *
+     * 
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
      * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> certificateName() {
         return Optional.ofNullable(this.certificateName);
@@ -35,14 +35,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate private key.
-     *
+     * 
      */
     @Import(name="privateKey", required=true)
     private Output<String> privateKey;
 
     /**
      * @return Certificate private key.
-     *
+     * 
      */
     public Output<String> privateKey() {
         return this.privateKey;
@@ -65,14 +65,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -80,14 +80,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate public key.
-     *
+     * 
      */
     @Import(name="publicKey", required=true)
     private Output<String> publicKey;
 
     /**
      * @return Certificate public key.
-     *
+     * 
      */
     public Output<String> publicKey() {
         return this.publicKey;
@@ -96,7 +96,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<CertificateTagArgs>> tags;
@@ -104,7 +104,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CertificateTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -141,9 +141,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateName(@Nullable Output<String> certificateName) {
             $.certificateName = certificateName;
@@ -152,9 +152,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateName(String certificateName) {
             return certificateName(Output.of(certificateName));
@@ -162,9 +162,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -173,9 +173,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -183,9 +183,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey Certificate private key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateKey(Output<String> privateKey) {
             $.privateKey = privateKey;
@@ -194,9 +194,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey Certificate private key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateKey(String privateKey) {
             return privateKey(Output.of(privateKey));
@@ -204,9 +204,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -215,9 +215,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -225,9 +225,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Certificate public key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicKey(Output<String> publicKey) {
             $.publicKey = publicKey;
@@ -236,9 +236,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Certificate public key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicKey(String publicKey) {
             return publicKey(Output.of(publicKey));
@@ -247,9 +247,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<CertificateTagArgs>> tags) {
             $.tags = tags;
@@ -259,9 +259,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<CertificateTagArgs> tags) {
             return tags(Output.of(tags));
@@ -270,9 +270,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(CertificateTagArgs... tags) {
             return tags(List.of(tags));

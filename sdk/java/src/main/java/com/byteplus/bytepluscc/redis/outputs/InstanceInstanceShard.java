@@ -16,25 +16,25 @@ import javax.annotation.Nullable;
 public final class InstanceInstanceShard {
     /**
      * @return Number of nodes in each shard
-     *
+     * 
      */
     private @Nullable Integer nodeNumber;
     /**
      * @return Detailed list of all Server nodes in the shard.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<InstanceInstanceShardServerNode> serverNodes;
     /**
      * @return Shard ID.
-     *
+     * 
      */
     private @Nullable String shardId;
 
     private InstanceInstanceShard() {}
     /**
      * @return Number of nodes in each shard
-     *
+     * 
      */
     public Optional<Integer> nodeNumber() {
         return Optional.ofNullable(this.nodeNumber);
@@ -42,14 +42,14 @@ public final class InstanceInstanceShard {
     /**
      * @return Detailed list of all Server nodes in the shard.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<InstanceInstanceShardServerNode> serverNodes() {
         return this.serverNodes == null ? List.of() : this.serverNodes;
     }
     /**
      * @return Shard ID.
-     *
+     * 
      */
     public Optional<String> shardId() {
         return Optional.ofNullable(this.shardId);

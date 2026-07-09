@@ -14,7 +14,7 @@ public final class DomainOriginArgOriginArgAction {
     /**
      * @return Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainOriginArgOriginArgActionOriginArgComponent> originArgComponents;
 
@@ -22,7 +22,7 @@ public final class DomainOriginArgOriginArgAction {
     /**
      * @return Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainOriginArgOriginArgActionOriginArgComponent> originArgComponents() {
         return this.originArgComponents == null ? List.of() : this.originArgComponents;

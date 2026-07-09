@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * A server group is a set of backend servers.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -43,12 +43,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var nLBServerGroupDemo = new NlbServerGroup("nLBServerGroupDemo", NlbServerGroupArgs.builder()
  *             .bypassSecurityGroupEnabled(false)
@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *             .preserveClientIpEnabled(false)
  *             .sessionPersistenceEnabled(false)
  *             .proxyProtocolType("off")
- *             .servers(
+ *             .servers(            
  *                 NlbServerGroupServerArgs.builder()
  *                     .instance_id("i-ye2fvd0qo0bw80ctxxxxx")
  *                     .type("ecs")
@@ -88,270 +88,270 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/nlbServerGroup:NlbServerGroup example &#34;server_group_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/nlbServerGroup:NlbServerGroup")
 public class NlbServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Account ID
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Enable all-port forwarding
-     *
+     * 
      */
     @Export(name="anyPortEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> anyPortEnabled;
 
     /**
      * @return Enable all-port forwarding
-     *
+     * 
      */
     public Output<Boolean> anyPortEnabled() {
         return this.anyPortEnabled;
     }
     /**
      * Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
-     *
+     * 
      */
     @Export(name="bypassSecurityGroupEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> bypassSecurityGroupEnabled;
 
     /**
      * @return Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
-     *
+     * 
      */
     public Output<Boolean> bypassSecurityGroupEnabled() {
         return this.bypassSecurityGroupEnabled;
     }
     /**
      * Enable graceful connection termination.
-     *
+     * 
      */
     @Export(name="connectionDrainEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> connectionDrainEnabled;
 
     /**
      * @return Enable graceful connection termination.
-     *
+     * 
      */
     public Output<Boolean> connectionDrainEnabled() {
         return this.connectionDrainEnabled;
     }
     /**
      * Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
-     *
+     * 
      */
     @Export(name="connectionDrainTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionDrainTimeout;
 
     /**
      * @return Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
-     *
+     * 
      */
     public Output<Integer> connectionDrainTimeout() {
         return this.connectionDrainTimeout;
     }
     /**
      * Backend server group creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Backend server group creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Health check parameters
-     *
+     * 
      */
     @Export(name="healthCheck", refs={NlbServerGroupHealthCheck.class}, tree="[0]")
     private Output<NlbServerGroupHealthCheck> healthCheck;
 
     /**
      * @return Health check parameters
-     *
+     * 
      */
     public Output<NlbServerGroupHealthCheck> healthCheck() {
         return this.healthCheck;
     }
     /**
      * IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
-     *
+     * 
      */
     @Export(name="ipAddressVersion", refs={String.class}, tree="[0]")
     private Output<String> ipAddressVersion;
 
     /**
      * @return IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
-     *
+     * 
      */
     public Output<String> ipAddressVersion() {
         return this.ipAddressVersion;
     }
     /**
      * Enable source address persistence
-     *
+     * 
      */
     @Export(name="preserveClientIpEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> preserveClientIpEnabled;
 
     /**
      * @return Enable source address persistence
-     *
+     * 
      */
     public Output<Boolean> preserveClientIpEnabled() {
         return this.preserveClientIpEnabled;
     }
     /**
      * Project name
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
-     *
+     * 
      */
     @Export(name="proxyProtocolType", refs={String.class}, tree="[0]")
     private Output<String> proxyProtocolType;
 
     /**
      * @return Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
-     *
+     * 
      */
     public Output<String> proxyProtocolType() {
         return this.proxyProtocolType;
     }
     /**
      * NLB instance associated with the server group.
-     *
+     * 
      */
     @Export(name="relatedLoadBalancerIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> relatedLoadBalancerIds;
 
     /**
      * @return NLB instance associated with the server group.
-     *
+     * 
      */
     public Output<List<String>> relatedLoadBalancerIds() {
         return this.relatedLoadBalancerIds;
     }
     /**
      * Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
-     *
+     * 
      */
     @Export(name="scheduler", refs={String.class}, tree="[0]")
     private Output<String> scheduler;
 
     /**
      * @return Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
-     *
+     * 
      */
     public Output<String> scheduler() {
         return this.scheduler;
     }
     /**
      * Number of backend servers in the server group.
-     *
+     * 
      */
     @Export(name="serverCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> serverCount;
 
     /**
      * @return Number of backend servers in the server group.
-     *
+     * 
      */
     public Output<Integer> serverCount() {
         return this.serverCount;
     }
     /**
      * Server group ID
-     *
+     * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return Server group ID
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
      * Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
-     *
+     * 
      */
     @Export(name="serverGroupName", refs={String.class}, tree="[0]")
     private Output<String> serverGroupName;
 
     /**
      * @return Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
-     *
+     * 
      */
     public Output<String> serverGroupName() {
         return this.serverGroupName;
@@ -359,7 +359,7 @@ public class NlbServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Information about backend servers to be added to the server group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="servers", refs={List.class,NlbServerGroupServer.class}, tree="[0,1]")
     private Output<List<NlbServerGroupServer>> servers;
@@ -367,49 +367,49 @@ public class NlbServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about backend servers to be added to the server group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<NlbServerGroupServer>> servers() {
         return this.servers;
     }
     /**
      * Enable session persistence.
-     *
+     * 
      */
     @Export(name="sessionPersistenceEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sessionPersistenceEnabled;
 
     /**
      * @return Enable session persistence.
-     *
+     * 
      */
     public Output<Boolean> sessionPersistenceEnabled() {
         return this.sessionPersistenceEnabled;
     }
     /**
      * Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
-     *
+     * 
      */
     @Export(name="sessionPersistenceTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> sessionPersistenceTimeout;
 
     /**
      * @return Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
-     *
+     * 
      */
     public Output<Integer> sessionPersistenceTimeout() {
         return this.sessionPersistenceTimeout;
     }
     /**
      * Server group status
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Server group status
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -417,7 +417,7 @@ public class NlbServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Tag
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,NlbServerGroupTag.class}, tree="[0,1]")
     private Output<List<NlbServerGroupTag>> tags;
@@ -425,63 +425,63 @@ public class NlbServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<NlbServerGroupTag>> tags() {
         return this.tags;
     }
     /**
      * Enable removal of TCP/HTTP/HTTPS packet timestamps
-     *
+     * 
      */
     @Export(name="timestampRemoveEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> timestampRemoveEnabled;
 
     /**
      * @return Enable removal of TCP/HTTP/HTTPS packet timestamps
-     *
+     * 
      */
     public Output<Boolean> timestampRemoveEnabled() {
         return this.timestampRemoveEnabled;
     }
     /**
      * Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Last update time of the backend server group.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last update time of the backend server group.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * ID of the private network to which the server group belongs
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the private network to which the server group belongs
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;

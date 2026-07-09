@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 {
     /// <summary>
     /// After a Redis cache database instance is created, you can set an allowlist for the instance to permit devices to access it.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var redisAllowListDemo = new Bytepluscc.Redis.AllowList("RedisAllowListDemo", new()
     ///     {
@@ -54,12 +54,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     ///             "redis-cnlfenhsypxxxxxx",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:redis/allowList:AllowList example "allow_list_id"
     /// ```

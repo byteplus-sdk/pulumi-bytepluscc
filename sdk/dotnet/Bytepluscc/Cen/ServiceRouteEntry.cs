@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
 {
     /// <summary>
     /// Cloud service access.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cENServiceRouteEntryDemo = new Bytepluscc.Cen.ServiceRouteEntry("CENServiceRouteEntryDemo", new()
     ///     {
@@ -46,12 +46,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry example "cen_id|destination_cidr_block"
     /// ```

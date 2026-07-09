@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * The SSL server is a service module in SSL VPN that provides SSL services and handles packet encapsulation and decapsulation.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vPNSslVpnServerDemo = new SslVpnServer("vPNSslVpnServerDemo", SslVpnServerArgs.builder()
  *             .compress(false)
@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .projectName("default")
  *             .port(1195)
  *             .sslVpnServerName("更新的SSL服务端名称")
- *             .localSubnets(
+ *             .localSubnets(            
  *                 "192.168.1.0/24",
  *                 "192.168.2.0/24")
  *             .vpnGatewayId("vgw-****")
@@ -66,228 +66,228 @@ import javax.annotation.Nullable;
  *                 .key("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpn/sslVpnServer:SslVpnServer example &#34;ssl_vpn_server_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpn/sslVpnServer:SslVpnServer")
 public class SslVpnServer extends com.pulumi.resources.CustomResource {
     /**
      * Authentication algorithm for the SSL server. SHA1 (default), MD5, None (no encryption).
-     *
+     * 
      */
     @Export(name="auth", refs={String.class}, tree="[0]")
     private Output<String> auth;
 
     /**
      * @return Authentication algorithm for the SSL server. SHA1 (default), MD5, None (no encryption).
-     *
+     * 
      */
     public Output<String> auth() {
         return this.auth;
     }
     /**
      * Encryption algorithm for the SSL server. AES-128-CBC (default) AES-192-CBC AES-256-CBC None (no encryption).
-     *
+     * 
      */
     @Export(name="cipher", refs={String.class}, tree="[0]")
     private Output<String> cipher;
 
     /**
      * @return Encryption algorithm for the SSL server. AES-128-CBC (default) AES-192-CBC AES-256-CBC None (no encryption).
-     *
+     * 
      */
     public Output<String> cipher() {
         return this.cipher;
     }
     /**
      * Session policy for client certificates. AllowConcurrent: Reuse supported. PreemptExisting: Reuse not supported.
-     *
+     * 
      */
     @Export(name="clientCertSessionPolicy", refs={String.class}, tree="[0]")
     private Output<String> clientCertSessionPolicy;
 
     /**
      * @return Session policy for client certificates. AllowConcurrent: Reuse supported. PreemptExisting: Reuse not supported.
-     *
+     * 
      */
     public Output<String> clientCertSessionPolicy() {
         return this.clientCertSessionPolicy;
     }
     /**
      * SSL client address pool. In SSL VPN, the client address pool is the address range assigned to the client&#39;s virtual network interface, not the client&#39;s existing internal network segment. Client address pool mask range: /16 to /28. The client address pool must not conflict with the LocalSubnet or IPSec connection routes. The client address pool must not overlap with 100.64.0.0/10, 169.254.0.0/16, 127.0.0.0/8, 224.0.0.0/4, or 240.0.0.0/4. The number of available IPs in the client address pool must be greater than four times the number of SSL connections selected when creating the VPN gateway. For example, if the number of SSL connections is 10, the client address pool must have more than 40 available IPs.
-     *
+     * 
      */
     @Export(name="clientIpPool", refs={String.class}, tree="[0]")
     private Output<String> clientIpPool;
 
     /**
      * @return SSL client address pool. In SSL VPN, the client address pool is the address range assigned to the client&#39;s virtual network interface, not the client&#39;s existing internal network segment. Client address pool mask range: /16 to /28. The client address pool must not conflict with the LocalSubnet or IPSec connection routes. The client address pool must not overlap with 100.64.0.0/10, 169.254.0.0/16, 127.0.0.0/8, 224.0.0.0/4, or 240.0.0.0/4. The number of available IPs in the client address pool must be greater than four times the number of SSL connections selected when creating the VPN gateway. For example, if the number of SSL connections is 10, the client address pool must have more than 40 available IPs.
-     *
+     * 
      */
     public Output<String> clientIpPool() {
         return this.clientIpPool;
     }
     /**
      * Whether to compress transmitted data. true: Enable compression for communication. false (default): Do not compress communication.
-     *
+     * 
      */
     @Export(name="compress", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> compress;
 
     /**
      * @return Whether to compress transmitted data. true: Enable compression for communication. false (default): Do not compress communication.
-     *
+     * 
      */
     public Output<Boolean> compress() {
         return this.compress;
     }
     /**
      * Time when the SSL server was created.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the SSL server was created.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), spaces ( ), underscores (_), hyphens (-), equals signs (=), English commas (,), Chinese commas (，), and Chinese periods (。). Length: 0 to 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), spaces ( ), underscores (_), hyphens (-), equals signs (=), English commas (,), Chinese commas (，), and Chinese periods (。). Length: 0 to 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Indicates whether the current resource is blocked. true: Blocked false: Not blocked.
-     *
+     * 
      */
     @Export(name="isBlocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBlocked;
 
     /**
      * @return Indicates whether the current resource is blocked. true: Blocked false: Not blocked.
-     *
+     * 
      */
     public Output<Boolean> isBlocked() {
         return this.isBlocked;
     }
     /**
      * Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-     *
+     * 
      */
     @Export(name="localSubnets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> localSubnets;
 
     /**
      * @return Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-     *
+     * 
      */
     public Output<List<String>> localSubnets() {
         return this.localSubnets;
     }
     /**
      * Port used by the SSL server. Default: 1194. Valid port range: 1 ~ 65535. The following ports are not supported: 22, 68, 179, 323, 500, 4500.
-     *
+     * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Port used by the SSL server. Default: 1194. Valid port range: 1 ~ 65535. The following ports are not supported: 22, 68, 179, 323, 500, 4500.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Project to which the SSL server belongs. If left blank, the default is default, meaning the created resource belongs to the default project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the SSL server belongs. If left blank, the default is default, meaning the created resource belongs to the default project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Protocol used by the SSL server. Options: TCP (default): TCP protocol. UDP: UDP protocol.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Protocol used by the SSL server. Options: TCP (default): TCP protocol. UDP: UDP protocol.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * ID of the SSL server.
-     *
+     * 
      */
     @Export(name="sslVpnServerId", refs={String.class}, tree="[0]")
     private Output<String> sslVpnServerId;
 
     /**
      * @return ID of the SSL server.
-     *
+     * 
      */
     public Output<String> sslVpnServerId() {
         return this.sslVpnServerId;
     }
     /**
      * Name of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1 to 128 characters. If not specified, defaults to the SSL server ID.
-     *
+     * 
      */
     @Export(name="sslVpnServerName", refs={String.class}, tree="[0]")
     private Output<String> sslVpnServerName;
 
     /**
      * @return Name of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1 to 128 characters. If not specified, defaults to the SSL server ID.
-     *
+     * 
      */
     public Output<String> sslVpnServerName() {
         return this.sslVpnServerName;
     }
     /**
      * Status of the SSL server. Available: Available Creating: Creating Pending: In progress Deleting: Deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the SSL server. Available: Available Creating: Creating Pending: In progress Deleting: Deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -295,7 +295,7 @@ public class SslVpnServer extends com.pulumi.resources.CustomResource {
     /**
      * Tags for the SSL server.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,SslVpnServerTag.class}, tree="[0,1]")
     private Output<List<SslVpnServerTag>> tags;
@@ -303,35 +303,35 @@ public class SslVpnServer extends com.pulumi.resources.CustomResource {
     /**
      * @return Tags for the SSL server.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SslVpnServerTag>> tags() {
         return this.tags;
     }
     /**
      * Modify the time of the SSL server.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Modify the time of the SSL server.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the VPN gateway used by the SSL server.
-     *
+     * 
      */
     @Export(name="vpnGatewayId", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayId;
 
     /**
      * @return ID of the VPN gateway used by the SSL server.
-     *
+     * 
      */
     public Output<String> vpnGatewayId() {
         return this.vpnGatewayId;

@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * The database is an independent database within a PostgreSQL instance, used to store and manage data.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,12 +34,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rDSPostgreSQLDatabaseDemo = new Database("rDSPostgreSQLDatabaseDemo", DatabaseArgs.builder()
  *             .instanceId("postgres-8d1fcxxxxxx")
@@ -49,116 +49,116 @@ import javax.annotation.Nullable;
  *             .collate("C")
  *             .cType("C.UTF-8")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/database:Database example &#34;instance_id|db_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdspostgresql/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
     /**
      * Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
-     *
+     * 
      */
     @Export(name="cType", refs={String.class}, tree="[0]")
     private Output<String> cType;
 
     /**
      * @return Character classification. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
-     *
+     * 
      */
     public Output<String> cType() {
         return this.cType;
     }
     /**
      * Database character set. Supported character sets: utf8 (default), latin1, ascii
-     *
+     * 
      */
     @Export(name="characterSetName", refs={String.class}, tree="[0]")
     private Output<String> characterSetName;
 
     /**
      * @return Database character set. Supported character sets: utf8 (default), latin1, ascii
-     *
+     * 
      */
     public Output<String> characterSetName() {
         return this.characterSetName;
     }
     /**
      * Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
-     *
+     * 
      */
     @Export(name="collate", refs={String.class}, tree="[0]")
     private Output<String> collate;
 
     /**
      * @return Collation. Supported values: C (default), C.UTF-8, en*US.utf8, zh*CN.utf8, and POSIX
-     *
+     * 
      */
     public Output<String> collate() {
         return this.collate;
     }
     /**
      * Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
-     *
+     * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
      * @return Database name. Naming rules: Length must be 2–63 characters. Can contain letters, numbers, underscores, or hyphens. Must start with a letter and end with a letter or number. Reserved keywords are not allowed. For a list of all disabled keywords, see Disabled Keywords.
-     *
+     * 
      */
     public Output<String> dbName() {
         return this.dbName;
     }
     /**
      * Database status: Unavailable: Not available. Available: Available.
-     *
+     * 
      */
     @Export(name="dbStatus", refs={String.class}, tree="[0]")
     private Output<String> dbStatus;
 
     /**
      * @return Database status: Unavailable: Not available. Available: Available.
-     *
+     * 
      */
     public Output<String> dbStatus() {
         return this.dbStatus;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
-     *
+     * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
      * @return Database owner. Note: Read-only instance accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the database owner. If no value is provided or the value is empty, this field defaults to rds superuser
-     *
+     * 
      */
     public Output<String> owner() {
         return this.owner;

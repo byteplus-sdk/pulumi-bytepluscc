@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * The subnet is a segment allocated within a specified availability zone from a VPC CIDR block, providing private IP addresses for cloud resources such as cloud servers and load balancers
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var subnetDemo = new Subnet("subnetDemo", SubnetArgs.builder()
  *             .vpcId("vpc-xxxx")
@@ -58,228 +58,228 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/subnet:Subnet example &#34;subnet_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/subnet:Subnet")
 public class Subnet extends com.pulumi.resources.CustomResource {
     /**
      * ID of the account to which the subnet belongs
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return ID of the account to which the subnet belongs
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Number of available IP addresses in the subnet
-     *
+     * 
      */
     @Export(name="availableIpAddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> availableIpAddressCount;
 
     /**
      * @return Number of available IP addresses in the subnet
-     *
+     * 
      */
     public Output<Integer> availableIpAddressCount() {
         return this.availableIpAddressCount;
     }
     /**
      * Subnet IPv4 CIDR block
-     *
+     * 
      */
     @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     /**
      * @return Subnet IPv4 CIDR block
-     *
+     * 
      */
     public Output<String> cidrBlock() {
         return this.cidrBlock;
     }
     /**
      * Subnet creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Subnet creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-     *
+     * 
      */
     @Export(name="enableIpv6", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIpv6;
 
     /**
      * @return Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-     *
+     * 
      */
     public Output<Boolean> enableIpv6() {
         return this.enableIpv6;
     }
     /**
      * Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-     *
+     * 
      */
     @Export(name="ipv6CidrBlock", refs={String.class}, tree="[0]")
     private Output<String> ipv6CidrBlock;
 
     /**
      * @return Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-     *
+     * 
      */
     public Output<String> ipv6CidrBlock() {
         return this.ipv6CidrBlock;
     }
     /**
      * Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
-     *
+     * 
      */
     @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefault;
 
     /**
      * @return Whether the subnet is a default subnet. 1. true: Default subnet, created automatically when an ECS instance is created. 2. false: Non-default subnet, created manually by the user
-     *
+     * 
      */
     public Output<Boolean> isDefault() {
         return this.isDefault;
     }
     /**
      * ID of the network ACL associated with the subnet
-     *
+     * 
      */
     @Export(name="networkAclId", refs={String.class}, tree="[0]")
     private Output<String> networkAclId;
 
     /**
      * @return ID of the network ACL associated with the subnet
-     *
+     * 
      */
     public Output<String> networkAclId() {
         return this.networkAclId;
     }
     /**
      * Name of the project associated with the VPC instance where the subnet resides
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project associated with the VPC instance where the subnet resides
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Read-only field, subnet IPv6 CIDR block
-     *
+     * 
      */
     @Export(name="readIpv6CidrBlock", refs={String.class}, tree="[0]")
     private Output<String> readIpv6CidrBlock;
 
     /**
      * @return Read-only field, subnet IPv6 CIDR block
-     *
+     * 
      */
     public Output<String> readIpv6CidrBlock() {
         return this.readIpv6CidrBlock;
     }
     /**
      * Route table information
-     *
+     * 
      */
     @Export(name="routeTable", refs={SubnetRouteTable.class}, tree="[0]")
     private Output<SubnetRouteTable> routeTable;
 
     /**
      * @return Route table information
-     *
+     * 
      */
     public Output<SubnetRouteTable> routeTable() {
         return this.routeTable;
     }
     /**
      * Subnet status. 1. Pending: Configuring. 2. Available: Available
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Subnet status. 1. Pending: Configuring. 2. Available: Available
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the subnet whose information is to be modified
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return ID of the subnet whose information is to be modified
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-     *
+     * 
      */
     @Export(name="subnetName", refs={String.class}, tree="[0]")
     private Output<String> subnetName;
 
     /**
      * @return Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-     *
+     * 
      */
     public Output<String> subnetName() {
         return this.subnetName;
@@ -287,7 +287,7 @@ public class Subnet extends com.pulumi.resources.CustomResource {
     /**
      * Subnet tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,SubnetTag.class}, tree="[0,1]")
     private Output<List<SubnetTag>> tags;
@@ -295,63 +295,63 @@ public class Subnet extends com.pulumi.resources.CustomResource {
     /**
      * @return Subnet tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SubnetTag>> tags() {
         return this.tags;
     }
     /**
      * Total number of available IPs in the subnet
-     *
+     * 
      */
     @Export(name="totalIpv4Count", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalIpv4Count;
 
     /**
      * @return Total number of available IPs in the subnet
-     *
+     * 
      */
     public Output<Integer> totalIpv4Count() {
         return this.totalIpv4Count;
     }
     /**
      * Subnet update time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Subnet update time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * ID of the VPC to which the subnet belongs
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the subnet belongs
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

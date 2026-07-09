@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
 {
     /// <summary>
     /// A sandbox instance is a secure and isolated container runtime environment that actually runs the sandbox image in the cloud sandbox
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vefaasSandboxDemo = new Bytepluscc.Vefaas.Sandbox("VefaasSandboxDemo", new()
     ///     {
@@ -51,7 +51,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     ///             Enable = true,
     ///             Tos_mount_points = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "bucketPath", "/mnt/tos" },
     ///                     { "localMountPath", "/mnt/tos" },
@@ -67,12 +67,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vefaas
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vefaas/sandbox:Sandbox example "function_id|sandbox_id"
     /// ```

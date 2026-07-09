@@ -17,136 +17,136 @@ import java.util.Objects;
 public final class GetInstanceEndpoint {
     /**
      * @return Address list.
-     *
+     * 
      */
     private List<GetInstanceEndpointAddress> addresses;
     /**
      * @return When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-     *
+     * 
      */
     private String autoAddNewNodes;
     /**
      * @return Address description.
-     *
+     * 
      */
     private String description;
     /**
      * @return Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     private String enableReadOnly;
     /**
      * @return Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     private String enableReadWriteSplitting;
     /**
      * @return Instance connection terminal ID
-     *
+     * 
      */
     private String endpointId;
     /**
      * @return Instance connection terminal name
-     *
+     * 
      */
     private String endpointName;
     /**
      * @return Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-     *
+     * 
      */
     private String endpointType;
     /**
      * @return Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-     *
+     * 
      */
     private String readOnlyNodeDistributionType;
     /**
      * @return Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
      * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-     *
+     * 
      */
     private Double readOnlyNodeMaxDelayTime;
     /**
      * @return List of nodes configured for the endpoint and their corresponding read-only weights.
-     *
+     * 
      */
     private List<GetInstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
      * @return Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-     *
+     * 
      */
     private String readWriteMode;
     /**
      * @return After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-     *
+     * 
      */
     private Double readWriteProxyConnection;
     /**
      * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
-     *
+     * 
      */
     private Boolean writeNodeHaltWriting;
 
     private GetInstanceEndpoint() {}
     /**
      * @return Address list.
-     *
+     * 
      */
     public List<GetInstanceEndpointAddress> addresses() {
         return this.addresses;
     }
     /**
      * @return When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-     *
+     * 
      */
     public String autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
      * @return Address description.
-     *
+     * 
      */
     public String description() {
         return this.description;
     }
     /**
      * @return Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     public String enableReadOnly() {
         return this.enableReadOnly;
     }
     /**
      * @return Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     public String enableReadWriteSplitting() {
         return this.enableReadWriteSplitting;
     }
     /**
      * @return Instance connection terminal ID
-     *
+     * 
      */
     public String endpointId() {
         return this.endpointId;
     }
     /**
      * @return Instance connection terminal name
-     *
+     * 
      */
     public String endpointName() {
         return this.endpointName;
     }
     /**
      * @return Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-     *
+     * 
      */
     public String endpointType() {
         return this.endpointType;
     }
     /**
      * @return Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-     *
+     * 
      */
     public String readOnlyNodeDistributionType() {
         return this.readOnlyNodeDistributionType;
@@ -154,35 +154,35 @@ public final class GetInstanceEndpoint {
     /**
      * @return Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
      * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-     *
+     * 
      */
     public Double readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
     /**
      * @return List of nodes configured for the endpoint and their corresponding read-only weights.
-     *
+     * 
      */
     public List<GetInstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }
     /**
      * @return Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-     *
+     * 
      */
     public String readWriteMode() {
         return this.readWriteMode;
     }
     /**
      * @return After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-     *
+     * 
      */
     public Double readWriteProxyConnection() {
         return this.readWriteProxyConnection;
     }
     /**
      * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
-     *
+     * 
      */
     public Boolean writeNodeHaltWriting() {
         return this.writeNodeHaltWriting;

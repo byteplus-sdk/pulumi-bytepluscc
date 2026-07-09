@@ -21,7 +21,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Detailed information about IP entries in the access control policy group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="aclEntries")
     private @Nullable Output<List<AclAclEntryArgs>> aclEntries;
@@ -29,7 +29,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Detailed information about IP entries in the access control policy group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AclAclEntryArgs>>> aclEntries() {
         return Optional.ofNullable(this.aclEntries);
@@ -37,14 +37,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-     *
+     * 
      */
     @Import(name="aclName")
     private @Nullable Output<String> aclName;
 
     /**
      * @return Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-     *
+     * 
      */
     public Optional<Output<String>> aclName() {
         return Optional.ofNullable(this.aclName);
@@ -52,14 +52,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -67,14 +67,14 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -83,7 +83,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Detailed information about access control policy group tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<AclTagArgs>> tags;
@@ -91,7 +91,7 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Detailed information about access control policy group tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AclTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -128,9 +128,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param aclEntries Detailed information about IP entries in the access control policy group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclEntries(@Nullable Output<List<AclAclEntryArgs>> aclEntries) {
             $.aclEntries = aclEntries;
@@ -140,9 +140,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param aclEntries Detailed information about IP entries in the access control policy group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclEntries(List<AclAclEntryArgs> aclEntries) {
             return aclEntries(Output.of(aclEntries));
@@ -151,9 +151,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param aclEntries Detailed information about IP entries in the access control policy group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclEntries(AclAclEntryArgs... aclEntries) {
             return aclEntries(List.of(aclEntries));
@@ -161,9 +161,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclName Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclName(@Nullable Output<String> aclName) {
             $.aclName = aclName;
@@ -172,9 +172,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclName Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclName(String aclName) {
             return aclName(Output.of(aclName));
@@ -182,9 +182,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -193,9 +193,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -203,9 +203,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -214,9 +214,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -225,9 +225,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Detailed information about access control policy group tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<AclTagArgs>> tags) {
             $.tags = tags;
@@ -237,9 +237,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Detailed information about access control policy group tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<AclTagArgs> tags) {
             return tags(Output.of(tags));
@@ -248,9 +248,9 @@ public final class AclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Detailed information about access control policy group tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(AclTagArgs... tags) {
             return tags(List.of(tags));

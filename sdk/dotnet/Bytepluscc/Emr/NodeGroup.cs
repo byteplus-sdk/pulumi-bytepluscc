@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
     /// An E-MapReduce cluster consists of multiple types of instance nodes, including master instance nodes (Master), core instance nodes (Core), and task instance nodes (Task). Different service processes are deployed on each node type, and each is responsible for different tasks.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eMRNodeGroupDemo = new Bytepluscc.Emr.NodeGroup("EMRNodeGroupDemo", new()
     ///     {
@@ -56,12 +56,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:emr/nodeGroup:NodeGroup example "cluster_id|node_group_id"
     /// ```

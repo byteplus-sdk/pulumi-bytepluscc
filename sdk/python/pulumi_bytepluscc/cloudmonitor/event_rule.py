@@ -43,7 +43,7 @@ class EventRuleArgs:
                  Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
                  Length limit: 0–255 characters
         :param pulumi.Input[_builtins.str] enable_state: Rule status
-
+                 
                  enable: Rule enabled
                  disable: Rule disabled
         :param pulumi.Input[_builtins.str] filter_pattern_input: Filter mode, also known as event matching rule. Used for creation and modification. Format: {"Data":{"autoscaling":["1","3"],"ecs":["2"]}}
@@ -145,7 +145,7 @@ class EventRuleArgs:
     def enable_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule status
-
+          
           enable: Rule enabled
           disable: Rule disabled
         """
@@ -207,7 +207,7 @@ class _EventRuleState:
                  Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
                  Length limit: 0–255 characters
         :param pulumi.Input[_builtins.str] enable_state: Rule status
-
+                 
                  enable: Rule enabled
                  disable: Rule disabled
         :param pulumi.Input[_builtins.str] event_bus_name: Event bus name. Currently, only 'default' can be entered
@@ -296,7 +296,7 @@ class _EventRuleState:
     def enable_state(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule status
-
+          
           enable: Rule enabled
           disable: Rule disabled
         """
@@ -489,7 +489,7 @@ class EventRule(pulumi.CustomResource):
                  Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
                  Length limit: 0–255 characters
         :param pulumi.Input[_builtins.str] enable_state: Rule status
-
+                 
                  enable: Rule enabled
                  disable: Rule disabled
         :param pulumi.Input[_builtins.str] event_bus_name: Event bus name. Currently, only 'default' can be entered
@@ -640,7 +640,7 @@ class EventRule(pulumi.CustomResource):
                  Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
                  Length limit: 0–255 characters
         :param pulumi.Input[_builtins.str] enable_state: Rule status
-
+                 
                  enable: Rule enabled
                  disable: Rule disabled
         :param pulumi.Input[_builtins.str] event_bus_name: Event bus name. Currently, only 'default' can be entered
@@ -708,7 +708,7 @@ class EventRule(pulumi.CustomResource):
     def enable_state(self) -> pulumi.Output[_builtins.str]:
         """
         Rule status
-
+          
           enable: Rule enabled
           disable: Rule disabled
         """

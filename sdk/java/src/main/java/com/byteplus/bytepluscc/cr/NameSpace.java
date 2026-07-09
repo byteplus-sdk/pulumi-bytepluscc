@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,86 +34,86 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var namespaceDemo = new NameSpace("namespaceDemo", NameSpaceArgs.builder()
  *             .registry("test")
  *             .name("testnamespace")
  *             .project("default")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cr/nameSpace:NameSpace example &#34;registry|name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cr/nameSpace:NameSpace")
 public class NameSpace extends com.pulumi.resources.CustomResource {
     /**
      * Namespace creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Namespace creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Namespace name. Supports lowercase English letters, numbers, periods (.), hyphens (-), and underscores (_). Punctuation cannot appear at the beginning or end, nor be used consecutively. Length must be between 2 and 90 characters. Standard edition instance: The name must be unique within the same image repository instance. Trial edition instance: The namespace name must be unique across all accounts within the same region. If the namespace name you set is already taken, try another name or purchase a standard edition instance.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
-     *
+     * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
      * @return Name of the project to which the namespace belongs. This parameter is case-sensitive and must not exceed 64 characters. If the parameter is empty, the namespace is associated with the default project.
-     *
+     * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
      * Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
-     *
+     * 
      */
     @Export(name="registry", refs={String.class}, tree="[0]")
     private Output<String> registry;
 
     /**
      * @return Specify the image repository instance name. Obtain it via ListRegistries or from the instance list page in the image repository console.
-     *
+     * 
      */
     public Output<String> registry() {
         return this.registry;

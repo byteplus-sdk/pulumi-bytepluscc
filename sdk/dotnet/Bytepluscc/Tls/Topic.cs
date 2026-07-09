@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// Log topic is the basic unit for log management in the log service. Log ingestion, search and analysis, and consumption are all performed at the log topic level.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tlsTopicDemo = new Bytepluscc.Tls.Topic("TlsTopicDemo", new()
     ///     {
@@ -49,12 +49,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         EnableHotTtl = false,
     ///         AllowConsume = false,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/topic:Topic example "topic_id"
     /// ```

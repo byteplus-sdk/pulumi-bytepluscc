@@ -23,14 +23,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Endpoint description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -38,14 +38,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint access model
-     *
+     * 
      */
     @Import(name="modelReference", required=true)
     private Output<EndpointModelReferenceArgs> modelReference;
 
     /**
      * @return Endpoint access model
-     *
+     * 
      */
     public Output<EndpointModelReferenceArgs> modelReference() {
         return this.modelReference;
@@ -53,14 +53,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Model unit. If empty, indicates postpaid; otherwise, prepaid.
-     *
+     * 
      */
     @Import(name="modelUnitId")
     private @Nullable Output<String> modelUnitId;
 
     /**
      * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
-     *
+     * 
      */
     public Optional<Output<String>> modelUnitId() {
         return Optional.ofNullable(this.modelUnitId);
@@ -68,14 +68,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Content guardrail scheme
-     *
+     * 
      */
     @Import(name="moderation")
     private @Nullable Output<EndpointModerationArgs> moderation;
 
     /**
      * @return Content guardrail scheme
-     *
+     * 
      */
     public Optional<Output<EndpointModerationArgs>> moderation() {
         return Optional.ofNullable(this.moderation);
@@ -83,14 +83,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint name
-     *
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Endpoint name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
@@ -98,14 +98,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name the resource belongs to; default value is &#34;default&#34;
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name the resource belongs to; default value is &#34;default&#34;
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -113,14 +113,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint rate limiting
-     *
+     * 
      */
     @Import(name="rateLimit")
     private @Nullable Output<EndpointRateLimitArgs> rateLimit;
 
     /**
      * @return Endpoint rate limiting
-     *
+     * 
      */
     public Optional<Output<EndpointRateLimitArgs>> rateLimit() {
         return Optional.ofNullable(this.rateLimit);
@@ -129,7 +129,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags bound to the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<EndpointTagArgs>> tags;
@@ -137,7 +137,7 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags bound to the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -176,9 +176,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Endpoint description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -187,9 +187,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Endpoint description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -197,9 +197,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelReference Endpoint access model
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelReference(Output<EndpointModelReferenceArgs> modelReference) {
             $.modelReference = modelReference;
@@ -208,9 +208,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelReference Endpoint access model
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelReference(EndpointModelReferenceArgs modelReference) {
             return modelReference(Output.of(modelReference));
@@ -218,9 +218,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelUnitId(@Nullable Output<String> modelUnitId) {
             $.modelUnitId = modelUnitId;
@@ -229,9 +229,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelUnitId(String modelUnitId) {
             return modelUnitId(Output.of(modelUnitId));
@@ -239,9 +239,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param moderation Content guardrail scheme
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder moderation(@Nullable Output<EndpointModerationArgs> moderation) {
             $.moderation = moderation;
@@ -250,9 +250,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param moderation Content guardrail scheme
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder moderation(EndpointModerationArgs moderation) {
             return moderation(Output.of(moderation));
@@ -260,9 +260,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Endpoint name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -271,9 +271,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Endpoint name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -281,9 +281,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -292,9 +292,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -302,9 +302,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rateLimit Endpoint rate limiting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rateLimit(@Nullable Output<EndpointRateLimitArgs> rateLimit) {
             $.rateLimit = rateLimit;
@@ -313,9 +313,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rateLimit Endpoint rate limiting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rateLimit(EndpointRateLimitArgs rateLimit) {
             return rateLimit(Output.of(rateLimit));
@@ -324,9 +324,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<EndpointTagArgs>> tags) {
             $.tags = tags;
@@ -336,9 +336,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<EndpointTagArgs> tags) {
             return tags(Output.of(tags));
@@ -347,9 +347,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(EndpointTagArgs... tags) {
             return tags(List.of(tags));

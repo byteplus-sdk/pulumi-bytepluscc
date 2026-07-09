@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
 {
     /// <summary>
     /// Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var fileNASMountPointDemo = new Bytepluscc.Filenas.MountPoint("FileNASMountPointDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     ///         SubnetId = "subnet-btepcsc5*****",
     ///         VpcId = "vpc-3nr6adcn064u8931*****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:filenas/mountPoint:MountPoint example "file_system_id|mount_point_id"
     /// ```

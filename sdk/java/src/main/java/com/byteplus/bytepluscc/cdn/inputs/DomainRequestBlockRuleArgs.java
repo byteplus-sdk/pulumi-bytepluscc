@@ -20,7 +20,7 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
     /**
      * Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="blockRules")
     private @Nullable Output<List<DomainRequestBlockRuleBlockRuleArgs>> blockRules;
@@ -28,7 +28,7 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
     /**
      * @return Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainRequestBlockRuleBlockRuleArgs>>> blockRules() {
         return Optional.ofNullable(this.blockRules);
@@ -36,14 +36,14 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
 
     /**
      * Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-     *
+     * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-     *
+     * 
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -77,9 +77,9 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
         /**
          * @param blockRules Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder blockRules(@Nullable Output<List<DomainRequestBlockRuleBlockRuleArgs>> blockRules) {
             $.blockRules = blockRules;
@@ -89,9 +89,9 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
         /**
          * @param blockRules Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder blockRules(List<DomainRequestBlockRuleBlockRuleArgs> blockRules) {
             return blockRules(Output.of(blockRules));
@@ -100,9 +100,9 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
         /**
          * @param blockRules Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder blockRules(DomainRequestBlockRuleBlockRuleArgs... blockRules) {
             return blockRules(List.of(blockRules));
@@ -110,9 +110,9 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
 
         /**
          * @param switch_ Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -121,9 +121,9 @@ public final class DomainRequestBlockRuleArgs extends com.pulumi.resources.Resou
 
         /**
          * @param switch_ Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

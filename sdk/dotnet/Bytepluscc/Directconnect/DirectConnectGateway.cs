@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect
 {
     /// <summary>
     /// The Direct Connect Gateway is the entry point for local data centers to access the cloud. It connects private networks (VPC) and physical dedicated connections, enabling mutual access between on-premises data centers (IDC) and cloud private networks (VPC).
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var directConnectDirectConnectGatewayDemo = new Bytepluscc.Directconnect.DirectConnectGateway("DirectConnectDirectConnectGatewayDemo", new()
     ///     {
@@ -38,12 +38,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:directconnect/directConnectGateway:DirectConnectGateway example "direct_connect_gateway_id"
     /// ```

@@ -21,14 +21,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
-     *
+     * 
      */
     @Import(name="allowConsume")
     private @Nullable Output<Boolean> allowConsume;
 
     /**
      * @return Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> allowConsume() {
         return Optional.ofNullable(this.allowConsume);
@@ -36,14 +36,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
-     *
+     * 
      */
     @Import(name="archiveTtl")
     private @Nullable Output<Integer> archiveTtl;
 
     /**
      * @return Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
-     *
+     * 
      */
     public Optional<Output<Integer>> archiveTtl() {
         return Optional.ofNullable(this.archiveTtl);
@@ -51,14 +51,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
-     *
+     * 
      */
     @Import(name="autoSplit")
     private @Nullable Output<Boolean> autoSplit;
 
     /**
      * @return Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoSplit() {
         return Optional.ofNullable(this.autoSplit);
@@ -66,14 +66,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     @Import(name="coldTtl")
     private @Nullable Output<Integer> coldTtl;
 
     /**
      * @return Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     public Optional<Output<Integer>> coldTtl() {
         return Optional.ofNullable(this.coldTtl);
@@ -81,14 +81,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
-     *
+     * 
      */
     @Import(name="consumeTopic")
     private @Nullable Output<String> consumeTopic;
 
     /**
      * @return Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
-     *
+     * 
      */
     public Optional<Output<String>> consumeTopic() {
         return Optional.ofNullable(this.consumeTopic);
@@ -96,14 +96,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log topic creation time.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Log topic creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -111,14 +111,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log topic description. Does not support &lt;&gt;, &#39;, \, \, or any emoji symbols. Length: 0–64 characters.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Log topic description. Does not support &lt;&gt;, &#39;, \, \, or any emoji symbols. Length: 0–64 characters.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -126,14 +126,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
-     *
+     * 
      */
     @Import(name="enableHotTtl")
     private @Nullable Output<Boolean> enableHotTtl;
 
     /**
      * @return Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableHotTtl() {
         return Optional.ofNullable(this.enableHotTtl);
@@ -141,14 +141,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
-     *
+     * 
      */
     @Import(name="enableTracking")
     private @Nullable Output<Boolean> enableTracking;
 
     /**
      * @return Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableTracking() {
         return Optional.ofNullable(this.enableTracking);
@@ -156,14 +156,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     @Import(name="hotTtl")
     private @Nullable Output<Integer> hotTtl;
 
     /**
      * @return Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     public Optional<Output<Integer>> hotTtl() {
         return Optional.ofNullable(this.hotTtl);
@@ -171,14 +171,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service&#39;s private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
-     *
+     * 
      */
     @Import(name="logPublicIp")
     private @Nullable Output<Boolean> logPublicIp;
 
     /**
      * @return Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service&#39;s private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
-     *
+     * 
      */
     public Optional<Output<Boolean>> logPublicIp() {
         return Optional.ofNullable(this.logPublicIp);
@@ -186,14 +186,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
-     *
+     * 
      */
     @Import(name="maxSplitShard")
     private @Nullable Output<Integer> maxSplitShard;
 
     /**
      * @return Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
-     *
+     * 
      */
     public Optional<Output<Integer>> maxSplitShard() {
         return Optional.ofNullable(this.maxSplitShard);
@@ -201,14 +201,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project ID to which the log topic belongs.
-     *
+     * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
      * @return Log project ID to which the log topic belongs.
-     *
+     * 
      */
     public Optional<Output<String>> projectId() {
         return Optional.ofNullable(this.projectId);
@@ -216,14 +216,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
-     *
+     * 
      */
     @Import(name="shardCount")
     private @Nullable Output<Integer> shardCount;
 
     /**
      * @return Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
-     *
+     * 
      */
     public Optional<Output<Integer>> shardCount() {
         return Optional.ofNullable(this.shardCount);
@@ -232,7 +232,7 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<TopicTagArgs>> tags;
@@ -240,7 +240,7 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<TopicTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -248,14 +248,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time format
-     *
+     * 
      */
     @Import(name="timeFormat")
     private @Nullable Output<String> timeFormat;
 
     /**
      * @return Time format
-     *
+     * 
      */
     public Optional<Output<String>> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
@@ -263,14 +263,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time field name
-     *
+     * 
      */
     @Import(name="timeKey")
     private @Nullable Output<String> timeKey;
 
     /**
      * @return Time field name
-     *
+     * 
      */
     public Optional<Output<String>> timeKey() {
         return Optional.ofNullable(this.timeKey);
@@ -278,14 +278,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log topic ID.
-     *
+     * 
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
      * @return Log topic ID.
-     *
+     * 
      */
     public Optional<Output<String>> topicId() {
         return Optional.ofNullable(this.topicId);
@@ -293,14 +293,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log topic name.
-     *
+     * 
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
      * @return Log topic name.
-     *
+     * 
      */
     public Optional<Output<String>> topicName() {
         return Optional.ofNullable(this.topicName);
@@ -308,14 +308,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
-     *
+     * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
-     *
+     * 
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -323,14 +323,14 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log topic modification time.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Log topic modification time.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -382,9 +382,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowConsume Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowConsume(@Nullable Output<Boolean> allowConsume) {
             $.allowConsume = allowConsume;
@@ -393,9 +393,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowConsume Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowConsume(Boolean allowConsume) {
             return allowConsume(Output.of(allowConsume));
@@ -403,9 +403,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param archiveTtl Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder archiveTtl(@Nullable Output<Integer> archiveTtl) {
             $.archiveTtl = archiveTtl;
@@ -414,9 +414,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param archiveTtl Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder archiveTtl(Integer archiveTtl) {
             return archiveTtl(Output.of(archiveTtl));
@@ -424,9 +424,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoSplit Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoSplit(@Nullable Output<Boolean> autoSplit) {
             $.autoSplit = autoSplit;
@@ -435,9 +435,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoSplit Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoSplit(Boolean autoSplit) {
             return autoSplit(Output.of(autoSplit));
@@ -445,9 +445,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param coldTtl Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldTtl(@Nullable Output<Integer> coldTtl) {
             $.coldTtl = coldTtl;
@@ -456,9 +456,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param coldTtl Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldTtl(Integer coldTtl) {
             return coldTtl(Output.of(coldTtl));
@@ -466,9 +466,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param consumeTopic Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consumeTopic(@Nullable Output<String> consumeTopic) {
             $.consumeTopic = consumeTopic;
@@ -477,9 +477,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param consumeTopic Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consumeTopic(String consumeTopic) {
             return consumeTopic(Output.of(consumeTopic));
@@ -487,9 +487,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Log topic creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -498,9 +498,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Log topic creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -508,9 +508,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Log topic description. Does not support &lt;&gt;, &#39;, \, \, or any emoji symbols. Length: 0–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -519,9 +519,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Log topic description. Does not support &lt;&gt;, &#39;, \, \, or any emoji symbols. Length: 0–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -529,9 +529,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableHotTtl Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHotTtl(@Nullable Output<Boolean> enableHotTtl) {
             $.enableHotTtl = enableHotTtl;
@@ -540,9 +540,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableHotTtl Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHotTtl(Boolean enableHotTtl) {
             return enableHotTtl(Output.of(enableHotTtl));
@@ -550,9 +550,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableTracking Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableTracking(@Nullable Output<Boolean> enableTracking) {
             $.enableTracking = enableTracking;
@@ -561,9 +561,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableTracking Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableTracking(Boolean enableTracking) {
             return enableTracking(Output.of(enableTracking));
@@ -571,9 +571,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hotTtl Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotTtl(@Nullable Output<Integer> hotTtl) {
             $.hotTtl = hotTtl;
@@ -582,9 +582,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hotTtl Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotTtl(Integer hotTtl) {
             return hotTtl(Output.of(hotTtl));
@@ -592,9 +592,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logPublicIp Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service&#39;s private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logPublicIp(@Nullable Output<Boolean> logPublicIp) {
             $.logPublicIp = logPublicIp;
@@ -603,9 +603,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logPublicIp Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service&#39;s private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logPublicIp(Boolean logPublicIp) {
             return logPublicIp(Output.of(logPublicIp));
@@ -613,9 +613,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxSplitShard Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxSplitShard(@Nullable Output<Integer> maxSplitShard) {
             $.maxSplitShard = maxSplitShard;
@@ -624,9 +624,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxSplitShard Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxSplitShard(Integer maxSplitShard) {
             return maxSplitShard(Output.of(maxSplitShard));
@@ -634,9 +634,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId Log project ID to which the log topic belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectId(@Nullable Output<String> projectId) {
             $.projectId = projectId;
@@ -645,9 +645,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId Log project ID to which the log topic belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
@@ -655,9 +655,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardCount Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardCount(@Nullable Output<Integer> shardCount) {
             $.shardCount = shardCount;
@@ -666,9 +666,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardCount Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardCount(Integer shardCount) {
             return shardCount(Output.of(shardCount));
@@ -677,9 +677,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<TopicTagArgs>> tags) {
             $.tags = tags;
@@ -689,9 +689,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<TopicTagArgs> tags) {
             return tags(Output.of(tags));
@@ -700,9 +700,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(TopicTagArgs... tags) {
             return tags(List.of(tags));
@@ -710,9 +710,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeFormat Time format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(@Nullable Output<String> timeFormat) {
             $.timeFormat = timeFormat;
@@ -721,9 +721,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeFormat Time format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(String timeFormat) {
             return timeFormat(Output.of(timeFormat));
@@ -731,9 +731,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeKey Time field name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(@Nullable Output<String> timeKey) {
             $.timeKey = timeKey;
@@ -742,9 +742,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeKey Time field name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(String timeKey) {
             return timeKey(Output.of(timeKey));
@@ -752,9 +752,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId Log topic ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicId(@Nullable Output<String> topicId) {
             $.topicId = topicId;
@@ -763,9 +763,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId Log topic ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicId(String topicId) {
             return topicId(Output.of(topicId));
@@ -773,9 +773,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicName Log topic name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicName(@Nullable Output<String> topicName) {
             $.topicName = topicName;
@@ -784,9 +784,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicName Log topic name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicName(String topicName) {
             return topicName(Output.of(topicName));
@@ -794,9 +794,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -805,9 +805,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));
@@ -815,9 +815,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Log topic modification time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -826,9 +826,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Log topic modification time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

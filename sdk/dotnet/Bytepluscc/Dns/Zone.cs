@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Dns
 {
     /// <summary>
     /// The zone in the resource is the domain name, which can be a primary domain such as example.com or a subdomain such as abc.example.com
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var dnsZoneDemo = new Bytepluscc.Dns.Zone("DnsZoneDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Dns
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:dns/zone:Zone example "zid"
     /// ```

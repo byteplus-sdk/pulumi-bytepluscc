@@ -19,14 +19,14 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
-     *
+     * 
      */
     @Import(name="enableNas")
     private @Nullable Output<Boolean> enableNas;
 
     /**
      * @return Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableNas() {
         return Optional.ofNullable(this.enableNas);
@@ -35,7 +35,7 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
     /**
      * NAS storage configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nasConfigs")
     private @Nullable Output<List<FunctionNasStorageNasConfigArgs>> nasConfigs;
@@ -43,7 +43,7 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
     /**
      * @return NAS storage configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<FunctionNasStorageNasConfigArgs>>> nasConfigs() {
         return Optional.ofNullable(this.nasConfigs);
@@ -76,9 +76,9 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableNas Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNas(@Nullable Output<Boolean> enableNas) {
             $.enableNas = enableNas;
@@ -87,9 +87,9 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableNas Enable NAS storage mount. true: enabled, store data in NAS. false: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNas(Boolean enableNas) {
             return enableNas(Output.of(enableNas));
@@ -98,9 +98,9 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
         /**
          * @param nasConfigs NAS storage configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nasConfigs(@Nullable Output<List<FunctionNasStorageNasConfigArgs>> nasConfigs) {
             $.nasConfigs = nasConfigs;
@@ -110,9 +110,9 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
         /**
          * @param nasConfigs NAS storage configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nasConfigs(List<FunctionNasStorageNasConfigArgs> nasConfigs) {
             return nasConfigs(Output.of(nasConfigs));
@@ -121,9 +121,9 @@ public final class FunctionNasStorageArgs extends com.pulumi.resources.ResourceA
         /**
          * @param nasConfigs NAS storage configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nasConfigs(FunctionNasStorageNasConfigArgs... nasConfigs) {
             return nasConfigs(List.of(nasConfigs));

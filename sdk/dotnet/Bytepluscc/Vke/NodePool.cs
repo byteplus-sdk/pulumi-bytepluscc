@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
     /// A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vKENodePoolDemo = new Bytepluscc.Vke.NodePool("VKENodePoolDemo", new()
     ///     {
@@ -38,7 +38,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///         KubernetesConfig = new Bytepluscc.Vke.Inputs.NodePoolKubernetesConfigArgs
     ///         {
     ///             Auto_sync_disabled = false,
-    ///             Containerd_config =
+    ///             Containerd_config = 
     ///             {
     ///                 { "insecureRegistries", new[]
     ///                 {
@@ -46,7 +46,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///                 } },
     ///                 { "registryProxyConfigs", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "proxyEndpoints", new[]
     ///                         {
@@ -57,12 +57,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///                 } },
     ///             },
     ///             Cordon = false,
-    ///             Kubelet_config =
+    ///             Kubelet_config = 
     ///             {
     ///                 { "cpuManagerPolicy", "none" },
     ///                 { "evictionHard", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "memory.available" },
     ///                         { "value", "15%" },
@@ -72,7 +72,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///                 { "kubeApiQps", 5 },
     ///                 { "kubeReserved", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "name", "memory" },
     ///                         { "quantity", "200m" },
@@ -84,7 +84,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///                 { "serializeImagePulls", true },
     ///                 { "systemReserved", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "name", "memory" },
     ///                         { "quantity", "200m" },
@@ -117,7 +117,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///         Management = new Bytepluscc.Vke.Inputs.NodePoolManagementArgs
     ///         {
     ///             Enabled = true,
-    ///             Remedy_config =
+    ///             Remedy_config = 
     ///             {
     ///                 { "enabled", true },
     ///                 { "remedyId", "R20260227xxxxxxxxxxx" },
@@ -128,7 +128,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///         {
     ///             Instance_charge_type = "PostPaid",
     ///             Spot_strategy = "SpotAsPriceGo",
-    ///             Instances_distribution =
+    ///             Instances_distribution = 
     ///             {
     ///                 { "capacityRebalance", true },
     ///                 { "compensateWithOnDemand", true },
@@ -152,7 +152,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///             },
     ///             Data_volumes = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "mountPoint", "/dev/vdb" },
     ///                     { "size", 100 },
@@ -160,7 +160,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///                     { "type", "ESSD_PL0" },
     ///                 },
     ///             },
-    ///             System_volume =
+    ///             System_volume = 
     ///             {
     ///                 { "size", 40 },
     ///                 { "type", "ESSD_PL0" },
@@ -179,7 +179,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///             Name_prefix = "name-prefix",
     ///             Network_traffic_mode = "Standard",
     ///             Project_name = "default",
-    ///             Public_access_config =
+    ///             Public_access_config = 
     ///             {
     ///                 { "billingType", 2 },
     ///                 { "isp", "BGP" },
@@ -208,12 +208,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vke/nodePool:NodePool example "cluster_id|node_pool_id"
     /// ```

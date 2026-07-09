@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
     /// Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cloudIdentityUserDemo = new Bytepluscc.Cloudidentity.User("CloudIdentityUserDemo", new()
     ///     {
@@ -33,12 +33,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     ///         Password = "********",
     ///         PasswordResetRequired = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cloudidentity/user:User example "user_id"
     /// ```

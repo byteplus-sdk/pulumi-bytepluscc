@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -42,12 +42,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var eniDemo = new Eni("eniDemo", EniArgs.builder()
  *             .networkInterfaceName("EniDemo")
@@ -65,186 +65,186 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/eni:Eni example &#34;network_interface_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/eni:Eni")
 public class Eni extends com.pulumi.resources.CustomResource {
     /**
      * NIC owner ID
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return NIC owner ID
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * NIC creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return NIC creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Enable release with cloud server instance deletion. true to enable, false to disable
-     *
+     * 
      */
     @Export(name="deleteOnTermination", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteOnTermination;
 
     /**
      * @return Enable release with cloud server instance deletion. true to enable, false to disable
-     *
+     * 
      */
     public Output<Boolean> deleteOnTermination() {
         return this.deleteOnTermination;
     }
     /**
      * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
-     *
+     * 
      */
     @Export(name="ipv6AddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> ipv6AddressCount;
 
     /**
      * @return Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
-     *
+     * 
      */
     public Output<Integer> ipv6AddressCount() {
         return this.ipv6AddressCount;
     }
     /**
      * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-     *
+     * 
      */
     @Export(name="ipv6Sets", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipv6Sets;
 
     /**
      * @return IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-     *
+     * 
      */
     public Output<List<String>> ipv6Sets() {
         return this.ipv6Sets;
     }
     /**
      * MAC address of the network interface.
-     *
+     * 
      */
     @Export(name="macAddress", refs={String.class}, tree="[0]")
     private Output<String> macAddress;
 
     /**
      * @return MAC address of the network interface.
-     *
+     * 
      */
     public Output<String> macAddress() {
         return this.macAddress;
     }
     /**
      * Network interface ID.
-     *
+     * 
      */
     @Export(name="networkInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceId;
 
     /**
      * @return Network interface ID.
-     *
+     * 
      */
     public Output<String> networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
      * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
-     *
+     * 
      */
     @Export(name="networkInterfaceName", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceName;
 
     /**
      * @return NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
-     *
+     * 
      */
     public Output<String> networkInterfaceName() {
         return this.networkInterfaceName;
     }
     /**
      * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
-     *
+     * 
      */
     @Export(name="portSecurityEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> portSecurityEnabled;
 
     /**
      * @return Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
-     *
+     * 
      */
     public Output<Boolean> portSecurityEnabled() {
         return this.portSecurityEnabled;
     }
     /**
      * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
-     *
+     * 
      */
     @Export(name="primaryIpAddress", refs={EniPrimaryIpAddress.class}, tree="[0]")
     private Output<EniPrimaryIpAddress> primaryIpAddress;
 
     /**
      * @return Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
-     *
+     * 
      */
     public Output<EniPrimaryIpAddress> primaryIpAddress() {
         return this.primaryIpAddress;
@@ -252,7 +252,7 @@ public class Eni extends com.pulumi.resources.CustomResource {
     /**
      * List of private IPv4 addresses for the network interface.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="privateIpSets", refs={List.class,EniPrivateIpSet.class}, tree="[0,1]")
     private Output<List<EniPrivateIpSet>> privateIpSets;
@@ -260,91 +260,91 @@ public class Eni extends com.pulumi.resources.CustomResource {
     /**
      * @return List of private IPv4 addresses for the network interface.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<EniPrivateIpSet>> privateIpSets() {
         return this.privateIpSets;
     }
     /**
      * Name of the project to which the NIC belongs
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the NIC belongs
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
-     *
+     * 
      */
     @Export(name="secondaryPrivateIpAddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> secondaryPrivateIpAddressCount;
 
     /**
      * @return Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
-     *
+     * 
      */
     public Output<Integer> secondaryPrivateIpAddressCount() {
         return this.secondaryPrivateIpAddressCount;
     }
     /**
      * ID of one or more security groups joined by the auxiliary network interface.
-     *
+     * 
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return ID of one or more security groups joined by the auxiliary network interface.
-     *
+     * 
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
      * Indicates whether this is an official service network interface. true for yes, false for no.
-     *
+     * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Indicates whether this is an official service network interface. true for yes, false for no.
-     *
+     * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the subnet where the auxiliary network interface resides.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return ID of the subnet where the auxiliary network interface resides.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -352,7 +352,7 @@ public class Eni extends com.pulumi.resources.CustomResource {
     /**
      * Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,EniTag.class}, tree="[0,1]")
     private Output<List<EniTag>> tags;
@@ -360,77 +360,77 @@ public class Eni extends com.pulumi.resources.CustomResource {
     /**
      * @return Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<EniTag>> tags() {
         return this.tags;
     }
     /**
      * NIC type. primary: primary NIC, secondary: secondary NIC
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return NIC type. primary: primary NIC, secondary: secondary NIC
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * NIC update time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return NIC update time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * ID of the VPC to which the network interface belongs.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the network interface belongs.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Name of the VPC to which the NIC belongs
-     *
+     * 
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
      * @return Name of the VPC to which the NIC belongs
-     *
+     * 
      */
     public Output<String> vpcName() {
         return this.vpcName;
     }
     /**
      * ID of the availability zone to which the network interface belongs.
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return ID of the availability zone to which the network interface belongs.
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

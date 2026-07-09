@@ -23,14 +23,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * User&#39;s unique identifier ID.
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return User&#39;s unique identifier ID.
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -38,14 +38,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy action. accept: allow; deny: deny; monitor: observe.
-     *
+     * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
      * @return Policy action. accept: allow; deny: deny; monitor: observe.
-     *
+     * 
      */
     public Optional<Output<String>> action() {
         return Optional.ofNullable(this.action);
@@ -53,14 +53,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Description of the policy.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the policy.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -68,14 +68,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.
-     *
+     * 
      */
     @Import(name="destPort")
     private @Nullable Output<String> destPort;
 
     /**
      * @return Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.
-     *
+     * 
      */
     public Optional<Output<String>> destPort() {
         return Optional.ofNullable(this.destPort);
@@ -83,14 +83,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination port book type.
-     *
+     * 
      */
     @Import(name="destPortGroupType")
     private @Nullable Output<String> destPortGroupType;
 
     /**
      * @return Destination port book type.
-     *
+     * 
      */
     public Optional<Output<String>> destPortGroupType() {
         return Optional.ofNullable(this.destPortGroupType);
@@ -99,7 +99,7 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
     /**
      * Destination port list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="destPortListV1s")
     private @Nullable Output<List<NatFireWallControlPolicyDestPortListV1Args>> destPortListV1s;
@@ -107,7 +107,7 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
     /**
      * @return Destination port list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NatFireWallControlPolicyDestPortListV1Args>>> destPortListV1s() {
         return Optional.ofNullable(this.destPortListV1s);
@@ -115,14 +115,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination port list.
-     *
+     * 
      */
     @Import(name="destPortLists")
     private @Nullable Output<List<String>> destPortLists;
 
     /**
      * @return Destination port list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destPortLists() {
         return Optional.ofNullable(this.destPortLists);
@@ -130,14 +130,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination port type. port: port; group: port address book.
-     *
+     * 
      */
     @Import(name="destPortType")
     private @Nullable Output<String> destPortType;
 
     /**
      * @return Destination port type. port: port; group: port address book.
-     *
+     * 
      */
     public Optional<Output<String>> destPortType() {
         return Optional.ofNullable(this.destPortType);
@@ -145,14 +145,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.
-     *
+     * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
      * @return Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.
-     *
+     * 
      */
     public Optional<Output<String>> destination() {
         return Optional.ofNullable(this.destination);
@@ -161,7 +161,7 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
     /**
      * Destination CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="destinationCidrListV1s")
     private @Nullable Output<List<NatFireWallControlPolicyDestinationCidrListV1Args>> destinationCidrListV1s;
@@ -169,7 +169,7 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
     /**
      * @return Destination CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NatFireWallControlPolicyDestinationCidrListV1Args>>> destinationCidrListV1s() {
         return Optional.ofNullable(this.destinationCidrListV1s);
@@ -177,14 +177,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination CIDR list.
-     *
+     * 
      */
     @Import(name="destinationCidrLists")
     private @Nullable Output<List<String>> destinationCidrLists;
 
     /**
      * @return Destination CIDR list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destinationCidrLists() {
         return Optional.ofNullable(this.destinationCidrLists);
@@ -192,14 +192,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination domain name list.
-     *
+     * 
      */
     @Import(name="destinationDomainLists")
     private @Nullable Output<List<String>> destinationDomainLists;
 
     /**
      * @return Destination domain name list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destinationDomainLists() {
         return Optional.ofNullable(this.destinationDomainLists);
@@ -207,14 +207,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination address book type.
-     *
+     * 
      */
     @Import(name="destinationGroupType")
     private @Nullable Output<String> destinationGroupType;
 
     /**
      * @return Destination address book type.
-     *
+     * 
      */
     public Optional<Output<String>> destinationGroupType() {
         return Optional.ofNullable(this.destinationGroupType);
@@ -222,14 +222,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).
-     *
+     * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
      * @return Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).
-     *
+     * 
      */
     public Optional<Output<String>> destinationType() {
         return Optional.ofNullable(this.destinationType);
@@ -237,14 +237,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.
-     *
+     * 
      */
     @Import(name="direction")
     private @Nullable Output<String> direction;
 
     /**
      * @return Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.
-     *
+     * 
      */
     public Optional<Output<String>> direction() {
         return Optional.ofNullable(this.direction);
@@ -252,14 +252,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.
-     *
+     * 
      */
     @Import(name="effectStatus")
     private @Nullable Output<Integer> effectStatus;
 
     /**
      * @return Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.
-     *
+     * 
      */
     public Optional<Output<Integer>> effectStatus() {
         return Optional.ofNullable(this.effectStatus);
@@ -267,14 +267,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-     *
+     * 
      */
     @Import(name="endTime")
     private @Nullable Output<Integer> endTime;
 
     /**
      * @return Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-     *
+     * 
      */
     public Optional<Output<Integer>> endTime() {
         return Optional.ofNullable(this.endTime);
@@ -282,14 +282,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Hit count, indicating the number of times this policy has been triggered.
-     *
+     * 
      */
     @Import(name="hitCnt")
     private @Nullable Output<Integer> hitCnt;
 
     /**
      * @return Hit count, indicating the number of times this policy has been triggered.
-     *
+     * 
      */
     public Optional<Output<Integer>> hitCnt() {
         return Optional.ofNullable(this.hitCnt);
@@ -297,14 +297,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Whether the policy is effective.
-     *
+     * 
      */
     @Import(name="isEffected")
     private @Nullable Output<Boolean> isEffected;
 
     /**
      * @return Whether the policy is effective.
-     *
+     * 
      */
     public Optional<Output<Boolean>> isEffected() {
         return Optional.ofNullable(this.isEffected);
@@ -312,14 +312,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Last hit timestamp, indicating the last time this policy was triggered.
-     *
+     * 
      */
     @Import(name="lastHitTime")
     private @Nullable Output<Integer> lastHitTime;
 
     /**
      * @return Last hit timestamp, indicating the last time this policy was triggered.
-     *
+     * 
      */
     public Optional<Output<Integer>> lastHitTime() {
         return Optional.ofNullable(this.lastHitTime);
@@ -327,14 +327,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * NAT border firewall instance ID.
-     *
+     * 
      */
     @Import(name="natFirewallId")
     private @Nullable Output<String> natFirewallId;
 
     /**
      * @return NAT border firewall instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> natFirewallId() {
         return Optional.ofNullable(this.natFirewallId);
@@ -342,14 +342,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.
-     *
+     * 
      */
     @Import(name="prio")
     private @Nullable Output<Integer> prio;
 
     /**
      * @return Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.
-     *
+     * 
      */
     public Optional<Output<Integer>> prio() {
         return Optional.ofNullable(this.prio);
@@ -357,14 +357,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.
-     *
+     * 
      */
     @Import(name="proto")
     private @Nullable Output<String> proto;
 
     /**
      * @return Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.
-     *
+     * 
      */
     public Optional<Output<String>> proto() {
         return Optional.ofNullable(this.proto);
@@ -372,14 +372,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.
-     *
+     * 
      */
     @Import(name="repeatDays")
     private @Nullable Output<List<Integer>> repeatDays;
 
     /**
      * @return Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.
-     *
+     * 
      */
     public Optional<Output<List<Integer>>> repeatDays() {
         return Optional.ofNullable(this.repeatDays);
@@ -387,14 +387,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-     *
+     * 
      */
     @Import(name="repeatEndTime")
     private @Nullable Output<String> repeatEndTime;
 
     /**
      * @return Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-     *
+     * 
      */
     public Optional<Output<String>> repeatEndTime() {
         return Optional.ofNullable(this.repeatEndTime);
@@ -402,14 +402,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-     *
+     * 
      */
     @Import(name="repeatStartTime")
     private @Nullable Output<String> repeatStartTime;
 
     /**
      * @return Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-     *
+     * 
      */
     public Optional<Output<String>> repeatStartTime() {
         return Optional.ofNullable(this.repeatStartTime);
@@ -417,14 +417,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.
-     *
+     * 
      */
     @Import(name="repeatType")
     private @Nullable Output<String> repeatType;
 
     /**
      * @return Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.
-     *
+     * 
      */
     public Optional<Output<String>> repeatType() {
         return Optional.ofNullable(this.repeatType);
@@ -432,14 +432,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Unique ID of the access control policy.
-     *
+     * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Unique ID of the access control policy.
-     *
+     * 
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -447,14 +447,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.
-     *
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
      * @return Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.
-     *
+     * 
      */
     public Optional<Output<String>> source() {
         return Optional.ofNullable(this.source);
@@ -463,7 +463,7 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
     /**
      * Source CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="sourceCidrListV1s")
     private @Nullable Output<List<NatFireWallControlPolicySourceCidrListV1Args>> sourceCidrListV1s;
@@ -471,7 +471,7 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
     /**
      * @return Source CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NatFireWallControlPolicySourceCidrListV1Args>>> sourceCidrListV1s() {
         return Optional.ofNullable(this.sourceCidrListV1s);
@@ -479,14 +479,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Source CIDR list.
-     *
+     * 
      */
     @Import(name="sourceCidrLists")
     private @Nullable Output<List<String>> sourceCidrLists;
 
     /**
      * @return Source CIDR list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> sourceCidrLists() {
         return Optional.ofNullable(this.sourceCidrLists);
@@ -494,14 +494,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Source address book type.
-     *
+     * 
      */
     @Import(name="sourceGroupType")
     private @Nullable Output<String> sourceGroupType;
 
     /**
      * @return Source address book type.
-     *
+     * 
      */
     public Optional<Output<String>> sourceGroupType() {
         return Optional.ofNullable(this.sourceGroupType);
@@ -509,14 +509,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).
-     *
+     * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
      * @return Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).
-     *
+     * 
      */
     public Optional<Output<String>> sourceType() {
         return Optional.ofNullable(this.sourceType);
@@ -524,14 +524,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-     *
+     * 
      */
     @Import(name="startTime")
     private @Nullable Output<Integer> startTime;
 
     /**
      * @return Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-     *
+     * 
      */
     public Optional<Output<Integer>> startTime() {
         return Optional.ofNullable(this.startTime);
@@ -539,14 +539,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy switch status. false: off; true: on.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<Boolean> status;
 
     /**
      * @return Policy switch status. false: off; true: on.
-     *
+     * 
      */
     public Optional<Output<Boolean>> status() {
         return Optional.ofNullable(this.status);
@@ -554,14 +554,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Policy update timestamp.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<Integer> updateTime;
 
     /**
      * @return Policy update timestamp.
-     *
+     * 
      */
     public Optional<Output<Integer>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -569,14 +569,14 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
     /**
      * Number of policies occupied by this policy.
-     *
+     * 
      */
     @Import(name="useCount")
     private @Nullable Output<Integer> useCount;
 
     /**
      * @return Number of policies occupied by this policy.
-     *
+     * 
      */
     public Optional<Output<Integer>> useCount() {
         return Optional.ofNullable(this.useCount);
@@ -644,9 +644,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param accountId User&#39;s unique identifier ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -655,9 +655,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param accountId User&#39;s unique identifier ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -665,9 +665,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param action Policy action. accept: allow; deny: deny; monitor: observe.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(@Nullable Output<String> action) {
             $.action = action;
@@ -676,9 +676,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param action Policy action. accept: allow; deny: deny; monitor: observe.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(String action) {
             return action(Output.of(action));
@@ -686,9 +686,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param description Description of the policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -697,9 +697,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param description Description of the policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -707,9 +707,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPort Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPort(@Nullable Output<String> destPort) {
             $.destPort = destPort;
@@ -718,9 +718,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPort Destination port, either a single port or a port range (e.g., 22/22, 100/200). If DestPortType is group, provide a list of port address book UUIDs, separated by commas. Leave blank if the protocol is ICMP or ANY.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPort(String destPort) {
             return destPort(Output.of(destPort));
@@ -728,9 +728,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortGroupType Destination port book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortGroupType(@Nullable Output<String> destPortGroupType) {
             $.destPortGroupType = destPortGroupType;
@@ -739,9 +739,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortGroupType Destination port book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortGroupType(String destPortGroupType) {
             return destPortGroupType(Output.of(destPortGroupType));
@@ -750,9 +750,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param destPortListV1s Destination port list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortListV1s(@Nullable Output<List<NatFireWallControlPolicyDestPortListV1Args>> destPortListV1s) {
             $.destPortListV1s = destPortListV1s;
@@ -762,9 +762,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param destPortListV1s Destination port list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortListV1s(List<NatFireWallControlPolicyDestPortListV1Args> destPortListV1s) {
             return destPortListV1s(Output.of(destPortListV1s));
@@ -773,9 +773,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param destPortListV1s Destination port list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortListV1s(NatFireWallControlPolicyDestPortListV1Args... destPortListV1s) {
             return destPortListV1s(List.of(destPortListV1s));
@@ -783,9 +783,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortLists Destination port list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortLists(@Nullable Output<List<String>> destPortLists) {
             $.destPortLists = destPortLists;
@@ -794,9 +794,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortLists Destination port list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortLists(List<String> destPortLists) {
             return destPortLists(Output.of(destPortLists));
@@ -804,9 +804,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortLists Destination port list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortLists(String... destPortLists) {
             return destPortLists(List.of(destPortLists));
@@ -814,9 +814,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortType Destination port type. port: port; group: port address book.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortType(@Nullable Output<String> destPortType) {
             $.destPortType = destPortType;
@@ -825,9 +825,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destPortType Destination port type. port: port; group: port address book.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortType(String destPortType) {
             return destPortType(Output.of(destPortType));
@@ -835,9 +835,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destination Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destination(@Nullable Output<String> destination) {
             $.destination = destination;
@@ -846,9 +846,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destination Destination address. The value depends on DestinationType: if net, use the destination CIDR address; if group, use the destination address book UUID. Separate multiple address books with commas.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destination(String destination) {
             return destination(Output.of(destination));
@@ -857,9 +857,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param destinationCidrListV1s Destination CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrListV1s(@Nullable Output<List<NatFireWallControlPolicyDestinationCidrListV1Args>> destinationCidrListV1s) {
             $.destinationCidrListV1s = destinationCidrListV1s;
@@ -869,9 +869,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param destinationCidrListV1s Destination CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrListV1s(List<NatFireWallControlPolicyDestinationCidrListV1Args> destinationCidrListV1s) {
             return destinationCidrListV1s(Output.of(destinationCidrListV1s));
@@ -880,9 +880,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param destinationCidrListV1s Destination CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrListV1s(NatFireWallControlPolicyDestinationCidrListV1Args... destinationCidrListV1s) {
             return destinationCidrListV1s(List.of(destinationCidrListV1s));
@@ -890,9 +890,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationCidrLists Destination CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrLists(@Nullable Output<List<String>> destinationCidrLists) {
             $.destinationCidrLists = destinationCidrLists;
@@ -901,9 +901,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationCidrLists Destination CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrLists(List<String> destinationCidrLists) {
             return destinationCidrLists(Output.of(destinationCidrLists));
@@ -911,9 +911,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationCidrLists Destination CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrLists(String... destinationCidrLists) {
             return destinationCidrLists(List.of(destinationCidrLists));
@@ -921,9 +921,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationDomainLists Destination domain name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationDomainLists(@Nullable Output<List<String>> destinationDomainLists) {
             $.destinationDomainLists = destinationDomainLists;
@@ -932,9 +932,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationDomainLists Destination domain name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationDomainLists(List<String> destinationDomainLists) {
             return destinationDomainLists(Output.of(destinationDomainLists));
@@ -942,9 +942,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationDomainLists Destination domain name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationDomainLists(String... destinationDomainLists) {
             return destinationDomainLists(List.of(destinationDomainLists));
@@ -952,9 +952,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationGroupType Destination address book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupType(@Nullable Output<String> destinationGroupType) {
             $.destinationGroupType = destinationGroupType;
@@ -963,9 +963,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationGroupType Destination address book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupType(String destinationGroupType) {
             return destinationGroupType(Output.of(destinationGroupType));
@@ -973,9 +973,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationType Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationType(@Nullable Output<String> destinationType) {
             $.destinationType = destinationType;
@@ -984,9 +984,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param destinationType Destination address type, used to specify the format and source of the destination address in the access control policy. net: destination network segment (CIDR format); group: destination address book (UUID format).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationType(String destinationType) {
             return destinationType(Output.of(destinationType));
@@ -994,9 +994,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param direction Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder direction(@Nullable Output<String> direction) {
             $.direction = direction;
@@ -1005,9 +1005,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param direction Policy direction, used to specify the traffic direction for the access control policy. in: inbound; out: outbound.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder direction(String direction) {
             return direction(Output.of(direction));
@@ -1015,9 +1015,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param effectStatus Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effectStatus(@Nullable Output<Integer> effectStatus) {
             $.effectStatus = effectStatus;
@@ -1026,9 +1026,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param effectStatus Status of the access control policy. Values: 1: Inactive; 2: Deploying; 3: Active.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effectStatus(Integer effectStatus) {
             return effectStatus(Output.of(effectStatus));
@@ -1036,9 +1036,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param endTime Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endTime(@Nullable Output<Integer> endTime) {
             $.endTime = endTime;
@@ -1047,9 +1047,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param endTime Policy end timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endTime(Integer endTime) {
             return endTime(Output.of(endTime));
@@ -1057,9 +1057,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param hitCnt Hit count, indicating the number of times this policy has been triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hitCnt(@Nullable Output<Integer> hitCnt) {
             $.hitCnt = hitCnt;
@@ -1068,9 +1068,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param hitCnt Hit count, indicating the number of times this policy has been triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hitCnt(Integer hitCnt) {
             return hitCnt(Output.of(hitCnt));
@@ -1078,9 +1078,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param isEffected Whether the policy is effective.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isEffected(@Nullable Output<Boolean> isEffected) {
             $.isEffected = isEffected;
@@ -1089,9 +1089,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param isEffected Whether the policy is effective.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isEffected(Boolean isEffected) {
             return isEffected(Output.of(isEffected));
@@ -1099,9 +1099,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param lastHitTime Last hit timestamp, indicating the last time this policy was triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lastHitTime(@Nullable Output<Integer> lastHitTime) {
             $.lastHitTime = lastHitTime;
@@ -1110,9 +1110,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param lastHitTime Last hit timestamp, indicating the last time this policy was triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lastHitTime(Integer lastHitTime) {
             return lastHitTime(Output.of(lastHitTime));
@@ -1120,9 +1120,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param natFirewallId NAT border firewall instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natFirewallId(@Nullable Output<String> natFirewallId) {
             $.natFirewallId = natFirewallId;
@@ -1131,9 +1131,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param natFirewallId NAT border firewall instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natFirewallId(String natFirewallId) {
             return natFirewallId(Output.of(natFirewallId));
@@ -1141,9 +1141,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param prio Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder prio(@Nullable Output<Integer> prio) {
             $.prio = prio;
@@ -1152,9 +1152,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param prio Policy priority. A lower value indicates a higher priority. By default, the priority is set to the highest. 0: lowest priority; 1: highest priority. When modifying, the minimum value for this parameter is 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder prio(Integer prio) {
             return prio(Output.of(prio));
@@ -1162,9 +1162,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param proto Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proto(@Nullable Output<String> proto) {
             $.proto = proto;
@@ -1173,9 +1173,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param proto Protocol type. ICMP: ICMP protocol; TCP: TCP protocol; UDP: UDP protocol; ANY: any protocol.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proto(String proto) {
             return proto(Output.of(proto));
@@ -1183,9 +1183,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatDays Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(@Nullable Output<List<Integer>> repeatDays) {
             $.repeatDays = repeatDays;
@@ -1194,9 +1194,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatDays Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(List<Integer> repeatDays) {
             return repeatDays(Output.of(repeatDays));
@@ -1204,9 +1204,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatDays Repeat cycle. This field is not required when RepeatType is Daily. When RepeatType is Weekly, the value range is [0, 6], corresponding to Sunday through Saturday. When RepeatType is Monthly, the value range is [1, 31], corresponding to the days of the month.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(Integer... repeatDays) {
             return repeatDays(List.of(repeatDays));
@@ -1214,9 +1214,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatEndTime Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatEndTime(@Nullable Output<String> repeatEndTime) {
             $.repeatEndTime = repeatEndTime;
@@ -1225,9 +1225,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatEndTime Repeat end time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatEndTime(String repeatEndTime) {
             return repeatEndTime(Output.of(repeatEndTime));
@@ -1235,9 +1235,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatStartTime Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatStartTime(@Nullable Output<String> repeatStartTime) {
             $.repeatStartTime = repeatStartTime;
@@ -1246,9 +1246,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatStartTime Repeat start time. This field is required when RepeatType is Daily, Weekly, or Monthly. Accurate to the minute, format: hh:mm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatStartTime(String repeatStartTime) {
             return repeatStartTime(Output.of(repeatStartTime));
@@ -1256,9 +1256,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatType Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatType(@Nullable Output<String> repeatType) {
             $.repeatType = repeatType;
@@ -1267,9 +1267,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param repeatType Policy repeat type. Permanent: always effective; Once: effective only once; Daily: effective every day; Weekly: effective every week; Monthly: effective every month.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatType(String repeatType) {
             return repeatType(Output.of(repeatType));
@@ -1277,9 +1277,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param ruleId Unique ID of the access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -1288,9 +1288,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param ruleId Unique ID of the access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -1298,9 +1298,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param source Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(@Nullable Output<String> source) {
             $.source = source;
@@ -1309,9 +1309,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param source Source address. The format varies based on the value of SourceType. If SourceType is net, use a CIDR address; if SourceType is group, use the UUID of the source address book; if SourceType is location, use the region code.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(String source) {
             return source(Output.of(source));
@@ -1320,9 +1320,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param sourceCidrListV1s Source CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrListV1s(@Nullable Output<List<NatFireWallControlPolicySourceCidrListV1Args>> sourceCidrListV1s) {
             $.sourceCidrListV1s = sourceCidrListV1s;
@@ -1332,9 +1332,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param sourceCidrListV1s Source CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrListV1s(List<NatFireWallControlPolicySourceCidrListV1Args> sourceCidrListV1s) {
             return sourceCidrListV1s(Output.of(sourceCidrListV1s));
@@ -1343,9 +1343,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
         /**
          * @param sourceCidrListV1s Source CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrListV1s(NatFireWallControlPolicySourceCidrListV1Args... sourceCidrListV1s) {
             return sourceCidrListV1s(List.of(sourceCidrListV1s));
@@ -1353,9 +1353,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceCidrLists Source CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrLists(@Nullable Output<List<String>> sourceCidrLists) {
             $.sourceCidrLists = sourceCidrLists;
@@ -1364,9 +1364,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceCidrLists Source CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrLists(List<String> sourceCidrLists) {
             return sourceCidrLists(Output.of(sourceCidrLists));
@@ -1374,9 +1374,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceCidrLists Source CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrLists(String... sourceCidrLists) {
             return sourceCidrLists(List.of(sourceCidrLists));
@@ -1384,9 +1384,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceGroupType Source address book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceGroupType(@Nullable Output<String> sourceGroupType) {
             $.sourceGroupType = sourceGroupType;
@@ -1395,9 +1395,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceGroupType Source address book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceGroupType(String sourceGroupType) {
             return sourceGroupType(Output.of(sourceGroupType));
@@ -1405,9 +1405,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceType Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(@Nullable Output<String> sourceType) {
             $.sourceType = sourceType;
@@ -1416,9 +1416,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param sourceType Source address type, used to specify the format and source of the source address in the access control policy. net: source network segment (CIDR format); group: source address book (UUID format); location: source region (region code format).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(String sourceType) {
             return sourceType(Output.of(sourceType));
@@ -1426,9 +1426,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param startTime Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startTime(@Nullable Output<Integer> startTime) {
             $.startTime = startTime;
@@ -1437,9 +1437,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param startTime Policy start timestamp. This field is not required when RepeatType is Permanent. When RepeatType is Once, Daily, Weekly, or Monthly, this field must be provided.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startTime(Integer startTime) {
             return startTime(Output.of(startTime));
@@ -1447,9 +1447,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param status Policy switch status. false: off; true: on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<Boolean> status) {
             $.status = status;
@@ -1458,9 +1458,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param status Policy switch status. false: off; true: on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(Boolean status) {
             return status(Output.of(status));
@@ -1468,9 +1468,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param updateTime Policy update timestamp.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<Integer> updateTime) {
             $.updateTime = updateTime;
@@ -1479,9 +1479,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param updateTime Policy update timestamp.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(Integer updateTime) {
             return updateTime(Output.of(updateTime));
@@ -1489,9 +1489,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param useCount Number of policies occupied by this policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder useCount(@Nullable Output<Integer> useCount) {
             $.useCount = useCount;
@@ -1500,9 +1500,9 @@ public final class NatFireWallControlPolicyState extends com.pulumi.resources.Re
 
         /**
          * @param useCount Number of policies occupied by this policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder useCount(Integer useCount) {
             return useCount(Output.of(useCount));

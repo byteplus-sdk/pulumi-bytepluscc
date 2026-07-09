@@ -1364,6 +1364,189 @@ func (o InstanceCpuMemoryPtrOutput) ThreadsPerCore() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type InstanceDataVolume struct {
+	// Whether the attached resources are deleted along with the instance.
+	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
+	// Additional performance IOPS for the instance
+	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
+	// The additional performance throughput of the instance, in MB.
+	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
+	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
+	// Instance size, in GiB
+	Size *int `pulumi:"size"`
+	// Instance snapshot ID
+	SnapshotId *string `pulumi:"snapshotId"`
+	// Instance volume ID.
+	VolumeId *string `pulumi:"volumeId"`
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// InstanceDataVolumeInput is an input type that accepts InstanceDataVolumeArgs and InstanceDataVolumeOutput values.
+// You can construct a concrete instance of `InstanceDataVolumeInput` via:
+//
+//	InstanceDataVolumeArgs{...}
+type InstanceDataVolumeInput interface {
+	pulumi.Input
+
+	ToInstanceDataVolumeOutput() InstanceDataVolumeOutput
+	ToInstanceDataVolumeOutputWithContext(context.Context) InstanceDataVolumeOutput
+}
+
+type InstanceDataVolumeArgs struct {
+	// Whether the attached resources are deleted along with the instance.
+	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
+	// Additional performance IOPS for the instance
+	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
+	// The additional performance throughput of the instance, in MB.
+	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
+	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
+	// Instance size, in GiB
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// Instance snapshot ID
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// Instance volume ID.
+	VolumeId pulumi.StringPtrInput `pulumi:"volumeId"`
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (InstanceDataVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceDataVolume)(nil)).Elem()
+}
+
+func (i InstanceDataVolumeArgs) ToInstanceDataVolumeOutput() InstanceDataVolumeOutput {
+	return i.ToInstanceDataVolumeOutputWithContext(context.Background())
+}
+
+func (i InstanceDataVolumeArgs) ToInstanceDataVolumeOutputWithContext(ctx context.Context) InstanceDataVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceDataVolumeOutput)
+}
+
+// InstanceDataVolumeArrayInput is an input type that accepts InstanceDataVolumeArray and InstanceDataVolumeArrayOutput values.
+// You can construct a concrete instance of `InstanceDataVolumeArrayInput` via:
+//
+//	InstanceDataVolumeArray{ InstanceDataVolumeArgs{...} }
+type InstanceDataVolumeArrayInput interface {
+	pulumi.Input
+
+	ToInstanceDataVolumeArrayOutput() InstanceDataVolumeArrayOutput
+	ToInstanceDataVolumeArrayOutputWithContext(context.Context) InstanceDataVolumeArrayOutput
+}
+
+type InstanceDataVolumeArray []InstanceDataVolumeInput
+
+func (InstanceDataVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceDataVolume)(nil)).Elem()
+}
+
+func (i InstanceDataVolumeArray) ToInstanceDataVolumeArrayOutput() InstanceDataVolumeArrayOutput {
+	return i.ToInstanceDataVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceDataVolumeArray) ToInstanceDataVolumeArrayOutputWithContext(ctx context.Context) InstanceDataVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceDataVolumeArrayOutput)
+}
+
+type InstanceDataVolumeOutput struct{ *pulumi.OutputState }
+
+func (InstanceDataVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceDataVolume)(nil)).Elem()
+}
+
+func (o InstanceDataVolumeOutput) ToInstanceDataVolumeOutput() InstanceDataVolumeOutput {
+	return o
+}
+
+func (o InstanceDataVolumeOutput) ToInstanceDataVolumeOutputWithContext(ctx context.Context) InstanceDataVolumeOutput {
+	return o
+}
+
+// Whether the attached resources are deleted along with the instance.
+func (o InstanceDataVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// Additional performance IOPS for the instance
+func (o InstanceDataVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
+}
+
+// The additional performance throughput of the instance, in MB.
+func (o InstanceDataVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
+}
+
+// Type of additional performance. Values:
+//
+//	Balance: Balanced additional performance
+//	IOPS: IOPS additional performance
+//	Throughput: Throughput additional performance
+func (o InstanceDataVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// Instance size, in GiB
+func (o InstanceDataVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// Instance snapshot ID
+func (o InstanceDataVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// Instance volume ID.
+func (o InstanceDataVolumeOutput) VolumeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *string { return v.VolumeId }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk type. Values:
+//
+//	PTSSD: Performance SSD.
+//	ESSD_PL0: Ultra SSD disk, PL0 specification.
+//	ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+//	TSSD_TL0: Throughput SSD disk.
+func (o InstanceDataVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceDataVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type InstanceDataVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceDataVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceDataVolume)(nil)).Elem()
+}
+
+func (o InstanceDataVolumeArrayOutput) ToInstanceDataVolumeArrayOutput() InstanceDataVolumeArrayOutput {
+	return o
+}
+
+func (o InstanceDataVolumeArrayOutput) ToInstanceDataVolumeArrayOutputWithContext(ctx context.Context) InstanceDataVolumeArrayOutput {
+	return o
+}
+
+func (o InstanceDataVolumeArrayOutput) Index(i pulumi.IntInput) InstanceDataVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceDataVolume {
+		return vs[0].([]InstanceDataVolume)[vs[1].(int)]
+	}).(InstanceDataVolumeOutput)
+}
+
 type InstanceEipAddress struct {
 	// Instance allocation ID
 	AllocationId *string `pulumi:"allocationId"`
@@ -7629,6 +7812,189 @@ func (o GetInstanceCpuMemoryOutput) ThreadsPerCore() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.ThreadsPerCore }).(pulumi.IntOutput)
 }
 
+type GetInstanceDataVolume struct {
+	// Whether the attached resources are deleted along with the instance.
+	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
+	// Additional performance IOPS for the instance
+	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
+	// The additional performance throughput of the instance, in MB.
+	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
+	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
+	// Instance size, in GiB
+	Size int `pulumi:"size"`
+	// Instance snapshot ID
+	SnapshotId string `pulumi:"snapshotId"`
+	// Instance volume ID.
+	VolumeId string `pulumi:"volumeId"`
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetInstanceDataVolumeInput is an input type that accepts GetInstanceDataVolumeArgs and GetInstanceDataVolumeOutput values.
+// You can construct a concrete instance of `GetInstanceDataVolumeInput` via:
+//
+//	GetInstanceDataVolumeArgs{...}
+type GetInstanceDataVolumeInput interface {
+	pulumi.Input
+
+	ToGetInstanceDataVolumeOutput() GetInstanceDataVolumeOutput
+	ToGetInstanceDataVolumeOutputWithContext(context.Context) GetInstanceDataVolumeOutput
+}
+
+type GetInstanceDataVolumeArgs struct {
+	// Whether the attached resources are deleted along with the instance.
+	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
+	// Additional performance IOPS for the instance
+	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
+	// The additional performance throughput of the instance, in MB.
+	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
+	// Type of additional performance. Values:
+	//   Balance: Balanced additional performance
+	//   IOPS: IOPS additional performance
+	//   Throughput: Throughput additional performance
+	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
+	// Instance size, in GiB
+	Size pulumi.IntInput `pulumi:"size"`
+	// Instance snapshot ID
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// Instance volume ID.
+	VolumeId pulumi.StringInput `pulumi:"volumeId"`
+	// Cloud disk type. Values:
+	//   PTSSD: Performance SSD.
+	//   ESSD_PL0: Ultra SSD disk, PL0 specification.
+	//   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+	//   TSSD_TL0: Throughput SSD disk.
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetInstanceDataVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceDataVolume)(nil)).Elem()
+}
+
+func (i GetInstanceDataVolumeArgs) ToGetInstanceDataVolumeOutput() GetInstanceDataVolumeOutput {
+	return i.ToGetInstanceDataVolumeOutputWithContext(context.Background())
+}
+
+func (i GetInstanceDataVolumeArgs) ToGetInstanceDataVolumeOutputWithContext(ctx context.Context) GetInstanceDataVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceDataVolumeOutput)
+}
+
+// GetInstanceDataVolumeArrayInput is an input type that accepts GetInstanceDataVolumeArray and GetInstanceDataVolumeArrayOutput values.
+// You can construct a concrete instance of `GetInstanceDataVolumeArrayInput` via:
+//
+//	GetInstanceDataVolumeArray{ GetInstanceDataVolumeArgs{...} }
+type GetInstanceDataVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceDataVolumeArrayOutput() GetInstanceDataVolumeArrayOutput
+	ToGetInstanceDataVolumeArrayOutputWithContext(context.Context) GetInstanceDataVolumeArrayOutput
+}
+
+type GetInstanceDataVolumeArray []GetInstanceDataVolumeInput
+
+func (GetInstanceDataVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceDataVolume)(nil)).Elem()
+}
+
+func (i GetInstanceDataVolumeArray) ToGetInstanceDataVolumeArrayOutput() GetInstanceDataVolumeArrayOutput {
+	return i.ToGetInstanceDataVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceDataVolumeArray) ToGetInstanceDataVolumeArrayOutputWithContext(ctx context.Context) GetInstanceDataVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceDataVolumeArrayOutput)
+}
+
+type GetInstanceDataVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceDataVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceDataVolume)(nil)).Elem()
+}
+
+func (o GetInstanceDataVolumeOutput) ToGetInstanceDataVolumeOutput() GetInstanceDataVolumeOutput {
+	return o
+}
+
+func (o GetInstanceDataVolumeOutput) ToGetInstanceDataVolumeOutputWithContext(ctx context.Context) GetInstanceDataVolumeOutput {
+	return o
+}
+
+// Whether the attached resources are deleted along with the instance.
+func (o GetInstanceDataVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
+}
+
+// Additional performance IOPS for the instance
+func (o GetInstanceDataVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
+}
+
+// The additional performance throughput of the instance, in MB.
+func (o GetInstanceDataVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
+}
+
+// Type of additional performance. Values:
+//
+//	Balance: Balanced additional performance
+//	IOPS: IOPS additional performance
+//	Throughput: Throughput additional performance
+func (o GetInstanceDataVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
+}
+
+// Instance size, in GiB
+func (o GetInstanceDataVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// Instance snapshot ID
+func (o GetInstanceDataVolumeOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// Instance volume ID.
+func (o GetInstanceDataVolumeOutput) VolumeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) string { return v.VolumeId }).(pulumi.StringOutput)
+}
+
+// Cloud disk type. Values:
+//
+//	PTSSD: Performance SSD.
+//	ESSD_PL0: Ultra SSD disk, PL0 specification.
+//	ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+//	TSSD_TL0: Throughput SSD disk.
+func (o GetInstanceDataVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceDataVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetInstanceDataVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceDataVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceDataVolume)(nil)).Elem()
+}
+
+func (o GetInstanceDataVolumeArrayOutput) ToGetInstanceDataVolumeArrayOutput() GetInstanceDataVolumeArrayOutput {
+	return o
+}
+
+func (o GetInstanceDataVolumeArrayOutput) ToGetInstanceDataVolumeArrayOutputWithContext(ctx context.Context) GetInstanceDataVolumeArrayOutput {
+	return o
+}
+
+func (o GetInstanceDataVolumeArrayOutput) Index(i pulumi.IntInput) GetInstanceDataVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceDataVolume {
+		return vs[0].([]GetInstanceDataVolume)[vs[1].(int)]
+	}).(GetInstanceDataVolumeOutput)
+}
+
 type GetInstanceEipAddress struct {
 	// Instance allocation ID
 	AllocationId string `pulumi:"allocationId"`
@@ -11005,6 +11371,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageTagArrayInput)(nil)).Elem(), ImageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuMemoryInput)(nil)).Elem(), InstanceCpuMemoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuMemoryPtrInput)(nil)).Elem(), InstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDataVolumeInput)(nil)).Elem(), InstanceDataVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDataVolumeArrayInput)(nil)).Elem(), InstanceDataVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEipAddressInput)(nil)).Elem(), InstanceEipAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEipAddressPtrInput)(nil)).Elem(), InstanceEipAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceImageInput)(nil)).Elem(), InstanceImageArgs{})
@@ -11078,6 +11446,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagInput)(nil)).Elem(), GetImageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagArrayInput)(nil)).Elem(), GetImageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCpuMemoryInput)(nil)).Elem(), GetInstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDataVolumeInput)(nil)).Elem(), GetInstanceDataVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDataVolumeArrayInput)(nil)).Elem(), GetInstanceDataVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEipAddressInput)(nil)).Elem(), GetInstanceEipAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceImageInput)(nil)).Elem(), GetInstanceImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceKeyPairInput)(nil)).Elem(), GetInstanceKeyPairArgs{})
@@ -11141,6 +11511,8 @@ func init() {
 	pulumi.RegisterOutputType(ImageTagArrayOutput{})
 	pulumi.RegisterOutputType(InstanceCpuMemoryOutput{})
 	pulumi.RegisterOutputType(InstanceCpuMemoryPtrOutput{})
+	pulumi.RegisterOutputType(InstanceDataVolumeOutput{})
+	pulumi.RegisterOutputType(InstanceDataVolumeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceEipAddressOutput{})
 	pulumi.RegisterOutputType(InstanceEipAddressPtrOutput{})
 	pulumi.RegisterOutputType(InstanceImageOutput{})
@@ -11214,6 +11586,8 @@ func init() {
 	pulumi.RegisterOutputType(GetImageTagOutput{})
 	pulumi.RegisterOutputType(GetImageTagArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceCpuMemoryOutput{})
+	pulumi.RegisterOutputType(GetInstanceDataVolumeOutput{})
+	pulumi.RegisterOutputType(GetInstanceDataVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceEipAddressOutput{})
 	pulumi.RegisterOutputType(GetInstanceImageOutput{})
 	pulumi.RegisterOutputType(GetInstanceKeyPairOutput{})

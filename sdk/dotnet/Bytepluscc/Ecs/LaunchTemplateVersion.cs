@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
     /// Instance launch template version is a collection of instance configuration information used for quick instance purchase. In the template, you can store all configuration information except passwords, including key pairs, compute specifications, disks, network, etc. If all configuration information is valid, you can purchase an instance with one click without repeated configuration
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var ecsLaunchTemplateVersionDemo = new Bytepluscc.Ecs.LaunchTemplateVersion("EcsLaunchTemplateVersionDemo", new()
     ///     {
@@ -97,12 +97,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     ///         VpcId = "vpc-1jolcldhxxxxxxmq5q7yms",
     ///         ZoneId = "cn-beijing-a",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion example "launch_template_id|version_number"
     /// ```

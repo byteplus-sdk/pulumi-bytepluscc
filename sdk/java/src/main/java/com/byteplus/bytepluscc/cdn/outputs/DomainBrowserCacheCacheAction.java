@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 public final class DomainBrowserCacheCacheAction {
     /**
      * @return Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     private @Nullable String action;
     /**
      * @return This parameter is shared by multiple CDN features.
-     *
+     * 
      */
     private @Nullable String defaultPolicy;
     /**
      * @return Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-     *
+     * 
      */
     private @Nullable Boolean ignoreCase;
     /**
      * @return Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-     *
+     * 
      */
     private @Nullable Integer ttl;
 
     private DomainBrowserCacheCacheAction() {}
     /**
      * @return Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
     /**
      * @return This parameter is shared by multiple CDN features.
-     *
+     * 
      */
     public Optional<String> defaultPolicy() {
         return Optional.ofNullable(this.defaultPolicy);
     }
     /**
      * @return Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-     *
+     * 
      */
     public Optional<Boolean> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
     }
     /**
      * @return Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-     *
+     * 
      */
     public Optional<Integer> ttl() {
         return Optional.ofNullable(this.ttl);

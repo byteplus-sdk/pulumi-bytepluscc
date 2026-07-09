@@ -19,14 +19,14 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Replica key description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Replica key description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -34,14 +34,14 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Replica key ID.
-     *
+     * 
      */
     @Import(name="replicaKeyId")
     private @Nullable Output<String> replicaKeyId;
 
     /**
      * @return Replica key ID.
-     *
+     * 
      */
     public Optional<Output<String>> replicaKeyId() {
         return Optional.ofNullable(this.replicaKeyId);
@@ -49,14 +49,14 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Target region of the replica key.
-     *
+     * 
      */
     @Import(name="replicaRegion")
     private @Nullable Output<String> replicaRegion;
 
     /**
      * @return Target region of the replica key.
-     *
+     * 
      */
     public Optional<Output<String>> replicaRegion() {
         return Optional.ofNullable(this.replicaRegion);
@@ -65,7 +65,7 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
     /**
      * Replica key label.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<KeyReplicateKeyTagArgs>> tags;
@@ -73,7 +73,7 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
     /**
      * @return Replica key label.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<KeyReplicateKeyTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -108,9 +108,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Replica key description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -119,9 +119,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Replica key description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -129,9 +129,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param replicaKeyId Replica key ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder replicaKeyId(@Nullable Output<String> replicaKeyId) {
             $.replicaKeyId = replicaKeyId;
@@ -140,9 +140,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param replicaKeyId Replica key ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder replicaKeyId(String replicaKeyId) {
             return replicaKeyId(Output.of(replicaKeyId));
@@ -150,9 +150,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param replicaRegion Target region of the replica key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder replicaRegion(@Nullable Output<String> replicaRegion) {
             $.replicaRegion = replicaRegion;
@@ -161,9 +161,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param replicaRegion Target region of the replica key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder replicaRegion(String replicaRegion) {
             return replicaRegion(Output.of(replicaRegion));
@@ -172,9 +172,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param tags Replica key label.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<KeyReplicateKeyTagArgs>> tags) {
             $.tags = tags;
@@ -184,9 +184,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param tags Replica key label.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<KeyReplicateKeyTagArgs> tags) {
             return tags(Output.of(tags));
@@ -195,9 +195,9 @@ public final class KeyReplicateKeyArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param tags Replica key label.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(KeyReplicateKeyTagArgs... tags) {
             return tags(List.of(tags));

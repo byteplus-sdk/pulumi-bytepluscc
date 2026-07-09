@@ -21,7 +21,7 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
     /**
      * Address information under the address pool.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="addresses")
     private @Nullable Output<List<RulePoolSetPoolAddressArgs>> addresses;
@@ -29,7 +29,7 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
     /**
      * @return Address information under the address pool.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RulePoolSetPoolAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
@@ -37,14 +37,14 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * The number of unavailable addresses in the address pool.
-     *
+     * 
      */
     @Import(name="inactiveAddrCount")
     private @Nullable Output<Integer> inactiveAddrCount;
 
     /**
      * @return The number of unavailable addresses in the address pool.
-     *
+     * 
      */
     public Optional<Output<Integer>> inactiveAddrCount() {
         return Optional.ofNullable(this.inactiveAddrCount);
@@ -52,14 +52,14 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Address pool name.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Address pool name.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -67,14 +67,14 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Address pool ID.
-     *
+     * 
      */
     @Import(name="poolId")
     private @Nullable Output<String> poolId;
 
     /**
      * @return Address pool ID.
-     *
+     * 
      */
     public Optional<Output<String>> poolId() {
         return Optional.ofNullable(this.poolId);
@@ -82,14 +82,14 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Address pool weight.
-     *
+     * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
      * @return Address pool weight.
-     *
+     * 
      */
     public Optional<Output<Integer>> weight() {
         return Optional.ofNullable(this.weight);
@@ -126,9 +126,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param addresses Address information under the address pool.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(@Nullable Output<List<RulePoolSetPoolAddressArgs>> addresses) {
             $.addresses = addresses;
@@ -138,9 +138,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param addresses Address information under the address pool.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(List<RulePoolSetPoolAddressArgs> addresses) {
             return addresses(Output.of(addresses));
@@ -149,9 +149,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param addresses Address information under the address pool.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(RulePoolSetPoolAddressArgs... addresses) {
             return addresses(List.of(addresses));
@@ -159,9 +159,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param inactiveAddrCount The number of unavailable addresses in the address pool.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder inactiveAddrCount(@Nullable Output<Integer> inactiveAddrCount) {
             $.inactiveAddrCount = inactiveAddrCount;
@@ -170,9 +170,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param inactiveAddrCount The number of unavailable addresses in the address pool.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder inactiveAddrCount(Integer inactiveAddrCount) {
             return inactiveAddrCount(Output.of(inactiveAddrCount));
@@ -180,9 +180,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param name Address pool name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -191,9 +191,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param name Address pool name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -201,9 +201,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param poolId Address pool ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder poolId(@Nullable Output<String> poolId) {
             $.poolId = poolId;
@@ -212,9 +212,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param poolId Address pool ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder poolId(String poolId) {
             return poolId(Output.of(poolId));
@@ -222,9 +222,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param weight Address pool weight.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder weight(@Nullable Output<Integer> weight) {
             $.weight = weight;
@@ -233,9 +233,9 @@ public final class RulePoolSetPoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param weight Address pool weight.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder weight(Integer weight) {
             return weight(Output.of(weight));

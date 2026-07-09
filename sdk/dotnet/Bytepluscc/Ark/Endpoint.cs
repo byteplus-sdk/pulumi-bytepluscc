@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
 {
     /// <summary>
     /// When using large language models for inference services, the inference endpoint is the key entry point for model invocation. Developers can initiate API/SDK inference requests to the large model simply by specifying the ID, enabling quick access and flexible invocation. The system provides a unified API invocation method, call monitoring, rate limiting strategies, and security mechanisms to ensure stability and security during inference
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var endpointDemo = new Bytepluscc.Ark.Endpoint("EndpointDemo", new()
     ///     {
@@ -29,7 +29,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
     ///         Description = "endpoint description",
     ///         ModelReference = new Bytepluscc.Ark.Inputs.EndpointModelReferenceArgs
     ///         {
-    ///             Foundation_model =
+    ///             Foundation_model = 
     ///             {
     ///                 { "name", "doubao-1-5-thinking-***" },
     ///                 { "modelVersion", "250428" },
@@ -50,12 +50,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ark
     ///             Rpm = 10,
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:ark/endpoint:Endpoint example "endpoint_id"
     /// ```

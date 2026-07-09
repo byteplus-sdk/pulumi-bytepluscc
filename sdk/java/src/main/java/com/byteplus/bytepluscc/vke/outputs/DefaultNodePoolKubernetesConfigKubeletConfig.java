@@ -19,92 +19,92 @@ import javax.annotation.Nullable;
 public final class DefaultNodePoolKubernetesConfigKubeletConfig {
     /**
      * @return Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
-     *
+     * 
      */
     private @Nullable String cpuManagerPolicy;
     /**
      * @return Feature gate.
-     *
+     * 
      */
     private @Nullable DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates featureGates;
     /**
      * @return Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
-     *
+     * 
      */
     private @Nullable Integer kubeApiBurst;
     /**
      * @return Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
-     *
+     * 
      */
     private @Nullable Integer kubeApiQps;
     /**
      * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved> kubeReserveds;
     /**
      * @return Configure the maximum number of Pods supported by kubelet
-     *
+     * 
      */
     private @Nullable Integer maxPods;
     /**
      * @return Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-     *
+     * 
      */
     private @Nullable Integer registryBurst;
     /**
      * @return Can be used to limit the QPS cap for the image repository
-     *
+     * 
      */
     private @Nullable Integer registryPullQps;
     /**
      * @return Pull images one by one
-     *
+     * 
      */
     private @Nullable Boolean serializeImagePulls;
     /**
      * @return Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved> systemReserveds;
     /**
      * @return Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
-     *
+     * 
      */
     private @Nullable String topologyManagerPolicy;
     /**
      * @return Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
-     *
+     * 
      */
     private @Nullable String topologyManagerScope;
 
     private DefaultNodePoolKubernetesConfigKubeletConfig() {}
     /**
      * @return Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
-     *
+     * 
      */
     public Optional<String> cpuManagerPolicy() {
         return Optional.ofNullable(this.cpuManagerPolicy);
     }
     /**
      * @return Feature gate.
-     *
+     * 
      */
     public Optional<DefaultNodePoolKubernetesConfigKubeletConfigFeatureGates> featureGates() {
         return Optional.ofNullable(this.featureGates);
     }
     /**
      * @return Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
-     *
+     * 
      */
     public Optional<Integer> kubeApiBurst() {
         return Optional.ofNullable(this.kubeApiBurst);
     }
     /**
      * @return Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
-     *
+     * 
      */
     public Optional<Integer> kubeApiQps() {
         return Optional.ofNullable(this.kubeApiQps);
@@ -112,35 +112,35 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfig {
     /**
      * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReserved> kubeReserveds() {
         return this.kubeReserveds == null ? List.of() : this.kubeReserveds;
     }
     /**
      * @return Configure the maximum number of Pods supported by kubelet
-     *
+     * 
      */
     public Optional<Integer> maxPods() {
         return Optional.ofNullable(this.maxPods);
     }
     /**
      * @return Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-     *
+     * 
      */
     public Optional<Integer> registryBurst() {
         return Optional.ofNullable(this.registryBurst);
     }
     /**
      * @return Can be used to limit the QPS cap for the image repository
-     *
+     * 
      */
     public Optional<Integer> registryPullQps() {
         return Optional.ofNullable(this.registryPullQps);
     }
     /**
      * @return Pull images one by one
-     *
+     * 
      */
     public Optional<Boolean> serializeImagePulls() {
         return Optional.ofNullable(this.serializeImagePulls);
@@ -148,21 +148,21 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfig {
     /**
      * @return Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReserved> systemReserveds() {
         return this.systemReserveds == null ? List.of() : this.systemReserveds;
     }
     /**
      * @return Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
-     *
+     * 
      */
     public Optional<String> topologyManagerPolicy() {
         return Optional.ofNullable(this.topologyManagerPolicy);
     }
     /**
      * @return Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
-     *
+     * 
      */
     public Optional<String> topologyManagerScope() {
         return Optional.ofNullable(this.topologyManagerScope);

@@ -18,14 +18,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Bandwidth Qos
-     *
+     * 
      */
     @Import(name="bandwidthQos")
     private @Nullable Output<Integer> bandwidthQos;
 
     /**
      * @return Bandwidth Qos
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidthQos() {
         return Optional.ofNullable(this.bandwidthQos);
@@ -33,14 +33,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Capacity quota limit (GiB)
-     *
+     * 
      */
     @Import(name="capacityLimit")
     private @Nullable Output<Integer> capacityLimit;
 
     /**
      * @return Capacity quota limit (GiB)
-     *
+     * 
      */
     public Optional<Output<Integer>> capacityLimit() {
         return Optional.ofNullable(this.capacityLimit);
@@ -48,14 +48,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Used capacity (GiB)
-     *
+     * 
      */
     @Import(name="capacityUsed")
     private @Nullable Output<Integer> capacityUsed;
 
     /**
      * @return Used capacity (GiB)
-     *
+     * 
      */
     public Optional<Output<Integer>> capacityUsed() {
         return Optional.ofNullable(this.capacityUsed);
@@ -63,14 +63,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset creation time
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Fileset creation time
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -78,14 +78,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
-     *
+     * 
      */
     @Import(name="fileLimit")
     private @Nullable Output<Integer> fileLimit;
 
     /**
      * @return File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
-     *
+     * 
      */
     public Optional<Output<Integer>> fileLimit() {
         return Optional.ofNullable(this.fileLimit);
@@ -93,14 +93,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system ID
-     *
+     * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
      * @return File system ID
-     *
+     * 
      */
     public Optional<Output<String>> fileSystemId() {
         return Optional.ofNullable(this.fileSystemId);
@@ -108,14 +108,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Used file count
-     *
+     * 
      */
     @Import(name="fileUsed")
     private @Nullable Output<Integer> fileUsed;
 
     /**
      * @return Used file count
-     *
+     * 
      */
     public Optional<Output<Integer>> fileUsed() {
         return Optional.ofNullable(this.fileUsed);
@@ -123,14 +123,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset ID。
-     *
+     * 
      */
     @Import(name="filesetId")
     private @Nullable Output<String> filesetId;
 
     /**
      * @return Fileset ID。
-     *
+     * 
      */
     public Optional<Output<String>> filesetId() {
         return Optional.ofNullable(this.filesetId);
@@ -138,14 +138,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset name
-     *
+     * 
      */
     @Import(name="filesetName")
     private @Nullable Output<String> filesetName;
 
     /**
      * @return Fileset name
-     *
+     * 
      */
     public Optional<Output<String>> filesetName() {
         return Optional.ofNullable(this.filesetName);
@@ -153,14 +153,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset absolute path
-     *
+     * 
      */
     @Import(name="filesetPath")
     private @Nullable Output<String> filesetPath;
 
     /**
      * @return Fileset absolute path
-     *
+     * 
      */
     public Optional<Output<String>> filesetPath() {
         return Optional.ofNullable(this.filesetPath);
@@ -168,14 +168,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset absolute path at creation
-     *
+     * 
      */
     @Import(name="filesetPathOnCreate")
     private @Nullable Output<String> filesetPathOnCreate;
 
     /**
      * @return Fileset absolute path at creation
-     *
+     * 
      */
     public Optional<Output<String>> filesetPathOnCreate() {
         return Optional.ofNullable(this.filesetPathOnCreate);
@@ -183,14 +183,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IOPS Qos。
-     *
+     * 
      */
     @Import(name="iopsQos")
     private @Nullable Output<Integer> iopsQos;
 
     /**
      * @return IOPS Qos。
-     *
+     * 
      */
     public Optional<Output<Integer>> iopsQos() {
         return Optional.ofNullable(this.iopsQos);
@@ -198,14 +198,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset inode limit
-     *
+     * 
      */
     @Import(name="maxInodeNum")
     private @Nullable Output<Integer> maxInodeNum;
 
     /**
      * @return Fileset inode limit
-     *
+     * 
      */
     public Optional<Output<Integer>> maxInodeNum() {
         return Optional.ofNullable(this.maxInodeNum);
@@ -213,7 +213,7 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Fileset status. The possible values are:
-     *
+     * 
      *     - `Creating`: Creating
      *     - `CreateError`: Creation failed
      *     - `Running`: Running
@@ -223,14 +223,14 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
      *     - `DeleteError`: Deletion failed
      *     - `Deleted`: Deleted
      *     - `Error`: Error
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Fileset status. The possible values are:
-     *
+     * 
      *     - `Creating`: Creating
      *     - `CreateError`: Creation failed
      *     - `Running`: Running
@@ -240,7 +240,7 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
      *     - `DeleteError`: Deletion failed
      *     - `Deleted`: Deleted
      *     - `Error`: Error
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -285,9 +285,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidthQos Bandwidth Qos
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidthQos(@Nullable Output<Integer> bandwidthQos) {
             $.bandwidthQos = bandwidthQos;
@@ -296,9 +296,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidthQos Bandwidth Qos
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidthQos(Integer bandwidthQos) {
             return bandwidthQos(Output.of(bandwidthQos));
@@ -306,9 +306,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacityLimit Capacity quota limit (GiB)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacityLimit(@Nullable Output<Integer> capacityLimit) {
             $.capacityLimit = capacityLimit;
@@ -317,9 +317,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacityLimit Capacity quota limit (GiB)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacityLimit(Integer capacityLimit) {
             return capacityLimit(Output.of(capacityLimit));
@@ -327,9 +327,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacityUsed Used capacity (GiB)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacityUsed(@Nullable Output<Integer> capacityUsed) {
             $.capacityUsed = capacityUsed;
@@ -338,9 +338,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacityUsed Used capacity (GiB)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacityUsed(Integer capacityUsed) {
             return capacityUsed(Output.of(capacityUsed));
@@ -348,9 +348,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Fileset creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -359,9 +359,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Fileset creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -369,9 +369,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileLimit File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileLimit(@Nullable Output<Integer> fileLimit) {
             $.fileLimit = fileLimit;
@@ -380,9 +380,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileLimit File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileLimit(Integer fileLimit) {
             return fileLimit(Output.of(fileLimit));
@@ -390,9 +390,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemId File system ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemId(@Nullable Output<String> fileSystemId) {
             $.fileSystemId = fileSystemId;
@@ -401,9 +401,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemId File system ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemId(String fileSystemId) {
             return fileSystemId(Output.of(fileSystemId));
@@ -411,9 +411,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileUsed Used file count
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileUsed(@Nullable Output<Integer> fileUsed) {
             $.fileUsed = fileUsed;
@@ -422,9 +422,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileUsed Used file count
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileUsed(Integer fileUsed) {
             return fileUsed(Output.of(fileUsed));
@@ -432,9 +432,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetId Fileset ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetId(@Nullable Output<String> filesetId) {
             $.filesetId = filesetId;
@@ -443,9 +443,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetId Fileset ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetId(String filesetId) {
             return filesetId(Output.of(filesetId));
@@ -453,9 +453,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetName Fileset name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetName(@Nullable Output<String> filesetName) {
             $.filesetName = filesetName;
@@ -464,9 +464,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetName Fileset name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetName(String filesetName) {
             return filesetName(Output.of(filesetName));
@@ -474,9 +474,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetPath Fileset absolute path
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetPath(@Nullable Output<String> filesetPath) {
             $.filesetPath = filesetPath;
@@ -485,9 +485,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetPath Fileset absolute path
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetPath(String filesetPath) {
             return filesetPath(Output.of(filesetPath));
@@ -495,9 +495,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetPathOnCreate Fileset absolute path at creation
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetPathOnCreate(@Nullable Output<String> filesetPathOnCreate) {
             $.filesetPathOnCreate = filesetPathOnCreate;
@@ -506,9 +506,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param filesetPathOnCreate Fileset absolute path at creation
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filesetPathOnCreate(String filesetPathOnCreate) {
             return filesetPathOnCreate(Output.of(filesetPathOnCreate));
@@ -516,9 +516,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iopsQos IOPS Qos。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iopsQos(@Nullable Output<Integer> iopsQos) {
             $.iopsQos = iopsQos;
@@ -527,9 +527,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iopsQos IOPS Qos。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iopsQos(Integer iopsQos) {
             return iopsQos(Output.of(iopsQos));
@@ -537,9 +537,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxInodeNum Fileset inode limit
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxInodeNum(@Nullable Output<Integer> maxInodeNum) {
             $.maxInodeNum = maxInodeNum;
@@ -548,9 +548,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxInodeNum Fileset inode limit
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxInodeNum(Integer maxInodeNum) {
             return maxInodeNum(Output.of(maxInodeNum));
@@ -558,7 +558,7 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Fileset status. The possible values are:
-         *
+         * 
          *     - `Creating`: Creating
          *     - `CreateError`: Creation failed
          *     - `Running`: Running
@@ -568,9 +568,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
          *     - `DeleteError`: Deletion failed
          *     - `Deleted`: Deleted
          *     - `Error`: Error
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -579,7 +579,7 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Fileset status. The possible values are:
-         *
+         * 
          *     - `Creating`: Creating
          *     - `CreateError`: Creation failed
          *     - `Running`: Running
@@ -589,9 +589,9 @@ public final class FilesetState extends com.pulumi.resources.ResourceArgs {
          *     - `DeleteError`: Deletion failed
          *     - `Deleted`: Deleted
          *     - `Error`: Error
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));

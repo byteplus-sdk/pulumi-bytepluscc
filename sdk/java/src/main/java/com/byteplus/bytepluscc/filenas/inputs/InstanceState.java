@@ -22,14 +22,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cache performance information
-     *
+     * 
      */
     @Import(name="cachePerformance")
     private @Nullable Output<InstanceCachePerformanceArgs> cachePerformance;
 
     /**
      * @return Cache performance information
-     *
+     * 
      */
     public Optional<Output<InstanceCachePerformanceArgs>> cachePerformance() {
         return Optional.ofNullable(this.cachePerformance);
@@ -37,14 +37,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system capacity
-     *
+     * 
      */
     @Import(name="capacity")
     private @Nullable Output<InstanceCapacityArgs> capacity;
 
     /**
      * @return File system capacity
-     *
+     * 
      */
     public Optional<Output<InstanceCapacityArgs>> capacity() {
         return Optional.ofNullable(this.capacity);
@@ -52,14 +52,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
-     *
+     * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
-     *
+     * 
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
@@ -67,14 +67,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -82,14 +82,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -97,14 +97,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system ID
-     *
+     * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
      * @return File system ID
-     *
+     * 
      */
     public Optional<Output<String>> fileSystemId() {
         return Optional.ofNullable(this.fileSystemId);
@@ -112,14 +112,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system name
-     *
+     * 
      */
     @Import(name="fileSystemName")
     private @Nullable Output<String> fileSystemName;
 
     /**
      * @return File system name
-     *
+     * 
      */
     public Optional<Output<String>> fileSystemName() {
         return Optional.ofNullable(this.fileSystemName);
@@ -127,14 +127,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
-     *
+     * 
      */
     @Import(name="fileSystemType")
     private @Nullable Output<String> fileSystemType;
 
     /**
      * @return File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
-     *
+     * 
      */
     public Optional<Output<String>> fileSystemType() {
         return Optional.ofNullable(this.fileSystemType);
@@ -142,14 +142,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project, default value is the Default project
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project, default value is the Default project
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -157,14 +157,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
-     *
+     * 
      */
     @Import(name="protocolType")
     private @Nullable Output<String> protocolType;
 
     /**
      * @return File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
-     *
+     * 
      */
     public Optional<Output<String>> protocolType() {
         return Optional.ofNullable(this.protocolType);
@@ -172,14 +172,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of snapshots
-     *
+     * 
      */
     @Import(name="snapshotCount")
     private @Nullable Output<Integer> snapshotCount;
 
     /**
      * @return Number of snapshots
-     *
+     * 
      */
     public Optional<Output<Integer>> snapshotCount() {
         return Optional.ofNullable(this.snapshotCount);
@@ -187,14 +187,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
-     *
+     * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
      * @return Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
-     *
+     * 
      */
     public Optional<Output<String>> snapshotId() {
         return Optional.ofNullable(this.snapshotId);
@@ -202,14 +202,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -217,14 +217,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Storage type. Value: Standard, indicates standard type
-     *
+     * 
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
      * @return Storage type. Value: Standard, indicates standard type
-     *
+     * 
      */
     public Optional<Output<String>> storageType() {
         return Optional.ofNullable(this.storageType);
@@ -233,7 +233,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * File system tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
@@ -241,7 +241,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return File system tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -249,14 +249,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update time
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Update time
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -264,14 +264,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability Zone ID
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability Zone ID
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -279,14 +279,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability Zone name
-     *
+     * 
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
      * @return Availability Zone name
-     *
+     * 
      */
     public Optional<Output<String>> zoneName() {
         return Optional.ofNullable(this.zoneName);
@@ -335,9 +335,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cachePerformance Cache performance information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cachePerformance(@Nullable Output<InstanceCachePerformanceArgs> cachePerformance) {
             $.cachePerformance = cachePerformance;
@@ -346,9 +346,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cachePerformance Cache performance information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cachePerformance(InstanceCachePerformanceArgs cachePerformance) {
             return cachePerformance(Output.of(cachePerformance));
@@ -356,9 +356,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacity File system capacity
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacity(@Nullable Output<InstanceCapacityArgs> capacity) {
             $.capacity = capacity;
@@ -367,9 +367,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacity File system capacity
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacity(InstanceCapacityArgs capacity) {
             return capacity(Output.of(capacity));
@@ -377,9 +377,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -388,9 +388,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -398,9 +398,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -409,9 +409,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -419,9 +419,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -430,9 +430,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -440,9 +440,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemId File system ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemId(@Nullable Output<String> fileSystemId) {
             $.fileSystemId = fileSystemId;
@@ -451,9 +451,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemId File system ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemId(String fileSystemId) {
             return fileSystemId(Output.of(fileSystemId));
@@ -461,9 +461,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemName File system name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemName(@Nullable Output<String> fileSystemName) {
             $.fileSystemName = fileSystemName;
@@ -472,9 +472,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemName File system name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemName(String fileSystemName) {
             return fileSystemName(Output.of(fileSystemName));
@@ -482,9 +482,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemType File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemType(@Nullable Output<String> fileSystemType) {
             $.fileSystemType = fileSystemType;
@@ -493,9 +493,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemType File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemType(String fileSystemType) {
             return fileSystemType(Output.of(fileSystemType));
@@ -503,9 +503,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project, default value is the Default project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -514,9 +514,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project, default value is the Default project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -524,9 +524,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolType File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocolType(@Nullable Output<String> protocolType) {
             $.protocolType = protocolType;
@@ -535,9 +535,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolType File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocolType(String protocolType) {
             return protocolType(Output.of(protocolType));
@@ -545,9 +545,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotCount Number of snapshots
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotCount(@Nullable Output<Integer> snapshotCount) {
             $.snapshotCount = snapshotCount;
@@ -556,9 +556,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotCount Number of snapshots
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotCount(Integer snapshotCount) {
             return snapshotCount(Output.of(snapshotCount));
@@ -566,9 +566,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotId Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotId(@Nullable Output<String> snapshotId) {
             $.snapshotId = snapshotId;
@@ -577,9 +577,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotId Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotId(String snapshotId) {
             return snapshotId(Output.of(snapshotId));
@@ -587,9 +587,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -598,9 +598,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -608,9 +608,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Storage type. Value: Standard, indicates standard type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storageType(@Nullable Output<String> storageType) {
             $.storageType = storageType;
@@ -619,9 +619,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Storage type. Value: Standard, indicates standard type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
@@ -630,9 +630,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags File system tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
@@ -642,9 +642,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags File system tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
@@ -653,9 +653,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags File system tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
@@ -663,9 +663,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -674,9 +674,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -684,9 +684,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability Zone ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -695,9 +695,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability Zone ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));
@@ -705,9 +705,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Availability Zone name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(@Nullable Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -716,9 +716,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Availability Zone name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

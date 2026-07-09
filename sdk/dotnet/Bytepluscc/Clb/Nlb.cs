@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// The NLB instance receives user access requests and forwards them to backend servers based on the configuration of listeners and server groups.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var nLBDemo = new Bytepluscc.Clb.Nlb("NLBDemo", new()
     ///     {
@@ -55,12 +55,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/nlb:Nlb example "load_balancer_id"
     /// ```

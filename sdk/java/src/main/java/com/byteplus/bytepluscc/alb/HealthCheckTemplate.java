@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * Health checks are essential for ensuring application availability. ALB regularly performs health checks on backend servers to verify whether they can accept new requests. If a backend server fails to respond properly to ALB&#39;s health check requests, client traffic will not be routed to that server. ALB forwards traffic to other servers with a healthy status, ensuring service continuity and reliability. ALB health checks are performed based on server groups. Once health checks are enabled for a server group, ALB periodically checks the status of backend servers within the group.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var aLBHealthCheckTemplateDemo = new HealthCheckTemplate("aLBHealthCheckTemplateDemo", HealthCheckTemplateArgs.builder()
  *             .description("asdfgh")
@@ -65,228 +65,228 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:alb/healthCheckTemplate:HealthCheckTemplate example &#34;health_check_template_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:alb/healthCheckTemplate:HealthCheckTemplate")
 public class HealthCheckTemplate extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the health check template.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the health check template.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
-     *
+     * 
      */
     @Export(name="healthCheckDomain", refs={String.class}, tree="[0]")
     private Output<String> healthCheckDomain;
 
     /**
      * @return Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
-     *
+     * 
      */
     public Output<String> healthCheckDomain() {
         return this.healthCheckDomain;
     }
     /**
      * HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-     *
+     * 
      */
     @Export(name="healthCheckHttpCode", refs={String.class}, tree="[0]")
     private Output<String> healthCheckHttpCode;
 
     /**
      * @return HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-     *
+     * 
      */
     public Output<String> healthCheckHttpCode() {
         return this.healthCheckHttpCode;
     }
     /**
      * HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
-     *
+     * 
      */
     @Export(name="healthCheckHttpVersion", refs={String.class}, tree="[0]")
     private Output<String> healthCheckHttpVersion;
 
     /**
      * @return HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
-     *
+     * 
      */
     public Output<String> healthCheckHttpVersion() {
         return this.healthCheckHttpVersion;
     }
     /**
      * Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
-     *
+     * 
      */
     @Export(name="healthCheckInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> healthCheckInterval;
 
     /**
      * @return Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
-     *
+     * 
      */
     public Output<Integer> healthCheckInterval() {
         return this.healthCheckInterval;
     }
     /**
      * Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
-     *
+     * 
      */
     @Export(name="healthCheckMethod", refs={String.class}, tree="[0]")
     private Output<String> healthCheckMethod;
 
     /**
      * @return Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
-     *
+     * 
      */
     public Output<String> healthCheckMethod() {
         return this.healthCheckMethod;
     }
     /**
      * Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
-     *
+     * 
      */
     @Export(name="healthCheckPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> healthCheckPort;
 
     /**
      * @return Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
-     *
+     * 
      */
     public Output<Integer> healthCheckPort() {
         return this.healthCheckPort;
     }
     /**
      * Protocol for the health check. HTTP or TCP.
-     *
+     * 
      */
     @Export(name="healthCheckProtocol", refs={String.class}, tree="[0]")
     private Output<String> healthCheckProtocol;
 
     /**
      * @return Protocol for the health check. HTTP or TCP.
-     *
+     * 
      */
     public Output<String> healthCheckProtocol() {
         return this.healthCheckProtocol;
     }
     /**
      * Health check template ID.
-     *
+     * 
      */
     @Export(name="healthCheckTemplateId", refs={String.class}, tree="[0]")
     private Output<String> healthCheckTemplateId;
 
     /**
      * @return Health check template ID.
-     *
+     * 
      */
     public Output<String> healthCheckTemplateId() {
         return this.healthCheckTemplateId;
     }
     /**
      * Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Export(name="healthCheckTemplateName", refs={String.class}, tree="[0]")
     private Output<String> healthCheckTemplateName;
 
     /**
      * @return Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Output<String> healthCheckTemplateName() {
         return this.healthCheckTemplateName;
     }
     /**
      * Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
-     *
+     * 
      */
     @Export(name="healthCheckTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> healthCheckTimeout;
 
     /**
      * @return Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
-     *
+     * 
      */
     public Output<Integer> healthCheckTimeout() {
         return this.healthCheckTimeout;
     }
     /**
      * Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
-     *
+     * 
      */
     @Export(name="healthCheckUri", refs={String.class}, tree="[0]")
     private Output<String> healthCheckUri;
 
     /**
      * @return Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
-     *
+     * 
      */
     public Output<String> healthCheckUri() {
         return this.healthCheckUri;
     }
     /**
      * Health threshold for the health check. Default is 3. Range: 2–10 times.
-     *
+     * 
      */
     @Export(name="healthyThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> healthyThreshold;
 
     /**
      * @return Health threshold for the health check. Default is 3. Range: 2–10 times.
-     *
+     * 
      */
     public Output<Integer> healthyThreshold() {
         return this.healthyThreshold;
     }
     /**
      * Project name to which the health check template belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the health check template belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -294,7 +294,7 @@ public class HealthCheckTemplate extends com.pulumi.resources.CustomResource {
     /**
      * List of tags associated with the health check template.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,HealthCheckTemplateTag.class}, tree="[0,1]")
     private Output<List<HealthCheckTemplateTag>> tags;
@@ -302,35 +302,35 @@ public class HealthCheckTemplate extends com.pulumi.resources.CustomResource {
     /**
      * @return List of tags associated with the health check template.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<HealthCheckTemplateTag>> tags() {
         return this.tags;
     }
     /**
      * Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
-     *
+     * 
      */
     @Export(name="unhealthyThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> unhealthyThreshold;
 
     /**
      * @return Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
-     *
+     * 
      */
     public Output<Integer> unhealthyThreshold() {
         return this.unhealthyThreshold;
     }
     /**
      * Last operation time of the health check template.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the health check template.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

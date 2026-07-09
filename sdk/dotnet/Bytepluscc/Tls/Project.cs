@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSProjectDemo = new Bytepluscc.Tls.Project("TLSProjectDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/project:Project example "project_id"
     /// ```

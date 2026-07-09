@@ -44,7 +44,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs.Inputs
         ///     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
         ///     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
         ///     - PrePaid: Subscription.
-        ///
+        ///   
         ///   **Note:**
         ///   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
         /// </summary>

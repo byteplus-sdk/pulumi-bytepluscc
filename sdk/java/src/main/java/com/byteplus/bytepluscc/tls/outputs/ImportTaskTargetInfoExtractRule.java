@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 public final class ImportTaskTargetInfoExtractRule {
     /**
      * @return Basic content of log extraction rules.
-     *
+     * 
      */
     private @Nullable ImportTaskTargetInfoExtractRuleExtractRule extractRule;
     /**
      * @return Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
-     *
+     * 
      */
     private @Nullable Integer skipLineCount;
     /**
      * @return Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
-     *
+     * 
      */
     private @Nullable String timeExtractRegex;
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     *
+     * 
      */
     private @Nullable String timeZone;
 
     private ImportTaskTargetInfoExtractRule() {}
     /**
      * @return Basic content of log extraction rules.
-     *
+     * 
      */
     public Optional<ImportTaskTargetInfoExtractRuleExtractRule> extractRule() {
         return Optional.ofNullable(this.extractRule);
     }
     /**
      * @return Number of skipped rows. Only valid when the log type is&lt;span pulumi-lang-nodejs=&#34; delimiterLog &#34; pulumi-lang-dotnet=&#34; DelimiterLog &#34; pulumi-lang-go=&#34; delimiterLog &#34; pulumi-lang-python=&#34; delimiter_log &#34; pulumi-lang-yaml=&#34; delimiterLog &#34; pulumi-lang-java=&#34; delimiterLog &#34; pulumi-lang-hcl=&#34; delimiter_log &#34;&gt; delimiterLog &lt;/span&gt;and the import type is tos.
-     *
+     * 
      */
     public Optional<Integer> skipLineCount() {
         return Optional.ofNullable(this.skipLineCount);
     }
     /**
      * @return Time extraction regular expression, used to extract the time value from the TimeKey field and parse it as the collection time
-     *
+     * 
      */
     public Optional<String> timeExtractRegex() {
         return Optional.ofNullable(this.timeExtractRegex);
     }
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     *
+     * 
      */
     public Optional<String> timeZone() {
         return Optional.ofNullable(this.timeZone);

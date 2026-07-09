@@ -27,14 +27,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist ID list. New instances are bound to the specified allowlist.
-     *
+     * 
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID list. New instances are bound to the specified allowlist.
-     *
+     * 
      */
     public Optional<Output<List<String>>> allowListIds() {
         return Optional.ofNullable(this.allowListIds);
@@ -42,14 +42,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
-     *
+     * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -57,14 +57,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
-     *
+     * 
      */
     @Import(name="chargeStatus")
     private @Nullable Output<String> chargeStatus;
 
     /**
      * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
-     *
+     * 
      */
     public Optional<Output<String>> chargeStatus() {
         return Optional.ofNullable(this.chargeStatus);
@@ -72,14 +72,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
-     *
+     * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
-     *
+     * 
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
@@ -87,14 +87,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scheduled shutdown time (UTC).
-     *
+     * 
      */
     @Import(name="closedTime")
     private @Nullable Output<String> closedTime;
 
     /**
      * @return Scheduled shutdown time (UTC).
-     *
+     * 
      */
     public Optional<Output<String>> closedTime() {
         return Optional.ofNullable(this.closedTime);
@@ -102,14 +102,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
-     *
+     * 
      */
     @Import(name="configServerNodeSpec")
     private @Nullable Output<String> configServerNodeSpec;
 
     /**
      * @return ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
-     *
+     * 
      */
     public Optional<Output<String>> configServerNodeSpec() {
         return Optional.ofNullable(this.configServerNodeSpec);
@@ -117,14 +117,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
-     *
+     * 
      */
     @Import(name="configServerStorageSpaceGb")
     private @Nullable Output<Integer> configServerStorageSpaceGb;
 
     /**
      * @return ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
-     *
+     * 
      */
     public Optional<Output<Integer>> configServerStorageSpaceGb() {
         return Optional.ofNullable(this.configServerStorageSpaceGb);
@@ -133,7 +133,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * ConfigServer information list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="configServers")
     private @Nullable Output<List<InstanceConfigServerArgs>> configServers;
@@ -141,7 +141,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return ConfigServer information list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceConfigServerArgs>>> configServers() {
         return Optional.ofNullable(this.configServers);
@@ -149,14 +149,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ConfigServer ID
-     *
+     * 
      */
     @Import(name="configServersId")
     private @Nullable Output<String> configServersId;
 
     /**
      * @return ConfigServer ID
-     *
+     * 
      */
     public Optional<Output<String>> configServersId() {
         return Optional.ofNullable(this.configServersId);
@@ -164,14 +164,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance creation time (UTC).
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Instance creation time (UTC).
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -179,14 +179,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database engine. The value is fixed as MongoDB
-     *
+     * 
      */
     @Import(name="dbEngine")
     private @Nullable Output<String> dbEngine;
 
     /**
      * @return Database engine. The value is fixed as MongoDB
-     *
+     * 
      */
     public Optional<Output<String>> dbEngine() {
         return Optional.ofNullable(this.dbEngine);
@@ -194,14 +194,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
-     *
+     * 
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
      * @return Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
-     *
+     * 
      */
     public Optional<Output<String>> dbEngineVersion() {
         return Optional.ofNullable(this.dbEngineVersion);
@@ -209,14 +209,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database engine version string
-     *
+     * 
      */
     @Import(name="dbEngineVersionStr")
     private @Nullable Output<String> dbEngineVersionStr;
 
     /**
      * @return Database engine version string
-     *
+     * 
      */
     public Optional<Output<String>> dbEngineVersionStr() {
         return Optional.ofNullable(this.dbEngineVersionStr);
@@ -224,14 +224,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance expiration time (UTC).
-     *
+     * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Instance expiration time (UTC).
-     *
+     * 
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -239,14 +239,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
-     *
+     * 
      */
     @Import(name="instanceCount")
     private @Nullable Output<Integer> instanceCount;
 
     /**
      * @return Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
-     *
+     * 
      */
     public Optional<Output<Integer>> instanceCount() {
         return Optional.ofNullable(this.instanceCount);
@@ -254,14 +254,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -269,14 +269,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-     *
+     * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-     *
+     * 
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -285,7 +285,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Instance parameter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="instanceParameters")
     private @Nullable Output<List<InstanceInstanceParameterArgs>> instanceParameters;
@@ -293,7 +293,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Instance parameter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceInstanceParameterArgs>>> instanceParameters() {
         return Optional.ofNullable(this.instanceParameters);
@@ -301,14 +301,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
-     *
+     * 
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
      * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
-     *
+     * 
      */
     public Optional<Output<String>> instanceStatus() {
         return Optional.ofNullable(this.instanceStatus);
@@ -316,14 +316,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
-     *
+     * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
      * @return MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
-     *
+     * 
      */
     public Optional<Output<String>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -332,7 +332,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Mongos information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="mongos")
     private @Nullable Output<List<InstanceMongoArgs>> mongos;
@@ -340,7 +340,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Mongos information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceMongoArgs>>> mongos() {
         return Optional.ofNullable(this.mongos);
@@ -348,14 +348,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mongos ID.
-     *
+     * 
      */
     @Import(name="mongosId")
     private @Nullable Output<String> mongosId;
 
     /**
      * @return Mongos ID.
-     *
+     * 
      */
     public Optional<Output<String>> mongosId() {
         return Optional.ofNullable(this.mongosId);
@@ -363,14 +363,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of Mongos nodes in the sharded cluster. Range: 2~32.
-     *
+     * 
      */
     @Import(name="mongosNodeNumber")
     private @Nullable Output<Integer> mongosNodeNumber;
 
     /**
      * @return Number of Mongos nodes in the sharded cluster. Range: 2~32.
-     *
+     * 
      */
     public Optional<Output<Integer>> mongosNodeNumber() {
         return Optional.ofNullable(this.mongosNodeNumber);
@@ -378,14 +378,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specification code for Mongos nodes in a sharded cluster.
-     *
+     * 
      */
     @Import(name="mongosNodeSpec")
     private @Nullable Output<String> mongosNodeSpec;
 
     /**
      * @return Specification code for Mongos nodes in a sharded cluster.
-     *
+     * 
      */
     public Optional<Output<String>> mongosNodeSpec() {
         return Optional.ofNullable(this.mongosNodeSpec);
@@ -394,7 +394,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Add read-only node information, including the availability zone and quantity of read-only nodes.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nodeAvailabilityZones")
     private @Nullable Output<List<InstanceNodeAvailabilityZoneArgs>> nodeAvailabilityZones;
@@ -402,7 +402,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Add read-only node information, including the availability zone and quantity of read-only nodes.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceNodeAvailabilityZoneArgs>>> nodeAvailabilityZones() {
         return Optional.ofNullable(this.nodeAvailabilityZones);
@@ -410,14 +410,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
-     *
+     * 
      */
     @Import(name="nodeNumber")
     private @Nullable Output<Integer> nodeNumber;
 
     /**
      * @return Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
-     *
+     * 
      */
     public Optional<Output<Integer>> nodeNumber() {
         return Optional.ofNullable(this.nodeNumber);
@@ -425,14 +425,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
-     *
+     * 
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
      * @return Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
-     *
+     * 
      */
     public Optional<Output<String>> nodeSpec() {
         return Optional.ofNullable(this.nodeSpec);
@@ -441,7 +441,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Information list for each node in the replica set instance or each node in the sharded cluster shard
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nodes")
     private @Nullable Output<List<InstanceNodeArgs>> nodes;
@@ -449,7 +449,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Information list for each node in the replica set instance or each node in the sharded cluster shard
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceNodeArgs>>> nodes() {
         return Optional.ofNullable(this.nodes);
@@ -457,14 +457,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
-     *
+     * 
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -472,14 +472,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
-     *
+     * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
-     *
+     * 
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -487,14 +487,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * String information for the instance&#39;s private network connection address.
-     *
+     * 
      */
     @Import(name="privateEndpoint")
     private @Nullable Output<String> privateEndpoint;
 
     /**
      * @return String information for the instance&#39;s private network connection address.
-     *
+     * 
      */
     public Optional<Output<String>> privateEndpoint() {
         return Optional.ofNullable(this.privateEndpoint);
@@ -502,14 +502,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Select the project for the instance. If left blank, the new instance will be added to the default project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Select the project for the instance. If left blank, the new instance will be added to the default project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -517,14 +517,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of read-only nodes in the instance
-     *
+     * 
      */
     @Import(name="readOnlyNodeNumber")
     private @Nullable Output<Integer> readOnlyNodeNumber;
 
     /**
      * @return Number of read-only nodes in the instance
-     *
+     * 
      */
     public Optional<Output<Integer>> readOnlyNodeNumber() {
         return Optional.ofNullable(this.readOnlyNodeNumber);
@@ -532,14 +532,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scheduled recycle time for the instance (UTC)
-     *
+     * 
      */
     @Import(name="reclaimTime")
     private @Nullable Output<String> reclaimTime;
 
     /**
      * @return Scheduled recycle time for the instance (UTC)
-     *
+     * 
      */
     public Optional<Output<String>> reclaimTime() {
         return Optional.ofNullable(this.reclaimTime);
@@ -547,14 +547,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of shards in the sharded cluster. Range: 2–32.
-     *
+     * 
      */
     @Import(name="shardNumber")
     private @Nullable Output<Integer> shardNumber;
 
     /**
      * @return Number of shards in the sharded cluster. Range: 2–32.
-     *
+     * 
      */
     public Optional<Output<Integer>> shardNumber() {
         return Optional.ofNullable(this.shardNumber);
@@ -563,7 +563,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Shard information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="shards")
     private @Nullable Output<List<InstanceShardArgs>> shards;
@@ -571,7 +571,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Shard information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceShardArgs>>> shards() {
         return Optional.ofNullable(this.shards);
@@ -579,14 +579,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
-     *
+     * 
      */
     @Import(name="storageSpaceGb")
     private @Nullable Output<Integer> storageSpaceGb;
 
     /**
      * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
-     *
+     * 
      */
     public Optional<Output<Integer>> storageSpaceGb() {
         return Optional.ofNullable(this.storageSpaceGb);
@@ -594,14 +594,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
-     *
+     * 
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
      * @return Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
-     *
+     * 
      */
     public Optional<Output<String>> storageType() {
         return Optional.ofNullable(this.storageType);
@@ -609,14 +609,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID.
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -624,14 +624,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
-     *
+     * 
      */
     @Import(name="superAccountName")
     private @Nullable Output<String> superAccountName;
 
     /**
      * @return Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
-     *
+     * 
      */
     public Optional<Output<String>> superAccountName() {
         return Optional.ofNullable(this.superAccountName);
@@ -639,14 +639,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
-     *
+     * 
      */
     @Import(name="superAccountPassword")
     private @Nullable Output<String> superAccountPassword;
 
     /**
      * @return Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
-     *
+     * 
      */
     public Optional<Output<String>> superAccountPassword() {
         return Optional.ofNullable(this.superAccountPassword);
@@ -655,7 +655,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * MongoDB instance tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
@@ -663,7 +663,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return MongoDB instance tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -671,14 +671,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance update time (UTC).
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Instance update time (UTC).
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -686,14 +686,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -701,14 +701,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -784,9 +784,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list. New instances are bound to the specified allowlist.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListIds(@Nullable Output<List<String>> allowListIds) {
             $.allowListIds = allowListIds;
@@ -795,9 +795,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list. New instances are bound to the specified allowlist.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListIds(List<String> allowListIds) {
             return allowListIds(Output.of(allowListIds));
@@ -805,9 +805,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list. New instances are bound to the specified allowlist.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListIds(String... allowListIds) {
             return allowListIds(List.of(allowListIds));
@@ -815,9 +815,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -826,9 +826,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -836,9 +836,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeStatus Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeStatus(@Nullable Output<String> chargeStatus) {
             $.chargeStatus = chargeStatus;
@@ -847,9 +847,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeStatus Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeStatus(String chargeStatus) {
             return chargeStatus(Output.of(chargeStatus));
@@ -857,9 +857,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -868,9 +868,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -878,9 +878,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param closedTime Scheduled shutdown time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder closedTime(@Nullable Output<String> closedTime) {
             $.closedTime = closedTime;
@@ -889,9 +889,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param closedTime Scheduled shutdown time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder closedTime(String closedTime) {
             return closedTime(Output.of(closedTime));
@@ -899,9 +899,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configServerNodeSpec ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServerNodeSpec(@Nullable Output<String> configServerNodeSpec) {
             $.configServerNodeSpec = configServerNodeSpec;
@@ -910,9 +910,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configServerNodeSpec ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServerNodeSpec(String configServerNodeSpec) {
             return configServerNodeSpec(Output.of(configServerNodeSpec));
@@ -920,9 +920,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configServerStorageSpaceGb ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServerStorageSpaceGb(@Nullable Output<Integer> configServerStorageSpaceGb) {
             $.configServerStorageSpaceGb = configServerStorageSpaceGb;
@@ -931,9 +931,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configServerStorageSpaceGb ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServerStorageSpaceGb(Integer configServerStorageSpaceGb) {
             return configServerStorageSpaceGb(Output.of(configServerStorageSpaceGb));
@@ -942,9 +942,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param configServers ConfigServer information list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServers(@Nullable Output<List<InstanceConfigServerArgs>> configServers) {
             $.configServers = configServers;
@@ -954,9 +954,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param configServers ConfigServer information list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServers(List<InstanceConfigServerArgs> configServers) {
             return configServers(Output.of(configServers));
@@ -965,9 +965,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param configServers ConfigServer information list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServers(InstanceConfigServerArgs... configServers) {
             return configServers(List.of(configServers));
@@ -975,9 +975,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configServersId ConfigServer ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServersId(@Nullable Output<String> configServersId) {
             $.configServersId = configServersId;
@@ -986,9 +986,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configServersId ConfigServer ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configServersId(String configServersId) {
             return configServersId(Output.of(configServersId));
@@ -996,9 +996,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Instance creation time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -1007,9 +1007,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Instance creation time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -1017,9 +1017,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngine Database engine. The value is fixed as MongoDB
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbEngine(@Nullable Output<String> dbEngine) {
             $.dbEngine = dbEngine;
@@ -1028,9 +1028,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngine Database engine. The value is fixed as MongoDB
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbEngine(String dbEngine) {
             return dbEngine(Output.of(dbEngine));
@@ -1038,9 +1038,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbEngineVersion(@Nullable Output<String> dbEngineVersion) {
             $.dbEngineVersion = dbEngineVersion;
@@ -1049,9 +1049,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbEngineVersion(String dbEngineVersion) {
             return dbEngineVersion(Output.of(dbEngineVersion));
@@ -1059,9 +1059,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersionStr Database engine version string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbEngineVersionStr(@Nullable Output<String> dbEngineVersionStr) {
             $.dbEngineVersionStr = dbEngineVersionStr;
@@ -1070,9 +1070,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersionStr Database engine version string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbEngineVersionStr(String dbEngineVersionStr) {
             return dbEngineVersionStr(Output.of(dbEngineVersionStr));
@@ -1080,9 +1080,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Instance expiration time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -1091,9 +1091,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Instance expiration time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -1101,9 +1101,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceCount Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceCount(@Nullable Output<Integer> instanceCount) {
             $.instanceCount = instanceCount;
@@ -1112,9 +1112,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceCount Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceCount(Integer instanceCount) {
             return instanceCount(Output.of(instanceCount));
@@ -1122,9 +1122,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -1133,9 +1133,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -1143,9 +1143,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -1154,9 +1154,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -1165,9 +1165,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceParameters Instance parameter list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceParameters(@Nullable Output<List<InstanceInstanceParameterArgs>> instanceParameters) {
             $.instanceParameters = instanceParameters;
@@ -1177,9 +1177,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceParameters Instance parameter list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceParameters(List<InstanceInstanceParameterArgs> instanceParameters) {
             return instanceParameters(Output.of(instanceParameters));
@@ -1188,9 +1188,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param instanceParameters Instance parameter list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceParameters(InstanceInstanceParameterArgs... instanceParameters) {
             return instanceParameters(List.of(instanceParameters));
@@ -1198,9 +1198,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceStatus Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceStatus(@Nullable Output<String> instanceStatus) {
             $.instanceStatus = instanceStatus;
@@ -1209,9 +1209,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceStatus Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceStatus(String instanceStatus) {
             return instanceStatus(Output.of(instanceStatus));
@@ -1219,9 +1219,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceType(@Nullable Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -1230,9 +1230,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -1241,9 +1241,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param mongos Mongos information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongos(@Nullable Output<List<InstanceMongoArgs>> mongos) {
             $.mongos = mongos;
@@ -1253,9 +1253,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param mongos Mongos information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongos(List<InstanceMongoArgs> mongos) {
             return mongos(Output.of(mongos));
@@ -1264,9 +1264,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param mongos Mongos information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongos(InstanceMongoArgs... mongos) {
             return mongos(List.of(mongos));
@@ -1274,9 +1274,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosId Mongos ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosId(@Nullable Output<String> mongosId) {
             $.mongosId = mongosId;
@@ -1285,9 +1285,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosId Mongos ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosId(String mongosId) {
             return mongosId(Output.of(mongosId));
@@ -1295,9 +1295,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeNumber Number of Mongos nodes in the sharded cluster. Range: 2~32.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeNumber(@Nullable Output<Integer> mongosNodeNumber) {
             $.mongosNodeNumber = mongosNodeNumber;
@@ -1306,9 +1306,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeNumber Number of Mongos nodes in the sharded cluster. Range: 2~32.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeNumber(Integer mongosNodeNumber) {
             return mongosNodeNumber(Output.of(mongosNodeNumber));
@@ -1316,9 +1316,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeSpec Specification code for Mongos nodes in a sharded cluster.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeSpec(@Nullable Output<String> mongosNodeSpec) {
             $.mongosNodeSpec = mongosNodeSpec;
@@ -1327,9 +1327,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeSpec Specification code for Mongos nodes in a sharded cluster.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeSpec(String mongosNodeSpec) {
             return mongosNodeSpec(Output.of(mongosNodeSpec));
@@ -1338,9 +1338,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeAvailabilityZones Add read-only node information, including the availability zone and quantity of read-only nodes.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeAvailabilityZones(@Nullable Output<List<InstanceNodeAvailabilityZoneArgs>> nodeAvailabilityZones) {
             $.nodeAvailabilityZones = nodeAvailabilityZones;
@@ -1350,9 +1350,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeAvailabilityZones Add read-only node information, including the availability zone and quantity of read-only nodes.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeAvailabilityZones(List<InstanceNodeAvailabilityZoneArgs> nodeAvailabilityZones) {
             return nodeAvailabilityZones(Output.of(nodeAvailabilityZones));
@@ -1361,9 +1361,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodeAvailabilityZones Add read-only node information, including the availability zone and quantity of read-only nodes.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeAvailabilityZones(InstanceNodeAvailabilityZoneArgs... nodeAvailabilityZones) {
             return nodeAvailabilityZones(List.of(nodeAvailabilityZones));
@@ -1371,9 +1371,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeNumber Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeNumber(@Nullable Output<Integer> nodeNumber) {
             $.nodeNumber = nodeNumber;
@@ -1382,9 +1382,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeNumber Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeNumber(Integer nodeNumber) {
             return nodeNumber(Output.of(nodeNumber));
@@ -1392,9 +1392,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeSpec Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeSpec(@Nullable Output<String> nodeSpec) {
             $.nodeSpec = nodeSpec;
@@ -1403,9 +1403,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeSpec Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeSpec(String nodeSpec) {
             return nodeSpec(Output.of(nodeSpec));
@@ -1414,9 +1414,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes Information list for each node in the replica set instance or each node in the sharded cluster shard
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(@Nullable Output<List<InstanceNodeArgs>> nodes) {
             $.nodes = nodes;
@@ -1426,9 +1426,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes Information list for each node in the replica set instance or each node in the sharded cluster shard
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(List<InstanceNodeArgs> nodes) {
             return nodes(Output.of(nodes));
@@ -1437,9 +1437,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes Information list for each node in the replica set instance or each node in the sharded cluster shard
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(InstanceNodeArgs... nodes) {
             return nodes(List.of(nodes));
@@ -1447,9 +1447,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -1458,9 +1458,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -1468,9 +1468,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -1479,9 +1479,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -1489,9 +1489,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateEndpoint String information for the instance&#39;s private network connection address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateEndpoint(@Nullable Output<String> privateEndpoint) {
             $.privateEndpoint = privateEndpoint;
@@ -1500,9 +1500,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateEndpoint String information for the instance&#39;s private network connection address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateEndpoint(String privateEndpoint) {
             return privateEndpoint(Output.of(privateEndpoint));
@@ -1510,9 +1510,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Select the project for the instance. If left blank, the new instance will be added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -1521,9 +1521,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Select the project for the instance. If left blank, the new instance will be added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -1531,9 +1531,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readOnlyNodeNumber Number of read-only nodes in the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeNumber(@Nullable Output<Integer> readOnlyNodeNumber) {
             $.readOnlyNodeNumber = readOnlyNodeNumber;
@@ -1542,9 +1542,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readOnlyNodeNumber Number of read-only nodes in the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeNumber(Integer readOnlyNodeNumber) {
             return readOnlyNodeNumber(Output.of(readOnlyNodeNumber));
@@ -1552,9 +1552,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param reclaimTime Scheduled recycle time for the instance (UTC)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder reclaimTime(@Nullable Output<String> reclaimTime) {
             $.reclaimTime = reclaimTime;
@@ -1563,9 +1563,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param reclaimTime Scheduled recycle time for the instance (UTC)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder reclaimTime(String reclaimTime) {
             return reclaimTime(Output.of(reclaimTime));
@@ -1573,9 +1573,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardNumber Number of shards in the sharded cluster. Range: 2–32.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardNumber(@Nullable Output<Integer> shardNumber) {
             $.shardNumber = shardNumber;
@@ -1584,9 +1584,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardNumber Number of shards in the sharded cluster. Range: 2–32.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardNumber(Integer shardNumber) {
             return shardNumber(Output.of(shardNumber));
@@ -1595,9 +1595,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shards Shard information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shards(@Nullable Output<List<InstanceShardArgs>> shards) {
             $.shards = shards;
@@ -1607,9 +1607,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shards Shard information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shards(List<InstanceShardArgs> shards) {
             return shards(Output.of(shards));
@@ -1618,9 +1618,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shards Shard information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shards(InstanceShardArgs... shards) {
             return shards(List.of(shards));
@@ -1628,9 +1628,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpaceGb Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storageSpaceGb(@Nullable Output<Integer> storageSpaceGb) {
             $.storageSpaceGb = storageSpaceGb;
@@ -1639,9 +1639,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpaceGb Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storageSpaceGb(Integer storageSpaceGb) {
             return storageSpaceGb(Output.of(storageSpaceGb));
@@ -1649,9 +1649,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storageType(@Nullable Output<String> storageType) {
             $.storageType = storageType;
@@ -1660,9 +1660,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
@@ -1670,9 +1670,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -1681,9 +1681,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -1691,9 +1691,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param superAccountName Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder superAccountName(@Nullable Output<String> superAccountName) {
             $.superAccountName = superAccountName;
@@ -1702,9 +1702,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param superAccountName Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder superAccountName(String superAccountName) {
             return superAccountName(Output.of(superAccountName));
@@ -1712,9 +1712,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param superAccountPassword Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder superAccountPassword(@Nullable Output<String> superAccountPassword) {
             $.superAccountPassword = superAccountPassword;
@@ -1723,9 +1723,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param superAccountPassword Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder superAccountPassword(String superAccountPassword) {
             return superAccountPassword(Output.of(superAccountPassword));
@@ -1734,9 +1734,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags MongoDB instance tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
@@ -1746,9 +1746,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags MongoDB instance tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1757,9 +1757,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags MongoDB instance tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
@@ -1767,9 +1767,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Instance update time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -1778,9 +1778,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Instance update time (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -1788,9 +1788,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1799,9 +1799,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -1809,9 +1809,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1820,9 +1820,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

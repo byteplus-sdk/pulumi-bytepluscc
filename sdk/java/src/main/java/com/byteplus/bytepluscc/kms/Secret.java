@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Credential Manager is a credential management product based on the key management system. It is used to store sensitive credential information required by user business applications, such as AK/SK, account passwords, access keys, database passwords, and certificates. The product provides secure storage, access control, automatic rotation, and auditing capabilities. User business applications can securely and dynamically obtain credential information by integrating the KMS SDK or using the KMS OpenAPI, effectively preventing risks such as information leakage or unintended modification caused by storing sensitive information in plaintext
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var kMSSecretDemo = new Secret("kMSSecretDemo", SecretArgs.builder()
  *             .secretName("secret-ccapi-Generic")
@@ -57,340 +57,340 @@ import javax.annotation.Nullable;
  *                     jsonProperty("key2", "value2")
  *                 )))
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:kms/secret:Secret example &#34;secret_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:kms/secret:Secret")
 public class Secret extends com.pulumi.resources.CustomResource {
     /**
      * Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
-     *
+     * 
      */
     @Export(name="automaticRotation", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> automaticRotation;
 
     /**
      * @return Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
-     *
+     * 
      */
     public Output<Boolean> automaticRotation() {
         return this.automaticRotation;
     }
     /**
      * Credential creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
      * @return Credential creation time
-     *
+     * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
      * Credential description, length: 0 ~ 8192 characters
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Credential description, length: 0 ~ 8192 characters
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
-     *
+     * 
      */
     @Export(name="encryptionKey", refs={String.class}, tree="[0]")
     private Output<String> encryptionKey;
 
     /**
      * @return KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
-     *
+     * 
      */
     public Output<String> encryptionKey() {
         return this.encryptionKey;
     }
     /**
      * Credential extension configuration, used to specify properties for non-Generic credentials
-     *
+     * 
      */
     @Export(name="extendedConfig", refs={String.class}, tree="[0]")
     private Output<String> extendedConfig;
 
     /**
      * @return Credential extension configuration, used to specify properties for non-Generic credentials
-     *
+     * 
      */
     public Output<String> extendedConfig() {
         return this.extendedConfig;
     }
     /**
      * Credential last rotation time
-     *
+     * 
      */
     @Export(name="lastRotationTime", refs={String.class}, tree="[0]")
     private Output<String> lastRotationTime;
 
     /**
      * @return Credential last rotation time
-     *
+     * 
      */
     public Output<String> lastRotationTime() {
         return this.lastRotationTime;
     }
     /**
      * Is managed credential
-     *
+     * 
      */
     @Export(name="managed", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> managed;
 
     /**
      * @return Is managed credential
-     *
+     * 
      */
     public Output<Boolean> managed() {
         return this.managed;
     }
     /**
      * Managed Cloud Service
-     *
+     * 
      */
     @Export(name="owningService", refs={String.class}, tree="[0]")
     private Output<String> owningService;
 
     /**
      * @return Managed Cloud Service
-     *
+     * 
      */
     public Output<String> owningService() {
         return this.owningService;
     }
     /**
      * Credential project name. Default value: default
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Credential project name. Default value: default
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
-     *
+     * 
      */
     @Export(name="rotationInterval", refs={String.class}, tree="[0]")
     private Output<String> rotationInterval;
 
     /**
      * @return Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
-     *
+     * 
      */
     public Output<String> rotationInterval() {
         return this.rotationInterval;
     }
     /**
      * Automatic rotation interval, unit: seconds
-     *
+     * 
      */
     @Export(name="rotationIntervalRead", refs={Integer.class}, tree="[0]")
     private Output<Integer> rotationIntervalRead;
 
     /**
      * @return Automatic rotation interval, unit: seconds
-     *
+     * 
      */
     public Output<Integer> rotationIntervalRead() {
         return this.rotationIntervalRead;
     }
     /**
      * Rotation status: Enable: automatic rotation enabled, Disable: automatic rotation disabled, Rotating: automatic rotation in progress, None: automatic rotation not supported
-     *
+     * 
      */
     @Export(name="rotationState", refs={String.class}, tree="[0]")
     private Output<String> rotationState;
 
     /**
      * @return Rotation status: Enable: automatic rotation enabled, Disable: automatic rotation disabled, Rotating: automatic rotation in progress, None: automatic rotation not supported
-     *
+     * 
      */
     public Output<String> rotationState() {
         return this.rotationState;
     }
     /**
      * Credential Scheduled Deletion Time
-     *
+     * 
      */
     @Export(name="scheduleDeleteTime", refs={String.class}, tree="[0]")
     private Output<String> scheduleDeleteTime;
 
     /**
      * @return Credential Scheduled Deletion Time
-     *
+     * 
      */
     public Output<String> scheduleDeleteTime() {
         return this.scheduleDeleteTime;
     }
     /**
      * Credential next rotation time
-     *
+     * 
      */
     @Export(name="scheduleRotationTime", refs={String.class}, tree="[0]")
     private Output<String> scheduleRotationTime;
 
     /**
      * @return Credential next rotation time
-     *
+     * 
      */
     public Output<String> scheduleRotationTime() {
         return this.scheduleRotationTime;
     }
     /**
      * Credential unique identifier, UUID format
-     *
+     * 
      */
     @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output<String> secretId;
 
     /**
      * @return Credential unique identifier, UUID format
-     *
+     * 
      */
     public Output<String> secretId() {
         return this.secretId;
     }
     /**
      * Credential name. Valid characters: [a-zA-Z0-9/_+=.{@literal @}-]
-     *
+     * 
      */
     @Export(name="secretName", refs={String.class}, tree="[0]")
     private Output<String> secretName;
 
     /**
      * @return Credential name. Valid characters: [a-zA-Z0-9/_+=.{@literal @}-]
-     *
+     * 
      */
     public Output<String> secretName() {
         return this.secretName;
     }
     /**
      * Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
-     *
+     * 
      */
     @Export(name="secretState", refs={String.class}, tree="[0]")
     private Output<String> secretState;
 
     /**
      * @return Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
-     *
+     * 
      */
     public Output<String> secretState() {
         return this.secretState;
     }
     /**
      * Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
-     *
+     * 
      */
     @Export(name="secretType", refs={String.class}, tree="[0]")
     private Output<String> secretType;
 
     /**
      * @return Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
-     *
+     * 
      */
     public Output<String> secretType() {
         return this.secretType;
     }
     /**
      * Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
-     *
+     * 
      */
     @Export(name="secretValue", refs={String.class}, tree="[0]")
     private Output<String> secretValue;
 
     /**
      * @return Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
-     *
+     * 
      */
     public Output<String> secretValue() {
         return this.secretValue;
     }
     /**
      * Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
-     *
+     * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
-     *
+     * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Credential tenant ID
-     *
+     * 
      */
     @Export(name="uid", refs={String.class}, tree="[0]")
     private Output<String> uid;
 
     /**
      * @return Credential tenant ID
-     *
+     * 
      */
     public Output<String> uid() {
         return this.uid;
     }
     /**
      * Credential update date
-     *
+     * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
      * @return Credential update date
-     *
+     * 
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Version alias. Valid characters: [a-zA-Z0-9/_+=.{@literal @}-]
-     *
+     * 
      */
     @Export(name="versionName", refs={String.class}, tree="[0]")
     private Output<String> versionName;
 
     /**
      * @return Version alias. Valid characters: [a-zA-Z0-9/_+=.{@literal @}-]
-     *
+     * 
      */
     public Output<String> versionName() {
         return this.versionName;

@@ -21,14 +21,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
-     *
+     * 
      */
     @Import(name="beginRegex")
     private @Nullable Output<String> beginRegex;
 
     /**
      * @return Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
-     *
+     * 
      */
     public Optional<Output<String>> beginRegex() {
         return Optional.ofNullable(this.beginRegex);
@@ -36,14 +36,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Delimiter. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
     /**
      * @return Delimiter. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     public Optional<Output<String>> delimiter() {
         return Optional.ofNullable(this.delimiter);
@@ -51,14 +51,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Enable nanoseconds.
-     *
+     * 
      */
     @Import(name="enableNanosecond")
     private @Nullable Output<Boolean> enableNanosecond;
 
     /**
      * @return Enable nanoseconds.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
@@ -67,7 +67,7 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
     /**
      * Filter key regular expression.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="filterKeyRegexes")
     private @Nullable Output<List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes;
@@ -75,7 +75,7 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
     /**
      * @return Filter key regular expression.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs>>> filterKeyRegexes() {
         return Optional.ofNullable(this.filterKeyRegexes);
@@ -83,14 +83,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-     *
+     * 
      */
     @Import(name="keys")
     private @Nullable Output<List<String>> keys;
 
     /**
      * @return List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-     *
+     * 
      */
     public Optional<Output<List<String>>> keys() {
         return Optional.ofNullable(this.keys);
@@ -98,14 +98,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Log regular expression
-     *
+     * 
      */
     @Import(name="logRegex")
     private @Nullable Output<String> logRegex;
 
     /**
      * @return Log regular expression
-     *
+     * 
      */
     public Optional<Output<String>> logRegex() {
         return Optional.ofNullable(this.logRegex);
@@ -113,14 +113,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Log template.
-     *
+     * 
      */
     @Import(name="logTemplate")
     private @Nullable Output<ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs> logTemplate;
 
     /**
      * @return Log template.
-     *
+     * 
      */
     public Optional<Output<ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs>> logTemplate() {
         return Optional.ofNullable(this.logTemplate);
@@ -128,14 +128,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     @Import(name="quote")
     private @Nullable Output<String> quote;
 
     /**
      * @return Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     public Optional<Output<String>> quote() {
         return Optional.ofNullable(this.quote);
@@ -143,14 +143,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
-     *
+     * 
      */
     @Import(name="timeFormat")
     private @Nullable Output<String> timeFormat;
 
     /**
      * @return Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
-     *
+     * 
      */
     public Optional<Output<String>> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
@@ -158,14 +158,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
-     *
+     * 
      */
     @Import(name="timeKey")
     private @Nullable Output<String> timeKey;
 
     /**
      * @return Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
-     *
+     * 
      */
     public Optional<Output<String>> timeKey() {
         return Optional.ofNullable(this.timeKey);
@@ -173,14 +173,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Time sample. Used to verify whether the entered time parsing format is correct
-     *
+     * 
      */
     @Import(name="timeSample")
     private @Nullable Output<String> timeSample;
 
     /**
      * @return Time sample. Used to verify whether the entered time parsing format is correct
-     *
+     * 
      */
     public Optional<Output<String>> timeSample() {
         return Optional.ofNullable(this.timeSample);
@@ -188,14 +188,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
-     *
+     * 
      */
     @Import(name="unMatchLogKey")
     private @Nullable Output<String> unMatchLogKey;
 
     /**
      * @return When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
-     *
+     * 
      */
     public Optional<Output<String>> unMatchLogKey() {
         return Optional.ofNullable(this.unMatchLogKey);
@@ -203,14 +203,14 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
     /**
      * Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     *
+     * 
      */
     @Import(name="unMatchUpLoadSwitch")
     private @Nullable Output<Boolean> unMatchUpLoadSwitch;
 
     /**
      * @return Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     *
+     * 
      */
     public Optional<Output<Boolean>> unMatchUpLoadSwitch() {
         return Optional.ofNullable(this.unMatchUpLoadSwitch);
@@ -254,9 +254,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param beginRegex Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder beginRegex(@Nullable Output<String> beginRegex) {
             $.beginRegex = beginRegex;
@@ -265,9 +265,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param beginRegex Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder beginRegex(String beginRegex) {
             return beginRegex(Output.of(beginRegex));
@@ -275,9 +275,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param delimiter Delimiter. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder delimiter(@Nullable Output<String> delimiter) {
             $.delimiter = delimiter;
@@ -286,9 +286,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param delimiter Delimiter. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder delimiter(String delimiter) {
             return delimiter(Output.of(delimiter));
@@ -296,9 +296,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param enableNanosecond Enable nanoseconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNanosecond(@Nullable Output<Boolean> enableNanosecond) {
             $.enableNanosecond = enableNanosecond;
@@ -307,9 +307,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param enableNanosecond Enable nanoseconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNanosecond(Boolean enableNanosecond) {
             return enableNanosecond(Output.of(enableNanosecond));
@@ -318,9 +318,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
         /**
          * @param filterKeyRegexes Filter key regular expression.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(@Nullable Output<List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes) {
             $.filterKeyRegexes = filterKeyRegexes;
@@ -330,9 +330,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
         /**
          * @param filterKeyRegexes Filter key regular expression.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs> filterKeyRegexes) {
             return filterKeyRegexes(Output.of(filterKeyRegexes));
@@ -341,9 +341,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
         /**
          * @param filterKeyRegexes Filter key regular expression.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegexArgs... filterKeyRegexes) {
             return filterKeyRegexes(List.of(filterKeyRegexes));
@@ -351,9 +351,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param keys List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(@Nullable Output<List<String>> keys) {
             $.keys = keys;
@@ -362,9 +362,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param keys List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(List<String> keys) {
             return keys(Output.of(keys));
@@ -372,9 +372,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param keys List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(String... keys) {
             return keys(List.of(keys));
@@ -382,9 +382,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param logRegex Log regular expression
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logRegex(@Nullable Output<String> logRegex) {
             $.logRegex = logRegex;
@@ -393,9 +393,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param logRegex Log regular expression
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logRegex(String logRegex) {
             return logRegex(Output.of(logRegex));
@@ -403,9 +403,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param logTemplate Log template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logTemplate(@Nullable Output<ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs> logTemplate) {
             $.logTemplate = logTemplate;
@@ -414,9 +414,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param logTemplate Log template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logTemplate(ImportTaskTargetInfoExtractRuleExtractRuleLogTemplateArgs logTemplate) {
             return logTemplate(Output.of(logTemplate));
@@ -424,9 +424,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param quote Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder quote(@Nullable Output<String> quote) {
             $.quote = quote;
@@ -435,9 +435,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param quote Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder quote(String quote) {
             return quote(Output.of(quote));
@@ -445,9 +445,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param timeFormat Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(@Nullable Output<String> timeFormat) {
             $.timeFormat = timeFormat;
@@ -456,9 +456,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param timeFormat Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(String timeFormat) {
             return timeFormat(Output.of(timeFormat));
@@ -466,9 +466,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param timeKey Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(@Nullable Output<String> timeKey) {
             $.timeKey = timeKey;
@@ -477,9 +477,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param timeKey Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(String timeKey) {
             return timeKey(Output.of(timeKey));
@@ -487,9 +487,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param timeSample Time sample. Used to verify whether the entered time parsing format is correct
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeSample(@Nullable Output<String> timeSample) {
             $.timeSample = timeSample;
@@ -498,9 +498,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param timeSample Time sample. Used to verify whether the entered time parsing format is correct
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeSample(String timeSample) {
             return timeSample(Output.of(timeSample));
@@ -508,9 +508,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param unMatchLogKey When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchLogKey(@Nullable Output<String> unMatchLogKey) {
             $.unMatchLogKey = unMatchLogKey;
@@ -519,9 +519,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param unMatchLogKey When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchLogKey(String unMatchLogKey) {
             return unMatchLogKey(Output.of(unMatchLogKey));
@@ -529,9 +529,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param unMatchUpLoadSwitch Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchUpLoadSwitch(@Nullable Output<Boolean> unMatchUpLoadSwitch) {
             $.unMatchUpLoadSwitch = unMatchUpLoadSwitch;
@@ -540,9 +540,9 @@ public final class ImportTaskTargetInfoExtractRuleExtractRuleArgs extends com.pu
 
         /**
          * @param unMatchUpLoadSwitch Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchUpLoadSwitch(Boolean unMatchUpLoadSwitch) {
             return unMatchUpLoadSwitch(Output.of(unMatchUpLoadSwitch));

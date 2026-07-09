@@ -20,14 +20,14 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-     *
+     * 
      */
     @Import(name="sslVpnClientCertName")
     private @Nullable Output<String> sslVpnClientCertName;
 
     /**
      * @return Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-     *
+     * 
      */
     public Optional<Output<String>> sslVpnClientCertName() {
         return Optional.ofNullable(this.sslVpnClientCertName);
@@ -50,14 +50,14 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-     *
+     * 
      */
     @Import(name="sslVpnServerId", required=true)
     private Output<String> sslVpnServerId;
 
     /**
      * @return ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-     *
+     * 
      */
     public Output<String> sslVpnServerId() {
         return this.sslVpnServerId;
@@ -66,7 +66,7 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
     /**
      * SSL client certificate tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SslVpnClientCertTagArgs>> tags;
@@ -74,7 +74,7 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return SSL client certificate tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SslVpnClientCertTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -109,9 +109,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -120,9 +120,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -130,9 +130,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param sslVpnClientCertName Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnClientCertName(@Nullable Output<String> sslVpnClientCertName) {
             $.sslVpnClientCertName = sslVpnClientCertName;
@@ -141,9 +141,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param sslVpnClientCertName Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnClientCertName(String sslVpnClientCertName) {
             return sslVpnClientCertName(Output.of(sslVpnClientCertName));
@@ -151,9 +151,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param sslVpnServerId ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnServerId(Output<String> sslVpnServerId) {
             $.sslVpnServerId = sslVpnServerId;
@@ -162,9 +162,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param sslVpnServerId ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnServerId(String sslVpnServerId) {
             return sslVpnServerId(Output.of(sslVpnServerId));
@@ -173,9 +173,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param tags SSL client certificate tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SslVpnClientCertTagArgs>> tags) {
             $.tags = tags;
@@ -185,9 +185,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param tags SSL client certificate tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SslVpnClientCertTagArgs> tags) {
             return tags(Output.of(tags));
@@ -196,9 +196,9 @@ public final class SslVpnClientCertArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param tags SSL client certificate tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SslVpnClientCertTagArgs... tags) {
             return tags(List.of(tags));

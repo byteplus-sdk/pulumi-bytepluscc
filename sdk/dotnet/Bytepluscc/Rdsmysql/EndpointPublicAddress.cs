@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// Instance connection endpoint public address.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var endpointPublicAddressDemo = new Bytepluscc.Rdsmysql.EndpointPublicAddress("EndpointPublicAddressDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///         DomainPrefix = "ccapi-terraform",
     ///         Port = "23306",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/endpointPublicAddress:EndpointPublicAddress example "instance_id|endpoint_id"
     /// ```

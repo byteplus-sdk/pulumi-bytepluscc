@@ -33,12 +33,12 @@ class EndpointArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] eip_ids: List of EIP IDs to bind when applying for a public address
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] mongos_node_ids: ID of the Mongos node that requires a public connection address
         :param pulumi.Input[_builtins.str] network_type: Network type of the connection address. Possible values:
-
+                 
                    - `Private`: Private connection address
                    - `Public`: Public connection address
         :param pulumi.Input[_builtins.str] object_id: ID of the component associated with the current connection address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         """
@@ -93,7 +93,7 @@ class EndpointArgs:
     def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network type of the connection address. Possible values:
-
+          
             - `Private`: Private connection address
             - `Public`: Public connection address
         """
@@ -108,8 +108,8 @@ class EndpointArgs:
     def object_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the component associated with the current connection address
-
-
+          
+          
           **Note:**
           This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         """
@@ -143,18 +143,18 @@ class _EndpointState:
         :param pulumi.Input[_builtins.str] endpoint_id: Connection address ID
         :param pulumi.Input[_builtins.str] endpoint_str: String information of the connection address.
         :param pulumi.Input[_builtins.str] endpoint_type: Node type corresponding to the connection address. Possible values:
-
+                 
                    - Replica set instances only support the `ReplicaSet` (replica set) connection address type
                    - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
         :param pulumi.Input[_builtins.str] instance_id: Instance ID
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] mongos_node_ids: ID of the Mongos node that requires a public connection address
         :param pulumi.Input[_builtins.str] network_type: Network type of the connection address. Possible values:
-
+                 
                    - `Private`: Private connection address
                    - `Public`: Public connection address
         :param pulumi.Input[_builtins.str] object_id: ID of the component associated with the current connection address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID of the current instance
@@ -237,7 +237,7 @@ class _EndpointState:
     def endpoint_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Node type corresponding to the connection address. Possible values:
-
+          
             - Replica set instances only support the `ReplicaSet` (replica set) connection address type
             - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
         """
@@ -276,7 +276,7 @@ class _EndpointState:
     def network_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Network type of the connection address. Possible values:
-
+          
             - `Private`: Private connection address
             - `Public`: Public connection address
         """
@@ -291,8 +291,8 @@ class _EndpointState:
     def object_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the component associated with the current connection address
-
-
+          
+          
           **Note:**
           This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         """
@@ -370,12 +370,12 @@ class Endpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_id: Instance ID
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] mongos_node_ids: ID of the Mongos node that requires a public connection address
         :param pulumi.Input[_builtins.str] network_type: Network type of the connection address. Possible values:
-
+                 
                    - `Private`: Private connection address
                    - `Public`: Public connection address
         :param pulumi.Input[_builtins.str] object_id: ID of the component associated with the current connection address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         """
@@ -486,18 +486,18 @@ class Endpoint(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] endpoint_id: Connection address ID
         :param pulumi.Input[_builtins.str] endpoint_str: String information of the connection address.
         :param pulumi.Input[_builtins.str] endpoint_type: Node type corresponding to the connection address. Possible values:
-
+                 
                    - Replica set instances only support the `ReplicaSet` (replica set) connection address type
                    - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
         :param pulumi.Input[_builtins.str] instance_id: Instance ID
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] mongos_node_ids: ID of the Mongos node that requires a public connection address
         :param pulumi.Input[_builtins.str] network_type: Network type of the connection address. Possible values:
-
+                 
                    - `Private`: Private connection address
                    - `Public`: Public connection address
         :param pulumi.Input[_builtins.str] object_id: ID of the component associated with the current connection address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID of the current instance
@@ -558,7 +558,7 @@ class Endpoint(pulumi.CustomResource):
     def endpoint_type(self) -> pulumi.Output[_builtins.str]:
         """
         Node type corresponding to the connection address. Possible values:
-
+          
             - Replica set instances only support the `ReplicaSet` (replica set) connection address type
             - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
         """
@@ -585,7 +585,7 @@ class Endpoint(pulumi.CustomResource):
     def network_type(self) -> pulumi.Output[_builtins.str]:
         """
         Network type of the connection address. Possible values:
-
+          
             - `Private`: Private connection address
             - `Public`: Public connection address
         """
@@ -596,8 +596,8 @@ class Endpoint(pulumi.CustomResource):
     def object_id(self) -> pulumi.Output[_builtins.str]:
         """
         ID of the component associated with the current connection address
-
-
+          
+          
           **Note:**
           This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         """

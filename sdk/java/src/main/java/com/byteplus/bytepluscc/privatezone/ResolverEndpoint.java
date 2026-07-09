@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,18 +39,18 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var privateZoneResolverEndpointDemo = new ResolverEndpoint("privateZoneResolverEndpointDemo", ResolverEndpointArgs.builder()
  *             .name("PrivateZoneResolverEndpointDemo")
  *             .vpcId("vpc-3nrh1tqschwcg931eaqxxxxx")
  *             .endpointType("IPv4")
- *             .ipConfigs(
+ *             .ipConfigs(            
  *                 ResolverEndpointIpConfigArgs.builder()
  *                     .az_id("cn-beijing-a")
  *                     .subnet_id("subnet-bt50na0bf6kg5h0b2u1xxxxx")
@@ -69,74 +69,74 @@ import javax.annotation.Nullable;
  *             .vpcRegion("cn-beijing")
  *             .direction("OUTBOUND")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint example &#34;endpoint_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint")
 public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-     *
+     * 
      */
     @Export(name="direction", refs={String.class}, tree="[0]")
     private Output<String> direction;
 
     /**
      * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-     *
+     * 
      */
     public Output<String> direction() {
         return this.direction;
     }
     /**
      * Endpoint ID
-     *
+     * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Endpoint ID
-     *
+     * 
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-     *
+     * 
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
      * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-     *
+     * 
      */
     public Output<String> endpointType() {
         return this.endpointType;
@@ -144,7 +144,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Availability zone, subnet, and IP configuration for the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="ipConfigs", refs={List.class,ResolverEndpointIpConfig.class}, tree="[0,1]")
     private Output<List<ResolverEndpointIpConfig>> ipConfigs;
@@ -152,63 +152,63 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * @return Availability zone, subnet, and IP configuration for the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ResolverEndpointIpConfig>> ipConfigs() {
         return this.ipConfigs;
     }
     /**
      * Endpoint name. Supports UTF-8 format
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Endpoint name. Supports UTF-8 format
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Project name to which the endpoint belongs. Default is default
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the endpoint belongs. Default is default
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
-     *
+     * 
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
      * @return Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
-     *
+     * 
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
      * Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -216,7 +216,7 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ResolverEndpointTag.class}, tree="[0,1]")
     private Output<List<ResolverEndpointTag>> tags;
@@ -224,49 +224,49 @@ public class ResolverEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ResolverEndpointTag>> tags() {
         return this.tags;
     }
     /**
      * Update time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * VPC ID where the endpoint is located
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID where the endpoint is located
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Region of the VPC where the endpoint is located
-     *
+     * 
      */
     @Export(name="vpcRegion", refs={String.class}, tree="[0]")
     private Output<String> vpcRegion;
 
     /**
      * @return Region of the VPC where the endpoint is located
-     *
+     * 
      */
     public Output<String> vpcRegion() {
         return this.vpcRegion;

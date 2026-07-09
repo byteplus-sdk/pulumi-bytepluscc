@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
     /// IP allowlist configuration
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var iAMAllowedIpAddressDemo = new Bytepluscc.Iam.AllowedIpAddress("IAMAllowedIpAddressDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:iam/allowedIpAddress:AllowedIpAddress example "user_id"
     /// ```

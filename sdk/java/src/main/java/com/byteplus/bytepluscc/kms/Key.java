@@ -25,14 +25,14 @@ import javax.annotation.Nullable;
 
 /**
  * Key Management Service (KMS) is a one-stop key management and data encryption platform on Volcano Engine. It provides easy-to-use encryption interfaces. KMS helps users easily manage keys and protect the security of core cloud data. It also greatly reduces the procurement and development costs for users to deploy their own cryptographic infrastructure. KMS helps businesses easily meet regulatory and compliance requirements.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -48,12 +48,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var kMSKeyDemo = new Key("kMSKeyDemo", KeyArgs.builder()
  *             .keyringName("KMSKeyDemo")
@@ -90,396 +90,396 @@ import javax.annotation.Nullable;
  *                     )))
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:kms/key:Key example &#34;keyring_name|key_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:kms/key:Key")
 public class Key extends com.pulumi.resources.CustomResource {
     /**
      * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     @Export(name="asymmetricCiphertext", refs={KeyAsymmetricCiphertext.class}, tree="[0]")
     private Output<KeyAsymmetricCiphertext> asymmetricCiphertext;
 
     /**
      * @return Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     public Output<KeyAsymmetricCiphertext> asymmetricCiphertext() {
         return this.asymmetricCiphertext;
     }
     /**
      * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     @Export(name="asymmetricSignature", refs={KeyAsymmetricSignature.class}, tree="[0]")
     private Output<KeyAsymmetricSignature> asymmetricSignature;
 
     /**
      * @return Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     public Output<KeyAsymmetricSignature> asymmetricSignature() {
         return this.asymmetricSignature;
     }
     /**
      * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     @Export(name="ciphertext", refs={KeyCiphertext.class}, tree="[0]")
     private Output<KeyCiphertext> ciphertext;
 
     /**
      * @return Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     public Output<KeyCiphertext> ciphertext() {
         return this.ciphertext;
     }
     /**
      * Key creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
      * @return Key creation time.
-     *
+     * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
      * Key description: Length 0–8192 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Key description: Length 0–8192 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * User master key archive operation (enter 1 to archive, 2 to unarchive).
-     *
+     * 
      */
     @Export(name="keyArchiveOperation", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyArchiveOperation;
 
     /**
      * @return User master key archive operation (enter 1 to archive, 2 to unarchive).
-     *
+     * 
      */
     public Output<Integer> keyArchiveOperation() {
         return this.keyArchiveOperation;
     }
     /**
      * User master key enable operation (enter 1 to enable, 2 to disable).
-     *
+     * 
      */
     @Export(name="keyEnableOperation", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyEnableOperation;
 
     /**
      * @return User master key enable operation (enter 1 to enable, 2 to disable).
-     *
+     * 
      */
     public Output<Integer> keyEnableOperation() {
         return this.keyEnableOperation;
     }
     /**
      * Key unique identifier in UUID format.
-     *
+     * 
      */
     @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
      * @return Key unique identifier in UUID format.
-     *
+     * 
      */
     public Output<String> keyId() {
         return this.keyId;
     }
     /**
      * Key material expiration time. If empty, the key does not expire.
-     *
+     * 
      */
     @Export(name="keyMaterialExpireTime", refs={String.class}, tree="[0]")
     private Output<String> keyMaterialExpireTime;
 
     /**
      * @return Key material expiration time. If empty, the key does not expire.
-     *
+     * 
      */
     public Output<String> keyMaterialExpireTime() {
         return this.keyMaterialExpireTime;
     }
     /**
      * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     *
+     * 
      */
     @Export(name="keyName", refs={String.class}, tree="[0]")
     private Output<String> keyName;
 
     /**
      * @return Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     *
+     * 
      */
     public Output<String> keyName() {
         return this.keyName;
     }
     /**
      * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
-     *
+     * 
      */
     @Export(name="keyPrimaryRegion", refs={String.class}, tree="[0]")
     private Output<String> keyPrimaryRegion;
 
     /**
      * @return Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
-     *
+     * 
      */
     public Output<String> keyPrimaryRegion() {
         return this.keyPrimaryRegion;
     }
     /**
      * User master key rotation operation (enter 1 to enable, 2 to disable).
-     *
+     * 
      */
     @Export(name="keyRotationOperation", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyRotationOperation;
 
     /**
      * @return User master key rotation operation (enter 1 to enable, 2 to disable).
-     *
+     * 
      */
     public Output<Integer> keyRotationOperation() {
         return this.keyRotationOperation;
     }
     /**
      * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
-     *
+     * 
      */
     @Export(name="keySpec", refs={String.class}, tree="[0]")
     private Output<String> keySpec;
 
     /**
      * @return Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
-     *
+     * 
      */
     public Output<String> keySpec() {
         return this.keySpec;
     }
     /**
      * Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
-     *
+     * 
      */
     @Export(name="keyState", refs={String.class}, tree="[0]")
     private Output<String> keyState;
 
     /**
      * @return Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
-     *
+     * 
      */
     public Output<String> keyState() {
         return this.keyState;
     }
     /**
      * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
-     *
+     * 
      */
     @Export(name="keyUsage", refs={String.class}, tree="[0]")
     private Output<String> keyUsage;
 
     /**
      * @return Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
-     *
+     * 
      */
     public Output<String> keyUsage() {
         return this.keyUsage;
     }
     /**
      * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     *
+     * 
      */
     @Export(name="keyringName", refs={String.class}, tree="[0]")
     private Output<String> keyringName;
 
     /**
      * @return Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     *
+     * 
      */
     public Output<String> keyringName() {
         return this.keyringName;
     }
     /**
      * Key last rotation time.
-     *
+     * 
      */
     @Export(name="lastRotationTime", refs={String.class}, tree="[0]")
     private Output<String> lastRotationTime;
 
     /**
      * @return Key last rotation time.
-     *
+     * 
      */
     public Output<String> lastRotationTime() {
         return this.lastRotationTime;
     }
     /**
      * Is this a multi-region type master key.
-     *
+     * 
      */
     @Export(name="multiRegion", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multiRegion;
 
     /**
      * @return Is this a multi-region type master key.
-     *
+     * 
      */
     public Output<Boolean> multiRegion() {
         return this.multiRegion;
     }
     /**
      * Multi-region key configuration information.
-     *
+     * 
      */
     @Export(name="multiRegionConfiguration", refs={KeyMultiRegionConfiguration.class}, tree="[0]")
     private Output<KeyMultiRegionConfiguration> multiRegionConfiguration;
 
     /**
      * @return Multi-region key configuration information.
-     *
+     * 
      */
     public Output<KeyMultiRegionConfiguration> multiRegionConfiguration() {
         return this.multiRegionConfiguration;
     }
     /**
      * Key source. Options: CloudKMS, External, ExternalKeyStore.
-     *
+     * 
      */
     @Export(name="origin", refs={String.class}, tree="[0]")
     private Output<String> origin;
 
     /**
      * @return Key source. Options: CloudKMS, External, ExternalKeyStore.
-     *
+     * 
      */
     public Output<String> origin() {
         return this.origin;
     }
     /**
      * Key protection level. Options: SOFTWARE, HSM.
-     *
+     * 
      */
     @Export(name="protectionLevel", refs={String.class}, tree="[0]")
     private Output<String> protectionLevel;
 
     /**
      * @return Key protection level. Options: SOFTWARE, HSM.
-     *
+     * 
      */
     public Output<String> protectionLevel() {
         return this.protectionLevel;
     }
     /**
      * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     @Export(name="reEncrypt", refs={KeyReEncrypt.class}, tree="[0]")
     private Output<KeyReEncrypt> reEncrypt;
 
     /**
      * @return Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     public Output<KeyReEncrypt> reEncrypt() {
         return this.reEncrypt;
     }
     /**
      * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     @Export(name="replicateKey", refs={KeyReplicateKey.class}, tree="[0]")
     private Output<KeyReplicateKey> replicateKey;
 
     /**
      * @return Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     *
+     * 
      */
     public Output<KeyReplicateKey> replicateKey() {
         return this.replicateKey;
     }
     /**
      * Key rotation period (days). Range: [90, 2560].
-     *
+     * 
      */
     @Export(name="rotateInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> rotateInterval;
 
     /**
      * @return Key rotation period (days). Range: [90, 2560].
-     *
+     * 
      */
     public Output<Integer> rotateInterval() {
         return this.rotateInterval;
     }
     /**
      * Key rotation status. Options: Enable, Disable.
-     *
+     * 
      */
     @Export(name="rotateState", refs={String.class}, tree="[0]")
     private Output<String> rotateState;
 
     /**
      * @return Key rotation status. Options: Enable, Disable.
-     *
+     * 
      */
     public Output<String> rotateState() {
         return this.rotateState;
     }
     /**
      * Key deletion time.
-     *
+     * 
      */
     @Export(name="scheduleDeleteTime", refs={String.class}, tree="[0]")
     private Output<String> scheduleDeleteTime;
 
     /**
      * @return Key deletion time.
-     *
+     * 
      */
     public Output<String> scheduleDeleteTime() {
         return this.scheduleDeleteTime;
     }
     /**
      * Key rotation time.
-     *
+     * 
      */
     @Export(name="scheduleRotationTime", refs={String.class}, tree="[0]")
     private Output<String> scheduleRotationTime;
 
     /**
      * @return Key rotation time.
-     *
+     * 
      */
     public Output<String> scheduleRotationTime() {
         return this.scheduleRotationTime;
@@ -487,7 +487,7 @@ public class Key extends com.pulumi.resources.CustomResource {
     /**
      * KMS key label information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,KeyTag.class}, tree="[0,1]")
     private Output<List<KeyTag>> tags;
@@ -495,35 +495,35 @@ public class Key extends com.pulumi.resources.CustomResource {
     /**
      * @return KMS key label information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<KeyTag>> tags() {
         return this.tags;
     }
     /**
      * Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
-     *
+     * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
-     *
+     * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Key update time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
      * @return Key update time.
-     *
+     * 
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;

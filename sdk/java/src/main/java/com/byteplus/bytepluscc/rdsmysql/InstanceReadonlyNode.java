@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Read-only node resources for RDS MySQL instances (NodeType=ReadOnly). Create, delete, or modify specifications using CreateDBNodes/DeleteDBNodes/ModifyDBNodeSpec; retrieve node details using DescribeDBInstanceHAConfig + DescribeReadOnlyNodeDelay; modify replication delay configuration using ModifyReadOnlyNodeDelayReplicationTime
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,12 +36,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var example = new InstanceReadonlyNode("example", InstanceReadonlyNodeArgs.builder()
  *             .instanceId("mysql-41xxxxx4db8")
@@ -50,214 +50,214 @@ import javax.annotation.Nullable;
  *             .updateEndpointIds("mysql-41xxxxx4db8-cluster")
  *             .delayReplicationTime(300)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode example &#34;instance_id|node_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode")
 public class InstanceReadonlyNode extends com.pulumi.resources.CustomResource {
     /**
      * Node creation time
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Node creation time
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Read-only node replication delay in seconds. Can be modified using ModifyReadOnlyNodeDelayReplicationTime
-     *
+     * 
      */
     @Export(name="delayReplicationTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> delayReplicationTime;
 
     /**
      * @return Read-only node replication delay in seconds. Can be modified using ModifyReadOnlyNodeDelayReplicationTime
-     *
+     * 
      */
     public Output<Integer> delayReplicationTime() {
         return this.delayReplicationTime;
     }
     /**
      * RDS MySQL instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return RDS MySQL instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Node memory size in GiB
-     *
+     * 
      */
     @Export(name="memory", refs={Integer.class}, tree="[0]")
     private Output<Integer> memory;
 
     /**
      * @return Node memory size in GiB
-     *
+     * 
      */
     public Output<Integer> memory() {
         return this.memory;
     }
     /**
      * Read-only node ID
-     *
+     * 
      */
     @Export(name="nodeId", refs={String.class}, tree="[0]")
     private Output<String> nodeId;
 
     /**
      * @return Read-only node ID
-     *
+     * 
      */
     public Output<String> nodeId() {
         return this.nodeId;
     }
     /**
      * Node specification
-     *
+     * 
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
      * @return Node specification
-     *
+     * 
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
     /**
      * Node status
-     *
+     * 
      */
     @Export(name="nodeStatus", refs={String.class}, tree="[0]")
     private Output<String> nodeStatus;
 
     /**
      * @return Node status
-     *
+     * 
      */
     public Output<String> nodeStatus() {
         return this.nodeStatus;
     }
     /**
      * Node type, fixed as ReadOnly
-     *
+     * 
      */
     @Export(name="nodeType", refs={String.class}, tree="[0]")
     private Output<String> nodeType;
 
     /**
      * @return Node type, fixed as ReadOnly
-     *
+     * 
      */
     public Output<String> nodeType() {
         return this.nodeType;
     }
     /**
      * Node region ID
-     *
+     * 
      */
     @Export(name="regionId", refs={String.class}, tree="[0]")
     private Output<String> regionId;
 
     /**
      * @return Node region ID
-     *
+     * 
      */
     public Output<String> regionId() {
         return this.regionId;
     }
     /**
      * Read-only node synchronization delay in seconds
-     *
+     * 
      */
     @Export(name="syncDelay", refs={Integer.class}, tree="[0]")
     private Output<Integer> syncDelay;
 
     /**
      * @return Read-only node synchronization delay in seconds
-     *
+     * 
      */
     public Output<Integer> syncDelay() {
         return this.syncDelay;
     }
     /**
      * List of connection endpoint IDs to be synchronously updated when applying replication delay changes (optional, write-only, passed through to ModifyReadOnlyNodeDelayReplicationTime during Update)
-     *
+     * 
      */
     @Export(name="updateEndpointIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> updateEndpointIds;
 
     /**
      * @return List of connection endpoint IDs to be synchronously updated when applying replication delay changes (optional, write-only, passed through to ModifyReadOnlyNodeDelayReplicationTime during Update)
-     *
+     * 
      */
     public Output<List<String>> updateEndpointIds() {
         return this.updateEndpointIds;
     }
     /**
      * Node update time
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Node update time
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * Node vCPU count
-     *
+     * 
      */
     @Export(name="vcpu", refs={Integer.class}, tree="[0]")
     private Output<Integer> vcpu;
 
     /**
      * @return Node vCPU count
-     *
+     * 
      */
     public Output<Integer> vcpu() {
         return this.vcpu;
     }
     /**
      * Node availability zone ID
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Node availability zone ID
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

@@ -23,14 +23,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
-     *
+     * 
      */
     @Import(name="cpuManagerPolicy")
     private @Nullable Output<String> cpuManagerPolicy;
 
     /**
      * @return Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
-     *
+     * 
      */
     public Optional<Output<String>> cpuManagerPolicy() {
         return Optional.ofNullable(this.cpuManagerPolicy);
@@ -38,14 +38,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Feature gate.
-     *
+     * 
      */
     @Import(name="featureGates")
     private @Nullable Output<DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs> featureGates;
 
     /**
      * @return Feature gate.
-     *
+     * 
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs>> featureGates() {
         return Optional.ofNullable(this.featureGates);
@@ -53,14 +53,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
-     *
+     * 
      */
     @Import(name="kubeApiBurst")
     private @Nullable Output<Integer> kubeApiBurst;
 
     /**
      * @return Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
-     *
+     * 
      */
     public Optional<Output<Integer>> kubeApiBurst() {
         return Optional.ofNullable(this.kubeApiBurst);
@@ -68,14 +68,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
-     *
+     * 
      */
     @Import(name="kubeApiQps")
     private @Nullable Output<Integer> kubeApiQps;
 
     /**
      * @return Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
-     *
+     * 
      */
     public Optional<Output<Integer>> kubeApiQps() {
         return Optional.ofNullable(this.kubeApiQps);
@@ -84,7 +84,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     /**
      * Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="kubeReserveds")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds;
@@ -92,7 +92,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     /**
      * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs>>> kubeReserveds() {
         return Optional.ofNullable(this.kubeReserveds);
@@ -100,14 +100,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Configure the maximum number of Pods supported by kubelet
-     *
+     * 
      */
     @Import(name="maxPods")
     private @Nullable Output<Integer> maxPods;
 
     /**
      * @return Configure the maximum number of Pods supported by kubelet
-     *
+     * 
      */
     public Optional<Output<Integer>> maxPods() {
         return Optional.ofNullable(this.maxPods);
@@ -115,14 +115,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-     *
+     * 
      */
     @Import(name="registryBurst")
     private @Nullable Output<Integer> registryBurst;
 
     /**
      * @return Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-     *
+     * 
      */
     public Optional<Output<Integer>> registryBurst() {
         return Optional.ofNullable(this.registryBurst);
@@ -130,14 +130,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Can be used to limit the QPS cap for the image repository
-     *
+     * 
      */
     @Import(name="registryPullQps")
     private @Nullable Output<Integer> registryPullQps;
 
     /**
      * @return Can be used to limit the QPS cap for the image repository
-     *
+     * 
      */
     public Optional<Output<Integer>> registryPullQps() {
         return Optional.ofNullable(this.registryPullQps);
@@ -145,14 +145,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Pull images one by one
-     *
+     * 
      */
     @Import(name="serializeImagePulls")
     private @Nullable Output<Boolean> serializeImagePulls;
 
     /**
      * @return Pull images one by one
-     *
+     * 
      */
     public Optional<Output<Boolean>> serializeImagePulls() {
         return Optional.ofNullable(this.serializeImagePulls);
@@ -161,7 +161,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     /**
      * Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="systemReserveds")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds;
@@ -169,7 +169,7 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
     /**
      * @return Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs>>> systemReserveds() {
         return Optional.ofNullable(this.systemReserveds);
@@ -177,14 +177,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
-     *
+     * 
      */
     @Import(name="topologyManagerPolicy")
     private @Nullable Output<String> topologyManagerPolicy;
 
     /**
      * @return Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
-     *
+     * 
      */
     public Optional<Output<String>> topologyManagerPolicy() {
         return Optional.ofNullable(this.topologyManagerPolicy);
@@ -192,14 +192,14 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
     /**
      * Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
-     *
+     * 
      */
     @Import(name="topologyManagerScope")
     private @Nullable Output<String> topologyManagerScope;
 
     /**
      * @return Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
-     *
+     * 
      */
     public Optional<Output<String>> topologyManagerScope() {
         return Optional.ofNullable(this.topologyManagerScope);
@@ -242,9 +242,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param cpuManagerPolicy Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cpuManagerPolicy(@Nullable Output<String> cpuManagerPolicy) {
             $.cpuManagerPolicy = cpuManagerPolicy;
@@ -253,9 +253,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param cpuManagerPolicy Configure kubelet&#39;s CpuManagerPolicy. Includes none and static strategies
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cpuManagerPolicy(String cpuManagerPolicy) {
             return cpuManagerPolicy(Output.of(cpuManagerPolicy));
@@ -263,9 +263,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param featureGates Feature gate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder featureGates(@Nullable Output<DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs> featureGates) {
             $.featureGates = featureGates;
@@ -274,9 +274,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param featureGates Feature gate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder featureGates(DefaultNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs featureGates) {
             return featureGates(Output.of(featureGates));
@@ -284,9 +284,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param kubeApiBurst Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeApiBurst(@Nullable Output<Integer> kubeApiBurst) {
             $.kubeApiBurst = kubeApiBurst;
@@ -295,9 +295,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param kubeApiBurst Maximum number of burst requests sent to the API server per second. Does not include events and node heartbeat APIs, whose rate limits are controlled by a different set of flags.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeApiBurst(Integer kubeApiBurst) {
             return kubeApiBurst(Output.of(kubeApiBurst));
@@ -305,9 +305,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeApiQps(@Nullable Output<Integer> kubeApiQps) {
             $.kubeApiQps = kubeApiQps;
@@ -316,9 +316,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Does not include event and node heartbeat APIs; their rate limits are controlled by a different set of flags
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeApiQps(Integer kubeApiQps) {
             return kubeApiQps(Output.of(kubeApiQps));
@@ -327,9 +327,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         /**
          * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeReserveds(@Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds) {
             $.kubeReserveds = kubeReserveds;
@@ -339,9 +339,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         /**
          * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeReserveds(List<DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs> kubeReserveds) {
             return kubeReserveds(Output.of(kubeReserveds));
@@ -350,9 +350,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         /**
          * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeReserveds(DefaultNodePoolKubernetesConfigKubeletConfigKubeReservedArgs... kubeReserveds) {
             return kubeReserveds(List.of(kubeReserveds));
@@ -360,9 +360,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param maxPods Configure the maximum number of Pods supported by kubelet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxPods(@Nullable Output<Integer> maxPods) {
             $.maxPods = maxPods;
@@ -371,9 +371,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param maxPods Configure the maximum number of Pods supported by kubelet
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxPods(Integer maxPods) {
             return maxPods(Output.of(maxPods));
@@ -381,9 +381,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param registryBurst Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryBurst(@Nullable Output<Integer> registryBurst) {
             $.registryBurst = registryBurst;
@@ -392,9 +392,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param registryBurst Set the maximum number of burst image pulls. Temporarily allow the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryBurst(Integer registryBurst) {
             return registryBurst(Output.of(registryBurst));
@@ -402,9 +402,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param registryPullQps Can be used to limit the QPS cap for the image repository
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryPullQps(@Nullable Output<Integer> registryPullQps) {
             $.registryPullQps = registryPullQps;
@@ -413,9 +413,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param registryPullQps Can be used to limit the QPS cap for the image repository
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryPullQps(Integer registryPullQps) {
             return registryPullQps(Output.of(registryPullQps));
@@ -423,9 +423,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param serializeImagePulls Pull images one by one
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serializeImagePulls(@Nullable Output<Boolean> serializeImagePulls) {
             $.serializeImagePulls = serializeImagePulls;
@@ -434,9 +434,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param serializeImagePulls Pull images one by one
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serializeImagePulls(Boolean serializeImagePulls) {
             return serializeImagePulls(Output.of(serializeImagePulls));
@@ -445,9 +445,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         /**
          * @param systemReserveds Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemReserveds(@Nullable Output<List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds) {
             $.systemReserveds = systemReserveds;
@@ -457,9 +457,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         /**
          * @param systemReserveds Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemReserveds(List<DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs> systemReserveds) {
             return systemReserveds(Output.of(systemReserveds));
@@ -468,9 +468,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
         /**
          * @param systemReserveds Resources reserved for the operating system on the node. By default, resources are reserved at half the default value specified in the node reserved resource policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemReserveds(DefaultNodePoolKubernetesConfigKubeletConfigSystemReservedArgs... systemReserveds) {
             return systemReserveds(List.of(systemReserveds));
@@ -478,9 +478,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param topologyManagerPolicy Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topologyManagerPolicy(@Nullable Output<String> topologyManagerPolicy) {
             $.topologyManagerPolicy = topologyManagerPolicy;
@@ -489,9 +489,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param topologyManagerPolicy Topology management policy. Values: none: (default) topology management policy disabled. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topologyManagerPolicy(String topologyManagerPolicy) {
             return topologyManagerPolicy(Output.of(topologyManagerPolicy));
@@ -499,9 +499,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param topologyManagerScope Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topologyManagerScope(@Nullable Output<String> topologyManagerScope) {
             $.topologyManagerScope = topologyManagerScope;
@@ -510,9 +510,9 @@ public final class DefaultNodePoolKubernetesConfigKubeletConfigArgs extends com.
 
         /**
          * @param topologyManagerScope Resource granularity for topology management strategy. Values: container: resource alignment at container level. pod: resource alignment at Pod level
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topologyManagerScope(String topologyManagerScope) {
             return topologyManagerScope(Output.of(topologyManagerScope));

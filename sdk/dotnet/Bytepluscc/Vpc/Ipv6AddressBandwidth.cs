@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// IPv6 public traffic bandwidth determines the public communication capability of the IPv6 address. If the IPv6 address does not have IPv6 public bandwidth enabled, it only supports private network communication. You can enable IPv6 public bandwidth for the IPv6 address as needed to allow public network communication.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPCIpv6AddressBandwidthDemo = new Bytepluscc.Vpc.Ipv6AddressBandwidth("VPCIpv6AddressBandwidthDemo", new()
     ///     {
@@ -39,12 +39,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth example "allocation_id"
     /// ```

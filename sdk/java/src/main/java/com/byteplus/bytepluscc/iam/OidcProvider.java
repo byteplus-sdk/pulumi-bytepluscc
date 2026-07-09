@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * OIDC identity provider is a user authentication service provider responsible for collecting and storing user identity data such as usernames and passwords. In access control (IAM), it is an entity containing external identity provider metadata and provides identity management services.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,161 +36,161 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var iAMOidcProviderDemo = new OidcProvider("iAMOidcProviderDemo", OidcProviderArgs.builder()
  *             .oidcProviderName("ccapi-test")
  *             .thumbprints("b676ffa3179e8812093a1b5eafee876ae7a6aaf231078dad1bfbxxxxxx")
- *             .clientIds(
+ *             .clientIds(            
  *                 "sts.test1.com",
  *                 "sts.test2.com")
  *             .description("this is a test")
  *             .issuanceLimitTime(10)
  *             .issuerUrl("https://oidc-vke-cn-xxx.tos-cn-boe.volces.com/test")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:iam/oidcProvider:OidcProvider example &#34;oidc_provider_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:iam/oidcProvider:OidcProvider")
 public class OidcProvider extends com.pulumi.resources.CustomResource {
     /**
      * Client ID list. Provided by external IdP.
-     *
+     * 
      */
     @Export(name="clientIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> clientIds;
 
     /**
      * @return Client ID list. Provided by external IdP.
-     *
+     * 
      */
     public Output<List<String>> clientIds() {
         return this.clientIds;
     }
     /**
      * Creation time.
-     *
+     * 
      */
     @Export(name="createDate", refs={String.class}, tree="[0]")
     private Output<String> createDate;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Output<String> createDate() {
         return this.createDate;
     }
     /**
      * Identity provider description.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Identity provider description.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Earliest issuance time allowed for external IdP to issue ID Token.
-     *
+     * 
      */
     @Export(name="issuanceLimitTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> issuanceLimitTime;
 
     /**
      * @return Earliest issuance time allowed for external IdP to issue ID Token.
-     *
+     * 
      */
     public Output<Integer> issuanceLimitTime() {
         return this.issuanceLimitTime;
     }
     /**
      * OIDC issuer URL.
-     *
+     * 
      */
     @Export(name="issuerUrl", refs={String.class}, tree="[0]")
     private Output<String> issuerUrl;
 
     /**
      * @return OIDC issuer URL.
-     *
+     * 
      */
     public Output<String> issuerUrl() {
         return this.issuerUrl;
     }
     /**
      * OIDC identity provider name.
-     *
+     * 
      */
     @Export(name="oidcProviderName", refs={String.class}, tree="[0]")
     private Output<String> oidcProviderName;
 
     /**
      * @return OIDC identity provider name.
-     *
+     * 
      */
     public Output<String> oidcProviderName() {
         return this.oidcProviderName;
     }
     /**
      * HTTPS certificate verification fingerprint (SHA256).
-     *
+     * 
      */
     @Export(name="thumbprints", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> thumbprints;
 
     /**
      * @return HTTPS certificate verification fingerprint (SHA256).
-     *
+     * 
      */
     public Output<List<String>> thumbprints() {
         return this.thumbprints;
     }
     /**
      * Identity provider Trn.
-     *
+     * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Identity provider Trn.
-     *
+     * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Update time.
-     *
+     * 
      */
     @Export(name="updateDate", refs={String.class}, tree="[0]")
     private Output<String> updateDate;
 
     /**
      * @return Update time.
-     *
+     * 
      */
     public Output<String> updateDate() {
         return this.updateDate;

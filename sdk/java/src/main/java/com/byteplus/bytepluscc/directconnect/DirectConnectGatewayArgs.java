@@ -21,14 +21,14 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
     /**
      * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-     *
+     * 
      */
     @Import(name="bgpAsn")
     private @Nullable Output<Integer> bgpAsn;
 
     /**
      * @return ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-     *
+     * 
      */
     public Optional<Output<Integer>> bgpAsn() {
         return Optional.ofNullable(this.bgpAsn);
@@ -36,14 +36,14 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
     /**
      * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
     /**
      * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-     *
+     * 
      */
     @Import(name="directConnectGatewayName")
     private @Nullable Output<String> directConnectGatewayName;
 
     /**
      * @return Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-     *
+     * 
      */
     public Optional<Output<String>> directConnectGatewayName() {
         return Optional.ofNullable(this.directConnectGatewayName);
@@ -66,14 +66,14 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
     /**
      * Whether IPv6 is supported. true: supported. false: not supported.
-     *
+     * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
      * @return Whether IPv6 is supported. true: supported. false: not supported.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableIpv6() {
         return Optional.ofNullable(this.enableIpv6);
@@ -81,14 +81,14 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
     /**
      * Project to which the Direct Connect Gateway belongs.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the Direct Connect Gateway belongs.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -97,7 +97,7 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
     /**
      * All tag information added to the Direct Connect Gateway.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DirectConnectGatewayTagArgs>> tags;
@@ -105,7 +105,7 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
     /**
      * @return All tag information added to the Direct Connect Gateway.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DirectConnectGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -142,9 +142,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param bgpAsn ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bgpAsn(@Nullable Output<Integer> bgpAsn) {
             $.bgpAsn = bgpAsn;
@@ -153,9 +153,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param bgpAsn ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bgpAsn(Integer bgpAsn) {
             return bgpAsn(Output.of(bgpAsn));
@@ -163,9 +163,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param description Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -174,9 +174,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param description Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -184,9 +184,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param directConnectGatewayName Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectGatewayName(@Nullable Output<String> directConnectGatewayName) {
             $.directConnectGatewayName = directConnectGatewayName;
@@ -195,9 +195,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param directConnectGatewayName Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectGatewayName(String directConnectGatewayName) {
             return directConnectGatewayName(Output.of(directConnectGatewayName));
@@ -205,9 +205,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param enableIpv6 Whether IPv6 is supported. true: supported. false: not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableIpv6(@Nullable Output<Boolean> enableIpv6) {
             $.enableIpv6 = enableIpv6;
@@ -216,9 +216,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param enableIpv6 Whether IPv6 is supported. true: supported. false: not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableIpv6(Boolean enableIpv6) {
             return enableIpv6(Output.of(enableIpv6));
@@ -226,9 +226,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project to which the Direct Connect Gateway belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -237,9 +237,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project to which the Direct Connect Gateway belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -248,9 +248,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
         /**
          * @param tags All tag information added to the Direct Connect Gateway.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<DirectConnectGatewayTagArgs>> tags) {
             $.tags = tags;
@@ -260,9 +260,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
         /**
          * @param tags All tag information added to the Direct Connect Gateway.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<DirectConnectGatewayTagArgs> tags) {
             return tags(Output.of(tags));
@@ -271,9 +271,9 @@ public final class DirectConnectGatewayArgs extends com.pulumi.resources.Resourc
         /**
          * @param tags All tag information added to the Direct Connect Gateway.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(DirectConnectGatewayTagArgs... tags) {
             return tags(List.of(tags));

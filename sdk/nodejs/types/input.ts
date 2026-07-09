@@ -5509,6 +5509,48 @@ export namespace ecs {
         threadsPerCore?: pulumi.Input<number | undefined>;
     }
 
+    export interface InstanceDataVolume {
+        /**
+         * Whether the attached resources are deleted along with the instance.
+         */
+        deleteWithInstance?: pulumi.Input<boolean | undefined>;
+        /**
+         * Additional performance IOPS for the instance
+         */
+        extraPerformanceIops?: pulumi.Input<number | undefined>;
+        /**
+         * The additional performance throughput of the instance, in MB.
+         */
+        extraPerformanceThroughputMb?: pulumi.Input<number | undefined>;
+        /**
+         * Type of additional performance. Values:
+         *   Balance: Balanced additional performance
+         *   IOPS: IOPS additional performance
+         *   Throughput: Throughput additional performance
+         */
+        extraPerformanceTypeId?: pulumi.Input<string | undefined>;
+        /**
+         * Instance size, in GiB
+         */
+        size?: pulumi.Input<number | undefined>;
+        /**
+         * Instance snapshot ID
+         */
+        snapshotId?: pulumi.Input<string | undefined>;
+        /**
+         * Instance volume ID.
+         */
+        volumeId?: pulumi.Input<string | undefined>;
+        /**
+         * Cloud disk type. Values:
+         *   PTSSD: Performance SSD.
+         *   ESSD_PL0: Ultra SSD disk, PL0 specification.
+         *   ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+         *   TSSD_TL0: Throughput SSD disk.
+         */
+        volumeType?: pulumi.Input<string | undefined>;
+    }
+
     export interface InstanceEipAddress {
         /**
          * Instance allocation ID
@@ -5535,7 +5577,7 @@ export namespace ecs {
          *     - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
          *     - PayByTraffic: Pay-as-you-go—billed by actual traffic.
          *     - PrePaid: Subscription.
-         *
+         *   
          *   **Note:**
          *   When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
          */
@@ -8840,21 +8882,21 @@ export namespace mongodb {
         addressPort?: pulumi.Input<string | undefined>;
         /**
          * Connection address type of the node. Possible values:
-         *
+         *   
          *   Primary: Primary node connection address
          *   Secondary: Secondary node connection address
          *   Hidden: Hidden node connection address
          *   ReadOnly: Read-only node connection address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
          */
         addressType?: pulumi.Input<string | undefined>;
         /**
          * EIP ID bound to the instance's public address
-         *
-         *
+         *   
+         *   
          *   **Note:**
          *   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
          */

@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Details of contact groups that meet the criteria
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,17 +37,17 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cloudMonitorContactGroupDemo = new ContactGroup("cloudMonitorContactGroupDemo", ContactGroupArgs.builder()
  *             .name("TestContactGroup")
  *             .description("TestContactGroup Description")
- *             .contacts(
+ *             .contacts(            
  *                 ContactGroupContactArgs.builder()
  *                     .contact_id("20562729774143xxxx")
  *                     .build(),
@@ -58,46 +58,46 @@ import javax.annotation.Nullable;
  *                     .contact_id("20562728672541xxxx")
  *                     .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cloudmonitor/contactGroup:ContactGroup example &#34;contact_group_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cloudmonitor/contactGroup:ContactGroup")
 public class ContactGroup extends com.pulumi.resources.CustomResource {
     /**
      * Account ID that created this contact group
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID that created this contact group
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Contact group ID
-     *
+     * 
      */
     @Export(name="contactGroupId", refs={String.class}, tree="[0]")
     private Output<String> contactGroupId;
 
     /**
      * @return Contact group ID
-     *
+     * 
      */
     public Output<String> contactGroupId() {
         return this.contactGroupId;
@@ -105,7 +105,7 @@ public class ContactGroup extends com.pulumi.resources.CustomResource {
     /**
      * Contact information in the contact group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="contacts", refs={List.class,ContactGroupContact.class}, tree="[0,1]")
     private Output<List<ContactGroupContact>> contacts;
@@ -113,63 +113,63 @@ public class ContactGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Contact information in the contact group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ContactGroupContact>> contacts() {
         return this.contacts;
     }
     /**
      * Contact group creation time
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Contact group creation time
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Contact group update time
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Contact group update time
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;

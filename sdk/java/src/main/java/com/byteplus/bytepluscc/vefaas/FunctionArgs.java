@@ -28,14 +28,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Asynchronous task configuration
-     *
+     * 
      */
     @Import(name="asyncTaskConfig")
     private @Nullable Output<FunctionAsyncTaskConfigArgs> asyncTaskConfig;
 
     /**
      * @return Asynchronous task configuration
-     *
+     * 
      */
     public Optional<Output<FunctionAsyncTaskConfigArgs>> asyncTaskConfig() {
         return Optional.ofNullable(this.asyncTaskConfig);
@@ -43,14 +43,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom startup command for the instance (currently only supported in native/v1 runtime)
-     *
+     * 
      */
     @Import(name="command")
     private @Nullable Output<String> command;
 
     /**
      * @return Custom startup command for the instance (currently only supported in native/v1 runtime)
-     *
+     * 
      */
     public Optional<Output<String>> command() {
         return Optional.ofNullable(this.command);
@@ -58,14 +58,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
-     *
+     * 
      */
     @Import(name="cpuStrategy")
     private @Nullable Output<String> cpuStrategy;
 
     /**
      * @return Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
-     *
+     * 
      */
     public Optional<Output<String>> cpuStrategy() {
         return Optional.ofNullable(this.cpuStrategy);
@@ -73,14 +73,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Function description. Up to 1000 Unicode characters
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Function description. Up to 1000 Unicode characters
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -88,14 +88,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable application monitoring
-     *
+     * 
      */
     @Import(name="enableApmplus")
     private @Nullable Output<Boolean> enableApmplus;
 
     /**
      * @return Whether to enable application monitoring
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableApmplus() {
         return Optional.ofNullable(this.enableApmplus);
@@ -103,14 +103,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
-     *
+     * 
      */
     @Import(name="enableDependencyInstall")
     private @Nullable Output<Boolean> enableDependencyInstall;
 
     /**
      * @return Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableDependencyInstall() {
         return Optional.ofNullable(this.enableDependencyInstall);
@@ -119,7 +119,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Environment variables.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="envs")
     private @Nullable Output<List<FunctionEnvArgs>> envs;
@@ -127,7 +127,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Environment variables.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<FunctionEnvArgs>>> envs() {
         return Optional.ofNullable(this.envs);
@@ -135,14 +135,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
-     *
+     * 
      */
     @Import(name="exclusiveMode")
     private @Nullable Output<Boolean> exclusiveMode;
 
     /**
      * @return Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
-     *
+     * 
      */
     public Optional<Output<Boolean>> exclusiveMode() {
         return Optional.ofNullable(this.exclusiveMode);
@@ -150,14 +150,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Function initialization timeout configuration
-     *
+     * 
      */
     @Import(name="initializerSec")
     private @Nullable Output<Integer> initializerSec;
 
     /**
      * @return Function initialization timeout configuration
-     *
+     * 
      */
     public Optional<Output<Integer>> initializerSec() {
         return Optional.ofNullable(this.initializerSec);
@@ -165,14 +165,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum concurrency per instance. Effective when ExclusiveMode = false. Range: 1–1000
-     *
+     * 
      */
     @Import(name="maxConcurrency")
     private @Nullable Output<Integer> maxConcurrency;
 
     /**
      * @return Maximum concurrency per instance. Effective when ExclusiveMode = false. Range: 1–1000
-     *
+     * 
      */
     public Optional<Output<Integer>> maxConcurrency() {
         return Optional.ofNullable(this.maxConcurrency);
@@ -180,14 +180,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum memory per instance, unit: MiB. Range: 512–4096, in increments of 512. Default: 1024
-     *
+     * 
      */
     @Import(name="memoryMb")
     private @Nullable Output<Integer> memoryMb;
 
     /**
      * @return Maximum memory per instance, unit: MiB. Range: 512–4096, in increments of 512. Default: 1024
-     *
+     * 
      */
     public Optional<Output<Integer>> memoryMb() {
         return Optional.ofNullable(this.memoryMb);
@@ -195,14 +195,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Function name. Function names must be unique within the same account. Function names support uppercase and lowercase English letters, numbers, hyphens (-), and underscores (_), with a length limit of 4–64 characters.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Function name. Function names must be unique within the same account. Function names support uppercase and lowercase English letters, numbers, hyphens (-), and underscores (_), with a length limit of 4–64 characters.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -210,14 +210,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAS file storage mount configuration
-     *
+     * 
      */
     @Import(name="nasStorage")
     private @Nullable Output<FunctionNasStorageArgs> nasStorage;
 
     /**
      * @return NAS file storage mount configuration
-     *
+     * 
      */
     public Optional<Output<FunctionNasStorageArgs>> nasStorage() {
         return Optional.ofNullable(this.nasStorage);
@@ -225,14 +225,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom listening port for the instance (currently only supported in native/v1 runtime)
-     *
+     * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
      * @return Custom listening port for the instance (currently only supported in native/v1 runtime)
-     *
+     * 
      */
     public Optional<Output<Integer>> port() {
         return Optional.ofNullable(this.port);
@@ -240,14 +240,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name associated with the function
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name associated with the function
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -255,14 +255,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Request timeout. Unit: seconds. Range: 1–900. Default: 30.
-     *
+     * 
      */
     @Import(name="requestTimeout")
     private @Nullable Output<Integer> requestTimeout;
 
     /**
      * @return Request timeout. Unit: seconds. Range: 1–900. Default: 30.
-     *
+     * 
      */
     public Optional<Output<Integer>> requestTimeout() {
         return Optional.ofNullable(this.requestTimeout);
@@ -270,14 +270,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IAM role bound to the function instance
-     *
+     * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
      * @return IAM role bound to the function instance
-     *
+     * 
      */
     public Optional<Output<String>> role() {
         return Optional.ofNullable(this.role);
@@ -285,14 +285,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Function runtime. Values: golang/v1, native/v1, nativejava8/v1, node14/v1, node20/v1, nodeprime14/v1, python3.12/v1, python3.8/v1, python3.9/v1.
-     *
+     * 
      */
     @Import(name="runtime")
     private @Nullable Output<String> runtime;
 
     /**
      * @return Function runtime. Values: golang/v1, native/v1, nativejava8/v1, node14/v1, node20/v1, nodeprime14/v1, python3.12/v1, python3.8/v1, python3.9/v1.
-     *
+     * 
      */
     public Optional<Output<String>> runtime() {
         return Optional.ofNullable(this.runtime);
@@ -300,14 +300,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Code source. Values: zip: Base64-encoded binary ZIP file; tos: string in the format bucket*name:object*key; image: image address in the format host/namespace/repo:tag
-     *
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
      * @return Code source. Values: zip: Base64-encoded binary ZIP file; tos: string in the format bucket*name:object*key; image: image address in the format host/namespace/repo:tag
-     *
+     * 
      */
     public Optional<Output<String>> source() {
         return Optional.ofNullable(this.source);
@@ -315,14 +315,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image repository access configuration.
-     *
+     * 
      */
     @Import(name="sourceAccessConfig")
     private @Nullable Output<FunctionSourceAccessConfigArgs> sourceAccessConfig;
 
     /**
      * @return Image repository access configuration.
-     *
+     * 
      */
     public Optional<Output<FunctionSourceAccessConfigArgs>> sourceAccessConfig() {
         return Optional.ofNullable(this.sourceAccessConfig);
@@ -330,14 +330,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Code source type. Values: tos: object storage (TOS); zip: local compressed file; image: image repository (CR), supports Basic and Enterprise editions
-     *
+     * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
      * @return Code source type. Values: tos: object storage (TOS); zip: local compressed file; image: image repository (CR), supports Basic and Enterprise editions
-     *
+     * 
      */
     public Optional<Output<String>> sourceType() {
         return Optional.ofNullable(this.sourceType);
@@ -346,7 +346,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Function tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<FunctionTagArgs>> tags;
@@ -354,7 +354,7 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Function tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<FunctionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -362,14 +362,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TLS configuration for Log Service
-     *
+     * 
      */
     @Import(name="tlsConfig")
     private @Nullable Output<FunctionTlsConfigArgs> tlsConfig;
 
     /**
      * @return TLS configuration for Log Service
-     *
+     * 
      */
     public Optional<Output<FunctionTlsConfigArgs>> tlsConfig() {
         return Optional.ofNullable(this.tlsConfig);
@@ -377,14 +377,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TOS object storage mount configuration
-     *
+     * 
      */
     @Import(name="tosMountConfig")
     private @Nullable Output<FunctionTosMountConfigArgs> tosMountConfig;
 
     /**
      * @return TOS object storage mount configuration
-     *
+     * 
      */
     public Optional<Output<FunctionTosMountConfigArgs>> tosMountConfig() {
         return Optional.ofNullable(this.tosMountConfig);
@@ -392,14 +392,14 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network VPC configuration.
-     *
+     * 
      */
     @Import(name="vpcConfig")
     private @Nullable Output<FunctionVpcConfigArgs> vpcConfig;
 
     /**
      * @return Private network VPC configuration.
-     *
+     * 
      */
     public Optional<Output<FunctionVpcConfigArgs>> vpcConfig() {
         return Optional.ofNullable(this.vpcConfig);
@@ -455,9 +455,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asyncTaskConfig Asynchronous task configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asyncTaskConfig(@Nullable Output<FunctionAsyncTaskConfigArgs> asyncTaskConfig) {
             $.asyncTaskConfig = asyncTaskConfig;
@@ -466,9 +466,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asyncTaskConfig Asynchronous task configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asyncTaskConfig(FunctionAsyncTaskConfigArgs asyncTaskConfig) {
             return asyncTaskConfig(Output.of(asyncTaskConfig));
@@ -476,9 +476,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param command Custom startup command for the instance (currently only supported in native/v1 runtime)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder command(@Nullable Output<String> command) {
             $.command = command;
@@ -487,9 +487,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param command Custom startup command for the instance (currently only supported in native/v1 runtime)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder command(String command) {
             return command(Output.of(command));
@@ -497,9 +497,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cpuStrategy Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cpuStrategy(@Nullable Output<String> cpuStrategy) {
             $.cpuStrategy = cpuStrategy;
@@ -508,9 +508,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cpuStrategy Function CPU billing policy. When creating a microservice application type function, this field must be set to always, meaning at least one instance is running. Other function types do not support this field
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cpuStrategy(String cpuStrategy) {
             return cpuStrategy(Output.of(cpuStrategy));
@@ -518,9 +518,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Function description. Up to 1000 Unicode characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -529,9 +529,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Function description. Up to 1000 Unicode characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -539,9 +539,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableApmplus Whether to enable application monitoring
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableApmplus(@Nullable Output<Boolean> enableApmplus) {
             $.enableApmplus = enableApmplus;
@@ -550,9 +550,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableApmplus Whether to enable application monitoring
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableApmplus(Boolean enableApmplus) {
             return enableApmplus(Output.of(enableApmplus));
@@ -560,9 +560,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableDependencyInstall Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableDependencyInstall(@Nullable Output<Boolean> enableDependencyInstall) {
             $.enableDependencyInstall = enableDependencyInstall;
@@ -571,9 +571,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableDependencyInstall Enable function dependency installation. true: Enabled. The function installs dependencies after creation. false: Disabled. The function does not automatically install dependencies.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableDependencyInstall(Boolean enableDependencyInstall) {
             return enableDependencyInstall(Output.of(enableDependencyInstall));
@@ -582,9 +582,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param envs Environment variables.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder envs(@Nullable Output<List<FunctionEnvArgs>> envs) {
             $.envs = envs;
@@ -594,9 +594,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param envs Environment variables.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder envs(List<FunctionEnvArgs> envs) {
             return envs(Output.of(envs));
@@ -605,9 +605,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param envs Environment variables.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder envs(FunctionEnvArgs... envs) {
             return envs(List.of(envs));
@@ -615,9 +615,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exclusiveMode Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder exclusiveMode(@Nullable Output<Boolean> exclusiveMode) {
             $.exclusiveMode = exclusiveMode;
@@ -626,9 +626,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exclusiveMode Exclusive mode switch. true: disables multi-concurrency per instance, i.e., exclusive mode where a single instance can only handle one request at a time. false (default): enables multi-concurrency per instance, i.e., non-exclusive mode where a single instance can handle multiple requests at the same time. You can set the maximum concurrent requests per instance using MaxConcurrency.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder exclusiveMode(Boolean exclusiveMode) {
             return exclusiveMode(Output.of(exclusiveMode));
@@ -636,9 +636,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param initializerSec Function initialization timeout configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder initializerSec(@Nullable Output<Integer> initializerSec) {
             $.initializerSec = initializerSec;
@@ -647,9 +647,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param initializerSec Function initialization timeout configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder initializerSec(Integer initializerSec) {
             return initializerSec(Output.of(initializerSec));
@@ -657,9 +657,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxConcurrency Maximum concurrency per instance. Effective when ExclusiveMode = false. Range: 1–1000
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxConcurrency(@Nullable Output<Integer> maxConcurrency) {
             $.maxConcurrency = maxConcurrency;
@@ -668,9 +668,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxConcurrency Maximum concurrency per instance. Effective when ExclusiveMode = false. Range: 1–1000
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxConcurrency(Integer maxConcurrency) {
             return maxConcurrency(Output.of(maxConcurrency));
@@ -678,9 +678,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param memoryMb Maximum memory per instance, unit: MiB. Range: 512–4096, in increments of 512. Default: 1024
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder memoryMb(@Nullable Output<Integer> memoryMb) {
             $.memoryMb = memoryMb;
@@ -689,9 +689,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param memoryMb Maximum memory per instance, unit: MiB. Range: 512–4096, in increments of 512. Default: 1024
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder memoryMb(Integer memoryMb) {
             return memoryMb(Output.of(memoryMb));
@@ -699,9 +699,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Function name. Function names must be unique within the same account. Function names support uppercase and lowercase English letters, numbers, hyphens (-), and underscores (_), with a length limit of 4–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -710,9 +710,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Function name. Function names must be unique within the same account. Function names support uppercase and lowercase English letters, numbers, hyphens (-), and underscores (_), with a length limit of 4–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -720,9 +720,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nasStorage NAS file storage mount configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nasStorage(@Nullable Output<FunctionNasStorageArgs> nasStorage) {
             $.nasStorage = nasStorage;
@@ -731,9 +731,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nasStorage NAS file storage mount configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nasStorage(FunctionNasStorageArgs nasStorage) {
             return nasStorage(Output.of(nasStorage));
@@ -741,9 +741,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Custom listening port for the instance (currently only supported in native/v1 runtime)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
@@ -752,9 +752,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Custom listening port for the instance (currently only supported in native/v1 runtime)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -762,9 +762,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the function
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -773,9 +773,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the function
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -783,9 +783,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestTimeout Request timeout. Unit: seconds. Range: 1–900. Default: 30.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestTimeout(@Nullable Output<Integer> requestTimeout) {
             $.requestTimeout = requestTimeout;
@@ -794,9 +794,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestTimeout Request timeout. Unit: seconds. Range: 1–900. Default: 30.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestTimeout(Integer requestTimeout) {
             return requestTimeout(Output.of(requestTimeout));
@@ -804,9 +804,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param role IAM role bound to the function instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder role(@Nullable Output<String> role) {
             $.role = role;
@@ -815,9 +815,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param role IAM role bound to the function instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder role(String role) {
             return role(Output.of(role));
@@ -825,9 +825,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param runtime Function runtime. Values: golang/v1, native/v1, nativejava8/v1, node14/v1, node20/v1, nodeprime14/v1, python3.12/v1, python3.8/v1, python3.9/v1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder runtime(@Nullable Output<String> runtime) {
             $.runtime = runtime;
@@ -836,9 +836,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param runtime Function runtime. Values: golang/v1, native/v1, nativejava8/v1, node14/v1, node20/v1, nodeprime14/v1, python3.12/v1, python3.8/v1, python3.9/v1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder runtime(String runtime) {
             return runtime(Output.of(runtime));
@@ -846,9 +846,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param source Code source. Values: zip: Base64-encoded binary ZIP file; tos: string in the format bucket*name:object*key; image: image address in the format host/namespace/repo:tag
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(@Nullable Output<String> source) {
             $.source = source;
@@ -857,9 +857,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param source Code source. Values: zip: Base64-encoded binary ZIP file; tos: string in the format bucket*name:object*key; image: image address in the format host/namespace/repo:tag
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(String source) {
             return source(Output.of(source));
@@ -867,9 +867,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceAccessConfig Image repository access configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceAccessConfig(@Nullable Output<FunctionSourceAccessConfigArgs> sourceAccessConfig) {
             $.sourceAccessConfig = sourceAccessConfig;
@@ -878,9 +878,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceAccessConfig Image repository access configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceAccessConfig(FunctionSourceAccessConfigArgs sourceAccessConfig) {
             return sourceAccessConfig(Output.of(sourceAccessConfig));
@@ -888,9 +888,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceType Code source type. Values: tos: object storage (TOS); zip: local compressed file; image: image repository (CR), supports Basic and Enterprise editions
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(@Nullable Output<String> sourceType) {
             $.sourceType = sourceType;
@@ -899,9 +899,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceType Code source type. Values: tos: object storage (TOS); zip: local compressed file; image: image repository (CR), supports Basic and Enterprise editions
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(String sourceType) {
             return sourceType(Output.of(sourceType));
@@ -910,9 +910,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Function tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<FunctionTagArgs>> tags) {
             $.tags = tags;
@@ -922,9 +922,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Function tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<FunctionTagArgs> tags) {
             return tags(Output.of(tags));
@@ -933,9 +933,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Function tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(FunctionTagArgs... tags) {
             return tags(List.of(tags));
@@ -943,9 +943,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsConfig TLS configuration for Log Service
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsConfig(@Nullable Output<FunctionTlsConfigArgs> tlsConfig) {
             $.tlsConfig = tlsConfig;
@@ -954,9 +954,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsConfig TLS configuration for Log Service
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsConfig(FunctionTlsConfigArgs tlsConfig) {
             return tlsConfig(Output.of(tlsConfig));
@@ -964,9 +964,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tosMountConfig TOS object storage mount configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tosMountConfig(@Nullable Output<FunctionTosMountConfigArgs> tosMountConfig) {
             $.tosMountConfig = tosMountConfig;
@@ -975,9 +975,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tosMountConfig TOS object storage mount configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tosMountConfig(FunctionTosMountConfigArgs tosMountConfig) {
             return tosMountConfig(Output.of(tosMountConfig));
@@ -985,9 +985,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcConfig Private network VPC configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcConfig(@Nullable Output<FunctionVpcConfigArgs> vpcConfig) {
             $.vpcConfig = vpcConfig;
@@ -996,9 +996,9 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcConfig Private network VPC configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcConfig(FunctionVpcConfigArgs vpcConfig) {
             return vpcConfig(Output.of(vpcConfig));

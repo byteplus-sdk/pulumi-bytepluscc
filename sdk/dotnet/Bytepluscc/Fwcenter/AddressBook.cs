@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
 {
     /// <summary>
     /// Cloud firewall access control address book, used to centrally manage a group of IPv4/IPv6 addresses, ports, or domain names. Can be referenced as source or destination in access control policies.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Fwcenter.AddressBook("Example", new()
     ///     {
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:fwcenter/addressBook:AddressBook example "group_uuid"
     /// ```

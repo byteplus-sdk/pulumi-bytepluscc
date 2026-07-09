@@ -12,17 +12,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// The log service supports log search and analysis. You must configure indexes to enable log search and analysis. When configuring indexes, specify the index type and the data type for each field. The index configuration determines the search method and the precision of search results.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
     /// using Std = Pulumi.Std;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSIndexDemo = new Bytepluscc.Tls.Index("TLSIndexDemo", new()
     ///     {
@@ -238,12 +238,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/index:Index example "topic_id"
     /// ```

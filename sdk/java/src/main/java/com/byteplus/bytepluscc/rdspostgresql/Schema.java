@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * RDS PostgreSQL Schema resource type
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,12 +34,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rDSPostgreSQLSchemaDemo = new Schema("rDSPostgreSQLSchemaDemo", SchemaArgs.builder()
  *             .instanceId("postgres-8d1fcxxxxx")
@@ -47,74 +47,74 @@ import javax.annotation.Nullable;
  *             .schemaName("ccapi-terraform-1")
  *             .owner("test")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/schema:Schema example &#34;instance_id|db_name|schema_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdspostgresql/schema:Schema")
 public class Schema extends com.pulumi.resources.CustomResource {
     /**
      * Database name
-     *
+     * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
      * @return Database name
-     *
+     * 
      */
     public Output<String> dbName() {
         return this.dbName;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
-     *
+     * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
      * @return Schema owner. Note that instance read-only accounts, high-privilege accounts with DDL permissions disabled, or regular accounts with DDL permissions disabled cannot be set as the Schema owner.
-     *
+     * 
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
      * Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
-     *
+     * 
      */
     @Export(name="schemaName", refs={String.class}, tree="[0]")
     private Output<String> schemaName;
 
     /**
      * @return Schema name. Length: 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Reserved keywords are not allowed; for all disabled keywords, see Disabled Keywords. Cannot start with pg*
-     *
+     * 
      */
     public Output<String> schemaName() {
         return this.schemaName;

@@ -12,17 +12,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 {
     /// <summary>
     /// Kafka Message Queue is a distributed messaging middleware service built on Apache Kafka. It features high throughput and scalability, provides stream data publishing/subscription and multi-replica storage mechanisms, and is widely used in log compression and collection, stream data processing, message decoupling, and traffic peak shaving scenarios.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using System.Text.Json;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var kafkaInstanceDemo = new Bytepluscc.Kafka.Instance("KafkaInstanceDemo", new()
     ///     {
@@ -66,12 +66,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
     ///         ZoneId = "cn-beijing-a",
     ///         ProjectName = "default",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:kafka/instance:Instance example "instance_id"
     /// ```

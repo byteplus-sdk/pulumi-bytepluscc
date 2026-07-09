@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
     /// E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eMRClusterDemo = new Bytepluscc.Emr.Cluster("EMRClusterDemo", new()
     ///     {
@@ -67,14 +67,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                     "ecs.r1ie.xlarge",
     ///                 },
     ///                 Node_count = 1,
-    ///                 System_disk =
+    ///                 System_disk = 
     ///                 {
     ///                     { "volumeType", "ESSD_FlexPL" },
     ///                     { "size", 120 },
     ///                 },
     ///                 Data_disks = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "volumeType", "ESSD_FlexPL" },
     ///                         { "size", 80 },
@@ -101,14 +101,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                     "ecs.r1ie.xlarge",
     ///                 },
     ///                 Node_count = 2,
-    ///                 System_disk =
+    ///                 System_disk = 
     ///                 {
     ///                     { "volumeType", "ESSD_FlexPL" },
     ///                     { "size", 80 },
     ///                 },
     ///                 Data_disks = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "volumeType", "ESSD_FlexPL" },
     ///                         { "size", 80 },
@@ -135,14 +135,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                     "ecs.r1ie.xlarge",
     ///                 },
     ///                 Node_count = 1,
-    ///                 System_disk =
+    ///                 System_disk = 
     ///                 {
     ///                     { "volumeType", "ESSD_FlexPL" },
     ///                     { "size", 80 },
     ///                 },
     ///                 Data_disks = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "volumeType", "ESSD_FlexPL" },
     ///                         { "size", 80 },
@@ -160,7 +160,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                 Connection_id = "",
     ///                 Application_configs = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "configFileName", "hive-site.xml" },
     ///                         { "configItemKey", "hive.metastore.warehouse.dir" },
@@ -168,7 +168,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                         { "deleted", false },
     ///                         { "componentInstanceName", "" },
     ///                         { "componentName", "" },
-    ///                         { "effectiveScope",
+    ///                         { "effectiveScope", 
     ///                         {
     ///                             { "effectiveType", "CLUSTER" },
     ///                             { "nodeGroupIds", new[] {} },
@@ -179,7 +179,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                             { "componentNames", new[] {} },
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "configFileName", "hive-site.xml" },
     ///                         { "configItemKey", "hive.metastore.warehouse.external.dir" },
@@ -187,7 +187,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                         { "deleted", false },
     ///                         { "componentInstanceName", "" },
     ///                         { "componentName", "" },
-    ///                         { "effectiveScope",
+    ///                         { "effectiveScope", 
     ///                         {
     ///                             { "effectiveType", "CLUSTER" },
     ///                             { "nodeGroupIds", new[] {} },
@@ -198,7 +198,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                             { "componentNames", new[] {} },
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "configFileName", "hive-site.xml" },
     ///                         { "configItemKey", "hive.metastore.warehouse.dir" },
@@ -206,7 +206,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                         { "deleted", false },
     ///                         { "componentInstanceName", "" },
     ///                         { "componentName", "" },
-    ///                         { "effectiveScope",
+    ///                         { "effectiveScope", 
     ///                         {
     ///                             { "effectiveType", "CLUSTER" },
     ///                             { "nodeGroupIds", new[] {} },
@@ -217,7 +217,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                             { "componentNames", new[] {} },
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "configFileName", "hive-site.xml" },
     ///                         { "configItemKey", "hive.metastore.warehouse.external.dir" },
@@ -225,7 +225,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                         { "deleted", false },
     ///                         { "componentInstanceName", "" },
     ///                         { "componentName", "" },
-    ///                         { "effectiveScope",
+    ///                         { "effectiveScope", 
     ///                         {
     ///                             { "effectiveType", "CLUSTER" },
     ///                             { "nodeGroupIds", new[] {} },
@@ -239,10 +239,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                 },
     ///                 Application_component_layouts = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "componentName", "" },
-    ///                         { "effectiveScope",
+    ///                         { "effectiveScope", 
     ///                         {
     ///                             { "effectiveType", "CLUSTER" },
     ///                             { "nodeGroupIds", new[] {} },
@@ -265,7 +265,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///                 Script_path = "tos://ccapi-test-tos-1/managed/",
     ///                 Script_args = "",
     ///                 Priority = "1",
-    ///                 Effective_scope =
+    ///                 Effective_scope = 
     ///                 {
     ///                     { "effectiveType", "CLUSTER" },
     ///                     { "componentNames", new[] {} },
@@ -288,12 +288,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:emr/cluster:Cluster example "cluster_id"
     /// ```

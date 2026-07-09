@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 {
     /// <summary>
     /// MongoDB instance database account.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var mongoDBAccountDemo = new Bytepluscc.Mongodb.Account("MongoDBAccountDemo", new()
     ///     {
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     ///         AuthDb = "admin",
     ///         InstanceId = "mongo-replica-xxxxxxxx",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:mongodb/account:Account example "instance_id|account_name"
     /// ```

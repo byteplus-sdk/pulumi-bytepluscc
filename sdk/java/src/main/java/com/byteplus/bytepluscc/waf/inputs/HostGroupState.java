@@ -20,14 +20,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain group description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Domain group description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of domains in the domain group.
-     *
+     * 
      */
     @Import(name="hostCount")
     private @Nullable Output<Integer> hostCount;
 
     /**
      * @return Number of domains in the domain group.
-     *
+     * 
      */
     public Optional<Output<Integer>> hostCount() {
         return Optional.ofNullable(this.hostCount);
@@ -50,14 +50,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain group ID.
-     *
+     * 
      */
     @Import(name="hostGroupId")
     private @Nullable Output<String> hostGroupId;
 
     /**
      * @return Domain group ID.
-     *
+     * 
      */
     public Optional<Output<String>> hostGroupId() {
         return Optional.ofNullable(this.hostGroupId);
@@ -65,14 +65,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domains in the domain group. The list can be filtered by the first element.
-     *
+     * 
      */
     @Import(name="hostLists")
     private @Nullable Output<List<String>> hostLists;
 
     /**
      * @return Domains in the domain group. The list can be filtered by the first element.
-     *
+     * 
      */
     public Optional<Output<List<String>>> hostLists() {
         return Optional.ofNullable(this.hostLists);
@@ -80,14 +80,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain group name.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Domain group name.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -95,14 +95,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -111,7 +111,7 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Associated rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="relatedRules")
     private @Nullable Output<List<HostGroupRelatedRuleArgs>> relatedRules;
@@ -119,7 +119,7 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Associated rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<HostGroupRelatedRuleArgs>>> relatedRules() {
         return Optional.ofNullable(this.relatedRules);
@@ -127,14 +127,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain group update time.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Domain group update time.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -173,9 +173,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Domain group description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -184,9 +184,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Domain group description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -194,9 +194,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostCount Number of domains in the domain group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostCount(@Nullable Output<Integer> hostCount) {
             $.hostCount = hostCount;
@@ -205,9 +205,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostCount Number of domains in the domain group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostCount(Integer hostCount) {
             return hostCount(Output.of(hostCount));
@@ -215,9 +215,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupId Domain group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupId(@Nullable Output<String> hostGroupId) {
             $.hostGroupId = hostGroupId;
@@ -226,9 +226,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupId Domain group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupId(String hostGroupId) {
             return hostGroupId(Output.of(hostGroupId));
@@ -236,9 +236,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostLists Domains in the domain group. The list can be filtered by the first element.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostLists(@Nullable Output<List<String>> hostLists) {
             $.hostLists = hostLists;
@@ -247,9 +247,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostLists Domains in the domain group. The list can be filtered by the first element.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostLists(List<String> hostLists) {
             return hostLists(Output.of(hostLists));
@@ -257,9 +257,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostLists Domains in the domain group. The list can be filtered by the first element.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostLists(String... hostLists) {
             return hostLists(List.of(hostLists));
@@ -267,9 +267,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Domain group name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -278,9 +278,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Domain group name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -288,9 +288,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -299,9 +299,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -310,9 +310,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param relatedRules Associated rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relatedRules(@Nullable Output<List<HostGroupRelatedRuleArgs>> relatedRules) {
             $.relatedRules = relatedRules;
@@ -322,9 +322,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param relatedRules Associated rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relatedRules(List<HostGroupRelatedRuleArgs> relatedRules) {
             return relatedRules(Output.of(relatedRules));
@@ -333,9 +333,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param relatedRules Associated rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relatedRules(HostGroupRelatedRuleArgs... relatedRules) {
             return relatedRules(List.of(relatedRules));
@@ -343,9 +343,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Domain group update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -354,9 +354,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Domain group update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

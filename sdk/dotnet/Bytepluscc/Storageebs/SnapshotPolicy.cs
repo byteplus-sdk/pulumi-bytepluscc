@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
 {
     /// <summary>
     /// Automatic snapshot policy
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var storageEBSSnapshotPolicyDemo = new Bytepluscc.Storageebs.SnapshotPolicy("StorageEBSSnapshotPolicyDemo", new()
     ///     {
@@ -52,12 +52,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:storageebs/snapshotPolicy:SnapshotPolicy example "auto_snapshot_policy_id"
     /// ```

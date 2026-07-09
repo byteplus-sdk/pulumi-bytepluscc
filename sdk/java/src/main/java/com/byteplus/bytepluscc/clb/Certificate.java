@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * Provides unified certificate management service for HTTPS protocol. Certificates do not need to be uploaded to backend servers. Supports decryption processing on CLB instances, reducing CPU overhead on backend servers.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var certificatDemo = new Certificate("certificatDemo", CertificateArgs.builder()
  *             .certificateName("CertificatDemo")
@@ -59,186 +59,186 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/certificate:Certificate example &#34;certificate_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/certificate:Certificate")
 public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * Certificate ID.
-     *
+     * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return Certificate ID.
-     *
+     * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-     *
+     * 
      */
     @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
      * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-     *
+     * 
      */
     public Output<String> certificateName() {
         return this.certificateName;
     }
     /**
      * Certificate creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Certificate creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Certificate primary domain name.
-     *
+     * 
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
      * @return Certificate primary domain name.
-     *
+     * 
      */
     public Output<String> domainName() {
         return this.domainName;
     }
     /**
      * Certificate expiration time.
-     *
+     * 
      */
     @Export(name="expiredAt", refs={String.class}, tree="[0]")
     private Output<String> expiredAt;
 
     /**
      * @return Certificate expiration time.
-     *
+     * 
      */
     public Output<String> expiredAt() {
         return this.expiredAt;
     }
     /**
      * ID of the listener associated with the certificate.
-     *
+     * 
      */
     @Export(name="listeners", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> listeners;
 
     /**
      * @return ID of the listener associated with the certificate.
-     *
+     * 
      */
     public Output<List<String>> listeners() {
         return this.listeners;
     }
     /**
      * Certificate private key.
-     *
+     * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
      * @return Certificate private key.
-     *
+     * 
      */
     public Output<String> privateKey() {
         return this.privateKey;
     }
     /**
      * Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Certificate public key.
-     *
+     * 
      */
     @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
      * @return Certificate public key.
-     *
+     * 
      */
     public Output<String> publicKey() {
         return this.publicKey;
     }
     /**
      * Managed resource status. true: managed resource. false: unmanaged resource.
-     *
+     * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Managed resource status. true: managed resource. false: unmanaged resource.
-     *
+     * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * List of alternate domain names for the certificate.
-     *
+     * 
      */
     @Export(name="subjectAlternativeNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subjectAlternativeNames;
 
     /**
      * @return List of alternate domain names for the certificate.
-     *
+     * 
      */
     public Output<List<String>> subjectAlternativeNames() {
         return this.subjectAlternativeNames;
@@ -246,7 +246,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,CertificateTag.class}, tree="[0,1]")
     private Output<List<CertificateTag>> tags;
@@ -254,7 +254,7 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<CertificateTag>> tags() {
         return this.tags;

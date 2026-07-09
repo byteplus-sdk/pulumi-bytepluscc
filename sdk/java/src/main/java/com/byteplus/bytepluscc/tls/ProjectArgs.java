@@ -20,14 +20,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Brief description of the log project
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Brief description of the log project
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The IAM project associated with the log project
-     *
+     * 
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
      * @return The IAM project associated with the log project
-     *
+     * 
      */
     public Optional<Output<String>> iamProjectName() {
         return Optional.ofNullable(this.iamProjectName);
@@ -50,14 +50,14 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project name
-     *
+     * 
      */
     @Import(name="projectName", required=true)
     private Output<String> projectName;
 
     /**
      * @return Log project name
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -66,7 +66,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ProjectTagArgs>> tags;
@@ -74,7 +74,7 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ProjectTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -109,9 +109,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Brief description of the log project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -120,9 +120,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Brief description of the log project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -130,9 +130,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iamProjectName The IAM project associated with the log project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iamProjectName(@Nullable Output<String> iamProjectName) {
             $.iamProjectName = iamProjectName;
@@ -141,9 +141,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iamProjectName The IAM project associated with the log project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iamProjectName(String iamProjectName) {
             return iamProjectName(Output.of(iamProjectName));
@@ -151,9 +151,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Log project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(Output<String> projectName) {
             $.projectName = projectName;
@@ -162,9 +162,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Log project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -173,9 +173,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ProjectTagArgs>> tags) {
             $.tags = tags;
@@ -185,9 +185,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ProjectTagArgs> tags) {
             return tags(Output.of(tags));
@@ -196,9 +196,9 @@ public final class ProjectArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ProjectTagArgs... tags) {
             return tags(List.of(tags));

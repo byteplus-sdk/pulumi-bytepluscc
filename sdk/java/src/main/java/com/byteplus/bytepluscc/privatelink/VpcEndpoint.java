@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * The endpoint node is a private network service access point deployed by the service user in their own VPC, used to access the service provider&#39;s services via the private network.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,17 +41,17 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var privateLinkVpcEndpointDemo = new VpcEndpoint("privateLinkVpcEndpointDemo", VpcEndpointArgs.builder()
  *             .description("this is a test")
  *             .endpointName("ccapi-test-1001")
- *             .ipAddressVersions(
+ *             .ipAddressVersions(            
  *                 "ipv4",
  *                 "ipv6")
  *             .privateDnsEnabled(true)
@@ -71,312 +71,312 @@ import javax.annotation.Nullable;
  *                 .zone_id("cn-beijing-a")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:privatelink/vpcEndpoint:VpcEndpoint example &#34;endpoint_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:privatelink/vpcEndpoint:VpcEndpoint")
 public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Maximum bandwidth limit for the endpoint node connection, in Mbps.
-     *
+     * 
      */
     @Export(name="bps", refs={Integer.class}, tree="[0]")
     private Output<Integer> bps;
 
     /**
      * @return Maximum bandwidth limit for the endpoint node connection, in Mbps.
-     *
+     * 
      */
     public Output<Integer> bps() {
         return this.bps;
     }
     /**
      * Whether the endpoint is locked. Normal: Normal. FinancialLocked: Locked. If this parameter is empty, the endpoint is not locked.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Whether the endpoint is locked. Normal: Normal. FinancialLocked: Locked. If this parameter is empty, the endpoint is not locked.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Status of the endpoint node connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted.
-     *
+     * 
      */
     @Export(name="connectionStatus", refs={String.class}, tree="[0]")
     private Output<String> connectionStatus;
 
     /**
      * @return Status of the endpoint node connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted.
-     *
+     * 
      */
     public Output<String> connectionStatus() {
         return this.connectionStatus;
     }
     /**
      * Creation time of the endpoint.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the endpoint.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Deletion time of the endpoint.
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time of the endpoint.
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the endpoint node. The default value is an empty string. It must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the endpoint node. The default value is an empty string. It must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Domain name of the endpoint.
-     *
+     * 
      */
     @Export(name="endpointDomain", refs={String.class}, tree="[0]")
     private Output<String> endpointDomain;
 
     /**
      * @return Domain name of the endpoint.
-     *
+     * 
      */
     public Output<String> endpointDomain() {
         return this.endpointDomain;
     }
     /**
      * ID of the endpoint node.
-     *
+     * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return ID of the endpoint node.
-     *
+     * 
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Endpoint index
-     *
+     * 
      */
     @Export(name="endpointIndex", refs={Integer.class}, tree="[0]")
     private Output<Integer> endpointIndex;
 
     /**
      * @return Endpoint index
-     *
+     * 
      */
     public Output<Integer> endpointIndex() {
         return this.endpointIndex;
     }
     /**
      * Endpoint name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the endpoint ID.
-     *
+     * 
      */
     @Export(name="endpointName", refs={String.class}, tree="[0]")
     private Output<String> endpointName;
 
     /**
      * @return Endpoint name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the endpoint ID.
-     *
+     * 
      */
     public Output<String> endpointName() {
         return this.endpointName;
     }
     /**
      * Type of the endpoint node. Interface: interface endpoint node.
-     *
+     * 
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
      * @return Type of the endpoint node. Interface: interface endpoint node.
-     *
+     * 
      */
     public Output<String> endpointType() {
         return this.endpointType;
     }
     /**
      * IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-     *
+     * 
      */
     @Export(name="ipAddressVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipAddressVersions;
 
     /**
      * @return IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-     *
+     * 
      */
     public Output<List<String>> ipAddressVersions() {
         return this.ipAddressVersions;
     }
     /**
      * Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-     *
+     * 
      */
     @Export(name="payer", refs={String.class}, tree="[0]")
     private Output<String> payer;
 
     /**
      * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-     *
+     * 
      */
     public Output<String> payer() {
         return this.payer;
     }
     /**
      * Enable private DNS name. false (default): disabled. true: enabled.
-     *
+     * 
      */
     @Export(name="privateDnsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> privateDnsEnabled;
 
     /**
      * @return Enable private DNS name. false (default): disabled. true: enabled.
-     *
+     * 
      */
     public Output<Boolean> privateDnsEnabled() {
         return this.privateDnsEnabled;
     }
     /**
      * The private DNS name of the endpoint node. If the parameter PrivateDNSEnabled returns false, this parameter is empty.
-     *
+     * 
      */
     @Export(name="privateDnsName", refs={String.class}, tree="[0]")
     private Output<String> privateDnsName;
 
     /**
      * @return The private DNS name of the endpoint node. If the parameter PrivateDNSEnabled returns false, this parameter is empty.
-     *
+     * 
      */
     public Output<String> privateDnsName() {
         return this.privateDnsName;
     }
     /**
      * Name of the project to which the endpoint node belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the endpoint node belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-     *
+     * 
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-     *
+     * 
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
      * ID of the endpoint service to be associated. You can call the DescribeVpcEndpointServices API to obtain the endpoint service ID.
-     *
+     * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return ID of the endpoint service to be associated. You can call the DescribeVpcEndpointServices API to obtain the endpoint service ID.
-     *
+     * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Whether the endpoint is managed. false: Unmanaged endpoint. true: Managed endpoint.
-     *
+     * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Whether the endpoint is managed. false: Unmanaged endpoint. true: Managed endpoint.
-     *
+     * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * Name of the endpoint service to be associated.
-     *
+     * 
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
      * @return Name of the endpoint service to be associated.
-     *
+     * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
      * Status of the endpoint. Creating: Creating. Pending: Modifying configuration. Available: Available. Deleting: Deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the endpoint. Creating: Creating. Pending: Modifying configuration. Available: Available. Deleting: Deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -384,7 +384,7 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Endpoint user tag.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,VpcEndpointTag.class}, tree="[0,1]")
     private Output<List<VpcEndpointTag>> tags;
@@ -392,35 +392,35 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * @return Endpoint user tag.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcEndpointTag>> tags() {
         return this.tags;
     }
     /**
      * Most recent operation time of the endpoint.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the endpoint.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the VPC to which the endpoint belongs. You can call the DescribeVpcs API to obtain the VPC ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the endpoint belongs. You can call the DescribeVpcs API to obtain the VPC ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -428,7 +428,7 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Availability zone of the endpoint node.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="zones", refs={List.class,VpcEndpointZone.class}, tree="[0,1]")
     private Output<List<VpcEndpointZone>> zones;
@@ -436,7 +436,7 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * @return Availability zone of the endpoint node.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcEndpointZone>> zones() {
         return this.zones;

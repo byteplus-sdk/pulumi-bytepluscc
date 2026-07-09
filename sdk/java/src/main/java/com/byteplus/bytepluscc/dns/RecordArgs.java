@@ -20,14 +20,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the DNS record is enabled; if disabled, the record is inactive.
-     *
+     * 
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
      * @return Whether the DNS record is enabled; if disabled, the record is inactive.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enable() {
         return Optional.ofNullable(this.enable);
@@ -35,14 +35,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     *
+     * 
      */
     @Import(name="host", required=true)
     private Output<String> host;
 
     /**
      * @return Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     *
+     * 
      */
     public Output<String> host() {
         return this.host;
@@ -50,14 +50,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-     *
+     * 
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
      * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-     *
+     * 
      */
     public Optional<Output<String>> line() {
         return Optional.ofNullable(this.line);
@@ -65,14 +65,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     *
+     * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     *
+     * 
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -80,14 +80,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expiration time of the DNS record, in seconds.
-     *
+     * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return Expiration time of the DNS record, in seconds.
-     *
+     * 
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -95,14 +95,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     *
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
@@ -110,14 +110,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Record value of the DNS record.
-     *
+     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
      * @return Record value of the DNS record.
-     *
+     * 
      */
     public Output<String> value() {
         return this.value;
@@ -125,14 +125,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     *
+     * 
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
      * @return Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     *
+     * 
      */
     public Optional<Output<Integer>> weight() {
         return Optional.ofNullable(this.weight);
@@ -140,14 +140,14 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name ID, can be obtained via interfaces such as `ListZones`.
-     *
+     * 
      */
     @Import(name="zid", required=true)
     private Output<String> zid;
 
     /**
      * @return Domain name ID, can be obtained via interfaces such as `ListZones`.
-     *
+     * 
      */
     public Output<String> zid() {
         return this.zid;
@@ -187,9 +187,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Whether the DNS record is enabled; if disabled, the record is inactive.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enable(@Nullable Output<Boolean> enable) {
             $.enable = enable;
@@ -198,9 +198,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Whether the DNS record is enabled; if disabled, the record is inactive.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enable(Boolean enable) {
             return enable(Output.of(enable));
@@ -208,9 +208,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder host(Output<String> host) {
             $.host = host;
@@ -219,9 +219,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder host(String host) {
             return host(Output.of(host));
@@ -229,9 +229,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder line(@Nullable Output<String> line) {
             $.line = line;
@@ -240,9 +240,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder line(String line) {
             return line(Output.of(line));
@@ -250,9 +250,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -261,9 +261,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -271,9 +271,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Expiration time of the DNS record, in seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -282,9 +282,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Expiration time of the DNS record, in seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));
@@ -292,9 +292,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(Output<String> type) {
             $.type = type;
@@ -303,9 +303,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -313,9 +313,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value Record value of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder value(Output<String> value) {
             $.value = value;
@@ -324,9 +324,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value Record value of the DNS record.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder value(String value) {
             return value(Output.of(value));
@@ -334,9 +334,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Weight of the DNS record, effective only when load balancing is enabled for the record set.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder weight(@Nullable Output<Integer> weight) {
             $.weight = weight;
@@ -345,9 +345,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Weight of the DNS record, effective only when load balancing is enabled for the record set.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder weight(Integer weight) {
             return weight(Output.of(weight));
@@ -355,9 +355,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain name ID, can be obtained via interfaces such as `ListZones`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zid(Output<String> zid) {
             $.zid = zid;
@@ -366,9 +366,9 @@ public final class RecordArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain name ID, can be obtained via interfaces such as `ListZones`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zid(String zid) {
             return zid(Output.of(zid));

@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Rule file.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vMPRuleFileDemo = new RuleFile("vMPRuleFileDemo", RuleFileArgs.builder()
  *             .description("这是一个测试规则文件")
@@ -54,19 +54,19 @@ import javax.annotation.Nullable;
  *             .workspaceId("3ba7844b-e7fc-4688-a869-****")
  *             .name("test-rule-file")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vmp/ruleFile:RuleFile example &#34;workspace_id|rule_file_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vmp/ruleFile:RuleFile")
 public class RuleFile extends com.pulumi.resources.CustomResource {
@@ -76,7 +76,7 @@ public class RuleFile extends com.pulumi.resources.CustomResource {
      *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
      *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
      *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
-     *
+     * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
@@ -87,157 +87,157 @@ public class RuleFile extends com.pulumi.resources.CustomResource {
      *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
      *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
      *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
-     *
+     * 
      */
     public Output<String> content() {
         return this.content;
     }
     /**
      * Rule file creation time in RFC3339 format.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Rule file creation time in RFC3339 format.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Rule file description, limited to 0–200 characters.
-     *
+     * 
      *   **Note:** Note
      *   Each English letter, Chinese character, or symbol counts as one character.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Rule file description, limited to 0–200 characters.
-     *
+     * 
      *   **Note:** Note
      *   Each English letter, Chinese character, or symbol counts as one character.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Last updated time of the rule file in RFC3339 format.
-     *
+     * 
      */
     @Export(name="lastUpdateTime", refs={String.class}, tree="[0]")
     private Output<String> lastUpdateTime;
 
     /**
      * @return Last updated time of the rule file in RFC3339 format.
-     *
+     * 
      */
     public Output<String> lastUpdateTime() {
         return this.lastUpdateTime;
     }
     /**
      * Rule file name:
-     *
+     * 
      *     - Must be a valid Linux file name and less than 255 characters.
      *     - Must be unique within the workspace.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Rule file name:
-     *
+     * 
      *     - Must be a valid Linux file name and less than 255 characters.
      *     - Must be unique within the workspace.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Number of rules in the rule file.
-     *
+     * 
      */
     @Export(name="ruleCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> ruleCount;
 
     /**
      * @return Number of rules in the rule file.
-     *
+     * 
      */
     public Output<Integer> ruleCount() {
         return this.ruleCount;
     }
     /**
      * Rule file ID.
-     *
+     * 
      */
     @Export(name="ruleFileId", refs={String.class}, tree="[0]")
     private Output<String> ruleFileId;
 
     /**
      * @return Rule file ID.
-     *
+     * 
      */
     public Output<String> ruleFileId() {
         return this.ruleFileId;
     }
     /**
      * Rule file status:
-     *
+     * 
      *     - **Creating**: Creating
      *     - **Running**: Running
      *     - **Updating**: Updating
      *     - **OverdueSuspended**: Suspended due to overdue payment
      *     - **Resuming**: Resuming
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Rule file status:
-     *
+     * 
      *     - **Creating**: Creating
      *     - **Running**: Running
      *     - **Updating**: Updating
      *     - **OverdueSuspended**: Suspended due to overdue payment
      *     - **Resuming**: Resuming
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Target workspace ID to write to. If empty, writes to the source workspace.
-     *
+     * 
      */
     @Export(name="targetWorkspaceId", refs={String.class}, tree="[0]")
     private Output<String> targetWorkspaceId;
 
     /**
      * @return Target workspace ID to write to. If empty, writes to the source workspace.
-     *
+     * 
      */
     public Output<String> targetWorkspaceId() {
         return this.targetWorkspaceId;
     }
     /**
      * Workspace ID.
-     *
+     * 
      */
     @Export(name="workspaceId", refs={String.class}, tree="[0]")
     private Output<String> workspaceId;
 
     /**
      * @return Workspace ID.
-     *
+     * 
      */
     public Output<String> workspaceId() {
         return this.workspaceId;

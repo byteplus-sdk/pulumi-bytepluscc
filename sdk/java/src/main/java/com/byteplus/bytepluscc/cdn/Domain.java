@@ -59,14 +59,14 @@ import javax.annotation.Nullable;
 
 /**
  * An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -111,19 +111,19 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cDNDomainDemo = new Domain("cDNDomainDemo", DomainArgs.builder()
  *             .areaAccessRule(DomainAreaAccessRuleArgs.builder()
  *                 .rule_type("")
  *                 .switch_(false)
  *                 .build())
- *             .caches(
+ *             .caches(            
  *                 DomainCacheArgs.builder()
  *                     .cache_action(Map.ofEntries(
  *                         Map.entry("action", "cache"),
@@ -175,7 +175,7 @@ import javax.annotation.Nullable;
  *                         .connective("OR")
  *                         .build())
  *                     .build())
- *             .cacheKeys(
+ *             .cacheKeys(            
  *                 DomainCacheKeyArgs.builder()
  *                     .cache_key_action(Map.of("cacheKeyComponents", Arrays.asList(Map.ofEntries(
  *                         Map.entry("action", "exclude"),
@@ -231,12 +231,12 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .build())
  *             .compression(DomainCompressionArgs.builder()
- *                 .compression_rules(Arrays.asList(
+ *                 .compression_rules(Arrays.asList(                
  *                     Map.ofEntries(
  *                         Map.entry("compressionAction", Map.ofEntries(
  *                             Map.entry("compressionFormat", "all"),
  *                             Map.entry("compressionTarget", "*"),
- *                             Map.entry("compressionType", Arrays.asList(
+ *                             Map.entry("compressionType", Arrays.asList(                            
  *                                 "gzip",
  *                                 "br")),
  *                             Map.entry("maxFileSizeKb", 2048),
@@ -257,7 +257,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("compressionAction", Map.ofEntries(
  *                             Map.entry("compressionFormat", "all"),
  *                             Map.entry("compressionTarget", "*"),
- *                             Map.entry("compressionType", Arrays.asList(
+ *                             Map.entry("compressionType", Arrays.asList(                            
  *                                 "gzip",
  *                                 "br")),
  *                             Map.entry("maxFileSizeKb", 2048),
@@ -278,7 +278,7 @@ import javax.annotation.Nullable;
  *                         Map.entry("compressionAction", Map.ofEntries(
  *                             Map.entry("compressionFormat", "all"),
  *                             Map.entry("compressionTarget", "*"),
- *                             Map.entry("compressionType", Arrays.asList(
+ *                             Map.entry("compressionType", Arrays.asList(                            
  *                                 "gzip",
  *                                 "br")),
  *                             Map.entry("maxFileSizeKb", 2048),
@@ -306,7 +306,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .conditionalOrigin(DomainConditionalOriginArgs.builder()
  *                 .origin_rules(Arrays.asList(Map.ofEntries(
- *                     Map.entry("actions", Map.of("originLines", Arrays.asList(
+ *                     Map.entry("actions", Map.of("originLines", Arrays.asList(                    
  *                         Map.ofEntries(
  *                             Map.entry("address", "192.168.0.4"),
  *                             Map.entry("httpPort", "80"),
@@ -322,7 +322,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("originHost", "192.168.0.6")
  *                         )))),
  *                     Map.entry("condition", Map.ofEntries(
- *                         Map.entry("conditionGroups", Arrays.asList(
+ *                         Map.entry("conditionGroups", Arrays.asList(                        
  *                             Map.of("condition", Map.ofEntries(
  *                                 Map.entry("object", "path"),
  *                                 Map.entry("operator", "equal"),
@@ -346,7 +346,7 @@ import javax.annotation.Nullable;
  *                             Map.of("condition", Map.ofEntries(
  *                                 Map.entry("object", "client_ip_operator"),
  *                                 Map.entry("operator", "belong"),
- *                                 Map.entry("value", Arrays.asList(
+ *                                 Map.entry("value", Arrays.asList(                                
  *                                     "CT",
  *                                     "CM",
  *                                     "CU",
@@ -406,7 +406,7 @@ import javax.annotation.Nullable;
  *                 .switch_(false)
  *                 .build())
  *             .origins(DomainOriginArgs.builder()
- *                 .origin_action(Map.of("originLines", Arrays.asList(
+ *                 .origin_action(Map.of("originLines", Arrays.asList(                
  *                     Map.ofEntries(
  *                         Map.entry("address", "192.168.0.1"),
  *                         Map.entry("httpPort", "80"),
@@ -488,7 +488,7 @@ import javax.annotation.Nullable;
  *                 .switch_(false)
  *                 .build())
  *             .pageOptimization(DomainPageOptimizationArgs.builder()
- *                 .optimization_type(Arrays.asList(
+ *                 .optimization_type(Arrays.asList(                
  *                     "html",
  *                     "js",
  *                     "css"))
@@ -524,46 +524,46 @@ import javax.annotation.Nullable;
  *                 .switch_(false)
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cdn/domain:Domain example &#34;domain&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cdn/domain:Domain")
 public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="areaAccessRule", refs={DomainAreaAccessRule.class}, tree="[0]")
     private Output<DomainAreaAccessRule> areaAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainAreaAccessRule> areaAccessRule() {
         return this.areaAccessRule;
     }
     /**
      * Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
-     *
+     * 
      */
     @Export(name="backupOrigins", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> backupOrigins;
 
     /**
      * @return Indicates the backup origin server list configured for this domain. If no backup origin server is configured for this domain, the parameter value is null.
-     *
+     * 
      */
     public Output<List<String>> backupOrigins() {
         return this.backupOrigins;
@@ -571,7 +571,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="browserCaches", refs={List.class,DomainBrowserCache.class}, tree="[0,1]")
     private Output<List<DomainBrowserCache>> browserCaches;
@@ -579,21 +579,21 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainBrowserCache>> browserCaches() {
         return this.browserCaches;
     }
     /**
      * Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="cacheHost", refs={DomainCacheHost.class}, tree="[0]")
     private Output<DomainCacheHost> cacheHost;
 
     /**
      * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainCacheHost> cacheHost() {
         return this.cacheHost;
@@ -601,7 +601,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="cacheKeys", refs={List.class,DomainCacheKey.class}, tree="[0,1]")
     private Output<List<DomainCacheKey>> cacheKeys;
@@ -609,35 +609,35 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainCacheKey>> cacheKeys() {
         return this.cacheKeys;
     }
     /**
      * Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
-     *
+     * 
      */
     @Export(name="cacheShared", refs={String.class}, tree="[0]")
     private Output<String> cacheShared;
 
     /**
      * @return Indicates the role of this domain in the &#39;shared cache&#39; configuration. The parameter has the following values: target*host: indicates the &#39;target domain&#39;. cache*shared_on: indicates the &#39;configured domain&#39;. If this domain is not included in any &#39;shared cache&#39; configuration, the parameter value is an empty string (&#39;&#39;).
-     *
+     * 
      */
     public Output<String> cacheShared() {
         return this.cacheShared;
     }
     /**
      * If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
-     *
+     * 
      */
     @Export(name="cacheSharedTargetHost", refs={String.class}, tree="[0]")
     private Output<String> cacheSharedTargetHost;
 
     /**
      * @return If CacheShared is cache*shared*on, this parameter indicates the &#39;Target Domain&#39; in the &#39;Shared Cache&#39; configuration for this domain name. If CacheShared is target_host, this parameter is empty (&#34;&#34;).
-     *
+     * 
      */
     public Output<String> cacheSharedTargetHost() {
         return this.cacheSharedTargetHost;
@@ -645,7 +645,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="caches", refs={List.class,DomainCache.class}, tree="[0,1]")
     private Output<List<DomainCache>> caches;
@@ -653,259 +653,259 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainCache>> caches() {
         return this.caches;
     }
     /**
      * Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
-     *
+     * 
      */
     @Export(name="cname", refs={String.class}, tree="[0]")
     private Output<String> cname;
 
     /**
      * @return Indicates the CNAME assigned by the content delivery network to the acceleration domain name.
-     *
+     * 
      */
     public Output<String> cname() {
         return this.cname;
     }
     /**
      * Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="compression", refs={DomainCompression.class}, tree="[0]")
     private Output<DomainCompression> compression;
 
     /**
      * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainCompression> compression() {
         return this.compression;
     }
     /**
      * Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-     *
+     * 
      */
     @Export(name="conditionalOrigin", refs={DomainConditionalOrigin.class}, tree="[0]")
     private Output<DomainConditionalOrigin> conditionalOrigin;
 
     /**
      * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-     *
+     * 
      */
     public Output<DomainConditionalOrigin> conditionalOrigin() {
         return this.conditionalOrigin;
     }
     /**
      * Indicates the creation time of this accelerated domain name, in Unix timestamp format.
-     *
+     * 
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
      * @return Indicates the creation time of this accelerated domain name, in Unix timestamp format.
-     *
+     * 
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
      * Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="customErrorPage", refs={DomainCustomErrorPage.class}, tree="[0]")
     private Output<DomainCustomErrorPage> customErrorPage;
 
     /**
      * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainCustomErrorPage> customErrorPage() {
         return this.customErrorPage;
     }
     /**
      * Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="customizeAccessRule", refs={DomainCustomizeAccessRule.class}, tree="[0]")
     private Output<DomainCustomizeAccessRule> customizeAccessRule;
 
     /**
      * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainCustomizeAccessRule> customizeAccessRule() {
         return this.customizeAccessRule;
     }
     /**
      * Indicates the acceleration domain name.
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Indicates the acceleration domain name.
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * Indicates the lock status of this domain name.
-     *
+     * 
      */
     @Export(name="domainLock", refs={DomainDomainLock.class}, tree="[0]")
     private Output<DomainDomainLock> domainLock;
 
     /**
      * @return Indicates the lock status of this domain name.
-     *
+     * 
      */
     public Output<DomainDomainLock> domainLock() {
         return this.domainLock;
     }
     /**
      * Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="downloadSpeedLimit", refs={DomainDownloadSpeedLimit.class}, tree="[0]")
     private Output<DomainDownloadSpeedLimit> downloadSpeedLimit;
 
     /**
      * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainDownloadSpeedLimit> downloadSpeedLimit() {
         return this.downloadSpeedLimit;
     }
     /**
      * Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-     *
+     * 
      */
     @Export(name="followRedirect", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> followRedirect;
 
     /**
      * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-     *
+     * 
      */
     public Output<Boolean> followRedirect() {
         return this.followRedirect;
     }
     /**
      * Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="httpForcedRedirect", refs={DomainHttpForcedRedirect.class}, tree="[0]")
     private Output<DomainHttpForcedRedirect> httpForcedRedirect;
 
     /**
      * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainHttpForcedRedirect> httpForcedRedirect() {
         return this.httpForcedRedirect;
     }
     /**
      * Indicates the HTTPS configuration module. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="https", refs={DomainHttps.class}, tree="[0]")
     private Output<DomainHttps> https;
 
     /**
      * @return Indicates the HTTPS configuration module. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainHttps> https() {
         return this.https;
     }
     /**
      * Indicates the configuration module for the IPv6 feature.
-     *
+     * 
      */
     @Export(name="iPv6", refs={DomainIPv6.class}, tree="[0]")
     private Output<DomainIPv6> iPv6;
 
     /**
      * @return Indicates the configuration module for the IPv6 feature.
-     *
+     * 
      */
     public Output<DomainIPv6> iPv6() {
         return this.iPv6;
     }
     /**
      * Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-     *
+     * 
      */
     @Export(name="ipAccessRule", refs={DomainIpAccessRule.class}, tree="[0]")
     private Output<DomainIpAccessRule> ipAccessRule;
 
     /**
      * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-     *
+     * 
      */
     public Output<DomainIpAccessRule> ipAccessRule() {
         return this.ipAccessRule;
     }
     /**
      * Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
-     *
+     * 
      */
     @Export(name="isConflictDomain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isConflictDomain;
 
     /**
      * @return Indicates whether the domain is a conflicting domain. In CDN, each domain is unique. If you need to add a domain that already exists under another primary account, you must submit a ticket. If you successfully add the domain under your primary account, it becomes a conflicting domain. This parameter has the following values: true: the domain is a conflicting domain. false: the domain is not a conflicting domain.
-     *
+     * 
      */
     public Output<Boolean> isConflictDomain() {
         return this.isConflictDomain;
     }
     /**
      * Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
-     *
+     * 
      */
     @Export(name="lockStatus", refs={String.class}, tree="[0]")
     private Output<String> lockStatus;
 
     /**
      * @return Indicates whether the configuration for this domain name can be changed. The parameter values are: on: Allowed. off: Not allowed.
-     *
+     * 
      */
     public Output<String> lockStatus() {
         return this.lockStatus;
     }
     /**
      * Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="methodDeniedRule", refs={DomainMethodDeniedRule.class}, tree="[0]")
     private Output<DomainMethodDeniedRule> methodDeniedRule;
 
     /**
      * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainMethodDeniedRule> methodDeniedRule() {
         return this.methodDeniedRule;
     }
     /**
      * Indicates the configuration module for the multi-range feature. This feature is disabled by default
-     *
+     * 
      */
     @Export(name="multiRange", refs={DomainMultiRange.class}, tree="[0]")
     private Output<DomainMultiRange> multiRange;
 
     /**
      * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
-     *
+     * 
      */
     public Output<DomainMultiRange> multiRange() {
         return this.multiRange;
@@ -913,7 +913,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="negativeCaches", refs={List.class,DomainNegativeCache.class}, tree="[0,1]")
     private Output<List<DomainNegativeCache>> negativeCaches;
@@ -921,35 +921,35 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainNegativeCache>> negativeCaches() {
         return this.negativeCaches;
     }
     /**
      * Indicates the configuration module for the &#39;offline cache&#39; feature.
-     *
+     * 
      */
     @Export(name="offlineCache", refs={DomainOfflineCache.class}, tree="[0]")
     private Output<DomainOfflineCache> offlineCache;
 
     /**
      * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
-     *
+     * 
      */
     public Output<DomainOfflineCache> offlineCache() {
         return this.offlineCache;
     }
     /**
      * Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="originAccessRule", refs={DomainOriginAccessRule.class}, tree="[0]")
     private Output<DomainOriginAccessRule> originAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainOriginAccessRule> originAccessRule() {
         return this.originAccessRule;
@@ -957,7 +957,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="originArgs", refs={List.class,DomainOriginArg.class}, tree="[0,1]")
     private Output<List<DomainOriginArg>> originArgs;
@@ -965,119 +965,119 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainOriginArg>> originArgs() {
         return this.originArgs;
     }
     /**
      * Origin certificate validation
-     *
+     * 
      */
     @Export(name="originCertCheck", refs={DomainOriginCertCheck.class}, tree="[0]")
     private Output<DomainOriginCertCheck> originCertCheck;
 
     /**
      * @return Origin certificate validation
-     *
+     * 
      */
     public Output<DomainOriginCertCheck> originCertCheck() {
         return this.originCertCheck;
     }
     /**
      * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-     *
+     * 
      */
     @Export(name="originHost", refs={String.class}, tree="[0]")
     private Output<String> originHost;
 
     /**
      * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-     *
+     * 
      */
     public Output<String> originHost() {
         return this.originHost;
     }
     /**
      * Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-     *
+     * 
      */
     @Export(name="originIPv6", refs={String.class}, tree="[0]")
     private Output<String> originIPv6;
 
     /**
      * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-     *
+     * 
      */
     public Output<String> originIPv6() {
         return this.originIPv6;
     }
     /**
      * Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-     *
+     * 
      */
     @Export(name="originProtocol", refs={String.class}, tree="[0]")
     private Output<String> originProtocol;
 
     /**
      * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-     *
+     * 
      */
     public Output<String> originProtocol() {
         return this.originProtocol;
     }
     /**
      * Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     *
+     * 
      */
     @Export(name="originRange", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> originRange;
 
     /**
      * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     *
+     * 
      */
     public Output<Boolean> originRange() {
         return this.originRange;
     }
     /**
      * Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-     *
+     * 
      */
     @Export(name="originRetry", refs={DomainOriginRetry.class}, tree="[0]")
     private Output<DomainOriginRetry> originRetry;
 
     /**
      * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-     *
+     * 
      */
     public Output<DomainOriginRetry> originRetry() {
         return this.originRetry;
     }
     /**
      * Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-     *
+     * 
      */
     @Export(name="originRewrite", refs={DomainOriginRewrite.class}, tree="[0]")
     private Output<DomainOriginRewrite> originRewrite;
 
     /**
      * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-     *
+     * 
      */
     public Output<DomainOriginRewrite> originRewrite() {
         return this.originRewrite;
     }
     /**
      * Indicates the configuration module for the &#39;origin SNI&#39; feature.
-     *
+     * 
      */
     @Export(name="originSni", refs={DomainOriginSni.class}, tree="[0]")
     private Output<DomainOriginSni> originSni;
 
     /**
      * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
-     *
+     * 
      */
     public Output<DomainOriginSni> originSni() {
         return this.originSni;
@@ -1085,7 +1085,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the basic origin configuration module.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="origins", refs={List.class,DomainOrigin.class}, tree="[0,1]")
     private Output<List<DomainOrigin>> origins;
@@ -1093,119 +1093,119 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates the basic origin configuration module.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainOrigin>> origins() {
         return this.origins;
     }
     /**
      * Specifies the configuration module for the &#39;page optimization&#39; feature.
-     *
+     * 
      */
     @Export(name="pageOptimization", refs={DomainPageOptimization.class}, tree="[0]")
     private Output<DomainPageOptimization> pageOptimization;
 
     /**
      * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
-     *
+     * 
      */
     public Output<DomainPageOptimization> pageOptimization() {
         return this.pageOptimization;
     }
     /**
      * Indicates the list of primary origin servers configured for this domain name.
-     *
+     * 
      */
     @Export(name="primaryOrigins", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> primaryOrigins;
 
     /**
      * @return Indicates the list of primary origin servers configured for this domain name.
-     *
+     * 
      */
     public Output<List<String>> primaryOrigins() {
         return this.primaryOrigins;
     }
     /**
      * Indicates the project to which the acceleration domain belongs
-     *
+     * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
      * @return Indicates the project to which the acceleration domain belongs
-     *
+     * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
      * Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="quic", refs={DomainQuic.class}, tree="[0]")
     private Output<DomainQuic> quic;
 
     /**
      * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainQuic> quic() {
         return this.quic;
     }
     /**
      * Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="redirectionRewrite", refs={DomainRedirectionRewrite.class}, tree="[0]")
     private Output<DomainRedirectionRewrite> redirectionRewrite;
 
     /**
      * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainRedirectionRewrite> redirectionRewrite() {
         return this.redirectionRewrite;
     }
     /**
      * Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="refererAccessRule", refs={DomainRefererAccessRule.class}, tree="[0]")
     private Output<DomainRefererAccessRule> refererAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainRefererAccessRule> refererAccessRule() {
         return this.refererAccessRule;
     }
     /**
      * Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="remoteAuth", refs={DomainRemoteAuth.class}, tree="[0]")
     private Output<DomainRemoteAuth> remoteAuth;
 
     /**
      * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainRemoteAuth> remoteAuth() {
         return this.remoteAuth;
     }
     /**
      * Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     @Export(name="requestBlockRule", refs={DomainRequestBlockRule.class}, tree="[0]")
     private Output<DomainRequestBlockRule> requestBlockRule;
 
     /**
      * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     public Output<DomainRequestBlockRule> requestBlockRule() {
         return this.requestBlockRule;
@@ -1213,7 +1213,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="requestHeaders", refs={List.class,DomainRequestHeader.class}, tree="[0,1]")
     private Output<List<DomainRequestHeader>> requestHeaders;
@@ -1221,7 +1221,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainRequestHeader>> requestHeaders() {
         return this.requestHeaders;
@@ -1229,7 +1229,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="responseHeaders", refs={List.class,DomainResponseHeader.class}, tree="[0,1]")
     private Output<List<DomainResponseHeader>> responseHeaders;
@@ -1237,77 +1237,77 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainResponseHeader>> responseHeaders() {
         return this.responseHeaders;
     }
     /**
      * Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="rewriteHls", refs={DomainRewriteHls.class}, tree="[0]")
     private Output<DomainRewriteHls> rewriteHls;
 
     /**
      * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainRewriteHls> rewriteHls() {
         return this.rewriteHls;
     }
     /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-     *
+     * 
      */
     @Export(name="serviceRegion", refs={String.class}, tree="[0]")
     private Output<String> serviceRegion;
 
     /**
      * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-     *
+     * 
      */
     public Output<String> serviceRegion() {
         return this.serviceRegion;
     }
     /**
      * Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-     *
+     * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
      * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-     *
+     * 
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
      * Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     @Export(name="signedUrlAuth", refs={DomainSignedUrlAuth.class}, tree="[0]")
     private Output<DomainSignedUrlAuth> signedUrlAuth;
 
     /**
      * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-     *
+     * 
      */
     public Output<DomainSignedUrlAuth> signedUrlAuth() {
         return this.signedUrlAuth;
     }
     /**
      * Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Indicates the status of the acceleration domain name. The parameter values are as follows: online: indicates normal operation. configuring: indicates configuration in progress. offline: indicates offline status.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -1315,7 +1315,7 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,DomainTag.class}, tree="[0,1]")
     private Output<List<DomainTag>> tags;
@@ -1323,77 +1323,77 @@ public class Domain extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DomainTag>> tags() {
         return this.tags;
     }
     /**
      * Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="timeout", refs={DomainTimeout.class}, tree="[0]")
     private Output<DomainTimeout> timeout;
 
     /**
      * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainTimeout> timeout() {
         return this.timeout;
     }
     /**
      * Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="uaAccessRule", refs={DomainUaAccessRule.class}, tree="[0]")
     private Output<DomainUaAccessRule> uaAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainUaAccessRule> uaAccessRule() {
         return this.uaAccessRule;
     }
     /**
      * Indicates the most recent update time for this domain configuration, in Unix timestamp format.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
      * @return Indicates the most recent update time for this domain configuration, in Unix timestamp format.
-     *
+     * 
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="urlNormalize", refs={DomainUrlNormalize.class}, tree="[0]")
     private Output<DomainUrlNormalize> urlNormalize;
 
     /**
      * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainUrlNormalize> urlNormalize() {
         return this.urlNormalize;
     }
     /**
      * Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     @Export(name="videoDrag", refs={DomainVideoDrag.class}, tree="[0]")
     private Output<DomainVideoDrag> videoDrag;
 
     /**
      * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Output<DomainVideoDrag> videoDrag() {
         return this.videoDrag;

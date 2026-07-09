@@ -20,14 +20,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Creation time of the personalized configuration.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time of the personalized configuration.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -36,7 +36,7 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
     /**
      * Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
      * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
-     *
+     * 
      */
     @Import(name="customizedCfgContent")
     private @Nullable Output<String> customizedCfgContent;
@@ -44,7 +44,7 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
      * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
-     *
+     * 
      */
     public Optional<Output<String>> customizedCfgContent() {
         return Optional.ofNullable(this.customizedCfgContent);
@@ -52,14 +52,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Personalized configuration ID.
-     *
+     * 
      */
     @Import(name="customizedCfgId")
     private @Nullable Output<String> customizedCfgId;
 
     /**
      * @return Personalized configuration ID.
-     *
+     * 
      */
     public Optional<Output<String>> customizedCfgId() {
         return Optional.ofNullable(this.customizedCfgId);
@@ -67,14 +67,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Import(name="customizedCfgName")
     private @Nullable Output<String> customizedCfgName;
 
     /**
      * @return Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> customizedCfgName() {
         return Optional.ofNullable(this.customizedCfgName);
@@ -82,14 +82,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -98,7 +98,7 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
     /**
      * List of listeners associated with the personalized configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="listeners")
     private @Nullable Output<List<CustomizedCfgListenerArgs>> listeners;
@@ -106,7 +106,7 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return List of listeners associated with the personalized configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CustomizedCfgListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
@@ -114,14 +114,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Project name to which the personalized configuration belongs.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the personalized configuration belongs.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -129,14 +129,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -145,7 +145,7 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<CustomizedCfgTagArgs>> tags;
@@ -153,7 +153,7 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CustomizedCfgTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -161,14 +161,14 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Last operation time of the personalized configuration.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Last operation time of the personalized configuration.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -209,9 +209,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Creation time of the personalized configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -220,9 +220,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Creation time of the personalized configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -231,9 +231,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param customizedCfgContent Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
          * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgContent(@Nullable Output<String> customizedCfgContent) {
             $.customizedCfgContent = customizedCfgContent;
@@ -243,9 +243,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param customizedCfgContent Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
          * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgContent(String customizedCfgContent) {
             return customizedCfgContent(Output.of(customizedCfgContent));
@@ -253,9 +253,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param customizedCfgId Personalized configuration ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgId(@Nullable Output<String> customizedCfgId) {
             $.customizedCfgId = customizedCfgId;
@@ -264,9 +264,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param customizedCfgId Personalized configuration ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgId(String customizedCfgId) {
             return customizedCfgId(Output.of(customizedCfgId));
@@ -274,9 +274,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param customizedCfgName Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgName(@Nullable Output<String> customizedCfgName) {
             $.customizedCfgName = customizedCfgName;
@@ -285,9 +285,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param customizedCfgName Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgName(String customizedCfgName) {
             return customizedCfgName(Output.of(customizedCfgName));
@@ -295,9 +295,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -306,9 +306,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -317,9 +317,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param listeners List of listeners associated with the personalized configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(@Nullable Output<List<CustomizedCfgListenerArgs>> listeners) {
             $.listeners = listeners;
@@ -329,9 +329,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param listeners List of listeners associated with the personalized configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(List<CustomizedCfgListenerArgs> listeners) {
             return listeners(Output.of(listeners));
@@ -340,9 +340,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param listeners List of listeners associated with the personalized configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(CustomizedCfgListenerArgs... listeners) {
             return listeners(List.of(listeners));
@@ -350,9 +350,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName Project name to which the personalized configuration belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -361,9 +361,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName Project name to which the personalized configuration belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -371,9 +371,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -382,9 +382,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -393,9 +393,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<CustomizedCfgTagArgs>> tags) {
             $.tags = tags;
@@ -405,9 +405,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<CustomizedCfgTagArgs> tags) {
             return tags(Output.of(tags));
@@ -416,9 +416,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(CustomizedCfgTagArgs... tags) {
             return tags(List.of(tags));
@@ -426,9 +426,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updatedTime Last operation time of the personalized configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -437,9 +437,9 @@ public final class CustomizedCfgState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updatedTime Last operation time of the personalized configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

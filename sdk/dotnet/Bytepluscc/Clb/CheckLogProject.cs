@@ -12,24 +12,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// CLB provides health check log capabilities and allows you to create a log topic to store and manage CLB health check logs.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cLBCheckLogProjectDemo = new Bytepluscc.Clb.CheckLogProject("CLBCheckLogProjectDemo");
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/checkLogProject:CheckLogProject example "log_project_id"
     /// ```

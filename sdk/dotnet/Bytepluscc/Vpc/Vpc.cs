@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// A private network creates an isolated, self-configurable virtual network environment for cloud resources. You can customize IP address ranges, security groups, routing policies, and other network features within the private network to manage cloud resources simply, efficiently, and securely.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPCDemo = new Bytepluscc.Vpc.Vpc("VPCDemo", new()
     ///     {
@@ -69,12 +69,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/vpc:Vpc example "vpc_id"
     /// ```

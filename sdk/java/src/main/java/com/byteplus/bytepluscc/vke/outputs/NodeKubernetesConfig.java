@@ -16,26 +16,26 @@ import javax.annotation.Nullable;
 public final class NodeKubernetesConfig {
     /**
      * @return Node lock configuration. Options: false (default): not locked; true: locked
-     *
+     * 
      */
     private @Nullable Boolean cordon;
     /**
      * @return Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<NodeKubernetesConfigLabel> labels;
     /**
      * @return Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<NodeKubernetesConfigTaint> taints;
 
     private NodeKubernetesConfig() {}
     /**
      * @return Node lock configuration. Options: false (default): not locked; true: locked
-     *
+     * 
      */
     public Optional<Boolean> cordon() {
         return Optional.ofNullable(this.cordon);
@@ -43,7 +43,7 @@ public final class NodeKubernetesConfig {
     /**
      * @return Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<NodeKubernetesConfigLabel> labels() {
         return this.labels == null ? List.of() : this.labels;
@@ -51,7 +51,7 @@ public final class NodeKubernetesConfig {
     /**
      * @return Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<NodeKubernetesConfigTaint> taints() {
         return this.taints == null ? List.of() : this.taints;

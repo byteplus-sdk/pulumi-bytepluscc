@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
 {
     /// <summary>
     /// NAT Gateway provides network address translation services for cloud servers within the private network
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var natGatewayNGWDemo = new Bytepluscc.Natgateway.Ngw("NatGatewayNGWDemo", new()
     ///     {
@@ -42,12 +42,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:natgateway/ngw:Ngw example "nat_gateway_id"
     /// ```

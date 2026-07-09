@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Control policy.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var organizationServiceControlPolicyDemo = new ServiceControlPolicy("organizationServiceControlPolicyDemo", ServiceControlPolicyArgs.builder()
  *             .policyName("ccapi-test")
@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *                         ))
  *                     )))
  *                 )))
- *             .targets(
+ *             .targets(            
  *                 ServiceControlPolicyTargetArgs.builder()
  *                     .target_id("212***")
  *                     .target_type("Account")
@@ -71,102 +71,102 @@ import javax.annotation.Nullable;
  *                     .target_type("Account")
  *                     .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy example &#34;policy_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy")
 public class ServiceControlPolicy extends com.pulumi.resources.CustomResource {
     /**
      * Creation time.
-     *
+     * 
      */
     @Export(name="createDate", refs={String.class}, tree="[0]")
     private Output<String> createDate;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Output<String> createDate() {
         return this.createDate;
     }
     /**
      * Description.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Policy ID.
-     *
+     * 
      */
     @Export(name="policyId", refs={String.class}, tree="[0]")
     private Output<String> policyId;
 
     /**
      * @return Policy ID.
-     *
+     * 
      */
     public Output<String> policyId() {
         return this.policyId;
     }
     /**
      * Policy name.
-     *
+     * 
      */
     @Export(name="policyName", refs={String.class}, tree="[0]")
     private Output<String> policyName;
 
     /**
      * @return Policy name.
-     *
+     * 
      */
     public Output<String> policyName() {
         return this.policyName;
     }
     /**
      * Policy type.
-     *
+     * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
      * @return Policy type.
-     *
+     * 
      */
     public Output<String> policyType() {
         return this.policyType;
     }
     /**
      * Policy expression.
-     *
+     * 
      */
     @Export(name="statement", refs={String.class}, tree="[0]")
     private Output<String> statement;
 
     /**
      * @return Policy expression.
-     *
+     * 
      */
     public Output<String> statement() {
         return this.statement;
@@ -174,7 +174,7 @@ public class ServiceControlPolicy extends com.pulumi.resources.CustomResource {
     /**
      * List of bound target objects.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="targets", refs={List.class,ServiceControlPolicyTarget.class}, tree="[0,1]")
     private Output<List<ServiceControlPolicyTarget>> targets;
@@ -182,21 +182,21 @@ public class ServiceControlPolicy extends com.pulumi.resources.CustomResource {
     /**
      * @return List of bound target objects.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ServiceControlPolicyTarget>> targets() {
         return this.targets;
     }
     /**
      * Update time.
-     *
+     * 
      */
     @Export(name="updateDate", refs={String.class}, tree="[0]")
     private Output<String> updateDate;
 
     /**
      * @return Update time.
-     *
+     * 
      */
     public Output<String> updateDate() {
         return this.updateDate;

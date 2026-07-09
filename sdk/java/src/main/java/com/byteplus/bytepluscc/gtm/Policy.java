@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Scheduling policy configuration under the GTM instance, identified by GtmId and PolicyType, and maintained via UpdatePolicy.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var gTMPolicyDemo = new Policy("gTMPolicyDemo", PolicyArgs.builder()
  *             .gtmId("003cd3af-dc55-xxxxx-xxxxxx-41470d406367")
@@ -55,102 +55,102 @@ import javax.annotation.Nullable;
  *             .alarmOnly(false)
  *             .routingMode("geo-lb")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:gtm/policy:Policy example &#34;gtm_id|policy_type&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:gtm/policy:Policy")
 public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * If the current address pool set is unavailable, Cloud Scheduling GTM only triggers an alert notification and does not automatically switch to an available address pool. true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool
-     *
+     * 
      */
     @Export(name="alarmOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> alarmOnly;
 
     /**
      * @return If the current address pool set is unavailable, Cloud Scheduling GTM only triggers an alert notification and does not automatically switch to an available address pool. true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool
-     *
+     * 
      */
     public Output<Boolean> alarmOnly() {
         return this.alarmOnly;
     }
     /**
      * UUID of the GTM instance. You can obtain GtmId through the ListGtms API
-     *
+     * 
      */
     @Export(name="gtmId", refs={String.class}, tree="[0]")
     private Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance. You can obtain GtmId through the ListGtms API
-     *
+     * 
      */
     public Output<String> gtmId() {
         return this.gtmId;
     }
     /**
      * Routing mode for intelligent routing strategy. perf: Performance first. capacity: Capacity first. feedback: Load feedback
-     *
+     * 
      */
     @Export(name="perfMode", refs={String.class}, tree="[0]")
     private Output<String> perfMode;
 
     /**
      * @return Routing mode for intelligent routing strategy. perf: Performance first. capacity: Capacity first. feedback: Load feedback
-     *
+     * 
      */
     public Output<String> perfMode() {
         return this.perfMode;
     }
     /**
      * Strategy type. geo: Basic routing. perf: Intelligent routing
-     *
+     * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
      * @return Strategy type. geo: Basic routing. perf: Intelligent routing
-     *
+     * 
      */
     public Output<String> policyType() {
         return this.policyType;
     }
     /**
      * Routing mode. The parameter values are: lb: Based on load balancing, user traffic is routed proportionally to different IDCs. geo: Based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC on the same operator&#39;s network. geo-lb (default): First, based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC access line on the same operator&#39;s network. Then, based on load balancing, user traffic is routed proportionally to multiple IDCs
-     *
+     * 
      */
     @Export(name="routingMode", refs={String.class}, tree="[0]")
     private Output<String> routingMode;
 
     /**
      * @return Routing mode. The parameter values are: lb: Based on load balancing, user traffic is routed proportionally to different IDCs. geo: Based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC on the same operator&#39;s network. geo-lb (default): First, based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC access line on the same operator&#39;s network. Then, based on load balancing, user traffic is routed proportionally to multiple IDCs
-     *
+     * 
      */
     public Output<String> routingMode() {
         return this.routingMode;
     }
     /**
      * Statistical information about address status
-     *
+     * 
      */
     @Export(name="statistics", refs={PolicyStatistics.class}, tree="[0]")
     private Output<PolicyStatistics> statistics;
 
     /**
      * @return Statistical information about address status
-     *
+     * 
      */
     public Output<PolicyStatistics> statistics() {
         return this.statistics;
@@ -158,7 +158,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * Traffic target for intelligent routing strategy
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="targets", refs={List.class,PolicyTarget.class}, tree="[0,1]")
     private Output<List<PolicyTarget>> targets;
@@ -166,7 +166,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * @return Traffic target for intelligent routing strategy
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PolicyTarget>> targets() {
         return this.targets;

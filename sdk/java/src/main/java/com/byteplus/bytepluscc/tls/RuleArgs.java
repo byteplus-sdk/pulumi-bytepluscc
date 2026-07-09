@@ -25,14 +25,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Container log collection rules.
-     *
+     * 
      */
     @Import(name="containerRule")
     private @Nullable Output<RuleContainerRuleArgs> containerRule;
 
     /**
      * @return Container log collection rules.
-     *
+     * 
      */
     public Optional<Output<RuleContainerRuleArgs>> containerRule() {
         return Optional.ofNullable(this.containerRule);
@@ -41,7 +41,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="excludePaths")
     private @Nullable Output<List<RuleExcludePathArgs>> excludePaths;
@@ -49,7 +49,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleExcludePathArgs>>> excludePaths() {
         return Optional.ofNullable(this.excludePaths);
@@ -57,14 +57,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log extraction rules. Note: This parameter is required if LogType is set to any type other than minimalist*log or json*log.
-     *
+     * 
      */
     @Import(name="extractRule")
     private @Nullable Output<RuleExtractRuleArgs> extractRule;
 
     /**
      * @return Log extraction rules. Note: This parameter is required if LogType is set to any type other than minimalist*log or json*log.
-     *
+     * 
      */
     public Optional<Output<RuleExtractRuleArgs>> extractRule() {
         return Optional.ofNullable(this.extractRule);
@@ -73,7 +73,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Machine group information list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="hostGroupInfos")
     private @Nullable Output<List<RuleHostGroupInfoArgs>> hostGroupInfos;
@@ -81,7 +81,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Machine group information list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleHostGroupInfoArgs>>> hostGroupInfos() {
         return Optional.ofNullable(this.hostGroupInfos);
@@ -89,14 +89,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection type. 0: (Default) Host log file. 1: K8s container stdout. 2: K8s container internal log file.
-     *
+     * 
      */
     @Import(name="inputType")
     private @Nullable Output<Integer> inputType;
 
     /**
      * @return Collection type. 0: (Default) Host log file. 1: K8s container stdout. 2: K8s container internal log file.
-     *
+     * 
      */
     public Optional<Output<Integer>> inputType() {
         return Optional.ofNullable(this.inputType);
@@ -104,14 +104,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log sample. Maximum length is 3000 characters. Log sample content must match the collection mode. Single-line full-text mode and JSON mode do not require a log sample. Other modes require a log sample, and the content must match the collection mode.
-     *
+     * 
      */
     @Import(name="logSample")
     private @Nullable Output<String> logSample;
 
     /**
      * @return Log sample. Maximum length is 3000 characters. Log sample content must match the collection mode. Single-line full-text mode and JSON mode do not require a log sample. Other modes require a log sample, and the content must match the collection mode.
-     *
+     * 
      */
     public Optional<Output<String>> logSample() {
         return Optional.ofNullable(this.logSample);
@@ -119,14 +119,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection mode. minimalist*log: (Default) Single-line full-text mode. json*log: JSON mode. delimiter*log: Delimiter mode. multiline*log: Multi-line full-text mode. fullregex_log: Full regex mode.
-     *
+     * 
      */
     @Import(name="logType")
     private @Nullable Output<String> logType;
 
     /**
      * @return Collection mode. minimalist*log: (Default) Single-line full-text mode. json*log: JSON mode. delimiter*log: Delimiter mode. multiline*log: Multi-line full-text mode. fullregex_log: Full regex mode.
-     *
+     * 
      */
     public Optional<Output<String>> logType() {
         return Optional.ofNullable(this.logType);
@@ -134,14 +134,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-     *
+     * 
      */
     @Import(name="paths")
     private @Nullable Output<List<String>> paths;
 
     /**
      * @return Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> paths() {
         return Optional.ofNullable(this.paths);
@@ -149,14 +149,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection configuration status. 0: Running. 1: Paused.
-     *
+     * 
      */
     @Import(name="pause")
     private @Nullable Output<Integer> pause;
 
     /**
      * @return Collection configuration status. 0: Running. 1: Paused.
-     *
+     * 
      */
     public Optional<Output<Integer>> pause() {
         return Optional.ofNullable(this.pause);
@@ -164,14 +164,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection configuration name. Please refer to the resource naming rules. Must be unique within a log topic.
-     *
+     * 
      */
     @Import(name="ruleName", required=true)
     private Output<String> ruleName;
 
     /**
      * @return Collection configuration name. Please refer to the resource naming rules. Must be unique within a log topic.
-     *
+     * 
      */
     public Output<String> ruleName() {
         return this.ruleName;
@@ -179,14 +179,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log topic ID to which the collection configuration belongs.
-     *
+     * 
      */
     @Import(name="topicId", required=true)
     private Output<String> topicId;
 
     /**
      * @return Log topic ID to which the collection configuration belongs.
-     *
+     * 
      */
     public Output<String> topicId() {
         return this.topicId;
@@ -194,14 +194,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User-defined collection rules.
-     *
+     * 
      */
     @Import(name="userDefineRule")
     private @Nullable Output<RuleUserDefineRuleArgs> userDefineRule;
 
     /**
      * @return User-defined collection rules.
-     *
+     * 
      */
     public Optional<Output<RuleUserDefineRuleArgs>> userDefineRule() {
         return Optional.ofNullable(this.userDefineRule);
@@ -244,9 +244,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param containerRule Container log collection rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder containerRule(@Nullable Output<RuleContainerRuleArgs> containerRule) {
             $.containerRule = containerRule;
@@ -255,9 +255,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param containerRule Container log collection rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder containerRule(RuleContainerRuleArgs containerRule) {
             return containerRule(Output.of(containerRule));
@@ -266,9 +266,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param excludePaths Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder excludePaths(@Nullable Output<List<RuleExcludePathArgs>> excludePaths) {
             $.excludePaths = excludePaths;
@@ -278,9 +278,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param excludePaths Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder excludePaths(List<RuleExcludePathArgs> excludePaths) {
             return excludePaths(Output.of(excludePaths));
@@ -289,9 +289,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param excludePaths Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder excludePaths(RuleExcludePathArgs... excludePaths) {
             return excludePaths(List.of(excludePaths));
@@ -299,9 +299,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param extractRule Log extraction rules. Note: This parameter is required if LogType is set to any type other than minimalist*log or json*log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractRule(@Nullable Output<RuleExtractRuleArgs> extractRule) {
             $.extractRule = extractRule;
@@ -310,9 +310,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param extractRule Log extraction rules. Note: This parameter is required if LogType is set to any type other than minimalist*log or json*log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractRule(RuleExtractRuleArgs extractRule) {
             return extractRule(Output.of(extractRule));
@@ -321,9 +321,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param hostGroupInfos Machine group information list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupInfos(@Nullable Output<List<RuleHostGroupInfoArgs>> hostGroupInfos) {
             $.hostGroupInfos = hostGroupInfos;
@@ -333,9 +333,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param hostGroupInfos Machine group information list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupInfos(List<RuleHostGroupInfoArgs> hostGroupInfos) {
             return hostGroupInfos(Output.of(hostGroupInfos));
@@ -344,9 +344,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param hostGroupInfos Machine group information list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupInfos(RuleHostGroupInfoArgs... hostGroupInfos) {
             return hostGroupInfos(List.of(hostGroupInfos));
@@ -354,9 +354,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param inputType Collection type. 0: (Default) Host log file. 1: K8s container stdout. 2: K8s container internal log file.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder inputType(@Nullable Output<Integer> inputType) {
             $.inputType = inputType;
@@ -365,9 +365,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param inputType Collection type. 0: (Default) Host log file. 1: K8s container stdout. 2: K8s container internal log file.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder inputType(Integer inputType) {
             return inputType(Output.of(inputType));
@@ -375,9 +375,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logSample Log sample. Maximum length is 3000 characters. Log sample content must match the collection mode. Single-line full-text mode and JSON mode do not require a log sample. Other modes require a log sample, and the content must match the collection mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logSample(@Nullable Output<String> logSample) {
             $.logSample = logSample;
@@ -386,9 +386,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logSample Log sample. Maximum length is 3000 characters. Log sample content must match the collection mode. Single-line full-text mode and JSON mode do not require a log sample. Other modes require a log sample, and the content must match the collection mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logSample(String logSample) {
             return logSample(Output.of(logSample));
@@ -396,9 +396,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logType Collection mode. minimalist*log: (Default) Single-line full-text mode. json*log: JSON mode. delimiter*log: Delimiter mode. multiline*log: Multi-line full-text mode. fullregex_log: Full regex mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logType(@Nullable Output<String> logType) {
             $.logType = logType;
@@ -407,9 +407,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logType Collection mode. minimalist*log: (Default) Single-line full-text mode. json*log: JSON mode. delimiter*log: Delimiter mode. multiline*log: Multi-line full-text mode. fullregex_log: Full regex mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logType(String logType) {
             return logType(Output.of(logType));
@@ -417,9 +417,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param paths Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder paths(@Nullable Output<List<String>> paths) {
             $.paths = paths;
@@ -428,9 +428,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param paths Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder paths(List<String> paths) {
             return paths(Output.of(paths));
@@ -438,9 +438,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param paths Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder paths(String... paths) {
             return paths(List.of(paths));
@@ -448,9 +448,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pause Collection configuration status. 0: Running. 1: Paused.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pause(@Nullable Output<Integer> pause) {
             $.pause = pause;
@@ -459,9 +459,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pause Collection configuration status. 0: Running. 1: Paused.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pause(Integer pause) {
             return pause(Output.of(pause));
@@ -469,9 +469,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleName Collection configuration name. Please refer to the resource naming rules. Must be unique within a log topic.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleName(Output<String> ruleName) {
             $.ruleName = ruleName;
@@ -480,9 +480,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleName Collection configuration name. Please refer to the resource naming rules. Must be unique within a log topic.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleName(String ruleName) {
             return ruleName(Output.of(ruleName));
@@ -490,9 +490,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId Log topic ID to which the collection configuration belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicId(Output<String> topicId) {
             $.topicId = topicId;
@@ -501,9 +501,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId Log topic ID to which the collection configuration belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicId(String topicId) {
             return topicId(Output.of(topicId));
@@ -511,9 +511,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userDefineRule User-defined collection rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userDefineRule(@Nullable Output<RuleUserDefineRuleArgs> userDefineRule) {
             $.userDefineRule = userDefineRule;
@@ -522,9 +522,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userDefineRule User-defined collection rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userDefineRule(RuleUserDefineRuleArgs userDefineRule) {
             return userDefineRule(Output.of(userDefineRule));

@@ -24,14 +24,14 @@ import javax.annotation.Nullable;
 
 /**
  * API Gateway (Gateway) is the core component of the API management service. It receives, processes, and forwards API requests, and provides security authentication, traffic control, and other features
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -47,19 +47,19 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var aPIGGatewayDemo = new Gateway("aPIGGatewayDemo", GatewayArgs.builder()
  *             .name("APIGGatewayDemo")
  *             .type("standard")
  *             .comments("APIGGatewayDemo comments")
  *             .vpcId("vpc-13f8k4dwdsydc3n6nu5rxxxxx")
- *             .subnetIds(
+ *             .subnetIds(            
  *                 "subnet-***",
  *                 "subnet-***")
  *             .resourceSpec(GatewayResourceSpecArgs.builder()
@@ -92,74 +92,74 @@ import javax.annotation.Nullable;
  *                 ))
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:apig/gateway:Gateway example &#34;gateway_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:apig/gateway:Gateway")
 public class Gateway extends com.pulumi.resources.CustomResource {
     /**
      * Backend service configuration information
-     *
+     * 
      */
     @Export(name="backendSpec", refs={GatewayBackendSpec.class}, tree="[0]")
     private Output<GatewayBackendSpec> backendSpec;
 
     /**
      * @return Backend service configuration information
-     *
+     * 
      */
     public Output<GatewayBackendSpec> backendSpec() {
         return this.backendSpec;
     }
     /**
      * Gateway remarks. Length limit: 0–253 characters.
-     *
+     * 
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
      * @return Gateway remarks. Length limit: 0–253 characters.
-     *
+     * 
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
      * Gateway creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Gateway creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Custom log configuration
-     *
+     * 
      */
     @Export(name="customLog", refs={GatewayCustomLog.class}, tree="[0]")
     private Output<GatewayCustomLog> customLog;
 
     /**
      * @return Custom log configuration
-     *
+     * 
      */
     public Output<GatewayCustomLog> customLog() {
         return this.customLog;
@@ -167,7 +167,7 @@ public class Gateway extends com.pulumi.resources.CustomResource {
     /**
      * Event
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="events", refs={List.class,GatewayEvent.class}, tree="[0,1]")
     private Output<List<GatewayEvent>> events;
@@ -175,203 +175,203 @@ public class Gateway extends com.pulumi.resources.CustomResource {
     /**
      * @return Event
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<GatewayEvent>> events() {
         return this.events;
     }
     /**
      * Gateway instance ID
-     *
+     * 
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
      * @return Gateway instance ID
-     *
+     * 
      */
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
     /**
      * Log configuration
-     *
+     * 
      */
     @Export(name="logSpec", refs={GatewayLogSpec.class}, tree="[0]")
     private Output<GatewayLogSpec> logSpec;
 
     /**
      * @return Log configuration
-     *
+     * 
      */
     public Output<GatewayLogSpec> logSpec() {
         return this.logSpec;
     }
     /**
      * Error message for gateway creation failure, deletion failure, or abnormal status
-     *
+     * 
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
      * @return Error message for gateway creation failure, deletion failure, or abnormal status
-     *
+     * 
      */
     public Output<String> message() {
         return this.message;
     }
     /**
      * Monitoring configuration information
-     *
+     * 
      */
     @Export(name="monitorSpec", refs={GatewayMonitorSpec.class}, tree="[0]")
     private Output<GatewayMonitorSpec> monitorSpec;
 
     /**
      * @return Monitoring configuration information
-     *
+     * 
      */
     public Output<GatewayMonitorSpec> monitorSpec() {
         return this.monitorSpec;
     }
     /**
      * Gateway name
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Gateway name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Network configuration information
-     *
+     * 
      */
     @Export(name="networkSpec", refs={GatewayNetworkSpec.class}, tree="[0]")
     private Output<GatewayNetworkSpec> networkSpec;
 
     /**
      * @return Network configuration information
-     *
+     * 
      */
     public Output<GatewayNetworkSpec> networkSpec() {
         return this.networkSpec;
     }
     /**
      * Project name
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Resource specification configuration information
-     *
+     * 
      */
     @Export(name="resourceSpec", refs={GatewayResourceSpec.class}, tree="[0]")
     private Output<GatewayResourceSpec> resourceSpec;
 
     /**
      * @return Resource specification configuration information
-     *
+     * 
      */
     public Output<GatewayResourceSpec> resourceSpec() {
         return this.resourceSpec;
     }
     /**
      * Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Subnet ID list. Length limit: 1–2
-     *
+     * 
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
      * @return Subnet ID list. Length limit: 1–2
-     *
+     * 
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
     /**
      * Link tracing configuration information.
-     *
+     * 
      */
     @Export(name="traceSpec", refs={GatewayTraceSpec.class}, tree="[0]")
     private Output<GatewayTraceSpec> traceSpec;
 
     /**
      * @return Link tracing configuration information.
-     *
+     * 
      */
     public Output<GatewayTraceSpec> traceSpec() {
         return this.traceSpec;
     }
     /**
      * Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Gateway version.
-     *
+     * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
      * @return Gateway version.
-     *
+     * 
      */
     public Output<String> version() {
         return this.version;
     }
     /**
      * VPC ID。
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID。
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;

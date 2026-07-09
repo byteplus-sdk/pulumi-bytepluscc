@@ -16,168 +16,168 @@ import javax.annotation.Nullable;
 public final class TransitRouterAttachment {
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     *
+     * 
      */
     private @Nullable Boolean autoPublishRouteEnabled;
     /**
      * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-     *
+     * 
      */
     private @Nullable String businessStatus;
     /**
      * @return Creation time of the network instance connection.
-     *
+     * 
      */
     private @Nullable String creationTime;
     /**
      * @return Deletion time of the network instance connection.
-     *
+     * 
      */
     private @Nullable String deletedTime;
     /**
      * @return Description of the network instance connection.
-     *
+     * 
      */
     private @Nullable String description;
     /**
      * @return Whether IPv6 is enabled. true: yes. false: no
-     *
+     * 
      */
     private @Nullable Boolean ipv6Enabled;
     /**
      * @return Shutdown time due to overdue payment for the network instance connection
-     *
+     * 
      */
     private @Nullable String overdueTime;
     /**
      * @return ID of the network instance
-     *
+     * 
      */
     private @Nullable String resourceId;
     /**
      * @return Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-     *
+     * 
      */
     private @Nullable String resourceType;
     /**
      * @return Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     *
+     * 
      */
     private @Nullable String status;
     /**
      * @return Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<TransitRouterAttachmentTag> tags;
     /**
      * @return Network instance connection ID.
-     *
+     * 
      */
     private @Nullable String transitRouterAttachmentId;
     /**
      * @return Name of the network instance connection
-     *
+     * 
      */
     private @Nullable String transitRouterAttachmentName;
     /**
      * @return ID of the forwarding policy associated with the cross-region connection
-     *
+     * 
      */
     private @Nullable String transitRouterForwardPolicyTableId;
     /**
      * @return Transit router instance ID.
-     *
+     * 
      */
     private @Nullable String transitRouterId;
     /**
      * @return Route table ID associated with the forwarding of the network instance connection.
-     *
+     * 
      */
     private @Nullable String transitRouterRouteTableId;
     /**
      * @return ID of the flow marking policy associated with the cross-region connection
-     *
+     * 
      */
     private @Nullable String transitRouterTrafficQosMarkingPolicyId;
     /**
      * @return ID of the flow queue policy associated with the cross-region connection
-     *
+     * 
      */
     private @Nullable String transitRouterTrafficQosQueuePolicyId;
     /**
      * @return Last operation time of the network instance connection
-     *
+     * 
      */
     private @Nullable String updateTime;
 
     private TransitRouterAttachment() {}
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     *
+     * 
      */
     public Optional<Boolean> autoPublishRouteEnabled() {
         return Optional.ofNullable(this.autoPublishRouteEnabled);
     }
     /**
      * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-     *
+     * 
      */
     public Optional<String> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
     }
     /**
      * @return Creation time of the network instance connection.
-     *
+     * 
      */
     public Optional<String> creationTime() {
         return Optional.ofNullable(this.creationTime);
     }
     /**
      * @return Deletion time of the network instance connection.
-     *
+     * 
      */
     public Optional<String> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
     }
     /**
      * @return Description of the network instance connection.
-     *
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Whether IPv6 is enabled. true: yes. false: no
-     *
+     * 
      */
     public Optional<Boolean> ipv6Enabled() {
         return Optional.ofNullable(this.ipv6Enabled);
     }
     /**
      * @return Shutdown time due to overdue payment for the network instance connection
-     *
+     * 
      */
     public Optional<String> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
     }
     /**
      * @return ID of the network instance
-     *
+     * 
      */
     public Optional<String> resourceId() {
         return Optional.ofNullable(this.resourceId);
     }
     /**
      * @return Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-     *
+     * 
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
     }
     /**
      * @return Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     *
+     * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
@@ -185,63 +185,63 @@ public final class TransitRouterAttachment {
     /**
      * @return Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<TransitRouterAttachmentTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Network instance connection ID.
-     *
+     * 
      */
     public Optional<String> transitRouterAttachmentId() {
         return Optional.ofNullable(this.transitRouterAttachmentId);
     }
     /**
      * @return Name of the network instance connection
-     *
+     * 
      */
     public Optional<String> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
     }
     /**
      * @return ID of the forwarding policy associated with the cross-region connection
-     *
+     * 
      */
     public Optional<String> transitRouterForwardPolicyTableId() {
         return Optional.ofNullable(this.transitRouterForwardPolicyTableId);
     }
     /**
      * @return Transit router instance ID.
-     *
+     * 
      */
     public Optional<String> transitRouterId() {
         return Optional.ofNullable(this.transitRouterId);
     }
     /**
      * @return Route table ID associated with the forwarding of the network instance connection.
-     *
+     * 
      */
     public Optional<String> transitRouterRouteTableId() {
         return Optional.ofNullable(this.transitRouterRouteTableId);
     }
     /**
      * @return ID of the flow marking policy associated with the cross-region connection
-     *
+     * 
      */
     public Optional<String> transitRouterTrafficQosMarkingPolicyId() {
         return Optional.ofNullable(this.transitRouterTrafficQosMarkingPolicyId);
     }
     /**
      * @return ID of the flow queue policy associated with the cross-region connection
-     *
+     * 
      */
     public Optional<String> transitRouterTrafficQosQueuePolicyId() {
         return Optional.ofNullable(this.transitRouterTrafficQosQueuePolicyId);
     }
     /**
      * @return Last operation time of the network instance connection
-     *
+     * 
      */
     public Optional<String> updateTime() {
         return Optional.ofNullable(this.updateTime);

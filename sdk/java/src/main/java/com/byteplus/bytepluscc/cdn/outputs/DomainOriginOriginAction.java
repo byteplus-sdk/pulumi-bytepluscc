@@ -14,7 +14,7 @@ public final class DomainOriginOriginAction {
     /**
      * @return Indicates a list of origin configurations. Each configuration can include one or more origins.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private List<DomainOriginOriginActionOriginLine> originLines;
 
@@ -22,7 +22,7 @@ public final class DomainOriginOriginAction {
     /**
      * @return Indicates a list of origin configurations. Each configuration can include one or more origins.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainOriginOriginActionOriginLine> originLines() {
         return this.originLines;

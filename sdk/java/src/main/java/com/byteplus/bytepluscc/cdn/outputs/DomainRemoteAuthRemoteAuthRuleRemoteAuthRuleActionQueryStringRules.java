@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules {
     /**
      * @return Indicates the strategy for setting authentication request parameters.
-     *
+     * 
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents queryStringComponents;
     /**
      * @return Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance> queryStringInstances;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRules() {}
     /**
      * @return Indicates the strategy for setting authentication request parameters.
-     *
+     * 
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponents> queryStringComponents() {
         return Optional.ofNullable(this.queryStringComponents);
@@ -36,7 +36,7 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
     /**
      * @return Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstance> queryStringInstances() {
         return this.queryStringInstances == null ? List.of() : this.queryStringInstances;

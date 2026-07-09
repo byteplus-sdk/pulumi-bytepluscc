@@ -21,14 +21,14 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Alarm notification group name. Refer to the resource naming rules.
-     *
+     * 
      */
     @Import(name="alarmNotifyGroupName", required=true)
     private Output<String> alarmNotifyGroupName;
 
     /**
      * @return Alarm notification group name. Refer to the resource naming rules.
-     *
+     * 
      */
     public Output<String> alarmNotifyGroupName() {
         return this.alarmNotifyGroupName;
@@ -36,14 +36,14 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-     *
+     * 
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
      * @return Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-     *
+     * 
      */
     public Optional<Output<String>> iamProjectName() {
         return Optional.ofNullable(this.iamProjectName);
@@ -52,7 +52,7 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="noticeRules")
     private @Nullable Output<List<AlarmNotifyGroupNoticeRuleArgs>> noticeRules;
@@ -60,7 +60,7 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmNotifyGroupNoticeRuleArgs>>> noticeRules() {
         return Optional.ofNullable(this.noticeRules);
@@ -68,14 +68,14 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-     *
+     * 
      */
     @Import(name="notifyTypes")
     private @Nullable Output<List<String>> notifyTypes;
 
     /**
      * @return Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-     *
+     * 
      */
     public Optional<Output<List<String>>> notifyTypes() {
         return Optional.ofNullable(this.notifyTypes);
@@ -84,7 +84,7 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * IAM user list to receive alarms. You can set 1–10 IAM users.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="receivers")
     private @Nullable Output<List<AlarmNotifyGroupReceiverArgs>> receivers;
@@ -92,7 +92,7 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return IAM user list to receive alarms. You can set 1–10 IAM users.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmNotifyGroupReceiverArgs>>> receivers() {
         return Optional.ofNullable(this.receivers);
@@ -128,9 +128,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param alarmNotifyGroupName Alarm notification group name. Refer to the resource naming rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroupName(Output<String> alarmNotifyGroupName) {
             $.alarmNotifyGroupName = alarmNotifyGroupName;
@@ -139,9 +139,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param alarmNotifyGroupName Alarm notification group name. Refer to the resource naming rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroupName(String alarmNotifyGroupName) {
             return alarmNotifyGroupName(Output.of(alarmNotifyGroupName));
@@ -149,9 +149,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param iamProjectName Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iamProjectName(@Nullable Output<String> iamProjectName) {
             $.iamProjectName = iamProjectName;
@@ -160,9 +160,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param iamProjectName Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder iamProjectName(String iamProjectName) {
             return iamProjectName(Output.of(iamProjectName));
@@ -171,9 +171,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param noticeRules Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder noticeRules(@Nullable Output<List<AlarmNotifyGroupNoticeRuleArgs>> noticeRules) {
             $.noticeRules = noticeRules;
@@ -183,9 +183,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param noticeRules Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder noticeRules(List<AlarmNotifyGroupNoticeRuleArgs> noticeRules) {
             return noticeRules(Output.of(noticeRules));
@@ -194,9 +194,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param noticeRules Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder noticeRules(AlarmNotifyGroupNoticeRuleArgs... noticeRules) {
             return noticeRules(List.of(noticeRules));
@@ -204,9 +204,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param notifyTypes Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder notifyTypes(@Nullable Output<List<String>> notifyTypes) {
             $.notifyTypes = notifyTypes;
@@ -215,9 +215,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param notifyTypes Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder notifyTypes(List<String> notifyTypes) {
             return notifyTypes(Output.of(notifyTypes));
@@ -225,9 +225,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param notifyTypes Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder notifyTypes(String... notifyTypes) {
             return notifyTypes(List.of(notifyTypes));
@@ -236,9 +236,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param receivers IAM user list to receive alarms. You can set 1–10 IAM users.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receivers(@Nullable Output<List<AlarmNotifyGroupReceiverArgs>> receivers) {
             $.receivers = receivers;
@@ -248,9 +248,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param receivers IAM user list to receive alarms. You can set 1–10 IAM users.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receivers(List<AlarmNotifyGroupReceiverArgs> receivers) {
             return receivers(Output.of(receivers));
@@ -259,9 +259,9 @@ public final class AlarmNotifyGroupArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param receivers IAM user list to receive alarms. You can set 1–10 IAM users.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receivers(AlarmNotifyGroupReceiverArgs... receivers) {
             return receivers(List.of(receivers));

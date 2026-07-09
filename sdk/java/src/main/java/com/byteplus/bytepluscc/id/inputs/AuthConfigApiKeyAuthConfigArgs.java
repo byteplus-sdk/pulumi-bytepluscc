@@ -20,14 +20,14 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
     /**
      * ApiKey Value
-     *
+     * 
      */
     @Import(name="apiKey")
     private @Nullable Output<String> apiKey;
 
     /**
      * @return ApiKey Value
-     *
+     * 
      */
     public Optional<Output<String>> apiKey() {
         return Optional.ofNullable(this.apiKey);
@@ -36,7 +36,7 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
     /**
      * ApiKey Metadata
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="apiKeyMetadatas")
     private @Nullable Output<List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs>> apiKeyMetadatas;
@@ -44,7 +44,7 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
     /**
      * @return ApiKey Metadata
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs>>> apiKeyMetadatas() {
         return Optional.ofNullable(this.apiKeyMetadatas);
@@ -52,14 +52,14 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
     /**
      * ApiKey Name
-     *
+     * 
      */
     @Import(name="apiKeyName")
     private @Nullable Output<String> apiKeyName;
 
     /**
      * @return ApiKey Name
-     *
+     * 
      */
     public Optional<Output<String>> apiKeyName() {
         return Optional.ofNullable(this.apiKeyName);
@@ -67,14 +67,14 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
     /**
      * Expiration Timestamp
-     *
+     * 
      */
     @Import(name="expiryTimestamp")
     private @Nullable Output<Integer> expiryTimestamp;
 
     /**
      * @return Expiration Timestamp
-     *
+     * 
      */
     public Optional<Output<Integer>> expiryTimestamp() {
         return Optional.ofNullable(this.expiryTimestamp);
@@ -109,9 +109,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param apiKey ApiKey Value
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKey(@Nullable Output<String> apiKey) {
             $.apiKey = apiKey;
@@ -120,9 +120,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param apiKey ApiKey Value
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKey(String apiKey) {
             return apiKey(Output.of(apiKey));
@@ -131,9 +131,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
         /**
          * @param apiKeyMetadatas ApiKey Metadata
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyMetadatas(@Nullable Output<List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs>> apiKeyMetadatas) {
             $.apiKeyMetadatas = apiKeyMetadatas;
@@ -143,9 +143,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
         /**
          * @param apiKeyMetadatas ApiKey Metadata
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyMetadatas(List<AuthConfigApiKeyAuthConfigApiKeyMetadataArgs> apiKeyMetadatas) {
             return apiKeyMetadatas(Output.of(apiKeyMetadatas));
@@ -154,9 +154,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
         /**
          * @param apiKeyMetadatas ApiKey Metadata
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyMetadatas(AuthConfigApiKeyAuthConfigApiKeyMetadataArgs... apiKeyMetadatas) {
             return apiKeyMetadatas(List.of(apiKeyMetadatas));
@@ -164,9 +164,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param apiKeyName ApiKey Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyName(@Nullable Output<String> apiKeyName) {
             $.apiKeyName = apiKeyName;
@@ -175,9 +175,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param apiKeyName ApiKey Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyName(String apiKeyName) {
             return apiKeyName(Output.of(apiKeyName));
@@ -185,9 +185,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param expiryTimestamp Expiration Timestamp
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiryTimestamp(@Nullable Output<Integer> expiryTimestamp) {
             $.expiryTimestamp = expiryTimestamp;
@@ -196,9 +196,9 @@ public final class AuthConfigApiKeyAuthConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param expiryTimestamp Expiration Timestamp
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiryTimestamp(Integer expiryTimestamp) {
             return expiryTimestamp(Output.of(expiryTimestamp));

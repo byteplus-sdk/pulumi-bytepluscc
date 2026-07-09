@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// The listener monitors user access requests received by the NLB instance based on the specified protocol and port. NLB forwards requests to healthy backend servers in the associated server group according to the scheduling algorithm configured for that group.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cLBNLBListenerDemo = new Bytepluscc.Clb.NlbListener("CLBNLBListenerDemo", new()
     ///     {
@@ -42,12 +42,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/nlbListener:NlbListener example "listener_id"
     /// ```

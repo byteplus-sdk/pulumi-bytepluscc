@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vPCTrafficMirrorFilterDemo = new TrafficMirrorFilter("vPCTrafficMirrorFilterDemo", TrafficMirrorFilterArgs.builder()
  *             .description("ccapi-terraform-test")
@@ -55,46 +55,46 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/trafficMirrorFilter:TrafficMirrorFilter example &#34;traffic_mirror_filter_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/trafficMirrorFilter:TrafficMirrorFilter")
 public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * Filter condition creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Filter condition creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Filter condition instance description
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Filter condition instance description
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -102,7 +102,7 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * Outbound filter rule details
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="egressFilterRules", refs={List.class,TrafficMirrorFilterEgressFilterRule.class}, tree="[0,1]")
     private Output<List<TrafficMirrorFilterEgressFilterRule>> egressFilterRules;
@@ -110,7 +110,7 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * @return Outbound filter rule details
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TrafficMirrorFilterEgressFilterRule>> egressFilterRules() {
         return this.egressFilterRules;
@@ -118,7 +118,7 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * Inbound filter rule details
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="ingressFilterRules", refs={List.class,TrafficMirrorFilterIngressFilterRule.class}, tree="[0,1]")
     private Output<List<TrafficMirrorFilterIngressFilterRule>> ingressFilterRules;
@@ -126,35 +126,35 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * @return Inbound filter rule details
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TrafficMirrorFilterIngressFilterRule>> ingressFilterRules() {
         return this.ingressFilterRules;
     }
     /**
      * Project name of the filter condition
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name of the filter condition
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Filter condition status
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Filter condition status
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -162,7 +162,7 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,TrafficMirrorFilterTag.class}, tree="[0,1]")
     private Output<List<TrafficMirrorFilterTag>> tags;
@@ -170,35 +170,35 @@ public class TrafficMirrorFilter extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TrafficMirrorFilterTag>> tags() {
         return this.tags;
     }
     /**
      * Filter condition instance ID
-     *
+     * 
      */
     @Export(name="trafficMirrorFilterId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterId;
 
     /**
      * @return Filter condition instance ID
-     *
+     * 
      */
     public Output<String> trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
      * Filter condition name
-     *
+     * 
      */
     @Export(name="trafficMirrorFilterName", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterName;
 
     /**
      * @return Filter condition name
-     *
+     * 
      */
     public Output<String> trafficMirrorFilterName() {
         return this.trafficMirrorFilterName;

@@ -19,7 +19,7 @@ public final class DomainOriginArgOriginArgActionArgs extends com.pulumi.resourc
     /**
      * Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="originArgComponents")
     private @Nullable Output<List<DomainOriginArgOriginArgActionOriginArgComponentArgs>> originArgComponents;
@@ -27,7 +27,7 @@ public final class DomainOriginArgOriginArgActionArgs extends com.pulumi.resourc
     /**
      * @return Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainOriginArgOriginArgActionOriginArgComponentArgs>>> originArgComponents() {
         return Optional.ofNullable(this.originArgComponents);
@@ -60,9 +60,9 @@ public final class DomainOriginArgOriginArgActionArgs extends com.pulumi.resourc
         /**
          * @param originArgComponents Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder originArgComponents(@Nullable Output<List<DomainOriginArgOriginArgActionOriginArgComponentArgs>> originArgComponents) {
             $.originArgComponents = originArgComponents;
@@ -72,9 +72,9 @@ public final class DomainOriginArgOriginArgActionArgs extends com.pulumi.resourc
         /**
          * @param originArgComponents Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder originArgComponents(List<DomainOriginArgOriginArgActionOriginArgComponentArgs> originArgComponents) {
             return originArgComponents(Output.of(originArgComponents));
@@ -83,9 +83,9 @@ public final class DomainOriginArgOriginArgActionArgs extends com.pulumi.resourc
         /**
          * @param originArgComponents Indicates a list of operations. These operations define how the CDN sets query parameters in origin requests. Currently, only one operation can be included in the list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder originArgComponents(DomainOriginArgOriginArgActionOriginArgComponentArgs... originArgComponents) {
             return originArgComponents(List.of(originArgComponents));

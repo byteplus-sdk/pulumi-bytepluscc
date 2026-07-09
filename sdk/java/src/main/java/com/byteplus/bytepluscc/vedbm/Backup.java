@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Database veDB Backup Management
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,12 +36,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vedbmbackupDemo = new Backup("vedbmbackupDemo", BackupArgs.builder()
  *             .instanceId("vedbm-i34lvm3j***")
@@ -51,214 +51,214 @@ import javax.annotation.Nullable;
  *             .fullBackupPeriod("Sunday")
  *             .backupRetentionPeriod(11)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vedbm/backup:Backup example &#34;instance_id|backup_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vedbm/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
-     *
+     * 
      */
     @Export(name="backupEndTime", refs={String.class}, tree="[0]")
     private Output<String> backupEndTime;
 
     /**
      * @return Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
-     *
+     * 
      */
     public Output<String> backupEndTime() {
         return this.backupEndTime;
     }
     /**
      * Backup file size, unit: KiB
-     *
+     * 
      */
     @Export(name="backupFileSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFileSize;
 
     /**
      * @return Backup file size, unit: KiB
-     *
+     * 
      */
     public Output<Integer> backupFileSize() {
         return this.backupFileSize;
     }
     /**
      * Backup ID
-     *
+     * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
      * @return Backup ID
-     *
+     * 
      */
     public Output<String> backupId() {
         return this.backupId;
     }
     /**
      * Backup method, currently only physical backup is supported
-     *
+     * 
      */
     @Export(name="backupMethod", refs={String.class}, tree="[0]")
     private Output<String> backupMethod;
 
     /**
      * @return Backup method, currently only physical backup is supported
-     *
+     * 
      */
     public Output<String> backupMethod() {
         return this.backupMethod;
     }
     /**
      * Data backup retention days
-     *
+     * 
      */
     @Export(name="backupRetentionPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupRetentionPeriod;
 
     /**
      * @return Data backup retention days
-     *
+     * 
      */
     public Output<Integer> backupRetentionPeriod() {
         return this.backupRetentionPeriod;
     }
     /**
      * Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
-     *
+     * 
      */
     @Export(name="backupStartTime", refs={String.class}, tree="[0]")
     private Output<String> backupStartTime;
 
     /**
      * @return Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
-     *
+     * 
      */
     public Output<String> backupStartTime() {
         return this.backupStartTime;
     }
     /**
      * Backup status
-     *
+     * 
      */
     @Export(name="backupStatus", refs={String.class}, tree="[0]")
     private Output<String> backupStatus;
 
     /**
      * @return Backup status
-     *
+     * 
      */
     public Output<String> backupStatus() {
         return this.backupStatus;
     }
     /**
      * Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
-     *
+     * 
      */
     @Export(name="backupTime", refs={String.class}, tree="[0]")
     private Output<String> backupTime;
 
     /**
      * @return Backup task execution time, interval window is two hours. Format: HH:mmZ-HH:mmZ (UTC time)
-     *
+     * 
      */
     public Output<String> backupTime() {
         return this.backupTime;
     }
     /**
      * Backup type, currently only full backup is supported
-     *
+     * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
      * @return Backup type, currently only full backup is supported
-     *
+     * 
      */
     public Output<String> backupType() {
         return this.backupType;
     }
     /**
      * Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
-     *
+     * 
      */
     @Export(name="consistentTime", refs={String.class}, tree="[0]")
     private Output<String> consistentTime;
 
     /**
      * @return Consistency backup timestamp, format: yyyy-MM-ddTHH:mm:ssZ (UTC time)
-     *
+     * 
      */
     public Output<String> consistentTime() {
         return this.consistentTime;
     }
     /**
      * Enable continuous backup, value is always true
-     *
+     * 
      */
     @Export(name="continueBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> continueBackup;
 
     /**
      * @return Enable continuous backup, value is always true
-     *
+     * 
      */
     public Output<Boolean> continueBackup() {
         return this.continueBackup;
     }
     /**
      * Creation type
-     *
+     * 
      */
     @Export(name="createType", refs={String.class}, tree="[0]")
     private Output<String> createType;
 
     /**
      * @return Creation type
-     *
+     * 
      */
     public Output<String> createType() {
         return this.createType;
     }
     /**
      * Full backup cycle, use commas (,) to separate multiple values
-     *
+     * 
      */
     @Export(name="fullBackupPeriod", refs={String.class}, tree="[0]")
     private Output<String> fullBackupPeriod;
 
     /**
      * @return Full backup cycle, use commas (,) to separate multiple values
-     *
+     * 
      */
     public Output<String> fullBackupPeriod() {
         return this.fullBackupPeriod;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
     /// The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rdsPostgresqlDbEndpointDemo = new Bytepluscc.Rdspostgresql.DbEndpoint("RdsPostgresqlDbEndpointDemo", new()
     ///     {
@@ -35,12 +35,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     ///             Eip_id = "eip-0xxxxx8c45",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint example "instance_id|endpoint_id"
     /// ```

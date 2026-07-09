@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// The endpoint is a network proxy service provided by Cloud Database MySQL Edition, located between the database and application. Based on endpoint functionality, endpoints are classified as proxy endpoints and direct endpoints. Connections via proxy endpoints pass through the proxy and support features such as read/write splitting, load balancing, idle connection recycling, and Multi-Statements. Connections via direct endpoints connect directly to the corresponding node and do not support proxy-related features.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rdsMysqlEndpointDemo = new Bytepluscc.Rdsmysql.Endpoint("RdsMysqlEndpointDemo", new()
     ///     {
@@ -66,12 +66,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///         ReadWriteMode = "ReadWrite",
     ///         ReadWriteSpliting = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/endpoint:Endpoint example "instance_id|endpoint_id"
     /// ```

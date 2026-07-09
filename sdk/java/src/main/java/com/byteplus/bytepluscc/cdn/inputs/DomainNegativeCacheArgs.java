@@ -18,14 +18,14 @@ public final class DomainNegativeCacheArgs extends com.pulumi.resources.Resource
 
     /**
      * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainNegativeCacheConditionArgs> condition;
 
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public Optional<Output<DomainNegativeCacheConditionArgs>> condition() {
         return Optional.ofNullable(this.condition);
@@ -33,14 +33,14 @@ public final class DomainNegativeCacheArgs extends com.pulumi.resources.Resource
 
     /**
      * Represents a list. Each element in the list is a status code cache rule.
-     *
+     * 
      */
     @Import(name="negativeCacheRule")
     private @Nullable Output<DomainNegativeCacheNegativeCacheRuleArgs> negativeCacheRule;
 
     /**
      * @return Represents a list. Each element in the list is a status code cache rule.
-     *
+     * 
      */
     public Optional<Output<DomainNegativeCacheNegativeCacheRuleArgs>> negativeCacheRule() {
         return Optional.ofNullable(this.negativeCacheRule);
@@ -73,9 +73,9 @@ public final class DomainNegativeCacheArgs extends com.pulumi.resources.Resource
 
         /**
          * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(@Nullable Output<DomainNegativeCacheConditionArgs> condition) {
             $.condition = condition;
@@ -84,9 +84,9 @@ public final class DomainNegativeCacheArgs extends com.pulumi.resources.Resource
 
         /**
          * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(DomainNegativeCacheConditionArgs condition) {
             return condition(Output.of(condition));
@@ -94,9 +94,9 @@ public final class DomainNegativeCacheArgs extends com.pulumi.resources.Resource
 
         /**
          * @param negativeCacheRule Represents a list. Each element in the list is a status code cache rule.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder negativeCacheRule(@Nullable Output<DomainNegativeCacheNegativeCacheRuleArgs> negativeCacheRule) {
             $.negativeCacheRule = negativeCacheRule;
@@ -105,9 +105,9 @@ public final class DomainNegativeCacheArgs extends com.pulumi.resources.Resource
 
         /**
          * @param negativeCacheRule Represents a list. Each element in the list is a status code cache rule.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder negativeCacheRule(DomainNegativeCacheNegativeCacheRuleArgs negativeCacheRule) {
             return negativeCacheRule(Output.of(negativeCacheRule));

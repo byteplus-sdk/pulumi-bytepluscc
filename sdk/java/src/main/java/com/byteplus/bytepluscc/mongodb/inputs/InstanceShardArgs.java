@@ -20,7 +20,7 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of node information in each Shard.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nodes")
     private @Nullable Output<List<InstanceShardNodeArgs>> nodes;
@@ -28,7 +28,7 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of node information in each Shard.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceShardNodeArgs>>> nodes() {
         return Optional.ofNullable(this.nodes);
@@ -36,14 +36,14 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Shard node ID.
-     *
+     * 
      */
     @Import(name="shardId")
     private @Nullable Output<String> shardId;
 
     /**
      * @return Shard node ID.
-     *
+     * 
      */
     public Optional<Output<String>> shardId() {
         return Optional.ofNullable(this.shardId);
@@ -77,9 +77,9 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes List of node information in each Shard.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(@Nullable Output<List<InstanceShardNodeArgs>> nodes) {
             $.nodes = nodes;
@@ -89,9 +89,9 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes List of node information in each Shard.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(List<InstanceShardNodeArgs> nodes) {
             return nodes(Output.of(nodes));
@@ -100,9 +100,9 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes List of node information in each Shard.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(InstanceShardNodeArgs... nodes) {
             return nodes(List.of(nodes));
@@ -110,9 +110,9 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardId Shard node ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardId(@Nullable Output<String> shardId) {
             $.shardId = shardId;
@@ -121,9 +121,9 @@ public final class InstanceShardArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardId Shard node ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardId(String shardId) {
             return shardId(Output.of(shardId));

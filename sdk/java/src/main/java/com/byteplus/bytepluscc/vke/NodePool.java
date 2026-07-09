@@ -23,14 +23,14 @@ import javax.annotation.Nullable;
 
 /**
  * A node pool is a group of nodes in a cluster with the same configuration. A node pool can contain one or more nodes. The node pool configuration includes node attributes such as node specifications, availability zones, labels, taints, and more. These attributes can be specified when creating the node pool or edited after creation.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -52,12 +52,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vKENodePoolDemo = new NodePool("vKENodePoolDemo", NodePoolArgs.builder()
  *             .autoScaling(NodePoolAutoScalingArgs.builder()
@@ -177,172 +177,172 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vke/nodePool:NodePool example &#34;cluster_id|node_pool_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vke/nodePool:NodePool")
 public class NodePool extends com.pulumi.resources.CustomResource {
     /**
      * Node pool scaling policy configuration.
-     *
+     * 
      */
     @Export(name="autoScaling", refs={NodePoolAutoScaling.class}, tree="[0]")
     private Output<NodePoolAutoScaling> autoScaling;
 
     /**
      * @return Node pool scaling policy configuration.
-     *
+     * 
      */
     public Output<NodePoolAutoScaling> autoScaling() {
         return this.autoScaling;
     }
     /**
      * ID of the cluster where the node pool is located
-     *
+     * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return ID of the cluster where the node pool is located
-     *
+     * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Node pool creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Node pool creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Kubernetes-related configuration for the node pool
-     *
+     * 
      */
     @Export(name="kubernetesConfig", refs={NodePoolKubernetesConfig.class}, tree="[0]")
     private Output<NodePoolKubernetesConfig> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node pool
-     *
+     * 
      */
     public Output<NodePoolKubernetesConfig> kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
      * Managed node pool configuration
-     *
+     * 
      */
     @Export(name="management", refs={NodePoolManagement.class}, tree="[0]")
     private Output<NodePoolManagement> management;
 
     /**
      * @return Managed node pool configuration
-     *
+     * 
      */
     public Output<NodePoolManagement> management() {
         return this.management;
     }
     /**
      * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Cloud server (ECS) instance configuration in the node pool
-     *
+     * 
      */
     @Export(name="nodeConfig", refs={NodePoolNodeConfig.class}, tree="[0]")
     private Output<NodePoolNodeConfig> nodeConfig;
 
     /**
      * @return Cloud server (ECS) instance configuration in the node pool
-     *
+     * 
      */
     public Output<NodePoolNodeConfig> nodeConfig() {
         return this.nodeConfig;
     }
     /**
      * Node pool ID
-     *
+     * 
      */
     @Export(name="nodePoolId", refs={String.class}, tree="[0]")
     private Output<String> nodePoolId;
 
     /**
      * @return Node pool ID
-     *
+     * 
      */
     public Output<String> nodePoolId() {
         return this.nodePoolId;
     }
     /**
      * Node statistics in the node pool.
-     *
+     * 
      */
     @Export(name="nodeStatistics", refs={NodePoolNodeStatistics.class}, tree="[0]")
     private Output<NodePoolNodeStatistics> nodeStatistics;
 
     /**
      * @return Node statistics in the node pool.
-     *
+     * 
      */
     public Output<NodePoolNodeStatistics> nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
      * When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-     *
+     * 
      */
     @Export(name="retainResources", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> retainResources;
 
     /**
      * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-     *
+     * 
      */
     public Output<List<String>> retainResources() {
         return this.retainResources;
     }
     /**
      * Node pool status
-     *
+     * 
      */
     @Export(name="status", refs={NodePoolStatus.class}, tree="[0]")
     private Output<NodePoolStatus> status;
 
     /**
      * @return Node pool status
-     *
+     * 
      */
     public Output<NodePoolStatus> status() {
         return this.status;
@@ -350,7 +350,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
     /**
      * Node pool tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,NodePoolTag.class}, tree="[0,1]")
     private Output<List<NodePoolTag>> tags;
@@ -358,21 +358,21 @@ public class NodePool extends com.pulumi.resources.CustomResource {
     /**
      * @return Node pool tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<NodePoolTag>> tags() {
         return this.tags;
     }
     /**
      * Node pool update time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Node pool update time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

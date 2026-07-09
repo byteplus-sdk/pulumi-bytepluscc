@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
     /// ALB supports uploading server certificates and CA certificates to the console and manages uploaded certificates separately
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var aLBCertificateDemo = new Bytepluscc.Alb.Certificate("ALBCertificateDemo", new()
     ///     {
@@ -39,12 +39,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:alb/certificate:Certificate example "certificate_id|certificate_type"
     /// ```

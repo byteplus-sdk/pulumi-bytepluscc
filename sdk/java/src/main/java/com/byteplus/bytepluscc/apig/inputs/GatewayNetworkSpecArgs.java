@@ -20,7 +20,7 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
     /**
      * Subnet configuration information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="subnets")
     private @Nullable Output<List<GatewayNetworkSpecSubnetArgs>> subnets;
@@ -28,7 +28,7 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
     /**
      * @return Subnet configuration information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GatewayNetworkSpecSubnetArgs>>> subnets() {
         return Optional.ofNullable(this.subnets);
@@ -36,14 +36,14 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
     /**
      * VPC ID。
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID。
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -51,14 +51,14 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
     /**
      * VPC name
-     *
+     * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
      * @return VPC name
-     *
+     * 
      */
     public Optional<Output<String>> vpcName() {
         return Optional.ofNullable(this.vpcName);
@@ -93,9 +93,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
         /**
          * @param subnets Subnet configuration information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnets(@Nullable Output<List<GatewayNetworkSpecSubnetArgs>> subnets) {
             $.subnets = subnets;
@@ -105,9 +105,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
         /**
          * @param subnets Subnet configuration information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnets(List<GatewayNetworkSpecSubnetArgs> subnets) {
             return subnets(Output.of(subnets));
@@ -116,9 +116,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
         /**
          * @param subnets Subnet configuration information list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnets(GatewayNetworkSpecSubnetArgs... subnets) {
             return subnets(List.of(subnets));
@@ -126,9 +126,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param vpcId VPC ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -137,9 +137,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param vpcId VPC ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -147,9 +147,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param vpcName VPC name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(@Nullable Output<String> vpcName) {
             $.vpcName = vpcName;
@@ -158,9 +158,9 @@ public final class GatewayNetworkSpecArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param vpcName VPC name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(String vpcName) {
             return vpcName(Output.of(vpcName));

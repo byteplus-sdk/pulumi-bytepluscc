@@ -23,14 +23,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
-     *
+     * 
      */
     @Import(name="autoAcceptEnabled")
     private @Nullable Output<Boolean> autoAcceptEnabled;
 
     /**
      * @return Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoAcceptEnabled() {
         return Optional.ofNullable(this.autoAcceptEnabled);
@@ -38,14 +38,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
-     *
+     * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
-     *
+     * 
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -53,14 +53,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
-     *
+     * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
-     *
+     * 
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -68,14 +68,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Creation time of the endpoint service.
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time of the endpoint service.
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -83,14 +83,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Description of the endpoint service.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the endpoint service.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -98,14 +98,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
-     *
+     * 
      */
     @Import(name="enableVerifyPrivateDns")
     private @Nullable Output<Boolean> enableVerifyPrivateDns;
 
     /**
      * @return Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableVerifyPrivateDns() {
         return Optional.ofNullable(this.enableVerifyPrivateDns);
@@ -113,14 +113,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-     *
+     * 
      */
     @Import(name="ipAddressVersions")
     private @Nullable Output<List<String>> ipAddressVersions;
 
     /**
      * @return IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-     *
+     * 
      */
     public Optional<Output<List<String>>> ipAddressVersions() {
         return Optional.ofNullable(this.ipAddressVersions);
@@ -128,14 +128,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-     *
+     * 
      */
     @Import(name="payer")
     private @Nullable Output<String> payer;
 
     /**
      * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-     *
+     * 
      */
     public Optional<Output<String>> payer() {
         return Optional.ofNullable(this.payer);
@@ -143,14 +143,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Details of authorized allowlist accounts.
-     *
+     * 
      */
     @Import(name="permitAccountIds")
     private @Nullable Output<List<String>> permitAccountIds;
 
     /**
      * @return Details of authorized allowlist accounts.
-     *
+     * 
      */
     public Optional<Output<List<String>>> permitAccountIds() {
         return Optional.ofNullable(this.permitAccountIds);
@@ -158,14 +158,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
-     *
+     * 
      */
     @Import(name="privateDnsEnabled")
     private @Nullable Output<Boolean> privateDnsEnabled;
 
     /**
      * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> privateDnsEnabled() {
         return Optional.ofNullable(this.privateDnsEnabled);
@@ -173,14 +173,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
-     *
+     * 
      */
     @Import(name="privateDnsName")
     private @Nullable Output<String> privateDnsName;
 
     /**
      * @return Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
-     *
+     * 
      */
     public Optional<Output<String>> privateDnsName() {
         return Optional.ofNullable(this.privateDnsName);
@@ -188,14 +188,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
-     *
+     * 
      */
     @Import(name="privateDnsNameConfiguration")
     private @Nullable Output<EndpointServicePrivateDnsNameConfigurationArgs> privateDnsNameConfiguration;
 
     /**
      * @return Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
-     *
+     * 
      */
     public Optional<Output<EndpointServicePrivateDnsNameConfigurationArgs>> privateDnsNameConfiguration() {
         return Optional.ofNullable(this.privateDnsNameConfiguration);
@@ -203,14 +203,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
-     *
+     * 
      */
     @Import(name="privateDnsType")
     private @Nullable Output<String> privateDnsType;
 
     /**
      * @return Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
-     *
+     * 
      */
     public Optional<Output<String>> privateDnsType() {
         return Optional.ofNullable(this.privateDnsType);
@@ -218,14 +218,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Project name to which the endpoint service belongs.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the endpoint service belongs.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -234,7 +234,7 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
     /**
      * Resources provided by the endpoint service.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="resources")
     private @Nullable Output<List<EndpointServiceResourceArgs>> resources;
@@ -242,7 +242,7 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
     /**
      * @return Resources provided by the endpoint service.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EndpointServiceResourceArgs>>> resources() {
         return Optional.ofNullable(this.resources);
@@ -250,14 +250,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Service domain name of the endpoint service.
-     *
+     * 
      */
     @Import(name="serviceDomain")
     private @Nullable Output<String> serviceDomain;
 
     /**
      * @return Service domain name of the endpoint service.
-     *
+     * 
      */
     public Optional<Output<String>> serviceDomain() {
         return Optional.ofNullable(this.serviceDomain);
@@ -265,14 +265,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Endpoint service ID.
-     *
+     * 
      */
     @Import(name="serviceId")
     private @Nullable Output<String> serviceId;
 
     /**
      * @return Endpoint service ID.
-     *
+     * 
      */
     public Optional<Output<String>> serviceId() {
         return Optional.ofNullable(this.serviceId);
@@ -280,14 +280,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the endpoint service.
-     *
+     * 
      */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
     /**
      * @return Name of the endpoint service.
-     *
+     * 
      */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
@@ -295,14 +295,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-     *
+     * 
      */
     @Import(name="serviceNameManaged")
     private @Nullable Output<String> serviceNameManaged;
 
     /**
      * @return Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-     *
+     * 
      */
     public Optional<Output<String>> serviceNameManaged() {
         return Optional.ofNullable(this.serviceNameManaged);
@@ -310,14 +310,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
-     *
+     * 
      */
     @Import(name="serviceNameSuffix")
     private @Nullable Output<String> serviceNameSuffix;
 
     /**
      * @return Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
-     *
+     * 
      */
     public Optional<Output<String>> serviceNameSuffix() {
         return Optional.ofNullable(this.serviceNameSuffix);
@@ -325,14 +325,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Current service principal.
-     *
+     * 
      */
     @Import(name="serviceOwner")
     private @Nullable Output<String> serviceOwner;
 
     /**
      * @return Current service principal.
-     *
+     * 
      */
     public Optional<Output<String>> serviceOwner() {
         return Optional.ofNullable(this.serviceOwner);
@@ -340,14 +340,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
-     *
+     * 
      */
     @Import(name="serviceResourceType")
     private @Nullable Output<String> serviceResourceType;
 
     /**
      * @return Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
-     *
+     * 
      */
     public Optional<Output<String>> serviceResourceType() {
         return Optional.ofNullable(this.serviceResourceType);
@@ -355,14 +355,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Type of the endpoint service. Interface: Interface endpoint service.
-     *
+     * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
      * @return Type of the endpoint service. Interface: Interface endpoint service.
-     *
+     * 
      */
     public Optional<Output<String>> serviceType() {
         return Optional.ofNullable(this.serviceType);
@@ -370,14 +370,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -386,7 +386,7 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
     /**
      * Tag information of the endpoint service.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<EndpointServiceTagArgs>> tags;
@@ -394,7 +394,7 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
     /**
      * @return Tag information of the endpoint service.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EndpointServiceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -402,14 +402,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Most recent operation time of the endpoint service.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the endpoint service.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -417,14 +417,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
-     *
+     * 
      */
     @Import(name="wildcardDomainEnabled")
     private @Nullable Output<Boolean> wildcardDomainEnabled;
 
     /**
      * @return Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> wildcardDomainEnabled() {
         return Optional.ofNullable(this.wildcardDomainEnabled);
@@ -432,14 +432,14 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
     /**
      * Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-     *
+     * 
      */
     @Import(name="zoneIds")
     private @Nullable Output<List<String>> zoneIds;
 
     /**
      * @return Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-     *
+     * 
      */
     public Optional<Output<List<String>>> zoneIds() {
         return Optional.ofNullable(this.zoneIds);
@@ -498,9 +498,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAcceptEnabled Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAcceptEnabled(@Nullable Output<Boolean> autoAcceptEnabled) {
             $.autoAcceptEnabled = autoAcceptEnabled;
@@ -509,9 +509,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAcceptEnabled Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAcceptEnabled(Boolean autoAcceptEnabled) {
             return autoAcceptEnabled(Output.of(autoAcceptEnabled));
@@ -519,9 +519,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param billingType Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -530,9 +530,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param billingType Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -540,9 +540,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param businessStatus Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -551,9 +551,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param businessStatus Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -561,9 +561,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param createTime Creation time of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -572,9 +572,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param createTime Creation time of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -582,9 +582,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -593,9 +593,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -603,9 +603,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableVerifyPrivateDns Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableVerifyPrivateDns(@Nullable Output<Boolean> enableVerifyPrivateDns) {
             $.enableVerifyPrivateDns = enableVerifyPrivateDns;
@@ -614,9 +614,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableVerifyPrivateDns Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableVerifyPrivateDns(Boolean enableVerifyPrivateDns) {
             return enableVerifyPrivateDns(Output.of(enableVerifyPrivateDns));
@@ -624,9 +624,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param ipAddressVersions IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressVersions(@Nullable Output<List<String>> ipAddressVersions) {
             $.ipAddressVersions = ipAddressVersions;
@@ -635,9 +635,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param ipAddressVersions IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressVersions(List<String> ipAddressVersions) {
             return ipAddressVersions(Output.of(ipAddressVersions));
@@ -645,9 +645,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param ipAddressVersions IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressVersions(String... ipAddressVersions) {
             return ipAddressVersions(List.of(ipAddressVersions));
@@ -655,9 +655,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param payer Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder payer(@Nullable Output<String> payer) {
             $.payer = payer;
@@ -666,9 +666,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param payer Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder payer(String payer) {
             return payer(Output.of(payer));
@@ -676,9 +676,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param permitAccountIds Details of authorized allowlist accounts.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permitAccountIds(@Nullable Output<List<String>> permitAccountIds) {
             $.permitAccountIds = permitAccountIds;
@@ -687,9 +687,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param permitAccountIds Details of authorized allowlist accounts.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permitAccountIds(List<String> permitAccountIds) {
             return permitAccountIds(Output.of(permitAccountIds));
@@ -697,9 +697,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param permitAccountIds Details of authorized allowlist accounts.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permitAccountIds(String... permitAccountIds) {
             return permitAccountIds(List.of(permitAccountIds));
@@ -707,9 +707,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsEnabled Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsEnabled(@Nullable Output<Boolean> privateDnsEnabled) {
             $.privateDnsEnabled = privateDnsEnabled;
@@ -718,9 +718,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsEnabled Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsEnabled(Boolean privateDnsEnabled) {
             return privateDnsEnabled(Output.of(privateDnsEnabled));
@@ -728,9 +728,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsName Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsName(@Nullable Output<String> privateDnsName) {
             $.privateDnsName = privateDnsName;
@@ -739,9 +739,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsName Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsName(String privateDnsName) {
             return privateDnsName(Output.of(privateDnsName));
@@ -749,9 +749,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsNameConfiguration Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsNameConfiguration(@Nullable Output<EndpointServicePrivateDnsNameConfigurationArgs> privateDnsNameConfiguration) {
             $.privateDnsNameConfiguration = privateDnsNameConfiguration;
@@ -760,9 +760,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsNameConfiguration Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsNameConfiguration(EndpointServicePrivateDnsNameConfigurationArgs privateDnsNameConfiguration) {
             return privateDnsNameConfiguration(Output.of(privateDnsNameConfiguration));
@@ -770,9 +770,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsType Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsType(@Nullable Output<String> privateDnsType) {
             $.privateDnsType = privateDnsType;
@@ -781,9 +781,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param privateDnsType Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateDnsType(String privateDnsType) {
             return privateDnsType(Output.of(privateDnsType));
@@ -791,9 +791,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Project name to which the endpoint service belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -802,9 +802,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Project name to which the endpoint service belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -813,9 +813,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         /**
          * @param resources Resources provided by the endpoint service.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resources(@Nullable Output<List<EndpointServiceResourceArgs>> resources) {
             $.resources = resources;
@@ -825,9 +825,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         /**
          * @param resources Resources provided by the endpoint service.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resources(List<EndpointServiceResourceArgs> resources) {
             return resources(Output.of(resources));
@@ -836,9 +836,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         /**
          * @param resources Resources provided by the endpoint service.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resources(EndpointServiceResourceArgs... resources) {
             return resources(List.of(resources));
@@ -846,9 +846,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceDomain Service domain name of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceDomain(@Nullable Output<String> serviceDomain) {
             $.serviceDomain = serviceDomain;
@@ -857,9 +857,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceDomain Service domain name of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceDomain(String serviceDomain) {
             return serviceDomain(Output.of(serviceDomain));
@@ -867,9 +867,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceId Endpoint service ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceId(@Nullable Output<String> serviceId) {
             $.serviceId = serviceId;
@@ -878,9 +878,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceId Endpoint service ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceId(String serviceId) {
             return serviceId(Output.of(serviceId));
@@ -888,9 +888,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceName Name of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceName(@Nullable Output<String> serviceName) {
             $.serviceName = serviceName;
@@ -899,9 +899,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceName Name of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
@@ -909,9 +909,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceNameManaged Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceNameManaged(@Nullable Output<String> serviceNameManaged) {
             $.serviceNameManaged = serviceNameManaged;
@@ -920,9 +920,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceNameManaged Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceNameManaged(String serviceNameManaged) {
             return serviceNameManaged(Output.of(serviceNameManaged));
@@ -930,9 +930,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceNameSuffix Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceNameSuffix(@Nullable Output<String> serviceNameSuffix) {
             $.serviceNameSuffix = serviceNameSuffix;
@@ -941,9 +941,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceNameSuffix Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceNameSuffix(String serviceNameSuffix) {
             return serviceNameSuffix(Output.of(serviceNameSuffix));
@@ -951,9 +951,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceOwner Current service principal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceOwner(@Nullable Output<String> serviceOwner) {
             $.serviceOwner = serviceOwner;
@@ -962,9 +962,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceOwner Current service principal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceOwner(String serviceOwner) {
             return serviceOwner(Output.of(serviceOwner));
@@ -972,9 +972,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceResourceType Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceResourceType(@Nullable Output<String> serviceResourceType) {
             $.serviceResourceType = serviceResourceType;
@@ -983,9 +983,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceResourceType Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceResourceType(String serviceResourceType) {
             return serviceResourceType(Output.of(serviceResourceType));
@@ -993,9 +993,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceType Type of the endpoint service. Interface: Interface endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceType(@Nullable Output<String> serviceType) {
             $.serviceType = serviceType;
@@ -1004,9 +1004,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceType Type of the endpoint service. Interface: Interface endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceType(String serviceType) {
             return serviceType(Output.of(serviceType));
@@ -1014,9 +1014,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -1025,9 +1025,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -1036,9 +1036,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         /**
          * @param tags Tag information of the endpoint service.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<EndpointServiceTagArgs>> tags) {
             $.tags = tags;
@@ -1048,9 +1048,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         /**
          * @param tags Tag information of the endpoint service.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<EndpointServiceTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1059,9 +1059,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
         /**
          * @param tags Tag information of the endpoint service.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(EndpointServiceTagArgs... tags) {
             return tags(List.of(tags));
@@ -1069,9 +1069,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param updateTime Most recent operation time of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -1080,9 +1080,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param updateTime Most recent operation time of the endpoint service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -1090,9 +1090,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param wildcardDomainEnabled Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wildcardDomainEnabled(@Nullable Output<Boolean> wildcardDomainEnabled) {
             $.wildcardDomainEnabled = wildcardDomainEnabled;
@@ -1101,9 +1101,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param wildcardDomainEnabled Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wildcardDomainEnabled(Boolean wildcardDomainEnabled) {
             return wildcardDomainEnabled(Output.of(wildcardDomainEnabled));
@@ -1111,9 +1111,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param zoneIds Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneIds(@Nullable Output<List<String>> zoneIds) {
             $.zoneIds = zoneIds;
@@ -1122,9 +1122,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param zoneIds Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneIds(List<String> zoneIds) {
             return zoneIds(Output.of(zoneIds));
@@ -1132,9 +1132,9 @@ public final class EndpointServiceState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param zoneIds Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneIds(String... zoneIds) {
             return zoneIds(List.of(zoneIds));

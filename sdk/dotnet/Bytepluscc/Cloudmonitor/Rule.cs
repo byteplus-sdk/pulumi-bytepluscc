@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 {
     /// <summary>
     /// If you need to monitor the data status of a cloud product resource, you can create a cloud monitoring alert policy. When the monitored resource data meets the alert trigger conditions, the system will send alert notifications using your specified method, helping you quickly identify resources with abnormal data.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cloudMonitorRuleDemo = new Bytepluscc.Cloudmonitor.Rule("CloudMonitorRuleDemo", new()
     ///     {
@@ -111,12 +111,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
     ///         EffectStartAt = "00:00",
     ///         EffectEndAt = "23:59",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cloudmonitor/rule:Rule example "rule_id"
     /// ```

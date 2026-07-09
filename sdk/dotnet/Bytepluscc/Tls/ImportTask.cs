@@ -12,23 +12,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// Log Service supports data import, allowing you to structure data stored in sources such as TOS and Kafka and save it in Log Service
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSImportTaskDemo = new Bytepluscc.Tls.ImportTask("TLSImportTaskDemo", new()
     ///     {
     ///         Description = "ccapi-test-kafka",
     ///         ImportSourceInfo = new Bytepluscc.Tls.Inputs.ImportTaskImportSourceInfoArgs
     ///         {
-    ///             Kafka_source_info =
+    ///             Kafka_source_info = 
     ///             {
     ///                 { "host", "kafka-cnngsl83xxxxx.kafka.cn-beijing.ivolces.com:9092" },
     ///                 { "group", "group1" },
@@ -51,14 +51,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             Region = "cn-beijing",
     ///             Log_type = "json_log",
     ///             Log_sample = "",
-    ///             Extract_rule =
+    ///             Extract_rule = 
     ///             {
-    ///                 { "extractRule",
+    ///                 { "extractRule", 
     ///                 {
     ///                     { "beginRegex", "" },
     ///                     { "delimiter", "" },
     ///                     { "logRegex", "" },
-    ///                     { "logTemplate",
+    ///                     { "logTemplate", 
     ///                     {
     ///                         { "format", "" },
     ///                         { "type", "" },
@@ -71,7 +71,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                     { "unMatchUpLoadSwitch", true },
     ///                     { "filterKeyRegex", new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "key", "user_id" },
     ///                             { "regex", "^[0-9]+$" },
@@ -86,12 +86,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         TaskName = "ccapi-test-kafka-1001",
     ///         TopicId = "b75fffd8-1986-460c-9cca-xxxxxxx",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/importTask:ImportTask example "task_id"
     /// ```

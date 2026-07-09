@@ -22,14 +22,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup description.
-     *
+     * 
      */
     @Import(name="backupDescription")
     private @Nullable Output<String> backupDescription;
 
     /**
      * @return Backup description.
-     *
+     * 
      */
     public Optional<Output<String>> backupDescription() {
         return Optional.ofNullable(this.backupDescription);
@@ -38,7 +38,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Backup metadata, used to specify the database list for logical backups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="backupMetas")
     private @Nullable Output<List<BackupBackupMetaArgs>> backupMetas;
@@ -46,7 +46,7 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Backup metadata, used to specify the database list for logical backups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<BackupBackupMetaArgs>>> backupMetas() {
         return Optional.ofNullable(this.backupMetas);
@@ -54,14 +54,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup method: Physical for physical backup, Logical for logical backup.
-     *
+     * 
      */
     @Import(name="backupMethod")
     private @Nullable Output<String> backupMethod;
 
     /**
      * @return Backup method: Physical for physical backup, Logical for logical backup.
-     *
+     * 
      */
     public Optional<Output<String>> backupMethod() {
         return Optional.ofNullable(this.backupMethod);
@@ -69,14 +69,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup policy configuration information.
-     *
+     * 
      */
     @Import(name="backupPolicy")
     private @Nullable Output<BackupBackupPolicyArgs> backupPolicy;
 
     /**
      * @return Backup policy configuration information.
-     *
+     * 
      */
     public Optional<Output<BackupBackupPolicyArgs>> backupPolicy() {
         return Optional.ofNullable(this.backupPolicy);
@@ -84,14 +84,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup scope: Instance for instance-level backup, Database for database-level backup.
-     *
+     * 
      */
     @Import(name="backupScope")
     private @Nullable Output<String> backupScope;
 
     /**
      * @return Backup scope: Instance for instance-level backup, Database for database-level backup.
-     *
+     * 
      */
     public Optional<Output<String>> backupScope() {
         return Optional.ofNullable(this.backupScope);
@@ -99,14 +99,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup type: Full for full backup, Increment for incremental backup.
-     *
+     * 
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
      * @return Backup type: Full for full backup, Increment for incremental backup.
-     *
+     * 
      */
     public Optional<Output<String>> backupType() {
         return Optional.ofNullable(this.backupType);
@@ -114,14 +114,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Download logical backup file after creation. Only valid for logical backups.
-     *
+     * 
      */
     @Import(name="downloadBackup")
     private @Nullable Output<Boolean> downloadBackup;
 
     /**
      * @return Download logical backup file after creation. Only valid for logical backups.
-     *
+     * 
      */
     public Optional<Output<Boolean>> downloadBackup() {
         return Optional.ofNullable(this.downloadBackup);
@@ -129,14 +129,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * RDS PostgreSQL instance ID.
-     *
+     * 
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return RDS PostgreSQL instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
@@ -175,9 +175,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupDescription Backup description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupDescription(@Nullable Output<String> backupDescription) {
             $.backupDescription = backupDescription;
@@ -186,9 +186,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupDescription Backup description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupDescription(String backupDescription) {
             return backupDescription(Output.of(backupDescription));
@@ -197,9 +197,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backupMetas Backup metadata, used to specify the database list for logical backups.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMetas(@Nullable Output<List<BackupBackupMetaArgs>> backupMetas) {
             $.backupMetas = backupMetas;
@@ -209,9 +209,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backupMetas Backup metadata, used to specify the database list for logical backups.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMetas(List<BackupBackupMetaArgs> backupMetas) {
             return backupMetas(Output.of(backupMetas));
@@ -220,9 +220,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backupMetas Backup metadata, used to specify the database list for logical backups.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMetas(BackupBackupMetaArgs... backupMetas) {
             return backupMetas(List.of(backupMetas));
@@ -230,9 +230,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupMethod Backup method: Physical for physical backup, Logical for logical backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMethod(@Nullable Output<String> backupMethod) {
             $.backupMethod = backupMethod;
@@ -241,9 +241,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupMethod Backup method: Physical for physical backup, Logical for logical backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMethod(String backupMethod) {
             return backupMethod(Output.of(backupMethod));
@@ -251,9 +251,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupPolicy Backup policy configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupPolicy(@Nullable Output<BackupBackupPolicyArgs> backupPolicy) {
             $.backupPolicy = backupPolicy;
@@ -262,9 +262,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupPolicy Backup policy configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupPolicy(BackupBackupPolicyArgs backupPolicy) {
             return backupPolicy(Output.of(backupPolicy));
@@ -272,9 +272,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupScope Backup scope: Instance for instance-level backup, Database for database-level backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupScope(@Nullable Output<String> backupScope) {
             $.backupScope = backupScope;
@@ -283,9 +283,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupScope Backup scope: Instance for instance-level backup, Database for database-level backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupScope(String backupScope) {
             return backupScope(Output.of(backupScope));
@@ -293,9 +293,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup type: Full for full backup, Increment for incremental backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupType(@Nullable Output<String> backupType) {
             $.backupType = backupType;
@@ -304,9 +304,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup type: Full for full backup, Increment for incremental backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupType(String backupType) {
             return backupType(Output.of(backupType));
@@ -314,9 +314,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadBackup Download logical backup file after creation. Only valid for logical backups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadBackup(@Nullable Output<Boolean> downloadBackup) {
             $.downloadBackup = downloadBackup;
@@ -325,9 +325,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadBackup Download logical backup file after creation. Only valid for logical backups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadBackup(Boolean downloadBackup) {
             return downloadBackup(Output.of(downloadBackup));
@@ -335,9 +335,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId RDS PostgreSQL instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -346,9 +346,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId RDS PostgreSQL instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));

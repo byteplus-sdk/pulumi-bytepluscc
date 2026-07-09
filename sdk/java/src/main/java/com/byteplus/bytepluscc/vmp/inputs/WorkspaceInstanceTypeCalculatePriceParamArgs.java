@@ -20,7 +20,7 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
     /**
      * Billing item list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="calChargeItemLists")
     private @Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs>> calChargeItemLists;
@@ -28,7 +28,7 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
     /**
      * @return Billing item list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs>>> calChargeItemLists() {
         return Optional.ofNullable(this.calChargeItemLists);
@@ -36,14 +36,14 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
     /**
      * Configuration item code.
-     *
+     * 
      */
     @Import(name="configurationCode")
     private @Nullable Output<String> configurationCode;
 
     /**
      * @return Configuration item code.
-     *
+     * 
      */
     public Optional<Output<String>> configurationCode() {
         return Optional.ofNullable(this.configurationCode);
@@ -51,14 +51,14 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
     /**
      * Billing cycle.
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<String> period;
 
     /**
      * @return Billing cycle.
-     *
+     * 
      */
     public Optional<Output<String>> period() {
         return Optional.ofNullable(this.period);
@@ -93,9 +93,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
         /**
          * @param calChargeItemLists Billing item list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder calChargeItemLists(@Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs>> calChargeItemLists) {
             $.calChargeItemLists = calChargeItemLists;
@@ -105,9 +105,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
         /**
          * @param calChargeItemLists Billing item list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder calChargeItemLists(List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs> calChargeItemLists) {
             return calChargeItemLists(Output.of(calChargeItemLists));
@@ -116,9 +116,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
         /**
          * @param calChargeItemLists Billing item list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder calChargeItemLists(WorkspaceInstanceTypeCalculatePriceParamCalChargeItemListArgs... calChargeItemLists) {
             return calChargeItemLists(List.of(calChargeItemLists));
@@ -126,9 +126,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
         /**
          * @param configurationCode Configuration item code.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configurationCode(@Nullable Output<String> configurationCode) {
             $.configurationCode = configurationCode;
@@ -137,9 +137,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
         /**
          * @param configurationCode Configuration item code.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configurationCode(String configurationCode) {
             return configurationCode(Output.of(configurationCode));
@@ -147,9 +147,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
         /**
          * @param period Billing cycle.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<String> period) {
             $.period = period;
@@ -158,9 +158,9 @@ public final class WorkspaceInstanceTypeCalculatePriceParamArgs extends com.pulu
 
         /**
          * @param period Billing cycle.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(String period) {
             return period(Output.of(period));

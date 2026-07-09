@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Filtering conditions are composed of filtering rules, divided into inbound filtering rules and outbound filtering rules.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vPCTrafficMirrorFilterRuleDemo = new TrafficMirrorFilterRule("vPCTrafficMirrorFilterRuleDemo", TrafficMirrorFilterRuleArgs.builder()
  *             .description("test")
@@ -54,186 +54,186 @@ import javax.annotation.Nullable;
  *             .trafficDirection("ingress")
  *             .trafficMirrorFilterId("tmf-3nqp5bt6a3dog931exxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/trafficMirrorFilterRule:TrafficMirrorFilterRule example &#34;traffic_mirror_filter_id|traffic_mirror_filter_rule_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/trafficMirrorFilterRule:TrafficMirrorFilterRule")
 public class TrafficMirrorFilterRule extends com.pulumi.resources.CustomResource {
     /**
      * Description of the filtering rule.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the filtering rule.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Destination network segment.
-     *
+     * 
      */
     @Export(name="destinationCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> destinationCidrBlock;
 
     /**
      * @return Destination network segment.
-     *
+     * 
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
      * Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
-     *
+     * 
      */
     @Export(name="destinationPortRange", refs={String.class}, tree="[0]")
     private Output<String> destinationPortRange;
 
     /**
      * @return Destination port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
-     *
+     * 
      */
     public Output<String> destinationPortRange() {
         return this.destinationPortRange;
     }
     /**
      * Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
-     *
+     * 
      */
     @Export(name="policy", refs={String.class}, tree="[0]")
     private Output<String> policy;
 
     /**
      * @return Traffic capture policy. accept: allow. When traffic from the mirror source matches this rule, the traffic is copied to the mirror target for monitoring and analysis. reject: reject. When traffic from the mirror source matches this rule, the traffic is not copied and monitoring and analysis are not performed.
-     *
+     * 
      */
     public Output<String> policy() {
         return this.policy;
     }
     /**
      * Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
-     *
+     * 
      */
     @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
      * @return Priority of the filtering rule, ranging from 1 to 1000. The smaller the value, the higher the priority. Default is 1, which is the highest priority. For the same filtering condition and direction, the priority must be unique.
-     *
+     * 
      */
     public Output<Integer> priority() {
         return this.priority;
     }
     /**
      * Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Traffic protocol. Valid values: all: includes TCP, UDP, and ICMP protocols. tcp: TCP protocol. udp: UDP protocol. icmp: ICMP protocol.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * Source network segment.
-     *
+     * 
      */
     @Export(name="sourceCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> sourceCidrBlock;
 
     /**
      * @return Source network segment.
-     *
+     * 
      */
     public Output<String> sourceCidrBlock() {
         return this.sourceCidrBlock;
     }
     /**
      * Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
-     *
+     * 
      */
     @Export(name="sourcePortRange", refs={String.class}, tree="[0]")
     private Output<String> sourcePortRange;
 
     /**
      * @return Source port range for traffic. When Protocol is all or icmp, this parameter is not required. The default value is -1/-1, which means no port restriction. When Protocol is tcp or udp, this parameter is required. Valid range is 1–65535. Use a forward slash (/) to separate the start and end ports, such as 1/50, 80/80.
-     *
+     * 
      */
     public Output<String> sourcePortRange() {
         return this.sourcePortRange;
     }
     /**
      * Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the filtering rule. Available: available. Deleting: deleting. Creating: creating. Pending: modifying.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
-     *
+     * 
      */
     @Export(name="trafficDirection", refs={String.class}, tree="[0]")
     private Output<String> trafficDirection;
 
     /**
      * @return Traffic direction. Valid values: ingress: inbound rule. egress: outbound rule.
-     *
+     * 
      */
     public Output<String> trafficDirection() {
         return this.trafficDirection;
     }
     /**
      * Filtering condition ID.
-     *
+     * 
      */
     @Export(name="trafficMirrorFilterId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterId;
 
     /**
      * @return Filtering condition ID.
-     *
+     * 
      */
     public Output<String> trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
      * Filtering rule ID.
-     *
+     * 
      */
     @Export(name="trafficMirrorFilterRuleId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterRuleId;
 
     /**
      * @return Filtering rule ID.
-     *
+     * 
      */
     public Output<String> trafficMirrorFilterRuleId() {
         return this.trafficMirrorFilterRuleId;

@@ -21,14 +21,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Instance launch template creation time
-     *
+     * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Instance launch template creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -36,14 +36,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Instance launch template default version number
-     *
+     * 
      */
     @Import(name="defaultVersionNumber")
     private @Nullable Output<Integer> defaultVersionNumber;
 
     /**
      * @return Instance launch template default version number
-     *
+     * 
      */
     public Optional<Output<Integer>> defaultVersionNumber() {
         return Optional.ofNullable(this.defaultVersionNumber);
@@ -51,14 +51,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Latest version number of the instance launch template.
-     *
+     * 
      */
     @Import(name="latestVersionNumber")
     private @Nullable Output<Integer> latestVersionNumber;
 
     /**
      * @return Latest version number of the instance launch template.
-     *
+     * 
      */
     public Optional<Output<Integer>> latestVersionNumber() {
         return Optional.ofNullable(this.latestVersionNumber);
@@ -66,14 +66,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Instance launch template ID
-     *
+     * 
      */
     @Import(name="launchTemplateId")
     private @Nullable Output<String> launchTemplateId;
 
     /**
      * @return Instance launch template ID
-     *
+     * 
      */
     public Optional<Output<String>> launchTemplateId() {
         return Optional.ofNullable(this.launchTemplateId);
@@ -81,14 +81,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Instance launch template name.
-     *
+     * 
      */
     @Import(name="launchTemplateName")
     private @Nullable Output<String> launchTemplateName;
 
     /**
      * @return Instance launch template name.
-     *
+     * 
      */
     public Optional<Output<String>> launchTemplateName() {
         return Optional.ofNullable(this.launchTemplateName);
@@ -96,14 +96,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Project associated with the instance launch template.
-     *
+     * 
      */
     @Import(name="launchTemplateProjectName")
     private @Nullable Output<String> launchTemplateProjectName;
 
     /**
      * @return Project associated with the instance launch template.
-     *
+     * 
      */
     public Optional<Output<String>> launchTemplateProjectName() {
         return Optional.ofNullable(this.launchTemplateProjectName);
@@ -112,7 +112,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     /**
      * Instance launch template tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="launchTemplateTags")
     private @Nullable Output<List<LaunchTemplateLaunchTemplateTagArgs>> launchTemplateTags;
@@ -120,7 +120,7 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
     /**
      * @return Instance launch template tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<LaunchTemplateLaunchTemplateTagArgs>>> launchTemplateTags() {
         return Optional.ofNullable(this.launchTemplateTags);
@@ -128,14 +128,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Instance launch template version information
-     *
+     * 
      */
     @Import(name="launchTemplateVersion")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionArgs> launchTemplateVersion;
 
     /**
      * @return Instance launch template version information
-     *
+     * 
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionArgs>> launchTemplateVersion() {
         return Optional.ofNullable(this.launchTemplateVersion);
@@ -143,14 +143,14 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Instance launch template update time
-     *
+     * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Instance launch template update time
-     *
+     * 
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -190,9 +190,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param createdAt Instance launch template creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -201,9 +201,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param createdAt Instance launch template creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -211,9 +211,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param defaultVersionNumber Instance launch template default version number
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder defaultVersionNumber(@Nullable Output<Integer> defaultVersionNumber) {
             $.defaultVersionNumber = defaultVersionNumber;
@@ -222,9 +222,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param defaultVersionNumber Instance launch template default version number
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder defaultVersionNumber(Integer defaultVersionNumber) {
             return defaultVersionNumber(Output.of(defaultVersionNumber));
@@ -232,9 +232,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param latestVersionNumber Latest version number of the instance launch template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder latestVersionNumber(@Nullable Output<Integer> latestVersionNumber) {
             $.latestVersionNumber = latestVersionNumber;
@@ -243,9 +243,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param latestVersionNumber Latest version number of the instance launch template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder latestVersionNumber(Integer latestVersionNumber) {
             return latestVersionNumber(Output.of(latestVersionNumber));
@@ -253,9 +253,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateId Instance launch template ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateId(@Nullable Output<String> launchTemplateId) {
             $.launchTemplateId = launchTemplateId;
@@ -264,9 +264,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateId Instance launch template ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateId(String launchTemplateId) {
             return launchTemplateId(Output.of(launchTemplateId));
@@ -274,9 +274,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateName Instance launch template name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateName(@Nullable Output<String> launchTemplateName) {
             $.launchTemplateName = launchTemplateName;
@@ -285,9 +285,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateName Instance launch template name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateName(String launchTemplateName) {
             return launchTemplateName(Output.of(launchTemplateName));
@@ -295,9 +295,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateProjectName Project associated with the instance launch template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateProjectName(@Nullable Output<String> launchTemplateProjectName) {
             $.launchTemplateProjectName = launchTemplateProjectName;
@@ -306,9 +306,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateProjectName Project associated with the instance launch template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateProjectName(String launchTemplateProjectName) {
             return launchTemplateProjectName(Output.of(launchTemplateProjectName));
@@ -317,9 +317,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         /**
          * @param launchTemplateTags Instance launch template tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateTags(@Nullable Output<List<LaunchTemplateLaunchTemplateTagArgs>> launchTemplateTags) {
             $.launchTemplateTags = launchTemplateTags;
@@ -329,9 +329,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         /**
          * @param launchTemplateTags Instance launch template tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateTags(List<LaunchTemplateLaunchTemplateTagArgs> launchTemplateTags) {
             return launchTemplateTags(Output.of(launchTemplateTags));
@@ -340,9 +340,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
         /**
          * @param launchTemplateTags Instance launch template tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateTags(LaunchTemplateLaunchTemplateTagArgs... launchTemplateTags) {
             return launchTemplateTags(List.of(launchTemplateTags));
@@ -350,9 +350,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateVersion Instance launch template version information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateVersion(@Nullable Output<LaunchTemplateLaunchTemplateVersionArgs> launchTemplateVersion) {
             $.launchTemplateVersion = launchTemplateVersion;
@@ -361,9 +361,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param launchTemplateVersion Instance launch template version information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder launchTemplateVersion(LaunchTemplateLaunchTemplateVersionArgs launchTemplateVersion) {
             return launchTemplateVersion(Output.of(launchTemplateVersion));
@@ -371,9 +371,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param updatedAt Instance launch template update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -382,9 +382,9 @@ public final class LaunchTemplateState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param updatedAt Instance launch template update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));

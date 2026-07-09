@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * After you create a Cloud Identity Center user, you need to grant the user login access permissions to each account. When access permissions to Volcano Engine cloud resources share common characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission operation and maintenance costs
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,19 +38,19 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cloudIdentityPermissionSetDemo = new PermissionSet("cloudIdentityPermissionSetDemo", PermissionSetArgs.builder()
  *             .description("cc-test")
  *             .name("cctest-test")
  *             .relayState("https://console.xxxxx.com/xxxxx")
  *             .sessionDuration(3600)
- *             .permissionPolicies(
+ *             .permissionPolicies(            
  *                 PermissionSetPermissionPolicyArgs.builder()
  *                     .permission_policy_name("AdministratorAccess")
  *                     .permission_policy_type("System")
@@ -80,60 +80,60 @@ import javax.annotation.Nullable;
  * }                    """)
  *                     .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cloudidentity/permissionSet:PermissionSet example &#34;permission_set_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cloudidentity/permissionSet:PermissionSet")
 public class PermissionSet extends com.pulumi.resources.CustomResource {
     /**
      * Creation Time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation Time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Permission Set Description
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Permission Set Description
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Permission Set Name
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Permission Set Name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
@@ -141,7 +141,7 @@ public class PermissionSet extends com.pulumi.resources.CustomResource {
     /**
      * Policy List Under Permission Set
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="permissionPolicies", refs={List.class,PermissionSetPermissionPolicy.class}, tree="[0,1]")
     private Output<List<PermissionSetPermissionPolicy>> permissionPolicies;
@@ -149,77 +149,77 @@ public class PermissionSet extends com.pulumi.resources.CustomResource {
     /**
      * @return Policy List Under Permission Set
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PermissionSetPermissionPolicy>> permissionPolicies() {
         return this.permissionPolicies;
     }
     /**
      * Permission Set ID
-     *
+     * 
      */
     @Export(name="permissionSetId", refs={String.class}, tree="[0]")
     private Output<String> permissionSetId;
 
     /**
      * @return Permission Set ID
-     *
+     * 
      */
     public Output<String> permissionSetId() {
         return this.permissionSetId;
     }
     /**
      * Console Redirect URL
-     *
+     * 
      */
     @Export(name="relayState", refs={String.class}, tree="[0]")
     private Output<String> relayState;
 
     /**
      * @return Console Redirect URL
-     *
+     * 
      */
     public Output<String> relayState() {
         return this.relayState;
     }
     /**
      * Session Expiration Time (seconds)
-     *
+     * 
      */
     @Export(name="sessionDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> sessionDuration;
 
     /**
      * @return Session Expiration Time (seconds)
-     *
+     * 
      */
     public Output<Integer> sessionDuration() {
         return this.sessionDuration;
     }
     /**
      * Status Notification Configuration
-     *
+     * 
      */
     @Export(name="statusNotifications", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> statusNotifications;
 
     /**
      * @return Status Notification Configuration
-     *
+     * 
      */
     public Output<List<String>> statusNotifications() {
         return this.statusNotifications;
     }
     /**
      * Update Time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update Time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

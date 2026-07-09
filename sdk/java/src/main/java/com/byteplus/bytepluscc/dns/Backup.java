@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Backup Information
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,84 +35,84 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var dNSBackupDemo = new Backup("dNSBackupDemo", BackupArgs.builder()
  *             .zid("21xxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:dns/backup:Backup example &#34;zid|backup_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:dns/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup ID.
-     *
+     * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
      * @return Backup ID.
-     *
+     * 
      */
     public Output<String> backupId() {
         return this.backupId;
     }
     /**
      * Backup creation time. Time zone is UTC+8.
-     *
+     * 
      */
     @Export(name="backupTime", refs={String.class}, tree="[0]")
     private Output<String> backupTime;
 
     /**
      * @return Backup creation time. Time zone is UTC+8.
-     *
+     * 
      */
     public Output<String> backupTime() {
         return this.backupTime;
     }
     /**
      * Number of DNS records in the backup.
-     *
+     * 
      */
     @Export(name="recordCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> recordCount;
 
     /**
      * @return Number of DNS records in the backup.
-     *
+     * 
      */
     public Output<Integer> recordCount() {
         return this.recordCount;
     }
     /**
      * The domain ID for which you need to manually create a backup. You can call the ListZones API to obtain the domain ID.
-     *
+     * 
      */
     @Export(name="zid", refs={String.class}, tree="[0]")
     private Output<String> zid;
 
     /**
      * @return The domain ID for which you need to manually create a backup. You can call the ListZones API to obtain the domain ID.
-     *
+     * 
      */
     public Output<String> zid() {
         return this.zid;

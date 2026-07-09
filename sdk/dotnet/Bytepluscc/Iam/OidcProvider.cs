@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
     /// OIDC identity provider is a user authentication service provider responsible for collecting and storing user identity data such as usernames and passwords. In access control (IAM), it is an entity containing external identity provider metadata and provides identity management services.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var iAMOidcProviderDemo = new Bytepluscc.Iam.OidcProvider("IAMOidcProviderDemo", new()
     ///     {
@@ -39,12 +39,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     ///         IssuanceLimitTime = 10,
     ///         IssuerUrl = "https://oidc-vke-cn-xxx.tos-cn-boe.volces.com/test",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:iam/oidcProvider:OidcProvider example "oidc_provider_name"
     /// ```

@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * Destination address translation. When the transit IP and port are accessed, the private NAT gateway replaces the destination address and port in the request with the private IP and port of the cloud server, then forwards the request.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,12 +34,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var natGatewayDnatentryDemo = new Dnatentry("natGatewayDnatentryDemo", DnatentryArgs.builder()
  *             .dnatEntryName("NatGatewayDnatentryDemo")
@@ -51,158 +51,158 @@ import javax.annotation.Nullable;
  *             .natGatewayId("ngw-2pc28yhdpbx8g227qo1sxxxxx")
  *             .portType("specified")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:natgateway/dnatentry:Dnatentry example &#34;dnat_entry_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:natgateway/dnatentry:Dnatentry")
 public class Dnatentry extends com.pulumi.resources.CustomResource {
     /**
      * ID of the DNAT rule.
-     *
+     * 
      */
     @Export(name="dnatEntryId", refs={String.class}, tree="[0]")
     private Output<String> dnatEntryId;
 
     /**
      * @return ID of the DNAT rule.
-     *
+     * 
      */
     public Output<String> dnatEntryId() {
         return this.dnatEntryId;
     }
     /**
      * Name of the DNAT rule.
-     *
+     * 
      */
     @Export(name="dnatEntryName", refs={String.class}, tree="[0]")
     private Output<String> dnatEntryName;
 
     /**
      * @return Name of the DNAT rule.
-     *
+     * 
      */
     public Output<String> dnatEntryName() {
         return this.dnatEntryName;
     }
     /**
      * IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
-     *
+     * 
      */
     @Export(name="externalIp", refs={String.class}, tree="[0]")
     private Output<String> externalIp;
 
     /**
      * @return IP address used by the NAT gateway for network address translation. If the NAT gateway is a public NAT gateway, enter its bound public IP address. If the NAT gateway is a private NAT gateway, enter its transit IP address.
-     *
+     * 
      */
     public Output<String> externalIp() {
         return this.externalIp;
     }
     /**
      * Port or port range that receives requests from the public network.
-     *
+     * 
      */
     @Export(name="externalPort", refs={String.class}, tree="[0]")
     private Output<String> externalPort;
 
     /**
      * @return Port or port range that receives requests from the public network.
-     *
+     * 
      */
     public Output<String> externalPort() {
         return this.externalPort;
     }
     /**
      * Private IP address of the cloud server instance.
-     *
+     * 
      */
     @Export(name="internalIp", refs={String.class}, tree="[0]")
     private Output<String> internalIp;
 
     /**
      * @return Private IP address of the cloud server instance.
-     *
+     * 
      */
     public Output<String> internalIp() {
         return this.internalIp;
     }
     /**
      * Port or port range of the private IP address of the cloud server instance.
-     *
+     * 
      */
     @Export(name="internalPort", refs={String.class}, tree="[0]")
     private Output<String> internalPort;
 
     /**
      * @return Port or port range of the private IP address of the cloud server instance.
-     *
+     * 
      */
     public Output<String> internalPort() {
         return this.internalPort;
     }
     /**
      * ID of the NAT gateway to which the DNAT rule belongs.
-     *
+     * 
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
      * @return ID of the NAT gateway to which the DNAT rule belongs.
-     *
+     * 
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
      * Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
-     *
+     * 
      */
     @Export(name="portType", refs={String.class}, tree="[0]")
     private Output<String> portType;
 
     /**
      * @return Port type of the DNAT rule. specified: Specified port. any: Any port, i.e., IP mapping.
-     *
+     * 
      */
     public Output<String> portType() {
         return this.portType;
     }
     /**
      * Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Protocol type. tcp: Forwards TCP protocol packets. udp: Forwards UDP protocol packets.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the DNAT rule. Creating: Creating. Deleting: Deleting. Available: Available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;

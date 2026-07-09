@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
 {
     /// <summary>
     /// RabbitMQ Message Queue is a distributed, high-availability message queue product that supports the AMQP (Advanced Message Queuing Protocol) protocol. It is fully compatible with the RabbitMQ open-source ecosystem and multi-language clients, provides rich messaging features and flexible message routing, and offers the advantages of distributed architecture, high throughput, low latency, and flexible scalability as a cloud messaging service. No user deployment or maintenance is required, enabling easy and rapid cloud adoption.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rabbitMQInstanceDemo = new Bytepluscc.Rabbitmq.Instance("RabbitMQInstanceDemo", new()
     ///     {
@@ -50,12 +50,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     ///         },
     ///         ProjectName = "default",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rabbitmq/instance:Instance example "instance_id"
     /// ```

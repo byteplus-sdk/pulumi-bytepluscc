@@ -22,14 +22,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * User&#39;s unique identifier.
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return User&#39;s unique identifier.
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -37,14 +37,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Policy description information.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Policy description information.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -52,14 +52,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
-     *
+     * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
      * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
-     *
+     * 
      */
     public Optional<Output<String>> destination() {
         return Optional.ofNullable(this.destination);
@@ -67,14 +67,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Domain address book name list.
-     *
+     * 
      */
     @Import(name="destinationGroupLists")
     private @Nullable Output<List<String>> destinationGroupLists;
 
     /**
      * @return Domain address book name list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destinationGroupLists() {
         return Optional.ofNullable(this.destinationGroupLists);
@@ -82,14 +82,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Type of access target. domain: domain; group: domain address book.
-     *
+     * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
      * @return Type of access target. domain: domain; group: domain address book.
-     *
+     * 
      */
     public Optional<Output<String>> destinationType() {
         return Optional.ofNullable(this.destinationType);
@@ -98,7 +98,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     /**
      * Domain list in the domain address book.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="domainListV1s")
     private @Nullable Output<List<DnsControlPolicyDomainListV1Args>> domainListV1s;
@@ -106,7 +106,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     /**
      * @return Domain list in the domain address book.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DnsControlPolicyDomainListV1Args>>> domainListV1s() {
         return Optional.ofNullable(this.domainListV1s);
@@ -114,14 +114,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Domain list.
-     *
+     * 
      */
     @Import(name="domainLists")
     private @Nullable Output<List<String>> domainLists;
 
     /**
      * @return Domain list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> domainLists() {
         return Optional.ofNullable(this.domainLists);
@@ -129,14 +129,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Hit count, indicating the number of times the domain denylist access control policy was triggered.
-     *
+     * 
      */
     @Import(name="hitCnt")
     private @Nullable Output<Integer> hitCnt;
 
     /**
      * @return Hit count, indicating the number of times the domain denylist access control policy was triggered.
-     *
+     * 
      */
     public Optional<Output<Integer>> hitCnt() {
         return Optional.ofNullable(this.hitCnt);
@@ -144,14 +144,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Internet border firewall instance ID.
-     *
+     * 
      */
     @Import(name="internetFirewallId")
     private @Nullable Output<String> internetFirewallId;
 
     /**
      * @return Internet border firewall instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> internetFirewallId() {
         return Optional.ofNullable(this.internetFirewallId);
@@ -159,14 +159,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
-     *
+     * 
      */
     @Import(name="lastHitTime")
     private @Nullable Output<Integer> lastHitTime;
 
     /**
      * @return Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
-     *
+     * 
      */
     public Optional<Output<Integer>> lastHitTime() {
         return Optional.ofNullable(this.lastHitTime);
@@ -174,14 +174,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Unique identifier of the access control policy.
-     *
+     * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Unique identifier of the access control policy.
-     *
+     * 
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -190,7 +190,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     /**
      * Access source information, including VPC list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="sources")
     private @Nullable Output<List<DnsControlPolicySourceArgs>> sources;
@@ -198,7 +198,7 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
     /**
      * @return Access source information, including VPC list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DnsControlPolicySourceArgs>>> sources() {
         return Optional.ofNullable(this.sources);
@@ -206,14 +206,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Switch status of the domain denylist access control policy. false: Off; true: On.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<Boolean> status;
 
     /**
      * @return Switch status of the domain denylist access control policy. false: Off; true: On.
-     *
+     * 
      */
     public Optional<Output<Boolean>> status() {
         return Optional.ofNullable(this.status);
@@ -221,14 +221,14 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
     /**
      * Number of policies occupied by this domain denylist access control policy.
-     *
+     * 
      */
     @Import(name="useCount")
     private @Nullable Output<Integer> useCount;
 
     /**
      * @return Number of policies occupied by this domain denylist access control policy.
-     *
+     * 
      */
     public Optional<Output<Integer>> useCount() {
         return Optional.ofNullable(this.useCount);
@@ -273,9 +273,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param accountId User&#39;s unique identifier.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -284,9 +284,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param accountId User&#39;s unique identifier.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -294,9 +294,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Policy description information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -305,9 +305,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Policy description information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -315,9 +315,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destination Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destination(@Nullable Output<String> destination) {
             $.destination = destination;
@@ -326,9 +326,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destination Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destination(String destination) {
             return destination(Output.of(destination));
@@ -336,9 +336,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationGroupLists Domain address book name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupLists(@Nullable Output<List<String>> destinationGroupLists) {
             $.destinationGroupLists = destinationGroupLists;
@@ -347,9 +347,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationGroupLists Domain address book name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupLists(List<String> destinationGroupLists) {
             return destinationGroupLists(Output.of(destinationGroupLists));
@@ -357,9 +357,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationGroupLists Domain address book name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupLists(String... destinationGroupLists) {
             return destinationGroupLists(List.of(destinationGroupLists));
@@ -367,9 +367,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationType Type of access target. domain: domain; group: domain address book.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationType(@Nullable Output<String> destinationType) {
             $.destinationType = destinationType;
@@ -378,9 +378,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationType Type of access target. domain: domain; group: domain address book.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationType(String destinationType) {
             return destinationType(Output.of(destinationType));
@@ -389,9 +389,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         /**
          * @param domainListV1s Domain list in the domain address book.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainListV1s(@Nullable Output<List<DnsControlPolicyDomainListV1Args>> domainListV1s) {
             $.domainListV1s = domainListV1s;
@@ -401,9 +401,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         /**
          * @param domainListV1s Domain list in the domain address book.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainListV1s(List<DnsControlPolicyDomainListV1Args> domainListV1s) {
             return domainListV1s(Output.of(domainListV1s));
@@ -412,9 +412,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         /**
          * @param domainListV1s Domain list in the domain address book.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainListV1s(DnsControlPolicyDomainListV1Args... domainListV1s) {
             return domainListV1s(List.of(domainListV1s));
@@ -422,9 +422,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param domainLists Domain list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainLists(@Nullable Output<List<String>> domainLists) {
             $.domainLists = domainLists;
@@ -433,9 +433,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param domainLists Domain list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainLists(List<String> domainLists) {
             return domainLists(Output.of(domainLists));
@@ -443,9 +443,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param domainLists Domain list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainLists(String... domainLists) {
             return domainLists(List.of(domainLists));
@@ -453,9 +453,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param hitCnt Hit count, indicating the number of times the domain denylist access control policy was triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hitCnt(@Nullable Output<Integer> hitCnt) {
             $.hitCnt = hitCnt;
@@ -464,9 +464,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param hitCnt Hit count, indicating the number of times the domain denylist access control policy was triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hitCnt(Integer hitCnt) {
             return hitCnt(Output.of(hitCnt));
@@ -474,9 +474,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param internetFirewallId Internet border firewall instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder internetFirewallId(@Nullable Output<String> internetFirewallId) {
             $.internetFirewallId = internetFirewallId;
@@ -485,9 +485,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param internetFirewallId Internet border firewall instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder internetFirewallId(String internetFirewallId) {
             return internetFirewallId(Output.of(internetFirewallId));
@@ -495,9 +495,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param lastHitTime Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lastHitTime(@Nullable Output<Integer> lastHitTime) {
             $.lastHitTime = lastHitTime;
@@ -506,9 +506,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param lastHitTime Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lastHitTime(Integer lastHitTime) {
             return lastHitTime(Output.of(lastHitTime));
@@ -516,9 +516,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ruleId Unique identifier of the access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -527,9 +527,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ruleId Unique identifier of the access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -538,9 +538,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         /**
          * @param sources Access source information, including VPC list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sources(@Nullable Output<List<DnsControlPolicySourceArgs>> sources) {
             $.sources = sources;
@@ -550,9 +550,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         /**
          * @param sources Access source information, including VPC list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sources(List<DnsControlPolicySourceArgs> sources) {
             return sources(Output.of(sources));
@@ -561,9 +561,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
         /**
          * @param sources Access source information, including VPC list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sources(DnsControlPolicySourceArgs... sources) {
             return sources(List.of(sources));
@@ -571,9 +571,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Switch status of the domain denylist access control policy. false: Off; true: On.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<Boolean> status) {
             $.status = status;
@@ -582,9 +582,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Switch status of the domain denylist access control policy. false: Off; true: On.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(Boolean status) {
             return status(Output.of(status));
@@ -592,9 +592,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param useCount Number of policies occupied by this domain denylist access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder useCount(@Nullable Output<Integer> useCount) {
             $.useCount = useCount;
@@ -603,9 +603,9 @@ public final class DnsControlPolicyState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param useCount Number of policies occupied by this domain denylist access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder useCount(Integer useCount) {
             return useCount(Output.of(useCount));

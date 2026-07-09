@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * A policy describes permissions. IAM users, user groups, or roles must be granted permissions by associating policies. If system preset policies do not meet your requirements, you can create custom policies for fine-grained permission definition.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -42,12 +42,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var policyDemo = new Policy("policyDemo", PolicyArgs.builder()
  *             .policyName("PolicyDemo")
@@ -61,116 +61,116 @@ import javax.annotation.Nullable;
  *                     .policyUserGroups(PolicyPolicyUserGroupArgs.builder()
  * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
  *                         .build());
- *
+ * 
  *                 }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:iam/policy:Policy example &#34;policy_name|policy_type&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:iam/policy:Policy")
 public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * Number of identities bound to the policy.
-     *
+     * 
      */
     @Export(name="attachmentCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> attachmentCount;
 
     /**
      * @return Number of identities bound to the policy.
-     *
+     * 
      */
     public Output<Integer> attachmentCount() {
         return this.attachmentCount;
     }
     /**
      * Category of the system preset policy, usually the service code. This field is not returned for custom policies.
-     *
+     * 
      */
     @Export(name="category", refs={String.class}, tree="[0]")
     private Output<String> category;
 
     /**
      * @return Category of the system preset policy, usually the service code. This field is not returned for custom policies.
-     *
+     * 
      */
     public Output<String> category() {
         return this.category;
     }
     /**
      * Policy creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Policy creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Policy description, no more than 128 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Policy description, no more than 128 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
-     *
+     * 
      */
     @Export(name="isServiceRolePolicy", refs={Integer.class}, tree="[0]")
     private Output<Integer> isServiceRolePolicy;
 
     /**
      * @return Indicates whether the policy is for a service-linked role. 0 means no; 1 means yes.
-     *
+     * 
      */
     public Output<Integer> isServiceRolePolicy() {
         return this.isServiceRolePolicy;
     }
     /**
      * Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
-     *
+     * 
      */
     @Export(name="policyDocument", refs={String.class}, tree="[0]")
     private Output<String> policyDocument;
 
     /**
      * @return Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
-     *
+     * 
      */
     public Output<String> policyDocument() {
         return this.policyDocument;
     }
     /**
      * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
-     *
+     * 
      */
     @Export(name="policyName", refs={String.class}, tree="[0]")
     private Output<String> policyName;
 
     /**
      * @return Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
-     *
+     * 
      */
     public Output<String> policyName() {
         return this.policyName;
@@ -178,7 +178,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * List of roles bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="policyRoles", refs={List.class,PolicyPolicyRole.class}, tree="[0,1]")
     private Output<List<PolicyPolicyRole>> policyRoles;
@@ -186,35 +186,35 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * @return List of roles bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PolicyPolicyRole>> policyRoles() {
         return this.policyRoles;
     }
     /**
      * Policy TRN.
-     *
+     * 
      */
     @Export(name="policyTrn", refs={String.class}, tree="[0]")
     private Output<String> policyTrn;
 
     /**
      * @return Policy TRN.
-     *
+     * 
      */
     public Output<String> policyTrn() {
         return this.policyTrn;
     }
     /**
      * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
-     *
+     * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
      * @return Policy type. System indicates a system preset policy; Custom indicates a custom policy.
-     *
+     * 
      */
     public Output<String> policyType() {
         return this.policyType;
@@ -222,7 +222,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * List of user groups bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="policyUserGroups", refs={List.class,PolicyPolicyUserGroup.class}, tree="[0,1]")
     private Output<List<PolicyPolicyUserGroup>> policyUserGroups;
@@ -230,7 +230,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * @return List of user groups bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PolicyPolicyUserGroup>> policyUserGroups() {
         return this.policyUserGroups;
@@ -238,7 +238,7 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * List of users bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="policyUsers", refs={List.class,PolicyPolicyUser.class}, tree="[0,1]")
     private Output<List<PolicyPolicyUser>> policyUsers;
@@ -246,21 +246,21 @@ public class Policy extends com.pulumi.resources.CustomResource {
     /**
      * @return List of users bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PolicyPolicyUser>> policyUsers() {
         return this.policyUsers;
     }
     /**
      * Policy update time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Policy update time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

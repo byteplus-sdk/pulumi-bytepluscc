@@ -20,14 +20,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -35,14 +35,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-     *
+     * 
      */
     @Import(name="direction")
     private @Nullable Output<String> direction;
 
     /**
      * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-     *
+     * 
      */
     public Optional<Output<String>> direction() {
         return Optional.ofNullable(this.direction);
@@ -50,14 +50,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Endpoint ID
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Endpoint ID
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -65,14 +65,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-     *
+     * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-     *
+     * 
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -81,7 +81,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     /**
      * Availability zone, subnet, and IP configuration for the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="ipConfigs")
     private @Nullable Output<List<ResolverEndpointIpConfigArgs>> ipConfigs;
@@ -89,7 +89,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     /**
      * @return Availability zone, subnet, and IP configuration for the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ResolverEndpointIpConfigArgs>>> ipConfigs() {
         return Optional.ofNullable(this.ipConfigs);
@@ -97,14 +97,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Endpoint name. Supports UTF-8 format
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Endpoint name. Supports UTF-8 format
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -112,14 +112,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Project name to which the endpoint belongs. Default is default
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the endpoint belongs. Default is default
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -127,14 +127,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
-     *
+     * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
      * @return Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
-     *
+     * 
      */
     public Optional<Output<String>> securityGroupId() {
         return Optional.ofNullable(this.securityGroupId);
@@ -142,14 +142,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -158,7 +158,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ResolverEndpointTagArgs>> tags;
@@ -166,7 +166,7 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ResolverEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -174,14 +174,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Update time
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update time
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -189,14 +189,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * VPC ID where the endpoint is located
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID where the endpoint is located
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -204,14 +204,14 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
     /**
      * Region of the VPC where the endpoint is located
-     *
+     * 
      */
     @Import(name="vpcRegion")
     private @Nullable Output<String> vpcRegion;
 
     /**
      * @return Region of the VPC where the endpoint is located
-     *
+     * 
      */
     public Optional<Output<String>> vpcRegion() {
         return Optional.ofNullable(this.vpcRegion);
@@ -255,9 +255,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param createdTime Creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -266,9 +266,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param createdTime Creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -276,9 +276,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder direction(@Nullable Output<String> direction) {
             $.direction = direction;
@@ -287,9 +287,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder direction(String direction) {
             return direction(Output.of(direction));
@@ -297,9 +297,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param endpointId Endpoint ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -308,9 +308,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param endpointId Endpoint ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -318,9 +318,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -329,9 +329,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
@@ -340,9 +340,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipConfigs(@Nullable Output<List<ResolverEndpointIpConfigArgs>> ipConfigs) {
             $.ipConfigs = ipConfigs;
@@ -352,9 +352,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipConfigs(List<ResolverEndpointIpConfigArgs> ipConfigs) {
             return ipConfigs(Output.of(ipConfigs));
@@ -363,9 +363,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipConfigs(ResolverEndpointIpConfigArgs... ipConfigs) {
             return ipConfigs(List.of(ipConfigs));
@@ -373,9 +373,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param name Endpoint name. Supports UTF-8 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -384,9 +384,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param name Endpoint name. Supports UTF-8 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -394,9 +394,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Project name to which the endpoint belongs. Default is default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -405,9 +405,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Project name to which the endpoint belongs. Default is default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -415,9 +415,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityGroupId Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(@Nullable Output<String> securityGroupId) {
             $.securityGroupId = securityGroupId;
@@ -426,9 +426,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityGroupId Security group ID for the endpoint IP address. The endpoint uses a default security group: For outbound endpoints, inbound traffic is denied; outbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0. For inbound endpoints, inbound traffic allows TCP port 53 and UDP port 53 to 0.0.0.0/0; outbound traffic is denied
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(String securityGroupId) {
             return securityGroupId(Output.of(securityGroupId));
@@ -436,9 +436,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -447,9 +447,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Endpoint status. Creating: creating. Running: running. Updating: updating. Error: abnormal operation
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -458,9 +458,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ResolverEndpointTagArgs>> tags) {
             $.tags = tags;
@@ -470,9 +470,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ResolverEndpointTagArgs> tags) {
             return tags(Output.of(tags));
@@ -481,9 +481,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ResolverEndpointTagArgs... tags) {
             return tags(List.of(tags));
@@ -491,9 +491,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updatedTime Update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -502,9 +502,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updatedTime Update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -512,9 +512,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vpcId VPC ID where the endpoint is located
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -523,9 +523,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vpcId VPC ID where the endpoint is located
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -533,9 +533,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vpcRegion Region of the VPC where the endpoint is located
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcRegion(@Nullable Output<String> vpcRegion) {
             $.vpcRegion = vpcRegion;
@@ -544,9 +544,9 @@ public final class ResolverEndpointState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vpcRegion Region of the VPC where the endpoint is located
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcRegion(String vpcRegion) {
             return vpcRegion(Output.of(vpcRegion));

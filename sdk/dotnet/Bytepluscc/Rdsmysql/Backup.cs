@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// Backups are important runtime files for the database. Based on backup files, the database can achieve disaster recovery and restoration. MySQL Cloud Database provides two backup capabilities: data backup and log backup. Data backup allows you to restore the database to a specific backup set, while log backup enables restoration to a specified point in time
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rdsmysqlbackupDemo = new Bytepluscc.Rdsmysql.Backup("rdsmysqlbackupDemo", new()
     ///     {
@@ -36,12 +36,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/backup:Backup example "instance_id|backup_id"
     /// ```

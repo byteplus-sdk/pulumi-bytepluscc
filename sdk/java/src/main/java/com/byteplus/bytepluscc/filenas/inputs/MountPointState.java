@@ -21,7 +21,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     /**
      * Client information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="clients")
     private @Nullable Output<List<MountPointClientArgs>> clients;
@@ -29,7 +29,7 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Client information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<MountPointClientArgs>>> clients() {
         return Optional.ofNullable(this.clients);
@@ -37,14 +37,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount point creation time.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Mount point creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -52,14 +52,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS address.
-     *
+     * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return DNS address.
-     *
+     * 
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
@@ -67,14 +67,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system ID.
-     *
+     * 
      */
     @Import(name="fileSystemId")
     private @Nullable Output<String> fileSystemId;
 
     /**
      * @return File system ID.
-     *
+     * 
      */
     public Optional<Output<String>> fileSystemId() {
         return Optional.ofNullable(this.fileSystemId);
@@ -82,14 +82,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount point address.
-     *
+     * 
      */
     @Import(name="ip")
     private @Nullable Output<String> ip;
 
     /**
      * @return Mount point address.
-     *
+     * 
      */
     public Optional<Output<String>> ip() {
         return Optional.ofNullable(this.ip);
@@ -97,14 +97,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount point ID.
-     *
+     * 
      */
     @Import(name="mountPointId")
     private @Nullable Output<String> mountPointId;
 
     /**
      * @return Mount point ID.
-     *
+     * 
      */
     public Optional<Output<String>> mountPointId() {
         return Optional.ofNullable(this.mountPointId);
@@ -112,14 +112,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount point name.
-     *
+     * 
      */
     @Import(name="mountPointName")
     private @Nullable Output<String> mountPointName;
 
     /**
      * @return Mount point name.
-     *
+     * 
      */
     public Optional<Output<String>> mountPointName() {
         return Optional.ofNullable(this.mountPointName);
@@ -127,14 +127,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Permission group information bound to the mount point.
-     *
+     * 
      */
     @Import(name="permissionGroup")
     private @Nullable Output<MountPointPermissionGroupArgs> permissionGroup;
 
     /**
      * @return Permission group information bound to the mount point.
-     *
+     * 
      */
     public Optional<Output<MountPointPermissionGroupArgs>> permissionGroup() {
         return Optional.ofNullable(this.permissionGroup);
@@ -142,14 +142,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Permission group ID.
-     *
+     * 
      */
     @Import(name="permissionGroupId")
     private @Nullable Output<String> permissionGroupId;
 
     /**
      * @return Permission group ID.
-     *
+     * 
      */
     public Optional<Output<String>> permissionGroupId() {
         return Optional.ofNullable(this.permissionGroupId);
@@ -157,14 +157,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -172,14 +172,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID.
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -187,14 +187,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet name.
-     *
+     * 
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
      * @return Subnet name.
-     *
+     * 
      */
     public Optional<Output<String>> subnetName() {
         return Optional.ofNullable(this.subnetName);
@@ -202,14 +202,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount point update time.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Mount point update time.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -217,14 +217,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -232,14 +232,14 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network name.
-     *
+     * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
      * @return Private network name.
-     *
+     * 
      */
     public Optional<Output<String>> vpcName() {
         return Optional.ofNullable(this.vpcName);
@@ -286,9 +286,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param clients Client information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clients(@Nullable Output<List<MountPointClientArgs>> clients) {
             $.clients = clients;
@@ -298,9 +298,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param clients Client information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clients(List<MountPointClientArgs> clients) {
             return clients(Output.of(clients));
@@ -309,9 +309,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param clients Client information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clients(MountPointClientArgs... clients) {
             return clients(List.of(clients));
@@ -319,9 +319,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Mount point creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -330,9 +330,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Mount point creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -340,9 +340,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain DNS address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
@@ -351,9 +351,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain DNS address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
@@ -361,9 +361,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemId File system ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemId(@Nullable Output<String> fileSystemId) {
             $.fileSystemId = fileSystemId;
@@ -372,9 +372,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemId File system ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemId(String fileSystemId) {
             return fileSystemId(Output.of(fileSystemId));
@@ -382,9 +382,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ip Mount point address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ip(@Nullable Output<String> ip) {
             $.ip = ip;
@@ -393,9 +393,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ip Mount point address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ip(String ip) {
             return ip(Output.of(ip));
@@ -403,9 +403,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountPointId Mount point ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountPointId(@Nullable Output<String> mountPointId) {
             $.mountPointId = mountPointId;
@@ -414,9 +414,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountPointId Mount point ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountPointId(String mountPointId) {
             return mountPointId(Output.of(mountPointId));
@@ -424,9 +424,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountPointName Mount point name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountPointName(@Nullable Output<String> mountPointName) {
             $.mountPointName = mountPointName;
@@ -435,9 +435,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountPointName Mount point name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountPointName(String mountPointName) {
             return mountPointName(Output.of(mountPointName));
@@ -445,9 +445,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionGroup Permission group information bound to the mount point.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionGroup(@Nullable Output<MountPointPermissionGroupArgs> permissionGroup) {
             $.permissionGroup = permissionGroup;
@@ -456,9 +456,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionGroup Permission group information bound to the mount point.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionGroup(MountPointPermissionGroupArgs permissionGroup) {
             return permissionGroup(Output.of(permissionGroup));
@@ -466,9 +466,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionGroupId Permission group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionGroupId(@Nullable Output<String> permissionGroupId) {
             $.permissionGroupId = permissionGroupId;
@@ -477,9 +477,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionGroupId Permission group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionGroupId(String permissionGroupId) {
             return permissionGroupId(Output.of(permissionGroupId));
@@ -487,9 +487,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -498,9 +498,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -508,9 +508,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -519,9 +519,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -529,9 +529,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetName Subnet name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetName(@Nullable Output<String> subnetName) {
             $.subnetName = subnetName;
@@ -540,9 +540,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetName Subnet name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetName(String subnetName) {
             return subnetName(Output.of(subnetName));
@@ -550,9 +550,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Mount point update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -561,9 +561,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Mount point update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -571,9 +571,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -582,9 +582,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -592,9 +592,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Private network name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(@Nullable Output<String> vpcName) {
             $.vpcName = vpcName;
@@ -603,9 +603,9 @@ public final class MountPointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Private network name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(String vpcName) {
             return vpcName(Output.of(vpcName));

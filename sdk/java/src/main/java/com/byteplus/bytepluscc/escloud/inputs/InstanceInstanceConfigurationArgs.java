@@ -36,14 +36,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Administrator password.
-     *
+     * 
      */
     @Import(name="adminPassword")
     private @Nullable Output<String> adminPassword;
 
     /**
      * @return Administrator password.
-     *
+     * 
      */
     public Optional<Output<String>> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
@@ -51,14 +51,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Administrator username.
-     *
+     * 
      */
     @Import(name="adminUserName")
     private @Nullable Output<String> adminUserName;
 
     /**
      * @return Administrator username.
-     *
+     * 
      */
     public Optional<Output<String>> adminUserName() {
         return Optional.ofNullable(this.adminUserName);
@@ -66,14 +66,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
-     *
+     * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -81,14 +81,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
-     *
+     * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
-     *
+     * 
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
@@ -96,14 +96,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Number of cold nodes.
-     *
+     * 
      */
     @Import(name="coldNodeNumber")
     private @Nullable Output<Integer> coldNodeNumber;
 
     /**
      * @return Number of cold nodes.
-     *
+     * 
      */
     public Optional<Output<Integer>> coldNodeNumber() {
         return Optional.ofNullable(this.coldNodeNumber);
@@ -111,14 +111,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Node specification details for cold nodes
-     *
+     * 
      */
     @Import(name="coldNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationColdNodeResourceSpecArgs> coldNodeResourceSpec;
 
     /**
      * @return Node specification details for cold nodes
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationColdNodeResourceSpecArgs>> coldNodeResourceSpec() {
         return Optional.ofNullable(this.coldNodeResourceSpec);
@@ -126,14 +126,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Details of cold node storage specification configuration
-     *
+     * 
      */
     @Import(name="coldNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationColdNodeStorageSpecArgs> coldNodeStorageSpec;
 
     /**
      * @return Details of cold node storage specification configuration
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationColdNodeStorageSpecArgs>> coldNodeStorageSpec() {
         return Optional.ofNullable(this.coldNodeStorageSpec);
@@ -141,14 +141,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
-     *
+     * 
      */
     @Import(name="configurationCode")
     private @Nullable Output<String> configurationCode;
 
     /**
      * @return Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
-     *
+     * 
      */
     public Optional<Output<String>> configurationCode() {
         return Optional.ofNullable(this.configurationCode);
@@ -156,14 +156,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Coordinator node count
-     *
+     * 
      */
     @Import(name="coordinatorNodeNumber")
     private @Nullable Output<Integer> coordinatorNodeNumber;
 
     /**
      * @return Coordinator node count
-     *
+     * 
      */
     public Optional<Output<Integer>> coordinatorNodeNumber() {
         return Optional.ofNullable(this.coordinatorNodeNumber);
@@ -171,14 +171,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Node specification configuration details for coordinator node.
-     *
+     * 
      */
     @Import(name="coordinatorNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs> coordinatorNodeResourceSpec;
 
     /**
      * @return Node specification configuration details for coordinator node.
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs>> coordinatorNodeResourceSpec() {
         return Optional.ofNullable(this.coordinatorNodeResourceSpec);
@@ -186,14 +186,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Storage specification configuration details for coordinator node.
-     *
+     * 
      */
     @Import(name="coordinatorNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs> coordinatorNodeStorageSpec;
 
     /**
      * @return Storage specification configuration details for coordinator node.
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs>> coordinatorNodeStorageSpec() {
         return Optional.ofNullable(this.coordinatorNodeStorageSpec);
@@ -201,14 +201,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
-     *
+     * 
      */
     @Import(name="deletionProtection")
     private @Nullable Output<Boolean> deletionProtection;
 
     /**
      * @return Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
-     *
+     * 
      */
     public Optional<Output<Boolean>> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
@@ -216,14 +216,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
-     *
+     * 
      */
     @Import(name="enableHttps")
     private @Nullable Output<Boolean> enableHttps;
 
     /**
      * @return Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableHttps() {
         return Optional.ofNullable(this.enableHttps);
@@ -231,14 +231,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
-     *
+     * 
      */
     @Import(name="enablePureMaster")
     private @Nullable Output<Boolean> enablePureMaster;
 
     /**
      * @return Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enablePureMaster() {
         return Optional.ofNullable(this.enablePureMaster);
@@ -246,14 +246,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Number of data nodes
-     *
+     * 
      */
     @Import(name="hotNodeNumber")
     private @Nullable Output<Integer> hotNodeNumber;
 
     /**
      * @return Number of data nodes
-     *
+     * 
      */
     public Optional<Output<Integer>> hotNodeNumber() {
         return Optional.ofNullable(this.hotNodeNumber);
@@ -261,14 +261,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Node specification configuration details for data node.
-     *
+     * 
      */
     @Import(name="hotNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationHotNodeResourceSpecArgs> hotNodeResourceSpec;
 
     /**
      * @return Node specification configuration details for data node.
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationHotNodeResourceSpecArgs>> hotNodeResourceSpec() {
         return Optional.ofNullable(this.hotNodeResourceSpec);
@@ -276,14 +276,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Data node storage specification configuration details
-     *
+     * 
      */
     @Import(name="hotNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationHotNodeStorageSpecArgs> hotNodeStorageSpec;
 
     /**
      * @return Data node storage specification configuration details
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationHotNodeStorageSpecArgs>> hotNodeStorageSpec() {
         return Optional.ofNullable(this.hotNodeStorageSpec);
@@ -291,14 +291,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -306,14 +306,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Number of Kibana nodes
-     *
+     * 
      */
     @Import(name="kibanaNodeNumber")
     private @Nullable Output<Integer> kibanaNodeNumber;
 
     /**
      * @return Number of Kibana nodes
-     *
+     * 
      */
     public Optional<Output<Integer>> kibanaNodeNumber() {
         return Optional.ofNullable(this.kibanaNodeNumber);
@@ -321,14 +321,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Kibana node specification configuration details
-     *
+     * 
      */
     @Import(name="kibanaNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationKibanaNodeResourceSpecArgs> kibanaNodeResourceSpec;
 
     /**
      * @return Kibana node specification configuration details
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationKibanaNodeResourceSpecArgs>> kibanaNodeResourceSpec() {
         return Optional.ofNullable(this.kibanaNodeResourceSpec);
@@ -336,14 +336,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Number of master nodes.
-     *
+     * 
      */
     @Import(name="masterNodeNumber")
     private @Nullable Output<Integer> masterNodeNumber;
 
     /**
      * @return Number of master nodes.
-     *
+     * 
      */
     public Optional<Output<Integer>> masterNodeNumber() {
         return Optional.ofNullable(this.masterNodeNumber);
@@ -351,14 +351,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Master node specification configuration details
-     *
+     * 
      */
     @Import(name="masterNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationMasterNodeResourceSpecArgs> masterNodeResourceSpec;
 
     /**
      * @return Master node specification configuration details
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationMasterNodeResourceSpecArgs>> masterNodeResourceSpec() {
         return Optional.ofNullable(this.masterNodeResourceSpec);
@@ -366,14 +366,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Storage specification details for master node
-     *
+     * 
      */
     @Import(name="masterNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationMasterNodeStorageSpecArgs> masterNodeStorageSpec;
 
     /**
      * @return Storage specification details for master node
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationMasterNodeStorageSpecArgs>> masterNodeStorageSpec() {
         return Optional.ofNullable(this.masterNodeStorageSpec);
@@ -382,7 +382,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     /**
      * Instance public network specification configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="networkSpecs")
     private @Nullable Output<List<InstanceInstanceConfigurationNetworkSpecArgs>> networkSpecs;
@@ -390,7 +390,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     /**
      * @return Instance public network specification configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceInstanceConfigurationNetworkSpecArgs>>> networkSpecs() {
         return Optional.ofNullable(this.networkSpecs);
@@ -399,7 +399,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     /**
      * Configuration of node counts and specifications in the instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nodeSpecsAssigns")
     private @Nullable Output<List<InstanceInstanceConfigurationNodeSpecsAssignArgs>> nodeSpecsAssigns;
@@ -407,7 +407,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     /**
      * @return Configuration of node counts and specifications in the instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceInstanceConfigurationNodeSpecsAssignArgs>>> nodeSpecsAssigns() {
         return Optional.ofNullable(this.nodeSpecsAssigns);
@@ -415,14 +415,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Subscription instance purchase duration, in months.
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Subscription instance purchase duration, in months.
-     *
+     * 
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -430,14 +430,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -445,14 +445,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Instance region
-     *
+     * 
      */
     @Import(name="regionId")
     private @Nullable Output<String> regionId;
 
     /**
      * @return Instance region
-     *
+     * 
      */
     public Optional<Output<String>> regionId() {
         return Optional.ofNullable(this.regionId);
@@ -460,14 +460,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Set subnet information for the instance. Note: The subnet must be in the primary zone.
-     *
+     * 
      */
     @Import(name="subnet")
     private @Nullable Output<InstanceInstanceConfigurationSubnetArgs> subnet;
 
     /**
      * @return Set subnet information for the instance. Note: The subnet must be in the primary zone.
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationSubnetArgs>> subnet() {
         return Optional.ofNullable(this.subnet);
@@ -476,7 +476,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<InstanceInstanceConfigurationTagArgs>> tags;
@@ -484,7 +484,7 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceInstanceConfigurationTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -492,14 +492,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * API version. Value: 2023-01-01.
-     *
+     * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return API version. Value: 2023-01-01.
-     *
+     * 
      */
     public Optional<Output<String>> version() {
         return Optional.ofNullable(this.version);
@@ -507,14 +507,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Set VPC information for the instance
-     *
+     * 
      */
     @Import(name="vpc")
     private @Nullable Output<InstanceInstanceConfigurationVpcArgs> vpc;
 
     /**
      * @return Set VPC information for the instance
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationVpcArgs>> vpc() {
         return Optional.ofNullable(this.vpc);
@@ -522,14 +522,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Warm node count.
-     *
+     * 
      */
     @Import(name="warmNodeNumber")
     private @Nullable Output<Integer> warmNodeNumber;
 
     /**
      * @return Warm node count.
-     *
+     * 
      */
     public Optional<Output<Integer>> warmNodeNumber() {
         return Optional.ofNullable(this.warmNodeNumber);
@@ -537,14 +537,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Warm node specification configuration details.
-     *
+     * 
      */
     @Import(name="warmNodeResourceSpec")
     private @Nullable Output<InstanceInstanceConfigurationWarmNodeResourceSpecArgs> warmNodeResourceSpec;
 
     /**
      * @return Warm node specification configuration details.
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationWarmNodeResourceSpecArgs>> warmNodeResourceSpec() {
         return Optional.ofNullable(this.warmNodeResourceSpec);
@@ -552,14 +552,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Storage specification details for warm nodes
-     *
+     * 
      */
     @Import(name="warmNodeStorageSpec")
     private @Nullable Output<InstanceInstanceConfigurationWarmNodeStorageSpecArgs> warmNodeStorageSpec;
 
     /**
      * @return Storage specification details for warm nodes
-     *
+     * 
      */
     public Optional<Output<InstanceInstanceConfigurationWarmNodeStorageSpecArgs>> warmNodeStorageSpec() {
         return Optional.ofNullable(this.warmNodeStorageSpec);
@@ -567,14 +567,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -582,14 +582,14 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
     /**
      * Number of instance availability zones.
-     *
+     * 
      */
     @Import(name="zoneNumber")
     private @Nullable Output<Integer> zoneNumber;
 
     /**
      * @return Number of instance availability zones.
-     *
+     * 
      */
     public Optional<Output<Integer>> zoneNumber() {
         return Optional.ofNullable(this.zoneNumber);
@@ -657,9 +657,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param adminPassword Administrator password.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder adminPassword(@Nullable Output<String> adminPassword) {
             $.adminPassword = adminPassword;
@@ -668,9 +668,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param adminPassword Administrator password.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder adminPassword(String adminPassword) {
             return adminPassword(Output.of(adminPassword));
@@ -678,9 +678,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param adminUserName Administrator username.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder adminUserName(@Nullable Output<String> adminUserName) {
             $.adminUserName = adminUserName;
@@ -689,9 +689,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param adminUserName Administrator username.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder adminUserName(String adminUserName) {
             return adminUserName(Output.of(adminUserName));
@@ -699,9 +699,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param autoRenew Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -710,9 +710,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param autoRenew Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -720,9 +720,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param chargeType Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -731,9 +731,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param chargeType Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -741,9 +741,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coldNodeNumber Number of cold nodes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldNodeNumber(@Nullable Output<Integer> coldNodeNumber) {
             $.coldNodeNumber = coldNodeNumber;
@@ -752,9 +752,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coldNodeNumber Number of cold nodes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldNodeNumber(Integer coldNodeNumber) {
             return coldNodeNumber(Output.of(coldNodeNumber));
@@ -762,9 +762,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coldNodeResourceSpec Node specification details for cold nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldNodeResourceSpec(@Nullable Output<InstanceInstanceConfigurationColdNodeResourceSpecArgs> coldNodeResourceSpec) {
             $.coldNodeResourceSpec = coldNodeResourceSpec;
@@ -773,9 +773,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coldNodeResourceSpec Node specification details for cold nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldNodeResourceSpec(InstanceInstanceConfigurationColdNodeResourceSpecArgs coldNodeResourceSpec) {
             return coldNodeResourceSpec(Output.of(coldNodeResourceSpec));
@@ -783,9 +783,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coldNodeStorageSpec Details of cold node storage specification configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldNodeStorageSpec(@Nullable Output<InstanceInstanceConfigurationColdNodeStorageSpecArgs> coldNodeStorageSpec) {
             $.coldNodeStorageSpec = coldNodeStorageSpec;
@@ -794,9 +794,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coldNodeStorageSpec Details of cold node storage specification configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coldNodeStorageSpec(InstanceInstanceConfigurationColdNodeStorageSpecArgs coldNodeStorageSpec) {
             return coldNodeStorageSpec(Output.of(coldNodeStorageSpec));
@@ -804,9 +804,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param configurationCode Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configurationCode(@Nullable Output<String> configurationCode) {
             $.configurationCode = configurationCode;
@@ -815,9 +815,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param configurationCode Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configurationCode(String configurationCode) {
             return configurationCode(Output.of(configurationCode));
@@ -825,9 +825,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coordinatorNodeNumber Coordinator node count
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coordinatorNodeNumber(@Nullable Output<Integer> coordinatorNodeNumber) {
             $.coordinatorNodeNumber = coordinatorNodeNumber;
@@ -836,9 +836,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coordinatorNodeNumber Coordinator node count
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coordinatorNodeNumber(Integer coordinatorNodeNumber) {
             return coordinatorNodeNumber(Output.of(coordinatorNodeNumber));
@@ -846,9 +846,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coordinatorNodeResourceSpec Node specification configuration details for coordinator node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coordinatorNodeResourceSpec(@Nullable Output<InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs> coordinatorNodeResourceSpec) {
             $.coordinatorNodeResourceSpec = coordinatorNodeResourceSpec;
@@ -857,9 +857,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coordinatorNodeResourceSpec Node specification configuration details for coordinator node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coordinatorNodeResourceSpec(InstanceInstanceConfigurationCoordinatorNodeResourceSpecArgs coordinatorNodeResourceSpec) {
             return coordinatorNodeResourceSpec(Output.of(coordinatorNodeResourceSpec));
@@ -867,9 +867,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coordinatorNodeStorageSpec Storage specification configuration details for coordinator node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coordinatorNodeStorageSpec(@Nullable Output<InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs> coordinatorNodeStorageSpec) {
             $.coordinatorNodeStorageSpec = coordinatorNodeStorageSpec;
@@ -878,9 +878,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param coordinatorNodeStorageSpec Storage specification configuration details for coordinator node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder coordinatorNodeStorageSpec(InstanceInstanceConfigurationCoordinatorNodeStorageSpecArgs coordinatorNodeStorageSpec) {
             return coordinatorNodeStorageSpec(Output.of(coordinatorNodeStorageSpec));
@@ -888,9 +888,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param deletionProtection Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletionProtection(@Nullable Output<Boolean> deletionProtection) {
             $.deletionProtection = deletionProtection;
@@ -899,9 +899,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param deletionProtection Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletionProtection(Boolean deletionProtection) {
             return deletionProtection(Output.of(deletionProtection));
@@ -909,9 +909,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param enableHttps Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHttps(@Nullable Output<Boolean> enableHttps) {
             $.enableHttps = enableHttps;
@@ -920,9 +920,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param enableHttps Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHttps(Boolean enableHttps) {
             return enableHttps(Output.of(enableHttps));
@@ -930,9 +930,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param enablePureMaster Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enablePureMaster(@Nullable Output<Boolean> enablePureMaster) {
             $.enablePureMaster = enablePureMaster;
@@ -941,9 +941,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param enablePureMaster Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enablePureMaster(Boolean enablePureMaster) {
             return enablePureMaster(Output.of(enablePureMaster));
@@ -951,9 +951,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param hotNodeNumber Number of data nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotNodeNumber(@Nullable Output<Integer> hotNodeNumber) {
             $.hotNodeNumber = hotNodeNumber;
@@ -962,9 +962,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param hotNodeNumber Number of data nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotNodeNumber(Integer hotNodeNumber) {
             return hotNodeNumber(Output.of(hotNodeNumber));
@@ -972,9 +972,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param hotNodeResourceSpec Node specification configuration details for data node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotNodeResourceSpec(@Nullable Output<InstanceInstanceConfigurationHotNodeResourceSpecArgs> hotNodeResourceSpec) {
             $.hotNodeResourceSpec = hotNodeResourceSpec;
@@ -983,9 +983,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param hotNodeResourceSpec Node specification configuration details for data node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotNodeResourceSpec(InstanceInstanceConfigurationHotNodeResourceSpecArgs hotNodeResourceSpec) {
             return hotNodeResourceSpec(Output.of(hotNodeResourceSpec));
@@ -993,9 +993,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param hotNodeStorageSpec Data node storage specification configuration details
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotNodeStorageSpec(@Nullable Output<InstanceInstanceConfigurationHotNodeStorageSpecArgs> hotNodeStorageSpec) {
             $.hotNodeStorageSpec = hotNodeStorageSpec;
@@ -1004,9 +1004,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param hotNodeStorageSpec Data node storage specification configuration details
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hotNodeStorageSpec(InstanceInstanceConfigurationHotNodeStorageSpecArgs hotNodeStorageSpec) {
             return hotNodeStorageSpec(Output.of(hotNodeStorageSpec));
@@ -1014,9 +1014,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param instanceName Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -1025,9 +1025,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param instanceName Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -1035,9 +1035,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param kibanaNodeNumber Number of Kibana nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kibanaNodeNumber(@Nullable Output<Integer> kibanaNodeNumber) {
             $.kibanaNodeNumber = kibanaNodeNumber;
@@ -1046,9 +1046,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param kibanaNodeNumber Number of Kibana nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kibanaNodeNumber(Integer kibanaNodeNumber) {
             return kibanaNodeNumber(Output.of(kibanaNodeNumber));
@@ -1056,9 +1056,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param kibanaNodeResourceSpec Kibana node specification configuration details
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kibanaNodeResourceSpec(@Nullable Output<InstanceInstanceConfigurationKibanaNodeResourceSpecArgs> kibanaNodeResourceSpec) {
             $.kibanaNodeResourceSpec = kibanaNodeResourceSpec;
@@ -1067,9 +1067,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param kibanaNodeResourceSpec Kibana node specification configuration details
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kibanaNodeResourceSpec(InstanceInstanceConfigurationKibanaNodeResourceSpecArgs kibanaNodeResourceSpec) {
             return kibanaNodeResourceSpec(Output.of(kibanaNodeResourceSpec));
@@ -1077,9 +1077,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param masterNodeNumber Number of master nodes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterNodeNumber(@Nullable Output<Integer> masterNodeNumber) {
             $.masterNodeNumber = masterNodeNumber;
@@ -1088,9 +1088,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param masterNodeNumber Number of master nodes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterNodeNumber(Integer masterNodeNumber) {
             return masterNodeNumber(Output.of(masterNodeNumber));
@@ -1098,9 +1098,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param masterNodeResourceSpec Master node specification configuration details
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterNodeResourceSpec(@Nullable Output<InstanceInstanceConfigurationMasterNodeResourceSpecArgs> masterNodeResourceSpec) {
             $.masterNodeResourceSpec = masterNodeResourceSpec;
@@ -1109,9 +1109,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param masterNodeResourceSpec Master node specification configuration details
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterNodeResourceSpec(InstanceInstanceConfigurationMasterNodeResourceSpecArgs masterNodeResourceSpec) {
             return masterNodeResourceSpec(Output.of(masterNodeResourceSpec));
@@ -1119,9 +1119,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param masterNodeStorageSpec Storage specification details for master node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterNodeStorageSpec(@Nullable Output<InstanceInstanceConfigurationMasterNodeStorageSpecArgs> masterNodeStorageSpec) {
             $.masterNodeStorageSpec = masterNodeStorageSpec;
@@ -1130,9 +1130,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param masterNodeStorageSpec Storage specification details for master node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterNodeStorageSpec(InstanceInstanceConfigurationMasterNodeStorageSpecArgs masterNodeStorageSpec) {
             return masterNodeStorageSpec(Output.of(masterNodeStorageSpec));
@@ -1141,9 +1141,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param networkSpecs Instance public network specification configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkSpecs(@Nullable Output<List<InstanceInstanceConfigurationNetworkSpecArgs>> networkSpecs) {
             $.networkSpecs = networkSpecs;
@@ -1153,9 +1153,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param networkSpecs Instance public network specification configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkSpecs(List<InstanceInstanceConfigurationNetworkSpecArgs> networkSpecs) {
             return networkSpecs(Output.of(networkSpecs));
@@ -1164,9 +1164,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param networkSpecs Instance public network specification configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkSpecs(InstanceInstanceConfigurationNetworkSpecArgs... networkSpecs) {
             return networkSpecs(List.of(networkSpecs));
@@ -1175,9 +1175,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param nodeSpecsAssigns Configuration of node counts and specifications in the instance
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeSpecsAssigns(@Nullable Output<List<InstanceInstanceConfigurationNodeSpecsAssignArgs>> nodeSpecsAssigns) {
             $.nodeSpecsAssigns = nodeSpecsAssigns;
@@ -1187,9 +1187,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param nodeSpecsAssigns Configuration of node counts and specifications in the instance
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeSpecsAssigns(List<InstanceInstanceConfigurationNodeSpecsAssignArgs> nodeSpecsAssigns) {
             return nodeSpecsAssigns(Output.of(nodeSpecsAssigns));
@@ -1198,9 +1198,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param nodeSpecsAssigns Configuration of node counts and specifications in the instance
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeSpecsAssigns(InstanceInstanceConfigurationNodeSpecsAssignArgs... nodeSpecsAssigns) {
             return nodeSpecsAssigns(List.of(nodeSpecsAssigns));
@@ -1208,9 +1208,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param period Subscription instance purchase duration, in months.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -1219,9 +1219,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param period Subscription instance purchase duration, in months.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -1229,9 +1229,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param projectName Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -1240,9 +1240,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param projectName Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -1250,9 +1250,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param regionId Instance region
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder regionId(@Nullable Output<String> regionId) {
             $.regionId = regionId;
@@ -1261,9 +1261,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param regionId Instance region
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder regionId(String regionId) {
             return regionId(Output.of(regionId));
@@ -1271,9 +1271,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param subnet Set subnet information for the instance. Note: The subnet must be in the primary zone.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnet(@Nullable Output<InstanceInstanceConfigurationSubnetArgs> subnet) {
             $.subnet = subnet;
@@ -1282,9 +1282,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param subnet Set subnet information for the instance. Note: The subnet must be in the primary zone.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnet(InstanceInstanceConfigurationSubnetArgs subnet) {
             return subnet(Output.of(subnet));
@@ -1293,9 +1293,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<InstanceInstanceConfigurationTagArgs>> tags) {
             $.tags = tags;
@@ -1305,9 +1305,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<InstanceInstanceConfigurationTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1316,9 +1316,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(InstanceInstanceConfigurationTagArgs... tags) {
             return tags(List.of(tags));
@@ -1326,9 +1326,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param version API version. Value: 2023-01-01.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder version(@Nullable Output<String> version) {
             $.version = version;
@@ -1337,9 +1337,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param version API version. Value: 2023-01-01.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder version(String version) {
             return version(Output.of(version));
@@ -1347,9 +1347,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param vpc Set VPC information for the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpc(@Nullable Output<InstanceInstanceConfigurationVpcArgs> vpc) {
             $.vpc = vpc;
@@ -1358,9 +1358,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param vpc Set VPC information for the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpc(InstanceInstanceConfigurationVpcArgs vpc) {
             return vpc(Output.of(vpc));
@@ -1368,9 +1368,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param warmNodeNumber Warm node count.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder warmNodeNumber(@Nullable Output<Integer> warmNodeNumber) {
             $.warmNodeNumber = warmNodeNumber;
@@ -1379,9 +1379,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param warmNodeNumber Warm node count.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder warmNodeNumber(Integer warmNodeNumber) {
             return warmNodeNumber(Output.of(warmNodeNumber));
@@ -1389,9 +1389,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param warmNodeResourceSpec Warm node specification configuration details.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder warmNodeResourceSpec(@Nullable Output<InstanceInstanceConfigurationWarmNodeResourceSpecArgs> warmNodeResourceSpec) {
             $.warmNodeResourceSpec = warmNodeResourceSpec;
@@ -1400,9 +1400,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param warmNodeResourceSpec Warm node specification configuration details.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder warmNodeResourceSpec(InstanceInstanceConfigurationWarmNodeResourceSpecArgs warmNodeResourceSpec) {
             return warmNodeResourceSpec(Output.of(warmNodeResourceSpec));
@@ -1410,9 +1410,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param warmNodeStorageSpec Storage specification details for warm nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder warmNodeStorageSpec(@Nullable Output<InstanceInstanceConfigurationWarmNodeStorageSpecArgs> warmNodeStorageSpec) {
             $.warmNodeStorageSpec = warmNodeStorageSpec;
@@ -1421,9 +1421,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param warmNodeStorageSpec Storage specification details for warm nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder warmNodeStorageSpec(InstanceInstanceConfigurationWarmNodeStorageSpecArgs warmNodeStorageSpec) {
             return warmNodeStorageSpec(Output.of(warmNodeStorageSpec));
@@ -1431,9 +1431,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param zoneId Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1442,9 +1442,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param zoneId Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));
@@ -1452,9 +1452,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param zoneNumber Number of instance availability zones.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneNumber(@Nullable Output<Integer> zoneNumber) {
             $.zoneNumber = zoneNumber;
@@ -1463,9 +1463,9 @@ public final class InstanceInstanceConfigurationArgs extends com.pulumi.resource
 
         /**
          * @param zoneNumber Number of instance availability zones.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneNumber(Integer zoneNumber) {
             return zoneNumber(Output.of(zoneNumber));

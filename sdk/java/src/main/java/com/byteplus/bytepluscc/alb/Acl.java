@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * ALB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the ALB instance through the listener port, you can set an access control policy for this listener. You can configure access control when creating the listener, or modify or reconfigure access control after the listener is created
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var albAclDemo = new Acl("albAclDemo", AclArgs.builder()
  *             .aclName("AlbAclDemo")
@@ -60,26 +60,26 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:alb/acl:Acl example &#34;acl_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:alb/acl:Acl")
 public class Acl extends com.pulumi.resources.CustomResource {
     /**
      * Details of IP entries in the access control policy group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="aclEntries", refs={List.class,AclAclEntry.class}, tree="[0,1]")
     private Output<List<AclAclEntry>> aclEntries;
@@ -87,77 +87,77 @@ public class Acl extends com.pulumi.resources.CustomResource {
     /**
      * @return Details of IP entries in the access control policy group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AclAclEntry>> aclEntries() {
         return this.aclEntries;
     }
     /**
      * Number of IP entries in the access control policy group
-     *
+     * 
      */
     @Export(name="aclEntryCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> aclEntryCount;
 
     /**
      * @return Number of IP entries in the access control policy group
-     *
+     * 
      */
     public Output<Integer> aclEntryCount() {
         return this.aclEntryCount;
     }
     /**
      * Access control policy group ID
-     *
+     * 
      */
     @Export(name="aclId", refs={String.class}, tree="[0]")
     private Output<String> aclId;
 
     /**
      * @return Access control policy group ID
-     *
+     * 
      */
     public Output<String> aclId() {
         return this.aclId;
     }
     /**
      * Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
-     *
+     * 
      */
     @Export(name="aclName", refs={String.class}, tree="[0]")
     private Output<String> aclName;
 
     /**
      * @return Name of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If left blank, defaults to the Access Control Policy Group ID.
-     *
+     * 
      */
     public Output<String> aclName() {
         return this.aclName;
     }
     /**
      * Creation time of the access control policy group
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the access control policy group
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the Access Control Policy Group. Cannot start with http:// or https://. Must begin with a letter or Chinese character and may include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If left blank, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -165,7 +165,7 @@ public class Acl extends com.pulumi.resources.CustomResource {
     /**
      * Details of listeners associated with the access control policy group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="listeners", refs={List.class,AclListener.class}, tree="[0,1]")
     private Output<List<AclListener>> listeners;
@@ -173,35 +173,35 @@ public class Acl extends com.pulumi.resources.CustomResource {
     /**
      * @return Details of listeners associated with the access control policy group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AclListener>> listeners() {
         return this.listeners;
     }
     /**
      * Project name to which the access control policy group belongs
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the access control policy group belongs
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the access control policy group. Creating: Creating. Active: Available. Configuring: Configuring. Deleting: Deleting
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -209,7 +209,7 @@ public class Acl extends com.pulumi.resources.CustomResource {
     /**
      * Tags bound to the access control policy group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,AclTag.class}, tree="[0,1]")
     private Output<List<AclTag>> tags;
@@ -217,21 +217,21 @@ public class Acl extends com.pulumi.resources.CustomResource {
     /**
      * @return Tags bound to the access control policy group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AclTag>> tags() {
         return this.tags;
     }
     /**
      * Last operation time of the access control policy group
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last operation time of the access control policy group
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

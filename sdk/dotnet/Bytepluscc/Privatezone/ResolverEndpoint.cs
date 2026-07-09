@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 {
     /// <summary>
     /// In scenarios where external DNS query requests are forwarded to the resolver, you need to create an endpoint. After receiving DNS query requests forwarded by the resolver, outbound endpoints forward DNS queries to external DNS servers. After receiving DNS query requests from external sources, inbound endpoints forward DNS queries to the resolver
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var privateZoneResolverEndpointDemo = new Bytepluscc.Privatezone.ResolverEndpoint("PrivateZoneResolverEndpointDemo", new()
     ///     {
@@ -55,12 +55,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     ///         VpcRegion = "cn-beijing",
     ///         Direction = "OUTBOUND",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:privatezone/resolverEndpoint:ResolverEndpoint example "endpoint_id"
     /// ```

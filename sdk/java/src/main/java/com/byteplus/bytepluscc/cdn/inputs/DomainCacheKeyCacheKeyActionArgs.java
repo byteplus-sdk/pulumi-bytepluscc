@@ -19,7 +19,7 @@ public final class DomainCacheKeyCacheKeyActionArgs extends com.pulumi.resources
     /**
      * Indicates a list of operation configurations. Currently, you can only set one operation configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="cacheKeyComponents")
     private @Nullable Output<List<DomainCacheKeyCacheKeyActionCacheKeyComponentArgs>> cacheKeyComponents;
@@ -27,7 +27,7 @@ public final class DomainCacheKeyCacheKeyActionArgs extends com.pulumi.resources
     /**
      * @return Indicates a list of operation configurations. Currently, you can only set one operation configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainCacheKeyCacheKeyActionCacheKeyComponentArgs>>> cacheKeyComponents() {
         return Optional.ofNullable(this.cacheKeyComponents);
@@ -60,9 +60,9 @@ public final class DomainCacheKeyCacheKeyActionArgs extends com.pulumi.resources
         /**
          * @param cacheKeyComponents Indicates a list of operation configurations. Currently, you can only set one operation configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheKeyComponents(@Nullable Output<List<DomainCacheKeyCacheKeyActionCacheKeyComponentArgs>> cacheKeyComponents) {
             $.cacheKeyComponents = cacheKeyComponents;
@@ -72,9 +72,9 @@ public final class DomainCacheKeyCacheKeyActionArgs extends com.pulumi.resources
         /**
          * @param cacheKeyComponents Indicates a list of operation configurations. Currently, you can only set one operation configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheKeyComponents(List<DomainCacheKeyCacheKeyActionCacheKeyComponentArgs> cacheKeyComponents) {
             return cacheKeyComponents(Output.of(cacheKeyComponents));
@@ -83,9 +83,9 @@ public final class DomainCacheKeyCacheKeyActionArgs extends com.pulumi.resources
         /**
          * @param cacheKeyComponents Indicates a list of operation configurations. Currently, you can only set one operation configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheKeyComponents(DomainCacheKeyCacheKeyActionCacheKeyComponentArgs... cacheKeyComponents) {
             return cacheKeyComponents(List.of(cacheKeyComponents));

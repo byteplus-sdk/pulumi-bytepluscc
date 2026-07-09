@@ -16,32 +16,32 @@ import javax.annotation.Nullable;
 public final class RuleDimensionConditionsMetaCondition {
     /**
      * @return Whether all resources are included. true: All resources. false: Partial resources.
-     *
+     * 
      */
     private @Nullable Boolean allDimensions;
     /**
      * @return Condition. and: All conditions met. or: Any condition met.
-     *
+     * 
      */
     private @Nullable String condition;
     /**
      * @return Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<RuleDimensionConditionsMetaConditionMeta> metas;
 
     private RuleDimensionConditionsMetaCondition() {}
     /**
      * @return Whether all resources are included. true: All resources. false: Partial resources.
-     *
+     * 
      */
     public Optional<Boolean> allDimensions() {
         return Optional.ofNullable(this.allDimensions);
     }
     /**
      * @return Condition. and: All conditions met. or: Any condition met.
-     *
+     * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
@@ -49,7 +49,7 @@ public final class RuleDimensionConditionsMetaCondition {
     /**
      * @return Resource list. Up to 10 resource names can be configured. When Comparator is equal or not*equal, there is no limit on the length of the resource name. When Comparator is contain, not*contain, prefix*match, or suffix*match, the resource name cannot exceed 100 characters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<RuleDimensionConditionsMetaConditionMeta> metas() {
         return this.metas == null ? List.of() : this.metas;

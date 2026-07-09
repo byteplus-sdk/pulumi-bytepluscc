@@ -210,18 +210,18 @@ class EndpointDbAddress(dict):
         :param _builtins.str address_ip: IP corresponding to the connection address
         :param _builtins.str address_port: Port number of the connection address
         :param _builtins.str address_type: Connection address type of the node. Possible values:
-
+                 
                  Primary: Primary node connection address
                  Secondary: Secondary node connection address
                  Hidden: Hidden node connection address
                  ReadOnly: Read-only node connection address
-
-
+                 
+                 
                  **Note:**
                  Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         :param _builtins.str eip_id: EIP ID bound to the instance's public address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         :param _builtins.str node_id: Node ID associated with the connection address
@@ -271,13 +271,13 @@ class EndpointDbAddress(dict):
     def address_type(self) -> Optional[_builtins.str]:
         """
         Connection address type of the node. Possible values:
-
+          
           Primary: Primary node connection address
           Secondary: Secondary node connection address
           Hidden: Hidden node connection address
           ReadOnly: Read-only node connection address
-
-
+          
+          
           **Note:**
           Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         """
@@ -288,8 +288,8 @@ class EndpointDbAddress(dict):
     def eip_id(self) -> Optional[_builtins.str]:
         """
         EIP ID bound to the instance's public address
-
-
+          
+          
           **Note:**
           This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         """
@@ -1248,24 +1248,24 @@ class GetEndpointDbAddressResult(dict):
         """
         :param _builtins.str address_domain: Domain name of the connection address
         :param _builtins.str address_ip: IP corresponding to the connection address
-
-
+                 
+                 
                  **Note:**
                  It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
         :param _builtins.str address_port: Port number of the connection address
         :param _builtins.str address_type: Connection address type of the node. Possible values:
-
+                 
                  Primary: Primary node connection address
                  Secondary: Secondary node connection address
                  Hidden: Hidden node connection address
                  ReadOnly: Read-only node connection address
-
-
+                 
+                 
                  **Note:**
                  Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         :param _builtins.str eip_id: EIP ID bound to the instance's public address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         :param _builtins.str node_id: Node ID associated with the connection address
@@ -1292,8 +1292,8 @@ class GetEndpointDbAddressResult(dict):
     def address_ip(self) -> _builtins.str:
         """
         IP corresponding to the connection address
-
-
+          
+          
           **Note:**
           It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
         """
@@ -1312,13 +1312,13 @@ class GetEndpointDbAddressResult(dict):
     def address_type(self) -> _builtins.str:
         """
         Connection address type of the node. Possible values:
-
+          
           Primary: Primary node connection address
           Secondary: Secondary node connection address
           Hidden: Hidden node connection address
           ReadOnly: Read-only node connection address
-
-
+          
+          
           **Note:**
           Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         """
@@ -1329,8 +1329,8 @@ class GetEndpointDbAddressResult(dict):
     def eip_id(self) -> _builtins.str:
         """
         EIP ID bound to the instance's public address
-
-
+          
+          
           **Note:**
           This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         """

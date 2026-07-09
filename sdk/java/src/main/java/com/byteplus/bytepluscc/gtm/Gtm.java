@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * The GTM instance is the core resource in Cloud Scheduling GTM for hosting scheduling domain names, routing policies, and health check configurations. After creating a GTM instance, you can use it to configure global traffic scheduling, failover, and health check capabilities for your business domain name
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var gTMGTMDemo = new Gtm("gTMGTMDemo", GtmArgs.builder()
  *             .domain("www.example4.com")
@@ -55,270 +55,270 @@ import javax.annotation.Nullable;
  *             .policyType("perf")
  *             .alarmId("71xxxx26d79-2b08-4033-b025-71xxxx26d79")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:gtm/gtm:Gtm example &#34;gtm_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:gtm/gtm:Gtm")
 public class Gtm extends com.pulumi.resources.CustomResource {
     /**
      * Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
-     *
+     * 
      */
     @Export(name="accessMode", refs={String.class}, tree="[0]")
     private Output<String> accessMode;
 
     /**
      * @return Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
-     *
+     * 
      */
     public Output<String> accessMode() {
         return this.accessMode;
     }
     /**
      * Alarm rule ID associated with the GTM instance
-     *
+     * 
      */
     @Export(name="alarmId", refs={String.class}, tree="[0]")
     private Output<String> alarmId;
 
     /**
      * @return Alarm rule ID associated with the GTM instance
-     *
+     * 
      */
     public Output<String> alarmId() {
         return this.alarmId;
     }
     /**
      * Scheduling domain name of the GTM instance
-     *
+     * 
      */
     @Export(name="cname", refs={String.class}, tree="[0]")
     private Output<String> cname;
 
     /**
      * @return Scheduling domain name of the GTM instance
-     *
+     * 
      */
     public Output<String> cname() {
         return this.cname;
     }
     /**
      * Creation time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Domain name of the GTM instance, such as `www.example.com`
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Domain name of the GTM instance, such as `www.example.com`
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * UUID of the GTM instance
-     *
+     * 
      */
     @Export(name="gtmId", refs={String.class}, tree="[0]")
     private Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance
-     *
+     * 
      */
     public Output<String> gtmId() {
         return this.gtmId;
     }
     /**
      * Account that last operated the GTM instance
-     *
+     * 
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
      * @return Account that last operated the GTM instance
-     *
+     * 
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
      * Account that created the GTM instance
-     *
+     * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
      * @return Account that created the GTM instance
-     *
+     * 
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
      * Detailed configuration of the scheduling policy for the GTM instance.
-     *
+     * 
      */
     @Export(name="policy", refs={GtmPolicy.class}, tree="[0]")
     private Output<GtmPolicy> policy;
 
     /**
      * @return Detailed configuration of the scheduling policy for the GTM instance.
-     *
+     * 
      */
     public Output<GtmPolicy> policy() {
         return this.policy;
     }
     /**
      * Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
-     *
+     * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
      * @return Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
-     *
+     * 
      */
     public Output<String> policyType() {
         return this.policyType;
     }
     /**
      * Detailed configuration of the health check for the GTM instance.
-     *
+     * 
      */
     @Export(name="probe", refs={GtmProbe.class}, tree="[0]")
     private Output<GtmProbe> probe;
 
     /**
      * @return Detailed configuration of the health check for the GTM instance.
-     *
+     * 
      */
     public Output<GtmProbe> probe() {
         return this.probe;
     }
     /**
      * Project name to which the GTM instance belongs
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the GTM instance belongs
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Remark information for the GTM instance
-     *
+     * 
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Remark information for the GTM instance
-     *
+     * 
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
      * Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
-     *
+     * 
      */
     @Export(name="specName", refs={String.class}, tree="[0]")
     private Output<String> specName;
 
     /**
      * @return Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
-     *
+     * 
      */
     public Output<String> specName() {
         return this.specName;
     }
     /**
      * Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
-     *
+     * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
      * @return Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
-     *
+     * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
      * Expiration time of the DNS record, in seconds
-     *
+     * 
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output<Integer> ttl;
 
     /**
      * @return Expiration time of the DNS record, in seconds
-     *
+     * 
      */
     public Output<Integer> ttl() {
         return this.ttl;
     }
     /**
      * Most recent modification time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent modification time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * This parameter has no practical significance and can be ignored
-     *
+     * 
      */
     @Export(name="zoneType", refs={String.class}, tree="[0]")
     private Output<String> zoneType;
 
     /**
      * @return This parameter has no practical significance and can be ignored
-     *
+     * 
      */
     public Output<String> zoneType() {
         return this.zoneType;

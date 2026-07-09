@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Id
 {
     /// <summary>
     /// ID namespace is a resource isolation unit in permissions management. It can be used to organize associated entities, projects, and tags.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Id.PermissionNamespace("Example", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Id
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:id/permissionNamespace:PermissionNamespace example "namespace_name"
     /// ```

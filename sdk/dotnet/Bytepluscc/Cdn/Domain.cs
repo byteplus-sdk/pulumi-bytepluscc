@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
 {
     /// <summary>
     /// An accelerated domain name is the domain you want to speed up content delivery for. After you add the domain to the content delivery network, it becomes an accelerated domain name in the CDN. The CDN assigns a CNAME to this domain. Once you create a DNS record to resolve your domain to this CNAME, requests sent by users to your domain are routed to your accelerated domain name, enabling faster content delivery.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cDNDomainDemo = new Bytepluscc.Cdn.Domain("CDNDomainDemo", new()
     ///     {
@@ -34,7 +34,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///         {
     ///             new Bytepluscc.Cdn.Inputs.DomainCacheArgs
     ///             {
-    ///                 Cache_action =
+    ///                 Cache_action = 
     ///                 {
     ///                     { "action", "cache" },
     ///                     { "defaultPolicy", "force_cache" },
@@ -44,7 +44,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "path" },
@@ -58,7 +58,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///             },
     ///             new Bytepluscc.Cdn.Inputs.DomainCacheArgs
     ///             {
-    ///                 Cache_action =
+    ///                 Cache_action = 
     ///                 {
     ///                     { "action", "cache" },
     ///                     { "defaultPolicy", "default" },
@@ -68,7 +68,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "filetype" },
@@ -82,7 +82,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///             },
     ///             new Bytepluscc.Cdn.Inputs.DomainCacheArgs
     ///             {
-    ///                 Cache_action =
+    ///                 Cache_action = 
     ///                 {
     ///                     { "action", "cache" },
     ///                     { "defaultPolicy", "default" },
@@ -92,7 +92,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "directory" },
@@ -109,11 +109,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///         {
     ///             new Bytepluscc.Cdn.Inputs.DomainCacheKeyArgs
     ///             {
-    ///                 Cache_key_action =
+    ///                 Cache_key_action = 
     ///                 {
     ///                     { "cacheKeyComponents", new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "action", "exclude" },
     ///                             { "ignoreCase", false },
@@ -126,7 +126,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "path" },
@@ -140,11 +140,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///             },
     ///             new Bytepluscc.Cdn.Inputs.DomainCacheKeyArgs
     ///             {
-    ///                 Cache_key_action =
+    ///                 Cache_key_action = 
     ///                 {
     ///                     { "cacheKeyComponents", new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "action", "includePart" },
     ///                             { "ignoreCase", true },
@@ -157,7 +157,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "filetype" },
@@ -171,11 +171,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///             },
     ///             new Bytepluscc.Cdn.Inputs.DomainCacheKeyArgs
     ///             {
-    ///                 Cache_key_action =
+    ///                 Cache_key_action = 
     ///                 {
     ///                     { "cacheKeyComponents", new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "action", "include" },
     ///                             { "ignoreCase", false },
@@ -188,7 +188,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "directory" },
@@ -205,9 +205,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///         {
     ///             Compression_rules = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
-    ///                     { "compressionAction",
+    ///                     { "compressionAction", 
     ///                     {
     ///                         { "compressionFormat", "all" },
     ///                         { "compressionTarget", "*" },
@@ -219,11 +219,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                         { "maxFileSizeKb", 2048 },
     ///                         { "minFileSizeKb", 0 },
     ///                     } },
-    ///                     { "condition",
+    ///                     { "condition", 
     ///                     {
     ///                         { "conditionRule", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "name", "" },
     ///                                 { "object", "path" },
@@ -235,9 +235,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                         { "connective", "OR" },
     ///                     } },
     ///                 },
-    ///
+    ///                 
     ///                 {
-    ///                     { "compressionAction",
+    ///                     { "compressionAction", 
     ///                     {
     ///                         { "compressionFormat", "all" },
     ///                         { "compressionTarget", "*" },
@@ -249,11 +249,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                         { "maxFileSizeKb", 2048 },
     ///                         { "minFileSizeKb", 0 },
     ///                     } },
-    ///                     { "condition",
+    ///                     { "condition", 
     ///                     {
     ///                         { "conditionRule", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "name", "" },
     ///                                 { "object", "directory" },
@@ -265,9 +265,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                         { "connective", "OR" },
     ///                     } },
     ///                 },
-    ///
+    ///                 
     ///                 {
-    ///                     { "compressionAction",
+    ///                     { "compressionAction", 
     ///                     {
     ///                         { "compressionFormat", "all" },
     ///                         { "compressionTarget", "*" },
@@ -279,11 +279,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                         { "maxFileSizeKb", 2048 },
     ///                         { "minFileSizeKb", 0 },
     ///                     } },
-    ///                     { "condition",
+    ///                     { "condition", 
     ///                     {
     ///                         { "conditionRule", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "name", "" },
     ///                                 { "object", "filetype" },
@@ -295,9 +295,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                         { "connective", "OR" },
     ///                     } },
     ///                 },
-    ///
+    ///                 
     ///                 {
-    ///                     { "compressionAction",
+    ///                     { "compressionAction", 
     ///                     {
     ///                         { "compressionFormat", "default" },
     ///                         { "compressionTarget", "*" },
@@ -316,13 +316,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///         {
     ///             Origin_rules = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
-    ///                     { "actions",
+    ///                     { "actions", 
     ///                     {
     ///                         { "originLines", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "address", "192.168.0.4" },
     ///                                 { "httpPort", "80" },
@@ -330,7 +330,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                                 { "instanceType", "ip" },
     ///                                 { "originHost", "192.168.0.5" },
     ///                             },
-    ///
+    ///                             
     ///                             {
     ///                                 { "address", "192.168.0.5" },
     ///                                 { "httpPort", "80" },
@@ -340,13 +340,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                             },
     ///                         } },
     ///                     } },
-    ///                     { "condition",
+    ///                     { "condition", 
     ///                     {
     ///                         { "conditionGroups", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
-    ///                                 { "condition",
+    ///                                 { "condition", 
     ///                                 {
     ///                                     { "object", "path" },
     ///                                     { "operator", "equal" },
@@ -356,9 +356,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                                     } },
     ///                                 } },
     ///                             },
-    ///
+    ///                             
     ///                             {
-    ///                                 { "condition",
+    ///                                 { "condition", 
     ///                                 {
     ///                                     { "object", "directory" },
     ///                                     { "operator", "equal" },
@@ -368,9 +368,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                                     } },
     ///                                 } },
     ///                             },
-    ///
+    ///                             
     ///                             {
-    ///                                 { "condition",
+    ///                                 { "condition", 
     ///                                 {
     ///                                     { "object", "filetype" },
     ///                                     { "operator", "equal" },
@@ -380,9 +380,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                                     } },
     ///                                 } },
     ///                             },
-    ///
+    ///                             
     ///                             {
-    ///                                 { "condition",
+    ///                                 { "condition", 
     ///                                 {
     ///                                     { "object", "client_ip" },
     ///                                     { "operator", "equal" },
@@ -392,9 +392,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                                     } },
     ///                                 } },
     ///                             },
-    ///
+    ///                             
     ///                             {
-    ///                                 { "condition",
+    ///                                 { "condition", 
     ///                                 {
     ///                                     { "object", "client_ip_operator" },
     ///                                     { "operator", "belong" },
@@ -435,7 +435,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///         Https = new Bytepluscc.Cdn.Inputs.DomainHttpsArgs
     ///         {
     ///             Disable_http = false,
-    ///             Forced_redirect =
+    ///             Forced_redirect = 
     ///             {
     ///                 { "enableForcedRedirect", false },
     ///                 { "statusCode", "301" },
@@ -477,11 +477,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///         {
     ///             new Bytepluscc.Cdn.Inputs.DomainOriginArgs
     ///             {
-    ///                 Origin_action =
+    ///                 Origin_action = 
     ///                 {
     ///                     { "originLines", new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "address", "192.168.0.1" },
     ///                             { "httpPort", "80" },
@@ -492,7 +492,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                             { "privateBucketAccess", false },
     ///                             { "weight", "1" },
     ///                         },
-    ///
+    ///                         
     ///                         {
     ///                             { "address", "b.com" },
     ///                             { "httpPort", "80" },
@@ -503,7 +503,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                             { "privateBucketAccess", false },
     ///                             { "weight", "1" },
     ///                         },
-    ///
+    ///                         
     ///                         {
     ///                             { "address", "ccapi-test-red.tos-cn-beijing.volces.com" },
     ///                             { "httpPort", "" },
@@ -512,14 +512,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                             { "originHost", "ccapi-test-red.tos-cn-beijing.volces.com" },
     ///                             { "originType", "primary" },
     ///                             { "privateBucketAccess", true },
-    ///                             { "privateBucketAuth",
+    ///                             { "privateBucketAuth", 
     ///                             {
     ///                                 { "authType", "tos" },
     ///                                 { "switch", true },
     ///                             } },
     ///                             { "weight", "1" },
     ///                         },
-    ///
+    ///                         
     ///                         {
     ///                             { "address", "192.168.0.2" },
     ///                             { "httpPort", "80" },
@@ -542,7 +542,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                 {
     ///                     ConditionRule = new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "name", "" },
     ///                             { "object", "directory" },
@@ -553,11 +553,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///                     },
     ///                     Connective = "OR",
     ///                 },
-    ///                 Origin_arg_action =
+    ///                 Origin_arg_action = 
     ///                 {
     ///                     { "originArgComponents", new[]
     ///                     {
-    ///
+    ///                         
     ///                         {
     ///                             { "action", "include" },
     ///                             { "object", "queryString" },
@@ -640,12 +640,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
     ///             Switch = false,
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cdn/domain:Domain example "domain"
     /// ```

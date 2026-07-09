@@ -22,7 +22,7 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * ApiKey Authentication Configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="apiKeyAuthConfigs")
     private @Nullable Output<List<AuthConfigApiKeyAuthConfigArgs>> apiKeyAuthConfigs;
@@ -30,7 +30,7 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return ApiKey Authentication Configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AuthConfigApiKeyAuthConfigArgs>>> apiKeyAuthConfigs() {
         return Optional.ofNullable(this.apiKeyAuthConfigs);
@@ -38,14 +38,14 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Authentication Type. Only Jwt or ApiKey is allowed
-     *
+     * 
      */
     @Import(name="authType", required=true)
     private Output<String> authType;
 
     /**
      * @return Authentication Type. Only Jwt or ApiKey is allowed
-     *
+     * 
      */
     public Output<String> authType() {
         return this.authType;
@@ -53,14 +53,14 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Configuration Name
-     *
+     * 
      */
     @Import(name="configName")
     private @Nullable Output<String> configName;
 
     /**
      * @return Configuration Name
-     *
+     * 
      */
     public Optional<Output<String>> configName() {
         return Optional.ofNullable(this.configName);
@@ -68,14 +68,14 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Configuration Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Configuration Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -83,14 +83,14 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Bound Instance ID
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Bound Instance ID
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -98,14 +98,14 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * JWT Authentication Configuration
-     *
+     * 
      */
     @Import(name="jwtAuthConfig")
     private @Nullable Output<AuthConfigJwtAuthConfigArgs> jwtAuthConfig;
 
     /**
      * @return JWT Authentication Configuration
-     *
+     * 
      */
     public Optional<Output<AuthConfigJwtAuthConfigArgs>> jwtAuthConfig() {
         return Optional.ofNullable(this.jwtAuthConfig);
@@ -143,9 +143,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param apiKeyAuthConfigs ApiKey Authentication Configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyAuthConfigs(@Nullable Output<List<AuthConfigApiKeyAuthConfigArgs>> apiKeyAuthConfigs) {
             $.apiKeyAuthConfigs = apiKeyAuthConfigs;
@@ -155,9 +155,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param apiKeyAuthConfigs ApiKey Authentication Configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyAuthConfigs(List<AuthConfigApiKeyAuthConfigArgs> apiKeyAuthConfigs) {
             return apiKeyAuthConfigs(Output.of(apiKeyAuthConfigs));
@@ -166,9 +166,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param apiKeyAuthConfigs ApiKey Authentication Configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder apiKeyAuthConfigs(AuthConfigApiKeyAuthConfigArgs... apiKeyAuthConfigs) {
             return apiKeyAuthConfigs(List.of(apiKeyAuthConfigs));
@@ -176,9 +176,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param authType Authentication Type. Only Jwt or ApiKey is allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder authType(Output<String> authType) {
             $.authType = authType;
@@ -187,9 +187,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param authType Authentication Type. Only Jwt or ApiKey is allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder authType(String authType) {
             return authType(Output.of(authType));
@@ -197,9 +197,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configName Configuration Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configName(@Nullable Output<String> configName) {
             $.configName = configName;
@@ -208,9 +208,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param configName Configuration Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder configName(String configName) {
             return configName(Output.of(configName));
@@ -218,9 +218,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Configuration Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -229,9 +229,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Configuration Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -239,9 +239,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Bound Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -250,9 +250,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Bound Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -260,9 +260,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param jwtAuthConfig JWT Authentication Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder jwtAuthConfig(@Nullable Output<AuthConfigJwtAuthConfigArgs> jwtAuthConfig) {
             $.jwtAuthConfig = jwtAuthConfig;
@@ -271,9 +271,9 @@ public final class AuthConfigArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param jwtAuthConfig JWT Authentication Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder jwtAuthConfig(AuthConfigJwtAuthConfigArgs jwtAuthConfig) {
             return jwtAuthConfig(Output.of(jwtAuthConfig));

@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * The log service supports log search and analysis. You must configure indexes to enable log search and analysis. When configuring indexes, specify the index type and the data type for each field. The index configuration determines the search method and the precision of search results.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -51,12 +51,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App }{{@code
  *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
  *     }}{@code
- *
+ * 
  *     public static void stack(Context ctx) }{{@code
  *         var tLSIndexDemo = new Index("tLSIndexDemo", IndexArgs.builder()
  *             .enableAutoIndex(true)
@@ -69,7 +69,7 @@ import javax.annotation.Nullable;
  *                     .build()).result())
  *                 .include_chinese(true)
  *                 .build())
- *             .keyValues(
+ *             .keyValues(            
  *                 IndexKeyValueArgs.builder()
  *                     .key("a")
  *                     .value(IndexKeyValueValueArgs.builder()
@@ -126,7 +126,7 @@ import javax.annotation.Nullable;
  *                         .includeChinese(true)
  *                         .indexAll(false)
  *                         .indexSqlAll(true)
- *                         .jsonKeys(
+ *                         .jsonKeys(                        
  *                             IndexKeyValueValueJsonKeyArgs.builder()
  *                                 .key("d1")
  *                                 .value(IndexKeyValueValueJsonKeyValueArgs.builder()
@@ -199,7 +199,7 @@ import javax.annotation.Nullable;
  *                     .includeChinese(true)
  *                     .indexAll(true)
  *                     .indexSqlAll(false)
- *                     .jsonKeys(
+ *                     .jsonKeys(                    
  *                         IndexUserInnerKeyValueValueJsonKeyArgs.builder()
  *                             .key("f1")
  *                             .value(IndexUserInnerKeyValueValueJsonKeyValueArgs.builder()
@@ -232,60 +232,60 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .build());
- *
+ * 
  *     }}{@code
  * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/index:Index example &#34;topic_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/index:Index")
 public class Index extends com.pulumi.resources.CustomResource {
     /**
      * Index creation time.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Index creation time.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
-     *
+     * 
      */
     @Export(name="enableAutoIndex", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableAutoIndex;
 
     /**
      * @return Enable automatic index updates? When enabled, the system will automatically add newly detected fields to the key-value index. true: Enable automatic updates. false: Do not enable automatic updates.
-     *
+     * 
      */
     public Output<Boolean> enableAutoIndex() {
         return this.enableAutoIndex;
     }
     /**
      * Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
-     *
+     * 
      */
     @Export(name="fullText", refs={IndexFullText.class}, tree="[0]")
     private Output<IndexFullText> fullText;
 
     /**
      * @return Full-text index configuration. If this field is null or not configured, full-text indexing is disabled. At least one of full-text index or key-value index must be configured; that is, at least one parameter between FullText and KeyValue must be specified.
-     *
+     * 
      */
     public Output<IndexFullText> fullText() {
         return this.fullText;
@@ -293,7 +293,7 @@ public class Index extends com.pulumi.resources.CustomResource {
     /**
      * Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="keyValues", refs={List.class,IndexKeyValue.class}, tree="[0,1]")
     private Output<List<IndexKeyValue>> keyValues;
@@ -301,49 +301,49 @@ public class Index extends com.pulumi.resources.CustomResource {
     /**
      * @return Key-value index configuration. If the length of this field array is 0 or not configured, key-value indexing is disabled. At least one of full-text index configuration or key-value index configuration must be set; that is, you must specify at least one parameter between FullText and KeyValue.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<IndexKeyValue>> keyValues() {
         return this.keyValues;
     }
     /**
      * Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
-     *
+     * 
      */
     @Export(name="maxTextLen", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxTextLen;
 
     /**
      * @return Set the maximum length for field values. The default is 2048. The valid range is 64–16384 bytes. If a single field value exceeds the specified maximum length, the excess part will be truncated and excluded from analysis. After updating the maximum field length, only incremental data is affected.
-     *
+     * 
      */
     public Output<Integer> maxTextLen() {
         return this.maxTextLen;
     }
     /**
      * Last modified time of the index.
-     *
+     * 
      */
     @Export(name="modifyTime", refs={String.class}, tree="[0]")
     private Output<String> modifyTime;
 
     /**
      * @return Last modified time of the index.
-     *
+     * 
      */
     public Output<String> modifyTime() {
         return this.modifyTime;
     }
     /**
      * Log topic ID.
-     *
+     * 
      */
     @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**
      * @return Log topic ID.
-     *
+     * 
      */
     public Output<String> topicId() {
         return this.topicId;
@@ -351,7 +351,7 @@ public class Index extends com.pulumi.resources.CustomResource {
     /**
      * Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="userInnerKeyValues", refs={List.class,IndexUserInnerKeyValue.class}, tree="[0,1]")
     private Output<List<IndexUserInnerKeyValue>> userInnerKeyValues;
@@ -359,7 +359,7 @@ public class Index extends com.pulumi.resources.CustomResource {
     /**
      * @return Reserved field index configuration. If the array length of this field is 0 or not configured, reserved field indexing is disabled. You cannot enable both full-text indexing and key-value indexing for the reserved field **content** at the same time. If you set the **content** index via the UserInnerKeyValue parameter, you cannot also set the FullText parameter. Among reserved fields, only manual indexing for **content** is currently supported. For other reserved field index settings, refer to reserved fields.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<IndexUserInnerKeyValue>> userInnerKeyValues() {
         return this.userInnerKeyValues;

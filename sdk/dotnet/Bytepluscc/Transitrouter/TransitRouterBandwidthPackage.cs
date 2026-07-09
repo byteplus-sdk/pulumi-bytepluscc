@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// Transit router bandwidth package resources.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterBandwidthPackageDemo = new Bytepluscc.Transitrouter.TransitRouterBandwidthPackage("TransitRouterBandwidthPackageDemo", new()
     ///     {
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///         },
     ///         TransitRouterBandwidthPackageName = "ccapi-test",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage example "transit_router_bandwidth_package_id"
     /// ```

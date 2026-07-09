@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
 {
     /// <summary>
     /// Gateway endpoint
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var privateLinkGatewayEndpointDemo = new Bytepluscc.Privatelink.GatewayEndpoint("PrivateLinkGatewayEndpointDemo", new()
     ///     {
@@ -40,12 +40,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
     ///         },
     ///         ServiceId = "gwepsvc-3rxxxxxxsk2ilz3f62",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:privatelink/gatewayEndpoint:GatewayEndpoint example "endpoint_id"
     /// ```

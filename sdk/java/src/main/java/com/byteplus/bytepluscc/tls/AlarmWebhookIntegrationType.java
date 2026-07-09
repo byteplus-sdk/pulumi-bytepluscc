@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Webhook integration configuration is used to manage alert notification channels such as DingTalk, Feishu, WeCom, and custom Webhooks
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,19 +37,19 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var example = new AlarmWebhookIntegrationType("example", AlarmWebhookIntegrationTypeArgs.builder()
  *             .webhookName("ccapi-test-1002replace")
  *             .webhookSecret("")
  *             .webhookType("custom")
  *             .webhookUrl("https://open.feishu.cn/open-apis/bot/v2/hook/79a2f8dxxxxxxx")
- *             .webhookHeaders(
+ *             .webhookHeaders(            
  *                 AlarmWebhookIntegrationTypeWebhookHeaderArgs.builder()
  *                     .key("Content-Type")
  *                     .value("application/json")
@@ -60,46 +60,46 @@ import javax.annotation.Nullable;
  *                     .build())
  *             .webhookMethod("PUT")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType example &#34;webhook_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType")
 public class AlarmWebhookIntegrationType extends com.pulumi.resources.CustomResource {
     /**
      * Webhook integration configuration creation time
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Webhook integration configuration creation time
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Webhook integration configuration last modified time
-     *
+     * 
      */
     @Export(name="modifyTime", refs={String.class}, tree="[0]")
     private Output<String> modifyTime;
 
     /**
      * @return Webhook integration configuration last modified time
-     *
+     * 
      */
     public Output<String> modifyTime() {
         return this.modifyTime;
@@ -107,7 +107,7 @@ public class AlarmWebhookIntegrationType extends com.pulumi.resources.CustomReso
     /**
      * Custom Webhook request headers. Required when WebhookType is set to custom
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="webhookHeaders", refs={List.class,AlarmWebhookIntegrationTypeWebhookHeader.class}, tree="[0,1]")
     private Output<List<AlarmWebhookIntegrationTypeWebhookHeader>> webhookHeaders;
@@ -115,91 +115,91 @@ public class AlarmWebhookIntegrationType extends com.pulumi.resources.CustomReso
     /**
      * @return Custom Webhook request headers. Required when WebhookType is set to custom
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AlarmWebhookIntegrationTypeWebhookHeader>> webhookHeaders() {
         return this.webhookHeaders;
     }
     /**
      * Webhook integration configuration ID
-     *
+     * 
      */
     @Export(name="webhookId", refs={String.class}, tree="[0]")
     private Output<String> webhookId;
 
     /**
      * @return Webhook integration configuration ID
-     *
+     * 
      */
     public Output<String> webhookId() {
         return this.webhookId;
     }
     /**
      * Custom Webhook request methods; only POST and PUT are supported
-     *
+     * 
      */
     @Export(name="webhookMethod", refs={String.class}, tree="[0]")
     private Output<String> webhookMethod;
 
     /**
      * @return Custom Webhook request methods; only POST and PUT are supported
-     *
+     * 
      */
     public Output<String> webhookMethod() {
         return this.webhookMethod;
     }
     /**
      * Webhook integration configuration name
-     *
+     * 
      */
     @Export(name="webhookName", refs={String.class}, tree="[0]")
     private Output<String> webhookName;
 
     /**
      * @return Webhook integration configuration name
-     *
+     * 
      */
     public Output<String> webhookName() {
         return this.webhookName;
     }
     /**
      * Webhook encryption key. If WebhookType is set to lark and signature verification is enabled in the Feishu bot security settings, enter the Feishu bot signature key here. For details, refer to the custom bot usage guide. If WebhookType is set to dingtalk and a signature value is configured in the DingTalk bot, enter the DingTalk bot signature value here. For details, refer to bot development documentation
-     *
+     * 
      */
     @Export(name="webhookSecret", refs={String.class}, tree="[0]")
     private Output<String> webhookSecret;
 
     /**
      * @return Webhook encryption key. If WebhookType is set to lark and signature verification is enabled in the Feishu bot security settings, enter the Feishu bot signature key here. For details, refer to the custom bot usage guide. If WebhookType is set to dingtalk and a signature value is configured in the DingTalk bot, enter the DingTalk bot signature value here. For details, refer to bot development documentation
-     *
+     * 
      */
     public Output<String> webhookSecret() {
         return this.webhookSecret;
     }
     /**
      * Webhook type. custom: custom Webhook address. lark: Feishu. dingtalk: DingTalk. wechat: WeCom
-     *
+     * 
      */
     @Export(name="webhookType", refs={String.class}, tree="[0]")
     private Output<String> webhookType;
 
     /**
      * @return Webhook type. custom: custom Webhook address. lark: Feishu. dingtalk: DingTalk. wechat: WeCom
-     *
+     * 
      */
     public Output<String> webhookType() {
         return this.webhookType;
     }
     /**
      * Webhook request URL
-     *
+     * 
      */
     @Export(name="webhookUrl", refs={String.class}, tree="[0]")
     private Output<String> webhookUrl;
 
     /**
      * @return Webhook request URL
-     *
+     * 
      */
     public Output<String> webhookUrl() {
         return this.webhookUrl;

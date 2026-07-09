@@ -20,14 +20,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Parameter template description information
-     *
+     * 
      */
     @Import(name="templateDesc")
     private @Nullable Output<String> templateDesc;
 
     /**
      * @return Parameter template description information
-     *
+     * 
      */
     public Optional<Output<String>> templateDesc() {
         return Optional.ofNullable(this.templateDesc);
@@ -35,14 +35,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Parameter template name
-     *
+     * 
      */
     @Import(name="templateName", required=true)
     private Output<String> templateName;
 
     /**
      * @return Parameter template name
-     *
+     * 
      */
     public Output<String> templateName() {
         return this.templateName;
@@ -51,7 +51,7 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
     /**
      * List of parameters included in the parameter template
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="templateParams", required=true)
     private Output<List<ParameterTemplateTemplateParamArgs>> templateParams;
@@ -59,7 +59,7 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
     /**
      * @return List of parameters included in the parameter template
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ParameterTemplateTemplateParamArgs>> templateParams() {
         return this.templateParams;
@@ -67,14 +67,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Database type of the parameter template. Value: PostgreSQL
-     *
+     * 
      */
     @Import(name="templateType", required=true)
     private Output<String> templateType;
 
     /**
      * @return Database type of the parameter template. Value: PostgreSQL
-     *
+     * 
      */
     public Output<String> templateType() {
         return this.templateType;
@@ -82,14 +82,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Database version of the parameter template, such as PostgreSQL*13, PostgreSQL*14, PostgreSQL_15, etc
-     *
+     * 
      */
     @Import(name="templateTypeVersion", required=true)
     private Output<String> templateTypeVersion;
 
     /**
      * @return Database version of the parameter template, such as PostgreSQL*13, PostgreSQL*14, PostgreSQL_15, etc
-     *
+     * 
      */
     public Output<String> templateTypeVersion() {
         return this.templateTypeVersion;
@@ -125,9 +125,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateDesc Parameter template description information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateDesc(@Nullable Output<String> templateDesc) {
             $.templateDesc = templateDesc;
@@ -136,9 +136,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateDesc Parameter template description information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateDesc(String templateDesc) {
             return templateDesc(Output.of(templateDesc));
@@ -146,9 +146,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateName Parameter template name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateName(Output<String> templateName) {
             $.templateName = templateName;
@@ -157,9 +157,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateName Parameter template name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateName(String templateName) {
             return templateName(Output.of(templateName));
@@ -168,9 +168,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param templateParams List of parameters included in the parameter template
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateParams(Output<List<ParameterTemplateTemplateParamArgs>> templateParams) {
             $.templateParams = templateParams;
@@ -180,9 +180,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param templateParams List of parameters included in the parameter template
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateParams(List<ParameterTemplateTemplateParamArgs> templateParams) {
             return templateParams(Output.of(templateParams));
@@ -191,9 +191,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param templateParams List of parameters included in the parameter template
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateParams(ParameterTemplateTemplateParamArgs... templateParams) {
             return templateParams(List.of(templateParams));
@@ -201,9 +201,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateType Database type of the parameter template. Value: PostgreSQL
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateType(Output<String> templateType) {
             $.templateType = templateType;
@@ -212,9 +212,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateType Database type of the parameter template. Value: PostgreSQL
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateType(String templateType) {
             return templateType(Output.of(templateType));
@@ -222,9 +222,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateTypeVersion Database version of the parameter template, such as PostgreSQL*13, PostgreSQL*14, PostgreSQL_15, etc
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateTypeVersion(Output<String> templateTypeVersion) {
             $.templateTypeVersion = templateTypeVersion;
@@ -233,9 +233,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateTypeVersion Database version of the parameter template, such as PostgreSQL*13, PostgreSQL*14, PostgreSQL_15, etc
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateTypeVersion(String templateTypeVersion) {
             return templateTypeVersion(Output.of(templateTypeVersion));

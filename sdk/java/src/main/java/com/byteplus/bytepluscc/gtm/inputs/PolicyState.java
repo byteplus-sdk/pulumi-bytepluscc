@@ -21,14 +21,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * If the current address pool set is unavailable, Cloud Scheduling GTM only triggers an alert notification and does not automatically switch to an available address pool. true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool
-     *
+     * 
      */
     @Import(name="alarmOnly")
     private @Nullable Output<Boolean> alarmOnly;
 
     /**
      * @return If the current address pool set is unavailable, Cloud Scheduling GTM only triggers an alert notification and does not automatically switch to an available address pool. true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool
-     *
+     * 
      */
     public Optional<Output<Boolean>> alarmOnly() {
         return Optional.ofNullable(this.alarmOnly);
@@ -36,14 +36,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * UUID of the GTM instance. You can obtain GtmId through the ListGtms API
-     *
+     * 
      */
     @Import(name="gtmId")
     private @Nullable Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance. You can obtain GtmId through the ListGtms API
-     *
+     * 
      */
     public Optional<Output<String>> gtmId() {
         return Optional.ofNullable(this.gtmId);
@@ -51,14 +51,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing mode for intelligent routing strategy. perf: Performance first. capacity: Capacity first. feedback: Load feedback
-     *
+     * 
      */
     @Import(name="perfMode")
     private @Nullable Output<String> perfMode;
 
     /**
      * @return Routing mode for intelligent routing strategy. perf: Performance first. capacity: Capacity first. feedback: Load feedback
-     *
+     * 
      */
     public Optional<Output<String>> perfMode() {
         return Optional.ofNullable(this.perfMode);
@@ -66,14 +66,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Strategy type. geo: Basic routing. perf: Intelligent routing
-     *
+     * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
      * @return Strategy type. geo: Basic routing. perf: Intelligent routing
-     *
+     * 
      */
     public Optional<Output<String>> policyType() {
         return Optional.ofNullable(this.policyType);
@@ -81,14 +81,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing mode. The parameter values are: lb: Based on load balancing, user traffic is routed proportionally to different IDCs. geo: Based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC on the same operator&#39;s network. geo-lb (default): First, based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC access line on the same operator&#39;s network. Then, based on load balancing, user traffic is routed proportionally to multiple IDCs
-     *
+     * 
      */
     @Import(name="routingMode")
     private @Nullable Output<String> routingMode;
 
     /**
      * @return Routing mode. The parameter values are: lb: Based on load balancing, user traffic is routed proportionally to different IDCs. geo: Based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC on the same operator&#39;s network. geo-lb (default): First, based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC access line on the same operator&#39;s network. Then, based on load balancing, user traffic is routed proportionally to multiple IDCs
-     *
+     * 
      */
     public Optional<Output<String>> routingMode() {
         return Optional.ofNullable(this.routingMode);
@@ -96,14 +96,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Statistical information about address status
-     *
+     * 
      */
     @Import(name="statistics")
     private @Nullable Output<PolicyStatisticsArgs> statistics;
 
     /**
      * @return Statistical information about address status
-     *
+     * 
      */
     public Optional<Output<PolicyStatisticsArgs>> statistics() {
         return Optional.ofNullable(this.statistics);
@@ -112,7 +112,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     /**
      * Traffic target for intelligent routing strategy
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="targets")
     private @Nullable Output<List<PolicyTargetArgs>> targets;
@@ -120,7 +120,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Traffic target for intelligent routing strategy
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PolicyTargetArgs>>> targets() {
         return Optional.ofNullable(this.targets);
@@ -158,9 +158,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmOnly If the current address pool set is unavailable, Cloud Scheduling GTM only triggers an alert notification and does not automatically switch to an available address pool. true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmOnly(@Nullable Output<Boolean> alarmOnly) {
             $.alarmOnly = alarmOnly;
@@ -169,9 +169,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmOnly If the current address pool set is unavailable, Cloud Scheduling GTM only triggers an alert notification and does not automatically switch to an available address pool. true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmOnly(Boolean alarmOnly) {
             return alarmOnly(Output.of(alarmOnly));
@@ -179,9 +179,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the GTM instance. You can obtain GtmId through the ListGtms API
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gtmId(@Nullable Output<String> gtmId) {
             $.gtmId = gtmId;
@@ -190,9 +190,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the GTM instance. You can obtain GtmId through the ListGtms API
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gtmId(String gtmId) {
             return gtmId(Output.of(gtmId));
@@ -200,9 +200,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param perfMode Routing mode for intelligent routing strategy. perf: Performance first. capacity: Capacity first. feedback: Load feedback
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder perfMode(@Nullable Output<String> perfMode) {
             $.perfMode = perfMode;
@@ -211,9 +211,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param perfMode Routing mode for intelligent routing strategy. perf: Performance first. capacity: Capacity first. feedback: Load feedback
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder perfMode(String perfMode) {
             return perfMode(Output.of(perfMode));
@@ -221,9 +221,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType Strategy type. geo: Basic routing. perf: Intelligent routing
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyType(@Nullable Output<String> policyType) {
             $.policyType = policyType;
@@ -232,9 +232,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType Strategy type. geo: Basic routing. perf: Intelligent routing
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));
@@ -242,9 +242,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routingMode Routing mode. The parameter values are: lb: Based on load balancing, user traffic is routed proportionally to different IDCs. geo: Based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC on the same operator&#39;s network. geo-lb (default): First, based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC access line on the same operator&#39;s network. Then, based on load balancing, user traffic is routed proportionally to multiple IDCs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routingMode(@Nullable Output<String> routingMode) {
             $.routingMode = routingMode;
@@ -253,9 +253,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routingMode Routing mode. The parameter values are: lb: Based on load balancing, user traffic is routed proportionally to different IDCs. geo: Based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC on the same operator&#39;s network. geo-lb (default): First, based on the user&#39;s geographic location and operator, user traffic is routed to the nearest IDC access line on the same operator&#39;s network. Then, based on load balancing, user traffic is routed proportionally to multiple IDCs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routingMode(String routingMode) {
             return routingMode(Output.of(routingMode));
@@ -263,9 +263,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statistics Statistical information about address status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statistics(@Nullable Output<PolicyStatisticsArgs> statistics) {
             $.statistics = statistics;
@@ -274,9 +274,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statistics Statistical information about address status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statistics(PolicyStatisticsArgs statistics) {
             return statistics(Output.of(statistics));
@@ -285,9 +285,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets Traffic target for intelligent routing strategy
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targets(@Nullable Output<List<PolicyTargetArgs>> targets) {
             $.targets = targets;
@@ -297,9 +297,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets Traffic target for intelligent routing strategy
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targets(List<PolicyTargetArgs> targets) {
             return targets(Output.of(targets));
@@ -308,9 +308,9 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets Traffic target for intelligent routing strategy
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targets(PolicyTargetArgs... targets) {
             return targets(List.of(targets));

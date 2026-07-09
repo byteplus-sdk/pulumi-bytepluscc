@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Id
 {
     /// <summary>
     /// The user pool is the core identity directory resource in the ID service for managing users, login methods, and identity connections
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Id.UserPool("Example", new()
     ///     {
@@ -62,12 +62,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Id
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:id/userPool:UserPool example "uid"
     /// ```

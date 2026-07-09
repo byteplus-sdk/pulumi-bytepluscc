@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * A snapshot is a backup method. Each snapshot is a backup of file storage at a specific point in time. If data is lost or a failure occurs, you can use snapshots to restore file storage and recover lost data
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,226 +36,226 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var fileNASSnapshotDemo = new Snapshot("fileNASSnapshotDemo", SnapshotArgs.builder()
  *             .fileSystemId("enas-apse1a059****")
  *             .snapshotName("FileNASSnapshotDemo")
  *             .description("FileNASSnapshotDemo description")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:filenas/snapshot:Snapshot example &#34;snapshot_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:filenas/snapshot:Snapshot")
 public class Snapshot extends com.pulumi.resources.CustomResource {
     /**
      * Snapshot Creation Time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Snapshot Creation Time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Snapshot Description
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Snapshot Description
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * File System ID
-     *
+     * 
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
      * @return File System ID
-     *
+     * 
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
      * File System Name
-     *
+     * 
      */
     @Export(name="fileSystemName", refs={String.class}, tree="[0]")
     private Output<String> fileSystemName;
 
     /**
      * @return File System Name
-     *
+     * 
      */
     public Output<String> fileSystemName() {
         return this.fileSystemName;
     }
     /**
      * Is encryption enabled. Currently only false is supported (not encrypted)
-     *
+     * 
      */
     @Export(name="isEncrypt", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEncrypt;
 
     /**
      * @return Is encryption enabled. Currently only false is supported (not encrypted)
-     *
+     * 
      */
     public Output<Boolean> isEncrypt() {
         return this.isEncrypt;
     }
     /**
      * Snapshot Creation Progress
-     *
+     * 
      */
     @Export(name="progress", refs={String.class}, tree="[0]")
     private Output<String> progress;
 
     /**
      * @return Snapshot Creation Progress
-     *
+     * 
      */
     public Output<String> progress() {
         return this.progress;
     }
     /**
      * Snapshot Retention Period. Default is 2147483647 (permanent retention)
-     *
+     * 
      */
     @Export(name="retentionDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionDays;
 
     /**
      * @return Snapshot Retention Period. Default is 2147483647 (permanent retention)
-     *
+     * 
      */
     public Output<Integer> retentionDays() {
         return this.retentionDays;
     }
     /**
      * Snapshot ID
-     *
+     * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
      * @return Snapshot ID
-     *
+     * 
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
     /**
      * Snapshot Name
-     *
+     * 
      */
     @Export(name="snapshotName", refs={String.class}, tree="[0]")
     private Output<String> snapshotName;
 
     /**
      * @return Snapshot Name
-     *
+     * 
      */
     public Output<String> snapshotName() {
         return this.snapshotName;
     }
     /**
      * Snapshot Type. Default is Manual (manual snapshot)
-     *
+     * 
      */
     @Export(name="snapshotType", refs={String.class}, tree="[0]")
     private Output<String> snapshotType;
 
     /**
      * @return Snapshot Type. Default is Manual (manual snapshot)
-     *
+     * 
      */
     public Output<String> snapshotType() {
         return this.snapshotType;
     }
     /**
      * File System Capacity (GiB)
-     *
+     * 
      */
     @Export(name="sourceSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> sourceSize;
 
     /**
      * @return File System Capacity (GiB)
-     *
+     * 
      */
     public Output<Integer> sourceSize() {
         return this.sourceSize;
     }
     /**
      * File System Version
-     *
+     * 
      */
     @Export(name="sourceVersion", refs={String.class}, tree="[0]")
     private Output<String> sourceVersion;
 
     /**
      * @return File System Version
-     *
+     * 
      */
     public Output<String> sourceVersion() {
         return this.sourceVersion;
     }
     /**
      * Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Snapshot Status. Details: Progressing: Creating. Accomplished: Created successfully. Failed: Creation failed
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Availability Zone ID
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability Zone ID
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

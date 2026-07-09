@@ -85,7 +85,7 @@ export class EventRule extends pulumi.CustomResource {
     declare public readonly description: pulumi.Output<string>;
     /**
      * Rule status
-     *
+     *   
      *   enable: Rule enabled
      *   disable: Rule disabled
      */
@@ -218,7 +218,7 @@ export interface EventRuleState {
     description?: pulumi.Input<string | undefined>;
     /**
      * Rule status
-     *
+     *   
      *   enable: Rule enabled
      *   disable: Rule disabled
      */
@@ -280,7 +280,7 @@ export interface EventRuleArgs {
     description?: pulumi.Input<string | undefined>;
     /**
      * Rule status
-     *
+     *   
      *   enable: Rule enabled
      *   disable: Rule disabled
      */

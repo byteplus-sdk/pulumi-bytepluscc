@@ -20,14 +20,14 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-     *
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
@@ -50,14 +50,14 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -66,7 +66,7 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<HpcClusterTagArgs>> tags;
@@ -74,7 +74,7 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<HpcClusterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -82,14 +82,14 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID of the high performance compute cluster
-     *
+     * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID of the high performance compute cluster
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -125,9 +125,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -136,9 +136,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -146,9 +146,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -157,9 +157,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -167,9 +167,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -178,9 +178,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -189,9 +189,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<HpcClusterTagArgs>> tags) {
             $.tags = tags;
@@ -201,9 +201,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<HpcClusterTagArgs> tags) {
             return tags(Output.of(tags));
@@ -212,9 +212,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(HpcClusterTagArgs... tags) {
             return tags(List.of(tags));
@@ -222,9 +222,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID of the high performance compute cluster
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -233,9 +233,9 @@ public final class HpcClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID of the high performance compute cluster
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

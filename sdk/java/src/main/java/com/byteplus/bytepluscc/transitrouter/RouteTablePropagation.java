@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * Details of route learning that meet the criteria.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,85 +34,85 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var routeTablePropagationDemo = new RouteTablePropagation("routeTablePropagationDemo", RouteTablePropagationArgs.builder()
  *             .transitRouterAttachmentId("tr-attach-mjoxz9mx5ji85***")
  *             .transitRouterRouteTableId("tr-rtb-mjoxx4ofrt345sm****")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation example &#34;transit_router_route_table_id|transit_router_attachment_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation")
 public class RouteTablePropagation extends com.pulumi.resources.CustomResource {
     /**
      * Route learning creation time.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Route learning creation time.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Route learning status. Available: Available. Creating: Creating. Pending: Pending. Deleting: Deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Route learning status. Available: Available. Creating: Creating. Pending: Pending. Deleting: Deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the network instance connection.
-     *
+     * 
      */
     @Export(name="transitRouterAttachmentId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentId;
 
     /**
      * @return ID of the network instance connection.
-     *
+     * 
      */
     public Output<String> transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
      * ID of the route table associated with the transit router instance.
-     *
+     * 
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
      * @return ID of the route table associated with the transit router instance.
-     *
+     * 
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;

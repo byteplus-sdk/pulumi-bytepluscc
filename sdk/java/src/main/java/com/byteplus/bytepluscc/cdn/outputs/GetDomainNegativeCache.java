@@ -13,26 +13,26 @@ import java.util.Objects;
 public final class GetDomainNegativeCache {
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     private GetDomainNegativeCacheCondition condition;
     /**
      * @return Represents a list. Each element in the list is a status code cache rule.
-     *
+     * 
      */
     private GetDomainNegativeCacheNegativeCacheRule negativeCacheRule;
 
     private GetDomainNegativeCache() {}
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public GetDomainNegativeCacheCondition condition() {
         return this.condition;
     }
     /**
      * @return Represents a list. Each element in the list is a status code cache rule.
-     *
+     * 
      */
     public GetDomainNegativeCacheNegativeCacheRule negativeCacheRule() {
         return this.negativeCacheRule;

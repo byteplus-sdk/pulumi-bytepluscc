@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
 {
     /// <summary>
     /// RabbitMQ access allowlist
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rabbitMQAllowListDemo = new Bytepluscc.Rabbitmq.AllowList("RabbitMQAllowListDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rabbitmq/allowList:AllowList example "allow_list_id"
     /// ```

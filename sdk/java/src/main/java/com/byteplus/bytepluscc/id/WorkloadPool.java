@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * Workload pool
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var example = new WorkloadPool("example", WorkloadPoolArgs.builder()
  *             .description("用于测试的工作负载池")
@@ -54,74 +54,74 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:id/workloadPool:WorkloadPool example &#34;workload_pool_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:id/workloadPool:WorkloadPool")
 public class WorkloadPool extends com.pulumi.resources.CustomResource {
     /**
      * Workload pool creation time
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Workload pool creation time
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Workload pool description
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Workload pool description
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * OIDC discovery endpoint
-     *
+     * 
      */
     @Export(name="discoveryUrl", refs={String.class}, tree="[0]")
     private Output<String> discoveryUrl;
 
     /**
      * @return OIDC discovery endpoint
-     *
+     * 
      */
     public Output<String> discoveryUrl() {
         return this.discoveryUrl;
     }
     /**
      * Project name
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -129,7 +129,7 @@ public class WorkloadPool extends com.pulumi.resources.CustomResource {
     /**
      * Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,WorkloadPoolTag.class}, tree="[0,1]")
     private Output<List<WorkloadPoolTag>> tags;
@@ -137,91 +137,91 @@ public class WorkloadPool extends com.pulumi.resources.CustomResource {
     /**
      * @return Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<WorkloadPoolTag>> tags() {
         return this.tags;
     }
     /**
      * Number of associated credentials
-     *
+     * 
      */
     @Export(name="totalCredentials", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalCredentials;
 
     /**
      * @return Number of associated credentials
-     *
+     * 
      */
     public Output<Integer> totalCredentials() {
         return this.totalCredentials;
     }
     /**
      * Number of workloads
-     *
+     * 
      */
     @Export(name="totalWorkloads", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalWorkloads;
 
     /**
      * @return Number of workloads
-     *
+     * 
      */
     public Output<Integer> totalWorkloads() {
         return this.totalWorkloads;
     }
     /**
      * Workload pool Trn
-     *
+     * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Workload pool Trn
-     *
+     * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Workload pool update time
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Workload pool update time
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Workload pool ID
-     *
+     * 
      */
     @Export(name="workloadPoolId", refs={String.class}, tree="[0]")
     private Output<String> workloadPoolId;
 
     /**
      * @return Workload pool ID
-     *
+     * 
      */
     public Output<String> workloadPoolId() {
         return this.workloadPoolId;
     }
     /**
      * Workload pool name
-     *
+     * 
      */
     @Export(name="workloadPoolName", refs={String.class}, tree="[0]")
     private Output<String> workloadPoolName;
 
     /**
      * @return Workload pool name
-     *
+     * 
      */
     public Output<String> workloadPoolName() {
         return this.workloadPoolName;

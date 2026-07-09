@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 {
     /// <summary>
     /// List of connection address information
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var mongoDBEndpointDemo = new Bytepluscc.Mongodb.Endpoint("MongoDBEndpointDemo", new()
     ///     {
@@ -33,12 +33,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     ///         InstanceId = "mongo-replica-****",
     ///         NetworkType = "Public",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:mongodb/endpoint:Endpoint example "instance_id|endpoint_id"
     /// ```
@@ -73,7 +73,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// Node type corresponding to the connection address. Possible values:
-        ///
+        ///   
         ///     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
         ///     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
         /// </summary>
@@ -94,7 +94,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// Network type of the connection address. Possible values:
-        ///
+        ///   
         ///     - `Private`: Private connection address
         ///     - `Public`: Public connection address
         /// </summary>
@@ -103,8 +103,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// ID of the component associated with the current connection address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         /// </summary>
@@ -202,7 +202,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// Network type of the connection address. Possible values:
-        ///
+        ///   
         ///     - `Private`: Private connection address
         ///     - `Public`: Public connection address
         /// </summary>
@@ -211,8 +211,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// ID of the component associated with the current connection address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         /// </summary>
@@ -266,7 +266,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// Node type corresponding to the connection address. Possible values:
-        ///
+        ///   
         ///     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
         ///     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
         /// </summary>
@@ -293,7 +293,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// Network type of the connection address. Possible values:
-        ///
+        ///   
         ///     - `Private`: Private connection address
         ///     - `Public`: Public connection address
         /// </summary>
@@ -302,8 +302,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
         /// <summary>
         /// ID of the component associated with the current connection address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
         /// </summary>

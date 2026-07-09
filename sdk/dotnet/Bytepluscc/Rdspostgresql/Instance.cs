@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
     /// Cloud database instance management
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSPostgreSQLInstanceDemo = new Bytepluscc.Rdspostgresql.Instance("RDSPostgreSQLInstanceDemo", new()
     ///     {
@@ -49,12 +49,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     ///             Charge_type = "PostPaid",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdspostgresql/instance:Instance example "instance_id"
     /// ```

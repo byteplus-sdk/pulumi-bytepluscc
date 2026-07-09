@@ -21,14 +21,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
-     *
+     * 
      */
     @Import(name="addressIpVersion")
     private @Nullable Output<String> addressIpVersion;
 
     /**
      * @return IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
-     *
+     * 
      */
     public Optional<Output<String>> addressIpVersion() {
         return Optional.ofNullable(this.addressIpVersion);
@@ -36,14 +36,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
-     *
+     * 
      */
     @Import(name="anyPortEnabled")
     private @Nullable Output<String> anyPortEnabled;
 
     /**
      * @return Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
-     *
+     * 
      */
     public Optional<Output<String>> anyPortEnabled() {
         return Optional.ofNullable(this.anyPortEnabled);
@@ -51,14 +51,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the backend server group.
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time of the backend server group.
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -66,14 +66,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -82,7 +82,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Listener information associated with the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="listeners")
     private @Nullable Output<List<ServerGroupListenerArgs>> listeners;
@@ -90,7 +90,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Listener information associated with the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServerGroupListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
@@ -98,14 +98,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CLB instance ID to which the backend server group belongs.
-     *
+     * 
      */
     @Import(name="loadBalancerId")
     private @Nullable Output<String> loadBalancerId;
 
     /**
      * @return CLB instance ID to which the backend server group belongs.
-     *
+     * 
      */
     public Optional<Output<String>> loadBalancerId() {
         return Optional.ofNullable(this.loadBalancerId);
@@ -113,14 +113,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backend server group ID.
-     *
+     * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
      * @return Backend server group ID.
-     *
+     * 
      */
     public Optional<Output<String>> serverGroupId() {
         return Optional.ofNullable(this.serverGroupId);
@@ -128,14 +128,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
-     *
+     * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
      * @return Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
-     *
+     * 
      */
     public Optional<Output<String>> serverGroupName() {
         return Optional.ofNullable(this.serverGroupName);
@@ -144,7 +144,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Information about servers in the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="servers")
     private @Nullable Output<List<ServerGroupServerArgs>> servers;
@@ -152,7 +152,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Information about servers in the backend server group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServerGroupServerArgs>>> servers() {
         return Optional.ofNullable(this.servers);
@@ -161,7 +161,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ServerGroupTagArgs>> tags;
@@ -169,7 +169,7 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServerGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -177,14 +177,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -192,14 +192,14 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last operation time of the backend server group.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Last operation time of the backend server group.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -242,9 +242,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressIpVersion IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressIpVersion(@Nullable Output<String> addressIpVersion) {
             $.addressIpVersion = addressIpVersion;
@@ -253,9 +253,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressIpVersion IP address type of the backend server group. ipv4: The backend server group is of IPv4 type. ipv6: The backend server group is of IPv6 type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressIpVersion(String addressIpVersion) {
             return addressIpVersion(Output.of(addressIpVersion));
@@ -263,9 +263,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param anyPortEnabled Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder anyPortEnabled(@Nullable Output<String> anyPortEnabled) {
             $.anyPortEnabled = anyPortEnabled;
@@ -274,9 +274,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param anyPortEnabled Whether to enable all-port forwarding. on: enable all-port forwarding. off: disable all-port forwarding.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder anyPortEnabled(String anyPortEnabled) {
             return anyPortEnabled(Output.of(anyPortEnabled));
@@ -284,9 +284,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the backend server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -295,9 +295,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the backend server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -305,9 +305,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -316,9 +316,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -327,9 +327,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param listeners Listener information associated with the backend server group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(@Nullable Output<List<ServerGroupListenerArgs>> listeners) {
             $.listeners = listeners;
@@ -339,9 +339,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param listeners Listener information associated with the backend server group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(List<ServerGroupListenerArgs> listeners) {
             return listeners(Output.of(listeners));
@@ -350,9 +350,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param listeners Listener information associated with the backend server group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(ServerGroupListenerArgs... listeners) {
             return listeners(List.of(listeners));
@@ -360,9 +360,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId CLB instance ID to which the backend server group belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(@Nullable Output<String> loadBalancerId) {
             $.loadBalancerId = loadBalancerId;
@@ -371,9 +371,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId CLB instance ID to which the backend server group belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(String loadBalancerId) {
             return loadBalancerId(Output.of(loadBalancerId));
@@ -381,9 +381,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Backend server group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(@Nullable Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -392,9 +392,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Backend server group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
@@ -402,9 +402,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupName Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupName(@Nullable Output<String> serverGroupName) {
             $.serverGroupName = serverGroupName;
@@ -413,9 +413,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupName Name of the backend server group. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the backend server group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupName(String serverGroupName) {
             return serverGroupName(Output.of(serverGroupName));
@@ -424,9 +424,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param servers Information about servers in the backend server group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder servers(@Nullable Output<List<ServerGroupServerArgs>> servers) {
             $.servers = servers;
@@ -436,9 +436,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param servers Information about servers in the backend server group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder servers(List<ServerGroupServerArgs> servers) {
             return servers(Output.of(servers));
@@ -447,9 +447,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param servers Information about servers in the backend server group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder servers(ServerGroupServerArgs... servers) {
             return servers(List.of(servers));
@@ -458,9 +458,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ServerGroupTagArgs>> tags) {
             $.tags = tags;
@@ -470,9 +470,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ServerGroupTagArgs> tags) {
             return tags(Output.of(tags));
@@ -481,9 +481,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ServerGroupTagArgs... tags) {
             return tags(List.of(tags));
@@ -491,9 +491,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -502,9 +502,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Type of the backend server group. instance: This backend server group can only add the primary or auxiliary network card of a cloud server as backend servers. ip: This backend server group can only add IP addresses as backend servers.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -512,9 +512,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Last operation time of the backend server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -523,9 +523,9 @@ public final class ServerGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Last operation time of the backend server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

@@ -12,17 +12,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
 {
     /// <summary>
     /// Control policy.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using System.Text.Json;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var organizationServiceControlPolicyDemo = new Bytepluscc.Organization.ServiceControlPolicy("OrganizationServiceControlPolicyDemo", new()
     ///     {
@@ -70,12 +70,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:organization/serviceControlPolicy:ServiceControlPolicy example "policy_id"
     /// ```

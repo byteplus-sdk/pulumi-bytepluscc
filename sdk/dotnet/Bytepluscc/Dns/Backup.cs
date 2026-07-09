@@ -12,27 +12,27 @@ namespace Byteplus.Pulumi.Bytepluscc.Dns
 {
     /// <summary>
     /// Backup Information
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var dNSBackupDemo = new Bytepluscc.Dns.Backup("DNSBackupDemo", new()
     ///     {
     ///         Zid = "21xxxx",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:dns/backup:Backup example "zid|backup_id"
     /// ```

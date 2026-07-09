@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
 {
     /// <summary>
     /// CEN inter-region bandwidth, used to allocate cross-region connectivity bandwidth for Cloud Enterprise Network instances.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cENInterRegionBandwidthDemo = new Bytepluscc.Cen.InterRegionBandwidth("CENInterRegionBandwidthDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     ///         CenId = "cen-2v73nw1h8a03k6x7exxxxx",
     ///         CenBandwidthPackageId = "cbp-mikp555wa4u85smt1xxxxxx",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth example "inter_region_bandwidth_id"
     /// ```

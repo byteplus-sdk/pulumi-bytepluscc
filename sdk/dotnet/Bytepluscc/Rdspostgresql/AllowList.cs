@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
     /// An allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database. After a PostgreSQL instance is created, it is not bound to any allowlist, and all IP addresses are denied access by default. To connect to the instance via private or public network, you must first configure an allowlist for the instance to ensure connectivity.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rdsPostgresqlAllowListDemo = new Bytepluscc.Rdspostgresql.AllowList("RdsPostgresqlAllowListDemo", new()
     ///     {
@@ -59,12 +59,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     ///         InstanceId = "postgres-60xxxxx5ed9",
     ///         UpgradeAllowListVersion = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdspostgresql/allowList:AllowList example "allow_list_id"
     /// ```

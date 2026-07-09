@@ -12,24 +12,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
 {
     /// <summary>
     /// Enterprise Organization Management
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var organizationDemo = new Bytepluscc.Organization.Organization("organizationDemo");
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:organization/organization:Organization example "organization_id"
     /// ```

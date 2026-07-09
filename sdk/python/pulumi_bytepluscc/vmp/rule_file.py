@@ -33,13 +33,13 @@ class RuleFileArgs:
                    - Each `labelname` must not exceed 256 bytes.
                    - Each `labelvalue` must not exceed 2,048 bytes.
         :param pulumi.Input[_builtins.str] name: Rule file name:
-
+                 
                    - Must be a valid Linux file name and less than 255 characters.
                    - Must be unique within the workspace.
         :param pulumi.Input[_builtins.str] workspace_id: Workspace ID.
         :param pulumi.Input[_builtins.str] description: Rule file description, limited to 0–200 characters.
-
-
+                 
+                 
                  **Note:** Note
                  Each English letter, Chinese character, or symbol counts as one character.
         :param pulumi.Input[_builtins.str] target_workspace_id: Target workspace ID to write to. If empty, writes to the source workspace.
@@ -73,7 +73,7 @@ class RuleFileArgs:
     def name(self) -> pulumi.Input[_builtins.str]:
         """
         Rule file name:
-
+          
             - Must be a valid Linux file name and less than 255 characters.
             - Must be unique within the workspace.
         """
@@ -100,8 +100,8 @@ class RuleFileArgs:
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule file description, limited to 0–200 characters.
-
-
+          
+          
           **Note:** Note
           Each English letter, Chinese character, or symbol counts as one character.
         """
@@ -147,19 +147,19 @@ class _RuleFileState:
                    - Each `labelvalue` must not exceed 2,048 bytes.
         :param pulumi.Input[_builtins.str] create_time: Rule file creation time in RFC3339 format.
         :param pulumi.Input[_builtins.str] description: Rule file description, limited to 0–200 characters.
-
-
+                 
+                 
                  **Note:** Note
                  Each English letter, Chinese character, or symbol counts as one character.
         :param pulumi.Input[_builtins.str] last_update_time: Last updated time of the rule file in RFC3339 format.
         :param pulumi.Input[_builtins.str] name: Rule file name:
-
+                 
                    - Must be a valid Linux file name and less than 255 characters.
                    - Must be unique within the workspace.
         :param pulumi.Input[_builtins.int] rule_count: Number of rules in the rule file.
         :param pulumi.Input[_builtins.str] rule_file_id: Rule file ID.
         :param pulumi.Input[_builtins.str] status: Rule file status:
-
+                 
                    - **Creating**: Creating
                    - **Running**: Running
                    - **Updating**: Updating
@@ -222,8 +222,8 @@ class _RuleFileState:
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule file description, limited to 0–200 characters.
-
-
+          
+          
           **Note:** Note
           Each English letter, Chinese character, or symbol counts as one character.
         """
@@ -250,7 +250,7 @@ class _RuleFileState:
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule file name:
-
+          
             - Must be a valid Linux file name and less than 255 characters.
             - Must be unique within the workspace.
         """
@@ -289,7 +289,7 @@ class _RuleFileState:
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Rule file status:
-
+          
             - **Creating**: Creating
             - **Running**: Running
             - **Updating**: Updating
@@ -375,12 +375,12 @@ class RuleFile(pulumi.CustomResource):
                    - Each `labelname` must not exceed 256 bytes.
                    - Each `labelvalue` must not exceed 2,048 bytes.
         :param pulumi.Input[_builtins.str] description: Rule file description, limited to 0–200 characters.
-
-
+                 
+                 
                  **Note:** Note
                  Each English letter, Chinese character, or symbol counts as one character.
         :param pulumi.Input[_builtins.str] name: Rule file name:
-
+                 
                    - Must be a valid Linux file name and less than 255 characters.
                    - Must be unique within the workspace.
         :param pulumi.Input[_builtins.str] target_workspace_id: Target workspace ID to write to. If empty, writes to the source workspace.
@@ -499,19 +499,19 @@ class RuleFile(pulumi.CustomResource):
                    - Each `labelvalue` must not exceed 2,048 bytes.
         :param pulumi.Input[_builtins.str] create_time: Rule file creation time in RFC3339 format.
         :param pulumi.Input[_builtins.str] description: Rule file description, limited to 0–200 characters.
-
-
+                 
+                 
                  **Note:** Note
                  Each English letter, Chinese character, or symbol counts as one character.
         :param pulumi.Input[_builtins.str] last_update_time: Last updated time of the rule file in RFC3339 format.
         :param pulumi.Input[_builtins.str] name: Rule file name:
-
+                 
                    - Must be a valid Linux file name and less than 255 characters.
                    - Must be unique within the workspace.
         :param pulumi.Input[_builtins.int] rule_count: Number of rules in the rule file.
         :param pulumi.Input[_builtins.str] rule_file_id: Rule file ID.
         :param pulumi.Input[_builtins.str] status: Rule file status:
-
+                 
                    - **Creating**: Creating
                    - **Running**: Running
                    - **Updating**: Updating
@@ -561,8 +561,8 @@ class RuleFile(pulumi.CustomResource):
     def description(self) -> pulumi.Output[_builtins.str]:
         """
         Rule file description, limited to 0–200 characters.
-
-
+          
+          
           **Note:** Note
           Each English letter, Chinese character, or symbol counts as one character.
         """
@@ -581,7 +581,7 @@ class RuleFile(pulumi.CustomResource):
     def name(self) -> pulumi.Output[_builtins.str]:
         """
         Rule file name:
-
+          
             - Must be a valid Linux file name and less than 255 characters.
             - Must be unique within the workspace.
         """
@@ -608,7 +608,7 @@ class RuleFile(pulumi.CustomResource):
     def status(self) -> pulumi.Output[_builtins.str]:
         """
         Rule file status:
-
+          
             - **Creating**: Creating
             - **Running**: Running
             - **Updating**: Updating

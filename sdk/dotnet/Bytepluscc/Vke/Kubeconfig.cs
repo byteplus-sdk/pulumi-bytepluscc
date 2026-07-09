@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
     /// Cluster Management Kubeconfig
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vKEKubeconfigDemo = new Bytepluscc.Vke.Kubeconfig("VKEKubeconfigDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///         Type = "Private",
     ///         ValidDuration = 2,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vke/kubeconfig:Kubeconfig example "cluster_id|kubeconfig_id"
     /// ```

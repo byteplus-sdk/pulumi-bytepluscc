@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Corresponds to Node in Kubernetes, which is the basic element of a Container Service cluster. Nodes mainly include: Master nodes (control nodes) and Worker nodes (compute nodes/worker nodes). Applications are actually deployed on Worker nodes, supporting random deployment on Worker nodes or deployment on specified Worker nodes through configuration. In Container Service, node generally refers to Worker node.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vkeNodeDemo = new Node("vkeNodeDemo", NodeArgs.builder()
  *             .additionalContainerStorageEnabled(false)
@@ -53,46 +53,46 @@ import javax.annotation.Nullable;
  *             .keepInstanceName(true)
  *             .nodePoolId("pd5s9srqxxxxxo88e621g")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vke/node:Node example &#34;cluster_id|node_pool_id|node_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vke/node:Node")
 public class Node extends com.pulumi.resources.CustomResource {
     /**
      * Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool&#39;s data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool&#39;s data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
-     *
+     * 
      */
     @Export(name="additionalContainerStorageEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> additionalContainerStorageEnabled;
 
     /**
      * @return Select the data disk for the node, format and mount it as the storage directory for container images and logs. Values: false (default): Disabled. Default node pool: indicates no data disk is mounted. Custom node pool: mounts according to the node pool&#39;s data disk configuration. ECS instance data disks added to the node pool must include the data disk specified for mounting by the target node pool (including local disks), and the disk type and size must match exactly. true: Enabled. You must also configure the ContainerStoragePath parameter. The node mounts according to the configuration in the ContainerStoragePath parameter and ignores the node pool&#39;s data disk configuration. There are no special requirements for ECS instance data disks added to the node pool.
-     *
+     * 
      */
     public Output<Boolean> additionalContainerStorageEnabled() {
         return this.additionalContainerStorageEnabled;
     }
     /**
      * Cluster ID.
-     *
+     * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID.
-     *
+     * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
@@ -100,7 +100,7 @@ public class Node extends com.pulumi.resources.CustomResource {
     /**
      * Use this data disk device to mount the container and image storage directory /var/lib/containerd.
      * Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
-     *
+     * 
      */
     @Export(name="containerStoragePath", refs={String.class}, tree="[0]")
     private Output<String> containerStoragePath;
@@ -108,203 +108,203 @@ public class Node extends com.pulumi.resources.CustomResource {
     /**
      * @return Use this data disk device to mount the container and image storage directory /var/lib/containerd.
      * Valid only when AdditionalContainerStorageEnabled=true and cannot be empty. The following conditions must be met, otherwise initialization will fail: Only ECS instances with mounted data disks are supported. When specifying a data disk device name, ensure the device exists, otherwise initialization will fail. When specifying a data disk partition or logical volume name, ensure the partition or logical volume exists and uses the ext4 file system.
-     *
+     * 
      */
     public Output<String> containerStoragePath() {
         return this.containerStoragePath;
     }
     /**
      * Creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Image ID used by the ECS instance corresponding to the node.
-     *
+     * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID used by the ECS instance corresponding to the node.
-     *
+     * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
-     *
+     * 
      */
     @Export(name="initializeScript", refs={String.class}, tree="[0]")
     private Output<String> initializeScript;
 
     /**
      * @return Script executed after creating ECS nodes and deploying Kubernetes components. Supports Shell format. Base64-encoded length must not exceed 1 KB. If left empty, the node inherits the default node pool initialization script NodeConfig.InitializeScript. If you enter a custom script, the custom script will be used and the default node pool initialization script will be ignored.
-     *
+     * 
      */
     public Output<String> initializeScript() {
         return this.initializeScript;
     }
     /**
      * Cloud server instance ID corresponding to the node.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Cloud server instance ID corresponding to the node.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Is it a virtual node? Parameter value description: false: No, true: Yes.
-     *
+     * 
      */
     @Export(name="isVirtual", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isVirtual;
 
     /**
      * @return Is it a virtual node? Parameter value description: false: No, true: Yes.
-     *
+     * 
      */
     public Output<Boolean> isVirtual() {
         return this.isVirtual;
     }
     /**
      * Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
-     *
+     * 
      */
     @Export(name="keepInstanceName", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> keepInstanceName;
 
     /**
      * @return Whether to retain the original ECS instance name. Options: false (default): do not retain the original ECS instance name; Container Service automatically assigns a name. true: retain the original ECS instance name.
-     *
+     * 
      */
     public Output<Boolean> keepInstanceName() {
         return this.keepInstanceName;
     }
     /**
      * Kubernetes-related configuration for the node. If empty, the node inherits the default node pool&#39;s Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool&#39;s Kubernetes configuration.
-     *
+     * 
      */
     @Export(name="kubernetesConfig", refs={NodeKubernetesConfig.class}, tree="[0]")
     private Output<NodeKubernetesConfig> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node. If empty, the node inherits the default node pool&#39;s Kubernetes configuration: KubernetesConfig.Labels/Taints/Cordon. If custom configuration is provided, the node uses the custom configuration and ignores the default node pool&#39;s Kubernetes configuration.
-     *
+     * 
      */
     public Output<NodeKubernetesConfig> kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
      * Node name.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Node name.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Node ID.
-     *
+     * 
      */
     @Export(name="nodeId", refs={String.class}, tree="[0]")
     private Output<String> nodeId;
 
     /**
      * @return Node ID.
-     *
+     * 
      */
     public Output<String> nodeId() {
         return this.nodeId;
     }
     /**
      * Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
-     *
+     * 
      */
     @Export(name="nodePoolId", refs={String.class}, tree="[0]")
     private Output<String> nodePoolId;
 
     /**
      * @return Node pool ID. If no parameter value is provided: add existing ECS instances to the default node pool. If a parameter value is provided: add existing ECS instances to a custom node pool.
-     *
+     * 
      */
     public Output<String> nodePoolId() {
         return this.nodePoolId;
     }
     /**
      * Node role. Parameter value description: Worker: Worker node.
-     *
+     * 
      */
     @Export(name="roles", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> roles;
 
     /**
      * @return Node role. Parameter value description: Worker: Worker node.
-     *
+     * 
      */
     public Output<List<String>> roles() {
         return this.roles;
     }
     /**
      * Node status.
-     *
+     * 
      */
     @Export(name="status", refs={NodeStatus.class}, tree="[0]")
     private Output<NodeStatus> status;
 
     /**
      * @return Node status.
-     *
+     * 
      */
     public Output<NodeStatus> status() {
         return this.status;
     }
     /**
      * Update time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Availability zone ID.
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

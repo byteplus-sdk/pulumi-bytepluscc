@@ -23,14 +23,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -39,7 +39,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Outbound ACL rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="egressAclEntries")
     private @Nullable Output<List<NetworkAclEgressAclEntryArgs>> egressAclEntries;
@@ -47,7 +47,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Outbound ACL rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NetworkAclEgressAclEntryArgs>>> egressAclEntries() {
         return Optional.ofNullable(this.egressAclEntries);
@@ -56,7 +56,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Inbound ACL rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="ingressAclEntries")
     private @Nullable Output<List<NetworkAclIngressAclEntryArgs>> ingressAclEntries;
@@ -64,7 +64,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Inbound ACL rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NetworkAclIngressAclEntryArgs>>> ingressAclEntries() {
         return Optional.ofNullable(this.ingressAclEntries);
@@ -72,14 +72,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
-     *
+     * 
      */
     @Import(name="networkAclName")
     private @Nullable Output<String> networkAclName;
 
     /**
      * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
-     *
+     * 
      */
     public Optional<Output<String>> networkAclName() {
         return Optional.ofNullable(this.networkAclName);
@@ -87,14 +87,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project associated with the network ACL. If not specified, added to the default project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project associated with the network ACL. If not specified, added to the default project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -103,7 +103,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Associated resource list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="resources")
     private @Nullable Output<List<NetworkAclResourceArgs>> resources;
@@ -111,7 +111,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Associated resource list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NetworkAclResourceArgs>>> resources() {
         return Optional.ofNullable(this.resources);
@@ -120,7 +120,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<NetworkAclTagArgs>> tags;
@@ -128,7 +128,7 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NetworkAclTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -136,14 +136,14 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the VPC associated with the network ACL.
-     *
+     * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC associated with the network ACL.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -182,9 +182,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -193,9 +193,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -204,9 +204,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param egressAclEntries Outbound ACL rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder egressAclEntries(@Nullable Output<List<NetworkAclEgressAclEntryArgs>> egressAclEntries) {
             $.egressAclEntries = egressAclEntries;
@@ -216,9 +216,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param egressAclEntries Outbound ACL rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder egressAclEntries(List<NetworkAclEgressAclEntryArgs> egressAclEntries) {
             return egressAclEntries(Output.of(egressAclEntries));
@@ -227,9 +227,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param egressAclEntries Outbound ACL rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder egressAclEntries(NetworkAclEgressAclEntryArgs... egressAclEntries) {
             return egressAclEntries(List.of(egressAclEntries));
@@ -238,9 +238,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ingressAclEntries Inbound ACL rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ingressAclEntries(@Nullable Output<List<NetworkAclIngressAclEntryArgs>> ingressAclEntries) {
             $.ingressAclEntries = ingressAclEntries;
@@ -250,9 +250,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ingressAclEntries Inbound ACL rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ingressAclEntries(List<NetworkAclIngressAclEntryArgs> ingressAclEntries) {
             return ingressAclEntries(Output.of(ingressAclEntries));
@@ -261,9 +261,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ingressAclEntries Inbound ACL rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ingressAclEntries(NetworkAclIngressAclEntryArgs... ingressAclEntries) {
             return ingressAclEntries(List.of(ingressAclEntries));
@@ -271,9 +271,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkAclName Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkAclName(@Nullable Output<String> networkAclName) {
             $.networkAclName = networkAclName;
@@ -282,9 +282,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkAclName Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkAclName(String networkAclName) {
             return networkAclName(Output.of(networkAclName));
@@ -292,9 +292,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project associated with the network ACL. If not specified, added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -303,9 +303,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project associated with the network ACL. If not specified, added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -314,9 +314,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param resources Associated resource list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resources(@Nullable Output<List<NetworkAclResourceArgs>> resources) {
             $.resources = resources;
@@ -326,9 +326,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param resources Associated resource list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resources(List<NetworkAclResourceArgs> resources) {
             return resources(Output.of(resources));
@@ -337,9 +337,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param resources Associated resource list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resources(NetworkAclResourceArgs... resources) {
             return resources(List.of(resources));
@@ -348,9 +348,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<NetworkAclTagArgs>> tags) {
             $.tags = tags;
@@ -360,9 +360,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<NetworkAclTagArgs> tags) {
             return tags(Output.of(tags));
@@ -371,9 +371,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(NetworkAclTagArgs... tags) {
             return tags(List.of(tags));
@@ -381,9 +381,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC associated with the network ACL.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -392,9 +392,9 @@ public final class NetworkAclArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC associated with the network ACL.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

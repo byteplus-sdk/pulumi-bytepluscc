@@ -20,54 +20,54 @@ import javax.annotation.Nullable;
 public final class HostGroupRuleContainerRule {
     /**
      * @return Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
-     *
+     * 
      */
     private @Nullable String containerNameRegex;
     /**
      * @return Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<HostGroupRuleContainerRuleEnvTag> envTags;
     /**
      * @return Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<HostGroupRuleContainerRuleExcludeContainerEnvRegex> excludeContainerEnvRegexes;
     /**
      * @return The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<HostGroupRuleContainerRuleExcludeContainerLabelRegex> excludeContainerLabelRegexes;
     /**
      * @return The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<HostGroupRuleContainerRuleIncludeContainerEnvRegex> includeContainerEnvRegexes;
     /**
      * @return The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<HostGroupRuleContainerRuleIncludeContainerLabelRegex> includeContainerLabelRegexes;
     /**
      * @return Kubernetes container collection rules.
-     *
+     * 
      */
     private @Nullable HostGroupRuleContainerRuleKubernetesRule kubernetesRule;
     /**
      * @return Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
-     *
+     * 
      */
     private @Nullable String stream;
 
     private HostGroupRuleContainerRule() {}
     /**
      * @return Container name to collect. If no container name is specified, all containers in the machine group are collected. Supports regular expressions. For example, setting the container name to ^(container-test)$ collects all containers named container-test.
-     *
+     * 
      */
     public Optional<String> containerNameRegex() {
         return Optional.ofNullable(this.containerNameRegex);
@@ -75,7 +75,7 @@ public final class HostGroupRuleContainerRule {
     /**
      * @return Whether to add environment variables as log tags to the raw log data. When enabled, Log Service adds container environment variable fields to logs. Setting multiple key-value pairs adds multiple fields. For example, set Key to source and Value to data_source. If the container has the environment variable source=DC, Log Service adds the field **tag**data_source_*: DC to the log.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<HostGroupRuleContainerRuleEnvTag> envTags() {
         return this.envTags == null ? List.of() : this.envTags;
@@ -83,7 +83,7 @@ public final class HostGroupRuleContainerRule {
     /**
      * @return Container environment variable denylist/blocklist specifies containers to exclude from collection. If the denylist/blocklist is not enabled, all containers are collected. If enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in their environment variables are excluded. If Value is not empty, only containers matching the key-value pair are excluded—that is, containers with the specified Key and a Value matching the given pattern. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to exclude containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR: any container matching any pair is excluded from collection. When the denylist/blocklist is enabled, Keys cannot be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<HostGroupRuleContainerRuleExcludeContainerEnvRegex> excludeContainerEnvRegexes() {
         return this.excludeContainerEnvRegexes == null ? List.of() : this.excludeContainerEnvRegexes;
@@ -91,7 +91,7 @@ public final class HostGroupRuleContainerRule {
     /**
      * @return The container Label denylist specifies which containers to exclude from collection. If not enabled, all containers are collected. If the container Label denylist is enabled, Key is required and Value is optional. If Value is empty, all containers with the specified Key in the container Label are excluded. If Value is not empty, only containers matching the Key-Value pair are excluded, meaning only containers with the specified Key and a Value matching the pattern are excluded. Value supports regex matching. For example, set Key to app and Value to ^(test1|test2)$ to exclude containers with app:test1 or app:test2 in the container Label. The logical relationship between multiple Key-Value pairs is OR, meaning any container Label matching any pair will be excluded from collection. When enabling the container Label denylist, Keys must not be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<HostGroupRuleContainerRuleExcludeContainerLabelRegex> excludeContainerLabelRegexes() {
         return this.excludeContainerLabelRegexes == null ? List.of() : this.excludeContainerLabelRegexes;
@@ -99,7 +99,7 @@ public final class HostGroupRuleContainerRule {
     /**
      * @return The container environment variable allowlist specifies which containers to collect by using environment variables as criteria. If the allowlist is not enabled, all containers are collected. When the container environment variable allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty: collect all containers that contain the Key in their environment variables. If Value is not empty: only collect containers where the Key exists and its value matches Value. Value supports regex matching. For example, set Key to module and Value to ^(tcp|udp)$ to collect only containers with module:tcp or module:udp in their environment variables. Multiple key-value pairs use logical OR; any container environment variable matching any key-value pair will be included in the collection scope. When the container environment variable allowlist is enabled, Keys must not be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<HostGroupRuleContainerRuleIncludeContainerEnvRegex> includeContainerEnvRegexes() {
         return this.includeContainerEnvRegexes == null ? List.of() : this.includeContainerEnvRegexes;
@@ -107,21 +107,21 @@ public final class HostGroupRuleContainerRule {
     /**
      * @return The container Label allowlist specifies which containers to collect based on container Labels. If the allowlist is not enabled, all containers are collected. When the container Label allowlist is enabled, you must enter key-value pairs. Key is required; Value is optional. If Value is empty, all containers with the specified Key in their container Label are collected. If Value is not empty, only containers with the specified Key and a Value matching the Value field are collected. Value supports regular expressions. For example, set Key to app and Value to ^(test1|test2)$ to collect only containers with app:test1 or app:test2 in their container Label. The logical relationship between multiple key-value pairs is OR; any container Label matching any key-value pair will be included in the collection scope. When the container Label allowlist is enabled, Keys must not be duplicated.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<HostGroupRuleContainerRuleIncludeContainerLabelRegex> includeContainerLabelRegexes() {
         return this.includeContainerLabelRegexes == null ? List.of() : this.includeContainerLabelRegexes;
     }
     /**
      * @return Kubernetes container collection rules.
-     *
+     * 
      */
     public Optional<HostGroupRuleContainerRuleKubernetesRule> kubernetesRule() {
         return Optional.ofNullable(this.kubernetesRule);
     }
     /**
      * @return Collection information. stdout: Container standard output (stdout). stderr: Container standard error (stderr). all: Both container standard output (stdout) and standard error (stderr).
-     *
+     * 
      */
     public Optional<String> stream() {
         return Optional.ofNullable(this.stream);

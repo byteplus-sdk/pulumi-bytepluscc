@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Dns
 {
     /// <summary>
     /// DNS record resource, used to create, query, update, delete, and list a single DNS record under a specified domain name.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var dNSRecordDemo = new Bytepluscc.Dns.Record("DNSRecordDemo", new()
     ///     {
@@ -35,12 +35,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Dns
     ///         Weight = 2,
     ///         Enable = false,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:dns/record:Record example "zid|record_id"
     /// ```

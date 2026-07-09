@@ -20,14 +20,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     *
+     * 
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
         return Optional.ofNullable(this.autoPublishRouteEnabled);
@@ -35,14 +35,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-     *
+     * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-     *
+     * 
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -50,14 +50,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Creation time of the network instance connection.
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the network instance connection.
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -65,14 +65,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Deletion time of the network instance connection.
-     *
+     * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return Deletion time of the network instance connection.
-     *
+     * 
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -80,14 +80,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Description of the network instance connection.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the network instance connection.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -95,14 +95,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Whether IPv6 is enabled. true: yes. false: no
-     *
+     * 
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether IPv6 is enabled. true: yes. false: no
-     *
+     * 
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
         return Optional.ofNullable(this.ipv6Enabled);
@@ -110,14 +110,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Shutdown time due to overdue payment for the network instance connection
-     *
+     * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
      * @return Shutdown time due to overdue payment for the network instance connection
-     *
+     * 
      */
     public Optional<Output<String>> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
@@ -125,14 +125,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * ID of the network instance
-     *
+     * 
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
      * @return ID of the network instance
-     *
+     * 
      */
     public Optional<Output<String>> resourceId() {
         return Optional.ofNullable(this.resourceId);
@@ -140,14 +140,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-     *
+     * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-     *
+     * 
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
@@ -155,14 +155,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -171,7 +171,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     /**
      * Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterAttachmentTagArgs>> tags;
@@ -179,7 +179,7 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
     /**
      * @return Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<TransitRouterAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -187,14 +187,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Network instance connection ID.
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentId")
     private @Nullable Output<String> transitRouterAttachmentId;
 
     /**
      * @return Network instance connection ID.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentId() {
         return Optional.ofNullable(this.transitRouterAttachmentId);
@@ -202,14 +202,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Name of the network instance connection
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -217,14 +217,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * ID of the forwarding policy associated with the cross-region connection
-     *
+     * 
      */
     @Import(name="transitRouterForwardPolicyTableId")
     private @Nullable Output<String> transitRouterForwardPolicyTableId;
 
     /**
      * @return ID of the forwarding policy associated with the cross-region connection
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterForwardPolicyTableId() {
         return Optional.ofNullable(this.transitRouterForwardPolicyTableId);
@@ -232,14 +232,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Transit router instance ID.
-     *
+     * 
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterId() {
         return Optional.ofNullable(this.transitRouterId);
@@ -247,14 +247,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Route table ID associated with the forwarding of the network instance connection.
-     *
+     * 
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
      * @return Route table ID associated with the forwarding of the network instance connection.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
         return Optional.ofNullable(this.transitRouterRouteTableId);
@@ -262,14 +262,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * ID of the flow marking policy associated with the cross-region connection
-     *
+     * 
      */
     @Import(name="transitRouterTrafficQosMarkingPolicyId")
     private @Nullable Output<String> transitRouterTrafficQosMarkingPolicyId;
 
     /**
      * @return ID of the flow marking policy associated with the cross-region connection
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterTrafficQosMarkingPolicyId() {
         return Optional.ofNullable(this.transitRouterTrafficQosMarkingPolicyId);
@@ -277,14 +277,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * ID of the flow queue policy associated with the cross-region connection
-     *
+     * 
      */
     @Import(name="transitRouterTrafficQosQueuePolicyId")
     private @Nullable Output<String> transitRouterTrafficQosQueuePolicyId;
 
     /**
      * @return ID of the flow queue policy associated with the cross-region connection
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterTrafficQosQueuePolicyId() {
         return Optional.ofNullable(this.transitRouterTrafficQosQueuePolicyId);
@@ -292,14 +292,14 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
     /**
      * Last operation time of the network instance connection
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Last operation time of the network instance connection
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -349,9 +349,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoPublishRouteEnabled(@Nullable Output<Boolean> autoPublishRouteEnabled) {
             $.autoPublishRouteEnabled = autoPublishRouteEnabled;
@@ -360,9 +360,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
             return autoPublishRouteEnabled(Output.of(autoPublishRouteEnabled));
@@ -370,9 +370,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param businessStatus Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -381,9 +381,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param businessStatus Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -391,9 +391,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param creationTime Creation time of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -402,9 +402,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param creationTime Creation time of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -412,9 +412,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param deletedTime Deletion time of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -423,9 +423,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param deletedTime Deletion time of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -433,9 +433,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param description Description of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -444,9 +444,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param description Description of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -454,9 +454,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param ipv6Enabled Whether IPv6 is enabled. true: yes. false: no
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Enabled(@Nullable Output<Boolean> ipv6Enabled) {
             $.ipv6Enabled = ipv6Enabled;
@@ -465,9 +465,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param ipv6Enabled Whether IPv6 is enabled. true: yes. false: no
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Enabled(Boolean ipv6Enabled) {
             return ipv6Enabled(Output.of(ipv6Enabled));
@@ -475,9 +475,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param overdueTime Shutdown time due to overdue payment for the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder overdueTime(@Nullable Output<String> overdueTime) {
             $.overdueTime = overdueTime;
@@ -486,9 +486,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param overdueTime Shutdown time due to overdue payment for the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder overdueTime(String overdueTime) {
             return overdueTime(Output.of(overdueTime));
@@ -496,9 +496,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param resourceId ID of the network instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceId(@Nullable Output<String> resourceId) {
             $.resourceId = resourceId;
@@ -507,9 +507,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param resourceId ID of the network instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceId(String resourceId) {
             return resourceId(Output.of(resourceId));
@@ -517,9 +517,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param resourceType Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceType(@Nullable Output<String> resourceType) {
             $.resourceType = resourceType;
@@ -528,9 +528,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param resourceType Type of network instance associated with the network instance connection. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
@@ -538,9 +538,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param status Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -549,9 +549,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param status Status of the network instance connection. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -560,9 +560,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<TransitRouterAttachmentTagArgs>> tags) {
             $.tags = tags;
@@ -572,9 +572,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<TransitRouterAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
@@ -583,9 +583,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(TransitRouterAttachmentTagArgs... tags) {
             return tags(List.of(tags));
@@ -593,9 +593,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterAttachmentId Network instance connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentId(@Nullable Output<String> transitRouterAttachmentId) {
             $.transitRouterAttachmentId = transitRouterAttachmentId;
@@ -604,9 +604,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterAttachmentId Network instance connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentId(String transitRouterAttachmentId) {
             return transitRouterAttachmentId(Output.of(transitRouterAttachmentId));
@@ -614,9 +614,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -625,9 +625,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -635,9 +635,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterForwardPolicyTableId ID of the forwarding policy associated with the cross-region connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterForwardPolicyTableId(@Nullable Output<String> transitRouterForwardPolicyTableId) {
             $.transitRouterForwardPolicyTableId = transitRouterForwardPolicyTableId;
@@ -646,9 +646,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterForwardPolicyTableId ID of the forwarding policy associated with the cross-region connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterForwardPolicyTableId(String transitRouterForwardPolicyTableId) {
             return transitRouterForwardPolicyTableId(Output.of(transitRouterForwardPolicyTableId));
@@ -656,9 +656,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterId Transit router instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(@Nullable Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -667,9 +667,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterId Transit router instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -677,9 +677,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterRouteTableId Route table ID associated with the forwarding of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterRouteTableId(@Nullable Output<String> transitRouterRouteTableId) {
             $.transitRouterRouteTableId = transitRouterRouteTableId;
@@ -688,9 +688,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterRouteTableId Route table ID associated with the forwarding of the network instance connection.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterRouteTableId(String transitRouterRouteTableId) {
             return transitRouterRouteTableId(Output.of(transitRouterRouteTableId));
@@ -698,9 +698,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterTrafficQosMarkingPolicyId ID of the flow marking policy associated with the cross-region connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterTrafficQosMarkingPolicyId(@Nullable Output<String> transitRouterTrafficQosMarkingPolicyId) {
             $.transitRouterTrafficQosMarkingPolicyId = transitRouterTrafficQosMarkingPolicyId;
@@ -709,9 +709,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterTrafficQosMarkingPolicyId ID of the flow marking policy associated with the cross-region connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterTrafficQosMarkingPolicyId(String transitRouterTrafficQosMarkingPolicyId) {
             return transitRouterTrafficQosMarkingPolicyId(Output.of(transitRouterTrafficQosMarkingPolicyId));
@@ -719,9 +719,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterTrafficQosQueuePolicyId ID of the flow queue policy associated with the cross-region connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterTrafficQosQueuePolicyId(@Nullable Output<String> transitRouterTrafficQosQueuePolicyId) {
             $.transitRouterTrafficQosQueuePolicyId = transitRouterTrafficQosQueuePolicyId;
@@ -730,9 +730,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterTrafficQosQueuePolicyId ID of the flow queue policy associated with the cross-region connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterTrafficQosQueuePolicyId(String transitRouterTrafficQosQueuePolicyId) {
             return transitRouterTrafficQosQueuePolicyId(Output.of(transitRouterTrafficQosQueuePolicyId));
@@ -740,9 +740,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param updateTime Last operation time of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -751,9 +751,9 @@ public final class TransitRouterAttachmentArgs extends com.pulumi.resources.Reso
 
         /**
          * @param updateTime Last operation time of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

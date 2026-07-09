@@ -19,7 +19,7 @@ public final class EndpointCustomRouteStrategyArgs extends com.pulumi.resources.
     /**
      * Custom routing policy list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="keywordRouteStrategies")
     private @Nullable Output<List<EndpointCustomRouteStrategyKeywordRouteStrategyArgs>> keywordRouteStrategies;
@@ -27,7 +27,7 @@ public final class EndpointCustomRouteStrategyArgs extends com.pulumi.resources.
     /**
      * @return Custom routing policy list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EndpointCustomRouteStrategyKeywordRouteStrategyArgs>>> keywordRouteStrategies() {
         return Optional.ofNullable(this.keywordRouteStrategies);
@@ -60,9 +60,9 @@ public final class EndpointCustomRouteStrategyArgs extends com.pulumi.resources.
         /**
          * @param keywordRouteStrategies Custom routing policy list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keywordRouteStrategies(@Nullable Output<List<EndpointCustomRouteStrategyKeywordRouteStrategyArgs>> keywordRouteStrategies) {
             $.keywordRouteStrategies = keywordRouteStrategies;
@@ -72,9 +72,9 @@ public final class EndpointCustomRouteStrategyArgs extends com.pulumi.resources.
         /**
          * @param keywordRouteStrategies Custom routing policy list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keywordRouteStrategies(List<EndpointCustomRouteStrategyKeywordRouteStrategyArgs> keywordRouteStrategies) {
             return keywordRouteStrategies(Output.of(keywordRouteStrategies));
@@ -83,9 +83,9 @@ public final class EndpointCustomRouteStrategyArgs extends com.pulumi.resources.
         /**
          * @param keywordRouteStrategies Custom routing policy list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keywordRouteStrategies(EndpointCustomRouteStrategyKeywordRouteStrategyArgs... keywordRouteStrategies) {
             return keywordRouteStrategies(List.of(keywordRouteStrategies));

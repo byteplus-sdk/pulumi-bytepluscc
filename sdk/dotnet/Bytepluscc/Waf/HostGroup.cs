@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
 {
     /// <summary>
     /// Domain groups are used for centralized management of multiple domains. You can batch associate rules and manage them collectively.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Waf.HostGroup("Example", new()
     ///     {
@@ -33,12 +33,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
     ///         },
     ///         Name = "test-host-group-full",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:waf/hostGroup:HostGroup example "host_group_id"
     /// ```

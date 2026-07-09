@@ -16,12 +16,12 @@ public final class NodeStatus {
     /**
      * @return Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<NodeStatusCondition> conditions;
     /**
      * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
-     *
+     * 
      */
     private @Nullable String phase;
 
@@ -29,14 +29,14 @@ public final class NodeStatus {
     /**
      * @return Status condition under the node&#39;s current primary state, indicating the reason for entering this primary state.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<NodeStatusCondition> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return Node status. Parameter values: Creating, Running, Deleting, Failed, Updating.
-     *
+     * 
      */
     public Optional<String> phase() {
         return Optional.ofNullable(this.phase);

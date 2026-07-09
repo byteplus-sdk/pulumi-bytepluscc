@@ -12,17 +12,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 {
     /// <summary>
     /// Event rule details
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using System.Text.Json;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cloudMonitorEventRuleDemo = new Bytepluscc.Cloudmonitor.EventRule("CloudMonitorEventRuleDemo", new()
     ///     {
@@ -53,12 +53,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
     ///             },
     ///         }),
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cloudmonitor/eventRule:EventRule example "rule_id"
     /// ```
@@ -89,7 +89,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 
         /// <summary>
         /// Rule status
-        ///
+        ///   
         ///   enable: Rule enabled
         ///   disable: Rule disabled
         /// </summary>
@@ -216,7 +216,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 
         /// <summary>
         /// Rule status
-        ///
+        ///   
         ///   enable: Rule enabled
         ///   disable: Rule disabled
         /// </summary>
@@ -304,7 +304,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 
         /// <summary>
         /// Rule status
-        ///
+        ///   
         ///   enable: Rule enabled
         ///   disable: Rule disabled
         /// </summary>

@@ -16,17 +16,17 @@ public final class WorkspaceInstanceTypeCalculatePriceParam {
     /**
      * @return Billing item list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList> calChargeItemLists;
     /**
      * @return Configuration item code.
-     *
+     * 
      */
     private @Nullable String configurationCode;
     /**
      * @return Billing cycle.
-     *
+     * 
      */
     private @Nullable String period;
 
@@ -34,21 +34,21 @@ public final class WorkspaceInstanceTypeCalculatePriceParam {
     /**
      * @return Billing item list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList> calChargeItemLists() {
         return this.calChargeItemLists == null ? List.of() : this.calChargeItemLists;
     }
     /**
      * @return Configuration item code.
-     *
+     * 
      */
     public Optional<String> configurationCode() {
         return Optional.ofNullable(this.configurationCode);
     }
     /**
      * @return Billing cycle.
-     *
+     * 
      */
     public Optional<String> period() {
         return Optional.ofNullable(this.period);

@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Allocated from the subnet associated with the private NAT gateway for IP address translation.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var natGatewayNatIpDemo = new NatIp("natGatewayNatIpDemo", NatIpArgs.builder()
  *             .natGatewayId("ngw-2hgk22kpfp5a874wjohxxxxx")
@@ -48,130 +48,130 @@ import javax.annotation.Nullable;
  *             .natIpName("NatGatewayNatIpDemo")
  *             .natIp("192.168.xxx.xx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:natgateway/natIp:NatIp example &#34;nat_ip_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:natgateway/natIp:NatIp")
 public class NatIp extends com.pulumi.resources.CustomResource {
     /**
      * Whether this is the default transit IP. true: Yes. false: No.
-     *
+     * 
      */
     @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefault;
 
     /**
      * @return Whether this is the default transit IP. true: Yes. false: No.
-     *
+     * 
      */
     public Output<Boolean> isDefault() {
         return this.isDefault;
     }
     /**
      * Private NAT gateway ID.
-     *
+     * 
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
      * @return Private NAT gateway ID.
-     *
+     * 
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
      * Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
-     *
+     * 
      */
     @Export(name="natIp", refs={String.class}, tree="[0]")
     private Output<String> natIp;
 
     /**
      * @return Transit IP address. If not specified, the system automatically randomly assigns an available IP address from the subnet of the private NAT gateway.
-     *
+     * 
      */
     public Output<String> natIp() {
         return this.natIp;
     }
     /**
      * Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     *
+     * 
      */
     @Export(name="natIpDescription", refs={String.class}, tree="[0]")
     private Output<String> natIpDescription;
 
     /**
      * @return Description of the transit IP. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     *
+     * 
      */
     public Output<String> natIpDescription() {
         return this.natIpDescription;
     }
     /**
      * Transit IP ID.
-     *
+     * 
      */
     @Export(name="natIpId", refs={String.class}, tree="[0]")
     private Output<String> natIpId;
 
     /**
      * @return Transit IP ID.
-     *
+     * 
      */
     public Output<String> natIpId() {
         return this.natIpId;
     }
     /**
      * Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
-     *
+     * 
      */
     @Export(name="natIpName", refs={String.class}, tree="[0]")
     private Output<String> natIpName;
 
     /**
      * @return Name of the transit IP. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number; can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the transit IP ID.
-     *
+     * 
      */
     public Output<String> natIpName() {
         return this.natIpName;
     }
     /**
      * Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the transit IP. Creating: Being created. Available: Available. Deleting: Being deleted. Deleted: Deleted.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
-     *
+     * 
      */
     @Export(name="usingStatus", refs={String.class}, tree="[0]")
     private Output<String> usingStatus;
 
     /**
      * @return Usage status of the transit IP. Idle: Not used. UsedBySnat: Used by SNAT rule. UsedByDnat: Used by DNAT rule. UsedByNat: Used by both SNAT and DNAT rules.
-     *
+     * 
      */
     public Output<String> usingStatus() {
         return this.usingStatus;

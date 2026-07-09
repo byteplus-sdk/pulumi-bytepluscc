@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
 {
     /// <summary>
     /// Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var wafDomainDemo = new Bytepluscc.Waf.Domain("WafDomainDemo", new()
     ///     {
@@ -63,12 +63,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:waf/domain:Domain example "domain"
     /// ```

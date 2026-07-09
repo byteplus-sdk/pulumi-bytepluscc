@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 {
     /// <summary>
     /// After you create a Cloud Identity Center user, you need to grant the user login access to each account.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cloudIdentityUserProvisioningDemo = new Bytepluscc.Cloudidentity.UserProvisioning("CloudIdentityUserProvisioningDemo", new()
     ///     {
@@ -34,12 +34,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     ///         Description = "ccapi-test",
     ///         DuplicationSuffix = "-cctest",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cloudidentity/userProvisioning:UserProvisioning example "user_provisioning_id"
     /// ```

@@ -16,66 +16,66 @@ import javax.annotation.Nullable;
 public final class MountPointPermissionGroup {
     /**
      * @return Permission group creation time.
-     *
+     * 
      */
     private @Nullable String createTime;
     /**
      * @return Permission group description information.
-     *
+     * 
      */
     private @Nullable String description;
     /**
      * @return Number of file systems associated with this permission group.
-     *
+     * 
      */
     private @Nullable Integer fileSystemCount;
     /**
      * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
-     *
+     * 
      */
     private @Nullable String fileSystemType;
     /**
      * @return Information about mount points that use this permission group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<MountPointPermissionGroupMountPoint> mountPoints;
     /**
      * @return Permission group name.
-     *
+     * 
      */
     private @Nullable String permissionGroupName;
     /**
      * @return Number of permission rules.
-     *
+     * 
      */
     private @Nullable Integer permissionRuleCount;
 
     private MountPointPermissionGroup() {}
     /**
      * @return Permission group creation time.
-     *
+     * 
      */
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
     }
     /**
      * @return Permission group description information.
-     *
+     * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Number of file systems associated with this permission group.
-     *
+     * 
      */
     public Optional<Integer> fileSystemCount() {
         return Optional.ofNullable(this.fileSystemCount);
     }
     /**
      * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
-     *
+     * 
      */
     public Optional<String> fileSystemType() {
         return Optional.ofNullable(this.fileSystemType);
@@ -83,21 +83,21 @@ public final class MountPointPermissionGroup {
     /**
      * @return Information about mount points that use this permission group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<MountPointPermissionGroupMountPoint> mountPoints() {
         return this.mountPoints == null ? List.of() : this.mountPoints;
     }
     /**
      * @return Permission group name.
-     *
+     * 
      */
     public Optional<String> permissionGroupName() {
         return Optional.ofNullable(this.permissionGroupName);
     }
     /**
      * @return Number of permission rules.
-     *
+     * 
      */
     public Optional<Integer> permissionRuleCount() {
         return Optional.ofNullable(this.permissionRuleCount);

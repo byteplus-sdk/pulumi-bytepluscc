@@ -12,28 +12,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
 {
     /// <summary>
     /// RabbitMQ supports enabling public access. Once enabled, you can access the RabbitMQ instance via the public network.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var publicaddressDemo = new Bytepluscc.Rabbitmq.PublicAddress("publicaddressDemo", new()
     ///     {
     ///         InstanceId = "rbtmq-db26b7****",
     ///         EipId = "eip-2f8w9fh1qmwao4****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rabbitmq/publicAddress:PublicAddress example "instance_id"
     /// ```

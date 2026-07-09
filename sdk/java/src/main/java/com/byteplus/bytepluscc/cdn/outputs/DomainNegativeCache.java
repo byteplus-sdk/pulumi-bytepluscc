@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 public final class DomainNegativeCache {
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     private @Nullable DomainNegativeCacheCondition condition;
     /**
      * @return Represents a list. Each element in the list is a status code cache rule.
-     *
+     * 
      */
     private @Nullable DomainNegativeCacheNegativeCacheRule negativeCacheRule;
 
     private DomainNegativeCache() {}
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public Optional<DomainNegativeCacheCondition> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
      * @return Represents a list. Each element in the list is a status code cache rule.
-     *
+     * 
      */
     public Optional<DomainNegativeCacheNegativeCacheRule> negativeCacheRule() {
         return Optional.ofNullable(this.negativeCacheRule);

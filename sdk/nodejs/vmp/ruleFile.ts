@@ -74,8 +74,8 @@ export class RuleFile extends pulumi.CustomResource {
     declare public /*out*/ readonly createTime: pulumi.Output<string>;
     /**
      * Rule file description, limited to 0–200 characters.
-     *
-     *
+     *   
+     *   
      *   **Note:** Note
      *   Each English letter, Chinese character, or symbol counts as one character.
      */
@@ -86,7 +86,7 @@ export class RuleFile extends pulumi.CustomResource {
     declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
     /**
      * Rule file name:
-     *
+     *   
      *     - Must be a valid Linux file name and less than 255 characters.
      *     - Must be unique within the workspace.
      */
@@ -101,7 +101,7 @@ export class RuleFile extends pulumi.CustomResource {
     declare public /*out*/ readonly ruleFileId: pulumi.Output<string>;
     /**
      * Rule file status:
-     *
+     *   
      *     - **Creating**: Creating
      *     - **Running**: Running
      *     - **Updating**: Updating
@@ -186,8 +186,8 @@ export interface RuleFileState {
     createTime?: pulumi.Input<string | undefined>;
     /**
      * Rule file description, limited to 0–200 characters.
-     *
-     *
+     *   
+     *   
      *   **Note:** Note
      *   Each English letter, Chinese character, or symbol counts as one character.
      */
@@ -198,7 +198,7 @@ export interface RuleFileState {
     lastUpdateTime?: pulumi.Input<string | undefined>;
     /**
      * Rule file name:
-     *
+     *   
      *     - Must be a valid Linux file name and less than 255 characters.
      *     - Must be unique within the workspace.
      */
@@ -213,7 +213,7 @@ export interface RuleFileState {
     ruleFileId?: pulumi.Input<string | undefined>;
     /**
      * Rule file status:
-     *
+     *   
      *     - **Creating**: Creating
      *     - **Running**: Running
      *     - **Updating**: Updating
@@ -245,15 +245,15 @@ export interface RuleFileArgs {
     content: pulumi.Input<string>;
     /**
      * Rule file description, limited to 0–200 characters.
-     *
-     *
+     *   
+     *   
      *   **Note:** Note
      *   Each English letter, Chinese character, or symbol counts as one character.
      */
     description?: pulumi.Input<string | undefined>;
     /**
      * Rule file name:
-     *
+     *   
      *     - Must be a valid Linux file name and less than 255 characters.
      *     - Must be unique within the workspace.
      */

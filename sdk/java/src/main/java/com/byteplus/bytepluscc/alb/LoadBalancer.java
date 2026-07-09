@@ -24,14 +24,14 @@ import javax.annotation.Nullable;
 
 /**
  * Application Load Balancer (ALB) is a service that distributes traffic for Layer 7 network protocols.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var aLBLoadBalancerDemo = new LoadBalancer("aLBLoadBalancerDemo", LoadBalancerArgs.builder()
  *             .type("public")
@@ -73,7 +73,7 @@ import javax.annotation.Nullable;
  *                 .security_protection_types("AntiDDoS_Enhanced")
  *                 .security_protection_instance_id(743)
  *                 .build())
- *             .zoneMappings(
+ *             .zoneMappings(            
  *                 LoadBalancerZoneMappingArgs.builder()
  *                     .subnet_id("subnet-rrwqhg3qzxfkv0xxxxxx")
  *                     .zone_id("cn-beijing-a")
@@ -106,354 +106,354 @@ import javax.annotation.Nullable;
  *                 .topic_id("90xxxx7774-7f7e-462e-8afb-90xxxx7774")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:alb/loadBalancer:LoadBalancer example &#34;load_balancer_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:alb/loadBalancer:LoadBalancer")
 public class LoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
-     *
+     * 
      */
     @Export(name="addressIpVersion", refs={String.class}, tree="[0]")
     private Output<String> addressIpVersion;
 
     /**
      * @return IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
-     *
+     * 
      */
     public Output<String> addressIpVersion() {
         return this.addressIpVersion;
     }
     /**
      * ID of the bound shared bandwidth package, enabling bandwidth sharing.
-     *
+     * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
      * @return ID of the bound shared bandwidth package, enabling bandwidth sharing.
-     *
+     * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
      * Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Service status of the ALB instance. Normal: normal; FinancialLocked: locked due to overdue payment.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time of the ALB instance.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the ALB instance.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Delete protection switch. on: enabled; off: disabled.
-     *
+     * 
      */
     @Export(name="deleteProtection", refs={String.class}, tree="[0]")
     private Output<String> deleteProtection;
 
     /**
      * @return Delete protection switch. on: enabled; off: disabled.
-     *
+     * 
      */
     public Output<String> deleteProtection() {
         return this.deleteProtection;
     }
     /**
      * Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Expected reclamation time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the ALB instance.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the ALB instance.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * DNS domain name.
-     *
+     * 
      */
     @Export(name="dnsName", refs={String.class}, tree="[0]")
     private Output<String> dnsName;
 
     /**
      * @return DNS domain name.
-     *
+     * 
      */
     public Output<String> dnsName() {
         return this.dnsName;
     }
     /**
      * Billing configuration for public IP, only applicable to public instances.
-     *
+     * 
      */
     @Export(name="eipBillingConfig", refs={LoadBalancerEipBillingConfig.class}, tree="[0]")
     private Output<LoadBalancerEipBillingConfig> eipBillingConfig;
 
     /**
      * @return Billing configuration for public IP, only applicable to public instances.
-     *
+     * 
      */
     public Output<LoadBalancerEipBillingConfig> eipBillingConfig() {
         return this.eipBillingConfig;
     }
     /**
      * Global accelerator configuration, used to improve cross-region access speed.
-     *
+     * 
      */
     @Export(name="globalAccelerator", refs={LoadBalancerGlobalAccelerator.class}, tree="[0]")
     private Output<LoadBalancerGlobalAccelerator> globalAccelerator;
 
     /**
      * @return Global accelerator configuration, used to improve cross-region access speed.
-     *
+     * 
      */
     public Output<LoadBalancerGlobalAccelerator> globalAccelerator() {
         return this.globalAccelerator;
     }
     /**
      * Health check log information in the ALB instance
-     *
+     * 
      */
     @Export(name="healthLog", refs={LoadBalancerHealthLog.class}, tree="[0]")
     private Output<LoadBalancerHealthLog> healthLog;
 
     /**
      * @return Health check log information in the ALB instance
-     *
+     * 
      */
     public Output<LoadBalancerHealthLog> healthLog() {
         return this.healthLog;
     }
     /**
      * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
-     *
+     * 
      */
     @Export(name="ipv6BandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> ipv6BandwidthPackageId;
 
     /**
      * @return When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
-     *
+     * 
      */
     public Output<String> ipv6BandwidthPackageId() {
         return this.ipv6BandwidthPackageId;
     }
     /**
      * Billing configuration for IPv6 public IP, only applicable to public instances.
-     *
+     * 
      */
     @Export(name="ipv6EipBillingConfig", refs={LoadBalancerIpv6EipBillingConfig.class}, tree="[0]")
     private Output<LoadBalancerIpv6EipBillingConfig> ipv6EipBillingConfig;
 
     /**
      * @return Billing configuration for IPv6 public IP, only applicable to public instances.
-     *
+     * 
      */
     public Output<LoadBalancerIpv6EipBillingConfig> ipv6EipBillingConfig() {
         return this.ipv6EipBillingConfig;
     }
     /**
      * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
-     *
+     * 
      */
     @Export(name="loadBalancerBillingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> loadBalancerBillingType;
 
     /**
      * @return ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
-     *
+     * 
      */
     public Output<Integer> loadBalancerBillingType() {
         return this.loadBalancerBillingType;
     }
     /**
      * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
-     *
+     * 
      */
     @Export(name="loadBalancerEdition", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerEdition;
 
     /**
      * @return Version of the application load balancer. Basic: Basic version; Standard: Standard version.
-     *
+     * 
      */
     public Output<String> loadBalancerEdition() {
         return this.loadBalancerEdition;
     }
     /**
      * ALB instance ID.
-     *
+     * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return ALB instance ID.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Name of the ALB instance.
-     *
+     * 
      */
     @Export(name="loadBalancerName", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerName;
 
     /**
      * @return Name of the ALB instance.
-     *
+     * 
      */
     public Output<String> loadBalancerName() {
         return this.loadBalancerName;
     }
     /**
      * Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
-     *
+     * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason for ALB instance freeze, such as Financial (arrears) or Security (security reasons). Returned only when the instance is locked.
-     *
+     * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
-     *
+     * 
      */
     @Export(name="modificationProtectionReason", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionReason;
 
     /**
      * @return Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
-     *
+     * 
      */
     public Output<String> modificationProtectionReason() {
         return this.modificationProtectionReason;
     }
     /**
      * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
-     *
+     * 
      */
     @Export(name="modificationProtectionStatus", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionStatus;
 
     /**
      * @return Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
-     *
+     * 
      */
     public Output<String> modificationProtectionStatus() {
         return this.modificationProtectionStatus;
     }
     /**
      * Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
-     *
+     * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Freeze time of the ALB instance. This parameter is only returned when the instance is in the FinancialLocked state.
-     *
+     * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Name of the project to which the instance belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the instance belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * ALB supports the Proxy Protocol and records the client&#39;s real IP.
-     *
+     * 
      */
     @Export(name="proxyProtocolEnabled", refs={String.class}, tree="[0]")
     private Output<String> proxyProtocolEnabled;
 
     /**
      * @return ALB supports the Proxy Protocol and records the client&#39;s real IP.
-     *
+     * 
      */
     public Output<String> proxyProtocolEnabled() {
         return this.proxyProtocolEnabled;
     }
     /**
      * ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return ALB instance status: Active (running), Provisioning (creating), Configuring (configuring), Deleting (deleting), CreateFailed (creation failed), Inactive (stopped).
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -461,7 +461,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * List of tags bound to the instance, used for categorization and billing.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,LoadBalancerTag.class}, tree="[0,1]")
     private Output<List<LoadBalancerTag>> tags;
@@ -469,105 +469,105 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * @return List of tags bound to the instance, used for categorization and billing.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<LoadBalancerTag>> tags() {
         return this.tags;
     }
     /**
      * Access log information in the ALB instance
-     *
+     * 
      */
     @Export(name="tlsAccessLog", refs={LoadBalancerTlsAccessLog.class}, tree="[0]")
     private Output<LoadBalancerTlsAccessLog> tlsAccessLog;
 
     /**
      * @return Access log information in the ALB instance
-     *
+     * 
      */
     public Output<LoadBalancerTlsAccessLog> tlsAccessLog() {
         return this.tlsAccessLog;
     }
     /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Last update time of the ALB instance.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last update time of the ALB instance.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * ID of the WAF security protection instance bound to the ALB instance.
-     *
+     * 
      */
     @Export(name="wafInstanceId", refs={String.class}, tree="[0]")
     private Output<String> wafInstanceId;
 
     /**
      * @return ID of the WAF security protection instance bound to the ALB instance.
-     *
+     * 
      */
     public Output<String> wafInstanceId() {
         return this.wafInstanceId;
     }
     /**
      * Domain name protected by WAF, used for precise rule matching.
-     *
+     * 
      */
     @Export(name="wafProtectedDomain", refs={String.class}, tree="[0]")
     private Output<String> wafProtectedDomain;
 
     /**
      * @return Domain name protected by WAF, used for precise rule matching.
-     *
+     * 
      */
     public Output<String> wafProtectedDomain() {
         return this.wafProtectedDomain;
     }
     /**
      * WAF security protection switch. on: enabled; off: disabled.
-     *
+     * 
      */
     @Export(name="wafProtectionEnabled", refs={String.class}, tree="[0]")
     private Output<String> wafProtectionEnabled;
 
     /**
      * @return WAF security protection switch. on: enabled; off: disabled.
-     *
+     * 
      */
     public Output<String> wafProtectionEnabled() {
         return this.wafProtectionEnabled;
@@ -575,7 +575,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * Availability zone mapping list, defines which availability zones the instance provides services in.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="zoneMappings", refs={List.class,LoadBalancerZoneMapping.class}, tree="[0,1]")
     private Output<List<LoadBalancerZoneMapping>> zoneMappings;
@@ -583,7 +583,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     /**
      * @return Availability zone mapping list, defines which availability zones the instance provides services in.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<LoadBalancerZoneMapping>> zoneMappings() {
         return this.zoneMappings;

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
 {
     /// <summary>
     /// The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var fileNASInstanceDemo = new Bytepluscc.Filenas.Instance("FileNASInstanceDemo", new()
     ///     {
@@ -35,12 +35,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Filenas
     ///         ProtocolType = "NFS",
     ///         ZoneId = "cn-beijing-x",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:filenas/instance:Instance example "file_system_id"
     /// ```

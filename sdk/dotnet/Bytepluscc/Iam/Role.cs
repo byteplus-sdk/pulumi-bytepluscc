@@ -12,17 +12,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
     /// A role is a virtual identity in the IAM system that grants certain access permissions within an account to various identity entities. Trusted identity entities can assume this role to access cloud resources within the account.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using System.Text.Json;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var roleDemo = new Bytepluscc.Iam.Role("RoleDemo", new()
     ///     {
@@ -107,12 +107,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:iam/role:Role example "role_name"
     /// ```

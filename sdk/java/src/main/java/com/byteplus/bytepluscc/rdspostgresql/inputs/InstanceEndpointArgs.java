@@ -23,7 +23,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * Address list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="addresses")
     private @Nullable Output<List<InstanceEndpointAddressArgs>> addresses;
@@ -31,7 +31,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return Address list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceEndpointAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
@@ -39,14 +39,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-     *
+     * 
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<String> autoAddNewNodes;
 
     /**
      * @return When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-     *
+     * 
      */
     public Optional<Output<String>> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
@@ -54,14 +54,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Address description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Address description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -69,14 +69,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     @Import(name="enableReadOnly")
     private @Nullable Output<String> enableReadOnly;
 
     /**
      * @return Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     public Optional<Output<String>> enableReadOnly() {
         return Optional.ofNullable(this.enableReadOnly);
@@ -84,14 +84,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     @Import(name="enableReadWriteSplitting")
     private @Nullable Output<String> enableReadWriteSplitting;
 
     /**
      * @return Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-     *
+     * 
      */
     public Optional<Output<String>> enableReadWriteSplitting() {
         return Optional.ofNullable(this.enableReadWriteSplitting);
@@ -99,14 +99,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Instance connection terminal ID
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Instance connection terminal ID
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -114,14 +114,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Instance connection terminal name
-     *
+     * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Instance connection terminal name
-     *
+     * 
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -129,14 +129,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-     *
+     * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-     *
+     * 
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -144,14 +144,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-     *
+     * 
      */
     @Import(name="readOnlyNodeDistributionType")
     private @Nullable Output<String> readOnlyNodeDistributionType;
 
     /**
      * @return Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-     *
+     * 
      */
     public Optional<Output<String>> readOnlyNodeDistributionType() {
         return Optional.ofNullable(this.readOnlyNodeDistributionType);
@@ -160,7 +160,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
      * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-     *
+     * 
      */
     @Import(name="readOnlyNodeMaxDelayTime")
     private @Nullable Output<Double> readOnlyNodeMaxDelayTime;
@@ -168,7 +168,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
      * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-     *
+     * 
      */
     public Optional<Output<Double>> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
@@ -177,7 +177,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * List of nodes configured for the endpoint and their corresponding read-only weights.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="readOnlyNodeWeights")
     private @Nullable Output<List<InstanceEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights;
@@ -185,7 +185,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return List of nodes configured for the endpoint and their corresponding read-only weights.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceEndpointReadOnlyNodeWeightArgs>>> readOnlyNodeWeights() {
         return Optional.ofNullable(this.readOnlyNodeWeights);
@@ -193,14 +193,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-     *
+     * 
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
      * @return Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-     *
+     * 
      */
     public Optional<Output<String>> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);
@@ -208,14 +208,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-     *
+     * 
      */
     @Import(name="readWriteProxyConnection")
     private @Nullable Output<Double> readWriteProxyConnection;
 
     /**
      * @return After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-     *
+     * 
      */
     public Optional<Output<Double>> readWriteProxyConnection() {
         return Optional.ofNullable(this.readWriteProxyConnection);
@@ -223,14 +223,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
-     *
+     * 
      */
     @Import(name="writeNodeHaltWriting")
     private @Nullable Output<Boolean> writeNodeHaltWriting;
 
     /**
      * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
-     *
+     * 
      */
     public Optional<Output<Boolean>> writeNodeHaltWriting() {
         return Optional.ofNullable(this.writeNodeHaltWriting);
@@ -276,9 +276,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param addresses Address list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(@Nullable Output<List<InstanceEndpointAddressArgs>> addresses) {
             $.addresses = addresses;
@@ -288,9 +288,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param addresses Address list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(List<InstanceEndpointAddressArgs> addresses) {
             return addresses(Output.of(addresses));
@@ -299,9 +299,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param addresses Address list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(InstanceEndpointAddressArgs... addresses) {
             return addresses(List.of(addresses));
@@ -309,9 +309,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAddNewNodes When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAddNewNodes(@Nullable Output<String> autoAddNewNodes) {
             $.autoAddNewNodes = autoAddNewNodes;
@@ -320,9 +320,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAddNewNodes When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAddNewNodes(String autoAddNewNodes) {
             return autoAddNewNodes(Output.of(autoAddNewNodes));
@@ -330,9 +330,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Address description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -341,9 +341,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Address description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -351,9 +351,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadOnly Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadOnly(@Nullable Output<String> enableReadOnly) {
             $.enableReadOnly = enableReadOnly;
@@ -362,9 +362,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadOnly Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadOnly(String enableReadOnly) {
             return enableReadOnly(Output.of(enableReadOnly));
@@ -372,9 +372,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadWriteSplitting Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadWriteSplitting(@Nullable Output<String> enableReadWriteSplitting) {
             $.enableReadWriteSplitting = enableReadWriteSplitting;
@@ -383,9 +383,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadWriteSplitting Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadWriteSplitting(String enableReadWriteSplitting) {
             return enableReadWriteSplitting(Output.of(enableReadWriteSplitting));
@@ -393,9 +393,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId Instance connection terminal ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -404,9 +404,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId Instance connection terminal ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -414,9 +414,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Instance connection terminal name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -425,9 +425,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Instance connection terminal name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -435,9 +435,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -446,9 +446,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
@@ -456,9 +456,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readOnlyNodeDistributionType Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeDistributionType(@Nullable Output<String> readOnlyNodeDistributionType) {
             $.readOnlyNodeDistributionType = readOnlyNodeDistributionType;
@@ -467,9 +467,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readOnlyNodeDistributionType Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeDistributionType(String readOnlyNodeDistributionType) {
             return readOnlyNodeDistributionType(Output.of(readOnlyNodeDistributionType));
@@ -478,9 +478,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param readOnlyNodeMaxDelayTime Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
          * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeMaxDelayTime(@Nullable Output<Double> readOnlyNodeMaxDelayTime) {
             $.readOnlyNodeMaxDelayTime = readOnlyNodeMaxDelayTime;
@@ -490,9 +490,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param readOnlyNodeMaxDelayTime Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
          * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeMaxDelayTime(Double readOnlyNodeMaxDelayTime) {
             return readOnlyNodeMaxDelayTime(Output.of(readOnlyNodeMaxDelayTime));
@@ -501,9 +501,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param readOnlyNodeWeights List of nodes configured for the endpoint and their corresponding read-only weights.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeWeights(@Nullable Output<List<InstanceEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights) {
             $.readOnlyNodeWeights = readOnlyNodeWeights;
@@ -513,9 +513,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param readOnlyNodeWeights List of nodes configured for the endpoint and their corresponding read-only weights.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeWeights(List<InstanceEndpointReadOnlyNodeWeightArgs> readOnlyNodeWeights) {
             return readOnlyNodeWeights(Output.of(readOnlyNodeWeights));
@@ -524,9 +524,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param readOnlyNodeWeights List of nodes configured for the endpoint and their corresponding read-only weights.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeWeights(InstanceEndpointReadOnlyNodeWeightArgs... readOnlyNodeWeights) {
             return readOnlyNodeWeights(List.of(readOnlyNodeWeights));
@@ -534,9 +534,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteMode Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteMode(@Nullable Output<String> readWriteMode) {
             $.readWriteMode = readWriteMode;
@@ -545,9 +545,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteMode Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteMode(String readWriteMode) {
             return readWriteMode(Output.of(readWriteMode));
@@ -555,9 +555,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteProxyConnection After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteProxyConnection(@Nullable Output<Double> readWriteProxyConnection) {
             $.readWriteProxyConnection = readWriteProxyConnection;
@@ -566,9 +566,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteProxyConnection After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteProxyConnection(Double readWriteProxyConnection) {
             return readWriteProxyConnection(Output.of(readWriteProxyConnection));
@@ -576,9 +576,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param writeNodeHaltWriting Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder writeNodeHaltWriting(@Nullable Output<Boolean> writeNodeHaltWriting) {
             $.writeNodeHaltWriting = writeNodeHaltWriting;
@@ -587,9 +587,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param writeNodeHaltWriting Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder writeNodeHaltWriting(Boolean writeNodeHaltWriting) {
             return writeNodeHaltWriting(Output.of(writeNodeHaltWriting));

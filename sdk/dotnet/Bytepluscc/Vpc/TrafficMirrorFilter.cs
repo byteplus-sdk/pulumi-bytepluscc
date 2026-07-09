@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// With traffic mirroring, you can mirror network interface traffic based on your filter conditions and forward the mirrored traffic over the private network to a target service for monitoring and analysis
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPCTrafficMirrorFilterDemo = new Bytepluscc.Vpc.TrafficMirrorFilter("VPCTrafficMirrorFilterDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/trafficMirrorFilter:TrafficMirrorFilter example "traffic_mirror_filter_id"
     /// ```

@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * Private network resolution
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var privateZoneDemo = new PrivateZone("privateZoneDemo", PrivateZoneArgs.builder()
  *             .zoneName("new.example.com")
@@ -63,116 +63,116 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .remark("测试域名")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:privatezone/privateZone:PrivateZone example &#34;zid&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:privatezone/privateZone:PrivateZone")
 public class PrivateZone extends com.pulumi.resources.CustomResource {
     /**
      * Domain creation time
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Domain creation time
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Most recent operator
-     *
+     * 
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
      * @return Most recent operator
-     *
+     * 
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
      * Enable load balancing: 0 to disable, 1 to enable. Default is 0
-     *
+     * 
      */
     @Export(name="lineMode", refs={Integer.class}, tree="[0]")
     private Output<Integer> lineMode;
 
     /**
      * @return Enable load balancing: 0 to disable, 1 to enable. Default is 0
-     *
+     * 
      */
     public Output<Integer> lineMode() {
         return this.lineMode;
     }
     /**
      * Name of the project the domain belongs to. Default is default
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project the domain belongs to. Default is default
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Number of DNS records under the domain name
-     *
+     * 
      */
     @Export(name="recordCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> recordCount;
 
     /**
      * @return Number of DNS records under the domain name
-     *
+     * 
      */
     public Output<Integer> recordCount() {
         return this.recordCount;
     }
     /**
      * Enable recursive resolution: true to enable, false to disable. Default is false
-     *
+     * 
      */
     @Export(name="recursionMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> recursionMode;
 
     /**
      * @return Enable recursive resolution: true to enable, false to disable. Default is false
-     *
+     * 
      */
     public Output<Boolean> recursionMode() {
         return this.recursionMode;
     }
     /**
      * Remarks. Default is an empty string
-     *
+     * 
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Remarks. Default is an empty string
-     *
+     * 
      */
     public Output<String> remark() {
         return this.remark;
@@ -180,7 +180,7 @@ public class PrivateZone extends com.pulumi.resources.CustomResource {
     /**
      * One or more tags associated with the domain. A resource can be associated with up to 50 tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,PrivateZoneTag.class}, tree="[0,1]")
     private Output<List<PrivateZoneTag>> tags;
@@ -188,21 +188,21 @@ public class PrivateZone extends com.pulumi.resources.CustomResource {
     /**
      * @return One or more tags associated with the domain. A resource can be associated with up to 50 tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PrivateZoneTag>> tags() {
         return this.tags;
     }
     /**
      * Most recent update time of the domain
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Most recent update time of the domain
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
@@ -210,7 +210,7 @@ public class PrivateZone extends com.pulumi.resources.CustomResource {
     /**
      * One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="vpcs", refs={List.class,PrivateZoneVpc.class}, tree="[0,1]")
     private Output<List<PrivateZoneVpc>> vpcs;
@@ -218,35 +218,35 @@ public class PrivateZone extends com.pulumi.resources.CustomResource {
     /**
      * @return One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<PrivateZoneVpc>> vpcs() {
         return this.vpcs;
     }
     /**
      * Unique ID identifying the domain name
-     *
+     * 
      */
     @Export(name="zid", refs={String.class}, tree="[0]")
     private Output<String> zid;
 
     /**
      * @return Unique ID identifying the domain name
-     *
+     * 
      */
     public Output<String> zid() {
         return this.zid;
     }
     /**
      * Domain name, can be a second-level or multi-level domain
-     *
+     * 
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Domain name, can be a second-level or multi-level domain
-     *
+     * 
      */
     public Output<String> zoneName() {
         return this.zoneName;

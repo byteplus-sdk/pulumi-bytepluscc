@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * ID Permission Gateway Service is used to define backend service access configuration, permission space binding, and optional route rules for unified management of service access by the agent identity and permission management platform
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -42,12 +42,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var iDServiceDemo = new Service("iDServiceDemo", ServiceArgs.builder()
  *             .permissionSpaceId("fd46c764-e94e-4c94-ba69-6bfxxxxxxxx")
@@ -91,158 +91,158 @@ import javax.annotation.Nullable;
  *                 .key("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:id/service:Service example &#34;service_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:id/service:Service")
 public class Service extends com.pulumi.resources.CustomResource {
     /**
      * Backend service configuration
-     *
+     * 
      */
     @Export(name="backend", refs={ServiceBackend.class}, tree="[0]")
     private Output<ServiceBackend> backend;
 
     /**
      * @return Backend service configuration
-     *
+     * 
      */
     public Output<ServiceBackend> backend() {
         return this.backend;
     }
     /**
      * Backend service type, for example custom, viking, agentkit-mcp
-     *
+     * 
      */
     @Export(name="backendType", refs={String.class}, tree="[0]")
     private Output<String> backendType;
 
     /**
      * @return Backend service type, for example custom, viking, agentkit-mcp
-     *
+     * 
      */
     public Output<String> backendType() {
         return this.backendType;
     }
     /**
      * Creation time, Unix timestamp in milliseconds
-     *
+     * 
      */
     @Export(name="createdAt", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdAt;
 
     /**
      * @return Creation time, Unix timestamp in milliseconds
-     *
+     * 
      */
     public Output<Integer> createdAt() {
         return this.createdAt;
     }
     /**
      * Service description, up to 256 characters
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Service description, up to 256 characters
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Private domain name
-     *
+     * 
      */
     @Export(name="hijackDomainPrivate", refs={String.class}, tree="[0]")
     private Output<String> hijackDomainPrivate;
 
     /**
      * @return Private domain name
-     *
+     * 
      */
     public Output<String> hijackDomainPrivate() {
         return this.hijackDomainPrivate;
     }
     /**
      * Public domain name
-     *
+     * 
      */
     @Export(name="hijackDomainPublic", refs={String.class}, tree="[0]")
     private Output<String> hijackDomainPublic;
 
     /**
      * @return Public domain name
-     *
+     * 
      */
     public Output<String> hijackDomainPublic() {
         return this.hijackDomainPublic;
     }
     /**
      * Permission space ID, for example ps_123456
-     *
+     * 
      */
     @Export(name="permissionSpaceId", refs={String.class}, tree="[0]")
     private Output<String> permissionSpaceId;
 
     /**
      * @return Permission space ID, for example ps_123456
-     *
+     * 
      */
     public Output<String> permissionSpaceId() {
         return this.permissionSpaceId;
     }
     /**
      * Permission space name
-     *
+     * 
      */
     @Export(name="permissionSpaceName", refs={String.class}, tree="[0]")
     private Output<String> permissionSpaceName;
 
     /**
      * @return Permission space name
-     *
+     * 
      */
     public Output<String> permissionSpaceName() {
         return this.permissionSpaceName;
     }
     /**
      * Project name. Optional at creation, default value is &#34;default&#34;
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name. Optional at creation, default value is &#34;default&#34;
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Number of routes
-     *
+     * 
      */
     @Export(name="routeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> routeCount;
 
     /**
      * @return Number of routes
-     *
+     * 
      */
     public Output<Integer> routeCount() {
         return this.routeCount;
@@ -250,7 +250,7 @@ public class Service extends com.pulumi.resources.CustomResource {
     /**
      * List of routes created simultaneously. This field is only written at creation, not returned by read interface
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="routes", refs={List.class,ServiceRoute.class}, tree="[0,1]")
     private Output<List<ServiceRoute>> routes;
@@ -258,49 +258,49 @@ public class Service extends com.pulumi.resources.CustomResource {
     /**
      * @return List of routes created simultaneously. This field is only written at creation, not returned by read interface
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ServiceRoute>> routes() {
         return this.routes;
     }
     /**
      * Service ID. Generated after system creation, for example svc-1234567890
-     *
+     * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return Service ID. Generated after system creation, for example svc-1234567890
-     *
+     * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Service name, 1–64 characters, unique within the account
-     *
+     * 
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
      * @return Service name, 1–64 characters, unique within the account
-     *
+     * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
      * Service status. inactive: not enabled. active: enabled (configuration synced to APIGateway). draft: draft status (changes not synced to APIGateway)
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Service status. inactive: not enabled. active: enabled (configuration synced to APIGateway). draft: draft status (changes not synced to APIGateway)
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -308,7 +308,7 @@ public class Service extends com.pulumi.resources.CustomResource {
     /**
      * Service tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ServiceTag.class}, tree="[0,1]")
     private Output<List<ServiceTag>> tags;
@@ -316,49 +316,49 @@ public class Service extends com.pulumi.resources.CustomResource {
     /**
      * @return Service tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ServiceTag>> tags() {
         return this.tags;
     }
     /**
      * Template ID associated with built-in service
-     *
+     * 
      */
     @Export(name="templateId", refs={String.class}, tree="[0]")
     private Output<String> templateId;
 
     /**
      * @return Template ID associated with built-in service
-     *
+     * 
      */
     public Output<String> templateId() {
         return this.templateId;
     }
     /**
      * Resource TRN
-     *
+     * 
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Resource TRN
-     *
+     * 
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Update time, Unix timestamp in milliseconds
-     *
+     * 
      */
     @Export(name="updatedAt", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedAt;
 
     /**
      * @return Update time, Unix timestamp in milliseconds
-     *
+     * 
      */
     public Output<Integer> updatedAt() {
         return this.updatedAt;

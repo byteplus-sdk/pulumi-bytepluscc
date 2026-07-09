@@ -18,14 +18,14 @@ public final class DomainBrowserCacheArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     @Import(name="cacheAction")
     private @Nullable Output<DomainBrowserCacheCacheActionArgs> cacheAction;
 
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     public Optional<Output<DomainBrowserCacheCacheActionArgs>> cacheAction() {
         return Optional.ofNullable(this.cacheAction);
@@ -33,14 +33,14 @@ public final class DomainBrowserCacheArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainBrowserCacheConditionArgs> condition;
 
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public Optional<Output<DomainBrowserCacheConditionArgs>> condition() {
         return Optional.ofNullable(this.condition);
@@ -73,9 +73,9 @@ public final class DomainBrowserCacheArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param cacheAction Indicates the relevant configuration for cache behavior.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheAction(@Nullable Output<DomainBrowserCacheCacheActionArgs> cacheAction) {
             $.cacheAction = cacheAction;
@@ -84,9 +84,9 @@ public final class DomainBrowserCacheArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param cacheAction Indicates the relevant configuration for cache behavior.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheAction(DomainBrowserCacheCacheActionArgs cacheAction) {
             return cacheAction(Output.of(cacheAction));
@@ -94,9 +94,9 @@ public final class DomainBrowserCacheArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(@Nullable Output<DomainBrowserCacheConditionArgs> condition) {
             $.condition = condition;
@@ -105,9 +105,9 @@ public final class DomainBrowserCacheArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(DomainBrowserCacheConditionArgs condition) {
             return condition(Output.of(condition));

@@ -168,7 +168,7 @@ class _FilesetState:
         :param pulumi.Input[_builtins.int] iops_qos: IOPS Qos。
         :param pulumi.Input[_builtins.int] max_inode_num: Fileset inode limit
         :param pulumi.Input[_builtins.str] status: Fileset status. The possible values are:
-
+                 
                    - `Creating`: Creating
                    - `CreateError`: Creation failed
                    - `Running`: Running
@@ -369,7 +369,7 @@ class _FilesetState:
     def status(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Fileset status. The possible values are:
-
+          
             - `Creating`: Creating
             - `CreateError`: Creation failed
             - `Running`: Running
@@ -557,7 +557,7 @@ class Fileset(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] iops_qos: IOPS Qos。
         :param pulumi.Input[_builtins.int] max_inode_num: Fileset inode limit
         :param pulumi.Input[_builtins.str] status: Fileset status. The possible values are:
-
+                 
                    - `Creating`: Creating
                    - `CreateError`: Creation failed
                    - `Running`: Running
@@ -697,7 +697,7 @@ class Fileset(pulumi.CustomResource):
     def status(self) -> pulumi.Output[_builtins.str]:
         """
         Fileset status. The possible values are:
-
+          
             - `Creating`: Creating
             - `CreateError`: Creation failed
             - `Running`: Running

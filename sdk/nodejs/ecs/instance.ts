@@ -102,7 +102,7 @@ export class Instance extends pulumi.CustomResource {
     declare public /*out*/ readonly affinityGroupId: pulumi.Output<string>;
     /**
      * Affinity group specification. Value: 2.
-     *
+     *   
      *   **Note:**
      *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
      *     - This feature is in invitation testing. To try it, please contact your account manager.
@@ -116,7 +116,7 @@ export class Instance extends pulumi.CustomResource {
      * Whether the instance will be automatically renewed upon expiration. Values:
      *     - true: Auto renewal
      *     - false (default): No auto renewal
-     *
+     *   
      *   **Note:**
      *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -129,7 +129,7 @@ export class Instance extends pulumi.CustomResource {
     declare public readonly autoRenewPeriod: pulumi.Output<number>;
     /**
      * Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-     *
+     *   
      *   **Note:**
      *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
      *     - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -147,12 +147,17 @@ export class Instance extends pulumi.CustomResource {
      * Burstable instance operating mode. Values:
      *     - Standard: Standard mode.
      *     - Unlimited: Unlimited performance mode (not supported yet).
-     *
+     *   
      *   **Note:**
      *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
      *     - If not specified or left empty, burstable instances default to `Standard` mode.
      */
     declare public readonly creditSpecification: pulumi.Output<string>;
+    /**
+     * Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    declare public readonly dataVolumes: pulumi.Output<outputs.ecs.InstanceDataVolume[]>;
     /**
      * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
      *     - true: Enable instance deletion protection
@@ -209,7 +214,7 @@ export class Instance extends pulumi.CustomResource {
     declare public readonly hostname: pulumi.Output<string>;
     /**
      * ID of the high performance computing cluster to which the instance belongs.
-     *
+     *   
      *   **Note:**
      *   This parameter is only effective and required when creating high performance computing GPU instances.
      */
@@ -270,7 +275,7 @@ export class Instance extends pulumi.CustomResource {
      * Resource purchase duration (N).
      *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
      *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-     *
+     *   
      *   **Note:**
      *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -279,7 +284,7 @@ export class Instance extends pulumi.CustomResource {
      * The unit for the duration of resource purchase. Values:
      *     - Month (default): Month
      *     - Year: Year
-     *
+     *   
      *   **Note:**
      *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -406,6 +411,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["cpuMemory"] = state?.cpuMemory;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["creditSpecification"] = state?.creditSpecification;
+            resourceInputs["dataVolumes"] = state?.dataVolumes;
             resourceInputs["deletionProtection"] = state?.deletionProtection;
             resourceInputs["deploymentSetGroupNumber"] = state?.deploymentSetGroupNumber;
             resourceInputs["deploymentSetId"] = state?.deploymentSetId;
@@ -473,6 +479,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["autoRenewPeriod"] = args?.autoRenewPeriod;
             resourceInputs["cpuMaxFrequency"] = args?.cpuMaxFrequency;
             resourceInputs["creditSpecification"] = args?.creditSpecification;
+            resourceInputs["dataVolumes"] = args?.dataVolumes;
             resourceInputs["deletionProtection"] = args?.deletionProtection;
             resourceInputs["deploymentSetGroupNumber"] = args?.deploymentSetGroupNumber;
             resourceInputs["deploymentSetId"] = args?.deploymentSetId;
@@ -533,7 +540,7 @@ export interface InstanceState {
     affinityGroupId?: pulumi.Input<string | undefined>;
     /**
      * Affinity group specification. Value: 2.
-     *
+     *   
      *   **Note:**
      *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
      *     - This feature is in invitation testing. To try it, please contact your account manager.
@@ -547,7 +554,7 @@ export interface InstanceState {
      * Whether the instance will be automatically renewed upon expiration. Values:
      *     - true: Auto renewal
      *     - false (default): No auto renewal
-     *
+     *   
      *   **Note:**
      *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -560,7 +567,7 @@ export interface InstanceState {
     autoRenewPeriod?: pulumi.Input<number | undefined>;
     /**
      * Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-     *
+     *   
      *   **Note:**
      *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
      *     - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -578,12 +585,17 @@ export interface InstanceState {
      * Burstable instance operating mode. Values:
      *     - Standard: Standard mode.
      *     - Unlimited: Unlimited performance mode (not supported yet).
-     *
+     *   
      *   **Note:**
      *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
      *     - If not specified or left empty, burstable instances default to `Standard` mode.
      */
     creditSpecification?: pulumi.Input<string | undefined>;
+    /**
+     * Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    dataVolumes?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceDataVolume>[] | undefined>;
     /**
      * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
      *     - true: Enable instance deletion protection
@@ -640,7 +652,7 @@ export interface InstanceState {
     hostname?: pulumi.Input<string | undefined>;
     /**
      * ID of the high performance computing cluster to which the instance belongs.
-     *
+     *   
      *   **Note:**
      *   This parameter is only effective and required when creating high performance computing GPU instances.
      */
@@ -701,7 +713,7 @@ export interface InstanceState {
      * Resource purchase duration (N).
      *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
      *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-     *
+     *   
      *   **Note:**
      *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -710,7 +722,7 @@ export interface InstanceState {
      * The unit for the duration of resource purchase. Values:
      *     - Month (default): Month
      *     - Year: Year
-     *
+     *   
      *   **Note:**
      *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -822,7 +834,7 @@ export interface InstanceState {
 export interface InstanceArgs {
     /**
      * Affinity group specification. Value: 2.
-     *
+     *   
      *   **Note:**
      *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
      *     - This feature is in invitation testing. To try it, please contact your account manager.
@@ -836,7 +848,7 @@ export interface InstanceArgs {
      * Whether the instance will be automatically renewed upon expiration. Values:
      *     - true: Auto renewal
      *     - false (default): No auto renewal
-     *
+     *   
      *   **Note:**
      *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -849,7 +861,7 @@ export interface InstanceArgs {
     autoRenewPeriod?: pulumi.Input<number | undefined>;
     /**
      * Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-     *
+     *   
      *   **Note:**
      *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
      *     - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -859,12 +871,17 @@ export interface InstanceArgs {
      * Burstable instance operating mode. Values:
      *     - Standard: Standard mode.
      *     - Unlimited: Unlimited performance mode (not supported yet).
-     *
+     *   
      *   **Note:**
      *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
      *     - If not specified or left empty, burstable instances default to `Standard` mode.
      */
     creditSpecification?: pulumi.Input<string | undefined>;
+    /**
+     * Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    dataVolumes?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceDataVolume>[] | undefined>;
     /**
      * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
      *     - true: Enable instance deletion protection
@@ -913,7 +930,7 @@ export interface InstanceArgs {
     hostname?: pulumi.Input<string | undefined>;
     /**
      * ID of the high performance computing cluster to which the instance belongs.
-     *
+     *   
      *   **Note:**
      *   This parameter is only effective and required when creating high performance computing GPU instances.
      */
@@ -961,7 +978,7 @@ export interface InstanceArgs {
      * Resource purchase duration (N).
      *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
      *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-     *
+     *   
      *   **Note:**
      *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
      */
@@ -970,7 +987,7 @@ export interface InstanceArgs {
      * The unit for the duration of resource purchase. Values:
      *     - Month (default): Month
      *     - Year: Year
-     *
+     *   
      *   **Note:**
      *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
      */

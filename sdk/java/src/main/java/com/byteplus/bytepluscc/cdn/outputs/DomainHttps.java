@@ -20,67 +20,67 @@ import javax.annotation.Nullable;
 public final class DomainHttps {
     /**
      * @return Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
-     *
+     * 
      */
     private @Nullable DomainHttpsCertCheck certCheck;
     /**
      * @return Indicates the single certificate to be associated with the acceleration domain name.
-     *
+     * 
      */
     private @Nullable DomainHttpsCertInfo certInfo;
     /**
      * @return Indicates the dual certificate to be associated with the acceleration domain name.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainHttpsCertInfoList> certInfoLists;
     /**
      * @return Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
-     *
+     * 
      */
     private @Nullable Boolean disableHttp;
     /**
      * @return Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     private @Nullable DomainHttpsForcedRedirect forcedRedirect;
     /**
      * @return Indicates the configuration module for the HSTS feature. This feature is disabled by default.
-     *
+     * 
      */
     private @Nullable DomainHttpsHsts hsts;
     /**
      * @return HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
-     *
+     * 
      */
     private @Nullable Boolean http2;
     /**
      * @return Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
-     *
+     * 
      */
     private @Nullable Boolean ocsp;
     /**
      * @return Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
-     *
+     * 
      */
     private @Nullable Boolean switch_;
     /**
      * @return Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-     *
+     * 
      */
     private @Nullable List<String> tlsVersions;
 
     private DomainHttps() {}
     /**
      * @return Indicates the configuration module for the &#39;mutual authentication&#39; feature. To configure &#39;mutual authentication&#39;.
-     *
+     * 
      */
     public Optional<DomainHttpsCertCheck> certCheck() {
         return Optional.ofNullable(this.certCheck);
     }
     /**
      * @return Indicates the single certificate to be associated with the acceleration domain name.
-     *
+     * 
      */
     public Optional<DomainHttpsCertInfo> certInfo() {
         return Optional.ofNullable(this.certInfo);
@@ -88,56 +88,56 @@ public final class DomainHttps {
     /**
      * @return Indicates the dual certificate to be associated with the acceleration domain name.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainHttpsCertInfoList> certInfoLists() {
         return this.certInfoLists == null ? List.of() : this.certInfoLists;
     }
     /**
      * @return Indicates whether to allow requests where the URL scheme is HTTP. The parameter values are: true: allows requests with HTTP scheme. false: does not allow requests with HTTP scheme. The default value is false.
-     *
+     * 
      */
     public Optional<Boolean> disableHttp() {
         return Optional.ofNullable(this.disableHttp);
     }
     /**
      * @return Indicates the configuration module for the &#39;HTTP Forced Redirect to HTTPS&#39; feature. This feature is disabled by default.
-     *
+     * 
      */
     public Optional<DomainHttpsForcedRedirect> forcedRedirect() {
         return Optional.ofNullable(this.forcedRedirect);
     }
     /**
      * @return Indicates the configuration module for the HSTS feature. This feature is disabled by default.
-     *
+     * 
      */
     public Optional<DomainHttpsHsts> hsts() {
         return Optional.ofNullable(this.hsts);
     }
     /**
      * @return HTTP/2 configuration switch. This parameter has the following values: true: enables HTTP/2. false: disables HTTP/2. To enable HTTP/2, you must first enable HTTPS. This feature is disabled by default. However, HTTP/2 is enabled by default in the following scenarios: The business type of the accelerated domain is web (ServiceType is web). The accelerated domain has already enabled HTTPS.
-     *
+     * 
      */
     public Optional<Boolean> http2() {
         return Optional.ofNullable(this.http2);
     }
     /**
      * @return Specify whether to enable OCSP stapling. This parameter has the following values: true: enables OCSP stapling. false: disables OCSP stapling. To enable OCSP stapling, you must first enable HTTPS. The default value is false.
-     *
+     * 
      */
     public Optional<Boolean> ocsp() {
         return Optional.ofNullable(this.ocsp);
     }
     /**
      * @return Indicates whether to enable the HTTPS feature. This parameter has the following values: true: enables the feature; false: disables the feature. If Switch is true, you must specify a certificate. If you specify a single certificate, you need to provide CertInfo. If you specify dual certificates, you need to provide CertInfoList. The certificate you specify can be hosted in the certificate center or on the content delivery network.
-     *
+     * 
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);
     }
     /**
      * @return Indicates the configuration module for the &#34;TLS Version&#34; feature. This parameter specifies the TLS versions that user requests can use, with the following options: tlsv1.0: TLS 1.0 tlsv1.1: TLS 1.1 tlsv1.2: TLS 1.2 tlsv1.3: TLS 1.3 The default value for this parameter is [&#34;tlsv1.1&#34;, &#34;tlsv1.2&#34;, &#34;tlsv1.3&#34;]
-     *
+     * 
      */
     public List<String> tlsVersions() {
         return this.tlsVersions == null ? List.of() : this.tlsVersions;

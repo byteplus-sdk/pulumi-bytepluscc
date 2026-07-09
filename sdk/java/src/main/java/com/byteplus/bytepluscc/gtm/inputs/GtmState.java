@@ -20,14 +20,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
-     *
+     * 
      */
     @Import(name="accessMode")
     private @Nullable Output<String> accessMode;
 
     /**
      * @return Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
-     *
+     * 
      */
     public Optional<Output<String>> accessMode() {
         return Optional.ofNullable(this.accessMode);
@@ -35,14 +35,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alarm rule ID associated with the GTM instance
-     *
+     * 
      */
     @Import(name="alarmId")
     private @Nullable Output<String> alarmId;
 
     /**
      * @return Alarm rule ID associated with the GTM instance
-     *
+     * 
      */
     public Optional<Output<String>> alarmId() {
         return Optional.ofNullable(this.alarmId);
@@ -50,14 +50,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scheduling domain name of the GTM instance
-     *
+     * 
      */
     @Import(name="cname")
     private @Nullable Output<String> cname;
 
     /**
      * @return Scheduling domain name of the GTM instance
-     *
+     * 
      */
     public Optional<Output<String>> cname() {
         return Optional.ofNullable(this.cname);
@@ -65,14 +65,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -80,14 +80,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name of the GTM instance, such as `www.example.com`
-     *
+     * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return Domain name of the GTM instance, such as `www.example.com`
-     *
+     * 
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
@@ -95,14 +95,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * UUID of the GTM instance
-     *
+     * 
      */
     @Import(name="gtmId")
     private @Nullable Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance
-     *
+     * 
      */
     public Optional<Output<String>> gtmId() {
         return Optional.ofNullable(this.gtmId);
@@ -110,14 +110,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account that last operated the GTM instance
-     *
+     * 
      */
     @Import(name="lastOperator")
     private @Nullable Output<String> lastOperator;
 
     /**
      * @return Account that last operated the GTM instance
-     *
+     * 
      */
     public Optional<Output<String>> lastOperator() {
         return Optional.ofNullable(this.lastOperator);
@@ -125,14 +125,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account that created the GTM instance
-     *
+     * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
      * @return Account that created the GTM instance
-     *
+     * 
      */
     public Optional<Output<String>> owner() {
         return Optional.ofNullable(this.owner);
@@ -140,14 +140,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Detailed configuration of the scheduling policy for the GTM instance.
-     *
+     * 
      */
     @Import(name="policy")
     private @Nullable Output<GtmPolicyArgs> policy;
 
     /**
      * @return Detailed configuration of the scheduling policy for the GTM instance.
-     *
+     * 
      */
     public Optional<Output<GtmPolicyArgs>> policy() {
         return Optional.ofNullable(this.policy);
@@ -155,14 +155,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
-     *
+     * 
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
      * @return Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
-     *
+     * 
      */
     public Optional<Output<String>> policyType() {
         return Optional.ofNullable(this.policyType);
@@ -170,14 +170,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Detailed configuration of the health check for the GTM instance.
-     *
+     * 
      */
     @Import(name="probe")
     private @Nullable Output<GtmProbeArgs> probe;
 
     /**
      * @return Detailed configuration of the health check for the GTM instance.
-     *
+     * 
      */
     public Optional<Output<GtmProbeArgs>> probe() {
         return Optional.ofNullable(this.probe);
@@ -185,14 +185,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name to which the GTM instance belongs
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the GTM instance belongs
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -200,14 +200,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Remark information for the GTM instance
-     *
+     * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Remark information for the GTM instance
-     *
+     * 
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -215,14 +215,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
-     *
+     * 
      */
     @Import(name="specName")
     private @Nullable Output<String> specName;
 
     /**
      * @return Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
-     *
+     * 
      */
     public Optional<Output<String>> specName() {
         return Optional.ofNullable(this.specName);
@@ -230,14 +230,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
-     *
+     * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
      * @return Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
-     *
+     * 
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
@@ -245,14 +245,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expiration time of the DNS record, in seconds
-     *
+     * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return Expiration time of the DNS record, in seconds
-     *
+     * 
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -260,14 +260,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Most recent modification time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Most recent modification time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -275,14 +275,14 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * This parameter has no practical significance and can be ignored
-     *
+     * 
      */
     @Import(name="zoneType")
     private @Nullable Output<String> zoneType;
 
     /**
      * @return This parameter has no practical significance and can be ignored
-     *
+     * 
      */
     public Optional<Output<String>> zoneType() {
         return Optional.ofNullable(this.zoneType);
@@ -331,9 +331,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessMode Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accessMode(@Nullable Output<String> accessMode) {
             $.accessMode = accessMode;
@@ -342,9 +342,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessMode Access method for the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`cname`&#34; pulumi-lang-dotnet=&#34;`Cname`&#34; pulumi-lang-go=&#34;`cname`&#34; pulumi-lang-python=&#34;`cname`&#34; pulumi-lang-yaml=&#34;`cname`&#34; pulumi-lang-java=&#34;`cname`&#34; pulumi-lang-hcl=&#34;`cname`&#34;&gt;`cname`&lt;/span&gt; means a scheduling domain name is generated and you configure CNAME at your DNS provider; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt; means Cloud DNS directly resolves the business domain name to the target address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accessMode(String accessMode) {
             return accessMode(Output.of(accessMode));
@@ -352,9 +352,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmId Alarm rule ID associated with the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmId(@Nullable Output<String> alarmId) {
             $.alarmId = alarmId;
@@ -363,9 +363,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmId Alarm rule ID associated with the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmId(String alarmId) {
             return alarmId(Output.of(alarmId));
@@ -373,9 +373,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cname Scheduling domain name of the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cname(@Nullable Output<String> cname) {
             $.cname = cname;
@@ -384,9 +384,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cname Scheduling domain name of the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cname(String cname) {
             return cname(Output.of(cname));
@@ -394,9 +394,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -405,9 +405,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -415,9 +415,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Domain name of the GTM instance, such as `www.example.com`
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
@@ -426,9 +426,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Domain name of the GTM instance, such as `www.example.com`
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
@@ -436,9 +436,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gtmId(@Nullable Output<String> gtmId) {
             $.gtmId = gtmId;
@@ -447,9 +447,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gtmId(String gtmId) {
             return gtmId(Output.of(gtmId));
@@ -457,9 +457,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastOperator Account that last operated the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lastOperator(@Nullable Output<String> lastOperator) {
             $.lastOperator = lastOperator;
@@ -468,9 +468,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastOperator Account that last operated the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lastOperator(String lastOperator) {
             return lastOperator(Output.of(lastOperator));
@@ -478,9 +478,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param owner Account that created the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder owner(@Nullable Output<String> owner) {
             $.owner = owner;
@@ -489,9 +489,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param owner Account that created the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder owner(String owner) {
             return owner(Output.of(owner));
@@ -499,9 +499,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policy Detailed configuration of the scheduling policy for the GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policy(@Nullable Output<GtmPolicyArgs> policy) {
             $.policy = policy;
@@ -510,9 +510,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policy Detailed configuration of the scheduling policy for the GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policy(GtmPolicyArgs policy) {
             return policy(Output.of(policy));
@@ -520,9 +520,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyType(@Nullable Output<String> policyType) {
             $.policyType = policyType;
@@ -531,9 +531,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType Routing policy type. &lt;span pulumi-lang-nodejs=&#34;`geo`&#34; pulumi-lang-dotnet=&#34;`Geo`&#34; pulumi-lang-go=&#34;`geo`&#34; pulumi-lang-python=&#34;`geo`&#34; pulumi-lang-yaml=&#34;`geo`&#34; pulumi-lang-java=&#34;`geo`&#34; pulumi-lang-hcl=&#34;`geo`&#34;&gt;`geo`&lt;/span&gt; indicates basic routing policy, &lt;span pulumi-lang-nodejs=&#34;`perf`&#34; pulumi-lang-dotnet=&#34;`Perf`&#34; pulumi-lang-go=&#34;`perf`&#34; pulumi-lang-python=&#34;`perf`&#34; pulumi-lang-yaml=&#34;`perf`&#34; pulumi-lang-java=&#34;`perf`&#34; pulumi-lang-hcl=&#34;`perf`&#34;&gt;`perf`&lt;/span&gt; indicates intelligent routing policy
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));
@@ -541,9 +541,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param probe Detailed configuration of the health check for the GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder probe(@Nullable Output<GtmProbeArgs> probe) {
             $.probe = probe;
@@ -552,9 +552,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param probe Detailed configuration of the health check for the GTM instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder probe(GtmProbeArgs probe) {
             return probe(Output.of(probe));
@@ -562,9 +562,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the GTM instance belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -573,9 +573,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the GTM instance belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -583,9 +583,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remark information for the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -594,9 +594,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remark information for the GTM instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -604,9 +604,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param specName Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder specName(@Nullable Output<String> specName) {
             $.specName = specName;
@@ -615,9 +615,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param specName Feature version of the GTM instance. &lt;span pulumi-lang-nodejs=&#34;`ultimate`&#34; pulumi-lang-dotnet=&#34;`Ultimate`&#34; pulumi-lang-go=&#34;`ultimate`&#34; pulumi-lang-python=&#34;`ultimate`&#34; pulumi-lang-yaml=&#34;`ultimate`&#34; pulumi-lang-java=&#34;`ultimate`&#34; pulumi-lang-hcl=&#34;`ultimate`&#34;&gt;`ultimate`&lt;/span&gt; indicates flagship edition, &lt;span pulumi-lang-nodejs=&#34;`standard`&#34; pulumi-lang-dotnet=&#34;`Standard`&#34; pulumi-lang-go=&#34;`standard`&#34; pulumi-lang-python=&#34;`standard`&#34; pulumi-lang-yaml=&#34;`standard`&#34; pulumi-lang-java=&#34;`standard`&#34; pulumi-lang-hcl=&#34;`standard`&#34;&gt;`standard`&lt;/span&gt; indicates standard edition
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder specName(String specName) {
             return specName(Output.of(specName));
@@ -625,9 +625,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param state Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder state(@Nullable Output<String> state) {
             $.state = state;
@@ -636,9 +636,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param state Current lifecycle status of the GTM instance, such as &lt;span pulumi-lang-nodejs=&#34;`init`&#34; pulumi-lang-dotnet=&#34;`Init`&#34; pulumi-lang-go=&#34;`init`&#34; pulumi-lang-python=&#34;`init`&#34; pulumi-lang-yaml=&#34;`init`&#34; pulumi-lang-java=&#34;`init`&#34; pulumi-lang-hcl=&#34;`init`&#34;&gt;`init`&lt;/span&gt;: indicates the GTM instance has been successfully created but not yet configured. &lt;span pulumi-lang-nodejs=&#34;`configuringAddress`&#34; pulumi-lang-dotnet=&#34;`ConfiguringAddress`&#34; pulumi-lang-go=&#34;`configuringAddress`&#34; pulumi-lang-python=&#34;`configuring_address`&#34; pulumi-lang-yaml=&#34;`configuringAddress`&#34; pulumi-lang-java=&#34;`configuringAddress`&#34; pulumi-lang-hcl=&#34;`configuring_address`&#34;&gt;`configuringAddress`&lt;/span&gt;: indicates basic rule configuration is complete but target address configuration is not yet finished. &lt;span pulumi-lang-nodejs=&#34;`editing`&#34; pulumi-lang-dotnet=&#34;`Editing`&#34; pulumi-lang-go=&#34;`editing`&#34; pulumi-lang-python=&#34;`editing`&#34; pulumi-lang-yaml=&#34;`editing`&#34; pulumi-lang-java=&#34;`editing`&#34; pulumi-lang-hcl=&#34;`editing`&#34;&gt;`editing`&lt;/span&gt;: indicates both basic configuration and target address are completed but the instance is not yet enabled. &lt;span pulumi-lang-nodejs=&#34;`running`&#34; pulumi-lang-dotnet=&#34;`Running`&#34; pulumi-lang-go=&#34;`running`&#34; pulumi-lang-python=&#34;`running`&#34; pulumi-lang-yaml=&#34;`running`&#34; pulumi-lang-java=&#34;`running`&#34; pulumi-lang-hcl=&#34;`running`&#34;&gt;`running`&lt;/span&gt;: indicates the instance is officially enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder state(String state) {
             return state(Output.of(state));
@@ -646,9 +646,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Expiration time of the DNS record, in seconds
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -657,9 +657,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl Expiration time of the DNS record, in seconds
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));
@@ -667,9 +667,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Most recent modification time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -678,9 +678,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Most recent modification time of the GTM instance. Accurate to milliseconds, formatted according to ISO 8601 standard
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -688,9 +688,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneType This parameter has no practical significance and can be ignored
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneType(@Nullable Output<String> zoneType) {
             $.zoneType = zoneType;
@@ -699,9 +699,9 @@ public final class GtmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneType This parameter has no practical significance and can be ignored
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneType(String zoneType) {
             return zoneType(Output.of(zoneType));

@@ -21,14 +21,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the account to which the VPC belongs.
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return ID of the account to which the VPC belongs.
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -37,7 +37,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     /**
      * CEN information associated with the VPC.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="associateCens")
     private @Nullable Output<List<VpcAssociateCenArgs>> associateCens;
@@ -45,7 +45,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return CEN information associated with the VPC.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<VpcAssociateCenArgs>>> associateCens() {
         return Optional.ofNullable(this.associateCens);
@@ -53,14 +53,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
-     *
+     * 
      */
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
      * @return IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
-     *
+     * 
      */
     public Optional<Output<String>> cidrBlock() {
         return Optional.ofNullable(this.cidrBlock);
@@ -68,14 +68,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the VPC was created.
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Time when the VPC was created.
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -83,14 +83,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -98,14 +98,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-     *
+     * 
      */
     @Import(name="dnsServers")
     private @Nullable Output<List<String>> dnsServers;
 
     /**
      * @return DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-     *
+     * 
      */
     public Optional<Output<List<String>>> dnsServers() {
         return Optional.ofNullable(this.dnsServers);
@@ -113,14 +113,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
-     *
+     * 
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
      * @return Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableIpv6() {
         return Optional.ofNullable(this.enableIpv6);
@@ -128,14 +128,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the IPv4 gateway bound to the VPC.
-     *
+     * 
      */
     @Import(name="ipv4GatewayId")
     private @Nullable Output<String> ipv4GatewayId;
 
     /**
      * @return ID of the IPv4 gateway bound to the VPC.
-     *
+     * 
      */
     public Optional<Output<String>> ipv4GatewayId() {
         return Optional.ofNullable(this.ipv4GatewayId);
@@ -143,14 +143,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
-     *
+     * 
      */
     @Import(name="ipv6CidrBlock")
     private @Nullable Output<String> ipv6CidrBlock;
 
     /**
      * @return IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
-     *
+     * 
      */
     public Optional<Output<String>> ipv6CidrBlock() {
         return Optional.ofNullable(this.ipv6CidrBlock);
@@ -158,14 +158,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
-     *
+     * 
      */
     @Import(name="isDefault")
     private @Nullable Output<Boolean> isDefault;
 
     /**
      * @return Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
-     *
+     * 
      */
     public Optional<Output<Boolean>> isDefault() {
         return Optional.ofNullable(this.isDefault);
@@ -173,14 +173,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the NAT gateway created in the VPC.
-     *
+     * 
      */
     @Import(name="natGatewayIds")
     private @Nullable Output<List<String>> natGatewayIds;
 
     /**
      * @return ID of the NAT gateway created in the VPC.
-     *
+     * 
      */
     public Optional<Output<List<String>>> natGatewayIds() {
         return Optional.ofNullable(this.natGatewayIds);
@@ -188,14 +188,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of network ACLs in the VPC.
-     *
+     * 
      */
     @Import(name="networkAclNum")
     private @Nullable Output<String> networkAclNum;
 
     /**
      * @return Number of network ACLs in the VPC.
-     *
+     * 
      */
     public Optional<Output<String>> networkAclNum() {
         return Optional.ofNullable(this.networkAclNum);
@@ -203,14 +203,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the VPC belongs. If not specified, it is added to the default project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the VPC belongs. If not specified, it is added to the default project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -218,14 +218,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the route table associated with the VPC.
-     *
+     * 
      */
     @Import(name="routeTableIds")
     private @Nullable Output<List<String>> routeTableIds;
 
     /**
      * @return ID of the route table associated with the VPC.
-     *
+     * 
      */
     public Optional<Output<List<String>>> routeTableIds() {
         return Optional.ofNullable(this.routeTableIds);
@@ -233,14 +233,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Secondary CIDR block of the VPC.
-     *
+     * 
      */
     @Import(name="secondaryCidrBlocks")
     private @Nullable Output<List<String>> secondaryCidrBlocks;
 
     /**
      * @return Secondary CIDR block of the VPC.
-     *
+     * 
      */
     public Optional<Output<List<String>>> secondaryCidrBlocks() {
         return Optional.ofNullable(this.secondaryCidrBlocks);
@@ -248,14 +248,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of security groups in the VPC.
-     *
+     * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
      * @return List of security groups in the VPC.
-     *
+     * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
         return Optional.ofNullable(this.securityGroupIds);
@@ -263,14 +263,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the VPC. Creating: being created. Created: created. Available: available.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the VPC. Creating: being created. Created: created. Available: available.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -278,14 +278,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of subnets in the VPC.
-     *
+     * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
      * @return List of subnets in the VPC.
-     *
+     * 
      */
     public Optional<Output<List<String>>> subnetIds() {
         return Optional.ofNullable(this.subnetIds);
@@ -293,14 +293,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
-     *
+     * 
      */
     @Import(name="supportIpv4Gateway")
     private @Nullable Output<Boolean> supportIpv4Gateway;
 
     /**
      * @return Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> supportIpv4Gateway() {
         return Optional.ofNullable(this.supportIpv4Gateway);
@@ -309,7 +309,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags bound to the private network.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<VpcTagArgs>> tags;
@@ -317,7 +317,7 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags bound to the private network.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<VpcTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -325,14 +325,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the VPC was updated.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Time when the VPC was updated.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -340,14 +340,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User CIDR block of the VPC.
-     *
+     * 
      */
     @Import(name="userCidrBlocks")
     private @Nullable Output<List<String>> userCidrBlocks;
 
     /**
      * @return User CIDR block of the VPC.
-     *
+     * 
      */
     public Optional<Output<List<String>>> userCidrBlocks() {
         return Optional.ofNullable(this.userCidrBlocks);
@@ -355,14 +355,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the VPC.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the VPC.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -370,14 +370,14 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
-     *
+     * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
      * @return Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
-     *
+     * 
      */
     public Optional<Output<String>> vpcName() {
         return Optional.ofNullable(this.vpcName);
@@ -432,9 +432,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId ID of the account to which the VPC belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -443,9 +443,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId ID of the account to which the VPC belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -454,9 +454,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associateCens CEN information associated with the VPC.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associateCens(@Nullable Output<List<VpcAssociateCenArgs>> associateCens) {
             $.associateCens = associateCens;
@@ -466,9 +466,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associateCens CEN information associated with the VPC.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associateCens(List<VpcAssociateCenArgs> associateCens) {
             return associateCens(Output.of(associateCens));
@@ -477,9 +477,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associateCens CEN information associated with the VPC.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associateCens(VpcAssociateCenArgs... associateCens) {
             return associateCens(List.of(associateCens));
@@ -487,9 +487,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cidrBlock IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cidrBlock(@Nullable Output<String> cidrBlock) {
             $.cidrBlock = cidrBlock;
@@ -498,9 +498,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cidrBlock IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cidrBlock(String cidrBlock) {
             return cidrBlock(Output.of(cidrBlock));
@@ -508,9 +508,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Time when the VPC was created.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -519,9 +519,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Time when the VPC was created.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -529,9 +529,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -540,9 +540,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -550,9 +550,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsServers DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dnsServers(@Nullable Output<List<String>> dnsServers) {
             $.dnsServers = dnsServers;
@@ -561,9 +561,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsServers DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dnsServers(List<String> dnsServers) {
             return dnsServers(Output.of(dnsServers));
@@ -571,9 +571,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsServers DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dnsServers(String... dnsServers) {
             return dnsServers(List.of(dnsServers));
@@ -581,9 +581,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableIpv6(@Nullable Output<Boolean> enableIpv6) {
             $.enableIpv6 = enableIpv6;
@@ -592,9 +592,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableIpv6(Boolean enableIpv6) {
             return enableIpv6(Output.of(enableIpv6));
@@ -602,9 +602,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4GatewayId ID of the IPv4 gateway bound to the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv4GatewayId(@Nullable Output<String> ipv4GatewayId) {
             $.ipv4GatewayId = ipv4GatewayId;
@@ -613,9 +613,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4GatewayId ID of the IPv4 gateway bound to the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv4GatewayId(String ipv4GatewayId) {
             return ipv4GatewayId(Output.of(ipv4GatewayId));
@@ -623,9 +623,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6CidrBlock IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6CidrBlock(@Nullable Output<String> ipv6CidrBlock) {
             $.ipv6CidrBlock = ipv6CidrBlock;
@@ -634,9 +634,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6CidrBlock IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             return ipv6CidrBlock(Output.of(ipv6CidrBlock));
@@ -644,9 +644,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isDefault Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isDefault(@Nullable Output<Boolean> isDefault) {
             $.isDefault = isDefault;
@@ -655,9 +655,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isDefault Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isDefault(Boolean isDefault) {
             return isDefault(Output.of(isDefault));
@@ -665,9 +665,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayIds ID of the NAT gateway created in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayIds(@Nullable Output<List<String>> natGatewayIds) {
             $.natGatewayIds = natGatewayIds;
@@ -676,9 +676,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayIds ID of the NAT gateway created in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayIds(List<String> natGatewayIds) {
             return natGatewayIds(Output.of(natGatewayIds));
@@ -686,9 +686,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayIds ID of the NAT gateway created in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayIds(String... natGatewayIds) {
             return natGatewayIds(List.of(natGatewayIds));
@@ -696,9 +696,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkAclNum Number of network ACLs in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkAclNum(@Nullable Output<String> networkAclNum) {
             $.networkAclNum = networkAclNum;
@@ -707,9 +707,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkAclNum Number of network ACLs in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkAclNum(String networkAclNum) {
             return networkAclNum(Output.of(networkAclNum));
@@ -717,9 +717,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the VPC belongs. If not specified, it is added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -728,9 +728,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the VPC belongs. If not specified, it is added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -738,9 +738,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableIds ID of the route table associated with the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTableIds(@Nullable Output<List<String>> routeTableIds) {
             $.routeTableIds = routeTableIds;
@@ -749,9 +749,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableIds ID of the route table associated with the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTableIds(List<String> routeTableIds) {
             return routeTableIds(Output.of(routeTableIds));
@@ -759,9 +759,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableIds ID of the route table associated with the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTableIds(String... routeTableIds) {
             return routeTableIds(List.of(routeTableIds));
@@ -769,9 +769,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondaryCidrBlocks Secondary CIDR block of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondaryCidrBlocks(@Nullable Output<List<String>> secondaryCidrBlocks) {
             $.secondaryCidrBlocks = secondaryCidrBlocks;
@@ -780,9 +780,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondaryCidrBlocks Secondary CIDR block of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondaryCidrBlocks(List<String> secondaryCidrBlocks) {
             return secondaryCidrBlocks(Output.of(secondaryCidrBlocks));
@@ -790,9 +790,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondaryCidrBlocks Secondary CIDR block of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondaryCidrBlocks(String... secondaryCidrBlocks) {
             return secondaryCidrBlocks(List.of(secondaryCidrBlocks));
@@ -800,9 +800,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds List of security groups in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(@Nullable Output<List<String>> securityGroupIds) {
             $.securityGroupIds = securityGroupIds;
@@ -811,9 +811,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds List of security groups in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(List<String> securityGroupIds) {
             return securityGroupIds(Output.of(securityGroupIds));
@@ -821,9 +821,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds List of security groups in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(String... securityGroupIds) {
             return securityGroupIds(List.of(securityGroupIds));
@@ -831,9 +831,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the VPC. Creating: being created. Created: created. Available: available.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -842,9 +842,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the VPC. Creating: being created. Created: created. Available: available.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -852,9 +852,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of subnets in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -863,9 +863,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of subnets in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -873,9 +873,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of subnets in the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -883,9 +883,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportIpv4Gateway Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder supportIpv4Gateway(@Nullable Output<Boolean> supportIpv4Gateway) {
             $.supportIpv4Gateway = supportIpv4Gateway;
@@ -894,9 +894,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportIpv4Gateway Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder supportIpv4Gateway(Boolean supportIpv4Gateway) {
             return supportIpv4Gateway(Output.of(supportIpv4Gateway));
@@ -905,9 +905,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the private network.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<VpcTagArgs>> tags) {
             $.tags = tags;
@@ -917,9 +917,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the private network.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<VpcTagArgs> tags) {
             return tags(Output.of(tags));
@@ -928,9 +928,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the private network.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(VpcTagArgs... tags) {
             return tags(List.of(tags));
@@ -938,9 +938,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Time when the VPC was updated.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -949,9 +949,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Time when the VPC was updated.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -959,9 +959,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userCidrBlocks User CIDR block of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userCidrBlocks(@Nullable Output<List<String>> userCidrBlocks) {
             $.userCidrBlocks = userCidrBlocks;
@@ -970,9 +970,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userCidrBlocks User CIDR block of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userCidrBlocks(List<String> userCidrBlocks) {
             return userCidrBlocks(Output.of(userCidrBlocks));
@@ -980,9 +980,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userCidrBlocks User CIDR block of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userCidrBlocks(String... userCidrBlocks) {
             return userCidrBlocks(List.of(userCidrBlocks));
@@ -990,9 +990,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1001,9 +1001,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -1011,9 +1011,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(@Nullable Output<String> vpcName) {
             $.vpcName = vpcName;
@@ -1022,9 +1022,9 @@ public final class VpcState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(String vpcName) {
             return vpcName(Output.of(vpcName));

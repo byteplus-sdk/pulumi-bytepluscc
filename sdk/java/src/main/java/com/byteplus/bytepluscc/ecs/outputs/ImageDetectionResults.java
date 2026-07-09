@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 public final class ImageDetectionResults {
     /**
      * @return Check status. Options: Finished (completed), Processing (in progress).
-     *
+     * 
      */
     private @Nullable String detectionStatus;
     /**
      * @return Details of image check items.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<ImageDetectionResultsItem> items;
 
     private ImageDetectionResults() {}
     /**
      * @return Check status. Options: Finished (completed), Processing (in progress).
-     *
+     * 
      */
     public Optional<String> detectionStatus() {
         return Optional.ofNullable(this.detectionStatus);
@@ -36,7 +36,7 @@ public final class ImageDetectionResults {
     /**
      * @return Details of image check items.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<ImageDetectionResultsItem> items() {
         return this.items == null ? List.of() : this.items;

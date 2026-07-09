@@ -19,92 +19,92 @@ import javax.annotation.Nullable;
 public final class HostGroupRule {
     /**
      * @return Container collection rules
-     *
+     * 
      */
     private @Nullable HostGroupRuleContainerRule containerRule;
     /**
      * @return Time when the collection configuration was created.
-     *
+     * 
      */
     private @Nullable String createTime;
     /**
      * @return Extraction rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<HostGroupRuleExcludePath> excludePaths;
     /**
      * @return Extraction rules
-     *
+     * 
      */
     private @Nullable HostGroupRuleExtractRule extractRule;
     /**
      * @return Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
-     *
+     * 
      */
     private @Nullable Integer inputType;
     /**
      * @return Log sample.
-     *
+     * 
      */
     private @Nullable String logSample;
     /**
      * @return Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
-     *
+     * 
      */
     private @Nullable String logType;
     /**
      * @return Time when the collection configuration was modified.
-     *
+     * 
      */
     private @Nullable String modifyTime;
     /**
      * @return Data collection path list
-     *
+     * 
      */
     private @Nullable List<String> paths;
     /**
      * @return Running status of the collection configuration. 0: Running. 1: Paused.
-     *
+     * 
      */
     private @Nullable Integer pause;
     /**
      * @return Collection configuration ID.
-     *
+     * 
      */
     private @Nullable String ruleId;
     /**
      * @return Name of the collection configuration.
-     *
+     * 
      */
     private @Nullable String ruleName;
     /**
      * @return ID of the log topic to which the collection configuration belongs.
-     *
+     * 
      */
     private @Nullable String topicId;
     /**
      * @return Name of the log topic associated with the collection configuration
-     *
+     * 
      */
     private @Nullable String topicName;
     /**
      * @return User-defined collection rules.
-     *
+     * 
      */
     private @Nullable HostGroupRuleUserDefineRule userDefineRule;
 
     private HostGroupRule() {}
     /**
      * @return Container collection rules
-     *
+     * 
      */
     public Optional<HostGroupRuleContainerRule> containerRule() {
         return Optional.ofNullable(this.containerRule);
     }
     /**
      * @return Time when the collection configuration was created.
-     *
+     * 
      */
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -112,91 +112,91 @@ public final class HostGroupRule {
     /**
      * @return Extraction rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<HostGroupRuleExcludePath> excludePaths() {
         return this.excludePaths == null ? List.of() : this.excludePaths;
     }
     /**
      * @return Extraction rules
-     *
+     * 
      */
     public Optional<HostGroupRuleExtractRule> extractRule() {
         return Optional.ofNullable(this.extractRule);
     }
     /**
      * @return Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
-     *
+     * 
      */
     public Optional<Integer> inputType() {
         return Optional.ofNullable(this.inputType);
     }
     /**
      * @return Log sample.
-     *
+     * 
      */
     public Optional<String> logSample() {
         return Optional.ofNullable(this.logSample);
     }
     /**
      * @return Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
-     *
+     * 
      */
     public Optional<String> logType() {
         return Optional.ofNullable(this.logType);
     }
     /**
      * @return Time when the collection configuration was modified.
-     *
+     * 
      */
     public Optional<String> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
     }
     /**
      * @return Data collection path list
-     *
+     * 
      */
     public List<String> paths() {
         return this.paths == null ? List.of() : this.paths;
     }
     /**
      * @return Running status of the collection configuration. 0: Running. 1: Paused.
-     *
+     * 
      */
     public Optional<Integer> pause() {
         return Optional.ofNullable(this.pause);
     }
     /**
      * @return Collection configuration ID.
-     *
+     * 
      */
     public Optional<String> ruleId() {
         return Optional.ofNullable(this.ruleId);
     }
     /**
      * @return Name of the collection configuration.
-     *
+     * 
      */
     public Optional<String> ruleName() {
         return Optional.ofNullable(this.ruleName);
     }
     /**
      * @return ID of the log topic to which the collection configuration belongs.
-     *
+     * 
      */
     public Optional<String> topicId() {
         return Optional.ofNullable(this.topicId);
     }
     /**
      * @return Name of the log topic associated with the collection configuration
-     *
+     * 
      */
     public Optional<String> topicName() {
         return Optional.ofNullable(this.topicName);
     }
     /**
      * @return User-defined collection rules.
-     *
+     * 
      */
     public Optional<HostGroupRuleUserDefineRule> userDefineRule() {
         return Optional.ofNullable(this.userDefineRule);

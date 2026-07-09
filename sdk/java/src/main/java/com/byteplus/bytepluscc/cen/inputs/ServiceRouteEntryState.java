@@ -19,14 +19,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Cloud Enterprise Network instance ID.
-     *
+     * 
      */
     @Import(name="cenId")
     private @Nullable Output<String> cenId;
 
     /**
      * @return Cloud Enterprise Network instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> cenId() {
         return Optional.ofNullable(this.cenId);
@@ -34,14 +34,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Resource creation time.
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Resource creation time.
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -49,14 +49,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Custom remarks for the route.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Custom remarks for the route.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -64,14 +64,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Address range where the cloud service is deployed.
-     *
+     * 
      */
     @Import(name="destinationCidrBlock")
     private @Nullable Output<String> destinationCidrBlock;
 
     /**
      * @return Address range where the cloud service is deployed.
-     *
+     * 
      */
     public Optional<Output<String>> destinationCidrBlock() {
         return Optional.ofNullable(this.destinationCidrBlock);
@@ -79,14 +79,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Route publishing scope mode.
-     *
+     * 
      */
     @Import(name="publishMode")
     private @Nullable Output<String> publishMode;
 
     /**
      * @return Route publishing scope mode.
-     *
+     * 
      */
     public Optional<Output<String>> publishMode() {
         return Optional.ofNullable(this.publishMode);
@@ -95,7 +95,7 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
     /**
      * List of network instances associated with batch route publishing.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="publishToInstances")
     private @Nullable Output<List<ServiceRouteEntryPublishToInstanceArgs>> publishToInstances;
@@ -103,7 +103,7 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
     /**
      * @return List of network instances associated with batch route publishing.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServiceRouteEntryPublishToInstanceArgs>>> publishToInstances() {
         return Optional.ofNullable(this.publishToInstances);
@@ -111,14 +111,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Region where the cloud service is located.
-     *
+     * 
      */
     @Import(name="serviceRegionId")
     private @Nullable Output<String> serviceRegionId;
 
     /**
      * @return Region where the cloud service is located.
-     *
+     * 
      */
     public Optional<Output<String>> serviceRegionId() {
         return Optional.ofNullable(this.serviceRegionId);
@@ -126,14 +126,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Private network ID bound to the backend cloud service.
-     *
+     * 
      */
     @Import(name="serviceVpcId")
     private @Nullable Output<String> serviceVpcId;
 
     /**
      * @return Private network ID bound to the backend cloud service.
-     *
+     * 
      */
     public Optional<Output<String>> serviceVpcId() {
         return Optional.ofNullable(this.serviceVpcId);
@@ -141,14 +141,14 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
     /**
      * Cloud service access route status.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Cloud service access route status.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -188,9 +188,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param cenId Cloud Enterprise Network instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cenId(@Nullable Output<String> cenId) {
             $.cenId = cenId;
@@ -199,9 +199,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param cenId Cloud Enterprise Network instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cenId(String cenId) {
             return cenId(Output.of(cenId));
@@ -209,9 +209,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param creationTime Resource creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -220,9 +220,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param creationTime Resource creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -230,9 +230,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param description Custom remarks for the route.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -241,9 +241,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param description Custom remarks for the route.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -251,9 +251,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param destinationCidrBlock Address range where the cloud service is deployed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrBlock(@Nullable Output<String> destinationCidrBlock) {
             $.destinationCidrBlock = destinationCidrBlock;
@@ -262,9 +262,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param destinationCidrBlock Address range where the cloud service is deployed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrBlock(String destinationCidrBlock) {
             return destinationCidrBlock(Output.of(destinationCidrBlock));
@@ -272,9 +272,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param publishMode Route publishing scope mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publishMode(@Nullable Output<String> publishMode) {
             $.publishMode = publishMode;
@@ -283,9 +283,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param publishMode Route publishing scope mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publishMode(String publishMode) {
             return publishMode(Output.of(publishMode));
@@ -294,9 +294,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
         /**
          * @param publishToInstances List of network instances associated with batch route publishing.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publishToInstances(@Nullable Output<List<ServiceRouteEntryPublishToInstanceArgs>> publishToInstances) {
             $.publishToInstances = publishToInstances;
@@ -306,9 +306,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
         /**
          * @param publishToInstances List of network instances associated with batch route publishing.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publishToInstances(List<ServiceRouteEntryPublishToInstanceArgs> publishToInstances) {
             return publishToInstances(Output.of(publishToInstances));
@@ -317,9 +317,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
         /**
          * @param publishToInstances List of network instances associated with batch route publishing.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publishToInstances(ServiceRouteEntryPublishToInstanceArgs... publishToInstances) {
             return publishToInstances(List.of(publishToInstances));
@@ -327,9 +327,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param serviceRegionId Region where the cloud service is located.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceRegionId(@Nullable Output<String> serviceRegionId) {
             $.serviceRegionId = serviceRegionId;
@@ -338,9 +338,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param serviceRegionId Region where the cloud service is located.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceRegionId(String serviceRegionId) {
             return serviceRegionId(Output.of(serviceRegionId));
@@ -348,9 +348,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param serviceVpcId Private network ID bound to the backend cloud service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceVpcId(@Nullable Output<String> serviceVpcId) {
             $.serviceVpcId = serviceVpcId;
@@ -359,9 +359,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param serviceVpcId Private network ID bound to the backend cloud service.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceVpcId(String serviceVpcId) {
             return serviceVpcId(Output.of(serviceVpcId));
@@ -369,9 +369,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param status Cloud service access route status.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -380,9 +380,9 @@ public final class ServiceRouteEntryState extends com.pulumi.resources.ResourceA
 
         /**
          * @param status Cloud service access route status.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));

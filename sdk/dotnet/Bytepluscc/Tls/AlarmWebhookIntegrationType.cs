@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// Webhook integration configuration is used to manage alert notification channels such as DingTalk, Feishu, WeCom, and custom Webhooks
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Tls.AlarmWebhookIntegrationType("Example", new()
     ///     {
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         },
     ///         WebhookMethod = "PUT",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType example "webhook_id"
     /// ```

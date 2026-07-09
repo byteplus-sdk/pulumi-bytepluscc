@@ -22,14 +22,14 @@ import javax.annotation.Nullable;
 
 /**
  * A sandbox instance is a secure and isolated container runtime environment that actually runs the sandbox image in the cloud sandbox
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -45,12 +45,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vefaasSandboxDemo = new Sandbox("vefaasSandboxDemo", SandboxArgs.builder()
  *             .functionId("n5hcs3y5****")
@@ -81,60 +81,60 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vefaas/sandbox:Sandbox example &#34;function_id|sandbox_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vefaas/sandbox:Sandbox")
 public class Sandbox extends com.pulumi.resources.CustomResource {
     /**
      * Availability zone ID of the sandbox instance
-     *
+     * 
      */
     @Export(name="availabilityZone", refs={String.class}, tree="[0]")
     private Output<String> availabilityZone;
 
     /**
      * @return Availability zone ID of the sandbox instance
-     *
+     * 
      */
     public Output<String> availabilityZone() {
         return this.availabilityZone;
     }
     /**
      * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
-     *
+     * 
      */
     @Export(name="cpuMilli", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuMilli;
 
     /**
      * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
-     *
+     * 
      */
     public Output<Integer> cpuMilli() {
         return this.cpuMilli;
     }
     /**
      * Sandbox instance creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Sandbox instance creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
@@ -142,7 +142,7 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     /**
      * Sandbox instance environment variables
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="envs", refs={List.class,SandboxEnv.class}, tree="[0,1]")
     private Output<List<SandboxEnv>> envs;
@@ -150,133 +150,133 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     /**
      * @return Sandbox instance environment variables
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SandboxEnv>> envs() {
         return this.envs;
     }
     /**
      * Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
-     *
+     * 
      */
     @Export(name="errorCode", refs={String.class}, tree="[0]")
     private Output<String> errorCode;
 
     /**
      * @return Sandbox instance startup failure error code. Parameter description: internal*load*request*error: internal system error, function*initialize*failed: business process initialization error, function*health*check*failed: health check error, route_terminating: route deletion in progress. This field is empty when the sandbox instance starts normally
-     *
+     * 
      */
     public Output<String> errorCode() {
         return this.errorCode;
     }
     /**
      * Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
-     *
+     * 
      */
     @Export(name="errorMessage", refs={String.class}, tree="[0]")
     private Output<String> errorMessage;
 
     /**
      * @return Details of the error code when the sandbox instance fails to start. This field is empty when the sandbox instance starts normally.
-     *
+     * 
      */
     public Output<String> errorMessage() {
         return this.errorMessage;
     }
     /**
      * Sandbox instance uptime.
-     *
+     * 
      */
     @Export(name="expireAt", refs={String.class}, tree="[0]")
     private Output<String> expireAt;
 
     /**
      * @return Sandbox instance uptime.
-     *
+     * 
      */
     public Output<String> expireAt() {
         return this.expireAt;
     }
     /**
      * Sandbox application ID to which the sandbox instance belongs
-     *
+     * 
      */
     @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
      * @return Sandbox application ID to which the sandbox instance belongs
-     *
+     * 
      */
     public Output<String> functionId() {
         return this.functionId;
     }
     /**
      * Sandbox instance image information, including image address, startup command, and listening port.
-     *
+     * 
      */
     @Export(name="instanceImageInfo", refs={SandboxInstanceImageInfo.class}, tree="[0]")
     private Output<SandboxInstanceImageInfo> instanceImageInfo;
 
     /**
      * @return Sandbox instance image information, including image address, startup command, and listening port.
-     *
+     * 
      */
     public Output<SandboxInstanceImageInfo> instanceImageInfo() {
         return this.instanceImageInfo;
     }
     /**
      * Instance-level object storage (TOS) mount configuration for the sandbox instance
-     *
+     * 
      */
     @Export(name="instanceTosMountConfig", refs={SandboxInstanceTosMountConfig.class}, tree="[0]")
     private Output<SandboxInstanceTosMountConfig> instanceTosMountConfig;
 
     /**
      * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
-     *
+     * 
      */
     public Output<SandboxInstanceTosMountConfig> instanceTosMountConfig() {
         return this.instanceTosMountConfig;
     }
     /**
      * Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
-     *
+     * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Sandbox instance type. Parameter description: elastic: elastic instance, frozen: frozen instance, activated: activated instance, reserved: reserved instance
-     *
+     * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Maximum concurrent requests per instance: range: 10~1000, default: 100
-     *
+     * 
      */
     @Export(name="maxConcurrency", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxConcurrency;
 
     /**
      * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
-     *
+     * 
      */
     public Output<Integer> maxConcurrency() {
         return this.maxConcurrency;
     }
     /**
      * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
-     *
+     * 
      */
     @Export(name="memoryMb", refs={Integer.class}, tree="[0]")
     private Output<Integer> memoryMb;
 
     /**
      * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
-     *
+     * 
      */
     public Output<Integer> memoryMb() {
         return this.memoryMb;
@@ -284,7 +284,7 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     /**
      * Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="metadatas", refs={List.class,SandboxMetadata.class}, tree="[0,1]")
     private Output<List<SandboxMetadata>> metadatas;
@@ -292,91 +292,91 @@ public class Sandbox extends com.pulumi.resources.CustomResource {
     /**
      * @return Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SandboxMetadata>> metadatas() {
         return this.metadatas;
     }
     /**
      * Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
-     *
+     * 
      */
     @Export(name="pending", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> pending;
 
     /**
      * @return Whether the sandbox instance is in Pending status. Parameter description: true: yes, false: no
-     *
+     * 
      */
     public Output<Boolean> pending() {
         return this.pending;
     }
     /**
      * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
-     *
+     * 
      */
     @Export(name="requestTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> requestTimeout;
 
     /**
      * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
-     *
+     * 
      */
     public Output<Integer> requestTimeout() {
         return this.requestTimeout;
     }
     /**
      * Function instance version number
-     *
+     * 
      */
     @Export(name="revisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> revisionNumber;
 
     /**
      * @return Function instance version number
-     *
+     * 
      */
     public Output<Integer> revisionNumber() {
         return this.revisionNumber;
     }
     /**
      * Sandbox instance ID
-     *
+     * 
      */
     @Export(name="sandboxId", refs={String.class}, tree="[0]")
     private Output<String> sandboxId;
 
     /**
      * @return Sandbox instance ID
-     *
+     * 
      */
     public Output<String> sandboxId() {
         return this.sandboxId;
     }
     /**
      * Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Sandbox instance status. Parameter description: Starting: starting, Ready: startup completed, Failed: startup failed, Terminating: terminating
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
-     *
+     * 
      */
     @Export(name="timeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeout;
 
     /**
      * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
-     *
+     * 
      */
     public Output<Integer> timeout() {
         return this.timeout;

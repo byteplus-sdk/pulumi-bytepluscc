@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Used to start or stop a GTM instance. After starting, the GTM instance configures DNS resolution for the scheduling domain, and initiates health checks and failover. After stopping, health checks and failover for the GTM instance also stop. However, DNS resolution from the scheduling domain to the target address does not stop. If you need to delete DNS resolution from the scheduling domain to the target address, you can call the DeleteGtm API to delete the GTM instance.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,71 +35,71 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var gTMRoutingDemo = new Routing("gTMRoutingDemo", RoutingArgs.builder()
  *             .gtmId("gtm_id_xxxxx")
  *             .routingEnabled(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:gtm/routing:Routing example &#34;gtm_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:gtm/routing:Routing")
 public class Routing extends com.pulumi.resources.CustomResource {
     /**
      * UUID of the GTM instance. You can obtain GtmId via the ListGtms API.
-     *
+     * 
      */
     @Export(name="gtmId", refs={String.class}, tree="[0]")
     private Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance. You can obtain GtmId via the ListGtms API.
-     *
+     * 
      */
     public Output<String> gtmId() {
         return this.gtmId;
     }
     /**
      * Start/stop GTM instance. true: Start GTM instance. false: Stop GTM instance.
-     *
+     * 
      */
     @Export(name="routingEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> routingEnabled;
 
     /**
      * @return Start/stop GTM instance. true: Start GTM instance. false: Stop GTM instance.
-     *
+     * 
      */
     public Output<Boolean> routingEnabled() {
         return this.routingEnabled;
     }
     /**
      * Indicates the current lifecycle state of the GTM instance. Value description: init: The GTM instance has been successfully created but not yet configured. configuring_address: Basic rule configuration for GTM is complete, but target address configuration is not yet finished. editing: Both basic configuration and target address have been completed, but the instance is not yet enabled. running: The instance is officially enabled.
-     *
+     * 
      */
     @Export(name="routingStatus", refs={String.class}, tree="[0]")
     private Output<String> routingStatus;
 
     /**
      * @return Indicates the current lifecycle state of the GTM instance. Value description: init: The GTM instance has been successfully created but not yet configured. configuring_address: Basic rule configuration for GTM is complete, but target address configuration is not yet finished. editing: Both basic configuration and target address have been completed, but the instance is not yet enabled. running: The instance is officially enabled.
-     *
+     * 
      */
     public Output<String> routingStatus() {
         return this.routingStatus;

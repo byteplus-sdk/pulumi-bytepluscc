@@ -19575,6 +19575,57 @@
                 }
             }
         },
+        "bytepluscc:ecs/InstanceDataVolume:InstanceDataVolume": {
+            "properties": {
+                "deleteWithInstance": {
+                    "type": "boolean",
+                    "description": "Whether the attached resources are deleted along with the instance.\n"
+                },
+                "extraPerformanceIops": {
+                    "type": "integer",
+                    "description": "Additional performance IOPS for the instance\n"
+                },
+                "extraPerformanceThroughputMb": {
+                    "type": "integer",
+                    "description": "The additional performance throughput of the instance, in MB.\n"
+                },
+                "extraPerformanceTypeId": {
+                    "type": "string",
+                    "description": "Type of additional performance. Values:\n  Balance: Balanced additional performance\n  IOPS: IOPS additional performance\n  Throughput: Throughput additional performance\n"
+                },
+                "size": {
+                    "type": "integer",
+                    "description": "Instance size, in GiB\n"
+                },
+                "snapshotId": {
+                    "type": "string",
+                    "description": "Instance snapshot ID\n"
+                },
+                "volumeId": {
+                    "type": "string",
+                    "description": "Instance volume ID.\n"
+                },
+                "volumeType": {
+                    "type": "string",
+                    "description": "Cloud disk type. Values:\n  PTSSD: Performance SSD.\n  ESSD_PL0: Ultra SSD disk, PL0 specification.\n  ESSD_FlexPL: Ultra SSD disk, FlexPL specification.\n  TSSD_TL0: Throughput SSD disk.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "deleteWithInstance",
+                        "extraPerformanceIops",
+                        "extraPerformanceThroughputMb",
+                        "extraPerformanceTypeId",
+                        "size",
+                        "snapshotId",
+                        "volumeId",
+                        "volumeType"
+                    ]
+                }
+            }
+        },
         "bytepluscc:ecs/InstanceEipAddress:InstanceEipAddress": {
             "properties": {
                 "allocationId": {
@@ -20977,6 +21028,58 @@
                 "cpuNumber",
                 "memorySize",
                 "threadsPerCore"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getInstanceDataVolume:getInstanceDataVolume": {
+            "properties": {
+                "deleteWithInstance": {
+                    "type": "boolean",
+                    "description": "Whether the attached resources are deleted along with the instance.\n"
+                },
+                "extraPerformanceIops": {
+                    "type": "integer",
+                    "description": "Additional performance IOPS for the instance\n"
+                },
+                "extraPerformanceThroughputMb": {
+                    "type": "integer",
+                    "description": "The additional performance throughput of the instance, in MB.\n"
+                },
+                "extraPerformanceTypeId": {
+                    "type": "string",
+                    "description": "Type of additional performance. Values:\n  Balance: Balanced additional performance\n  IOPS: IOPS additional performance\n  Throughput: Throughput additional performance\n"
+                },
+                "size": {
+                    "type": "integer",
+                    "description": "Instance size, in GiB\n"
+                },
+                "snapshotId": {
+                    "type": "string",
+                    "description": "Instance snapshot ID\n"
+                },
+                "volumeId": {
+                    "type": "string",
+                    "description": "Instance volume ID.\n"
+                },
+                "volumeType": {
+                    "type": "string",
+                    "description": "Cloud disk type. Values:\n  PTSSD: Performance SSD.\n  ESSD_PL0: Ultra SSD disk, PL0 specification.\n  ESSD_FlexPL: Ultra SSD disk, FlexPL specification.\n  TSSD_TL0: Throughput SSD disk.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "deleteWithInstance",
+                "extraPerformanceIops",
+                "extraPerformanceThroughputMb",
+                "extraPerformanceTypeId",
+                "size",
+                "snapshotId",
+                "volumeId",
+                "volumeType"
             ],
             "language": {
                 "nodejs": {
@@ -73664,6 +73767,13 @@
                     "type": "string",
                     "description": "Burstable instance operating mode. Values:\n    - Standard: Standard mode.\n    - Unlimited: Unlimited performance mode (not supported yet).\n  \n  **Note:**\n    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.\n    - If not specified or left empty, burstable instances default to `Standard` mode."
                 },
+                "dataVolumes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/InstanceDataVolume:InstanceDataVolume"
+                    },
+                    "description": "Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.\n Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability."
+                },
                 "deletionProtection": {
                     "type": "boolean",
                     "description": "Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:\n    - true: Enable instance deletion protection\n    - false (default): Disable instance deletion protection\n  When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first"
@@ -73857,6 +73967,7 @@
                 "cpuMemory",
                 "createdAt",
                 "creditSpecification",
+                "dataVolumes",
                 "deletionProtection",
                 "deploymentSetGroupNumber",
                 "deploymentSetId",
@@ -73923,6 +74034,13 @@
                 "creditSpecification": {
                     "type": "string",
                     "description": "Burstable instance operating mode. Values:\n    - Standard: Standard mode.\n    - Unlimited: Unlimited performance mode (not supported yet).\n  \n  **Note:**\n    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.\n    - If not specified or left empty, burstable instances default to `Standard` mode."
+                },
+                "dataVolumes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/InstanceDataVolume:InstanceDataVolume"
+                    },
+                    "description": "Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.\n Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability."
                 },
                 "deletionProtection": {
                     "type": "boolean",
@@ -74108,6 +74226,13 @@
                     "creditSpecification": {
                         "type": "string",
                         "description": "Burstable instance operating mode. Values:\n    - Standard: Standard mode.\n    - Unlimited: Unlimited performance mode (not supported yet).\n  \n  **Note:**\n    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.\n    - If not specified or left empty, burstable instances default to `Standard` mode."
+                    },
+                    "dataVolumes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/InstanceDataVolume:InstanceDataVolume"
+                        },
+                        "description": "Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.\n Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability."
                     },
                     "deletionProtection": {
                         "type": "boolean",
@@ -122686,6 +122811,12 @@
                     "creditSpecification": {
                         "type": "string"
                     },
+                    "dataVolumes": {
+                        "items": {
+                            "$ref": "#/types/bytepluscc:ecs/getInstanceDataVolume:getInstanceDataVolume"
+                        },
+                        "type": "array"
+                    },
                     "deletionProtection": {
                         "type": "boolean"
                     },
@@ -122841,6 +122972,7 @@
                     "cpuMemory",
                     "createdAt",
                     "creditSpecification",
+                    "dataVolumes",
                     "deletionProtection",
                     "deploymentSetGroupNumber",
                     "deploymentSetId",

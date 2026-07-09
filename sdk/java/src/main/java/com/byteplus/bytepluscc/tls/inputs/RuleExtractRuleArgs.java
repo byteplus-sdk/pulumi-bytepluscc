@@ -21,14 +21,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
-     *
+     * 
      */
     @Import(name="beginRegex")
     private @Nullable Output<String> beginRegex;
 
     /**
      * @return Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
-     *
+     * 
      */
     public Optional<Output<String>> beginRegex() {
         return Optional.ofNullable(this.beginRegex);
@@ -36,14 +36,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Log delimiter. Valid only when LogType is delimiter_log.
-     *
+     * 
      */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
     /**
      * @return Log delimiter. Valid only when LogType is delimiter_log.
-     *
+     * 
      */
     public Optional<Output<String>> delimiter() {
         return Optional.ofNullable(this.delimiter);
@@ -51,14 +51,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     *
+     * 
      */
     @Import(name="enableNanosecond")
     private @Nullable Output<Boolean> enableNanosecond;
 
     /**
      * @return Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
@@ -67,7 +67,7 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
     /**
      * Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="filterKeyRegexes")
     private @Nullable Output<List<RuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes;
@@ -75,7 +75,7 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
     /**
      * @return Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleExtractRuleFilterKeyRegexArgs>>> filterKeyRegexes() {
         return Optional.ofNullable(this.filterKeyRegexes);
@@ -83,14 +83,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-     *
+     * 
      */
     @Import(name="keys")
     private @Nullable Output<List<String>> keys;
 
     /**
      * @return List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-     *
+     * 
      */
     public Optional<Output<List<String>>> keys() {
         return Optional.ofNullable(this.keys);
@@ -98,14 +98,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
-     *
+     * 
      */
     @Import(name="logRegex")
     private @Nullable Output<String> logRegex;
 
     /**
      * @return The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
-     *
+     * 
      */
     public Optional<Output<String>> logRegex() {
         return Optional.ofNullable(this.logRegex);
@@ -113,14 +113,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Automatically extract log fields based on the specified log template
-     *
+     * 
      */
     @Import(name="logTemplate")
     private @Nullable Output<RuleExtractRuleLogTemplateArgs> logTemplate;
 
     /**
      * @return Automatically extract log fields based on the specified log template
-     *
+     * 
      */
     public Optional<Output<RuleExtractRuleLogTemplateArgs>> logTemplate() {
         return Optional.ofNullable(this.logTemplate);
@@ -128,14 +128,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     @Import(name="quote")
     private @Nullable Output<String> quote;
 
     /**
      * @return Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     public Optional<Output<String>> quote() {
         return Optional.ofNullable(this.quote);
@@ -143,14 +143,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
-     *
+     * 
      */
     @Import(name="timeExtractRegex")
     private @Nullable Output<String> timeExtractRegex;
 
     /**
      * @return Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
-     *
+     * 
      */
     public Optional<Output<String>> timeExtractRegex() {
         return Optional.ofNullable(this.timeExtractRegex);
@@ -158,14 +158,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
-     *
+     * 
      */
     @Import(name="timeFormat")
     private @Nullable Output<String> timeFormat;
 
     /**
      * @return Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
-     *
+     * 
      */
     public Optional<Output<String>> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
@@ -173,14 +173,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
-     *
+     * 
      */
     @Import(name="timeKey")
     private @Nullable Output<String> timeKey;
 
     /**
      * @return Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
-     *
+     * 
      */
     public Optional<Output<String>> timeKey() {
         return Optional.ofNullable(this.timeKey);
@@ -188,14 +188,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Time sample. Used to check whether the entered time parsing format is correct.
-     *
+     * 
      */
     @Import(name="timeSample")
     private @Nullable Output<String> timeSample;
 
     /**
      * @return Time sample. Used to check whether the entered time parsing format is correct.
-     *
+     * 
      */
     public Optional<Output<String>> timeSample() {
         return Optional.ofNullable(this.timeSample);
@@ -203,14 +203,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     *
+     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     *
+     * 
      */
     public Optional<Output<String>> timeZone() {
         return Optional.ofNullable(this.timeZone);
@@ -218,14 +218,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Key name for unmatched logs.
-     *
+     * 
      */
     @Import(name="unMatchLogKey")
     private @Nullable Output<String> unMatchLogKey;
 
     /**
      * @return Key name for unmatched logs.
-     *
+     * 
      */
     public Optional<Output<String>> unMatchLogKey() {
         return Optional.ofNullable(this.unMatchLogKey);
@@ -233,14 +233,14 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Switch for uploading unmatched logs.
-     *
+     * 
      */
     @Import(name="unMatchUpLoadSwitch")
     private @Nullable Output<Boolean> unMatchUpLoadSwitch;
 
     /**
      * @return Switch for uploading unmatched logs.
-     *
+     * 
      */
     public Optional<Output<Boolean>> unMatchUpLoadSwitch() {
         return Optional.ofNullable(this.unMatchUpLoadSwitch);
@@ -286,9 +286,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param beginRegex Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder beginRegex(@Nullable Output<String> beginRegex) {
             $.beginRegex = beginRegex;
@@ -297,9 +297,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param beginRegex Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder beginRegex(String beginRegex) {
             return beginRegex(Output.of(beginRegex));
@@ -307,9 +307,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param delimiter Log delimiter. Valid only when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder delimiter(@Nullable Output<String> delimiter) {
             $.delimiter = delimiter;
@@ -318,9 +318,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param delimiter Log delimiter. Valid only when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder delimiter(String delimiter) {
             return delimiter(Output.of(delimiter));
@@ -328,9 +328,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param enableNanosecond Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNanosecond(@Nullable Output<Boolean> enableNanosecond) {
             $.enableNanosecond = enableNanosecond;
@@ -339,9 +339,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param enableNanosecond Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNanosecond(Boolean enableNanosecond) {
             return enableNanosecond(Output.of(enableNanosecond));
@@ -350,9 +350,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param filterKeyRegexes Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(@Nullable Output<List<RuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes) {
             $.filterKeyRegexes = filterKeyRegexes;
@@ -362,9 +362,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param filterKeyRegexes Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(List<RuleExtractRuleFilterKeyRegexArgs> filterKeyRegexes) {
             return filterKeyRegexes(Output.of(filterKeyRegexes));
@@ -373,9 +373,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param filterKeyRegexes Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(RuleExtractRuleFilterKeyRegexArgs... filterKeyRegexes) {
             return filterKeyRegexes(List.of(filterKeyRegexes));
@@ -383,9 +383,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param keys List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(@Nullable Output<List<String>> keys) {
             $.keys = keys;
@@ -394,9 +394,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param keys List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(List<String> keys) {
             return keys(Output.of(keys));
@@ -404,9 +404,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param keys List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(String... keys) {
             return keys(List.of(keys));
@@ -414,9 +414,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param logRegex The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logRegex(@Nullable Output<String> logRegex) {
             $.logRegex = logRegex;
@@ -425,9 +425,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param logRegex The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logRegex(String logRegex) {
             return logRegex(Output.of(logRegex));
@@ -435,9 +435,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param logTemplate Automatically extract log fields based on the specified log template
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logTemplate(@Nullable Output<RuleExtractRuleLogTemplateArgs> logTemplate) {
             $.logTemplate = logTemplate;
@@ -446,9 +446,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param logTemplate Automatically extract log fields based on the specified log template
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logTemplate(RuleExtractRuleLogTemplateArgs logTemplate) {
             return logTemplate(Output.of(logTemplate));
@@ -456,9 +456,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param quote Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder quote(@Nullable Output<String> quote) {
             $.quote = quote;
@@ -467,9 +467,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param quote Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder quote(String quote) {
             return quote(Output.of(quote));
@@ -477,9 +477,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeExtractRegex Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeExtractRegex(@Nullable Output<String> timeExtractRegex) {
             $.timeExtractRegex = timeExtractRegex;
@@ -488,9 +488,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeExtractRegex Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeExtractRegex(String timeExtractRegex) {
             return timeExtractRegex(Output.of(timeExtractRegex));
@@ -498,9 +498,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeFormat Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(@Nullable Output<String> timeFormat) {
             $.timeFormat = timeFormat;
@@ -509,9 +509,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeFormat Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(String timeFormat) {
             return timeFormat(Output.of(timeFormat));
@@ -519,9 +519,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeKey Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(@Nullable Output<String> timeKey) {
             $.timeKey = timeKey;
@@ -530,9 +530,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeKey Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(String timeKey) {
             return timeKey(Output.of(timeKey));
@@ -540,9 +540,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeSample Time sample. Used to check whether the entered time parsing format is correct.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeSample(@Nullable Output<String> timeSample) {
             $.timeSample = timeSample;
@@ -551,9 +551,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeSample Time sample. Used to check whether the entered time parsing format is correct.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeSample(String timeSample) {
             return timeSample(Output.of(timeSample));
@@ -561,9 +561,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeZone Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeZone(@Nullable Output<String> timeZone) {
             $.timeZone = timeZone;
@@ -572,9 +572,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timeZone Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
@@ -582,9 +582,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param unMatchLogKey Key name for unmatched logs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchLogKey(@Nullable Output<String> unMatchLogKey) {
             $.unMatchLogKey = unMatchLogKey;
@@ -593,9 +593,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param unMatchLogKey Key name for unmatched logs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchLogKey(String unMatchLogKey) {
             return unMatchLogKey(Output.of(unMatchLogKey));
@@ -603,9 +603,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param unMatchUpLoadSwitch Switch for uploading unmatched logs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchUpLoadSwitch(@Nullable Output<Boolean> unMatchUpLoadSwitch) {
             $.unMatchUpLoadSwitch = unMatchUpLoadSwitch;
@@ -614,9 +614,9 @@ public final class RuleExtractRuleArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param unMatchUpLoadSwitch Switch for uploading unmatched logs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchUpLoadSwitch(Boolean unMatchUpLoadSwitch) {
             return unMatchUpLoadSwitch(Output.of(unMatchUpLoadSwitch));

@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * The physical connection is a dedicated physical connection resource in the dedicated connection service, used to connect the local IDC to the Volcano Engine access point
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App }{{@code
  *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
  *     }}{@code
- *
+ * 
  *     public static void stack(Context ctx) }{{@code
  *         var example = new Connection("example", ConnectionArgs.builder()
  *             .bandwidth(500)
@@ -63,354 +63,354 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }}{@code
  * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:directconnect/connection:Connection example &#34;direct_connect_connection_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:directconnect/connection:Connection")
 public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * Account ID of the physical connection owner
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID of the physical connection owner
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Connection billing type. Currently only 1 is supported, indicating annual/monthly subscription billing
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Connection billing type. Currently only 1 is supported, indicating annual/monthly subscription billing
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Billing status of the connection. Normal: normal; FinancialLocked: locked
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Billing status of the connection. Normal: normal; FinancialLocked: locked
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Type of the physical connection. DedicatedConnection: dedicated connection; SharedConnection: shared connection
-     *
+     * 
      */
     @Export(name="connectionType", refs={String.class}, tree="[0]")
     private Output<String> connectionType;
 
     /**
      * @return Type of the physical connection. DedicatedConnection: dedicated connection; SharedConnection: shared connection
-     *
+     * 
      */
     public Output<String> connectionType() {
         return this.connectionType;
     }
     /**
      * Time when the physical connection was created
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the physical connection was created
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Email address of the dedicated connection contact
-     *
+     * 
      */
     @Export(name="customerContactEmail", refs={String.class}, tree="[0]")
     private Output<String> customerContactEmail;
 
     /**
      * @return Email address of the dedicated connection contact
-     *
+     * 
      */
     public Output<String> customerContactEmail() {
         return this.customerContactEmail;
     }
     /**
      * Phone number of the dedicated connection contact
-     *
+     * 
      */
     @Export(name="customerContactPhone", refs={String.class}, tree="[0]")
     private Output<String> customerContactPhone;
 
     /**
      * @return Phone number of the dedicated connection contact
-     *
+     * 
      */
     public Output<String> customerContactPhone() {
         return this.customerContactPhone;
     }
     /**
      * Name of the dedicated connection contact
-     *
+     * 
      */
     @Export(name="customerName", refs={String.class}, tree="[0]")
     private Output<String> customerName;
 
     /**
      * @return Name of the dedicated connection contact
-     *
+     * 
      */
     public Output<String> customerName() {
         return this.customerName;
     }
     /**
      * Expected resource forced reclaim time
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Expected resource forced reclaim time
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the physical connection. Length limit: 0 ~ 255 characters
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the physical connection. Length limit: 0 ~ 255 characters
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-     *
+     * 
      */
     @Export(name="directConnectAccessPointId", refs={String.class}, tree="[0]")
     private Output<String> directConnectAccessPointId;
 
     /**
      * @return ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-     *
+     * 
      */
     public Output<String> directConnectAccessPointId() {
         return this.directConnectAccessPointId;
     }
     /**
      * ID of the physical dedicated line.
-     *
+     * 
      */
     @Export(name="directConnectConnectionId", refs={String.class}, tree="[0]")
     private Output<String> directConnectConnectionId;
 
     /**
      * @return ID of the physical dedicated line.
-     *
+     * 
      */
     public Output<String> directConnectConnectionId() {
         return this.directConnectConnectionId;
     }
     /**
      * Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-     *
+     * 
      */
     @Export(name="directConnectConnectionName", refs={String.class}, tree="[0]")
     private Output<String> directConnectConnectionName;
 
     /**
      * @return Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-     *
+     * 
      */
     public Output<String> directConnectConnectionName() {
         return this.directConnectConnectionName;
     }
     /**
      * Expected bandwidth of the physical connection in Mbps
-     *
+     * 
      */
     @Export(name="expectBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> expectBandwidth;
 
     /**
      * @return Expected bandwidth of the physical connection in Mbps
-     *
+     * 
      */
     public Output<Integer> expectBandwidth() {
         return this.expectBandwidth;
     }
     /**
      * Connection expiration time
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Connection expiration time
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-     *
+     * 
      */
     @Export(name="lineOperator", refs={String.class}, tree="[0]")
     private Output<String> lineOperator;
 
     /**
      * @return Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-     *
+     * 
      */
     public Output<String> lineOperator() {
         return this.lineOperator;
     }
     /**
      * Account ID of the physical connection associated with the shared connection. If the physical connection type is DedicatedConnection, this parameter returns empty
-     *
+     * 
      */
     @Export(name="parentConnectionAccountId", refs={String.class}, tree="[0]")
     private Output<String> parentConnectionAccountId;
 
     /**
      * @return Account ID of the physical connection associated with the shared connection. If the physical connection type is DedicatedConnection, this parameter returns empty
-     *
+     * 
      */
     public Output<String> parentConnectionAccountId() {
         return this.parentConnectionAccountId;
     }
     /**
      * ID of the physical dedicated line to which the shared dedicated line belongs. If the physical dedicated line type is dedicated, this parameter returns empty.
-     *
+     * 
      */
     @Export(name="parentConnectionId", refs={String.class}, tree="[0]")
     private Output<String> parentConnectionId;
 
     /**
      * @return ID of the physical dedicated line to which the shared dedicated line belongs. If the physical dedicated line type is dedicated, this parameter returns empty.
-     *
+     * 
      */
     public Output<String> parentConnectionId() {
         return this.parentConnectionId;
     }
     /**
      * Local IDC address or the remote access point of the physical dedicated line.
-     *
+     * 
      */
     @Export(name="peerLocation", refs={String.class}, tree="[0]")
     private Output<String> peerLocation;
 
     /**
      * @return Local IDC address or the remote access point of the physical dedicated line.
-     *
+     * 
      */
     public Output<String> peerLocation() {
         return this.peerLocation;
     }
     /**
      * Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-     *
+     * 
      */
     @Export(name="portSpec", refs={String.class}, tree="[0]")
     private Output<String> portSpec;
 
     /**
      * @return Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-     *
+     * 
      */
     public Output<String> portSpec() {
         return this.portSpec;
     }
     /**
      * Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-     *
+     * 
      */
     @Export(name="portType", refs={String.class}, tree="[0]")
     private Output<String> portType;
 
     /**
      * @return Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-     *
+     * 
      */
     public Output<String> portType() {
         return this.portType;
     }
     /**
      * Project to which the physical dedicated line belongs. If left blank, the default project is used.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the physical dedicated line belongs. If left blank, the default project is used.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the physical connection. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available; Initial: applying; Allocated: under construction; Rejected: application rejected; UnConfirmed: waiting for acceptance; NoPayment: pending payment
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the physical connection. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available; Initial: applying; Allocated: under construction; Rejected: application rejected; UnConfirmed: waiting for acceptance; NoPayment: pending payment
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -418,7 +418,7 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * All tag information added to the physical connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ConnectionTag.class}, tree="[0,1]")
     private Output<List<ConnectionTag>> tags;
@@ -426,35 +426,35 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * @return All tag information added to the physical connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ConnectionTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the physical dedicated line was updated.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the physical dedicated line was updated.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * VLAN ID of the shared connection. If the physical connection type is DedicatedConnection, returns 0
-     *
+     * 
      */
     @Export(name="vlanId", refs={Integer.class}, tree="[0]")
     private Output<Integer> vlanId;
 
     /**
      * @return VLAN ID of the shared connection. If the physical connection type is DedicatedConnection, returns 0
-     *
+     * 
      */
     public Output<Integer> vlanId() {
         return this.vlanId;

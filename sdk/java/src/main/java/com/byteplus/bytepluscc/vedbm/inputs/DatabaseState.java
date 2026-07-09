@@ -19,14 +19,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
-     *
+     * 
      */
     @Import(name="characterSetName")
     private @Nullable Output<String> characterSetName;
 
     /**
      * @return Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
-     *
+     * 
      */
     public Optional<Output<String>> characterSetName() {
         return Optional.ofNullable(this.characterSetName);
@@ -35,7 +35,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     /**
      * Database permission information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="databasesPrivileges")
     private @Nullable Output<List<DatabaseDatabasesPrivilegeArgs>> databasesPrivileges;
@@ -43,7 +43,7 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Database permission information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DatabaseDatabasesPrivilegeArgs>>> databasesPrivileges() {
         return Optional.ofNullable(this.databasesPrivileges);
@@ -51,14 +51,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
-     *
+     * 
      */
     @Import(name="dbDesc")
     private @Nullable Output<String> dbDesc;
 
     /**
      * @return Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
-     *
+     * 
      */
     public Optional<Output<String>> dbDesc() {
         return Optional.ofNullable(this.dbDesc);
@@ -66,14 +66,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
-     *
+     * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
      * @return Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
-     *
+     * 
      */
     public Optional<Output<String>> dbName() {
         return Optional.ofNullable(this.dbName);
@@ -81,14 +81,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -124,9 +124,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param characterSetName Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder characterSetName(@Nullable Output<String> characterSetName) {
             $.characterSetName = characterSetName;
@@ -135,9 +135,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param characterSetName Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder characterSetName(String characterSetName) {
             return characterSetName(Output.of(characterSetName));
@@ -146,9 +146,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param databasesPrivileges Database permission information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder databasesPrivileges(@Nullable Output<List<DatabaseDatabasesPrivilegeArgs>> databasesPrivileges) {
             $.databasesPrivileges = databasesPrivileges;
@@ -158,9 +158,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param databasesPrivileges Database permission information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder databasesPrivileges(List<DatabaseDatabasesPrivilegeArgs> databasesPrivileges) {
             return databasesPrivileges(Output.of(databasesPrivileges));
@@ -169,9 +169,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param databasesPrivileges Database permission information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder databasesPrivileges(DatabaseDatabasesPrivilegeArgs... databasesPrivileges) {
             return databasesPrivileges(List.of(databasesPrivileges));
@@ -179,9 +179,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbDesc Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbDesc(@Nullable Output<String> dbDesc) {
             $.dbDesc = dbDesc;
@@ -190,9 +190,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbDesc Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbDesc(String dbDesc) {
             return dbDesc(Output.of(dbDesc));
@@ -200,9 +200,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbName Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbName(@Nullable Output<String> dbName) {
             $.dbName = dbName;
@@ -211,9 +211,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbName Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbName(String dbName) {
             return dbName(Output.of(dbName));
@@ -221,9 +221,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -232,9 +232,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));

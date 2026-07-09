@@ -14,7 +14,7 @@ public final class DomainConditionalOriginOriginRuleActions {
     /**
      * @return Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainConditionalOriginOriginRuleActionsOriginLine> originLines;
 
@@ -22,7 +22,7 @@ public final class DomainConditionalOriginOriginRuleActions {
     /**
      * @return Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainConditionalOriginOriginRuleActionsOriginLine> originLines() {
         return this.originLines == null ? List.of() : this.originLines;

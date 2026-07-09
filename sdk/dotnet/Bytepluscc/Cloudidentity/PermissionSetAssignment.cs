@@ -13,16 +13,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     /// <summary>
     /// After you create a Cloud Identity Center user, you need to grant the user login access to each account.
     /// When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cloudIdentityPermissionSetAssignmentDemo = new Bytepluscc.Cloudidentity.PermissionSetAssignment("CloudIdentityPermissionSetAssignmentDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
     ///         PrincipalType = "User",
     ///         TargetId = "21036*****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment example "target_id|principal_id|permission_set_id"
     /// ```

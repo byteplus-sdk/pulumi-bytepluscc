@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
 {
     /// <summary>
     /// Cloud Search Service is a fully managed, one-stop information retrieval and analytics platform compatible with Elasticsearch, OpenSearch, Kibana, Dashboards, Cerebro, and common open-source plugins. It supports scenarios such as full-text search, vector search, hybrid search, AI search, and spatiotemporal retrieval. With Cloud Search Service, you can deploy with one click, scale elastically, simplify operations, and quickly build log analysis and information retrieval analytics for real-world business.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eSCloudInstanceDemo = new Bytepluscc.Escloud.Instance("ESCloudInstanceDemo", new()
     ///     {
@@ -47,38 +47,38 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
     ///             Enable_pure_master = true,
     ///             Node_specs_assigns = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "type", "Hot" },
     ///                     { "number", 1 },
     ///                     { "storageSize", 100 },
     ///                     { "storageSpecName", "es.volume.essd.pl0" },
     ///                     { "resourceSpecName", "es.x2.medium" },
-    ///                     { "extraPerformance",
+    ///                     { "extraPerformance", 
     ///                     {
     ///                         { "throughput", 0 },
     ///                     } },
     ///                 },
-    ///
+    ///                 
     ///                 {
     ///                     { "type", "Master" },
     ///                     { "number", 3 },
     ///                     { "storageSize", 20 },
     ///                     { "storageSpecName", "es.volume.essd.pl0" },
     ///                     { "resourceSpecName", "es.x2.medium" },
-    ///                     { "extraPerformance",
+    ///                     { "extraPerformance", 
     ///                     {
     ///                         { "throughput", 0 },
     ///                     } },
     ///                 },
-    ///
+    ///                 
     ///                 {
     ///                     { "type", "Kibana" },
     ///                     { "number", 1 },
     ///                     { "storageSize", 0 },
     ///                     { "storageSpecName", "" },
     ///                     { "resourceSpecName", "kibana.x2.small" },
-    ///                     { "extraPerformance",
+    ///                     { "extraPerformance", 
     ///                     {
     ///                         { "throughput", 0 },
     ///                     } },
@@ -88,14 +88,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
     ///             Deletion_protection = true,
     ///             Network_specs = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "type", "Elasticsearch" },
     ///                     { "bandwidth", 1 },
     ///                     { "isOpen", true },
     ///                     { "specName", "es.eip.bgp_fixed_bandwidth" },
     ///                 },
-    ///
+    ///                 
     ///                 {
     ///                     { "type", "Kibana" },
     ///                     { "bandwidth", 1 },
@@ -114,12 +114,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Escloud
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:escloud/instance:Instance example "instance_id"
     /// ```

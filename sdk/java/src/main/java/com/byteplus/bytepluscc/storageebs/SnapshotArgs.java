@@ -21,14 +21,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -36,14 +36,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -51,14 +51,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-     *
+     * 
      */
     @Import(name="retentionDays")
     private @Nullable Output<Integer> retentionDays;
 
     /**
      * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-     *
+     * 
      */
     public Optional<Output<Integer>> retentionDays() {
         return Optional.ofNullable(this.retentionDays);
@@ -66,14 +66,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-     *
+     * 
      */
     @Import(name="snapshotName", required=true)
     private Output<String> snapshotName;
 
     /**
      * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-     *
+     * 
      */
     public Output<String> snapshotName() {
         return this.snapshotName;
@@ -82,7 +82,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Snapshot tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SnapshotTagArgs>> tags;
@@ -90,7 +90,7 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Snapshot tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SnapshotTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -98,14 +98,14 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk ID associated with the snapshot.
-     *
+     * 
      */
     @Import(name="volumeId", required=true)
     private Output<String> volumeId;
 
     /**
      * @return Cloud disk ID associated with the snapshot.
-     *
+     * 
      */
     public Output<String> volumeId() {
         return this.volumeId;
@@ -142,9 +142,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -153,9 +153,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -163,9 +163,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -174,9 +174,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -184,9 +184,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionDays Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder retentionDays(@Nullable Output<Integer> retentionDays) {
             $.retentionDays = retentionDays;
@@ -195,9 +195,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionDays Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder retentionDays(Integer retentionDays) {
             return retentionDays(Output.of(retentionDays));
@@ -205,9 +205,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotName Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotName(Output<String> snapshotName) {
             $.snapshotName = snapshotName;
@@ -216,9 +216,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotName Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotName(String snapshotName) {
             return snapshotName(Output.of(snapshotName));
@@ -227,9 +227,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Snapshot tag information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SnapshotTagArgs>> tags) {
             $.tags = tags;
@@ -239,9 +239,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Snapshot tag information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SnapshotTagArgs> tags) {
             return tags(Output.of(tags));
@@ -250,9 +250,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Snapshot tag information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SnapshotTagArgs... tags) {
             return tags(List.of(tags));
@@ -260,9 +260,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeId Cloud disk ID associated with the snapshot.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumeId(Output<String> volumeId) {
             $.volumeId = volumeId;
@@ -271,9 +271,9 @@ public final class SnapshotArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeId Cloud disk ID associated with the snapshot.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumeId(String volumeId) {
             return volumeId(Output.of(volumeId));

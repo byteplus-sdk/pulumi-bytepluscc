@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
 {
     /// <summary>
     /// The endpoint service enables private network connections between VPCs via endpoints.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var privateLinkEndpointServiceDemo = new Bytepluscc.Privatelink.EndpointService("PrivateLinkEndpointServiceDemo", new()
     ///     {
@@ -63,12 +63,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatelink
     ///             "*",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:privatelink/endpointService:EndpointService example "service_id"
     /// ```

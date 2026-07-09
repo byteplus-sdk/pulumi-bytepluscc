@@ -24,14 +24,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
-     *
+     * 
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<String> autoAddNewNodes;
 
     /**
      * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
-     *
+     * 
      */
     public Optional<Output<String>> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
@@ -39,14 +39,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Address description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -54,14 +54,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
-     *
+     * 
      */
     @Import(name="enableReadOnly")
     private @Nullable Output<String> enableReadOnly;
 
     /**
      * @return Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
-     *
+     * 
      */
     public Optional<Output<String>> enableReadOnly() {
         return Optional.ofNullable(this.enableReadOnly);
@@ -69,14 +69,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
-     *
+     * 
      */
     @Import(name="enableReadWriteSplitting")
     private @Nullable Output<String> enableReadWriteSplitting;
 
     /**
      * @return Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
-     *
+     * 
      */
     public Optional<Output<String>> enableReadWriteSplitting() {
         return Optional.ofNullable(this.enableReadWriteSplitting);
@@ -84,14 +84,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance connection endpoint ID.
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -99,14 +99,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance connection endpoint name.
-     *
+     * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Instance connection endpoint name.
-     *
+     * 
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -114,14 +114,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
-     *
+     * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
-     *
+     * 
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -129,14 +129,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Public service zone connection address
-     *
+     * 
      */
     @Import(name="innerAddresses")
     private @Nullable Output<DbEndpointInnerAddressesArgs> innerAddresses;
 
     /**
      * @return Public service zone connection address
-     *
+     * 
      */
     public Optional<Output<DbEndpointInnerAddressesArgs>> innerAddresses() {
         return Optional.ofNullable(this.innerAddresses);
@@ -144,14 +144,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -159,14 +159,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
-     *
+     * 
      */
     @Import(name="nodes")
     private @Nullable Output<String> nodes;
 
     /**
      * @return List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
-     *
+     * 
      */
     public Optional<Output<String>> nodes() {
         return Optional.ofNullable(this.nodes);
@@ -174,14 +174,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network connection address
-     *
+     * 
      */
     @Import(name="privateAddresses")
     private @Nullable Output<DbEndpointPrivateAddressesArgs> privateAddresses;
 
     /**
      * @return Private network connection address
-     *
+     * 
      */
     public Optional<Output<DbEndpointPrivateAddressesArgs>> privateAddresses() {
         return Optional.ofNullable(this.privateAddresses);
@@ -189,14 +189,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Public network connection address
-     *
+     * 
      */
     @Import(name="publicAddresses")
     private @Nullable Output<DbEndpointPublicAddressesArgs> publicAddresses;
 
     /**
      * @return Public network connection address
-     *
+     * 
      */
     public Optional<Output<DbEndpointPublicAddressesArgs>> publicAddresses() {
         return Optional.ofNullable(this.publicAddresses);
@@ -204,14 +204,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
-     *
+     * 
      */
     @Import(name="readOnlyNodeDistributionType")
     private @Nullable Output<String> readOnlyNodeDistributionType;
 
     /**
      * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
-     *
+     * 
      */
     public Optional<Output<String>> readOnlyNodeDistributionType() {
         return Optional.ofNullable(this.readOnlyNodeDistributionType);
@@ -219,14 +219,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
-     *
+     * 
      */
     @Import(name="readOnlyNodeMaxDelayTime")
     private @Nullable Output<Integer> readOnlyNodeMaxDelayTime;
 
     /**
      * @return Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
-     *
+     * 
      */
     public Optional<Output<Integer>> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
@@ -235,7 +235,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     /**
      * List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="readOnlyNodeWeights")
     private @Nullable Output<List<DbEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights;
@@ -243,7 +243,7 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DbEndpointReadOnlyNodeWeightArgs>>> readOnlyNodeWeights() {
         return Optional.ofNullable(this.readOnlyNodeWeights);
@@ -251,14 +251,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-     *
+     * 
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-     *
+     * 
      */
     public Optional<Output<String>> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);
@@ -266,14 +266,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
-     *
+     * 
      */
     @Import(name="readWriteProxyConnection")
     private @Nullable Output<Integer> readWriteProxyConnection;
 
     /**
      * @return After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
-     *
+     * 
      */
     public Optional<Output<Integer>> readWriteProxyConnection() {
         return Optional.ofNullable(this.readWriteProxyConnection);
@@ -281,14 +281,14 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
-     *
+     * 
      */
     @Import(name="writeNodeHaltWriting")
     private @Nullable Output<Boolean> writeNodeHaltWriting;
 
     /**
      * @return Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
-     *
+     * 
      */
     public Optional<Output<Boolean>> writeNodeHaltWriting() {
         return Optional.ofNullable(this.writeNodeHaltWriting);
@@ -337,9 +337,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAddNewNodes(@Nullable Output<String> autoAddNewNodes) {
             $.autoAddNewNodes = autoAddNewNodes;
@@ -348,9 +348,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAddNewNodes(String autoAddNewNodes) {
             return autoAddNewNodes(Output.of(autoAddNewNodes));
@@ -358,9 +358,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Address description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -369,9 +369,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Address description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -379,9 +379,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableReadOnly Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadOnly(@Nullable Output<String> enableReadOnly) {
             $.enableReadOnly = enableReadOnly;
@@ -390,9 +390,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableReadOnly Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadOnly(String enableReadOnly) {
             return enableReadOnly(Output.of(enableReadOnly));
@@ -400,9 +400,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableReadWriteSplitting Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadWriteSplitting(@Nullable Output<String> enableReadWriteSplitting) {
             $.enableReadWriteSplitting = enableReadWriteSplitting;
@@ -411,9 +411,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableReadWriteSplitting Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableReadWriteSplitting(String enableReadWriteSplitting) {
             return enableReadWriteSplitting(Output.of(enableReadWriteSplitting));
@@ -421,9 +421,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -432,9 +432,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -442,9 +442,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointName Instance connection endpoint name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -453,9 +453,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointName Instance connection endpoint name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -463,9 +463,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointType Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -474,9 +474,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointType Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
@@ -484,9 +484,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param innerAddresses Public service zone connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder innerAddresses(@Nullable Output<DbEndpointInnerAddressesArgs> innerAddresses) {
             $.innerAddresses = innerAddresses;
@@ -495,9 +495,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param innerAddresses Public service zone connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder innerAddresses(DbEndpointInnerAddressesArgs innerAddresses) {
             return innerAddresses(Output.of(innerAddresses));
@@ -505,9 +505,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -516,9 +516,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -526,9 +526,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodes List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(@Nullable Output<String> nodes) {
             $.nodes = nodes;
@@ -537,9 +537,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodes List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(String nodes) {
             return nodes(Output.of(nodes));
@@ -547,9 +547,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateAddresses Private network connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateAddresses(@Nullable Output<DbEndpointPrivateAddressesArgs> privateAddresses) {
             $.privateAddresses = privateAddresses;
@@ -558,9 +558,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateAddresses Private network connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateAddresses(DbEndpointPrivateAddressesArgs privateAddresses) {
             return privateAddresses(Output.of(privateAddresses));
@@ -568,9 +568,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicAddresses Public network connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicAddresses(@Nullable Output<DbEndpointPublicAddressesArgs> publicAddresses) {
             $.publicAddresses = publicAddresses;
@@ -579,9 +579,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicAddresses Public network connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicAddresses(DbEndpointPublicAddressesArgs publicAddresses) {
             return publicAddresses(Output.of(publicAddresses));
@@ -589,9 +589,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readOnlyNodeDistributionType Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeDistributionType(@Nullable Output<String> readOnlyNodeDistributionType) {
             $.readOnlyNodeDistributionType = readOnlyNodeDistributionType;
@@ -600,9 +600,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readOnlyNodeDistributionType Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeDistributionType(String readOnlyNodeDistributionType) {
             return readOnlyNodeDistributionType(Output.of(readOnlyNodeDistributionType));
@@ -610,9 +610,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readOnlyNodeMaxDelayTime Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeMaxDelayTime(@Nullable Output<Integer> readOnlyNodeMaxDelayTime) {
             $.readOnlyNodeMaxDelayTime = readOnlyNodeMaxDelayTime;
@@ -621,9 +621,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readOnlyNodeMaxDelayTime Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeMaxDelayTime(Integer readOnlyNodeMaxDelayTime) {
             return readOnlyNodeMaxDelayTime(Output.of(readOnlyNodeMaxDelayTime));
@@ -632,9 +632,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeWeights(@Nullable Output<List<DbEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights) {
             $.readOnlyNodeWeights = readOnlyNodeWeights;
@@ -644,9 +644,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeWeights(List<DbEndpointReadOnlyNodeWeightArgs> readOnlyNodeWeights) {
             return readOnlyNodeWeights(Output.of(readOnlyNodeWeights));
@@ -655,9 +655,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readOnlyNodeWeights(DbEndpointReadOnlyNodeWeightArgs... readOnlyNodeWeights) {
             return readOnlyNodeWeights(List.of(readOnlyNodeWeights));
@@ -665,9 +665,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteMode(@Nullable Output<String> readWriteMode) {
             $.readWriteMode = readWriteMode;
@@ -676,9 +676,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteMode(String readWriteMode) {
             return readWriteMode(Output.of(readWriteMode));
@@ -686,9 +686,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readWriteProxyConnection After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteProxyConnection(@Nullable Output<Integer> readWriteProxyConnection) {
             $.readWriteProxyConnection = readWriteProxyConnection;
@@ -697,9 +697,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param readWriteProxyConnection After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteProxyConnection(Integer readWriteProxyConnection) {
             return readWriteProxyConnection(Output.of(readWriteProxyConnection));
@@ -707,9 +707,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param writeNodeHaltWriting Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder writeNodeHaltWriting(@Nullable Output<Boolean> writeNodeHaltWriting) {
             $.writeNodeHaltWriting = writeNodeHaltWriting;
@@ -718,9 +718,9 @@ public final class DbEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param writeNodeHaltWriting Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder writeNodeHaltWriting(Boolean writeNodeHaltWriting) {
             return writeNodeHaltWriting(Output.of(writeNodeHaltWriting));

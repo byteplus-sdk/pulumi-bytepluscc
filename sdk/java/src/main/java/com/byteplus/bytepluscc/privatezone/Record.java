@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * A DNS record maps a domain name to resource information within a VPC.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var privateZoneRecordDemo = new Record("privateZoneRecordDemo", RecordArgs.builder()
  *             .host("ccapi-test-1")
@@ -56,102 +56,102 @@ import javax.annotation.Nullable;
  *             .zid(403215)
  *             .enable(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:privatezone/record:Record example &#34;record_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:privatezone/record:Record")
 public class Record extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the DNS record.
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Creation time of the DNS record.
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Indicates whether the DNS record is enabled.
-     *
+     * 
      */
     @Export(name="enable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enable;
 
     /**
      * @return Indicates whether the DNS record is enabled.
-     *
+     * 
      */
     public Output<Boolean> enable() {
         return this.enable;
     }
     /**
      * Domain prefix for the subdomain.
-     *
+     * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
      * @return Domain prefix for the subdomain.
-     *
+     * 
      */
     public Output<String> host() {
         return this.host;
     }
     /**
      * Account ID of the most recent update to the DNS record.
-     *
+     * 
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
      * @return Account ID of the most recent update to the DNS record.
-     *
+     * 
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
      * DNS record route, only the default route &#39;default&#39; is supported.
-     *
+     * 
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
      * @return DNS record route, only the default route &#39;default&#39; is supported.
-     *
+     * 
      */
     public Output<String> line() {
         return this.line;
     }
     /**
      * DNS record ID.
-     *
+     * 
      */
     @Export(name="recordId", refs={String.class}, tree="[0]")
     private Output<String> recordId;
 
     /**
      * @return DNS record ID.
-     *
+     * 
      */
     public Output<String> recordId() {
         return this.recordId;
@@ -159,7 +159,7 @@ public class Record extends com.pulumi.resources.CustomResource {
     /**
      * Record set list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="recordSets", refs={List.class,RecordRecordSet.class}, tree="[0,1]")
     private Output<List<RecordRecordSet>> recordSets;
@@ -167,119 +167,119 @@ public class Record extends com.pulumi.resources.CustomResource {
     /**
      * @return Record set list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<RecordRecordSet>> recordSets() {
         return this.recordSets;
     }
     /**
      * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
-     *
+     * 
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
-     *
+     * 
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
      * DNS record TTL (time to live), in seconds. Default is 600.
-     *
+     * 
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output<Integer> ttl;
 
     /**
      * @return DNS record TTL (time to live), in seconds. Default is 600.
-     *
+     * 
      */
     public Output<Integer> ttl() {
         return this.ttl;
     }
     /**
      * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Last update time of the DNS record.
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Last update time of the DNS record.
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Record value.
-     *
+     * 
      */
     @Export(name="value", refs={String.class}, tree="[0]")
     private Output<String> value;
 
     /**
      * @return Record value.
-     *
+     * 
      */
     public Output<String> value() {
         return this.value;
     }
     /**
      * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
-     *
+     * 
      */
     @Export(name="weight", refs={Integer.class}, tree="[0]")
     private Output<Integer> weight;
 
     /**
      * @return Record weight. The weight takes effect only when load balancing is enabled for the domain name.
-     *
+     * 
      */
     public Output<Integer> weight() {
         return this.weight;
     }
     /**
      * Indicates whether load balancing is enabled for this record set.
-     *
+     * 
      */
     @Export(name="weightEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> weightEnabled;
 
     /**
      * @return Indicates whether load balancing is enabled for this record set.
-     *
+     * 
      */
     public Output<Boolean> weightEnabled() {
         return this.weightEnabled;
     }
     /**
      * Domain name ID.
-     *
+     * 
      */
     @Export(name="zid", refs={Integer.class}, tree="[0]")
     private Output<Integer> zid;
 
     /**
      * @return Domain name ID.
-     *
+     * 
      */
     public Output<Integer> zid() {
         return this.zid;

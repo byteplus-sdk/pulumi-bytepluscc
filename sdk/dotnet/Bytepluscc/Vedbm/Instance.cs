@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
     /// veDB MySQL Edition is Volcano Engine's self-developed next-generation cloud-native relational database. veDB MySQL Edition is fully compatible with MySQL and supports diverse enterprise database application scenarios.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vEDBMInstanceDemo = new Bytepluscc.Vedbm.Instance("VEDBMInstanceDemo", new()
     ///     {
@@ -54,12 +54,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     ///             Charge_type = "PostPaid",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vedbm/instance:Instance example "instance_id"
     /// ```

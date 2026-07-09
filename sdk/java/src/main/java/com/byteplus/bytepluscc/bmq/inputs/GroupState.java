@@ -20,14 +20,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer Group creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Consumer Group creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -35,14 +35,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer Group description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Consumer Group description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer Group ID
-     *
+     * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
      * @return Consumer Group ID
-     *
+     * 
      */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
@@ -65,14 +65,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
-     *
+     * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
      * @return Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
-     *
+     * 
      */
     public Optional<Output<String>> groupName() {
         return Optional.ofNullable(this.groupName);
@@ -80,14 +80,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * BMQ instance ID
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return BMQ instance ID
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -95,14 +95,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User ID of the Consumer Group owner
-     *
+     * 
      */
     @Import(name="ownerId")
     private @Nullable Output<String> ownerId;
 
     /**
      * @return User ID of the Consumer Group owner
-     *
+     * 
      */
     public Optional<Output<String>> ownerId() {
         return Optional.ofNullable(this.ownerId);
@@ -110,14 +110,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the Consumer Group owner
-     *
+     * 
      */
     @Import(name="ownerName")
     private @Nullable Output<String> ownerName;
 
     /**
      * @return Name of the Consumer Group owner
-     *
+     * 
      */
     public Optional<Output<String>> ownerName() {
         return Optional.ofNullable(this.ownerName);
@@ -125,14 +125,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Reset consumption offset information
-     *
+     * 
      */
     @Import(name="resetInfo")
     private @Nullable Output<GroupResetInfoArgs> resetInfo;
 
     /**
      * @return Reset consumption offset information
-     *
+     * 
      */
     public Optional<Output<GroupResetInfoArgs>> resetInfo() {
         return Optional.ofNullable(this.resetInfo);
@@ -140,14 +140,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer Group status
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Consumer Group status
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -156,7 +156,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Topic list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="topicInfos")
     private @Nullable Output<List<GroupTopicInfoArgs>> topicInfos;
@@ -164,7 +164,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Topic list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GroupTopicInfoArgs>>> topicInfos() {
         return Optional.ofNullable(this.topicInfos);
@@ -205,9 +205,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Consumer Group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -216,9 +216,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Consumer Group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -226,9 +226,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Consumer Group description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -237,9 +237,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Consumer Group description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -247,9 +247,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId Consumer Group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
@@ -258,9 +258,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId Consumer Group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
@@ -268,9 +268,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(@Nullable Output<String> groupName) {
             $.groupName = groupName;
@@ -279,9 +279,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(String groupName) {
             return groupName(Output.of(groupName));
@@ -289,9 +289,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId BMQ instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -300,9 +300,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId BMQ instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -310,9 +310,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ownerId User ID of the Consumer Group owner
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ownerId(@Nullable Output<String> ownerId) {
             $.ownerId = ownerId;
@@ -321,9 +321,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ownerId User ID of the Consumer Group owner
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ownerId(String ownerId) {
             return ownerId(Output.of(ownerId));
@@ -331,9 +331,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ownerName Name of the Consumer Group owner
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ownerName(@Nullable Output<String> ownerName) {
             $.ownerName = ownerName;
@@ -342,9 +342,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ownerName Name of the Consumer Group owner
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ownerName(String ownerName) {
             return ownerName(Output.of(ownerName));
@@ -352,9 +352,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resetInfo Reset consumption offset information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resetInfo(@Nullable Output<GroupResetInfoArgs> resetInfo) {
             $.resetInfo = resetInfo;
@@ -363,9 +363,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resetInfo Reset consumption offset information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resetInfo(GroupResetInfoArgs resetInfo) {
             return resetInfo(Output.of(resetInfo));
@@ -373,9 +373,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Consumer Group status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -384,9 +384,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Consumer Group status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -395,9 +395,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param topicInfos Topic list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicInfos(@Nullable Output<List<GroupTopicInfoArgs>> topicInfos) {
             $.topicInfos = topicInfos;
@@ -407,9 +407,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param topicInfos Topic list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicInfos(List<GroupTopicInfoArgs> topicInfos) {
             return topicInfos(Output.of(topicInfos));
@@ -418,9 +418,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param topicInfos Topic list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder topicInfos(GroupTopicInfoArgs... topicInfos) {
             return topicInfos(List.of(topicInfos));

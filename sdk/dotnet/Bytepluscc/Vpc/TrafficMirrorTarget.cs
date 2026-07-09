@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// The mirror target is the network interface or classic load balancer used to collect traffic. You can use traffic mirroring to replicate network interface traffic based on your filtering criteria and forward the replicated traffic over the private network to the target service for monitoring and analysis.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPCTrafficMirrorTargetDemo = new Bytepluscc.Vpc.TrafficMirrorTarget("VPCTrafficMirrorTargetDemo", new()
     ///     {
@@ -39,12 +39,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/trafficMirrorTarget:TrafficMirrorTarget example "traffic_mirror_target_id"
     /// ```

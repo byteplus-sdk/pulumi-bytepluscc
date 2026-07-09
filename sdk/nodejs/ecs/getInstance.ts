@@ -36,6 +36,7 @@ export interface GetInstanceResult {
     readonly cpuMemory: outputs.ecs.GetInstanceCpuMemory;
     readonly createdAt: string;
     readonly creditSpecification: string;
+    readonly dataVolumes: outputs.ecs.GetInstanceDataVolume[];
     readonly deletionProtection: boolean;
     readonly deploymentSetGroupNumber: number;
     readonly deploymentSetId: string;

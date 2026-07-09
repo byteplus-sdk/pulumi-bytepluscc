@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * GTM routing rule resource, which defines the address pool set, health checks, and effective policies for a specific line.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -42,12 +42,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var gTMRuleDemo = new Rule("gTMRuleDemo", RuleArgs.builder()
  *             .disable(false)
@@ -76,7 +76,7 @@ import javax.annotation.Nullable;
  *                 .http_method("GET")
  *                 .http_usability_codes(Arrays.asList(Map.ofEntries(
  *                     Map.entry("operator", "interval"),
- *                     Map.entry("codes", Arrays.asList(
+ *                     Map.entry("codes", Arrays.asList(                    
  *                         100,
  *                         200))
  *                 )))
@@ -84,7 +84,7 @@ import javax.annotation.Nullable;
  *                 .ping_loss_percent(0)
  *                 .interval(60)
  *                 .is_manual_nodes(false)
- *                 .nodes(
+ *                 .nodes(                
  *                     "China-North lq Bytedance",
  *                     "China-North lf Bytedance",
  *                     "China-North hl Bytedance")
@@ -95,130 +95,130 @@ import javax.annotation.Nullable;
  *             .usePolicyProbeNodes(false)
  *             .weight(1)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:gtm/rule:Rule example &#34;gtm_id|policy_type|rule_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:gtm/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Route rule creation time.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Route rule creation time.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Whether this route rule is disabled. true: The route rule is disabled. false: The route rule is enabled.
-     *
+     * 
      */
     @Export(name="disable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> disable;
 
     /**
      * @return Whether this route rule is disabled. true: The route rule is disabled. false: The route rule is enabled.
-     *
+     * 
      */
     public Output<Boolean> disable() {
         return this.disable;
     }
     /**
      * Index of the effective address pool set.
-     *
+     * 
      */
     @Export(name="effectivePoolSetIndex", refs={Integer.class}, tree="[0]")
     private Output<Integer> effectivePoolSetIndex;
 
     /**
      * @return Index of the effective address pool set.
-     *
+     * 
      */
     public Output<Integer> effectivePoolSetIndex() {
         return this.effectivePoolSetIndex;
     }
     /**
      * UUID of the GTM instance.
-     *
+     * 
      */
     @Export(name="gtmId", refs={String.class}, tree="[0]")
     private Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance.
-     *
+     * 
      */
     public Output<String> gtmId() {
         return this.gtmId;
     }
     /**
      * Route rule applicable lines.
-     *
+     * 
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
      * @return Route rule applicable lines.
-     *
+     * 
      */
     public Output<String> line() {
         return this.line;
     }
     /**
      * Route rule name.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Route rule name.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * The policy type corresponding to the routing rule. geo: basic routing. perf: intelligent routing.
-     *
+     * 
      */
     @Export(name="policyType", refs={String.class}, tree="[0]")
     private Output<String> policyType;
 
     /**
      * @return The policy type corresponding to the routing rule. geo: basic routing. perf: intelligent routing.
-     *
+     * 
      */
     public Output<String> policyType() {
         return this.policyType;
     }
     /**
      * Address pool set effective mode. auto: Automatically sets the effective address pool set. The highest-priority available address pool becomes effective automatically. If all address pools are unavailable, the highest-priority address pool becomes effective. manual: Manually sets the effective address pool set. In this mode, you need to set the index of the effective address pool set in the EffectivePoolSetIndex parameter.
-     *
+     * 
      */
     @Export(name="poolSetMode", refs={String.class}, tree="[0]")
     private Output<String> poolSetMode;
 
     /**
      * @return Address pool set effective mode. auto: Automatically sets the effective address pool set. The highest-priority available address pool becomes effective automatically. If all address pools are unavailable, the highest-priority address pool becomes effective. manual: Manually sets the effective address pool set. In this mode, you need to set the index of the effective address pool set in the EffectivePoolSetIndex parameter.
-     *
+     * 
      */
     public Output<String> poolSetMode() {
         return this.poolSetMode;
@@ -226,7 +226,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Address pool collection list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="poolSets", refs={List.class,RulePoolSet.class}, tree="[0,1]")
     private Output<List<RulePoolSet>> poolSets;
@@ -234,119 +234,119 @@ public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * @return Address pool collection list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<RulePoolSet>> poolSets() {
         return this.poolSets;
     }
     /**
      * Health check parameters for the route rule.
-     *
+     * 
      */
     @Export(name="probe", refs={RuleProbe.class}, tree="[0]")
     private Output<RuleProbe> probe;
 
     /**
      * @return Health check parameters for the route rule.
-     *
+     * 
      */
     public Output<RuleProbe> probe() {
         return this.probe;
     }
     /**
      * Health check mode.
-     *
+     * 
      */
     @Export(name="probeMode", refs={String.class}, tree="[0]")
     private Output<String> probeMode;
 
     /**
      * @return Health check mode.
-     *
+     * 
      */
     public Output<String> probeMode() {
         return this.probeMode;
     }
     /**
      * Route rule remarks.
-     *
+     * 
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Route rule remarks.
-     *
+     * 
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
      * Routing rule ID.
-     *
+     * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Routing rule ID.
-     *
+     * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * Route rule update time.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Route rule update time.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * Whether to inherit instance-level health check nodes.
-     *
+     * 
      */
     @Export(name="usePolicyProbeNodes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> usePolicyProbeNodes;
 
     /**
      * @return Whether to inherit instance-level health check nodes.
-     *
+     * 
      */
     public Output<Boolean> usePolicyProbeNodes() {
         return this.usePolicyProbeNodes;
     }
     /**
      * Whether to use route rule-level probe configuration.
-     *
+     * 
      */
     @Export(name="useRuleProbeConfig", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> useRuleProbeConfig;
 
     /**
      * @return Whether to use route rule-level probe configuration.
-     *
+     * 
      */
     public Output<Boolean> useRuleProbeConfig() {
         return this.useRuleProbeConfig;
     }
     /**
      * Routing rule weight.
-     *
+     * 
      */
     @Export(name="weight", refs={Integer.class}, tree="[0]")
     private Output<Integer> weight;
 
     /**
      * @return Routing rule weight.
-     *
+     * 
      */
     public Output<Integer> weight() {
         return this.weight;

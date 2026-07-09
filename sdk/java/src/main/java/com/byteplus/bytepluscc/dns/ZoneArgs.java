@@ -20,14 +20,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Domain project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -35,14 +35,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain notes
-     *
+     * 
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Domain notes
-     *
+     * 
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -51,7 +51,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags for the domain. Default is empty.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ZoneTagArgs>> tags;
@@ -59,7 +59,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags for the domain. Default is empty.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ZoneTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -67,14 +67,14 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name.
-     *
+     * 
      */
     @Import(name="zoneName", required=true)
     private Output<String> zoneName;
 
     /**
      * @return Domain name.
-     *
+     * 
      */
     public Output<String> zoneName() {
         return this.zoneName;
@@ -109,9 +109,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Domain project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -120,9 +120,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Domain project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -130,9 +130,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Domain notes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -141,9 +141,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Domain notes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -152,9 +152,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags for the domain. Default is empty.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ZoneTagArgs>> tags) {
             $.tags = tags;
@@ -164,9 +164,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags for the domain. Default is empty.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ZoneTagArgs> tags) {
             return tags(Output.of(tags));
@@ -175,9 +175,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags for the domain. Default is empty.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ZoneTagArgs... tags) {
             return tags(List.of(tags));
@@ -185,9 +185,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -196,9 +196,9 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

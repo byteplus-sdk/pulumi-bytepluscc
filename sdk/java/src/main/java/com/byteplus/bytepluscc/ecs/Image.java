@@ -23,14 +23,14 @@ import javax.annotation.Nullable;
 
 /**
  * An image is a special file containing the basic operating system and application data required for a cloud server instance. You must select an image when creating an instance.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -43,12 +43,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var imageDemo = new Image("imageDemo", ImageArgs.builder()
  *             .description("ImageDemo Example")
@@ -61,410 +61,410 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:ecs/image:Image example &#34;image_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:ecs/image:Image")
 public class Image extends com.pulumi.resources.CustomResource {
     /**
      * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
-     *
+     * 
      */
     @Export(name="architecture", refs={String.class}, tree="[0]")
     private Output<String> architecture;
 
     /**
      * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
-     *
+     * 
      */
     public Output<String> architecture() {
         return this.architecture;
     }
     /**
      * Image boot mode. You can select BIOS or UEFI
-     *
+     * 
      */
     @Export(name="bootMode", refs={String.class}, tree="[0]")
     private Output<String> bootMode;
 
     /**
      * @return Image boot mode. You can select BIOS or UEFI
-     *
+     * 
      */
     public Output<String> bootMode() {
         return this.bootMode;
     }
     /**
      * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
-     *
+     * 
      */
     @Export(name="createWholeImage", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> createWholeImage;
 
     /**
      * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
-     *
+     * 
      */
     public Output<Boolean> createWholeImage() {
         return this.createWholeImage;
     }
     /**
      * Image creation time
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Image creation time
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Image check result.
-     *
+     * 
      */
     @Export(name="detectionResults", refs={ImageDetectionResults.class}, tree="[0]")
     private Output<ImageDetectionResults> detectionResults;
 
     /**
      * @return Image check result.
-     *
+     * 
      */
     public Output<ImageDetectionResults> detectionResults() {
         return this.detectionResults;
     }
     /**
      * Image ID
-     *
+     * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID
-     *
+     * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
-     *
+     * 
      */
     @Export(name="imageName", refs={String.class}, tree="[0]")
     private Output<String> imageName;
 
     /**
      * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
-     *
+     * 
      */
     public Output<String> imageName() {
         return this.imageName;
     }
     /**
      * Account ID to which the image belongs.
-     *
+     * 
      */
     @Export(name="imageOwnerId", refs={String.class}, tree="[0]")
     private Output<String> imageOwnerId;
 
     /**
      * @return Account ID to which the image belongs.
-     *
+     * 
      */
     public Output<String> imageOwnerId() {
         return this.imageOwnerId;
     }
     /**
      * Imported image information
-     *
+     * 
      */
     @Export(name="importImage", refs={ImageImportImage.class}, tree="[0]")
     private Output<ImageImportImage> importImage;
 
     /**
      * @return Imported image information
-     *
+     * 
      */
     public Output<ImageImportImage> importImage() {
         return this.importImage;
     }
     /**
      * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Whether Cloud Assistant Agent is installed in the image
-     *
+     * 
      */
     @Export(name="isInstallRunCommandAgent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isInstallRunCommandAgent;
 
     /**
      * @return Whether Cloud Assistant Agent is installed in the image
-     *
+     * 
      */
     public Output<Boolean> isInstallRunCommandAgent() {
         return this.isInstallRunCommandAgent;
     }
     /**
      * Whether the public image is maintained long-term.
-     *
+     * 
      */
     @Export(name="isLts", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isLts;
 
     /**
      * @return Whether the public image is maintained long-term.
-     *
+     * 
      */
     public Output<Boolean> isLts() {
         return this.isLts;
     }
     /**
      * Whether the image supports Cloud-init.
-     *
+     * 
      */
     @Export(name="isSupportCloudInit", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSupportCloudInit;
 
     /**
      * @return Whether the image supports Cloud-init.
-     *
+     * 
      */
     public Output<Boolean> isSupportCloudInit() {
         return this.isSupportCloudInit;
     }
     /**
      * Image kernel version.
-     *
+     * 
      */
     @Export(name="kernel", refs={String.class}, tree="[0]")
     private Output<String> kernel;
 
     /**
      * @return Image kernel version.
-     *
+     * 
      */
     public Output<String> kernel() {
         return this.kernel;
     }
     /**
      * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
-     *
+     * 
      */
     @Export(name="licenseType", refs={String.class}, tree="[0]")
     private Output<String> licenseType;
 
     /**
      * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
-     *
+     * 
      */
     public Output<String> licenseType() {
         return this.licenseType;
     }
     /**
      * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
-     *
+     * 
      */
     @Export(name="needDetection", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> needDetection;
 
     /**
      * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
-     *
+     * 
      */
     public Output<Boolean> needDetection() {
         return this.needDetection;
     }
     /**
      * Name of the image operating system.
-     *
+     * 
      */
     @Export(name="osName", refs={String.class}, tree="[0]")
     private Output<String> osName;
 
     /**
      * @return Name of the image operating system.
-     *
+     * 
      */
     public Output<String> osName() {
         return this.osName;
     }
     /**
      * Operating system type
-     *
+     * 
      */
     @Export(name="osType", refs={String.class}, tree="[0]")
     private Output<String> osType;
 
     /**
      * @return Operating system type
-     *
+     * 
      */
     public Output<String> osType() {
         return this.osType;
     }
     /**
      * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
-     *
+     * 
      */
     @Export(name="platform", refs={String.class}, tree="[0]")
     private Output<String> platform;
 
     /**
      * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
-     *
+     * 
      */
     public Output<String> platform() {
         return this.platform;
     }
     /**
      * Image release version.
-     *
+     * 
      */
     @Export(name="platformVersion", refs={String.class}, tree="[0]")
     private Output<String> platformVersion;
 
     /**
      * @return Image release version.
-     *
+     * 
      */
     public Output<String> platformVersion() {
         return this.platformVersion;
     }
     /**
      * Product code for marketplace image
-     *
+     * 
      */
     @Export(name="productCode", refs={String.class}, tree="[0]")
     private Output<String> productCode;
 
     /**
      * @return Product code for marketplace image
-     *
+     * 
      */
     public Output<String> productCode() {
         return this.productCode;
     }
     /**
      * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Accounts with which the image is shared
-     *
+     * 
      */
     @Export(name="sharePermissions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sharePermissions;
 
     /**
      * @return Accounts with which the image is shared
-     *
+     * 
      */
     public Output<List<String>> sharePermissions() {
         return this.sharePermissions;
     }
     /**
      * Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
-     *
+     * 
      */
     @Export(name="shareStatus", refs={String.class}, tree="[0]")
     private Output<String> shareStatus;
 
     /**
      * @return Image sharing status. HasShared: The custom image has been shared with other users. If the custom image is not shared or a public image is used, ShareStatus returns empty.
-     *
+     * 
      */
     public Output<String> shareStatus() {
         return this.shareStatus;
     }
     /**
      * Image size, in GiB.
-     *
+     * 
      */
     @Export(name="size", refs={Integer.class}, tree="[0]")
     private Output<Integer> size;
 
     /**
      * @return Image size, in GiB.
-     *
+     * 
      */
     public Output<Integer> size() {
         return this.size;
     }
     /**
      * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
-     *
+     * 
      */
     @Export(name="snapshotGroupId", refs={String.class}, tree="[0]")
     private Output<String> snapshotGroupId;
 
     /**
      * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
-     *
+     * 
      */
     public Output<String> snapshotGroupId() {
         return this.snapshotGroupId;
     }
     /**
      * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
      * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
@@ -472,7 +472,7 @@ public class Image extends com.pulumi.resources.CustomResource {
     /**
      * Information about snapshots associated with the image.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="snapshots", refs={List.class,ImageSnapshot.class}, tree="[0,1]")
     private Output<List<ImageSnapshot>> snapshots;
@@ -480,21 +480,21 @@ public class Image extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about snapshots associated with the image.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ImageSnapshot>> snapshots() {
         return this.snapshots;
     }
     /**
      * Image status.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Image status.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -502,7 +502,7 @@ public class Image extends com.pulumi.resources.CustomResource {
     /**
      * List of tags bound to the image.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ImageTag.class}, tree="[0,1]")
     private Output<List<ImageTag>> tags;
@@ -510,49 +510,49 @@ public class Image extends com.pulumi.resources.CustomResource {
     /**
      * @return List of tags bound to the image.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ImageTag>> tags() {
         return this.tags;
     }
     /**
      * Image update time
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Image update time
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Image size, in Bytes.
-     *
+     * 
      */
     @Export(name="virtualSize", refs={Double.class}, tree="[0]")
     private Output<Double> virtualSize;
 
     /**
      * @return Image size, in Bytes.
-     *
+     * 
      */
     public Output<Double> virtualSize() {
         return this.virtualSize;
     }
     /**
      * Image visibility. public: Public image. private: Private image. shared: Shared image.
-     *
+     * 
      */
     @Export(name="visibility", refs={String.class}, tree="[0]")
     private Output<String> visibility;
 
     /**
      * @return Image visibility. public: Public image. private: Private image. shared: Shared image.
-     *
+     * 
      */
     public Output<String> visibility() {
         return this.visibility;

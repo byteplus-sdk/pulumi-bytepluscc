@@ -20,7 +20,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     /**
      * List of connection address strings
      *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="dbAddresses")
     private @Nullable Output<List<EndpointDbAddressArgs>> dbAddresses;
@@ -28,7 +28,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of connection address strings
      *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EndpointDbAddressArgs>>> dbAddresses() {
         return Optional.ofNullable(this.dbAddresses);
@@ -36,14 +36,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of EIP IDs to bind when applying for a public address
-     *
+     * 
      */
     @Import(name="eipIds")
     private @Nullable Output<List<String>> eipIds;
 
     /**
      * @return List of EIP IDs to bind when applying for a public address
-     *
+     * 
      */
     public Optional<Output<List<String>>> eipIds() {
         return Optional.ofNullable(this.eipIds);
@@ -51,14 +51,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Connection address ID
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Connection address ID
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -66,14 +66,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * String information of the connection address.
-     *
+     * 
      */
     @Import(name="endpointStr")
     private @Nullable Output<String> endpointStr;
 
     /**
      * @return String information of the connection address.
-     *
+     * 
      */
     public Optional<Output<String>> endpointStr() {
         return Optional.ofNullable(this.endpointStr);
@@ -81,20 +81,20 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node type corresponding to the connection address. Possible values:
-     *
+     * 
      *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
      *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
-     *
+     * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Node type corresponding to the connection address. Possible values:
-     *
+     * 
      *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
      *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
-     *
+     * 
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -102,14 +102,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -117,14 +117,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the Mongos node that requires a public connection address
-     *
+     * 
      */
     @Import(name="mongosNodeIds")
     private @Nullable Output<List<String>> mongosNodeIds;
 
     /**
      * @return ID of the Mongos node that requires a public connection address
-     *
+     * 
      */
     public Optional<Output<List<String>>> mongosNodeIds() {
         return Optional.ofNullable(this.mongosNodeIds);
@@ -132,20 +132,20 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network type of the connection address. Possible values:
-     *
+     * 
      *     - `Private`: Private connection address
      *     - `Public`: Public connection address
-     *
+     * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
      * @return Network type of the connection address. Possible values:
-     *
+     * 
      *     - `Private`: Private connection address
      *     - `Public`: Public connection address
-     *
+     * 
      */
     public Optional<Output<String>> networkType() {
         return Optional.ofNullable(this.networkType);
@@ -153,20 +153,20 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the component associated with the current connection address
-     *
+     * 
      *   **Note:**
      *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-     *
+     * 
      */
     @Import(name="objectId")
     private @Nullable Output<String> objectId;
 
     /**
      * @return ID of the component associated with the current connection address
-     *
+     * 
      *   **Note:**
      *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-     *
+     * 
      */
     public Optional<Output<String>> objectId() {
         return Optional.ofNullable(this.objectId);
@@ -174,14 +174,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID of the current instance
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID of the current instance
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -189,14 +189,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID of the current instance
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID of the current instance
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -239,9 +239,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param dbAddresses List of connection address strings
          *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbAddresses(@Nullable Output<List<EndpointDbAddressArgs>> dbAddresses) {
             $.dbAddresses = dbAddresses;
@@ -251,9 +251,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param dbAddresses List of connection address strings
          *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbAddresses(List<EndpointDbAddressArgs> dbAddresses) {
             return dbAddresses(Output.of(dbAddresses));
@@ -262,9 +262,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param dbAddresses List of connection address strings
          *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dbAddresses(EndpointDbAddressArgs... dbAddresses) {
             return dbAddresses(List.of(dbAddresses));
@@ -272,9 +272,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipIds List of EIP IDs to bind when applying for a public address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eipIds(@Nullable Output<List<String>> eipIds) {
             $.eipIds = eipIds;
@@ -283,9 +283,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipIds List of EIP IDs to bind when applying for a public address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eipIds(List<String> eipIds) {
             return eipIds(Output.of(eipIds));
@@ -293,9 +293,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipIds List of EIP IDs to bind when applying for a public address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eipIds(String... eipIds) {
             return eipIds(List.of(eipIds));
@@ -303,9 +303,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Connection address ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -314,9 +314,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Connection address ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -324,9 +324,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointStr String information of the connection address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointStr(@Nullable Output<String> endpointStr) {
             $.endpointStr = endpointStr;
@@ -335,9 +335,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointStr String information of the connection address.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointStr(String endpointStr) {
             return endpointStr(Output.of(endpointStr));
@@ -345,12 +345,12 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointType Node type corresponding to the connection address. Possible values:
-         *
+         * 
          *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
          *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -359,12 +359,12 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointType Node type corresponding to the connection address. Possible values:
-         *
+         * 
          *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
          *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
@@ -372,9 +372,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -383,9 +383,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -393,9 +393,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeIds ID of the Mongos node that requires a public connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeIds(@Nullable Output<List<String>> mongosNodeIds) {
             $.mongosNodeIds = mongosNodeIds;
@@ -404,9 +404,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeIds ID of the Mongos node that requires a public connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeIds(List<String> mongosNodeIds) {
             return mongosNodeIds(Output.of(mongosNodeIds));
@@ -414,9 +414,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeIds ID of the Mongos node that requires a public connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mongosNodeIds(String... mongosNodeIds) {
             return mongosNodeIds(List.of(mongosNodeIds));
@@ -424,12 +424,12 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkType Network type of the connection address. Possible values:
-         *
+         * 
          *     - `Private`: Private connection address
          *     - `Public`: Public connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkType(@Nullable Output<String> networkType) {
             $.networkType = networkType;
@@ -438,12 +438,12 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkType Network type of the connection address. Possible values:
-         *
+         * 
          *     - `Private`: Private connection address
          *     - `Public`: Public connection address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
@@ -451,12 +451,12 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param objectId ID of the component associated with the current connection address
-         *
+         * 
          *   **Note:**
          *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder objectId(@Nullable Output<String> objectId) {
             $.objectId = objectId;
@@ -465,12 +465,12 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param objectId ID of the component associated with the current connection address
-         *
+         * 
          *   **Note:**
          *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder objectId(String objectId) {
             return objectId(Output.of(objectId));
@@ -478,9 +478,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID of the current instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -489,9 +489,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID of the current instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -499,9 +499,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID of the current instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -510,9 +510,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID of the current instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

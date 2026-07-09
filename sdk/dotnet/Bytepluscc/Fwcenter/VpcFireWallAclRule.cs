@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
 {
     /// <summary>
     /// VPC border firewall access control policy (ACL rule), used to define allow, block, or observe rules for traffic between VPCs.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Fwcenter.VpcFireWallAclRule("Example", new()
     ///     {
@@ -50,12 +50,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Fwcenter
     ///         Status = true,
     ///         VpcFirewallId = "vfw-yeoxxxxxx4vvsy6xj",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule example "vpc_firewall_id|rule_id"
     /// ```

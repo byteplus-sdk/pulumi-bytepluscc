@@ -21,14 +21,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist category. Values: Ordinary: ordinary allowlist; Default: default allowlist. Note: This parameter has no default value when used as a request parameter. If not provided, all categories of allowlists are queried.
-     *
+     * 
      */
     @Import(name="allowListCategory")
     private @Nullable Output<String> allowListCategory;
 
     /**
      * @return Allowlist category. Values: Ordinary: ordinary allowlist; Default: default allowlist. Note: This parameter has no default value when used as a request parameter. If not provided, all categories of allowlists are queried.
-     *
+     * 
      */
     public Optional<Output<String>> allowListCategory() {
         return Optional.ofNullable(this.allowListCategory);
@@ -36,14 +36,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the allowlist. Up to 200 characters. Default value is an empty string.
-     *
+     * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
      * @return Description of the allowlist. Up to 200 characters. Default value is an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> allowListDesc() {
         return Optional.ofNullable(this.allowListDesc);
@@ -51,14 +51,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
-     *
+     * 
      */
     @Import(name="allowListName")
     private @Nullable Output<String> allowListName;
 
     /**
      * @return Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> allowListName() {
         return Optional.ofNullable(this.allowListName);
@@ -66,14 +66,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network protocol type used by the allowlist. Value: IPv4 (default).
-     *
+     * 
      */
     @Import(name="allowListType")
     private @Nullable Output<String> allowListType;
 
     /**
      * @return Network protocol type used by the allowlist. Value: IPv4 (default).
-     *
+     * 
      */
     public Optional<Output<String>> allowListType() {
         return Optional.ofNullable(this.allowListType);
@@ -81,14 +81,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-     *
+     * 
      */
     @Import(name="allowLists")
     private @Nullable Output<List<String>> allowLists;
 
     /**
      * @return IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-     *
+     * 
      */
     public Optional<Output<List<String>>> allowLists() {
         return Optional.ofNullable(this.allowLists);
@@ -97,7 +97,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of instances bound to this allowlist, including instance ID and instance name.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="associatedInstances")
     private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
@@ -105,7 +105,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of instances bound to this allowlist, including instance ID and instance name.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
         return Optional.ofNullable(this.associatedInstances);
@@ -113,14 +113,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -128,14 +128,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
-     *
+     * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
      * @return Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
-     *
+     * 
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
@@ -143,14 +143,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
-     *
+     * 
      */
     @Import(name="modifyMode")
     private @Nullable Output<String> modifyMode;
 
     /**
      * @return Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
-     *
+     * 
      */
     public Optional<Output<String>> modifyMode() {
         return Optional.ofNullable(this.modifyMode);
@@ -159,7 +159,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of security groups bound to this allowlist.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="securityGroupBindInfos")
     private @Nullable Output<List<AllowListSecurityGroupBindInfoArgs>> securityGroupBindInfos;
@@ -167,7 +167,7 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of security groups bound to this allowlist.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AllowListSecurityGroupBindInfoArgs>>> securityGroupBindInfos() {
         return Optional.ofNullable(this.securityGroupBindInfos);
@@ -175,14 +175,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
-     *
+     * 
      */
     @Import(name="updateSecurityGroup")
     private @Nullable Output<Boolean> updateSecurityGroup;
 
     /**
      * @return Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
-     *
+     * 
      */
     public Optional<Output<Boolean>> updateSecurityGroup() {
         return Optional.ofNullable(this.updateSecurityGroup);
@@ -190,14 +190,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
-     *
+     * 
      */
     @Import(name="upgradeAllowListVersion")
     private @Nullable Output<Boolean> upgradeAllowListVersion;
 
     /**
      * @return Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
-     *
+     * 
      */
     public Optional<Output<Boolean>> upgradeAllowListVersion() {
         return Optional.ofNullable(this.upgradeAllowListVersion);
@@ -205,14 +205,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
-     *
+     * 
      */
     @Import(name="userAllowList")
     private @Nullable Output<String> userAllowList;
 
     /**
      * @return IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
-     *
+     * 
      */
     public Optional<Output<String>> userAllowList() {
         return Optional.ofNullable(this.userAllowList);
@@ -256,9 +256,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListCategory Allowlist category. Values: Ordinary: ordinary allowlist; Default: default allowlist. Note: This parameter has no default value when used as a request parameter. If not provided, all categories of allowlists are queried.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListCategory(@Nullable Output<String> allowListCategory) {
             $.allowListCategory = allowListCategory;
@@ -267,9 +267,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListCategory Allowlist category. Values: Ordinary: ordinary allowlist; Default: default allowlist. Note: This parameter has no default value when used as a request parameter. If not provided, all categories of allowlists are queried.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListCategory(String allowListCategory) {
             return allowListCategory(Output.of(allowListCategory));
@@ -277,9 +277,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Description of the allowlist. Up to 200 characters. Default value is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListDesc(@Nullable Output<String> allowListDesc) {
             $.allowListDesc = allowListDesc;
@@ -288,9 +288,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Description of the allowlist. Up to 200 characters. Default value is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListDesc(String allowListDesc) {
             return allowListDesc(Output.of(allowListDesc));
@@ -298,9 +298,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListName(@Nullable Output<String> allowListName) {
             $.allowListName = allowListName;
@@ -309,9 +309,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist naming rules: The allowlist name must be unique within the current region. It must start with a Chinese character, letter, or underscore (*). It can only contain Chinese characters, letters, numbers, underscores (*), and hyphens (-). Length must be 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListName(String allowListName) {
             return allowListName(Output.of(allowListName));
@@ -319,9 +319,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListType Network protocol type used by the allowlist. Value: IPv4 (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListType(@Nullable Output<String> allowListType) {
             $.allowListType = allowListType;
@@ -330,9 +330,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListType Network protocol type used by the allowlist. Value: IPv4 (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListType(String allowListType) {
             return allowListType(Output.of(allowListType));
@@ -340,9 +340,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowLists IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowLists(@Nullable Output<List<String>> allowLists) {
             $.allowLists = allowLists;
@@ -351,9 +351,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowLists IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowLists(List<String> allowLists) {
             return allowLists(Output.of(allowLists));
@@ -361,9 +361,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowLists IP addresses included in the allowlist. Supports the following two formats: IP address format, for example: 10.23.12.24. CIDR IP address range format, for example: 10.23.12.0/24 (Classless Inter-Domain Routing, 24 indicates the prefix length, range is 1–32). Note: Each allowlist can add up to 300 IP addresses or IP ranges. If there are many IPs, it is recommended to merge them into IP ranges, such as 10.23.12.0/24. Do not add IP addresses ending with x.x.x.x/0 except for 0.0.0.0/0 to the allowlist. This field cannot be used together with the UserAllowList field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowLists(String... allowLists) {
             return allowLists(List.of(allowLists));
@@ -372,9 +372,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances List of instances bound to this allowlist, including instance ID and instance name.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
             $.associatedInstances = associatedInstances;
@@ -384,9 +384,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances List of instances bound to this allowlist, including instance ID and instance name.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
             return associatedInstances(Output.of(associatedInstances));
@@ -395,9 +395,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances List of instances bound to this allowlist, including instance ID and instance name.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
             return associatedInstances(List.of(associatedInstances));
@@ -405,9 +405,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -416,9 +416,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID. When UpgradeAllowListVersion is set to true, you must provide this field to specify the instance for upgrading the allowlist version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -426,9 +426,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddress(@Nullable Output<String> ipAddress) {
             $.ipAddress = ipAddress;
@@ -437,9 +437,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress Query allowlist by IP address. Supports multiple IP addresses separated by commas (,). Note: If the allowlist contains any subset of the provided IP addresses, that allowlist will be returned.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
@@ -447,9 +447,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyMode Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyMode(@Nullable Output<String> modifyMode) {
             $.modifyMode = modifyMode;
@@ -458,9 +458,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyMode Allowlist modification mode. Values: Cover (default): overwrite, use the value of the AllowList field to overwrite the original allowlist. Append: add, add the IP addresses in the AllowList field to the original allowlist. Delete: remove, remove the IP addresses in the AllowList field from the original allowlist. At least one IP address must remain. Note: If the allowlist to be modified is bound to a security group, or if you need to bind a security group when modifying the allowlist, ModifyMode can only be set to Cover.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyMode(String modifyMode) {
             return modifyMode(Output.of(modifyMode));
@@ -469,9 +469,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param securityGroupBindInfos List of security groups bound to this allowlist.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupBindInfos(@Nullable Output<List<AllowListSecurityGroupBindInfoArgs>> securityGroupBindInfos) {
             $.securityGroupBindInfos = securityGroupBindInfos;
@@ -481,9 +481,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param securityGroupBindInfos List of security groups bound to this allowlist.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupBindInfos(List<AllowListSecurityGroupBindInfoArgs> securityGroupBindInfos) {
             return securityGroupBindInfos(Output.of(securityGroupBindInfos));
@@ -492,9 +492,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param securityGroupBindInfos List of security groups bound to this allowlist.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupBindInfos(AllowListSecurityGroupBindInfoArgs... securityGroupBindInfos) {
             return securityGroupBindInfos(List.of(securityGroupBindInfos));
@@ -502,9 +502,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateSecurityGroup Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateSecurityGroup(@Nullable Output<Boolean> updateSecurityGroup) {
             $.updateSecurityGroup = updateSecurityGroup;
@@ -513,9 +513,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateSecurityGroup Whether to update the security group bound to the allowlist. Values: true: update; false: do not update. Default value.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateSecurityGroup(Boolean updateSecurityGroup) {
             return updateSecurityGroup(Output.of(updateSecurityGroup));
@@ -523,9 +523,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param upgradeAllowListVersion Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder upgradeAllowListVersion(@Nullable Output<Boolean> upgradeAllowListVersion) {
             $.upgradeAllowListVersion = upgradeAllowListVersion;
@@ -534,9 +534,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param upgradeAllowListVersion Whether to upgrade the allowlist version. Values: true: upgrade; false: do not upgrade (default). You must also provide the InstanceId field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder upgradeAllowListVersion(Boolean upgradeAllowListVersion) {
             return upgradeAllowListVersion(Output.of(upgradeAllowListVersion));
@@ -544,9 +544,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userAllowList IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userAllowList(@Nullable Output<String> userAllowList) {
             $.userAllowList = userAllowList;
@@ -555,9 +555,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userAllowList IP addresses outside the security group that need to be added to the allowlist. You can enter IP addresses or CIDR IP ranges. Note: This field cannot be used together with the AllowList field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userAllowList(String userAllowList) {
             return userAllowList(Output.of(userAllowList));

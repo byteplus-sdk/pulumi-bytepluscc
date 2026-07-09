@@ -22,14 +22,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Security group creation time
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Security group creation time
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -37,14 +37,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -53,7 +53,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     /**
      * Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="egressPermissions")
     private @Nullable Output<List<SecurityGroupEgressPermissionArgs>> egressPermissions;
@@ -61,7 +61,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SecurityGroupEgressPermissionArgs>>> egressPermissions() {
         return Optional.ofNullable(this.egressPermissions);
@@ -70,7 +70,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     /**
      * Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="ingressPermissions")
     private @Nullable Output<List<SecurityGroupIngressPermissionArgs>> ingressPermissions;
@@ -78,7 +78,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SecurityGroupIngressPermissionArgs>>> ingressPermissions() {
         return Optional.ofNullable(this.ingressPermissions);
@@ -86,14 +86,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -101,14 +101,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Security group ID
-     *
+     * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
      * @return Security group ID
-     *
+     * 
      */
     public Optional<Output<String>> securityGroupId() {
         return Optional.ofNullable(this.securityGroupId);
@@ -116,14 +116,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
-     *
+     * 
      */
     @Import(name="securityGroupName")
     private @Nullable Output<String> securityGroupName;
 
     /**
      * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
-     *
+     * 
      */
     public Optional<Output<String>> securityGroupName() {
         return Optional.ofNullable(this.securityGroupName);
@@ -131,14 +131,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
-     *
+     * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
      * @return Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
-     *
+     * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
         return Optional.ofNullable(this.serviceManaged);
@@ -146,14 +146,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Security group status. Available means available for use, Creating means being created
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Security group status. Available means available for use, Creating means being created
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -162,7 +162,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SecurityGroupTagArgs>> tags;
@@ -170,7 +170,7 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SecurityGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -178,14 +178,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -193,14 +193,14 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * VPC ID to which the security group belongs
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID to which the security group belongs
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -243,9 +243,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param creationTime Security group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -254,9 +254,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param creationTime Security group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -264,9 +264,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -275,9 +275,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -286,9 +286,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param egressPermissions Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder egressPermissions(@Nullable Output<List<SecurityGroupEgressPermissionArgs>> egressPermissions) {
             $.egressPermissions = egressPermissions;
@@ -298,9 +298,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param egressPermissions Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder egressPermissions(List<SecurityGroupEgressPermissionArgs> egressPermissions) {
             return egressPermissions(Output.of(egressPermissions));
@@ -309,9 +309,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param egressPermissions Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder egressPermissions(SecurityGroupEgressPermissionArgs... egressPermissions) {
             return egressPermissions(List.of(egressPermissions));
@@ -320,9 +320,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param ingressPermissions Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ingressPermissions(@Nullable Output<List<SecurityGroupIngressPermissionArgs>> ingressPermissions) {
             $.ingressPermissions = ingressPermissions;
@@ -332,9 +332,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param ingressPermissions Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ingressPermissions(List<SecurityGroupIngressPermissionArgs> ingressPermissions) {
             return ingressPermissions(Output.of(ingressPermissions));
@@ -343,9 +343,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param ingressPermissions Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ingressPermissions(SecurityGroupIngressPermissionArgs... ingressPermissions) {
             return ingressPermissions(List.of(ingressPermissions));
@@ -353,9 +353,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -364,9 +364,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -374,9 +374,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param securityGroupId Security group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(@Nullable Output<String> securityGroupId) {
             $.securityGroupId = securityGroupId;
@@ -385,9 +385,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param securityGroupId Security group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(String securityGroupId) {
             return securityGroupId(Output.of(securityGroupId));
@@ -395,9 +395,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param securityGroupName Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupName(@Nullable Output<String> securityGroupName) {
             $.securityGroupName = securityGroupName;
@@ -406,9 +406,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param securityGroupName Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupName(String securityGroupName) {
             return securityGroupName(Output.of(securityGroupName));
@@ -416,9 +416,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param serviceManaged Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceManaged(@Nullable Output<Boolean> serviceManaged) {
             $.serviceManaged = serviceManaged;
@@ -427,9 +427,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param serviceManaged Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceManaged(Boolean serviceManaged) {
             return serviceManaged(Output.of(serviceManaged));
@@ -437,9 +437,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Security group status. Available means available for use, Creating means being created
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -448,9 +448,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Security group status. Available means available for use, Creating means being created
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -459,9 +459,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SecurityGroupTagArgs>> tags) {
             $.tags = tags;
@@ -471,9 +471,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SecurityGroupTagArgs> tags) {
             return tags(Output.of(tags));
@@ -482,9 +482,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SecurityGroupTagArgs... tags) {
             return tags(List.of(tags));
@@ -492,9 +492,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param type Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -503,9 +503,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param type Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -513,9 +513,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param vpcId VPC ID to which the security group belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -524,9 +524,9 @@ public final class SecurityGroupState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param vpcId VPC ID to which the security group belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

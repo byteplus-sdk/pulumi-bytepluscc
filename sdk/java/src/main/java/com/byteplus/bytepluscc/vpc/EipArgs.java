@@ -22,14 +22,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
-     *
+     * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -37,14 +37,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
-     *
+     * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
      * @return Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
-     *
+     * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
         return Optional.ofNullable(this.bandwidthPackageId);
@@ -52,14 +52,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
-     *
+     * 
      */
     @Import(name="billingType", required=true)
     private Output<Integer> billingType;
 
     /**
      * @return Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
@@ -67,14 +67,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the public IP.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the public IP.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -82,14 +82,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
-     *
+     * 
      */
     @Import(name="directMode")
     private @Nullable Output<Boolean> directMode;
 
     /**
      * @return Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> directMode() {
         return Optional.ofNullable(this.directMode);
@@ -97,14 +97,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Currently bound instance ID.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Currently bound instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -112,14 +112,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
-     *
+     * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
      * @return Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
-     *
+     * 
      */
     public Optional<Output<String>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -127,14 +127,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
-     *
+     * 
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
      * @return Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
-     *
+     * 
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
@@ -142,14 +142,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address pool ID.
-     *
+     * 
      */
     @Import(name="ipAddressPoolId")
     private @Nullable Output<String> ipAddressPoolId;
 
     /**
      * @return IP address pool ID.
-     *
+     * 
      */
     public Optional<Output<String>> ipAddressPoolId() {
         return Optional.ofNullable(this.ipAddressPoolId);
@@ -157,14 +157,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
-     *
+     * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
      * @return Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
-     *
+     * 
      */
     public Optional<Output<String>> isp() {
         return Optional.ofNullable(this.isp);
@@ -172,14 +172,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the public IP.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Name of the public IP.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -187,14 +187,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
-     *
+     * 
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -202,14 +202,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
-     *
+     * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<Integer> periodUnit;
 
     /**
      * @return Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
-     *
+     * 
      */
     public Optional<Output<Integer>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -217,14 +217,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
-     *
+     * 
      */
     @Import(name="privateIpAddress")
     private @Nullable Output<String> privateIpAddress;
 
     /**
      * @return Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
-     *
+     * 
      */
     public Optional<Output<String>> privateIpAddress() {
         return Optional.ofNullable(this.privateIpAddress);
@@ -232,14 +232,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the public IP belongs.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the public IP belongs.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -247,14 +247,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
-     *
+     * 
      */
     @Import(name="releaseWithInstance")
     private @Nullable Output<Boolean> releaseWithInstance;
 
     /**
      * @return Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
-     *
+     * 
      */
     public Optional<Output<Boolean>> releaseWithInstance() {
         return Optional.ofNullable(this.releaseWithInstance);
@@ -262,14 +262,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
-     *
+     * 
      */
     @Import(name="renewPeriodTimes")
     private @Nullable Output<Integer> renewPeriodTimes;
 
     /**
      * @return Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
-     *
+     * 
      */
     public Optional<Output<Integer>> renewPeriodTimes() {
         return Optional.ofNullable(this.renewPeriodTimes);
@@ -277,14 +277,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
-     *
+     * 
      */
     @Import(name="renewType")
     private @Nullable Output<Integer> renewType;
 
     /**
      * @return Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
-     *
+     * 
      */
     public Optional<Output<Integer>> renewType() {
         return Optional.ofNullable(this.renewType);
@@ -292,14 +292,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
-     *
+     * 
      */
     @Import(name="securityProtectionInstanceId")
     private @Nullable Output<Integer> securityProtectionInstanceId;
 
     /**
      * @return DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
-     *
+     * 
      */
     public Optional<Output<Integer>> securityProtectionInstanceId() {
         return Optional.ofNullable(this.securityProtectionInstanceId);
@@ -307,14 +307,14 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-     *
+     * 
      */
     @Import(name="securityProtectionTypes")
     private @Nullable Output<List<String>> securityProtectionTypes;
 
     /**
      * @return Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-     *
+     * 
      */
     public Optional<Output<List<String>>> securityProtectionTypes() {
         return Optional.ofNullable(this.securityProtectionTypes);
@@ -323,7 +323,7 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag information of the public IP
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<EipTagArgs>> tags;
@@ -331,7 +331,7 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag information of the public IP
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EipTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -383,9 +383,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -394,9 +394,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -404,9 +404,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidthPackageId Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidthPackageId(@Nullable Output<String> bandwidthPackageId) {
             $.bandwidthPackageId = bandwidthPackageId;
@@ -415,9 +415,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidthPackageId Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidthPackageId(String bandwidthPackageId) {
             return bandwidthPackageId(Output.of(bandwidthPackageId));
@@ -425,9 +425,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Output<Integer> billingType) {
             $.billingType = billingType;
@@ -436,9 +436,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -446,9 +446,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -457,9 +457,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -467,9 +467,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directMode Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directMode(@Nullable Output<Boolean> directMode) {
             $.directMode = directMode;
@@ -478,9 +478,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directMode Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directMode(Boolean directMode) {
             return directMode(Output.of(directMode));
@@ -488,9 +488,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Currently bound instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -499,9 +499,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Currently bound instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -509,9 +509,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceType(@Nullable Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -520,9 +520,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -530,9 +530,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddress(@Nullable Output<String> ipAddress) {
             $.ipAddress = ipAddress;
@@ -541,9 +541,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
@@ -551,9 +551,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressPoolId IP address pool ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressPoolId(@Nullable Output<String> ipAddressPoolId) {
             $.ipAddressPoolId = ipAddressPoolId;
@@ -562,9 +562,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressPoolId IP address pool ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressPoolId(String ipAddressPoolId) {
             return ipAddressPoolId(Output.of(ipAddressPoolId));
@@ -572,9 +572,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isp Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isp(@Nullable Output<String> isp) {
             $.isp = isp;
@@ -583,9 +583,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isp Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isp(String isp) {
             return isp(Output.of(isp));
@@ -593,9 +593,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -604,9 +604,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -614,9 +614,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -625,9 +625,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -635,9 +635,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(@Nullable Output<Integer> periodUnit) {
             $.periodUnit = periodUnit;
@@ -646,9 +646,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(Integer periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -656,9 +656,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateIpAddress Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateIpAddress(@Nullable Output<String> privateIpAddress) {
             $.privateIpAddress = privateIpAddress;
@@ -667,9 +667,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateIpAddress Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateIpAddress(String privateIpAddress) {
             return privateIpAddress(Output.of(privateIpAddress));
@@ -677,9 +677,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the public IP belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -688,9 +688,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the public IP belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -698,9 +698,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param releaseWithInstance Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder releaseWithInstance(@Nullable Output<Boolean> releaseWithInstance) {
             $.releaseWithInstance = releaseWithInstance;
@@ -709,9 +709,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param releaseWithInstance Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder releaseWithInstance(Boolean releaseWithInstance) {
             return releaseWithInstance(Output.of(releaseWithInstance));
@@ -719,9 +719,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewPeriodTimes Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder renewPeriodTimes(@Nullable Output<Integer> renewPeriodTimes) {
             $.renewPeriodTimes = renewPeriodTimes;
@@ -730,9 +730,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewPeriodTimes Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder renewPeriodTimes(Integer renewPeriodTimes) {
             return renewPeriodTimes(Output.of(renewPeriodTimes));
@@ -740,9 +740,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewType Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder renewType(@Nullable Output<Integer> renewType) {
             $.renewType = renewType;
@@ -751,9 +751,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewType Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder renewType(Integer renewType) {
             return renewType(Output.of(renewType));
@@ -761,9 +761,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityProtectionInstanceId DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityProtectionInstanceId(@Nullable Output<Integer> securityProtectionInstanceId) {
             $.securityProtectionInstanceId = securityProtectionInstanceId;
@@ -772,9 +772,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityProtectionInstanceId DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityProtectionInstanceId(Integer securityProtectionInstanceId) {
             return securityProtectionInstanceId(Output.of(securityProtectionInstanceId));
@@ -782,9 +782,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityProtectionTypes Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityProtectionTypes(@Nullable Output<List<String>> securityProtectionTypes) {
             $.securityProtectionTypes = securityProtectionTypes;
@@ -793,9 +793,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityProtectionTypes Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityProtectionTypes(List<String> securityProtectionTypes) {
             return securityProtectionTypes(Output.of(securityProtectionTypes));
@@ -803,9 +803,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityProtectionTypes Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityProtectionTypes(String... securityProtectionTypes) {
             return securityProtectionTypes(List.of(securityProtectionTypes));
@@ -814,9 +814,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information of the public IP
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<EipTagArgs>> tags) {
             $.tags = tags;
@@ -826,9 +826,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information of the public IP
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<EipTagArgs> tags) {
             return tags(Output.of(tags));
@@ -837,9 +837,9 @@ public final class EipArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information of the public IP
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(EipTagArgs... tags) {
             return tags(List.of(tags));

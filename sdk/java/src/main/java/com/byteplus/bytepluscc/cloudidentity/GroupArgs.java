@@ -20,14 +20,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Display Name
-     *
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return Display Name
-     *
+     * 
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -50,14 +50,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User Group Name
-     *
+     * 
      */
     @Import(name="groupName", required=true)
     private Output<String> groupName;
 
     /**
      * @return User Group Name
-     *
+     * 
      */
     public Output<String> groupName() {
         return this.groupName;
@@ -65,14 +65,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User Group Type
-     *
+     * 
      */
     @Import(name="joinType", required=true)
     private Output<String> joinType;
 
     /**
      * @return User Group Type
-     *
+     * 
      */
     public Output<String> joinType() {
         return this.joinType;
@@ -81,7 +81,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * User Group Member List
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="members")
     private @Nullable Output<List<GroupMemberArgs>> members;
@@ -89,7 +89,7 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return User Group Member List
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GroupMemberArgs>>> members() {
         return Optional.ofNullable(this.members);
@@ -125,9 +125,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -136,9 +136,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -146,9 +146,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName Display Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
@@ -157,9 +157,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName Display Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
@@ -167,9 +167,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName User Group Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(Output<String> groupName) {
             $.groupName = groupName;
@@ -178,9 +178,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName User Group Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(String groupName) {
             return groupName(Output.of(groupName));
@@ -188,9 +188,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param joinType User Group Type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinType(Output<String> joinType) {
             $.joinType = joinType;
@@ -199,9 +199,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param joinType User Group Type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinType(String joinType) {
             return joinType(Output.of(joinType));
@@ -210,9 +210,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members User Group Member List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder members(@Nullable Output<List<GroupMemberArgs>> members) {
             $.members = members;
@@ -222,9 +222,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members User Group Member List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder members(List<GroupMemberArgs> members) {
             return members(Output.of(members));
@@ -233,9 +233,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members User Group Member List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder members(GroupMemberArgs... members) {
             return members(List.of(members));

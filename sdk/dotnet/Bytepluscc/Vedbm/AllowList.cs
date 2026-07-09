@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
     /// vedbm access allowlist.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vEDBMAllowListDemo = new Bytepluscc.Vedbm.AllowList("VEDBMAllowListDemo", new()
     ///     {
@@ -43,12 +43,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     ///         },
     ///         ModifyMode = "Cover",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vedbm/allowList:AllowList example "allow_list_id"
     /// ```

@@ -25,14 +25,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
-     *
+     * 
      */
     @Import(name="advanced")
     private @Nullable Output<RuleUserDefineRuleAdvancedArgs> advanced;
 
     /**
      * @return The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
-     *
+     * 
      */
     public Optional<Output<RuleUserDefineRuleAdvancedArgs>> advanced() {
         return Optional.ofNullable(this.advanced);
@@ -40,14 +40,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
-     *
+     * 
      */
     @Import(name="enableHostGroupLabel")
     private @Nullable Output<Boolean> enableHostGroupLabel;
 
     /**
      * @return Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableHostGroupLabel() {
         return Optional.ofNullable(this.enableHostGroupLabel);
@@ -55,14 +55,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
-     *
+     * 
      */
     @Import(name="enableHostname")
     private @Nullable Output<Boolean> enableHostname;
 
     /**
      * @return Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableHostname() {
         return Optional.ofNullable(this.enableHostname);
@@ -70,14 +70,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
-     *
+     * 
      */
     @Import(name="enableRawLog")
     private @Nullable Output<Boolean> enableRawLog;
 
     /**
      * @return Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableRawLog() {
         return Optional.ofNullable(this.enableRawLog);
@@ -86,7 +86,7 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
     /**
      * Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="fields")
     private @Nullable Output<List<RuleUserDefineRuleFieldArgs>> fields;
@@ -94,7 +94,7 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
     /**
      * @return Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleUserDefineRuleFieldArgs>>> fields() {
         return Optional.ofNullable(this.fields);
@@ -102,14 +102,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Field name used to store machine group label information
-     *
+     * 
      */
     @Import(name="hostGroupLabelKey")
     private @Nullable Output<String> hostGroupLabelKey;
 
     /**
      * @return Field name used to store machine group label information
-     *
+     * 
      */
     public Optional<Output<String>> hostGroupLabelKey() {
         return Optional.ofNullable(this.hostGroupLabelKey);
@@ -117,14 +117,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Hostname field name. Required only when EnableHostname is true.
-     *
+     * 
      */
     @Import(name="hostnameKey")
     private @Nullable Output<String> hostnameKey;
 
     /**
      * @return Hostname field name. Required only when EnableHostname is true.
-     *
+     * 
      */
     public Optional<Output<String>> hostnameKey() {
         return Optional.ofNullable(this.hostnameKey);
@@ -132,14 +132,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Ignore log files that have not been updated for a specified period (in hours).
-     *
+     * 
      */
     @Import(name="ignoreOlder")
     private @Nullable Output<Integer> ignoreOlder;
 
     /**
      * @return Ignore log files that have not been updated for a specified period (in hours).
-     *
+     * 
      */
     public Optional<Output<Integer>> ignoreOlder() {
         return Optional.ofNullable(this.ignoreOlder);
@@ -147,14 +147,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
-     *
+     * 
      */
     @Import(name="multiCollectsType")
     private @Nullable Output<String> multiCollectsType;
 
     /**
      * @return Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
-     *
+     * 
      */
     public Optional<Output<String>> multiCollectsType() {
         return Optional.ofNullable(this.multiCollectsType);
@@ -162,14 +162,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
-     *
+     * 
      */
     @Import(name="parsePathRule")
     private @Nullable Output<RuleUserDefineRuleParsePathRuleArgs> parsePathRule;
 
     /**
      * @return Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
-     *
+     * 
      */
     public Optional<Output<RuleUserDefineRuleParsePathRuleArgs>> parsePathRule() {
         return Optional.ofNullable(this.parsePathRule);
@@ -177,14 +177,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
-     *
+     * 
      */
     @Import(name="plugin")
     private @Nullable Output<RuleUserDefineRulePluginArgs> plugin;
 
     /**
      * @return LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
-     *
+     * 
      */
     public Optional<Output<RuleUserDefineRulePluginArgs>> plugin() {
         return Optional.ofNullable(this.plugin);
@@ -192,14 +192,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
-     *
+     * 
      */
     @Import(name="rawLogKey")
     private @Nullable Output<String> rawLogKey;
 
     /**
      * @return Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
-     *
+     * 
      */
     public Optional<Output<String>> rawLogKey() {
         return Optional.ofNullable(this.rawLogKey);
@@ -207,14 +207,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
-     *
+     * 
      */
     @Import(name="shardHashKey")
     private @Nullable Output<RuleUserDefineRuleShardHashKeyArgs> shardHashKey;
 
     /**
      * @return Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
-     *
+     * 
      */
     public Optional<Output<RuleUserDefineRuleShardHashKeyArgs>> shardHashKey() {
         return Optional.ofNullable(this.shardHashKey);
@@ -222,14 +222,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
-     *
+     * 
      */
     @Import(name="tailFiles")
     private @Nullable Output<Boolean> tailFiles;
 
     /**
      * @return LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
-     *
+     * 
      */
     public Optional<Output<Boolean>> tailFiles() {
         return Optional.ofNullable(this.tailFiles);
@@ -237,14 +237,14 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
-     *
+     * 
      */
     @Import(name="tailSizeKb")
     private @Nullable Output<Integer> tailSizeKb;
 
     /**
      * @return Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
-     *
+     * 
      */
     public Optional<Output<Integer>> tailSizeKb() {
         return Optional.ofNullable(this.tailSizeKb);
@@ -290,9 +290,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param advanced The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder advanced(@Nullable Output<RuleUserDefineRuleAdvancedArgs> advanced) {
             $.advanced = advanced;
@@ -301,9 +301,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param advanced The Advanced parameter is used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple release conditions are specified, the handle is released and log file monitoring ends as soon as any condition is met.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder advanced(RuleUserDefineRuleAdvancedArgs advanced) {
             return advanced(Output.of(advanced));
@@ -311,9 +311,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableHostGroupLabel Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHostGroupLabel(@Nullable Output<Boolean> enableHostGroupLabel) {
             $.enableHostGroupLabel = enableHostGroupLabel;
@@ -322,9 +322,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableHostGroupLabel Whether to upload the label information of the host group to the log service. The default is off. true: LogCollector uploads the label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): Host group label information is not uploaded.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHostGroupLabel(Boolean enableHostGroupLabel) {
             return enableHostGroupLabel(Output.of(enableHostGroupLabel));
@@ -332,9 +332,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableHostname Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHostname(@Nullable Output<Boolean> enableHostname) {
             $.enableHostname = enableHostname;
@@ -343,9 +343,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableHostname Upload the hostname field. Default is disabled. true: Add a field to the original log to record the source hostname. Specify the hostname field name using HostnameKey. false: (default) Do not add the hostname field.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHostname(Boolean enableHostname) {
             return enableHostname(Output.of(enableHostname));
@@ -353,9 +353,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableRawLog Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableRawLog(@Nullable Output<Boolean> enableRawLog) {
             $.enableRawLog = enableRawLog;
@@ -364,9 +364,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param enableRawLog Upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableRawLog(Boolean enableRawLog) {
             return enableRawLog(Output.of(enableRawLog));
@@ -375,9 +375,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
         /**
          * @param fields Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fields(@Nullable Output<List<RuleUserDefineRuleFieldArgs>> fields) {
             $.fields = fields;
@@ -387,9 +387,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
         /**
          * @param fields Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fields(List<RuleUserDefineRuleFieldArgs> fields) {
             return fields(Output.of(fields));
@@ -398,9 +398,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
         /**
          * @param fields Add constant fields to logs. Constant fields must follow these restrictions: You can upload up to 5 constant fields. Field names (Key) must be unique and not empty. Length limit: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field values (Value) must not be empty, with a maximum length of 512 KiB.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fields(RuleUserDefineRuleFieldArgs... fields) {
             return fields(List.of(fields));
@@ -408,9 +408,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param hostGroupLabelKey Field name used to store machine group label information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupLabelKey(@Nullable Output<String> hostGroupLabelKey) {
             $.hostGroupLabelKey = hostGroupLabelKey;
@@ -419,9 +419,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param hostGroupLabelKey Field name used to store machine group label information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostGroupLabelKey(String hostGroupLabelKey) {
             return hostGroupLabelKey(Output.of(hostGroupLabelKey));
@@ -429,9 +429,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param hostnameKey Hostname field name. Required only when EnableHostname is true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostnameKey(@Nullable Output<String> hostnameKey) {
             $.hostnameKey = hostnameKey;
@@ -440,9 +440,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param hostnameKey Hostname field name. Required only when EnableHostname is true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostnameKey(String hostnameKey) {
             return hostnameKey(Output.of(hostnameKey));
@@ -450,9 +450,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param ignoreOlder Ignore log files that have not been updated for a specified period (in hours).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ignoreOlder(@Nullable Output<Integer> ignoreOlder) {
             $.ignoreOlder = ignoreOlder;
@@ -461,9 +461,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param ignoreOlder Ignore log files that have not been updated for a specified period (in hours).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ignoreOlder(Integer ignoreOlder) {
             return ignoreOlder(Output.of(ignoreOlder));
@@ -471,9 +471,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param multiCollectsType Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder multiCollectsType(@Nullable Output<String> multiCollectsType) {
             $.multiCollectsType = multiCollectsType;
@@ -482,9 +482,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param multiCollectsType Allow multiple log file collections. Empty: Use log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Use collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Use log topic ID, collection rule name, and log file ID to uniquely identify the log file.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder multiCollectsType(String multiCollectsType) {
             return multiCollectsType(Output.of(multiCollectsType));
@@ -492,9 +492,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param parsePathRule Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parsePathRule(@Nullable Output<RuleUserDefineRuleParsePathRuleArgs> parsePathRule) {
             $.parsePathRule = parsePathRule;
@@ -503,9 +503,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param parsePathRule Rule for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regular expression and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parsePathRule(RuleUserDefineRuleParsePathRuleArgs parsePathRule) {
             return parsePathRule(Output.of(parsePathRule));
@@ -513,9 +513,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param plugin LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder plugin(@Nullable Output<RuleUserDefineRulePluginArgs> plugin) {
             $.plugin = plugin;
@@ -524,9 +524,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param plugin LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder plugin(RuleUserDefineRulePluginArgs plugin) {
             return plugin(Output.of(plugin));
@@ -534,9 +534,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param rawLogKey Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rawLogKey(@Nullable Output<String> rawLogKey) {
             $.rawLogKey = rawLogKey;
@@ -545,9 +545,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param rawLogKey Name of the raw log field. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service along with the parsed log data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rawLogKey(String rawLogKey) {
             return rawLogKey(Output.of(rawLogKey));
@@ -555,9 +555,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param shardHashKey Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardHashKey(@Nullable Output<RuleUserDefineRuleShardHashKeyArgs> shardHashKey) {
             $.shardHashKey = shardHashKey;
@@ -566,9 +566,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param shardHashKey Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If this parameter is set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder shardHashKey(RuleUserDefineRuleShardHashKeyArgs shardHashKey) {
             return shardHashKey(Output.of(shardHashKey));
@@ -576,9 +576,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param tailFiles LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tailFiles(@Nullable Output<Boolean> tailFiles) {
             $.tailFiles = tailFiles;
@@ -587,9 +587,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param tailFiles LogCollector collection policy, which specifies whether LogCollector collects incremental logs or full logs. Default is false, meaning full log collection. true: incremental collection. LogCollector only collects newly added content in the file. When new logs are written to monitored log files, LogCollector triggers log collection. For first-time collection, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, collecting only incremental logs. For subsequent collections, LogCollector determines the collection position based on Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tailFiles(Boolean tailFiles) {
             return tailFiles(Output.of(tailFiles));
@@ -597,9 +597,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param tailSizeKb Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tailSizeKb(@Nullable Output<Integer> tailSizeKb) {
             $.tailSizeKb = tailSizeKb;
@@ -608,9 +608,9 @@ public final class RuleUserDefineRuleArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param tailSizeKb Backtracking threshold for incremental collection, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: If the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position that is TailSizeKb from the end of the file.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tailSizeKb(Integer tailSizeKb) {
             return tailSizeKb(Output.of(tailSizeKb));

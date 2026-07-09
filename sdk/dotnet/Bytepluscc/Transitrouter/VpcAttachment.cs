@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// By establishing a connection between the private network and the transit router, you can enable private network communication between the private network and the transit router.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterVpcAttachmentDemo = new Bytepluscc.Transitrouter.VpcAttachment("TransitRouterVpcAttachmentDemo", new()
     ///     {
@@ -49,12 +49,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///         TransitRouterId = "tr-mjl8xxxxxg5smt1boobol4",
     ///         VpcId = "vpc-btg9hmxxxxx0b2tnp1on8",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/vpcAttachment:VpcAttachment example "transit_router_id|transit_router_attachment_id"
     /// ```

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// A backend server group is a collection of backend servers.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cLBServerGroupDemo = new Bytepluscc.Clb.ServerGroup("CLBServerGroupDemo", new()
     ///     {
@@ -63,12 +63,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/serverGroup:ServerGroup example "server_group_id"
     /// ```

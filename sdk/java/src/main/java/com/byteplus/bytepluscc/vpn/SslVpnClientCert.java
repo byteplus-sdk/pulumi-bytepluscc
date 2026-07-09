@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * SSL client certificate is a sub-resource of the SSL server.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vPNSslVpnClientCertDemo = new SslVpnClientCert("vPNSslVpnClientCertDemo", SslVpnClientCertArgs.builder()
  *             .sslVpnServerId("vss-xxxx")
@@ -53,186 +53,186 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert example &#34;ssl_vpn_client_cert_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert")
 public class SslVpnClientCert extends com.pulumi.resources.CustomResource {
     /**
      * CA certificate information.
-     *
+     * 
      */
     @Export(name="caCertificate", refs={String.class}, tree="[0]")
     private Output<String> caCertificate;
 
     /**
      * @return CA certificate information.
-     *
+     * 
      */
     public Output<String> caCertificate() {
         return this.caCertificate;
     }
     /**
      * SSL client certificate status. Available: available; Expiring: expiring, displays this status when the expiration time is less than or equal to one week; Expired: expired.
-     *
+     * 
      */
     @Export(name="certificateStatus", refs={String.class}, tree="[0]")
     private Output<String> certificateStatus;
 
     /**
      * @return SSL client certificate status. Available: available; Expiring: expiring, displays this status when the expiration time is less than or equal to one week; Expired: expired.
-     *
+     * 
      */
     public Output<String> certificateStatus() {
         return this.certificateStatus;
     }
     /**
      * Client certificate information.
-     *
+     * 
      */
     @Export(name="clientCertificate", refs={String.class}, tree="[0]")
     private Output<String> clientCertificate;
 
     /**
      * @return Client certificate information.
-     *
+     * 
      */
     public Output<String> clientCertificate() {
         return this.clientCertificate;
     }
     /**
      * Client key information.
-     *
+     * 
      */
     @Export(name="clientKey", refs={String.class}, tree="[0]")
     private Output<String> clientKey;
 
     /**
      * @return Client key information.
-     *
+     * 
      */
     public Output<String> clientKey() {
         return this.clientKey;
     }
     /**
      * Creation time of the SSL client certificate.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the SSL client certificate.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Expiration time of the SSL client certificate.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time of the SSL client certificate.
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * OpenVPN client configuration.
-     *
+     * 
      */
     @Export(name="openVpnClientConfig", refs={String.class}, tree="[0]")
     private Output<String> openVpnClientConfig;
 
     /**
      * @return OpenVPN client configuration.
-     *
+     * 
      */
     public Output<String> openVpnClientConfig() {
         return this.openVpnClientConfig;
     }
     /**
      * SSL client certificate ID.
-     *
+     * 
      */
     @Export(name="sslVpnClientCertId", refs={String.class}, tree="[0]")
     private Output<String> sslVpnClientCertId;
 
     /**
      * @return SSL client certificate ID.
-     *
+     * 
      */
     public Output<String> sslVpnClientCertId() {
         return this.sslVpnClientCertId;
     }
     /**
      * Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-     *
+     * 
      */
     @Export(name="sslVpnClientCertName", refs={String.class}, tree="[0]")
     private Output<String> sslVpnClientCertName;
 
     /**
      * @return Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-     *
+     * 
      */
     public Output<String> sslVpnClientCertName() {
         return this.sslVpnClientCertName;
     }
     /**
      * ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-     *
+     * 
      */
     @Export(name="sslVpnServerId", refs={String.class}, tree="[0]")
     private Output<String> sslVpnServerId;
 
     /**
      * @return ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-     *
+     * 
      */
     public Output<String> sslVpnServerId() {
         return this.sslVpnServerId;
     }
     /**
      * SSL client status. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return SSL client status. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -240,7 +240,7 @@ public class SslVpnClientCert extends com.pulumi.resources.CustomResource {
     /**
      * SSL client certificate tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,SslVpnClientCertTag.class}, tree="[0,1]")
     private Output<List<SslVpnClientCertTag>> tags;
@@ -248,21 +248,21 @@ public class SslVpnClientCert extends com.pulumi.resources.CustomResource {
     /**
      * @return SSL client certificate tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SslVpnClientCertTag>> tags() {
         return this.tags;
     }
     /**
      * Modification time of the SSL client certificate.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Modification time of the SSL client certificate.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

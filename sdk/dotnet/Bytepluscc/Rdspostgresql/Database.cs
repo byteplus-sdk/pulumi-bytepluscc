@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
     /// The database is an independent database within a PostgreSQL instance, used to store and manage data.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSPostgreSQLDatabaseDemo = new Bytepluscc.Rdspostgresql.Database("RDSPostgreSQLDatabaseDemo", new()
     ///     {
@@ -32,12 +32,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     ///         Collate = "C",
     ///         CType = "C.UTF-8",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdspostgresql/database:Database example "instance_id|db_name"
     /// ```

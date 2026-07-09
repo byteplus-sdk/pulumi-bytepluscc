@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// Platform on which the transit router service runs. Receives traffic from network instances and forwards it according to the associated forwarding route table
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterDemo = new Bytepluscc.Transitrouter.TransitRouter("TransitRouterDemo", new()
     ///     {
@@ -38,12 +38,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/transitRouter:TransitRouter example "transit_router_id"
     /// ```

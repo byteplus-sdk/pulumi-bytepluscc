@@ -20,14 +20,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID.
-     *
+     * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return Certificate ID.
-     *
+     * 
      */
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
@@ -35,14 +35,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-     *
+     * 
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
      * @return Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> certificateName() {
         return Optional.ofNullable(this.certificateName);
@@ -50,14 +50,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate creation time.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Certificate creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -65,14 +65,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -80,14 +80,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate primary domain name.
-     *
+     * 
      */
     @Import(name="domainName")
     private @Nullable Output<String> domainName;
 
     /**
      * @return Certificate primary domain name.
-     *
+     * 
      */
     public Optional<Output<String>> domainName() {
         return Optional.ofNullable(this.domainName);
@@ -95,14 +95,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate expiration time.
-     *
+     * 
      */
     @Import(name="expiredAt")
     private @Nullable Output<String> expiredAt;
 
     /**
      * @return Certificate expiration time.
-     *
+     * 
      */
     public Optional<Output<String>> expiredAt() {
         return Optional.ofNullable(this.expiredAt);
@@ -110,14 +110,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the listener associated with the certificate.
-     *
+     * 
      */
     @Import(name="listeners")
     private @Nullable Output<List<String>> listeners;
 
     /**
      * @return ID of the listener associated with the certificate.
-     *
+     * 
      */
     public Optional<Output<List<String>>> listeners() {
         return Optional.ofNullable(this.listeners);
@@ -125,14 +125,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate private key.
-     *
+     * 
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
      * @return Certificate private key.
-     *
+     * 
      */
     public Optional<Output<String>> privateKey() {
         return Optional.ofNullable(this.privateKey);
@@ -140,14 +140,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -155,14 +155,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate public key.
-     *
+     * 
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
      * @return Certificate public key.
-     *
+     * 
      */
     public Optional<Output<String>> publicKey() {
         return Optional.ofNullable(this.publicKey);
@@ -170,14 +170,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Managed resource status. true: managed resource. false: unmanaged resource.
-     *
+     * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
      * @return Managed resource status. true: managed resource. false: unmanaged resource.
-     *
+     * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
         return Optional.ofNullable(this.serviceManaged);
@@ -185,14 +185,14 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of alternate domain names for the certificate.
-     *
+     * 
      */
     @Import(name="subjectAlternativeNames")
     private @Nullable Output<List<String>> subjectAlternativeNames;
 
     /**
      * @return List of alternate domain names for the certificate.
-     *
+     * 
      */
     public Optional<Output<List<String>>> subjectAlternativeNames() {
         return Optional.ofNullable(this.subjectAlternativeNames);
@@ -201,7 +201,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<CertificateTagArgs>> tags;
@@ -209,7 +209,7 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CertificateTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -253,9 +253,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
@@ -264,9 +264,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
@@ -274,9 +274,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateName(@Nullable Output<String> certificateName) {
             $.certificateName = certificateName;
@@ -285,9 +285,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateName(String certificateName) {
             return certificateName(Output.of(certificateName));
@@ -295,9 +295,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Certificate creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -306,9 +306,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Certificate creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -316,9 +316,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -327,9 +327,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Certificate description. Default value is an empty string. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -337,9 +337,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domainName Certificate primary domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainName(@Nullable Output<String> domainName) {
             $.domainName = domainName;
@@ -348,9 +348,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domainName Certificate primary domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainName(String domainName) {
             return domainName(Output.of(domainName));
@@ -358,9 +358,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredAt Certificate expiration time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredAt(@Nullable Output<String> expiredAt) {
             $.expiredAt = expiredAt;
@@ -369,9 +369,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredAt Certificate expiration time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredAt(String expiredAt) {
             return expiredAt(Output.of(expiredAt));
@@ -379,9 +379,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listeners ID of the listener associated with the certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(@Nullable Output<List<String>> listeners) {
             $.listeners = listeners;
@@ -390,9 +390,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listeners ID of the listener associated with the certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(List<String> listeners) {
             return listeners(Output.of(listeners));
@@ -400,9 +400,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listeners ID of the listener associated with the certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listeners(String... listeners) {
             return listeners(List.of(listeners));
@@ -410,9 +410,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey Certificate private key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateKey(@Nullable Output<String> privateKey) {
             $.privateKey = privateKey;
@@ -421,9 +421,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey Certificate private key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateKey(String privateKey) {
             return privateKey(Output.of(privateKey));
@@ -431,9 +431,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -442,9 +442,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the certificate belongs to. If not specified, defaults to &#39;default&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -452,9 +452,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Certificate public key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicKey(@Nullable Output<String> publicKey) {
             $.publicKey = publicKey;
@@ -463,9 +463,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Certificate public key.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicKey(String publicKey) {
             return publicKey(Output.of(publicKey));
@@ -473,9 +473,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Managed resource status. true: managed resource. false: unmanaged resource.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceManaged(@Nullable Output<Boolean> serviceManaged) {
             $.serviceManaged = serviceManaged;
@@ -484,9 +484,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Managed resource status. true: managed resource. false: unmanaged resource.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceManaged(Boolean serviceManaged) {
             return serviceManaged(Output.of(serviceManaged));
@@ -494,9 +494,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subjectAlternativeNames List of alternate domain names for the certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subjectAlternativeNames(@Nullable Output<List<String>> subjectAlternativeNames) {
             $.subjectAlternativeNames = subjectAlternativeNames;
@@ -505,9 +505,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subjectAlternativeNames List of alternate domain names for the certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subjectAlternativeNames(List<String> subjectAlternativeNames) {
             return subjectAlternativeNames(Output.of(subjectAlternativeNames));
@@ -515,9 +515,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subjectAlternativeNames List of alternate domain names for the certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subjectAlternativeNames(String... subjectAlternativeNames) {
             return subjectAlternativeNames(List.of(subjectAlternativeNames));
@@ -526,9 +526,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<CertificateTagArgs>> tags) {
             $.tags = tags;
@@ -538,9 +538,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<CertificateTagArgs> tags) {
             return tags(Output.of(tags));
@@ -549,9 +549,9 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(CertificateTagArgs... tags) {
             return tags(List.of(tags));

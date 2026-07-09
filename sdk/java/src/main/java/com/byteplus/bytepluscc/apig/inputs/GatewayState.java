@@ -26,14 +26,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backend service configuration information
-     *
+     * 
      */
     @Import(name="backendSpec")
     private @Nullable Output<GatewayBackendSpecArgs> backendSpec;
 
     /**
      * @return Backend service configuration information
-     *
+     * 
      */
     public Optional<Output<GatewayBackendSpecArgs>> backendSpec() {
         return Optional.ofNullable(this.backendSpec);
@@ -41,14 +41,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway remarks. Length limit: 0–253 characters.
-     *
+     * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
      * @return Gateway remarks. Length limit: 0–253 characters.
-     *
+     * 
      */
     public Optional<Output<String>> comments() {
         return Optional.ofNullable(this.comments);
@@ -56,14 +56,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Gateway creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -71,14 +71,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom log configuration
-     *
+     * 
      */
     @Import(name="customLog")
     private @Nullable Output<GatewayCustomLogArgs> customLog;
 
     /**
      * @return Custom log configuration
-     *
+     * 
      */
     public Optional<Output<GatewayCustomLogArgs>> customLog() {
         return Optional.ofNullable(this.customLog);
@@ -87,7 +87,7 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
     /**
      * Event
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="events")
     private @Nullable Output<List<GatewayEventArgs>> events;
@@ -95,7 +95,7 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Event
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GatewayEventArgs>>> events() {
         return Optional.ofNullable(this.events);
@@ -103,14 +103,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway instance ID
-     *
+     * 
      */
     @Import(name="gatewayId")
     private @Nullable Output<String> gatewayId;
 
     /**
      * @return Gateway instance ID
-     *
+     * 
      */
     public Optional<Output<String>> gatewayId() {
         return Optional.ofNullable(this.gatewayId);
@@ -118,14 +118,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log configuration
-     *
+     * 
      */
     @Import(name="logSpec")
     private @Nullable Output<GatewayLogSpecArgs> logSpec;
 
     /**
      * @return Log configuration
-     *
+     * 
      */
     public Optional<Output<GatewayLogSpecArgs>> logSpec() {
         return Optional.ofNullable(this.logSpec);
@@ -133,14 +133,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Error message for gateway creation failure, deletion failure, or abnormal status
-     *
+     * 
      */
     @Import(name="message")
     private @Nullable Output<String> message;
 
     /**
      * @return Error message for gateway creation failure, deletion failure, or abnormal status
-     *
+     * 
      */
     public Optional<Output<String>> message() {
         return Optional.ofNullable(this.message);
@@ -148,14 +148,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Monitoring configuration information
-     *
+     * 
      */
     @Import(name="monitorSpec")
     private @Nullable Output<GatewayMonitorSpecArgs> monitorSpec;
 
     /**
      * @return Monitoring configuration information
-     *
+     * 
      */
     public Optional<Output<GatewayMonitorSpecArgs>> monitorSpec() {
         return Optional.ofNullable(this.monitorSpec);
@@ -163,14 +163,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway name
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Gateway name
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -178,14 +178,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network configuration information
-     *
+     * 
      */
     @Import(name="networkSpec")
     private @Nullable Output<GatewayNetworkSpecArgs> networkSpec;
 
     /**
      * @return Network configuration information
-     *
+     * 
      */
     public Optional<Output<GatewayNetworkSpecArgs>> networkSpec() {
         return Optional.ofNullable(this.networkSpec);
@@ -193,14 +193,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -208,14 +208,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Resource specification configuration information
-     *
+     * 
      */
     @Import(name="resourceSpec")
     private @Nullable Output<GatewayResourceSpecArgs> resourceSpec;
 
     /**
      * @return Resource specification configuration information
-     *
+     * 
      */
     public Optional<Output<GatewayResourceSpecArgs>> resourceSpec() {
         return Optional.ofNullable(this.resourceSpec);
@@ -223,14 +223,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -238,14 +238,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID list. Length limit: 1–2
-     *
+     * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
      * @return Subnet ID list. Length limit: 1–2
-     *
+     * 
      */
     public Optional<Output<List<String>>> subnetIds() {
         return Optional.ofNullable(this.subnetIds);
@@ -253,14 +253,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Link tracing configuration information.
-     *
+     * 
      */
     @Import(name="traceSpec")
     private @Nullable Output<GatewayTraceSpecArgs> traceSpec;
 
     /**
      * @return Link tracing configuration information.
-     *
+     * 
      */
     public Optional<Output<GatewayTraceSpecArgs>> traceSpec() {
         return Optional.ofNullable(this.traceSpec);
@@ -268,14 +268,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -283,14 +283,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway version.
-     *
+     * 
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return Gateway version.
-     *
+     * 
      */
     public Optional<Output<String>> version() {
         return Optional.ofNullable(this.version);
@@ -298,14 +298,14 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID。
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID。
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -355,9 +355,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backendSpec Backend service configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backendSpec(@Nullable Output<GatewayBackendSpecArgs> backendSpec) {
             $.backendSpec = backendSpec;
@@ -366,9 +366,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backendSpec Backend service configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backendSpec(GatewayBackendSpecArgs backendSpec) {
             return backendSpec(Output.of(backendSpec));
@@ -376,9 +376,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param comments Gateway remarks. Length limit: 0–253 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder comments(@Nullable Output<String> comments) {
             $.comments = comments;
@@ -387,9 +387,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param comments Gateway remarks. Length limit: 0–253 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder comments(String comments) {
             return comments(Output.of(comments));
@@ -397,9 +397,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Gateway creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -408,9 +408,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Gateway creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -418,9 +418,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customLog Custom log configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customLog(@Nullable Output<GatewayCustomLogArgs> customLog) {
             $.customLog = customLog;
@@ -429,9 +429,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customLog Custom log configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customLog(GatewayCustomLogArgs customLog) {
             return customLog(Output.of(customLog));
@@ -440,9 +440,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param events Event
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder events(@Nullable Output<List<GatewayEventArgs>> events) {
             $.events = events;
@@ -452,9 +452,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param events Event
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder events(List<GatewayEventArgs> events) {
             return events(Output.of(events));
@@ -463,9 +463,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param events Event
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder events(GatewayEventArgs... events) {
             return events(List.of(events));
@@ -473,9 +473,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gatewayId Gateway instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayId(@Nullable Output<String> gatewayId) {
             $.gatewayId = gatewayId;
@@ -484,9 +484,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gatewayId Gateway instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayId(String gatewayId) {
             return gatewayId(Output.of(gatewayId));
@@ -494,9 +494,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logSpec Log configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logSpec(@Nullable Output<GatewayLogSpecArgs> logSpec) {
             $.logSpec = logSpec;
@@ -505,9 +505,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logSpec Log configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logSpec(GatewayLogSpecArgs logSpec) {
             return logSpec(Output.of(logSpec));
@@ -515,9 +515,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param message Error message for gateway creation failure, deletion failure, or abnormal status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder message(@Nullable Output<String> message) {
             $.message = message;
@@ -526,9 +526,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param message Error message for gateway creation failure, deletion failure, or abnormal status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder message(String message) {
             return message(Output.of(message));
@@ -536,9 +536,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param monitorSpec Monitoring configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder monitorSpec(@Nullable Output<GatewayMonitorSpecArgs> monitorSpec) {
             $.monitorSpec = monitorSpec;
@@ -547,9 +547,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param monitorSpec Monitoring configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder monitorSpec(GatewayMonitorSpecArgs monitorSpec) {
             return monitorSpec(Output.of(monitorSpec));
@@ -557,9 +557,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Gateway name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -568,9 +568,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Gateway name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -578,9 +578,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkSpec Network configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkSpec(@Nullable Output<GatewayNetworkSpecArgs> networkSpec) {
             $.networkSpec = networkSpec;
@@ -589,9 +589,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkSpec Network configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkSpec(GatewayNetworkSpecArgs networkSpec) {
             return networkSpec(Output.of(networkSpec));
@@ -599,9 +599,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -610,9 +610,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -620,9 +620,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceSpec Resource specification configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceSpec(@Nullable Output<GatewayResourceSpecArgs> resourceSpec) {
             $.resourceSpec = resourceSpec;
@@ -631,9 +631,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceSpec Resource specification configuration information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceSpec(GatewayResourceSpecArgs resourceSpec) {
             return resourceSpec(Output.of(resourceSpec));
@@ -641,9 +641,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -652,9 +652,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Gateway status. Options: Creating: Creating; CreatedFailed: Creation failed; Updating: Updating; Running: Running; Deleting: Deleting; DeletedFailed: Deletion failed; Abnormal: Abnormal
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -662,9 +662,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds Subnet ID list. Length limit: 1–2
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -673,9 +673,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds Subnet ID list. Length limit: 1–2
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -683,9 +683,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds Subnet ID list. Length limit: 1–2
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -693,9 +693,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param traceSpec Link tracing configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder traceSpec(@Nullable Output<GatewayTraceSpecArgs> traceSpec) {
             $.traceSpec = traceSpec;
@@ -704,9 +704,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param traceSpec Link tracing configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder traceSpec(GatewayTraceSpecArgs traceSpec) {
             return traceSpec(Output.of(traceSpec));
@@ -714,9 +714,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -725,9 +725,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Gateway type. Options: standard: Standard gateway; serverless: Serverless gateway (not supported yet)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -735,9 +735,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param version Gateway version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder version(@Nullable Output<String> version) {
             $.version = version;
@@ -746,9 +746,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param version Gateway version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder version(String version) {
             return version(Output.of(version));
@@ -756,9 +756,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -767,9 +767,9 @@ public final class GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

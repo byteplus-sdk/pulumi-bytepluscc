@@ -14,20 +14,20 @@ import javax.annotation.Nullable;
 public final class NodePoolKubernetesConfigContainerdConfig {
     /**
      * @return Specify the container image repository address to skip certificate verification.
-     *
+     * 
      */
     private @Nullable List<String> insecureRegistries;
     /**
      * @return Container image repository proxy configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> registryProxyConfigs;
 
     private NodePoolKubernetesConfigContainerdConfig() {}
     /**
      * @return Specify the container image repository address to skip certificate verification.
-     *
+     * 
      */
     public List<String> insecureRegistries() {
         return this.insecureRegistries == null ? List.of() : this.insecureRegistries;
@@ -35,7 +35,7 @@ public final class NodePoolKubernetesConfigContainerdConfig {
     /**
      * @return Container image repository proxy configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig> registryProxyConfigs() {
         return this.registryProxyConfigs == null ? List.of() : this.registryProxyConfigs;

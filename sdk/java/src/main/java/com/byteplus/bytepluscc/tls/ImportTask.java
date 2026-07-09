@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Log Service supports data import, allowing you to structure data stored in sources such as TOS and Kafka and save it in Log Service
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var tLSImportTaskDemo = new ImportTask("tLSImportTaskDemo", ImportTaskArgs.builder()
  *             .description("ccapi-test-kafka")
@@ -99,200 +99,200 @@ import javax.annotation.Nullable;
  *             .taskName("ccapi-test-kafka-1001")
  *             .topicId("b75fffd8-1986-460c-9cca-xxxxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/importTask:ImportTask example &#34;task_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/importTask:ImportTask")
 public class ImportTask extends com.pulumi.resources.CustomResource {
     /**
      * Creation time.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Task description.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Task description.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Import data source information
-     *
+     * 
      */
     @Export(name="importSourceInfo", refs={ImportTaskImportSourceInfo.class}, tree="[0]")
     private Output<ImportTaskImportSourceInfo> importSourceInfo;
 
     /**
      * @return Import data source information
-     *
+     * 
      */
     public Output<ImportTaskImportSourceInfo> importSourceInfo() {
         return this.importSourceInfo;
     }
     /**
      * Log project ID for storing data.
-     *
+     * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return Log project ID for storing data.
-     *
+     * 
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Log project name.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Log project name.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Data source type. Options: tos, kafka.
-     *
+     * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
      * @return Data source type. Options: tos, kafka.
-     *
+     * 
      */
     public Output<String> sourceType() {
         return this.sourceType;
     }
     /**
      * Status of the data import task. 0: Importing. 1: Import completed. 2: Import error. 3: Stopping. 4: Stopped. 5: Restarting
-     *
+     * 
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
      * @return Status of the data import task. 0: Importing. 1: Import completed. 2: Import error. 3: Stopping. 4: Stopped. 5: Restarting
-     *
+     * 
      */
     public Output<Integer> status() {
         return this.status;
     }
     /**
      * Output information for the data import task.
-     *
+     * 
      */
     @Export(name="targetInfo", refs={ImportTaskTargetInfo.class}, tree="[0]")
     private Output<ImportTaskTargetInfo> targetInfo;
 
     /**
      * @return Output information for the data import task.
-     *
+     * 
      */
     public Output<ImportTaskTargetInfo> targetInfo() {
         return this.targetInfo;
     }
     /**
      * Import task ID.
-     *
+     * 
      */
     @Export(name="taskId", refs={String.class}, tree="[0]")
     private Output<String> taskId;
 
     /**
      * @return Import task ID.
-     *
+     * 
      */
     public Output<String> taskId() {
         return this.taskId;
     }
     /**
      * Import task name
-     *
+     * 
      */
     @Export(name="taskName", refs={String.class}, tree="[0]")
     private Output<String> taskName;
 
     /**
      * @return Import task name
-     *
+     * 
      */
     public Output<String> taskName() {
         return this.taskName;
     }
     /**
      * Progress of the data import task.
-     *
+     * 
      */
     @Export(name="taskStatistics", refs={ImportTaskTaskStatistics.class}, tree="[0]")
     private Output<ImportTaskTaskStatistics> taskStatistics;
 
     /**
      * @return Progress of the data import task.
-     *
+     * 
      */
     public Output<ImportTaskTaskStatistics> taskStatistics() {
         return this.taskStatistics;
     }
     /**
      * Log topic ID used to store data
-     *
+     * 
      */
     @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**
      * @return Log topic ID used to store data
-     *
+     * 
      */
     public Output<String> topicId() {
         return this.topicId;
     }
     /**
      * Log topic name.
-     *
+     * 
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
      * @return Log topic name.
-     *
+     * 
      */
     public Output<String> topicName() {
         return this.topicName;

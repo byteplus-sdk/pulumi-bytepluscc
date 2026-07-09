@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * RabbitMQ Message Queue is a distributed, high-availability message queue product that supports the AMQP (Advanced Message Queuing Protocol) protocol. It is fully compatible with the RabbitMQ open-source ecosystem and multi-language clients, provides rich messaging features and flexible message routing, and offers the advantages of distributed architecture, high throughput, low latency, and flexible scalability as a cloud messaging service. No user deployment or maintenance is required, enabling easy and rapid cloud adoption.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -42,12 +42,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rabbitMQInstanceDemo = new Instance("rabbitMQInstanceDemo", InstanceArgs.builder()
  *             .zoneId("cn-beijing-a")
@@ -70,116 +70,116 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .projectName("default")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rabbitmq/instance:Instance example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rabbitmq/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Main account ID used to create the instance.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Main account ID used to create the instance.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Whether public DNS resolution is enabled. true: enabled, false: disabled.
-     *
+     * 
      */
     @Export(name="applyPrivateDnsToPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> applyPrivateDnsToPublic;
 
     /**
      * @return Whether public DNS resolution is enabled. true: enabled, false: disabled.
-     *
+     * 
      */
     public Output<Boolean> applyPrivateDnsToPublic() {
         return this.applyPrivateDnsToPublic;
     }
     /**
      * Instance type, either cluster or standalone.
-     *
+     * 
      */
     @Export(name="archType", refs={String.class}, tree="[0]")
     private Output<String> archType;
 
     /**
      * @return Instance type, either cluster or standalone.
-     *
+     * 
      */
     public Output<String> archType() {
         return this.archType;
     }
     /**
      * Instance billing method and related billing information.
-     *
+     * 
      */
     @Export(name="chargeDetail", refs={InstanceChargeDetail.class}, tree="[0]")
     private Output<InstanceChargeDetail> chargeDetail;
 
     /**
      * @return Instance billing method and related billing information.
-     *
+     * 
      */
     public Output<InstanceChargeDetail> chargeDetail() {
         return this.chargeDetail;
     }
     /**
      * Compute specification of the RabbitMQ instance.
-     *
+     * 
      */
     @Export(name="computeSpec", refs={String.class}, tree="[0]")
     private Output<String> computeSpec;
 
     /**
      * @return Compute specification of the RabbitMQ instance.
-     *
+     * 
      */
     public Output<String> computeSpec() {
         return this.computeSpec;
     }
     /**
      * Instance creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Instance creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * EIP ID.
-     *
+     * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return EIP ID.
-     *
+     * 
      */
     public Output<String> eipId() {
         return this.eipId;
@@ -187,7 +187,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Instance connection information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
@@ -195,119 +195,119 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance connection information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
     /**
      * Brief description of the instance.
-     *
+     * 
      */
     @Export(name="instanceDescription", refs={String.class}, tree="[0]")
     private Output<String> instanceDescription;
 
     /**
      * @return Brief description of the instance.
-     *
+     * 
      */
     public Output<String> instanceDescription() {
         return this.instanceDescription;
     }
     /**
      * RabbitMQ instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return RabbitMQ instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * RabbitMQ instance name.
-     *
+     * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return RabbitMQ instance name.
-     *
+     * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance status.
-     *
+     * 
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Instance status.
-     *
+     * 
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * Whether cloud disk encryption is enabled.
-     *
+     * 
      */
     @Export(name="isEncrypted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEncrypted;
 
     /**
      * @return Whether cloud disk encryption is enabled.
-     *
+     * 
      */
     public Output<Boolean> isEncrypted() {
         return this.isEncrypted;
     }
     /**
      * IAM project to which the instance belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return IAM project to which the instance belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Total storage space of the instance, measured in GiB.
-     *
+     * 
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
      * @return Total storage space of the instance, measured in GiB.
-     *
+     * 
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
      * VPC subnet ID.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return VPC subnet ID.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -315,7 +315,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Tags bound to the instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -323,105 +323,105 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Tags bound to the instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Used storage space of the instance, measured in GiB.
-     *
+     * 
      */
     @Export(name="usedStorageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedStorageSpace;
 
     /**
      * @return Used storage space of the instance, measured in GiB.
-     *
+     * 
      */
     public Output<Integer> usedStorageSpace() {
         return this.usedStorageSpace;
     }
     /**
      * RabbitMQ WebUI administrator account name.
-     *
+     * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
      * @return RabbitMQ WebUI administrator account name.
-     *
+     * 
      */
     public Output<String> userName() {
         return this.userName;
     }
     /**
      * RabbitMQ WebUI administrator password.
-     *
+     * 
      */
     @Export(name="userPassword", refs={String.class}, tree="[0]")
     private Output<String> userPassword;
 
     /**
      * @return RabbitMQ WebUI administrator password.
-     *
+     * 
      */
     public Output<String> userPassword() {
         return this.userPassword;
     }
     /**
      * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
-     *
+     * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
      * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
-     *
+     * 
      */
     public Output<String> version() {
         return this.version;
     }
     /**
      * Private network (VPC) ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network (VPC) ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Description of the availability zone.
-     *
+     * 
      */
     @Export(name="zoneDescription", refs={String.class}, tree="[0]")
     private Output<String> zoneDescription;
 
     /**
      * @return Description of the availability zone.
-     *
+     * 
      */
     public Output<String> zoneDescription() {
         return this.zoneDescription;
     }
     /**
      * Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID where the instance is located. For high-availability instances across AZs, multiple availability zone IDs are returned.
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

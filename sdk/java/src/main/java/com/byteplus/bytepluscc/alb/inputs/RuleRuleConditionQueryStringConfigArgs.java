@@ -19,7 +19,7 @@ public final class RuleRuleConditionQueryStringConfigArgs extends com.pulumi.res
     /**
      * Values。
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="values")
     private @Nullable Output<List<RuleRuleConditionQueryStringConfigValueArgs>> values;
@@ -27,7 +27,7 @@ public final class RuleRuleConditionQueryStringConfigArgs extends com.pulumi.res
     /**
      * @return Values。
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleRuleConditionQueryStringConfigValueArgs>>> values() {
         return Optional.ofNullable(this.values);
@@ -60,9 +60,9 @@ public final class RuleRuleConditionQueryStringConfigArgs extends com.pulumi.res
         /**
          * @param values Values。
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder values(@Nullable Output<List<RuleRuleConditionQueryStringConfigValueArgs>> values) {
             $.values = values;
@@ -72,9 +72,9 @@ public final class RuleRuleConditionQueryStringConfigArgs extends com.pulumi.res
         /**
          * @param values Values。
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder values(List<RuleRuleConditionQueryStringConfigValueArgs> values) {
             return values(Output.of(values));
@@ -83,9 +83,9 @@ public final class RuleRuleConditionQueryStringConfigArgs extends com.pulumi.res
         /**
          * @param values Values。
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder values(RuleRuleConditionQueryStringConfigValueArgs... values) {
             return values(List.of(values));

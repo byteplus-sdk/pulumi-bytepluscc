@@ -21,14 +21,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
     /**
      * IPv6 public bandwidth cap
-     *
+     * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return IPv6 public bandwidth cap
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -36,14 +36,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
     /**
      * IPv6 shared bandwidth package ID
-     *
+     * 
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
      * @return IPv6 shared bandwidth package ID
-     *
+     * 
      */
     public Optional<Output<String>> bandwidthPackageId() {
         return Optional.ofNullable(this.bandwidthPackageId);
@@ -51,14 +51,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
     /**
      * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-     *
+     * 
      */
     @Import(name="billingType", required=true)
     private Output<Integer> billingType;
 
     /**
      * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
@@ -66,14 +66,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
     /**
      * IPv6 address
-     *
+     * 
      */
     @Import(name="ipv6Address", required=true)
     private Output<String> ipv6Address;
 
     /**
      * @return IPv6 address
-     *
+     * 
      */
     public Output<String> ipv6Address() {
         return this.ipv6Address;
@@ -81,14 +81,14 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
     /**
      * IPv6 public bandwidth project
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return IPv6 public bandwidth project
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -97,7 +97,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<Ipv6AddressBandwidthTagArgs>> tags;
@@ -105,7 +105,7 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<Ipv6AddressBandwidthTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -142,9 +142,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param bandwidth IPv6 public bandwidth cap
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -153,9 +153,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param bandwidth IPv6 public bandwidth cap
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -163,9 +163,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param bandwidthPackageId IPv6 shared bandwidth package ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidthPackageId(@Nullable Output<String> bandwidthPackageId) {
             $.bandwidthPackageId = bandwidthPackageId;
@@ -174,9 +174,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param bandwidthPackageId IPv6 shared bandwidth package ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidthPackageId(String bandwidthPackageId) {
             return bandwidthPackageId(Output.of(bandwidthPackageId));
@@ -184,9 +184,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Output<Integer> billingType) {
             $.billingType = billingType;
@@ -195,9 +195,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -205,9 +205,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param ipv6Address IPv6 address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Address(Output<String> ipv6Address) {
             $.ipv6Address = ipv6Address;
@@ -216,9 +216,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param ipv6Address IPv6 address
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Address(String ipv6Address) {
             return ipv6Address(Output.of(ipv6Address));
@@ -226,9 +226,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName IPv6 public bandwidth project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -237,9 +237,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName IPv6 public bandwidth project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -248,9 +248,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<Ipv6AddressBandwidthTagArgs>> tags) {
             $.tags = tags;
@@ -260,9 +260,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<Ipv6AddressBandwidthTagArgs> tags) {
             return tags(Output.of(tags));
@@ -271,9 +271,9 @@ public final class Ipv6AddressBandwidthArgs extends com.pulumi.resources.Resourc
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(Ipv6AddressBandwidthTagArgs... tags) {
             return tags(List.of(tags));

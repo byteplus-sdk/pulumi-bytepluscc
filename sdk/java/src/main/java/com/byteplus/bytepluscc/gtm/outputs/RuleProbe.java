@@ -17,113 +17,113 @@ import javax.annotation.Nullable;
 public final class RuleProbe {
     /**
      * @return Recommended number of health check probe points.
-     *
+     * 
      */
     private @Nullable Integer advisedNodeCount;
     /**
      * @return Whether health checks are disabled. true: disabled. false: not disabled.
-     *
+     * 
      */
     private @Nullable Boolean disable;
     /**
      * @return The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
-     *
+     * 
      */
     private @Nullable Integer failedCount;
     /**
      * @return Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     private @Nullable String host;
     /**
      * @return HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     private @Nullable String httpMethod;
     /**
      * @return Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside this range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the routing rule, this parameter will not be returned.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<RuleProbeHttpUsabilityCode> httpUsabilityCodes;
     /**
      * @return The interval between each health check, in seconds.
-     *
+     * 
      */
     private @Nullable Integer interval;
     /**
      * @return Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
-     *
+     * 
      */
     private @Nullable Boolean isManualNodes;
     /**
      * @return Health check probe point.
-     *
+     * 
      */
     private @Nullable List<String> nodes;
     /**
      * @return Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
-     *
+     * 
      */
     private @Nullable Integer pingCount;
     /**
      * @return Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
-     *
+     * 
      */
     private @Nullable Integer pingLossPercent;
     /**
      * @return Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     private @Nullable Integer port;
     /**
      * @return Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
-     *
+     * 
      */
     private @Nullable String protocol;
     /**
      * @return The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
-     *
+     * 
      */
     private @Nullable Integer timeout;
     /**
      * @return Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     private @Nullable String url;
 
     private RuleProbe() {}
     /**
      * @return Recommended number of health check probe points.
-     *
+     * 
      */
     public Optional<Integer> advisedNodeCount() {
         return Optional.ofNullable(this.advisedNodeCount);
     }
     /**
      * @return Whether health checks are disabled. true: disabled. false: not disabled.
-     *
+     * 
      */
     public Optional<Boolean> disable() {
         return Optional.ofNullable(this.disable);
     }
     /**
      * @return The threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address is marked as faulty after 3 consecutive health check failures. The default value is 3.
-     *
+     * 
      */
     public Optional<Integer> failedCount() {
         return Optional.ofNullable(this.failedCount);
     }
     /**
      * @return Domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<String> host() {
         return Optional.ofNullable(this.host);
     }
     /**
      * @return HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<String> httpMethod() {
         return Optional.ofNullable(this.httpMethod);
@@ -131,70 +131,70 @@ public final class RuleProbe {
     /**
      * @return Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside this range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the routing rule, this parameter will not be returned.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<RuleProbeHttpUsabilityCode> httpUsabilityCodes() {
         return this.httpUsabilityCodes == null ? List.of() : this.httpUsabilityCodes;
     }
     /**
      * @return The interval between each health check, in seconds.
-     *
+     * 
      */
     public Optional<Integer> interval() {
         return Optional.ofNullable(this.interval);
     }
     /**
      * @return Whether to manually configure the health check probe. true: Manually configure the health check probe. false: Use recommended health check probe.
-     *
+     * 
      */
     public Optional<Boolean> isManualNodes() {
         return Optional.ofNullable(this.isManualNodes);
     }
     /**
      * @return Health check probe point.
-     *
+     * 
      */
     public List<String> nodes() {
         return this.nodes == null ? List.of() : this.nodes;
     }
     /**
      * @return Packet count. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
-     *
+     * 
      */
     public Optional<Integer> pingCount() {
         return Optional.ofNullable(this.pingCount);
     }
     /**
      * @return Packet loss rate, expressed as a percentage. If the packet loss rate exceeds this parameter, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during the health check is 11%, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
-     *
+     * 
      */
     public Optional<Integer> pingLossPercent() {
         return Optional.ofNullable(this.pingLossPercent);
     }
     /**
      * @return Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Integer> port() {
         return Optional.ofNullable(this.port);
     }
     /**
      * @return Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
-     *
+     * 
      */
     public Optional<String> protocol() {
         return Optional.ofNullable(this.protocol);
     }
     /**
      * @return The timeout period for the health check task, in seconds. ping: If the latency exceeds the value of Timeout, it is considered packet loss. http/https: If the latency exceeds the value of Timeout, it is considered an abnormal result.
-     *
+     * 
      */
     public Optional<Integer> timeout() {
         return Optional.ofNullable(this.timeout);
     }
     /**
      * @return Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<String> url() {
         return Optional.ofNullable(this.url);

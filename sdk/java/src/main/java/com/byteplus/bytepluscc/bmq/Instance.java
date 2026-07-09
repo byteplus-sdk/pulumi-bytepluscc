@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * The cloud-native messaging engine is 100% compatible with the Apache Kafka protocol. It offers a fully managed, high-throughput, low-latency, highly available, highly scalable, and highly stable distributed messaging engine service based on cloud-native architecture. Supports flexible and dynamic scaling, integrated stream and batch processing, and provides enterprise-grade real-time stream data processing capabilities for large-scale data. Helps you build the &#39;central nervous system&#39; for data processing, widely used in scenarios such as log collection, data aggregation, and offline data analysis.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -44,12 +44,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var bMQInstanceDemo = new Instance("bMQInstanceDemo", InstanceArgs.builder()
  *             .name("BMQInstanceDemo")
@@ -75,214 +75,214 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:bmq/instance:Instance example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:bmq/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
-     *
+     * 
      */
     @Export(name="autoRenew", refs={String.class}, tree="[0]")
     private Output<String> autoRenew;
 
     /**
      * @return Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
-     *
+     * 
      */
     public Output<String> autoRenew() {
         return this.autoRenew;
     }
     /**
      * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
-     *
+     * 
      */
     @Export(name="billingPeriod", refs={String.class}, tree="[0]")
     private Output<String> billingPeriod;
 
     /**
      * @return Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
-     *
+     * 
      */
     public Output<String> billingPeriod() {
         return this.billingPeriod;
     }
     /**
      * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
-     *
+     * 
      */
     @Export(name="billingType", refs={String.class}, tree="[0]")
     private Output<String> billingType;
 
     /**
      * @return Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
-     *
+     * 
      */
     public Output<String> billingType() {
         return this.billingType;
     }
     /**
      * Instance creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Instance creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Instance description
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Instance description
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
-     *
+     * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
-     *
+     * 
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
      * Response data for all instance endpoints
-     *
+     * 
      */
     @Export(name="endpoints", refs={InstanceEndpoints.class}, tree="[0]")
     private Output<InstanceEndpoints> endpoints;
 
     /**
      * @return Response data for all instance endpoints
-     *
+     * 
      */
     public Output<InstanceEndpoints> endpoints() {
         return this.endpoints;
     }
     /**
      * Instance expiration time
-     *
+     * 
      */
     @Export(name="expirationTime", refs={String.class}, tree="[0]")
     private Output<String> expirationTime;
 
     /**
      * @return Instance expiration time
-     *
+     * 
      */
     public Output<String> expirationTime() {
         return this.expirationTime;
     }
     /**
      * Maximum number of consumer groups per instance
-     *
+     * 
      */
     @Export(name="groupLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupLimit;
 
     /**
      * @return Maximum number of consumer groups per instance
-     *
+     * 
      */
     public Output<Integer> groupLimit() {
         return this.groupLimit;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Message retention period for all Topics under the instance, in hours
-     *
+     * 
      */
     @Export(name="messageRetention", refs={Integer.class}, tree="[0]")
     private Output<Integer> messageRetention;
 
     /**
      * @return Message retention period for all Topics under the instance, in hours
-     *
+     * 
      */
     public Output<Integer> messageRetention() {
         return this.messageRetention;
     }
     /**
      * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Maximum number of partitions per instance
-     *
+     * 
      */
     @Export(name="partitionLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> partitionLimit;
 
     /**
      * @return Maximum number of partitions per instance
-     *
+     * 
      */
     public Output<Integer> partitionLimit() {
         return this.partitionLimit;
     }
     /**
      * Project name associated with the instance
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name associated with the instance
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -290,7 +290,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Instance resource tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="resourceTags", refs={List.class,InstanceResourceTag.class}, tree="[0,1]")
     private Output<List<InstanceResourceTag>> resourceTags;
@@ -298,77 +298,77 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance resource tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceResourceTag>> resourceTags() {
         return this.resourceTags;
     }
     /**
      * Instance resource statistics response data
-     *
+     * 
      */
     @Export(name="resources", refs={InstanceResources.class}, tree="[0]")
     private Output<InstanceResources> resources;
 
     /**
      * @return Instance resource statistics response data
-     *
+     * 
      */
     public Output<InstanceResources> resources() {
         return this.resources;
     }
     /**
      * Security group list used by the instance
-     *
+     * 
      */
     @Export(name="securityGroupIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIdLists;
 
     /**
      * @return Security group list used by the instance
-     *
+     * 
      */
     public Output<List<String>> securityGroupIdLists() {
         return this.securityGroupIdLists;
     }
     /**
      * Instance specification
-     *
+     * 
      */
     @Export(name="specification", refs={String.class}, tree="[0]")
     private Output<String> specification;
 
     /**
      * @return Instance specification
-     *
+     * 
      */
     public Output<String> specification() {
         return this.specification;
     }
     /**
      * Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Instance status. Possible values: INITIALIZING: Initializing, INITIALIZATION*FAILED: Initialization failed, RUNNING: Running, MODIFYING: Updating, MODIFY*FAILED: Update failed, RELEASING: Releasing, STOPPING: Stopping, STOPPED: Stopped, RECOVERING: Recovering, EXCEPTION: Exception, CAPACITY*EXPAXION*FAILED: Capacity expansion failed, EXPANDING*CAPACITY: Expanding capacity, CANCEL*EXPANDING_CAPACITY: Canceling capacity expansion, RESTARTING: Restarting, UNPAID: Unpaid
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Subnet list used by the instance
-     *
+     * 
      */
     @Export(name="subnetIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIdLists;
 
     /**
      * @return Subnet list used by the instance
-     *
+     * 
      */
     public Output<List<String>> subnetIdLists() {
         return this.subnetIdLists;
@@ -376,7 +376,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Instance resource tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -384,63 +384,63 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance resource tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Purchase duration for yearly/monthly subscription instances, in months
-     *
+     * 
      */
     @Export(name="times", refs={Integer.class}, tree="[0]")
     private Output<Integer> times;
 
     /**
      * @return Purchase duration for yearly/monthly subscription instances, in months
-     *
+     * 
      */
     public Output<Integer> times() {
         return this.times;
     }
     /**
      * Maximum number of Topics per instance
-     *
+     * 
      */
     @Export(name="topicLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> topicLimit;
 
     /**
      * @return Maximum number of Topics per instance
-     *
+     * 
      */
     public Output<Integer> topicLimit() {
         return this.topicLimit;
     }
     /**
      * VPC ID where the instance is located
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID where the instance is located
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * List of availability zones for the instance
-     *
+     * 
      */
     @Export(name="zoneIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIdLists;
 
     /**
      * @return List of availability zones for the instance
-     *
+     * 
      */
     public Output<List<String>> zoneIdLists() {
         return this.zoneIdLists;

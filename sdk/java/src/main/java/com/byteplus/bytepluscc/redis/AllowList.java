@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * After a Redis cache database instance is created, you can set an allowlist for the instance to permit devices to access it.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var redisAllowListDemo = new AllowList("redisAllowListDemo", AllowListArgs.builder()
  *             .allowList("127.0.0.1,0.0.0.0/0,192.168.0.0/24")
@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *             .allowListDesc("this is a test")
  *             .allowListCategory("Ordinary")
  *             .projectName("default")
- *             .securityGroupBindInfos(
+ *             .securityGroupBindInfos(            
  *                 AllowListSecurityGroupBindInfoArgs.builder()
  *                     .bind_mode("AssociateEcsIp")
  *                     .security_group_id("sg-w06pxjgvtds0865yxxxxxx")
@@ -65,120 +65,120 @@ import javax.annotation.Nullable;
  *                     .bind_mode("IngressDirectionIp")
  *                     .security_group_id("sg-w07syi789s74865yxxxxxx")
  *                     .build())
- *             .instanceIds(
+ *             .instanceIds(            
  *                 "redis-cnlfwpqoohxxxxxx",
  *                 "redis-cnlfenhsypxxxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:redis/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:redis/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
-     *
+     * 
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
      * @return Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
-     *
+     * 
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
      * Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
-     *
+     * 
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
      * @return Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
-     *
+     * 
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
      * Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-     *
+     * 
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-     *
+     * 
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID.
-     *
+     * 
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID.
-     *
+     * 
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Number of IP addresses in the allowlist
-     *
+     * 
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Number of IP addresses in the allowlist
-     *
+     * 
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-     *
+     * 
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-     *
+     * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * Total number of instances bound to the allowlist
-     *
+     * 
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Total number of instances bound to the allowlist
-     *
+     * 
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
@@ -186,7 +186,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * List of instances currently bound to this allowlist.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
@@ -194,35 +194,35 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * @return List of instances currently bound to this allowlist.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
     /**
      * List of instance IDs bound to the current allowlist
-     *
+     * 
      */
     @Export(name="instanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> instanceIds;
 
     /**
      * @return List of instance IDs bound to the current allowlist
-     *
+     * 
      */
     public Output<List<String>> instanceIds() {
         return this.instanceIds;
     }
     /**
      * Project name associated with the allowlist
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name associated with the allowlist
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -230,7 +230,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="securityGroupBindInfos", refs={List.class,AllowListSecurityGroupBindInfo.class}, tree="[0,1]")
     private Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos;
@@ -238,7 +238,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos() {
         return this.securityGroupBindInfos;

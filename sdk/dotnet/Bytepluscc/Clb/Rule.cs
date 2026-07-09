@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var ruleDemo = new Bytepluscc.Clb.Rule("RuleDemo", new()
     ///     {
@@ -40,12 +40,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/rule:Rule example "listener_id|rule_id"
     /// ```

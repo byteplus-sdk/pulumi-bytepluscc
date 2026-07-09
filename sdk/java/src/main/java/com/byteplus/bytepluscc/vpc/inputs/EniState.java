@@ -23,14 +23,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NIC owner ID
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return NIC owner ID
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -38,14 +38,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NIC creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return NIC creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -53,14 +53,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable release with cloud server instance deletion. true to enable, false to disable
-     *
+     * 
      */
     @Import(name="deleteOnTermination")
     private @Nullable Output<Boolean> deleteOnTermination;
 
     /**
      * @return Enable release with cloud server instance deletion. true to enable, false to disable
-     *
+     * 
      */
     public Optional<Output<Boolean>> deleteOnTermination() {
         return Optional.ofNullable(this.deleteOnTermination);
@@ -68,14 +68,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -83,14 +83,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -98,14 +98,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
-     *
+     * 
      */
     @Import(name="ipv6AddressCount")
     private @Nullable Output<Integer> ipv6AddressCount;
 
     /**
      * @return Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
-     *
+     * 
      */
     public Optional<Output<Integer>> ipv6AddressCount() {
         return Optional.ofNullable(this.ipv6AddressCount);
@@ -113,14 +113,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-     *
+     * 
      */
     @Import(name="ipv6Sets")
     private @Nullable Output<List<String>> ipv6Sets;
 
     /**
      * @return IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-     *
+     * 
      */
     public Optional<Output<List<String>>> ipv6Sets() {
         return Optional.ofNullable(this.ipv6Sets);
@@ -128,14 +128,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * MAC address of the network interface.
-     *
+     * 
      */
     @Import(name="macAddress")
     private @Nullable Output<String> macAddress;
 
     /**
      * @return MAC address of the network interface.
-     *
+     * 
      */
     public Optional<Output<String>> macAddress() {
         return Optional.ofNullable(this.macAddress);
@@ -143,14 +143,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network interface ID.
-     *
+     * 
      */
     @Import(name="networkInterfaceId")
     private @Nullable Output<String> networkInterfaceId;
 
     /**
      * @return Network interface ID.
-     *
+     * 
      */
     public Optional<Output<String>> networkInterfaceId() {
         return Optional.ofNullable(this.networkInterfaceId);
@@ -158,14 +158,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
-     *
+     * 
      */
     @Import(name="networkInterfaceName")
     private @Nullable Output<String> networkInterfaceName;
 
     /**
      * @return NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
-     *
+     * 
      */
     public Optional<Output<String>> networkInterfaceName() {
         return Optional.ofNullable(this.networkInterfaceName);
@@ -173,14 +173,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
-     *
+     * 
      */
     @Import(name="portSecurityEnabled")
     private @Nullable Output<Boolean> portSecurityEnabled;
 
     /**
      * @return Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
-     *
+     * 
      */
     public Optional<Output<Boolean>> portSecurityEnabled() {
         return Optional.ofNullable(this.portSecurityEnabled);
@@ -188,14 +188,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
-     *
+     * 
      */
     @Import(name="primaryIpAddress")
     private @Nullable Output<EniPrimaryIpAddressArgs> primaryIpAddress;
 
     /**
      * @return Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
-     *
+     * 
      */
     public Optional<Output<EniPrimaryIpAddressArgs>> primaryIpAddress() {
         return Optional.ofNullable(this.primaryIpAddress);
@@ -204,7 +204,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     /**
      * List of private IPv4 addresses for the network interface.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="privateIpSets")
     private @Nullable Output<List<EniPrivateIpSetArgs>> privateIpSets;
@@ -212,7 +212,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of private IPv4 addresses for the network interface.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EniPrivateIpSetArgs>>> privateIpSets() {
         return Optional.ofNullable(this.privateIpSets);
@@ -220,14 +220,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the NIC belongs
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the NIC belongs
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -235,14 +235,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
-     *
+     * 
      */
     @Import(name="secondaryPrivateIpAddressCount")
     private @Nullable Output<Integer> secondaryPrivateIpAddressCount;
 
     /**
      * @return Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
-     *
+     * 
      */
     public Optional<Output<Integer>> secondaryPrivateIpAddressCount() {
         return Optional.ofNullable(this.secondaryPrivateIpAddressCount);
@@ -250,14 +250,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of one or more security groups joined by the auxiliary network interface.
-     *
+     * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
      * @return ID of one or more security groups joined by the auxiliary network interface.
-     *
+     * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
         return Optional.ofNullable(this.securityGroupIds);
@@ -265,14 +265,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether this is an official service network interface. true for yes, false for no.
-     *
+     * 
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
      * @return Indicates whether this is an official service network interface. true for yes, false for no.
-     *
+     * 
      */
     public Optional<Output<Boolean>> serviceManaged() {
         return Optional.ofNullable(this.serviceManaged);
@@ -280,14 +280,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -295,14 +295,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the subnet where the auxiliary network interface resides.
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return ID of the subnet where the auxiliary network interface resides.
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -311,7 +311,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<EniTagArgs>> tags;
@@ -319,7 +319,7 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EniTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -327,14 +327,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NIC type. primary: primary NIC, secondary: secondary NIC
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return NIC type. primary: primary NIC, secondary: secondary NIC
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -342,14 +342,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NIC update time
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return NIC update time
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -357,14 +357,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the VPC to which the network interface belongs.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the network interface belongs.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -372,14 +372,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the VPC to which the NIC belongs
-     *
+     * 
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
      * @return Name of the VPC to which the NIC belongs
-     *
+     * 
      */
     public Optional<Output<String>> vpcName() {
         return Optional.ofNullable(this.vpcName);
@@ -387,14 +387,14 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the availability zone to which the network interface belongs.
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return ID of the availability zone to which the network interface belongs.
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -450,9 +450,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId NIC owner ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -461,9 +461,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId NIC owner ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -471,9 +471,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime NIC creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -482,9 +482,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime NIC creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -492,9 +492,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteOnTermination Enable release with cloud server instance deletion. true to enable, false to disable
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deleteOnTermination(@Nullable Output<Boolean> deleteOnTermination) {
             $.deleteOnTermination = deleteOnTermination;
@@ -503,9 +503,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteOnTermination Enable release with cloud server instance deletion. true to enable, false to disable
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deleteOnTermination(Boolean deleteOnTermination) {
             return deleteOnTermination(Output.of(deleteOnTermination));
@@ -513,9 +513,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -524,9 +524,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description for the auxiliary network interface. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Allowed characters include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -534,9 +534,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -545,9 +545,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId ID of the instance bound to the NIC. If the NIC is not attached or the ServiceManaged parameter is true, InstanceId returns empty
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -555,9 +555,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6AddressCount Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6AddressCount(@Nullable Output<Integer> ipv6AddressCount) {
             $.ipv6AddressCount = ipv6AddressCount;
@@ -566,9 +566,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6AddressCount Number of private IPv6 addresses assigned to the network interface. When this parameter is specified, the system automatically assigns the corresponding number of available private IPv6 addresses from the subnet to which the network interface belongs. Cannot be used together with IPv6Sets during creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6AddressCount(Integer ipv6AddressCount) {
             return ipv6AddressCount(Output.of(ipv6AddressCount));
@@ -576,9 +576,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6Sets IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Sets(@Nullable Output<List<String>> ipv6Sets) {
             $.ipv6Sets = ipv6Sets;
@@ -587,9 +587,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6Sets IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Sets(List<String> ipv6Sets) {
             return ipv6Sets(Output.of(ipv6Sets));
@@ -597,9 +597,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6Sets IPv6 address list of the network interface, for example [2408::153:3921:XX:XX:7b12:1c5f, 2408:4008:2cf:XX:XX:dd1e:2a22:5ddf].
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Sets(String... ipv6Sets) {
             return ipv6Sets(List.of(ipv6Sets));
@@ -607,9 +607,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param macAddress MAC address of the network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder macAddress(@Nullable Output<String> macAddress) {
             $.macAddress = macAddress;
@@ -618,9 +618,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param macAddress MAC address of the network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder macAddress(String macAddress) {
             return macAddress(Output.of(macAddress));
@@ -628,9 +628,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkInterfaceId Network interface ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkInterfaceId(@Nullable Output<String> networkInterfaceId) {
             $.networkInterfaceId = networkInterfaceId;
@@ -639,9 +639,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkInterfaceId Network interface ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkInterfaceId(String networkInterfaceId) {
             return networkInterfaceId(Output.of(networkInterfaceId));
@@ -649,9 +649,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkInterfaceName NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkInterfaceName(@Nullable Output<String> networkInterfaceName) {
             $.networkInterfaceName = networkInterfaceName;
@@ -660,9 +660,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkInterfaceName NIC name. Length must be between 1 and 128 characters, starting with a letter, Chinese character, or number. Can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the ID of the secondary NIC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkInterfaceName(String networkInterfaceName) {
             return networkInterfaceName(Output.of(networkInterfaceName));
@@ -670,9 +670,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portSecurityEnabled Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder portSecurityEnabled(@Nullable Output<Boolean> portSecurityEnabled) {
             $.portSecurityEnabled = portSecurityEnabled;
@@ -681,9 +681,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portSecurityEnabled Enable source/destination address check for the NIC. When enabled, the system automatically blocks traffic whose source or destination address does not match the current NIC. true to enable, false to disable (default)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder portSecurityEnabled(Boolean portSecurityEnabled) {
             return portSecurityEnabled(Output.of(portSecurityEnabled));
@@ -691,9 +691,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primaryIpAddress Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder primaryIpAddress(@Nullable Output<EniPrimaryIpAddressArgs> primaryIpAddress) {
             $.primaryIpAddress = primaryIpAddress;
@@ -702,9 +702,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primaryIpAddress Primary private IPv4 address of the network interface. Address modification is not supported, but you can modify the public IP. If specified, it must be an available private IPv4 address in the corresponding subnet. If not specified, an available private IPv4 address will be automatically assigned from the corresponding subnet. For example: 192.XX.XX.10.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder primaryIpAddress(EniPrimaryIpAddressArgs primaryIpAddress) {
             return primaryIpAddress(Output.of(primaryIpAddress));
@@ -713,9 +713,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateIpSets List of private IPv4 addresses for the network interface.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateIpSets(@Nullable Output<List<EniPrivateIpSetArgs>> privateIpSets) {
             $.privateIpSets = privateIpSets;
@@ -725,9 +725,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateIpSets List of private IPv4 addresses for the network interface.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateIpSets(List<EniPrivateIpSetArgs> privateIpSets) {
             return privateIpSets(Output.of(privateIpSets));
@@ -736,9 +736,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param privateIpSets List of private IPv4 addresses for the network interface.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder privateIpSets(EniPrivateIpSetArgs... privateIpSets) {
             return privateIpSets(List.of(privateIpSets));
@@ -746,9 +746,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the NIC belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -757,9 +757,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the NIC belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -767,9 +767,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondaryPrivateIpAddressCount Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondaryPrivateIpAddressCount(@Nullable Output<Integer> secondaryPrivateIpAddressCount) {
             $.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
@@ -778,9 +778,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param secondaryPrivateIpAddressCount Number of auxiliary private IPv4 addresses automatically assigned to the auxiliary network interface. Value range: 1–49. Cannot be used together with PrivateIpSets during creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder secondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
             return secondaryPrivateIpAddressCount(Output.of(secondaryPrivateIpAddressCount));
@@ -788,9 +788,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds ID of one or more security groups joined by the auxiliary network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(@Nullable Output<List<String>> securityGroupIds) {
             $.securityGroupIds = securityGroupIds;
@@ -799,9 +799,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds ID of one or more security groups joined by the auxiliary network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(List<String> securityGroupIds) {
             return securityGroupIds(Output.of(securityGroupIds));
@@ -809,9 +809,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds ID of one or more security groups joined by the auxiliary network interface.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(String... securityGroupIds) {
             return securityGroupIds(List.of(securityGroupIds));
@@ -819,9 +819,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Indicates whether this is an official service network interface. true for yes, false for no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceManaged(@Nullable Output<Boolean> serviceManaged) {
             $.serviceManaged = serviceManaged;
@@ -830,9 +830,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Indicates whether this is an official service network interface. true for yes, false for no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceManaged(Boolean serviceManaged) {
             return serviceManaged(Output.of(serviceManaged));
@@ -840,9 +840,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -851,9 +851,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Binding status of the network interface. Creating: In progress. Available: Not attached. Attaching: In progress. InUse: Attached. Detaching: In progress. Deleting: In progress.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -861,9 +861,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet where the auxiliary network interface resides.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -872,9 +872,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet where the auxiliary network interface resides.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -883,9 +883,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<EniTagArgs>> tags) {
             $.tags = tags;
@@ -895,9 +895,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<EniTagArgs> tags) {
             return tags(Output.of(tags));
@@ -906,9 +906,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(EniTagArgs... tags) {
             return tags(List.of(tags));
@@ -916,9 +916,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type NIC type. primary: primary NIC, secondary: secondary NIC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -927,9 +927,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type NIC type. primary: primary NIC, secondary: secondary NIC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -937,9 +937,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime NIC update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -948,9 +948,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime NIC update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -958,9 +958,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the network interface belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -969,9 +969,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the network interface belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -979,9 +979,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Name of the VPC to which the NIC belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(@Nullable Output<String> vpcName) {
             $.vpcName = vpcName;
@@ -990,9 +990,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Name of the VPC to which the NIC belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcName(String vpcName) {
             return vpcName(Output.of(vpcName));
@@ -1000,9 +1000,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId ID of the availability zone to which the network interface belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1011,9 +1011,9 @@ public final class EniState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId ID of the availability zone to which the network interface belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

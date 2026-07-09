@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect
 {
     /// <summary>
     /// The virtual interface is built on top of a physical dedicated line. It is a logical interface that enables the local data center (IDC) to connect to different private networks in the cloud via the physical dedicated line. Supports both static routing and BGP routing. This operation uses BGP routing.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var directConnectVirtualInterfaceDemo = new Bytepluscc.Directconnect.VirtualInterface("DirectConnectVirtualInterfaceDemo", new()
     ///     {
@@ -50,12 +50,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect
     ///         },
     ///         BfdDetectInterval = 1000,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:directconnect/virtualInterface:VirtualInterface example "virtual_interface_id"
     /// ```

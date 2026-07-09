@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// Database
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var databaseDemo = new Bytepluscc.Rdsmysql.Database("DatabaseDemo", new()
     ///     {
@@ -39,12 +39,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///         InstanceId = "mysql-779***",
     ///         Name = "rdstest",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/database:Database example "instance_id|name"
     /// ```

@@ -19,7 +19,7 @@ public final class UpstreamUpstreamSpecDomainArgs extends com.pulumi.resources.R
     /**
      * Domain name list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="domainLists")
     private @Nullable Output<List<UpstreamUpstreamSpecDomainDomainListArgs>> domainLists;
@@ -27,7 +27,7 @@ public final class UpstreamUpstreamSpecDomainArgs extends com.pulumi.resources.R
     /**
      * @return Domain name list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<UpstreamUpstreamSpecDomainDomainListArgs>>> domainLists() {
         return Optional.ofNullable(this.domainLists);
@@ -60,9 +60,9 @@ public final class UpstreamUpstreamSpecDomainArgs extends com.pulumi.resources.R
         /**
          * @param domainLists Domain name list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainLists(@Nullable Output<List<UpstreamUpstreamSpecDomainDomainListArgs>> domainLists) {
             $.domainLists = domainLists;
@@ -72,9 +72,9 @@ public final class UpstreamUpstreamSpecDomainArgs extends com.pulumi.resources.R
         /**
          * @param domainLists Domain name list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainLists(List<UpstreamUpstreamSpecDomainDomainListArgs> domainLists) {
             return domainLists(Output.of(domainLists));
@@ -83,9 +83,9 @@ public final class UpstreamUpstreamSpecDomainArgs extends com.pulumi.resources.R
         /**
          * @param domainLists Domain name list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainLists(UpstreamUpstreamSpecDomainDomainListArgs... domainLists) {
             return domainLists(List.of(domainLists));

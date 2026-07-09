@@ -20,7 +20,7 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
     /**
      * Tag key-value pair
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tagKvs")
     private @Nullable Output<List<InstanceResourceTagTagKvArgs>> tagKvs;
@@ -28,7 +28,7 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
     /**
      * @return Tag key-value pair
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceResourceTagTagKvArgs>>> tagKvs() {
         return Optional.ofNullable(this.tagKvs);
@@ -36,14 +36,14 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
 
     /**
      * Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -77,9 +77,9 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
         /**
          * @param tagKvs Tag key-value pair
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tagKvs(@Nullable Output<List<InstanceResourceTagTagKvArgs>> tagKvs) {
             $.tagKvs = tagKvs;
@@ -89,9 +89,9 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
         /**
          * @param tagKvs Tag key-value pair
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tagKvs(List<InstanceResourceTagTagKvArgs> tagKvs) {
             return tagKvs(Output.of(tagKvs));
@@ -100,9 +100,9 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
         /**
          * @param tagKvs Tag key-value pair
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tagKvs(InstanceResourceTagTagKvArgs... tagKvs) {
             return tagKvs(List.of(tagKvs));
@@ -110,9 +110,9 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
 
         /**
          * @param type Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -121,9 +121,9 @@ public final class InstanceResourceTagArgs extends com.pulumi.resources.Resource
 
         /**
          * @param type Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));

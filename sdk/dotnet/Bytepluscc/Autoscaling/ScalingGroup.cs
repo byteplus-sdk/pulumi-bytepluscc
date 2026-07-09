@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
 {
     /// <summary>
     /// Scaling groups are used to manage a set of cloud resource instances. You can use scaling groups to define the number/capacity of instances in the resource pool, cooldown time, load balancing, and other information.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var autoScalingScalingGroupDemo = new Bytepluscc.Autoscaling.ScalingGroup("AutoScalingScalingGroupDemo", new()
     ///     {
@@ -82,12 +82,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     ///         MultiAzPolicy = "PRIORITY",
     ///         ScalingGroupName = "AutoScalingScalingGroupDemo",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:autoscaling/scalingGroup:ScalingGroup example "scaling_group_id"
     /// ```

@@ -16,17 +16,17 @@ public final class GatewayNetworkSpec {
     /**
      * @return Subnet configuration information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<GatewayNetworkSpecSubnet> subnets;
     /**
      * @return VPC ID。
-     *
+     * 
      */
     private @Nullable String vpcId;
     /**
      * @return VPC name
-     *
+     * 
      */
     private @Nullable String vpcName;
 
@@ -34,21 +34,21 @@ public final class GatewayNetworkSpec {
     /**
      * @return Subnet configuration information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<GatewayNetworkSpecSubnet> subnets() {
         return this.subnets == null ? List.of() : this.subnets;
     }
     /**
      * @return VPC ID。
-     *
+     * 
      */
     public Optional<String> vpcId() {
         return Optional.ofNullable(this.vpcId);
     }
     /**
      * @return VPC name
-     *
+     * 
      */
     public Optional<String> vpcName() {
         return Optional.ofNullable(this.vpcName);

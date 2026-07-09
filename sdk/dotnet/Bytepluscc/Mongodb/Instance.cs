@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 {
     /// <summary>
     /// MongoDB document database supports multiple architectures for flexible business deployment. In addition to replica set instances, MongoDB document database also provides sharded cluster architecture for large-scale data scenarios, along with disaster recovery, backup and restore, monitoring, and a complete solution set. It is widely used in industries such as internet (gaming, e-commerce, live streaming, news, social), new retail, online education, finance, IoT, and government/enterprise.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var mongoDBInstanceDemo = new Bytepluscc.Mongodb.Instance("MongoDBInstanceDemo", new()
     ///     {
@@ -59,12 +59,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
     ///             "acl-70dbb8ee8893467dbafxxxc964xxxxx",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:mongodb/instance:Instance example "instance_id"
     /// ```

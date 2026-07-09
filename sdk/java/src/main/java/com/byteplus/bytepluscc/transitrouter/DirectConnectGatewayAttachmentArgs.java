@@ -20,14 +20,14 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
     /**
      * Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
     /**
      * Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-     *
+     * 
      */
     @Import(name="directConnectGatewayId", required=true)
     private Output<String> directConnectGatewayId;
 
     /**
      * @return Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-     *
+     * 
      */
     public Output<String> directConnectGatewayId() {
         return this.directConnectGatewayId;
@@ -51,7 +51,7 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
     /**
      * Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DirectConnectGatewayAttachmentTagArgs>> tags;
@@ -59,7 +59,7 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
     /**
      * @return Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DirectConnectGatewayAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -67,14 +67,14 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
     /**
      * Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -82,14 +82,14 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
     /**
      * Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-     *
+     * 
      */
     @Import(name="transitRouterId", required=true)
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-     *
+     * 
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
@@ -125,9 +125,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -136,9 +136,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -146,9 +146,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param directConnectGatewayId Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectGatewayId(Output<String> directConnectGatewayId) {
             $.directConnectGatewayId = directConnectGatewayId;
@@ -157,9 +157,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param directConnectGatewayId Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectGatewayId(String directConnectGatewayId) {
             return directConnectGatewayId(Output.of(directConnectGatewayId));
@@ -168,9 +168,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<DirectConnectGatewayAttachmentTagArgs>> tags) {
             $.tags = tags;
@@ -180,9 +180,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<DirectConnectGatewayAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
@@ -191,9 +191,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(DirectConnectGatewayAttachmentTagArgs... tags) {
             return tags(List.of(tags));
@@ -201,9 +201,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -212,9 +212,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -222,9 +222,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param transitRouterId Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -233,9 +233,9 @@ public final class DirectConnectGatewayAttachmentArgs extends com.pulumi.resourc
 
         /**
          * @param transitRouterId Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));

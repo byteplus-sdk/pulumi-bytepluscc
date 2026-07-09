@@ -17,17 +17,17 @@ public final class RuleForwardGroupConfig {
     /**
      * @return Destination server group list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<RuleForwardGroupConfigServerGroupTuple> serverGroupTuples;
     /**
      * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
-     *
+     * 
      */
     private @Nullable String stickySessionEnabled;
     /**
      * @return Component session stickiness timeout. Unit: seconds.
-     *
+     * 
      */
     private @Nullable Integer stickySessionTimeout;
 
@@ -35,21 +35,21 @@ public final class RuleForwardGroupConfig {
     /**
      * @return Destination server group list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<RuleForwardGroupConfigServerGroupTuple> serverGroupTuples() {
         return this.serverGroupTuples == null ? List.of() : this.serverGroupTuples;
     }
     /**
      * @return Whether to enable inter-group session persistence. on: enabled. off: disabled.
-     *
+     * 
      */
     public Optional<String> stickySessionEnabled() {
         return Optional.ofNullable(this.stickySessionEnabled);
     }
     /**
      * @return Component session stickiness timeout. Unit: seconds.
-     *
+     * 
      */
     public Optional<Integer> stickySessionTimeout() {
         return Optional.ofNullable(this.stickySessionTimeout);

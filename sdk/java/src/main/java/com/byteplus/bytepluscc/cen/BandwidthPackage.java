@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * Provides cross-region communication bandwidth for Cloud Enterprise Network instances. You can allocate bandwidth to different inter-region connections. By creating a bandwidth package and assigning inter-region bandwidth, you enable connectivity between network instances in different regions.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cENBandwidthPackageDemo = new BandwidthPackage("cENBandwidthPackageDemo", BandwidthPackageArgs.builder()
  *             .bandwidth(3)
@@ -59,340 +59,340 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cen/bandwidthPackage:BandwidthPackage example &#34;cen_bandwidth_package_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cen/bandwidthPackage:BandwidthPackage")
 public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Billing status of the bandwidth package instance. 0: Creating 1: Running 3: Unsubscribed 4: Expired and stopped 5: Expired and recycled 8: Unsubscribed and stopped
-     *
+     * 
      */
     @Export(name="billingStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingStatus;
 
     /**
      * @return Billing status of the bandwidth package instance. 0: Creating 1: Running 3: Unsubscribed 4: Expired and stopped 5: Expired and recycled 8: Unsubscribed and stopped
-     *
+     * 
      */
     public Output<Integer> billingStatus() {
         return this.billingStatus;
     }
     /**
      * Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Frozen status of the bandwidth package. Normal: normal. FinancialLocked: frozen.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Frozen status of the bandwidth package. Normal: normal. FinancialLocked: frozen.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Bandwidth package ID.
-     *
+     * 
      */
     @Export(name="cenBandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> cenBandwidthPackageId;
 
     /**
      * @return Bandwidth package ID.
-     *
+     * 
      */
     public Output<String> cenBandwidthPackageId() {
         return this.cenBandwidthPackageId;
     }
     /**
      * Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-     *
+     * 
      */
     @Export(name="cenBandwidthPackageName", refs={String.class}, tree="[0]")
     private Output<String> cenBandwidthPackageName;
 
     /**
      * @return Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-     *
+     * 
      */
     public Output<String> cenBandwidthPackageName() {
         return this.cenBandwidthPackageName;
     }
     /**
      * List of associated CEN instance IDs.
-     *
+     * 
      */
     @Export(name="cenIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> cenIds;
 
     /**
      * @return List of associated CEN instance IDs.
-     *
+     * 
      */
     public Output<List<String>> cenIds() {
         return this.cenIds;
     }
     /**
      * Creation time of the bandwidth package.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the bandwidth package.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Deletion time of the bandwidth package.
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time of the bandwidth package.
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Expiration time of the bandwidth package.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time of the bandwidth package.
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-     *
+     * 
      */
     @Export(name="lineOperator", refs={String.class}, tree="[0]")
     private Output<String> lineOperator;
 
     /**
      * @return Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-     *
+     * 
      */
     public Output<String> lineOperator() {
         return this.lineOperator;
     }
     /**
      * Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-     *
+     * 
      */
     @Export(name="localGeographicRegionSetId", refs={String.class}, tree="[0]")
     private Output<String> localGeographicRegionSetId;
 
     /**
      * @return Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-     *
+     * 
      */
     public Output<String> localGeographicRegionSetId() {
         return this.localGeographicRegionSetId;
     }
     /**
      * Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-     *
+     * 
      */
     @Export(name="peerGeographicRegionSetId", refs={String.class}, tree="[0]")
     private Output<String> peerGeographicRegionSetId;
 
     /**
      * @return Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-     *
+     * 
      */
     public Output<String> peerGeographicRegionSetId() {
         return this.peerGeographicRegionSetId;
     }
     /**
      * Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-     *
+     * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-     *
+     * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-     *
+     * 
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
      * @return Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-     *
+     * 
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Recycle time after the bandwidth package instance expires.
-     *
+     * 
      */
     @Export(name="reclaimTime", refs={String.class}, tree="[0]")
     private Output<String> reclaimTime;
 
     /**
      * @return Recycle time after the bandwidth package instance expires.
-     *
+     * 
      */
     public Output<String> reclaimTime() {
         return this.reclaimTime;
     }
     /**
      * Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-     *
+     * 
      */
     @Export(name="remainRenewTimes", refs={Integer.class}, tree="[0]")
     private Output<Integer> remainRenewTimes;
 
     /**
      * @return Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-     *
+     * 
      */
     public Output<Integer> remainRenewTimes() {
         return this.remainRenewTimes;
     }
     /**
      * Remaining bandwidth, measured in Mbps.
-     *
+     * 
      */
     @Export(name="remainingBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> remainingBandwidth;
 
     /**
      * @return Remaining bandwidth, measured in Mbps.
-     *
+     * 
      */
     public Output<Integer> remainingBandwidth() {
         return this.remainingBandwidth;
     }
     /**
      * Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-     *
+     * 
      */
     @Export(name="renewPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> renewPeriod;
 
     /**
      * @return Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-     *
+     * 
      */
     public Output<Integer> renewPeriod() {
         return this.renewPeriod;
     }
     /**
      * Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-     *
+     * 
      */
     @Export(name="renewType", refs={String.class}, tree="[0]")
     private Output<String> renewType;
 
     /**
      * @return Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-     *
+     * 
      */
     public Output<String> renewType() {
         return this.renewType;
     }
     /**
      * Status of the bandwidth package. Creating: Being created. Deleting: Being deleted. Pending: In progress. Available: Unbound. InUse: Bound.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the bandwidth package. Creating: Being created. Deleting: Being deleted. Pending: In progress. Available: Unbound. InUse: Bound.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -400,7 +400,7 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,BandwidthPackageTag.class}, tree="[0,1]")
     private Output<List<BandwidthPackageTag>> tags;
@@ -408,21 +408,21 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BandwidthPackageTag>> tags() {
         return this.tags;
     }
     /**
      * Update time of the bandwidth package.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Update time of the bandwidth package.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

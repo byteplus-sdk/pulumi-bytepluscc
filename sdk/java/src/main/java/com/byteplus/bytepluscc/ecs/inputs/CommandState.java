@@ -22,14 +22,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
-     *
+     * 
      */
     @Import(name="commandContent")
     private @Nullable Output<String> commandContent;
 
     /**
      * @return Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
-     *
+     * 
      */
     public Optional<Output<String>> commandContent() {
         return Optional.ofNullable(this.commandContent);
@@ -37,14 +37,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom command ID.
-     *
+     * 
      */
     @Import(name="commandId")
     private @Nullable Output<String> commandId;
 
     /**
      * @return Custom command ID.
-     *
+     * 
      */
     public Optional<Output<String>> commandId() {
         return Optional.ofNullable(this.commandId);
@@ -52,14 +52,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
-     *
+     * 
      */
     @Import(name="contentEncoding")
     private @Nullable Output<String> contentEncoding;
 
     /**
      * @return Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
-     *
+     * 
      */
     public Optional<Output<String>> contentEncoding() {
         return Optional.ofNullable(this.contentEncoding);
@@ -67,14 +67,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -82,14 +82,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -97,14 +97,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
-     *
+     * 
      */
     @Import(name="enableParameter")
     private @Nullable Output<Boolean> enableParameter;
 
     /**
      * @return Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableParameter() {
         return Optional.ofNullable(this.enableParameter);
@@ -112,14 +112,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of times the command has been invoked.
-     *
+     * 
      */
     @Import(name="invocationTimes")
     private @Nullable Output<Integer> invocationTimes;
 
     /**
      * @return Number of times the command has been invoked.
-     *
+     * 
      */
     public Optional<Output<Integer>> invocationTimes() {
         return Optional.ofNullable(this.invocationTimes);
@@ -127,14 +127,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command name. Character length: 1~32. No restriction on special characters.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Command name. Character length: 1~32. No restriction on special characters.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -143,7 +143,7 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
     /**
      * Custom parameter definition information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="parameterDefinitions")
     private @Nullable Output<List<CommandParameterDefinitionArgs>> parameterDefinitions;
@@ -151,7 +151,7 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Custom parameter definition information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CommandParameterDefinitionArgs>>> parameterDefinitions() {
         return Optional.ofNullable(this.parameterDefinitions);
@@ -159,14 +159,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the resource belongs. Each resource can belong to only one project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. Each resource can belong to only one project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -174,14 +174,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command provider.
-     *
+     * 
      */
     @Import(name="providerName")
     private @Nullable Output<String> providerName;
 
     /**
      * @return Command provider.
-     *
+     * 
      */
     public Optional<Output<String>> providerName() {
         return Optional.ofNullable(this.providerName);
@@ -190,7 +190,7 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag key-value pair.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<CommandTagArgs>> tags;
@@ -198,7 +198,7 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag key-value pair.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CommandTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -206,14 +206,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
-     *
+     * 
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
      * @return Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
-     *
+     * 
      */
     public Optional<Output<Integer>> timeout() {
         return Optional.ofNullable(this.timeout);
@@ -221,14 +221,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -236,14 +236,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update time.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update time.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -251,14 +251,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Username for executing the command.
-     *
+     * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
      * @return Username for executing the command.
-     *
+     * 
      */
     public Optional<Output<String>> username() {
         return Optional.ofNullable(this.username);
@@ -266,14 +266,14 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Directory where the created command runs on ECS instances.
-     *
+     * 
      */
     @Import(name="workingDir")
     private @Nullable Output<String> workingDir;
 
     /**
      * @return Directory where the created command runs on ECS instances.
-     *
+     * 
      */
     public Optional<Output<String>> workingDir() {
         return Optional.ofNullable(this.workingDir);
@@ -321,9 +321,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandContent Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder commandContent(@Nullable Output<String> commandContent) {
             $.commandContent = commandContent;
@@ -332,9 +332,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandContent Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder commandContent(String commandContent) {
             return commandContent(Output.of(commandContent));
@@ -342,9 +342,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandId Custom command ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder commandId(@Nullable Output<String> commandId) {
             $.commandId = commandId;
@@ -353,9 +353,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandId Custom command ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder commandId(String commandId) {
             return commandId(Output.of(commandId));
@@ -363,9 +363,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contentEncoding Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contentEncoding(@Nullable Output<String> contentEncoding) {
             $.contentEncoding = contentEncoding;
@@ -374,9 +374,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contentEncoding Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contentEncoding(String contentEncoding) {
             return contentEncoding(Output.of(contentEncoding));
@@ -384,9 +384,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -395,9 +395,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -405,9 +405,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -416,9 +416,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -426,9 +426,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableParameter Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableParameter(@Nullable Output<Boolean> enableParameter) {
             $.enableParameter = enableParameter;
@@ -437,9 +437,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableParameter Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableParameter(Boolean enableParameter) {
             return enableParameter(Output.of(enableParameter));
@@ -447,9 +447,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationTimes Number of times the command has been invoked.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder invocationTimes(@Nullable Output<Integer> invocationTimes) {
             $.invocationTimes = invocationTimes;
@@ -458,9 +458,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationTimes Number of times the command has been invoked.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder invocationTimes(Integer invocationTimes) {
             return invocationTimes(Output.of(invocationTimes));
@@ -468,9 +468,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Command name. Character length: 1~32. No restriction on special characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -479,9 +479,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Command name. Character length: 1~32. No restriction on special characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -490,9 +490,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param parameterDefinitions Custom parameter definition information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parameterDefinitions(@Nullable Output<List<CommandParameterDefinitionArgs>> parameterDefinitions) {
             $.parameterDefinitions = parameterDefinitions;
@@ -502,9 +502,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param parameterDefinitions Custom parameter definition information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parameterDefinitions(List<CommandParameterDefinitionArgs> parameterDefinitions) {
             return parameterDefinitions(Output.of(parameterDefinitions));
@@ -513,9 +513,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param parameterDefinitions Custom parameter definition information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parameterDefinitions(CommandParameterDefinitionArgs... parameterDefinitions) {
             return parameterDefinitions(List.of(parameterDefinitions));
@@ -523,9 +523,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. Each resource can belong to only one project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -534,9 +534,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. Each resource can belong to only one project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -544,9 +544,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param providerName Command provider.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder providerName(@Nullable Output<String> providerName) {
             $.providerName = providerName;
@@ -555,9 +555,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param providerName Command provider.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder providerName(String providerName) {
             return providerName(Output.of(providerName));
@@ -566,9 +566,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag key-value pair.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<CommandTagArgs>> tags) {
             $.tags = tags;
@@ -578,9 +578,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag key-value pair.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<CommandTagArgs> tags) {
             return tags(Output.of(tags));
@@ -589,9 +589,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag key-value pair.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(CommandTagArgs... tags) {
             return tags(List.of(tags));
@@ -599,9 +599,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeout(@Nullable Output<Integer> timeout) {
             $.timeout = timeout;
@@ -610,9 +610,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeout(Integer timeout) {
             return timeout(Output.of(timeout));
@@ -620,9 +620,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -631,9 +631,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -641,9 +641,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -652,9 +652,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -662,9 +662,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username Username for executing the command.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder username(@Nullable Output<String> username) {
             $.username = username;
@@ -673,9 +673,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username Username for executing the command.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder username(String username) {
             return username(Output.of(username));
@@ -683,9 +683,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workingDir Directory where the created command runs on ECS instances.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder workingDir(@Nullable Output<String> workingDir) {
             $.workingDir = workingDir;
@@ -694,9 +694,9 @@ public final class CommandState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workingDir Directory where the created command runs on ECS instances.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder workingDir(String workingDir) {
             return workingDir(Output.of(workingDir));

@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * The forwarding rule directs requests for specified domain names and URLs to the designated backend server group.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,12 +38,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var ruleDemo = new Rule("ruleDemo", RuleArgs.builder()
  *             .listenerId("lsn-13****")
@@ -57,116 +57,116 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/rule:Rule example &#34;listener_id|rule_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
-     *
+     * 
      */
     @Export(name="actionType", refs={String.class}, tree="[0]")
     private Output<String> actionType;
 
     /**
      * @return Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
-     *
+     * 
      */
     public Output<String> actionType() {
         return this.actionType;
     }
     /**
      * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Domain name of the forwarding rule.
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Domain name of the forwarding rule.
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * Listener ID.
-     *
+     * 
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
      * @return Listener ID.
-     *
+     * 
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
      * Redirection-related configuration information.
-     *
+     * 
      */
     @Export(name="redirectConfig", refs={RuleRedirectConfig.class}, tree="[0]")
     private Output<RuleRedirectConfig> redirectConfig;
 
     /**
      * @return Redirection-related configuration information.
-     *
+     * 
      */
     public Output<RuleRedirectConfig> redirectConfig() {
         return this.redirectConfig;
     }
     /**
      * Forwarding rule ID.
-     *
+     * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Forwarding rule ID.
-     *
+     * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * ID of the backend server group associated with the forwarding rule.
-     *
+     * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return ID of the backend server group associated with the forwarding rule.
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
@@ -174,7 +174,7 @@ public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,RuleTag.class}, tree="[0,1]")
     private Output<List<RuleTag>> tags;
@@ -182,21 +182,21 @@ public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<RuleTag>> tags() {
         return this.tags;
     }
     /**
      * URL of the forwarding rule.
-     *
+     * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
      * @return URL of the forwarding rule.
-     *
+     * 
      */
     public Output<String> url() {
         return this.url;

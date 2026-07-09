@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Transit router bandwidth package resources.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var transitRouterBandwidthPackageDemo = new TransitRouterBandwidthPackage("transitRouterBandwidthPackageDemo", TransitRouterBandwidthPackageArgs.builder()
  *             .bandwidth(3)
@@ -62,32 +62,32 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .transitRouterBandwidthPackageName("ccapi-test")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage example &#34;transit_router_bandwidth_package_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage")
 public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * Account ID to which the bandwidth package belongs.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID to which the bandwidth package belongs.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
@@ -95,7 +95,7 @@ public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomRe
     /**
      * Details of the cross-region connection associated with the bandwidth package.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="allocations", refs={List.class,TransitRouterBandwidthPackageAllocation.class}, tree="[0,1]")
     private Output<List<TransitRouterBandwidthPackageAllocation>> allocations;
@@ -103,287 +103,287 @@ public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomRe
     /**
      * @return Details of the cross-region connection associated with the bandwidth package.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TransitRouterBandwidthPackageAllocation>> allocations() {
         return this.allocations;
     }
     /**
      * Bandwidth peak of the transit router bandwidth package, in Mbps.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth peak of the transit router bandwidth package, in Mbps.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Billing status of the transit router bandwidth package. 0: creating. 1: running. 3: unsubscribed. 4: expired and stopped. 5: expired and recycled. 8: unsubscribed and stopped.
-     *
+     * 
      */
     @Export(name="billingStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingStatus;
 
     /**
      * @return Billing status of the transit router bandwidth package. 0: creating. 1: running. 3: unsubscribed. 4: expired and stopped. 5: expired and recycled. 8: unsubscribed and stopped.
-     *
+     * 
      */
     public Output<Integer> billingStatus() {
         return this.billingStatus;
     }
     /**
      * Billing method of the transit router bandwidth package. 1: subscription (yearly/monthly).
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Billing method of the transit router bandwidth package. 1: subscription (yearly/monthly).
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Business status of the transit router bandwidth package. Normal: normal. FinancialLocked: frozen.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Business status of the transit router bandwidth package. Normal: normal. FinancialLocked: frozen.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Deletion time of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Expiration time of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Carrier for cross-border bandwidth package. ChinaUnicom: China Unicom ChinaTelecom: China Telecom
-     *
+     * 
      */
     @Export(name="lineOperator", refs={String.class}, tree="[0]")
     private Output<String> lineOperator;
 
     /**
      * @return Carrier for cross-border bandwidth package. ChinaUnicom: China Unicom ChinaTelecom: China Telecom
-     *
+     * 
      */
     public Output<String> lineOperator() {
         return this.lineOperator;
     }
     /**
      * Local geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland Asia: Asia-Pacific
-     *
+     * 
      */
     @Export(name="localGeographicRegionSetId", refs={String.class}, tree="[0]")
     private Output<String> localGeographicRegionSetId;
 
     /**
      * @return Local geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland Asia: Asia-Pacific
-     *
+     * 
      */
     public Output<String> localGeographicRegionSetId() {
         return this.localGeographicRegionSetId;
     }
     /**
      * Peer geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland. Asia: Asia-Pacific.
-     *
+     * 
      */
     @Export(name="peerGeographicRegionSetId", refs={String.class}, tree="[0]")
     private Output<String> peerGeographicRegionSetId;
 
     /**
      * @return Peer geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland. Asia: Asia-Pacific.
-     *
+     * 
      */
     public Output<String> peerGeographicRegionSetId() {
         return this.peerGeographicRegionSetId;
     }
     /**
      * Purchase duration of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return Purchase duration of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Billing cycle of the transit router bandwidth package. Month: billed monthly. Year: billed yearly.
-     *
+     * 
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
      * @return Billing cycle of the transit router bandwidth package. Month: billed monthly. Year: billed yearly.
-     *
+     * 
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Name of the project to which the transit router bandwidth package belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the transit router bandwidth package belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Recycle time after the transit router bandwidth package expires. Returned when BillingType is 1.
-     *
+     * 
      */
     @Export(name="reclaimTime", refs={String.class}, tree="[0]")
     private Output<String> reclaimTime;
 
     /**
      * @return Recycle time after the transit router bandwidth package expires. Returned when BillingType is 1.
-     *
+     * 
      */
     public Output<String> reclaimTime() {
         return this.reclaimTime;
     }
     /**
      * Number of auto-renewals. Value can be -1 or 1–100. Default is -1, which means unlimited auto-renewals.
-     *
+     * 
      */
     @Export(name="remainRenewTimes", refs={Integer.class}, tree="[0]")
     private Output<Integer> remainRenewTimes;
 
     /**
      * @return Number of auto-renewals. Value can be -1 or 1–100. Default is -1, which means unlimited auto-renewals.
-     *
+     * 
      */
     public Output<Integer> remainRenewTimes() {
         return this.remainRenewTimes;
     }
     /**
      * Remaining unallocated bandwidth of the transit router bandwidth package, in Mbps.
-     *
+     * 
      */
     @Export(name="remainingBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> remainingBandwidth;
 
     /**
      * @return Remaining unallocated bandwidth of the transit router bandwidth package, in Mbps.
-     *
+     * 
      */
     public Output<Integer> remainingBandwidth() {
         return this.remainingBandwidth;
     }
     /**
      * Duration of each auto-renewal, in months.
-     *
+     * 
      */
     @Export(name="renewPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> renewPeriod;
 
     /**
      * @return Duration of each auto-renewal, in months.
-     *
+     * 
      */
     public Output<Integer> renewPeriod() {
         return this.renewPeriod;
     }
     /**
      * Renewal type for transit router bandwidth package. Manual: Manual renewal Auto: Automatic renewal NoRenew: Do not renew
-     *
+     * 
      */
     @Export(name="renewType", refs={String.class}, tree="[0]")
     private Output<String> renewType;
 
     /**
      * @return Renewal type for transit router bandwidth package. Manual: Manual renewal Auto: Automatic renewal NoRenew: Do not renew
-     *
+     * 
      */
     public Output<String> renewType() {
         return this.renewType;
     }
     /**
      * Status of the transit router bandwidth package. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the transit router bandwidth package. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -391,7 +391,7 @@ public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomRe
     /**
      * Tag information of the transit router bandwidth package.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,TransitRouterBandwidthPackageTag.class}, tree="[0,1]")
     private Output<List<TransitRouterBandwidthPackageTag>> tags;
@@ -399,49 +399,49 @@ public class TransitRouterBandwidthPackage extends com.pulumi.resources.CustomRe
     /**
      * @return Tag information of the transit router bandwidth package.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TransitRouterBandwidthPackageTag>> tags() {
         return this.tags;
     }
     /**
      * Transit router bandwidth package ID.
-     *
+     * 
      */
     @Export(name="transitRouterBandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterBandwidthPackageId;
 
     /**
      * @return Transit router bandwidth package ID.
-     *
+     * 
      */
     public Output<String> transitRouterBandwidthPackageId() {
         return this.transitRouterBandwidthPackageId;
     }
     /**
      * Name of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="transitRouterBandwidthPackageName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterBandwidthPackageName;
 
     /**
      * @return Name of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<String> transitRouterBandwidthPackageName() {
         return this.transitRouterBandwidthPackageName;
     }
     /**
      * Last operation time of the transit router bandwidth package.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the transit router bandwidth package.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

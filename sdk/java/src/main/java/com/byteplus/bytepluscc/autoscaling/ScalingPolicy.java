@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var autoScalingScalingPolicyDemo = new ScalingPolicy("autoScalingScalingPolicyDemo", ScalingPolicyArgs.builder()
  *             .scalingGroupId("scg-ye9vu9ztco9ht5lxxxxx")
@@ -61,172 +61,172 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .isEnabledPolicy(false)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:autoscaling/scalingPolicy:ScalingPolicy example &#34;scaling_group_id|scaling_policy_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:autoscaling/scalingPolicy:ScalingPolicy")
 public class ScalingPolicy extends com.pulumi.resources.CustomResource {
     /**
      * Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
-     *
+     * 
      */
     @Export(name="adjustmentType", refs={String.class}, tree="[0]")
     private Output<String> adjustmentType;
 
     /**
      * @return Scaling actions for the scaling rule, applicable to simple and step rules. QuantityChangeInCapacity: increase or decrease a specified number of instances. PercentChangeInCapacity: increase or decrease a specified percentage of instances. TotalCapacity: adjust the number of instances in the current scaling group to the specified value.
-     *
+     * 
      */
     public Output<String> adjustmentType() {
         return this.adjustmentType;
     }
     /**
      * Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
-     *
+     * 
      */
     @Export(name="adjustmentValue", refs={Integer.class}, tree="[0]")
     private Output<Integer> adjustmentValue;
 
     /**
      * @return Adjustment value for scaling actions, applicable to simple and step rules. When AdjustmentType is set to QuantityChangeInCapacity: -100 to 100, cannot be 0, unit: instances. When AdjustmentType is set to PercentChangeInCapacity: -100 to 10000, cannot be 0, unit: %. When AdjustmentType is set to TotalCapacity: defaults to 0 to 100, unit: instances.
-     *
+     * 
      */
     public Output<Integer> adjustmentValue() {
         return this.adjustmentValue;
     }
     /**
      * Detailed information about the alarm task.
-     *
+     * 
      */
     @Export(name="alarmPolicy", refs={ScalingPolicyAlarmPolicy.class}, tree="[0]")
     private Output<ScalingPolicyAlarmPolicy> alarmPolicy;
 
     /**
      * @return Detailed information about the alarm task.
-     *
+     * 
      */
     public Output<ScalingPolicyAlarmPolicy> alarmPolicy() {
         return this.alarmPolicy;
     }
     /**
      * Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
-     *
+     * 
      */
     @Export(name="cooldown", refs={Integer.class}, tree="[0]")
     private Output<Integer> cooldown;
 
     /**
      * @return Cooldown time for scaling rules. Value: 0–86400, unit: seconds. If not specified, the scaling group&#39;s cooldown time is used by default.
-     *
+     * 
      */
     public Output<Integer> cooldown() {
         return this.cooldown;
     }
     /**
      * Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
-     *
+     * 
      */
     @Export(name="isEnabledPolicy", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnabledPolicy;
 
     /**
      * @return Status of the scaling rule. Options: true: enabled. false: disabled. The scaling group must be in Active status.
-     *
+     * 
      */
     public Output<Boolean> isEnabledPolicy() {
         return this.isEnabledPolicy;
     }
     /**
      * Scaling group ID.
-     *
+     * 
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
      * @return Scaling group ID.
-     *
+     * 
      */
     public Output<String> scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
      * Scaling rule ID.
-     *
+     * 
      */
     @Export(name="scalingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> scalingPolicyId;
 
     /**
      * @return Scaling rule ID.
-     *
+     * 
      */
     public Output<String> scalingPolicyId() {
         return this.scalingPolicyId;
     }
     /**
      * Name of the scaling rule.
-     *
+     * 
      */
     @Export(name="scalingPolicyName", refs={String.class}, tree="[0]")
     private Output<String> scalingPolicyName;
 
     /**
      * @return Name of the scaling rule.
-     *
+     * 
      */
     public Output<String> scalingPolicyName() {
         return this.scalingPolicyName;
     }
     /**
      * Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
-     *
+     * 
      */
     @Export(name="scalingPolicyType", refs={String.class}, tree="[0]")
     private Output<String> scalingPolicyType;
 
     /**
      * @return Type of scaling rule. Options: Scheduled: scheduled task. Recurrence: recurring task. Alarm: alarm task.
-     *
+     * 
      */
     public Output<String> scalingPolicyType() {
         return this.scalingPolicyType;
     }
     /**
      * Detailed information for scheduled/recurring tasks.
-     *
+     * 
      */
     @Export(name="scheduledPolicy", refs={ScalingPolicyScheduledPolicy.class}, tree="[0]")
     private Output<ScalingPolicyScheduledPolicy> scheduledPolicy;
 
     /**
      * @return Detailed information for scheduled/recurring tasks.
-     *
+     * 
      */
     public Output<ScalingPolicyScheduledPolicy> scheduledPolicy() {
         return this.scheduledPolicy;
     }
     /**
      * Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the scaling rule. Options: Active: enabled. Inactive: disabled. The scaling group must be in Active status.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;

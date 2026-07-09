@@ -21,7 +21,7 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Mount instance information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="attachFileSystems")
     private @Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems;
@@ -29,7 +29,7 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Mount instance information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<MountServiceAttachFileSystemArgs>>> attachFileSystems() {
         return Optional.ofNullable(this.attachFileSystems);
@@ -37,14 +37,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time.
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -52,14 +52,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount service ID.
-     *
+     * 
      */
     @Import(name="mountServiceId")
     private @Nullable Output<String> mountServiceId;
 
     /**
      * @return Mount service ID.
-     *
+     * 
      */
     public Optional<Output<String>> mountServiceId() {
         return Optional.ofNullable(this.mountServiceId);
@@ -67,14 +67,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-     *
+     * 
      */
     @Import(name="mountServiceName")
     private @Nullable Output<String> mountServiceName;
 
     /**
      * @return Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-     *
+     * 
      */
     public Optional<Output<String>> mountServiceName() {
         return Optional.ofNullable(this.mountServiceName);
@@ -82,14 +82,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Client management node type.
-     *
+     * 
      */
     @Import(name="nodeType")
     private @Nullable Output<String> nodeType;
 
     /**
      * @return Client management node type.
-     *
+     * 
      */
     public Optional<Output<String>> nodeType() {
         return Optional.ofNullable(this.nodeType);
@@ -98,7 +98,7 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
     /**
      * Client management node list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="nodes")
     private @Nullable Output<List<MountServiceNodeArgs>> nodes;
@@ -106,7 +106,7 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Client management node list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<MountServiceNodeArgs>>> nodes() {
         return Optional.ofNullable(this.nodes);
@@ -114,14 +114,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project.
-     *
+     * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
      * @return Project.
-     *
+     * 
      */
     public Optional<Output<String>> project() {
         return Optional.ofNullable(this.project);
@@ -129,14 +129,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Client NIC security group ID.
-     *
+     * 
      */
     @Import(name="securityGroupId")
     private @Nullable Output<String> securityGroupId;
 
     /**
      * @return Client NIC security group ID.
-     *
+     * 
      */
     public Optional<Output<String>> securityGroupId() {
         return Optional.ofNullable(this.securityGroupId);
@@ -144,14 +144,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount service status. Details: Creating: Creating. CreateError: Creation failed. Running: Running. Updating: Updating. UpdateError: Update failed. Deleting: Deleting. DeleteError: Deletion failed. Deleted: Deleted. Attaching: Attaching. AttachError: Attachment failed. Detaching: Detaching. DetachError: Detachment failed. Stopped: Stopped. Error: Error.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Mount service status. Details: Creating: Creating. CreateError: Creation failed. Running: Running. Updating: Updating. UpdateError: Update failed. Deleting: Deleting. DeleteError: Deletion failed. Deleted: Deleted. Attaching: Attaching. AttachError: Attachment failed. Detaching: Detaching. DetachError: Detachment failed. Stopped: Stopped. Error: Error.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -159,14 +159,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID.
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -174,14 +174,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Mount service version.
-     *
+     * 
      */
     @Import(name="versionNumber")
     private @Nullable Output<String> versionNumber;
 
     /**
      * @return Mount service version.
-     *
+     * 
      */
     public Optional<Output<String>> versionNumber() {
         return Optional.ofNullable(this.versionNumber);
@@ -189,14 +189,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -204,14 +204,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID.
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -219,14 +219,14 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone name.
-     *
+     * 
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
      * @return Availability zone name.
-     *
+     * 
      */
     public Optional<Output<String>> zoneName() {
         return Optional.ofNullable(this.zoneName);
@@ -272,9 +272,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param attachFileSystems Mount instance information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder attachFileSystems(@Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems) {
             $.attachFileSystems = attachFileSystems;
@@ -284,9 +284,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param attachFileSystems Mount instance information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder attachFileSystems(List<MountServiceAttachFileSystemArgs> attachFileSystems) {
             return attachFileSystems(Output.of(attachFileSystems));
@@ -295,9 +295,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param attachFileSystems Mount instance information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder attachFileSystems(MountServiceAttachFileSystemArgs... attachFileSystems) {
             return attachFileSystems(List.of(attachFileSystems));
@@ -305,9 +305,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -316,9 +316,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -326,9 +326,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountServiceId Mount service ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountServiceId(@Nullable Output<String> mountServiceId) {
             $.mountServiceId = mountServiceId;
@@ -337,9 +337,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountServiceId Mount service ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountServiceId(String mountServiceId) {
             return mountServiceId(Output.of(mountServiceId));
@@ -347,9 +347,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountServiceName Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountServiceName(@Nullable Output<String> mountServiceName) {
             $.mountServiceName = mountServiceName;
@@ -358,9 +358,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountServiceName Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder mountServiceName(String mountServiceName) {
             return mountServiceName(Output.of(mountServiceName));
@@ -368,9 +368,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeType Client management node type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeType(@Nullable Output<String> nodeType) {
             $.nodeType = nodeType;
@@ -379,9 +379,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeType Client management node type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeType(String nodeType) {
             return nodeType(Output.of(nodeType));
@@ -390,9 +390,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes Client management node list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(@Nullable Output<List<MountServiceNodeArgs>> nodes) {
             $.nodes = nodes;
@@ -402,9 +402,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes Client management node list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(List<MountServiceNodeArgs> nodes) {
             return nodes(Output.of(nodes));
@@ -413,9 +413,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param nodes Client management node list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodes(MountServiceNodeArgs... nodes) {
             return nodes(List.of(nodes));
@@ -423,9 +423,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder project(@Nullable Output<String> project) {
             $.project = project;
@@ -434,9 +434,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder project(String project) {
             return project(Output.of(project));
@@ -444,9 +444,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupId Client NIC security group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(@Nullable Output<String> securityGroupId) {
             $.securityGroupId = securityGroupId;
@@ -455,9 +455,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupId Client NIC security group ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupId(String securityGroupId) {
             return securityGroupId(Output.of(securityGroupId));
@@ -465,9 +465,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Mount service status. Details: Creating: Creating. CreateError: Creation failed. Running: Running. Updating: Updating. UpdateError: Update failed. Deleting: Deleting. DeleteError: Deletion failed. Deleted: Deleted. Attaching: Attaching. AttachError: Attachment failed. Detaching: Detaching. DetachError: Detachment failed. Stopped: Stopped. Error: Error.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -476,9 +476,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Mount service status. Details: Creating: Creating. CreateError: Creation failed. Running: Running. Updating: Updating. UpdateError: Update failed. Deleting: Deleting. DeleteError: Deletion failed. Deleted: Deleted. Attaching: Attaching. AttachError: Attachment failed. Detaching: Detaching. DetachError: Detachment failed. Stopped: Stopped. Error: Error.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -486,9 +486,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -497,9 +497,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -507,9 +507,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param versionNumber Mount service version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionNumber(@Nullable Output<String> versionNumber) {
             $.versionNumber = versionNumber;
@@ -518,9 +518,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param versionNumber Mount service version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionNumber(String versionNumber) {
             return versionNumber(Output.of(versionNumber));
@@ -528,9 +528,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -539,9 +539,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -549,9 +549,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -560,9 +560,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));
@@ -570,9 +570,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Availability zone name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(@Nullable Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -581,9 +581,9 @@ public final class MountServiceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Availability zone name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

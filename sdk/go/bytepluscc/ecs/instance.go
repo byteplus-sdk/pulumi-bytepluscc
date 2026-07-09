@@ -135,6 +135,9 @@ type Instance struct {
 	//     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
 	//     - If not specified or left empty, burstable instances default to `Standard` mode.
 	CreditSpecification pulumi.StringOutput `pulumi:"creditSpecification"`
+	// Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DataVolumes InstanceDataVolumeArrayOutput `pulumi:"dataVolumes"`
 	// Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
 	//     - true: Enable instance deletion protection
 	//     - false (default): Disable instance deletion protection
@@ -372,6 +375,9 @@ type instanceState struct {
 	//     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
 	//     - If not specified or left empty, burstable instances default to `Standard` mode.
 	CreditSpecification *string `pulumi:"creditSpecification"`
+	// Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DataVolumes []InstanceDataVolume `pulumi:"dataVolumes"`
 	// Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
 	//     - true: Enable instance deletion protection
 	//     - false (default): Disable instance deletion protection
@@ -562,6 +568,9 @@ type InstanceState struct {
 	//     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
 	//     - If not specified or left empty, burstable instances default to `Standard` mode.
 	CreditSpecification pulumi.StringPtrInput
+	// Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DataVolumes InstanceDataVolumeArrayInput
 	// Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
 	//     - true: Enable instance deletion protection
 	//     - false (default): Disable instance deletion protection
@@ -750,6 +759,9 @@ type instanceArgs struct {
 	//     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
 	//     - If not specified or left empty, burstable instances default to `Standard` mode.
 	CreditSpecification *string `pulumi:"creditSpecification"`
+	// Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DataVolumes []InstanceDataVolume `pulumi:"dataVolumes"`
 	// Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
 	//     - true: Enable instance deletion protection
 	//     - false (default): Disable instance deletion protection
@@ -915,6 +927,9 @@ type InstanceArgs struct {
 	//     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
 	//     - If not specified or left empty, burstable instances default to `Standard` mode.
 	CreditSpecification pulumi.StringPtrInput
+	// Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DataVolumes InstanceDataVolumeArrayInput
 	// Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
 	//     - true: Enable instance deletion protection
 	//     - false (default): Disable instance deletion protection
@@ -1202,6 +1217,13 @@ func (o InstanceOutput) CreatedAt() pulumi.StringOutput {
 //   - If not specified or left empty, burstable instances default to `Standard` mode.
 func (o InstanceOutput) CreditSpecification() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.CreditSpecification }).(pulumi.StringOutput)
+}
+
+// Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o InstanceOutput) DataVolumes() InstanceDataVolumeArrayOutput {
+	return o.ApplyT(func(v *Instance) InstanceDataVolumeArrayOutput { return v.DataVolumes }).(InstanceDataVolumeArrayOutput)
 }
 
 // Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:

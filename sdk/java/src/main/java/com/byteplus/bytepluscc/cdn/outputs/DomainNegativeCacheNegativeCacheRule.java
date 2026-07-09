@@ -15,50 +15,50 @@ import javax.annotation.Nullable;
 public final class DomainNegativeCacheNegativeCacheRule {
     /**
      * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     private @Nullable String action;
     /**
      * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-     *
+     * 
      */
     private @Nullable Boolean ignoreCase;
     /**
      * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-     *
+     * 
      */
     private @Nullable String statusCode;
     /**
      * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-     *
+     * 
      */
     private @Nullable Integer ttl;
 
     private DomainNegativeCacheNegativeCacheRule() {}
     /**
      * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     public Optional<String> action() {
         return Optional.ofNullable(this.action);
     }
     /**
      * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-     *
+     * 
      */
     public Optional<Boolean> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
     }
     /**
      * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-     *
+     * 
      */
     public Optional<String> statusCode() {
         return Optional.ofNullable(this.statusCode);
     }
     /**
      * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-     *
+     * 
      */
     public Optional<Integer> ttl() {
         return Optional.ofNullable(this.ttl);

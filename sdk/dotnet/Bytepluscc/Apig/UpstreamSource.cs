@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
     /// The API Gateway supports cluster registration based on container services (VKE) and container service clusters. Import clusters into the API Gateway instance to use them as Upstream sources, allowing the gateway to retrieve the Service list from the cluster
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var upstreamSourceNacosDemo = new Bytepluscc.Apig.UpstreamSource("UpstreamSourceNacosDemo", new()
     ///     {
@@ -30,12 +30,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     ///         SourceType = "Nacos",
     ///         SourceSpec = new Bytepluscc.Apig.Inputs.UpstreamSourceSourceSpecArgs
     ///         {
-    ///             Nacos_source =
+    ///             Nacos_source = 
     ///             {
     ///                 { "nacosId", "nd3thmnjdl46p917xxxxx" },
-    ///                 { "authConfig",
+    ///                 { "authConfig", 
     ///                 {
-    ///                     { "basic",
+    ///                     { "basic", 
     ///                     {
     ///                         { "username", "nacos" },
     ///                         { "password", "******" },
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:apig/upstreamSource:UpstreamSource example "upstream_source_id"
     /// ```

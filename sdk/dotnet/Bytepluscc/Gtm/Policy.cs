@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
 {
     /// <summary>
     /// Scheduling policy configuration under the GTM instance, identified by GtmId and PolicyType, and maintained via UpdatePolicy.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var gTMPolicyDemo = new Bytepluscc.Gtm.Policy("GTMPolicyDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Gtm
     ///         AlarmOnly = false,
     ///         RoutingMode = "geo-lb",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:gtm/policy:Policy example "gtm_id|policy_type"
     /// ```

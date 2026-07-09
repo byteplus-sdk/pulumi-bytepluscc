@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Unidirectional, private network connection established between the endpoint and the endpoint service
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,17 +39,17 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var privateLinkVpcEndpointConnectionDemo = new VpcEndpointConnection("privateLinkVpcEndpointConnectionDemo", VpcEndpointConnectionArgs.builder()
  *             .endpointId("ep-2rxb5wrxxxxxxxukcknq")
  *             .serviceId("epsvc-1mg2xrmsxxxxxxxxconsso")
- *             .resourcesAllocates(
+ *             .resourcesAllocates(            
  *                 VpcEndpointConnectionResourcesAllocateArgs.builder()
  *                     .resource_id("clb-13g8lgxxxxxxx6nu5ajtpp2")
  *                     .zone_id("cn-beijing-c")
@@ -59,130 +59,130 @@ import javax.annotation.Nullable;
  *                     .zone_id("cn-beijing-b")
  *                     .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection example &#34;service_id|endpoint_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:privatelink/vpcEndpointConnection:VpcEndpointConnection")
 public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     /**
      * Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-     *
+     * 
      */
     @Export(name="bps", refs={Integer.class}, tree="[0]")
     private Output<Integer> bps;
 
     /**
      * @return Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-     *
+     * 
      */
     public Output<Integer> bps() {
         return this.bps;
     }
     /**
      * Status of the endpoint connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted
-     *
+     * 
      */
     @Export(name="connectionStatus", refs={String.class}, tree="[0]")
     private Output<String> connectionStatus;
 
     /**
      * @return Status of the endpoint connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted
-     *
+     * 
      */
     public Output<String> connectionStatus() {
         return this.connectionStatus;
     }
     /**
      * Creation time of the endpoint connection
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the endpoint connection
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Endpoint ID
-     *
+     * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Endpoint ID
-     *
+     * 
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Account ID to which the endpoint belongs
-     *
+     * 
      */
     @Export(name="endpointOwnerAccountId", refs={String.class}, tree="[0]")
     private Output<String> endpointOwnerAccountId;
 
     /**
      * @return Account ID to which the endpoint belongs
-     *
+     * 
      */
     public Output<String> endpointOwnerAccountId() {
         return this.endpointOwnerAccountId;
     }
     /**
      * ID of the VPC to which the endpoint network interface belongs
-     *
+     * 
      */
     @Export(name="endpointVpcId", refs={String.class}, tree="[0]")
     private Output<String> endpointVpcId;
 
     /**
      * @return ID of the VPC to which the endpoint network interface belongs
-     *
+     * 
      */
     public Output<String> endpointVpcId() {
         return this.endpointVpcId;
     }
     /**
      * New service resource ID
-     *
+     * 
      */
     @Export(name="replaceResourceId", refs={String.class}, tree="[0]")
     private Output<String> replaceResourceId;
 
     /**
      * @return New service resource ID
-     *
+     * 
      */
     public Output<String> replaceResourceId() {
         return this.replaceResourceId;
     }
     /**
      * Whether to operate the endpoint connection for seamless service resource replacement. true: yes, disconnect the old service resource for the seamless replacement endpoint connection. false: no, reject the specified endpoint connection. If this parameter is empty, the specified endpoint connection is rejected
-     *
+     * 
      */
     @Export(name="replacingResource", refs={String.class}, tree="[0]")
     private Output<String> replacingResource;
 
     /**
      * @return Whether to operate the endpoint connection for seamless service resource replacement. true: yes, disconnect the old service resource for the seamless replacement endpoint connection. false: no, reject the specified endpoint connection. If this parameter is empty, the specified endpoint connection is rejected
-     *
+     * 
      */
     public Output<String> replacingResource() {
         return this.replacingResource;
@@ -190,7 +190,7 @@ public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     /**
      * Specified service resource
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="resourcesAllocates", refs={List.class,VpcEndpointConnectionResourcesAllocate.class}, tree="[0,1]")
     private Output<List<VpcEndpointConnectionResourcesAllocate>> resourcesAllocates;
@@ -198,49 +198,49 @@ public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     /**
      * @return Specified service resource
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcEndpointConnectionResourcesAllocate>> resourcesAllocates() {
         return this.resourcesAllocates;
     }
     /**
      * Endpoint service ID
-     *
+     * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return Endpoint service ID
-     *
+     * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Most recent operation time of the endpoint connection
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the endpoint connection
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * Endpoint zone ID
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Endpoint zone ID
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -248,7 +248,7 @@ public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     /**
      * Details of the endpoint zone
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="zones", refs={List.class,VpcEndpointConnectionZone.class}, tree="[0,1]")
     private Output<List<VpcEndpointConnectionZone>> zones;
@@ -256,7 +256,7 @@ public class VpcEndpointConnection extends com.pulumi.resources.CustomResource {
     /**
      * @return Details of the endpoint zone
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcEndpointConnectionZone>> zones() {
         return this.zones;

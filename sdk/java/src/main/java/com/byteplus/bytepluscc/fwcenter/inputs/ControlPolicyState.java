@@ -23,14 +23,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Unique user ID.
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Unique user ID.
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -38,14 +38,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Action of the access control policy. accept: allow; deny: block; monitor: observe.
-     *
+     * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
      * @return Action of the access control policy. accept: allow; deny: block; monitor: observe.
-     *
+     * 
      */
     public Optional<Output<String>> action() {
         return Optional.ofNullable(this.action);
@@ -53,14 +53,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Policy description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Policy description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -68,14 +68,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination port. Format is a single port or port range. If protocol type is ICMP/ALL, value is empty; if DestPortType is group, use port address book UUID list; if DestPortType is port, use port range.
-     *
+     * 
      */
     @Import(name="destPort")
     private @Nullable Output<String> destPort;
 
     /**
      * @return Destination port. Format is a single port or port range. If protocol type is ICMP/ALL, value is empty; if DestPortType is group, use port address book UUID list; if DestPortType is port, use port range.
-     *
+     * 
      */
     public Optional<Output<String>> destPort() {
         return Optional.ofNullable(this.destPort);
@@ -83,14 +83,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination port book type
-     *
+     * 
      */
     @Import(name="destPortGroupType")
     private @Nullable Output<String> destPortGroupType;
 
     /**
      * @return Destination port book type
-     *
+     * 
      */
     public Optional<Output<String>> destPortGroupType() {
         return Optional.ofNullable(this.destPortGroupType);
@@ -99,7 +99,7 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
     /**
      * Destination port list (structured)
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="destPortListV1s")
     private @Nullable Output<List<ControlPolicyDestPortListV1Args>> destPortListV1s;
@@ -107,7 +107,7 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Destination port list (structured)
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ControlPolicyDestPortListV1Args>>> destPortListV1s() {
         return Optional.ofNullable(this.destPortListV1s);
@@ -115,14 +115,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination port list.
-     *
+     * 
      */
     @Import(name="destPortLists")
     private @Nullable Output<List<String>> destPortLists;
 
     /**
      * @return Destination port list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destPortLists() {
         return Optional.ofNullable(this.destPortLists);
@@ -130,14 +130,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination port type. port: port; group: port address book.
-     *
+     * 
      */
     @Import(name="destPortType")
     private @Nullable Output<String> destPortType;
 
     /**
      * @return Destination port type. port: port; group: port address book.
-     *
+     * 
      */
     public Optional<Output<String>> destPortType() {
         return Optional.ofNullable(this.destPortType);
@@ -145,14 +145,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination address of the access control policy. When DestinationType is net, use CIDR; when group, use address book UUID list; when location, use region code; when domain, use domain name.
-     *
+     * 
      */
     @Import(name="destination")
     private @Nullable Output<String> destination;
 
     /**
      * @return Destination address of the access control policy. When DestinationType is net, use CIDR; when group, use address book UUID list; when location, use region code; when domain, use domain name.
-     *
+     * 
      */
     public Optional<Output<String>> destination() {
         return Optional.ofNullable(this.destination);
@@ -161,7 +161,7 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
     /**
      * Destination CIDR list (structured)
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="destinationCidrListV1s")
     private @Nullable Output<List<ControlPolicyDestinationCidrListV1Args>> destinationCidrListV1s;
@@ -169,7 +169,7 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Destination CIDR list (structured)
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ControlPolicyDestinationCidrListV1Args>>> destinationCidrListV1s() {
         return Optional.ofNullable(this.destinationCidrListV1s);
@@ -177,14 +177,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination CIDR list.
-     *
+     * 
      */
     @Import(name="destinationCidrLists")
     private @Nullable Output<List<String>> destinationCidrLists;
 
     /**
      * @return Destination CIDR list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destinationCidrLists() {
         return Optional.ofNullable(this.destinationCidrLists);
@@ -192,14 +192,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination domain name list.
-     *
+     * 
      */
     @Import(name="destinationDomainLists")
     private @Nullable Output<List<String>> destinationDomainLists;
 
     /**
      * @return Destination domain name list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> destinationDomainLists() {
         return Optional.ofNullable(this.destinationDomainLists);
@@ -207,14 +207,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination address book type.
-     *
+     * 
      */
     @Import(name="destinationGroupType")
     private @Nullable Output<String> destinationGroupType;
 
     /**
      * @return Destination address book type.
-     *
+     * 
      */
     public Optional<Output<String>> destinationGroupType() {
         return Optional.ofNullable(this.destinationGroupType);
@@ -222,14 +222,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Destination address type. net: destination subnet (CIDR); group: destination address book; location: destination region; domain: destination domain name
-     *
+     * 
      */
     @Import(name="destinationType")
     private @Nullable Output<String> destinationType;
 
     /**
      * @return Destination address type. net: destination subnet (CIDR); group: destination address book; location: destination region; domain: destination domain name
-     *
+     * 
      */
     public Optional<Output<String>> destinationType() {
         return Optional.ofNullable(this.destinationType);
@@ -237,14 +237,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Direction of the access control policy, indicating the direction of traffic transmission. in: inbound direction; out: outbound direction.
-     *
+     * 
      */
     @Import(name="direction")
     private @Nullable Output<String> direction;
 
     /**
      * @return Direction of the access control policy, indicating the direction of traffic transmission. in: inbound direction; out: outbound direction.
-     *
+     * 
      */
     public Optional<Output<String>> direction() {
         return Optional.ofNullable(this.direction);
@@ -252,14 +252,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Access control policy status. 1: Inactive; 2: Deploying; 3: Active
-     *
+     * 
      */
     @Import(name="effectStatus")
     private @Nullable Output<Integer> effectStatus;
 
     /**
      * @return Access control policy status. 1: Inactive; 2: Deploying; 3: Active
-     *
+     * 
      */
     public Optional<Output<Integer>> effectStatus() {
         return Optional.ofNullable(this.effectStatus);
@@ -267,14 +267,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Policy expiration date, Unix timestamp. If RepeatType is Permanent (always active), this field is not required. If RepeatType is Once (active for a single period) or Daily, Weekly, Monthly (repeatedly active), this field must be filled in.
-     *
+     * 
      */
     @Import(name="endTime")
     private @Nullable Output<Integer> endTime;
 
     /**
      * @return Policy expiration date, Unix timestamp. If RepeatType is Permanent (always active), this field is not required. If RepeatType is Once (active for a single period) or Daily, Weekly, Monthly (repeatedly active), this field must be filled in.
-     *
+     * 
      */
     public Optional<Output<Integer>> endTime() {
         return Optional.ofNullable(this.endTime);
@@ -282,14 +282,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Number of matches.
-     *
+     * 
      */
     @Import(name="hitCnt")
     private @Nullable Output<Integer> hitCnt;
 
     /**
      * @return Number of matches.
-     *
+     * 
      */
     public Optional<Output<Integer>> hitCnt() {
         return Optional.ofNullable(this.hitCnt);
@@ -297,14 +297,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Internet border firewall instance ID.
-     *
+     * 
      */
     @Import(name="internetFirewallId")
     private @Nullable Output<String> internetFirewallId;
 
     /**
      * @return Internet border firewall instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> internetFirewallId() {
         return Optional.ofNullable(this.internetFirewallId);
@@ -312,14 +312,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * IP version. v4: IPv4; v6: IPv6
-     *
+     * 
      */
     @Import(name="ipType")
     private @Nullable Output<String> ipType;
 
     /**
      * @return IP version. v4: IPv4; v6: IPv6
-     *
+     * 
      */
     public Optional<Output<String>> ipType() {
         return Optional.ofNullable(this.ipType);
@@ -327,14 +327,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Whether the access control policy is active. true: active; false: inactive.
-     *
+     * 
      */
     @Import(name="isEffected")
     private @Nullable Output<Boolean> isEffected;
 
     /**
      * @return Whether the access control policy is active. true: active; false: inactive.
-     *
+     * 
      */
     public Optional<Output<Boolean>> isEffected() {
         return Optional.ofNullable(this.isEffected);
@@ -342,14 +342,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Policy priority. The lower the value, the higher the priority. 0: lowest priority; 1: highest priority; other values: other priorities. Default value is 0 (lowest priority). When modifying, this parameter represents the policy&#39;s position in the policy list (cannot be set to 0).
-     *
+     * 
      */
     @Import(name="prio")
     private @Nullable Output<Integer> prio;
 
     /**
      * @return Policy priority. The lower the value, the higher the priority. 0: lowest priority; 1: highest priority; other values: other priorities. Default value is 0 (lowest priority). When modifying, this parameter represents the policy&#39;s position in the policy list (cannot be set to 0).
-     *
+     * 
      */
     public Optional<Output<Integer>> prio() {
         return Optional.ofNullable(this.prio);
@@ -357,14 +357,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Protocol type. ICMP, TCP, UDP, ANY (any protocol). When DestinationType is domain, protocol type must be TCP.
-     *
+     * 
      */
     @Import(name="proto")
     private @Nullable Output<String> proto;
 
     /**
      * @return Protocol type. ICMP, TCP, UDP, ANY (any protocol). When DestinationType is domain, protocol type must be TCP.
-     *
+     * 
      */
     public Optional<Output<String>> proto() {
         return Optional.ofNullable(this.proto);
@@ -372,14 +372,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Recurring effective period. Required when RepeatType is Weekly or Monthly. Weekly value range: [0,6]; Monthly value range: [1,31]
-     *
+     * 
      */
     @Import(name="repeatDays")
     private @Nullable Output<List<Integer>> repeatDays;
 
     /**
      * @return Recurring effective period. Required when RepeatType is Weekly or Monthly. Weekly value range: [0,6]; Monthly value range: [1,31]
-     *
+     * 
      */
     public Optional<Output<List<Integer>>> repeatDays() {
         return Optional.ofNullable(this.repeatDays);
@@ -387,14 +387,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Repeat expiration time. Accurate to the minute, format is hh:mm.
-     *
+     * 
      */
     @Import(name="repeatEndTime")
     private @Nullable Output<String> repeatEndTime;
 
     /**
      * @return Repeat expiration time. Accurate to the minute, format is hh:mm.
-     *
+     * 
      */
     public Optional<Output<String>> repeatEndTime() {
         return Optional.ofNullable(this.repeatEndTime);
@@ -402,14 +402,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Repeat start time. Accurate to the minute, format is hh:mm. Required when RepeatType is Daily, Weekly, or Monthly (repeatedly active).
-     *
+     * 
      */
     @Import(name="repeatStartTime")
     private @Nullable Output<String> repeatStartTime;
 
     /**
      * @return Repeat start time. Accurate to the minute, format is hh:mm. Required when RepeatType is Daily, Weekly, or Monthly (repeatedly active).
-     *
+     * 
      */
     public Optional<Output<String>> repeatStartTime() {
         return Optional.ofNullable(this.repeatStartTime);
@@ -417,14 +417,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Repeat type. Permanent: always active; Once: active once; Daily: repeats daily; Weekly: repeats weekly; Monthly: repeats monthly.
-     *
+     * 
      */
     @Import(name="repeatType")
     private @Nullable Output<String> repeatType;
 
     /**
      * @return Repeat type. Permanent: always active; Once: active once; Daily: repeats daily; Weekly: repeats weekly; Monthly: repeats monthly.
-     *
+     * 
      */
     public Optional<Output<String>> repeatType() {
         return Optional.ofNullable(this.repeatType);
@@ -432,14 +432,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Unique ID of the access control policy, used to uniquely identify an access control policy.
-     *
+     * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Unique ID of the access control policy, used to uniquely identify an access control policy.
-     *
+     * 
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -447,14 +447,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Source address. When SourceType is net, use CIDR; when group, use address book UUID list; when location, use region code.
-     *
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
      * @return Source address. When SourceType is net, use CIDR; when group, use address book UUID list; when location, use region code.
-     *
+     * 
      */
     public Optional<Output<String>> source() {
         return Optional.ofNullable(this.source);
@@ -463,7 +463,7 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
     /**
      * Source CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="sourceCidrListV1s")
     private @Nullable Output<List<ControlPolicySourceCidrListV1Args>> sourceCidrListV1s;
@@ -471,7 +471,7 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Source CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ControlPolicySourceCidrListV1Args>>> sourceCidrListV1s() {
         return Optional.ofNullable(this.sourceCidrListV1s);
@@ -479,14 +479,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Source CIDR list
-     *
+     * 
      */
     @Import(name="sourceCidrLists")
     private @Nullable Output<List<String>> sourceCidrLists;
 
     /**
      * @return Source CIDR list
-     *
+     * 
      */
     public Optional<Output<List<String>>> sourceCidrLists() {
         return Optional.ofNullable(this.sourceCidrLists);
@@ -494,14 +494,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Source address book type
-     *
+     * 
      */
     @Import(name="sourceGroupType")
     private @Nullable Output<String> sourceGroupType;
 
     /**
      * @return Source address book type
-     *
+     * 
      */
     public Optional<Output<String>> sourceGroupType() {
         return Optional.ofNullable(this.sourceGroupType);
@@ -509,14 +509,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Source address type. net: subnet (CIDR); group: address book; location: region
-     *
+     * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
      * @return Source address type. net: subnet (CIDR); group: address book; location: region
-     *
+     * 
      */
     public Optional<Output<String>> sourceType() {
         return Optional.ofNullable(this.sourceType);
@@ -524,14 +524,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Policy effective start date, Unix timestamp. Not required when RepeatType is Permanent (always effective). Required when RepeatType is Once (single period effective) or Daily, Weekly, Monthly (recurring effective)
-     *
+     * 
      */
     @Import(name="startTime")
     private @Nullable Output<Integer> startTime;
 
     /**
      * @return Policy effective start date, Unix timestamp. Not required when RepeatType is Permanent (always effective). Required when RepeatType is Once (single period effective) or Daily, Weekly, Monthly (recurring effective)
-     *
+     * 
      */
     public Optional<Output<Integer>> startTime() {
         return Optional.ofNullable(this.startTime);
@@ -539,14 +539,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Policy enable status. true: Enabled; false: Disabled
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<Boolean> status;
 
     /**
      * @return Policy enable status. true: Enabled; false: Disabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> status() {
         return Optional.ofNullable(this.status);
@@ -554,14 +554,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Last update time of the access control policy, Unix timestamp.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<Integer> updateTime;
 
     /**
      * @return Last update time of the access control policy, Unix timestamp.
-     *
+     * 
      */
     public Optional<Output<Integer>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -569,14 +569,14 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Number of policies in use.
-     *
+     * 
      */
     @Import(name="useCount")
     private @Nullable Output<Integer> useCount;
 
     /**
      * @return Number of policies in use.
-     *
+     * 
      */
     public Optional<Output<Integer>> useCount() {
         return Optional.ofNullable(this.useCount);
@@ -644,9 +644,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param accountId Unique user ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -655,9 +655,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param accountId Unique user ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -665,9 +665,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param action Action of the access control policy. accept: allow; deny: block; monitor: observe.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(@Nullable Output<String> action) {
             $.action = action;
@@ -676,9 +676,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param action Action of the access control policy. accept: allow; deny: block; monitor: observe.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(String action) {
             return action(Output.of(action));
@@ -686,9 +686,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Policy description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -697,9 +697,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Policy description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -707,9 +707,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPort Destination port. Format is a single port or port range. If protocol type is ICMP/ALL, value is empty; if DestPortType is group, use port address book UUID list; if DestPortType is port, use port range.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPort(@Nullable Output<String> destPort) {
             $.destPort = destPort;
@@ -718,9 +718,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPort Destination port. Format is a single port or port range. If protocol type is ICMP/ALL, value is empty; if DestPortType is group, use port address book UUID list; if DestPortType is port, use port range.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPort(String destPort) {
             return destPort(Output.of(destPort));
@@ -728,9 +728,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortGroupType Destination port book type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortGroupType(@Nullable Output<String> destPortGroupType) {
             $.destPortGroupType = destPortGroupType;
@@ -739,9 +739,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortGroupType Destination port book type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortGroupType(String destPortGroupType) {
             return destPortGroupType(Output.of(destPortGroupType));
@@ -750,9 +750,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param destPortListV1s Destination port list (structured)
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortListV1s(@Nullable Output<List<ControlPolicyDestPortListV1Args>> destPortListV1s) {
             $.destPortListV1s = destPortListV1s;
@@ -762,9 +762,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param destPortListV1s Destination port list (structured)
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortListV1s(List<ControlPolicyDestPortListV1Args> destPortListV1s) {
             return destPortListV1s(Output.of(destPortListV1s));
@@ -773,9 +773,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param destPortListV1s Destination port list (structured)
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortListV1s(ControlPolicyDestPortListV1Args... destPortListV1s) {
             return destPortListV1s(List.of(destPortListV1s));
@@ -783,9 +783,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortLists Destination port list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortLists(@Nullable Output<List<String>> destPortLists) {
             $.destPortLists = destPortLists;
@@ -794,9 +794,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortLists Destination port list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortLists(List<String> destPortLists) {
             return destPortLists(Output.of(destPortLists));
@@ -804,9 +804,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortLists Destination port list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortLists(String... destPortLists) {
             return destPortLists(List.of(destPortLists));
@@ -814,9 +814,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortType Destination port type. port: port; group: port address book.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortType(@Nullable Output<String> destPortType) {
             $.destPortType = destPortType;
@@ -825,9 +825,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destPortType Destination port type. port: port; group: port address book.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destPortType(String destPortType) {
             return destPortType(Output.of(destPortType));
@@ -835,9 +835,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destination Destination address of the access control policy. When DestinationType is net, use CIDR; when group, use address book UUID list; when location, use region code; when domain, use domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destination(@Nullable Output<String> destination) {
             $.destination = destination;
@@ -846,9 +846,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destination Destination address of the access control policy. When DestinationType is net, use CIDR; when group, use address book UUID list; when location, use region code; when domain, use domain name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destination(String destination) {
             return destination(Output.of(destination));
@@ -857,9 +857,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param destinationCidrListV1s Destination CIDR list (structured)
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrListV1s(@Nullable Output<List<ControlPolicyDestinationCidrListV1Args>> destinationCidrListV1s) {
             $.destinationCidrListV1s = destinationCidrListV1s;
@@ -869,9 +869,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param destinationCidrListV1s Destination CIDR list (structured)
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrListV1s(List<ControlPolicyDestinationCidrListV1Args> destinationCidrListV1s) {
             return destinationCidrListV1s(Output.of(destinationCidrListV1s));
@@ -880,9 +880,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param destinationCidrListV1s Destination CIDR list (structured)
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrListV1s(ControlPolicyDestinationCidrListV1Args... destinationCidrListV1s) {
             return destinationCidrListV1s(List.of(destinationCidrListV1s));
@@ -890,9 +890,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationCidrLists Destination CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrLists(@Nullable Output<List<String>> destinationCidrLists) {
             $.destinationCidrLists = destinationCidrLists;
@@ -901,9 +901,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationCidrLists Destination CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrLists(List<String> destinationCidrLists) {
             return destinationCidrLists(Output.of(destinationCidrLists));
@@ -911,9 +911,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationCidrLists Destination CIDR list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrLists(String... destinationCidrLists) {
             return destinationCidrLists(List.of(destinationCidrLists));
@@ -921,9 +921,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationDomainLists Destination domain name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationDomainLists(@Nullable Output<List<String>> destinationDomainLists) {
             $.destinationDomainLists = destinationDomainLists;
@@ -932,9 +932,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationDomainLists Destination domain name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationDomainLists(List<String> destinationDomainLists) {
             return destinationDomainLists(Output.of(destinationDomainLists));
@@ -942,9 +942,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationDomainLists Destination domain name list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationDomainLists(String... destinationDomainLists) {
             return destinationDomainLists(List.of(destinationDomainLists));
@@ -952,9 +952,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationGroupType Destination address book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupType(@Nullable Output<String> destinationGroupType) {
             $.destinationGroupType = destinationGroupType;
@@ -963,9 +963,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationGroupType Destination address book type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationGroupType(String destinationGroupType) {
             return destinationGroupType(Output.of(destinationGroupType));
@@ -973,9 +973,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationType Destination address type. net: destination subnet (CIDR); group: destination address book; location: destination region; domain: destination domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationType(@Nullable Output<String> destinationType) {
             $.destinationType = destinationType;
@@ -984,9 +984,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param destinationType Destination address type. net: destination subnet (CIDR); group: destination address book; location: destination region; domain: destination domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationType(String destinationType) {
             return destinationType(Output.of(destinationType));
@@ -994,9 +994,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param direction Direction of the access control policy, indicating the direction of traffic transmission. in: inbound direction; out: outbound direction.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder direction(@Nullable Output<String> direction) {
             $.direction = direction;
@@ -1005,9 +1005,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param direction Direction of the access control policy, indicating the direction of traffic transmission. in: inbound direction; out: outbound direction.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder direction(String direction) {
             return direction(Output.of(direction));
@@ -1015,9 +1015,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param effectStatus Access control policy status. 1: Inactive; 2: Deploying; 3: Active
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effectStatus(@Nullable Output<Integer> effectStatus) {
             $.effectStatus = effectStatus;
@@ -1026,9 +1026,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param effectStatus Access control policy status. 1: Inactive; 2: Deploying; 3: Active
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effectStatus(Integer effectStatus) {
             return effectStatus(Output.of(effectStatus));
@@ -1036,9 +1036,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param endTime Policy expiration date, Unix timestamp. If RepeatType is Permanent (always active), this field is not required. If RepeatType is Once (active for a single period) or Daily, Weekly, Monthly (repeatedly active), this field must be filled in.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endTime(@Nullable Output<Integer> endTime) {
             $.endTime = endTime;
@@ -1047,9 +1047,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param endTime Policy expiration date, Unix timestamp. If RepeatType is Permanent (always active), this field is not required. If RepeatType is Once (active for a single period) or Daily, Weekly, Monthly (repeatedly active), this field must be filled in.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endTime(Integer endTime) {
             return endTime(Output.of(endTime));
@@ -1057,9 +1057,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param hitCnt Number of matches.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hitCnt(@Nullable Output<Integer> hitCnt) {
             $.hitCnt = hitCnt;
@@ -1068,9 +1068,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param hitCnt Number of matches.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hitCnt(Integer hitCnt) {
             return hitCnt(Output.of(hitCnt));
@@ -1078,9 +1078,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param internetFirewallId Internet border firewall instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder internetFirewallId(@Nullable Output<String> internetFirewallId) {
             $.internetFirewallId = internetFirewallId;
@@ -1089,9 +1089,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param internetFirewallId Internet border firewall instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder internetFirewallId(String internetFirewallId) {
             return internetFirewallId(Output.of(internetFirewallId));
@@ -1099,9 +1099,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param ipType IP version. v4: IPv4; v6: IPv6
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipType(@Nullable Output<String> ipType) {
             $.ipType = ipType;
@@ -1110,9 +1110,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param ipType IP version. v4: IPv4; v6: IPv6
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipType(String ipType) {
             return ipType(Output.of(ipType));
@@ -1120,9 +1120,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param isEffected Whether the access control policy is active. true: active; false: inactive.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isEffected(@Nullable Output<Boolean> isEffected) {
             $.isEffected = isEffected;
@@ -1131,9 +1131,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param isEffected Whether the access control policy is active. true: active; false: inactive.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder isEffected(Boolean isEffected) {
             return isEffected(Output.of(isEffected));
@@ -1141,9 +1141,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param prio Policy priority. The lower the value, the higher the priority. 0: lowest priority; 1: highest priority; other values: other priorities. Default value is 0 (lowest priority). When modifying, this parameter represents the policy&#39;s position in the policy list (cannot be set to 0).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder prio(@Nullable Output<Integer> prio) {
             $.prio = prio;
@@ -1152,9 +1152,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param prio Policy priority. The lower the value, the higher the priority. 0: lowest priority; 1: highest priority; other values: other priorities. Default value is 0 (lowest priority). When modifying, this parameter represents the policy&#39;s position in the policy list (cannot be set to 0).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder prio(Integer prio) {
             return prio(Output.of(prio));
@@ -1162,9 +1162,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param proto Protocol type. ICMP, TCP, UDP, ANY (any protocol). When DestinationType is domain, protocol type must be TCP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proto(@Nullable Output<String> proto) {
             $.proto = proto;
@@ -1173,9 +1173,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param proto Protocol type. ICMP, TCP, UDP, ANY (any protocol). When DestinationType is domain, protocol type must be TCP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proto(String proto) {
             return proto(Output.of(proto));
@@ -1183,9 +1183,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatDays Recurring effective period. Required when RepeatType is Weekly or Monthly. Weekly value range: [0,6]; Monthly value range: [1,31]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(@Nullable Output<List<Integer>> repeatDays) {
             $.repeatDays = repeatDays;
@@ -1194,9 +1194,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatDays Recurring effective period. Required when RepeatType is Weekly or Monthly. Weekly value range: [0,6]; Monthly value range: [1,31]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(List<Integer> repeatDays) {
             return repeatDays(Output.of(repeatDays));
@@ -1204,9 +1204,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatDays Recurring effective period. Required when RepeatType is Weekly or Monthly. Weekly value range: [0,6]; Monthly value range: [1,31]
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(Integer... repeatDays) {
             return repeatDays(List.of(repeatDays));
@@ -1214,9 +1214,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatEndTime Repeat expiration time. Accurate to the minute, format is hh:mm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatEndTime(@Nullable Output<String> repeatEndTime) {
             $.repeatEndTime = repeatEndTime;
@@ -1225,9 +1225,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatEndTime Repeat expiration time. Accurate to the minute, format is hh:mm.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatEndTime(String repeatEndTime) {
             return repeatEndTime(Output.of(repeatEndTime));
@@ -1235,9 +1235,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatStartTime Repeat start time. Accurate to the minute, format is hh:mm. Required when RepeatType is Daily, Weekly, or Monthly (repeatedly active).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatStartTime(@Nullable Output<String> repeatStartTime) {
             $.repeatStartTime = repeatStartTime;
@@ -1246,9 +1246,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatStartTime Repeat start time. Accurate to the minute, format is hh:mm. Required when RepeatType is Daily, Weekly, or Monthly (repeatedly active).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatStartTime(String repeatStartTime) {
             return repeatStartTime(Output.of(repeatStartTime));
@@ -1256,9 +1256,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatType Repeat type. Permanent: always active; Once: active once; Daily: repeats daily; Weekly: repeats weekly; Monthly: repeats monthly.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatType(@Nullable Output<String> repeatType) {
             $.repeatType = repeatType;
@@ -1267,9 +1267,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatType Repeat type. Permanent: always active; Once: active once; Daily: repeats daily; Weekly: repeats weekly; Monthly: repeats monthly.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatType(String repeatType) {
             return repeatType(Output.of(repeatType));
@@ -1277,9 +1277,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param ruleId Unique ID of the access control policy, used to uniquely identify an access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -1288,9 +1288,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param ruleId Unique ID of the access control policy, used to uniquely identify an access control policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -1298,9 +1298,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param source Source address. When SourceType is net, use CIDR; when group, use address book UUID list; when location, use region code.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(@Nullable Output<String> source) {
             $.source = source;
@@ -1309,9 +1309,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param source Source address. When SourceType is net, use CIDR; when group, use address book UUID list; when location, use region code.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(String source) {
             return source(Output.of(source));
@@ -1320,9 +1320,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param sourceCidrListV1s Source CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrListV1s(@Nullable Output<List<ControlPolicySourceCidrListV1Args>> sourceCidrListV1s) {
             $.sourceCidrListV1s = sourceCidrListV1s;
@@ -1332,9 +1332,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param sourceCidrListV1s Source CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrListV1s(List<ControlPolicySourceCidrListV1Args> sourceCidrListV1s) {
             return sourceCidrListV1s(Output.of(sourceCidrListV1s));
@@ -1343,9 +1343,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param sourceCidrListV1s Source CIDR list (structured).
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrListV1s(ControlPolicySourceCidrListV1Args... sourceCidrListV1s) {
             return sourceCidrListV1s(List.of(sourceCidrListV1s));
@@ -1353,9 +1353,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceCidrLists Source CIDR list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrLists(@Nullable Output<List<String>> sourceCidrLists) {
             $.sourceCidrLists = sourceCidrLists;
@@ -1364,9 +1364,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceCidrLists Source CIDR list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrLists(List<String> sourceCidrLists) {
             return sourceCidrLists(Output.of(sourceCidrLists));
@@ -1374,9 +1374,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceCidrLists Source CIDR list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceCidrLists(String... sourceCidrLists) {
             return sourceCidrLists(List.of(sourceCidrLists));
@@ -1384,9 +1384,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceGroupType Source address book type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceGroupType(@Nullable Output<String> sourceGroupType) {
             $.sourceGroupType = sourceGroupType;
@@ -1395,9 +1395,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceGroupType Source address book type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceGroupType(String sourceGroupType) {
             return sourceGroupType(Output.of(sourceGroupType));
@@ -1405,9 +1405,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceType Source address type. net: subnet (CIDR); group: address book; location: region
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(@Nullable Output<String> sourceType) {
             $.sourceType = sourceType;
@@ -1416,9 +1416,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sourceType Source address type. net: subnet (CIDR); group: address book; location: region
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(String sourceType) {
             return sourceType(Output.of(sourceType));
@@ -1426,9 +1426,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param startTime Policy effective start date, Unix timestamp. Not required when RepeatType is Permanent (always effective). Required when RepeatType is Once (single period effective) or Daily, Weekly, Monthly (recurring effective)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startTime(@Nullable Output<Integer> startTime) {
             $.startTime = startTime;
@@ -1437,9 +1437,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param startTime Policy effective start date, Unix timestamp. Not required when RepeatType is Permanent (always effective). Required when RepeatType is Once (single period effective) or Daily, Weekly, Monthly (recurring effective)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startTime(Integer startTime) {
             return startTime(Output.of(startTime));
@@ -1447,9 +1447,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Policy enable status. true: Enabled; false: Disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<Boolean> status) {
             $.status = status;
@@ -1458,9 +1458,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Policy enable status. true: Enabled; false: Disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(Boolean status) {
             return status(Output.of(status));
@@ -1468,9 +1468,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updateTime Last update time of the access control policy, Unix timestamp.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<Integer> updateTime) {
             $.updateTime = updateTime;
@@ -1479,9 +1479,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updateTime Last update time of the access control policy, Unix timestamp.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(Integer updateTime) {
             return updateTime(Output.of(updateTime));
@@ -1489,9 +1489,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param useCount Number of policies in use.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder useCount(@Nullable Output<Integer> useCount) {
             $.useCount = useCount;
@@ -1500,9 +1500,9 @@ public final class ControlPolicyState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param useCount Number of policies in use.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder useCount(Integer useCount) {
             return useCount(Output.of(useCount));

@@ -19,14 +19,14 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SAML Identity Provider Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return SAML Identity Provider Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -34,14 +34,14 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Base64 Encoded SAML Identity Provider Metadata File
-     *
+     * 
      */
     @Import(name="encodedSamlMetadataDocument", required=true)
     private Output<String> encodedSamlMetadataDocument;
 
     /**
      * @return Base64 Encoded SAML Identity Provider Metadata File
-     *
+     * 
      */
     public Output<String> encodedSamlMetadataDocument() {
         return this.encodedSamlMetadataDocument;
@@ -49,14 +49,14 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SAML Identity Provider Name
-     *
+     * 
      */
     @Import(name="samlProviderName", required=true)
     private Output<String> samlProviderName;
 
     /**
      * @return SAML Identity Provider Name
-     *
+     * 
      */
     public Output<String> samlProviderName() {
         return this.samlProviderName;
@@ -66,7 +66,7 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
      * Identity Provider SSO Type
      *   1. Role SSO
      *   2. User SSO
-     *
+     * 
      */
     @Import(name="ssoType", required=true)
     private Output<Integer> ssoType;
@@ -75,7 +75,7 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
      * @return Identity Provider SSO Type
      *   1. Role SSO
      *   2. User SSO
-     *
+     * 
      */
     public Output<Integer> ssoType() {
         return this.ssoType;
@@ -86,7 +86,7 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
      *   1. Enabled
      *   2. Enabled and other login methods disabled
      *   3. Disabled
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
@@ -96,7 +96,7 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
      *   1. Enabled
      *   2. Enabled and other login methods disabled
      *   3. Disabled
-     *
+     * 
      */
     public Optional<Output<Integer>> status() {
         return Optional.ofNullable(this.status);
@@ -132,9 +132,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description SAML Identity Provider Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -143,9 +143,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description SAML Identity Provider Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -153,9 +153,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param encodedSamlMetadataDocument Base64 Encoded SAML Identity Provider Metadata File
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder encodedSamlMetadataDocument(Output<String> encodedSamlMetadataDocument) {
             $.encodedSamlMetadataDocument = encodedSamlMetadataDocument;
@@ -164,9 +164,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param encodedSamlMetadataDocument Base64 Encoded SAML Identity Provider Metadata File
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder encodedSamlMetadataDocument(String encodedSamlMetadataDocument) {
             return encodedSamlMetadataDocument(Output.of(encodedSamlMetadataDocument));
@@ -174,9 +174,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param samlProviderName SAML Identity Provider Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder samlProviderName(Output<String> samlProviderName) {
             $.samlProviderName = samlProviderName;
@@ -185,9 +185,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param samlProviderName SAML Identity Provider Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder samlProviderName(String samlProviderName) {
             return samlProviderName(Output.of(samlProviderName));
@@ -197,9 +197,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @param ssoType Identity Provider SSO Type
          *   1. Role SSO
          *   2. User SSO
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ssoType(Output<Integer> ssoType) {
             $.ssoType = ssoType;
@@ -210,9 +210,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
          * @param ssoType Identity Provider SSO Type
          *   1. Role SSO
          *   2. User SSO
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ssoType(Integer ssoType) {
             return ssoType(Output.of(ssoType));
@@ -223,9 +223,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
          *   1. Enabled
          *   2. Enabled and other login methods disabled
          *   3. Disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<Integer> status) {
             $.status = status;
@@ -237,9 +237,9 @@ public final class SamlProviderArgs extends com.pulumi.resources.ResourceArgs {
          *   1. Enabled
          *   2. Enabled and other login methods disabled
          *   3. Disabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(Integer status) {
             return status(Output.of(status));

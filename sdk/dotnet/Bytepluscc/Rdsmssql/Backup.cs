@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
 {
     /// <summary>
     /// Backup list.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSMsSQLBackupDemo = new Bytepluscc.Rdsmssql.Backup("RDSMsSQLBackupDemo", new()
     ///     {
@@ -35,12 +35,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmssql/backup:Backup example "instance_id|backup_id"
     /// ```

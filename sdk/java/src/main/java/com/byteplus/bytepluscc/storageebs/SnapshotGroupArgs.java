@@ -20,14 +20,14 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot consistency group description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Snapshot consistency group description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ECS instance ID of the snapshot consistency group
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return ECS instance ID of the snapshot consistency group
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -50,14 +50,14 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot consistency group name
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Snapshot consistency group name
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -65,14 +65,14 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -81,7 +81,7 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags of the snapshot consistency group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SnapshotGroupTagArgs>> tags;
@@ -89,7 +89,7 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags of the snapshot consistency group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SnapshotGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -97,14 +97,14 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-     *
+     * 
      */
     @Import(name="volumeIds", required=true)
     private Output<List<String>> volumeIds;
 
     /**
      * @return Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-     *
+     * 
      */
     public Output<List<String>> volumeIds() {
         return this.volumeIds;
@@ -141,9 +141,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Snapshot consistency group description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -152,9 +152,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Snapshot consistency group description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -162,9 +162,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId ECS instance ID of the snapshot consistency group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -173,9 +173,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId ECS instance ID of the snapshot consistency group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -183,9 +183,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Snapshot consistency group name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -194,9 +194,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Snapshot consistency group name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -204,9 +204,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -215,9 +215,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -226,9 +226,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags of the snapshot consistency group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SnapshotGroupTagArgs>> tags) {
             $.tags = tags;
@@ -238,9 +238,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags of the snapshot consistency group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SnapshotGroupTagArgs> tags) {
             return tags(Output.of(tags));
@@ -249,9 +249,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags of the snapshot consistency group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SnapshotGroupTagArgs... tags) {
             return tags(List.of(tags));
@@ -259,9 +259,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeIds Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumeIds(Output<List<String>> volumeIds) {
             $.volumeIds = volumeIds;
@@ -270,9 +270,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeIds Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumeIds(List<String> volumeIds) {
             return volumeIds(Output.of(volumeIds));
@@ -280,9 +280,9 @@ public final class SnapshotGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeIds Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumeIds(String... volumeIds) {
             return volumeIds(List.of(volumeIds));

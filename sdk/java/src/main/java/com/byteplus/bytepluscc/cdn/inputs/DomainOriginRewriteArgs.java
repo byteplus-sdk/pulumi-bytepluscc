@@ -20,7 +20,7 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
     /**
      * Represents a list of rules. This parameter is required when Switch is true. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The SourcePath in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="originRewriteRules")
     private @Nullable Output<List<DomainOriginRewriteOriginRewriteRuleArgs>> originRewriteRules;
@@ -28,7 +28,7 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
     /**
      * @return Represents a list of rules. This parameter is required when Switch is true. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The SourcePath in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainOriginRewriteOriginRewriteRuleArgs>>> originRewriteRules() {
         return Optional.ofNullable(this.originRewriteRules);
@@ -36,14 +36,14 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
 
     /**
      * Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-     *
+     * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-     *
+     * 
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -77,9 +77,9 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
         /**
          * @param originRewriteRules Represents a list of rules. This parameter is required when Switch is true. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The SourcePath in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder originRewriteRules(@Nullable Output<List<DomainOriginRewriteOriginRewriteRuleArgs>> originRewriteRules) {
             $.originRewriteRules = originRewriteRules;
@@ -89,9 +89,9 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
         /**
          * @param originRewriteRules Represents a list of rules. This parameter is required when Switch is true. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The SourcePath in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder originRewriteRules(List<DomainOriginRewriteOriginRewriteRuleArgs> originRewriteRules) {
             return originRewriteRules(Output.of(originRewriteRules));
@@ -100,9 +100,9 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
         /**
          * @param originRewriteRules Represents a list of rules. This parameter is required when Switch is true. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The SourcePath in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder originRewriteRules(DomainOriginRewriteOriginRewriteRuleArgs... originRewriteRules) {
             return originRewriteRules(List.of(originRewriteRules));
@@ -110,9 +110,9 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
 
         /**
          * @param switch_ Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -121,9 +121,9 @@ public final class DomainOriginRewriteArgs extends com.pulumi.resources.Resource
 
         /**
          * @param switch_ Indicates whether to enable this module. The parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

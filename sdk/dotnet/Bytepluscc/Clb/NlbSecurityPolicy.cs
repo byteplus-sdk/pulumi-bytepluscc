@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// Some security policies are preset for common scenarios. If the system preset policies do not meet your needs, you can also customize security policies
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cLBNLBSecurityPolicyDemo = new Bytepluscc.Clb.NlbSecurityPolicy("CLBNLBSecurityPolicyDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     ///             "TLSv1.3",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy example "security_policy_id"
     /// ```

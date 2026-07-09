@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Basis for Transit Router to forward traffic, supporting associated forwarding, static routing, route learning, and route synchronization. Multiple TR routing tables can be created under each TR instance to forward traffic for network instances with different access requirements. Multiple network instance connections can be associated with the same TR routing table.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var transitRouterTransitRouterRouteTableDemo = new TransitRouterRouteTable("transitRouterTransitRouterRouteTableDemo", TransitRouterRouteTableArgs.builder()
  *             .transitRouterId("tr-mj7mc0paq******")
@@ -53,88 +53,88 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable example &#34;transit_router_id|transit_router_route_table_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable")
 public class TransitRouterRouteTable extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the TR routing table
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the TR routing table
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the inbound routing policy associated with the TR routing table
-     *
+     * 
      */
     @Export(name="inRoutePolicyTableId", refs={String.class}, tree="[0]")
     private Output<String> inRoutePolicyTableId;
 
     /**
      * @return ID of the inbound routing policy associated with the TR routing table
-     *
+     * 
      */
     public Output<String> inRoutePolicyTableId() {
         return this.inRoutePolicyTableId;
     }
     /**
      * ID of the outbound routing policy associated with the TR routing table
-     *
+     * 
      */
     @Export(name="outRoutePolicyTableId", refs={String.class}, tree="[0]")
     private Output<String> outRoutePolicyTableId;
 
     /**
      * @return ID of the outbound routing policy associated with the TR routing table
-     *
+     * 
      */
     public Output<String> outRoutePolicyTableId() {
         return this.outRoutePolicyTableId;
     }
     /**
      * Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -142,7 +142,7 @@ public class TransitRouterRouteTable extends com.pulumi.resources.CustomResource
     /**
      * Tag information for the TR routing table
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,TransitRouterRouteTableTag.class}, tree="[0,1]")
     private Output<List<TransitRouterRouteTableTag>> tags;
@@ -150,77 +150,77 @@ public class TransitRouterRouteTable extends com.pulumi.resources.CustomResource
     /**
      * @return Tag information for the TR routing table
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TransitRouterRouteTableTag>> tags() {
         return this.tags;
     }
     /**
      * Transit Router instance ID
-     *
+     * 
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
      * @return Transit Router instance ID
-     *
+     * 
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
      * TR routing table ID
-     *
+     * 
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
      * @return TR routing table ID
-     *
+     * 
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
      * Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-     *
+     * 
      */
     @Export(name="transitRouterRouteTableName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableName;
 
     /**
      * @return Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-     *
+     * 
      */
     public Output<String> transitRouterRouteTableName() {
         return this.transitRouterRouteTableName;
     }
     /**
      * Type of TR routing table. System: system routing table. Custom: custom routing table.
-     *
+     * 
      */
     @Export(name="transitRouterRouteTableType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableType;
 
     /**
      * @return Type of TR routing table. System: system routing table. Custom: custom routing table.
-     *
+     * 
      */
     public Output<String> transitRouterRouteTableType() {
         return this.transitRouterRouteTableType;
     }
     /**
      * Last operation time of the TR routing table
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last operation time of the TR routing table
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

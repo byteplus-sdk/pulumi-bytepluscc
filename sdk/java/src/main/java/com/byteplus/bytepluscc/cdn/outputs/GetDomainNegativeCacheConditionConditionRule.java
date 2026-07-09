@@ -12,62 +12,62 @@ import java.util.Objects;
 public final class GetDomainNegativeCacheConditionConditionRule {
     /**
      * @return When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-     *
+     * 
      */
     private String name;
     /**
      * @return Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-     *
+     * 
      */
     private String object;
     /**
      * @return Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-     *
+     * 
      */
     private String operator;
     /**
      * @return Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-     *
+     * 
      */
     private String type;
     /**
      * @return Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-     *
+     * 
      */
     private String value;
 
     private GetDomainNegativeCacheConditionConditionRule() {}
     /**
      * @return When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-     *
+     * 
      */
     public String name() {
         return this.name;
     }
     /**
      * @return Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-     *
+     * 
      */
     public String object() {
         return this.object;
     }
     /**
      * @return Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-     *
+     * 
      */
     public String operator() {
         return this.operator;
     }
     /**
      * @return Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-     *
+     * 
      */
     public String type() {
         return this.type;
     }
     /**
      * @return Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-     *
+     * 
      */
     public String value() {
         return this.value;

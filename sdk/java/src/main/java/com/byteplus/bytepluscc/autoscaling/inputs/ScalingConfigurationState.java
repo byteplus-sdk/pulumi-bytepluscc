@@ -23,14 +23,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Resource creation time (UTC)
-     *
+     * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Resource creation time (UTC)
-     *
+     * 
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -38,14 +38,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Public IP.
-     *
+     * 
      */
     @Import(name="eip")
     private @Nullable Output<ScalingConfigurationEipArgs> eip;
 
     /**
      * @return Public IP.
-     *
+     * 
      */
     public Optional<Output<ScalingConfigurationEipArgs>> eip() {
         return Optional.ofNullable(this.eip);
@@ -53,14 +53,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
-     *
+     * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
      * @return Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
-     *
+     * 
      */
     public Optional<Output<String>> hostName() {
         return Optional.ofNullable(this.hostName);
@@ -68,14 +68,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
-     *
+     * 
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
      * @return ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
-     *
+     * 
      */
     public Optional<Output<String>> hpcClusterId() {
         return Optional.ofNullable(this.hpcClusterId);
@@ -83,14 +83,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Image ID. The image resource used when the scaling group automatically creates an instance
-     *
+     * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
      * @return Image ID. The image resource used when the scaling group automatically creates an instance
-     *
+     * 
      */
     public Optional<Output<String>> imageId() {
         return Optional.ofNullable(this.imageId);
@@ -98,14 +98,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
-     *
+     * 
      */
     @Import(name="instanceChargeType")
     private @Nullable Output<String> instanceChargeType;
 
     /**
      * @return Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
-     *
+     * 
      */
     public Optional<Output<String>> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
@@ -113,14 +113,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     *
+     * 
      */
     @Import(name="instanceDescription")
     private @Nullable Output<String> instanceDescription;
 
     /**
      * @return Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     *
+     * 
      */
     public Optional<Output<String>> instanceDescription() {
         return Optional.ofNullable(this.instanceDescription);
@@ -128,14 +128,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
-     *
+     * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -144,7 +144,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
     /**
      * Specification information for preemptible instances
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="instanceTypeOverrides")
     private @Nullable Output<List<ScalingConfigurationInstanceTypeOverrideArgs>> instanceTypeOverrides;
@@ -152,7 +152,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
     /**
      * @return Specification information for preemptible instances
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ScalingConfigurationInstanceTypeOverrideArgs>>> instanceTypeOverrides() {
         return Optional.ofNullable(this.instanceTypeOverrides);
@@ -160,14 +160,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * List of compute specifications for the instance
-     *
+     * 
      */
     @Import(name="instanceTypes")
     private @Nullable Output<List<String>> instanceTypes;
 
     /**
      * @return List of compute specifications for the instance
-     *
+     * 
      */
     public Optional<Output<List<String>>> instanceTypes() {
         return Optional.ofNullable(this.instanceTypes);
@@ -175,14 +175,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
-     *
+     * 
      */
     @Import(name="ipv6AddressCount")
     private @Nullable Output<Integer> ipv6AddressCount;
 
     /**
      * @return Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
-     *
+     * 
      */
     public Optional<Output<Integer>> ipv6AddressCount() {
         return Optional.ofNullable(this.ipv6AddressCount);
@@ -190,14 +190,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
-     *
+     * 
      */
     @Import(name="keyPairName")
     private @Nullable Output<String> keyPairName;
 
     /**
      * @return Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
-     *
+     * 
      */
     public Optional<Output<String>> keyPairName() {
         return Optional.ofNullable(this.keyPairName);
@@ -205,14 +205,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Lifecycle status. Values: Active (active) / InActive (inactive)
-     *
+     * 
      */
     @Import(name="lifecycleState")
     private @Nullable Output<String> lifecycleState;
 
     /**
      * @return Lifecycle status. Values: Active (active) / InActive (inactive)
-     *
+     * 
      */
     public Optional<Output<String>> lifecycleState() {
         return Optional.ofNullable(this.lifecycleState);
@@ -220,14 +220,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
-     *
+     * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
-     *
+     * 
      */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
@@ -237,7 +237,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
      * The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
      * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
      * Maximum length: 64 characters
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
@@ -246,7 +246,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
      * @return The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
      * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
      * Maximum length: 64 characters
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -254,14 +254,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Scaling configuration ID
-     *
+     * 
      */
     @Import(name="scalingConfigurationId")
     private @Nullable Output<String> scalingConfigurationId;
 
     /**
      * @return Scaling configuration ID
-     *
+     * 
      */
     public Optional<Output<String>> scalingConfigurationId() {
         return Optional.ofNullable(this.scalingConfigurationId);
@@ -269,14 +269,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
-     *
+     * 
      */
     @Import(name="scalingConfigurationName")
     private @Nullable Output<String> scalingConfigurationName;
 
     /**
      * @return Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
-     *
+     * 
      */
     public Optional<Output<String>> scalingConfigurationName() {
         return Optional.ofNullable(this.scalingConfigurationName);
@@ -284,14 +284,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Scaling group ID to which the scaling configuration belongs
-     *
+     * 
      */
     @Import(name="scalingGroupId")
     private @Nullable Output<String> scalingGroupId;
 
     /**
      * @return Scaling group ID to which the scaling configuration belongs
-     *
+     * 
      */
     public Optional<Output<String>> scalingGroupId() {
         return Optional.ofNullable(this.scalingGroupId);
@@ -299,14 +299,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     *
+     * 
      */
     @Import(name="securityEnhancementStrategy")
     private @Nullable Output<String> securityEnhancementStrategy;
 
     /**
      * @return Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     *
+     * 
      */
     public Optional<Output<String>> securityEnhancementStrategy() {
         return Optional.ofNullable(this.securityEnhancementStrategy);
@@ -314,14 +314,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Security group ID associated with the instance&#39;s primary network interface
-     *
+     * 
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
      * @return Security group ID associated with the instance&#39;s primary network interface
-     *
+     * 
      */
     public Optional<Output<List<String>>> securityGroupIds() {
         return Optional.ofNullable(this.securityGroupIds);
@@ -329,14 +329,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
-     *
+     * 
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
      * @return Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
-     *
+     * 
      */
     public Optional<Output<String>> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
@@ -345,7 +345,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
     /**
      * Tag key-value pairs
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ScalingConfigurationTagArgs>> tags;
@@ -353,7 +353,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
     /**
      * @return Tag key-value pairs
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ScalingConfigurationTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -361,14 +361,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Resource update time (UTC)
-     *
+     * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Resource update time (UTC)
-     *
+     * 
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -376,14 +376,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
-     *
+     * 
      */
     @Import(name="userData")
     private @Nullable Output<String> userData;
 
     /**
      * @return Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
-     *
+     * 
      */
     public Optional<Output<String>> userData() {
         return Optional.ofNullable(this.userData);
@@ -392,7 +392,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
     /**
      * Cloud disk
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="volumes")
     private @Nullable Output<List<ScalingConfigurationVolumeArgs>> volumes;
@@ -400,7 +400,7 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
     /**
      * @return Cloud disk
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ScalingConfigurationVolumeArgs>>> volumes() {
         return Optional.ofNullable(this.volumes);
@@ -408,14 +408,14 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
     /**
      * Availability zone ID for the scaling configuration
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID for the scaling configuration
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -472,9 +472,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param createdAt Resource creation time (UTC)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -483,9 +483,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param createdAt Resource creation time (UTC)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -493,9 +493,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param eip Public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eip(@Nullable Output<ScalingConfigurationEipArgs> eip) {
             $.eip = eip;
@@ -504,9 +504,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param eip Public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eip(ScalingConfigurationEipArgs eip) {
             return eip(Output.of(eip));
@@ -514,9 +514,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param hostName Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostName(@Nullable Output<String> hostName) {
             $.hostName = hostName;
@@ -525,9 +525,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param hostName Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostName(String hostName) {
             return hostName(Output.of(hostName));
@@ -535,9 +535,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param hpcClusterId ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterId(@Nullable Output<String> hpcClusterId) {
             $.hpcClusterId = hpcClusterId;
@@ -546,9 +546,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param hpcClusterId ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterId(String hpcClusterId) {
             return hpcClusterId(Output.of(hpcClusterId));
@@ -556,9 +556,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param imageId Image ID. The image resource used when the scaling group automatically creates an instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder imageId(@Nullable Output<String> imageId) {
             $.imageId = imageId;
@@ -567,9 +567,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param imageId Image ID. The image resource used when the scaling group automatically creates an instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder imageId(String imageId) {
             return imageId(Output.of(imageId));
@@ -577,9 +577,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceChargeType Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceChargeType(@Nullable Output<String> instanceChargeType) {
             $.instanceChargeType = instanceChargeType;
@@ -588,9 +588,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceChargeType Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceChargeType(String instanceChargeType) {
             return instanceChargeType(Output.of(instanceChargeType));
@@ -598,9 +598,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceDescription Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceDescription(@Nullable Output<String> instanceDescription) {
             $.instanceDescription = instanceDescription;
@@ -609,9 +609,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceDescription Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceDescription(String instanceDescription) {
             return instanceDescription(Output.of(instanceDescription));
@@ -619,9 +619,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceName Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -630,9 +630,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceName Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -641,9 +641,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param instanceTypeOverrides Specification information for preemptible instances
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeOverrides(@Nullable Output<List<ScalingConfigurationInstanceTypeOverrideArgs>> instanceTypeOverrides) {
             $.instanceTypeOverrides = instanceTypeOverrides;
@@ -653,9 +653,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param instanceTypeOverrides Specification information for preemptible instances
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeOverrides(List<ScalingConfigurationInstanceTypeOverrideArgs> instanceTypeOverrides) {
             return instanceTypeOverrides(Output.of(instanceTypeOverrides));
@@ -664,9 +664,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param instanceTypeOverrides Specification information for preemptible instances
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeOverrides(ScalingConfigurationInstanceTypeOverrideArgs... instanceTypeOverrides) {
             return instanceTypeOverrides(List.of(instanceTypeOverrides));
@@ -674,9 +674,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceTypes List of compute specifications for the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypes(@Nullable Output<List<String>> instanceTypes) {
             $.instanceTypes = instanceTypes;
@@ -685,9 +685,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceTypes List of compute specifications for the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypes(List<String> instanceTypes) {
             return instanceTypes(Output.of(instanceTypes));
@@ -695,9 +695,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceTypes List of compute specifications for the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypes(String... instanceTypes) {
             return instanceTypes(List.of(instanceTypes));
@@ -705,9 +705,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param ipv6AddressCount Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6AddressCount(@Nullable Output<Integer> ipv6AddressCount) {
             $.ipv6AddressCount = ipv6AddressCount;
@@ -716,9 +716,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param ipv6AddressCount Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6AddressCount(Integer ipv6AddressCount) {
             return ipv6AddressCount(Output.of(ipv6AddressCount));
@@ -726,9 +726,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param keyPairName Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keyPairName(@Nullable Output<String> keyPairName) {
             $.keyPairName = keyPairName;
@@ -737,9 +737,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param keyPairName Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keyPairName(String keyPairName) {
             return keyPairName(Output.of(keyPairName));
@@ -747,9 +747,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param lifecycleState Lifecycle status. Values: Active (active) / InActive (inactive)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lifecycleState(@Nullable Output<String> lifecycleState) {
             $.lifecycleState = lifecycleState;
@@ -758,9 +758,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param lifecycleState Lifecycle status. Values: Active (active) / InActive (inactive)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lifecycleState(String lifecycleState) {
             return lifecycleState(Output.of(lifecycleState));
@@ -768,9 +768,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param password When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
@@ -779,9 +779,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param password When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder password(String password) {
             return password(Output.of(password));
@@ -791,9 +791,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
          * @param projectName The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
          * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
          * Maximum length: 64 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -804,9 +804,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
          * @param projectName The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
          * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
          * Maximum length: 64 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -814,9 +814,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param scalingConfigurationId Scaling configuration ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scalingConfigurationId(@Nullable Output<String> scalingConfigurationId) {
             $.scalingConfigurationId = scalingConfigurationId;
@@ -825,9 +825,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param scalingConfigurationId Scaling configuration ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scalingConfigurationId(String scalingConfigurationId) {
             return scalingConfigurationId(Output.of(scalingConfigurationId));
@@ -835,9 +835,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param scalingConfigurationName Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scalingConfigurationName(@Nullable Output<String> scalingConfigurationName) {
             $.scalingConfigurationName = scalingConfigurationName;
@@ -846,9 +846,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param scalingConfigurationName Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scalingConfigurationName(String scalingConfigurationName) {
             return scalingConfigurationName(Output.of(scalingConfigurationName));
@@ -856,9 +856,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param scalingGroupId Scaling group ID to which the scaling configuration belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scalingGroupId(@Nullable Output<String> scalingGroupId) {
             $.scalingGroupId = scalingGroupId;
@@ -867,9 +867,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param scalingGroupId Scaling group ID to which the scaling configuration belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scalingGroupId(String scalingGroupId) {
             return scalingGroupId(Output.of(scalingGroupId));
@@ -877,9 +877,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param securityEnhancementStrategy Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityEnhancementStrategy(@Nullable Output<String> securityEnhancementStrategy) {
             $.securityEnhancementStrategy = securityEnhancementStrategy;
@@ -888,9 +888,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param securityEnhancementStrategy Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityEnhancementStrategy(String securityEnhancementStrategy) {
             return securityEnhancementStrategy(Output.of(securityEnhancementStrategy));
@@ -898,9 +898,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param securityGroupIds Security group ID associated with the instance&#39;s primary network interface
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(@Nullable Output<List<String>> securityGroupIds) {
             $.securityGroupIds = securityGroupIds;
@@ -909,9 +909,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param securityGroupIds Security group ID associated with the instance&#39;s primary network interface
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(List<String> securityGroupIds) {
             return securityGroupIds(Output.of(securityGroupIds));
@@ -919,9 +919,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param securityGroupIds Security group ID associated with the instance&#39;s primary network interface
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityGroupIds(String... securityGroupIds) {
             return securityGroupIds(List.of(securityGroupIds));
@@ -929,9 +929,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param spotStrategy Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder spotStrategy(@Nullable Output<String> spotStrategy) {
             $.spotStrategy = spotStrategy;
@@ -940,9 +940,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param spotStrategy Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder spotStrategy(String spotStrategy) {
             return spotStrategy(Output.of(spotStrategy));
@@ -951,9 +951,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param tags Tag key-value pairs
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ScalingConfigurationTagArgs>> tags) {
             $.tags = tags;
@@ -963,9 +963,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param tags Tag key-value pairs
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ScalingConfigurationTagArgs> tags) {
             return tags(Output.of(tags));
@@ -974,9 +974,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param tags Tag key-value pairs
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ScalingConfigurationTagArgs... tags) {
             return tags(List.of(tags));
@@ -984,9 +984,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param updatedAt Resource update time (UTC)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -995,9 +995,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param updatedAt Resource update time (UTC)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -1005,9 +1005,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param userData Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userData(@Nullable Output<String> userData) {
             $.userData = userData;
@@ -1016,9 +1016,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param userData Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userData(String userData) {
             return userData(Output.of(userData));
@@ -1027,9 +1027,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param volumes Cloud disk
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumes(@Nullable Output<List<ScalingConfigurationVolumeArgs>> volumes) {
             $.volumes = volumes;
@@ -1039,9 +1039,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param volumes Cloud disk
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumes(List<ScalingConfigurationVolumeArgs> volumes) {
             return volumes(Output.of(volumes));
@@ -1050,9 +1050,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
         /**
          * @param volumes Cloud disk
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder volumes(ScalingConfigurationVolumeArgs... volumes) {
             return volumes(List.of(volumes));
@@ -1060,9 +1060,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param zoneId Availability zone ID for the scaling configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1071,9 +1071,9 @@ public final class ScalingConfigurationState extends com.pulumi.resources.Resour
 
         /**
          * @param zoneId Availability zone ID for the scaling configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

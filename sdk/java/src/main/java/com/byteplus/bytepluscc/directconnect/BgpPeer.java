@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * BGP neighbor
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var directConnectBgpPeerDemo = new BgpPeer("directConnectBgpPeerDemo", BgpPeerArgs.builder()
  *             .authKey("QWExxxx")
@@ -50,200 +50,200 @@ import javax.annotation.Nullable;
  *             .remoteAsn(4294960000)
  *             .virtualInterfaceId("dcv-33cjs5xxxxxxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:directconnect/bgpPeer:BgpPeer example &#34;bgp_peer_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:directconnect/bgpPeer:BgpPeer")
 public class BgpPeer extends com.pulumi.resources.CustomResource {
     /**
      * ID of the account to which the BGP neighbor belongs.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return ID of the account to which the BGP neighbor belongs.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Authentication key of the BGP neighbor.
-     *
+     * 
      */
     @Export(name="authKey", refs={String.class}, tree="[0]")
     private Output<String> authKey;
 
     /**
      * @return Authentication key of the BGP neighbor.
-     *
+     * 
      */
     public Output<String> authKey() {
         return this.authKey;
     }
     /**
      * ID of the BGP neighbor.
-     *
+     * 
      */
     @Export(name="bgpPeerId", refs={String.class}, tree="[0]")
     private Output<String> bgpPeerId;
 
     /**
      * @return ID of the BGP neighbor.
-     *
+     * 
      */
     public Output<String> bgpPeerId() {
         return this.bgpPeerId;
     }
     /**
      * Name of the BGP neighbor.
-     *
+     * 
      */
     @Export(name="bgpPeerName", refs={String.class}, tree="[0]")
     private Output<String> bgpPeerName;
 
     /**
      * @return Name of the BGP neighbor.
-     *
+     * 
      */
     public Output<String> bgpPeerName() {
         return this.bgpPeerName;
     }
     /**
      * Time when the BGP neighbor was created.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the BGP neighbor was created.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the BGP neighbor.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the BGP neighbor.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * IP type of the BGP neighbor. IPv4 indicates IPv4 type, IPv6 indicates IPv6 type.
-     *
+     * 
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
      * @return IP type of the BGP neighbor. IPv4 indicates IPv4 type, IPv6 indicates IPv6 type.
-     *
+     * 
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
      * ASN of the Volcano side.
-     *
+     * 
      */
     @Export(name="localAsn", refs={Integer.class}, tree="[0]")
     private Output<Integer> localAsn;
 
     /**
      * @return ASN of the Volcano side.
-     *
+     * 
      */
     public Output<Integer> localAsn() {
         return this.localAsn;
     }
     /**
      * Peer ASN of the BGP neighbor.
-     *
+     * 
      */
     @Export(name="remoteAsn", refs={Integer.class}, tree="[0]")
     private Output<Integer> remoteAsn;
 
     /**
      * @return Peer ASN of the BGP neighbor.
-     *
+     * 
      */
     public Output<Integer> remoteAsn() {
         return this.remoteAsn;
     }
     /**
      * Session status of the BGP neighbor. Up indicates normal, Down indicates not operational.
-     *
+     * 
      */
     @Export(name="sessionStatus", refs={String.class}, tree="[0]")
     private Output<String> sessionStatus;
 
     /**
      * @return Session status of the BGP neighbor. Up indicates normal, Down indicates not operational.
-     *
+     * 
      */
     public Output<String> sessionStatus() {
         return this.sessionStatus;
     }
     /**
      * Status of the BGP neighbor. Creating means the neighbor is being created, Deleting means it is being deleted, Pending means it is being configured, Available means it is available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the BGP neighbor. Creating means the neighbor is being created, Deleting means it is being deleted, Pending means it is being configured, Available means it is available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Time when the BGP neighbor was updated.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the BGP neighbor was updated.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the virtual interface where the BGP neighbor is located.
-     *
+     * 
      */
     @Export(name="virtualInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> virtualInterfaceId;
 
     /**
      * @return ID of the virtual interface where the BGP neighbor is located.
-     *
+     * 
      */
     public Output<String> virtualInterfaceId() {
         return this.virtualInterfaceId;

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 {
     /// <summary>
     /// Account authorization management.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var privateZoneUserVpcAuthorizationDemo = new Bytepluscc.Privatezone.UserVpcAuthorization("PrivateZoneUserVpcAuthorizationDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     ///         AuthType = 0,
     ///         VerifyCode = "sdw",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization example "account_id"
     /// ```

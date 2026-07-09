@@ -35,6 +35,8 @@ __all__ = [
     'ImageTagArgsDict',
     'InstanceCpuMemoryArgs',
     'InstanceCpuMemoryArgsDict',
+    'InstanceDataVolumeArgs',
+    'InstanceDataVolumeArgsDict',
     'InstanceEipAddressArgs',
     'InstanceEipAddressArgsDict',
     'InstanceImageArgs',
@@ -846,6 +848,196 @@ class InstanceCpuMemoryArgs:
         pulumi.set(self, "threads_per_core", value)
 
 
+class InstanceDataVolumeArgsDict(TypedDict):
+    delete_with_instance: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the attached resources are deleted along with the instance.
+    """
+    extra_performance_iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Additional performance IOPS for the instance
+    """
+    extra_performance_throughput_mb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The additional performance throughput of the instance, in MB.
+    """
+    extra_performance_type_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of additional performance. Values:
+      Balance: Balanced additional performance
+      IOPS: IOPS additional performance
+      Throughput: Throughput additional performance
+    """
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Instance size, in GiB
+    """
+    snapshot_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance snapshot ID
+    """
+    volume_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance volume ID.
+    """
+    volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cloud disk type. Values:
+      PTSSD: Performance SSD.
+      ESSD_PL0: Ultra SSD disk, PL0 specification.
+      ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+      TSSD_TL0: Throughput SSD disk.
+    """
+
+@pulumi.input_type
+class InstanceDataVolumeArgs:
+    def __init__(__self__, *,
+                 delete_with_instance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 extra_performance_iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 extra_performance_throughput_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 extra_performance_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] delete_with_instance: Whether the attached resources are deleted along with the instance.
+        :param pulumi.Input[_builtins.int] extra_performance_iops: Additional performance IOPS for the instance
+        :param pulumi.Input[_builtins.int] extra_performance_throughput_mb: The additional performance throughput of the instance, in MB.
+        :param pulumi.Input[_builtins.str] extra_performance_type_id: Type of additional performance. Values:
+                 Balance: Balanced additional performance
+                 IOPS: IOPS additional performance
+                 Throughput: Throughput additional performance
+        :param pulumi.Input[_builtins.int] size: Instance size, in GiB
+        :param pulumi.Input[_builtins.str] snapshot_id: Instance snapshot ID
+        :param pulumi.Input[_builtins.str] volume_id: Instance volume ID.
+        :param pulumi.Input[_builtins.str] volume_type: Cloud disk type. Values:
+                 PTSSD: Performance SSD.
+                 ESSD_PL0: Ultra SSD disk, PL0 specification.
+                 ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+                 TSSD_TL0: Throughput SSD disk.
+        """
+        if delete_with_instance is not None:
+            pulumi.set(__self__, "delete_with_instance", delete_with_instance)
+        if extra_performance_iops is not None:
+            pulumi.set(__self__, "extra_performance_iops", extra_performance_iops)
+        if extra_performance_throughput_mb is not None:
+            pulumi.set(__self__, "extra_performance_throughput_mb", extra_performance_throughput_mb)
+        if extra_performance_type_id is not None:
+            pulumi.set(__self__, "extra_performance_type_id", extra_performance_type_id)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if snapshot_id is not None:
+            pulumi.set(__self__, "snapshot_id", snapshot_id)
+        if volume_id is not None:
+            pulumi.set(__self__, "volume_id", volume_id)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteWithInstance")
+    def delete_with_instance(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the attached resources are deleted along with the instance.
+        """
+        return pulumi.get(self, "delete_with_instance")
+
+    @delete_with_instance.setter
+    def delete_with_instance(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "delete_with_instance", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extraPerformanceIops")
+    def extra_performance_iops(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Additional performance IOPS for the instance
+        """
+        return pulumi.get(self, "extra_performance_iops")
+
+    @extra_performance_iops.setter
+    def extra_performance_iops(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "extra_performance_iops", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extraPerformanceThroughputMb")
+    def extra_performance_throughput_mb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The additional performance throughput of the instance, in MB.
+        """
+        return pulumi.get(self, "extra_performance_throughput_mb")
+
+    @extra_performance_throughput_mb.setter
+    def extra_performance_throughput_mb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "extra_performance_throughput_mb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extraPerformanceTypeId")
+    def extra_performance_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of additional performance. Values:
+          Balance: Balanced additional performance
+          IOPS: IOPS additional performance
+          Throughput: Throughput additional performance
+        """
+        return pulumi.get(self, "extra_performance_type_id")
+
+    @extra_performance_type_id.setter
+    def extra_performance_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "extra_performance_type_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Instance size, in GiB
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="snapshotId")
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance snapshot ID
+        """
+        return pulumi.get(self, "snapshot_id")
+
+    @snapshot_id.setter
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "snapshot_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeId")
+    def volume_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance volume ID.
+        """
+        return pulumi.get(self, "volume_id")
+
+    @volume_id.setter
+    def volume_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "volume_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloud disk type. Values:
+          PTSSD: Performance SSD.
+          ESSD_PL0: Ultra SSD disk, PL0 specification.
+          ESSD_FlexPL: Ultra SSD disk, FlexPL specification.
+          TSSD_TL0: Throughput SSD disk.
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "volume_type", value)
+
+
 class InstanceEipAddressArgsDict(TypedDict):
     allocation_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -873,7 +1065,7 @@ class InstanceEipAddressArgsDict(TypedDict):
         - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
         - PayByTraffic: Pay-as-you-go—billed by actual traffic.
         - PrePaid: Subscription.
-
+      
       **Note:**
       When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
     """
@@ -933,7 +1125,7 @@ class InstanceEipAddressArgs:
                    - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
                    - PayByTraffic: Pay-as-you-go—billed by actual traffic.
                    - PrePaid: Subscription.
-
+                 
                  **Note:**
                  When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
         :param pulumi.Input[_builtins.str] ip_address: Instance IP address.
@@ -1020,7 +1212,7 @@ class InstanceEipAddressArgs:
             - PayByBandwidth (default): Pay-as-you-go—billed by bandwidth cap.
             - PayByTraffic: Pay-as-you-go—billed by actual traffic.
             - PrePaid: Subscription.
-
+          
           **Note:**
           When `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
         """

@@ -21,14 +21,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * List of cloud disk IDs to associate with the automatic snapshot policy.
-     *
+     * 
      */
     @Import(name="addVolumeIds")
     private @Nullable Output<List<String>> addVolumeIds;
 
     /**
      * @return List of cloud disk IDs to associate with the automatic snapshot policy.
-     *
+     * 
      */
     public Optional<Output<List<String>>> addVolumeIds() {
         return Optional.ofNullable(this.addVolumeIds);
@@ -36,14 +36,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Automatic snapshot policy name. Naming rules: The first character must be Chinese, a letter, or an underscore (*). It can include Chinese, letters, numbers, underscores (*), hyphens (-), or periods (.). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Import(name="autoSnapshotPolicyName", required=true)
     private Output<String> autoSnapshotPolicyName;
 
     /**
      * @return Automatic snapshot policy name. Naming rules: The first character must be Chinese, a letter, or an underscore (*). It can include Chinese, letters, numbers, underscores (*), hyphens (-), or periods (.). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Output<String> autoSnapshotPolicyName() {
         return this.autoSnapshotPolicyName;
@@ -51,14 +51,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Project associated with the automatic snapshot policy.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project associated with the automatic snapshot policy.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -66,14 +66,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * List of cloud disk IDs to disassociate from the automatic snapshot policy.
-     *
+     * 
      */
     @Import(name="removeVolumeIds")
     private @Nullable Output<List<String>> removeVolumeIds;
 
     /**
      * @return List of cloud disk IDs to disassociate from the automatic snapshot policy.
-     *
+     * 
      */
     public Optional<Output<List<String>>> removeVolumeIds() {
         return Optional.ofNullable(this.removeVolumeIds);
@@ -81,14 +81,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Create snapshots on a daily basis, with a specified interval in days. The value range is [1, 30]. When repeating snapshot creation daily, the day you create the automatic snapshot policy is considered Day 1. Snapshots will not be created for past time points. If all scheduled snapshot times for the day have passed, the day is still counted as Day 1.
-     *
+     * 
      */
     @Import(name="repeatDays")
     private @Nullable Output<Integer> repeatDays;
 
     /**
      * @return Create snapshots on a daily basis, with a specified interval in days. The value range is [1, 30]. When repeating snapshot creation daily, the day you create the automatic snapshot policy is considered Day 1. Snapshots will not be created for past time points. If all scheduled snapshot times for the day have passed, the day is still counted as Day 1.
-     *
+     * 
      */
     public Optional<Output<Integer>> repeatDays() {
         return Optional.ofNullable(this.repeatDays);
@@ -96,14 +96,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Create snapshots on a weekly basis by selecting one or more days from Monday to Sunday. The value range is 1–7. When creating an automatic snapshot policy, you must set either the RepeatWeekdays.N or RepeatDays parameter. Setting both parameters at the same time is not supported.
-     *
+     * 
      */
     @Import(name="repeatWeekdays")
     private @Nullable Output<List<String>> repeatWeekdays;
 
     /**
      * @return Create snapshots on a weekly basis by selecting one or more days from Monday to Sunday. The value range is 1–7. When creating an automatic snapshot policy, you must set either the RepeatWeekdays.N or RepeatDays parameter. Setting both parameters at the same time is not supported.
-     *
+     * 
      */
     public Optional<Output<List<String>>> repeatWeekdays() {
         return Optional.ofNullable(this.repeatWeekdays);
@@ -111,14 +111,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Retention period for automatic snapshots, in days. -1: Save permanently; 1–65536: Specify number of days to retain.
-     *
+     * 
      */
     @Import(name="retentionDays", required=true)
     private Output<Integer> retentionDays;
 
     /**
      * @return Retention period for automatic snapshots, in days. -1: Save permanently; 1–65536: Specify number of days to retain.
-     *
+     * 
      */
     public Output<Integer> retentionDays() {
         return this.retentionDays;
@@ -127,7 +127,7 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * Tag.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SnapshotPolicyTagArgs>> tags;
@@ -135,7 +135,7 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Tag.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SnapshotPolicyTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -143,14 +143,14 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Snapshot creation time points, using UTC +8 time. Unit: hour. Value range: 0–23.
-     *
+     * 
      */
     @Import(name="timePoints", required=true)
     private Output<List<String>> timePoints;
 
     /**
      * @return Snapshot creation time points, using UTC +8 time. Unit: hour. Value range: 0–23.
-     *
+     * 
      */
     public Output<List<String>> timePoints() {
         return this.timePoints;
@@ -190,9 +190,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param addVolumeIds List of cloud disk IDs to associate with the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addVolumeIds(@Nullable Output<List<String>> addVolumeIds) {
             $.addVolumeIds = addVolumeIds;
@@ -201,9 +201,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param addVolumeIds List of cloud disk IDs to associate with the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addVolumeIds(List<String> addVolumeIds) {
             return addVolumeIds(Output.of(addVolumeIds));
@@ -211,9 +211,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param addVolumeIds List of cloud disk IDs to associate with the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addVolumeIds(String... addVolumeIds) {
             return addVolumeIds(List.of(addVolumeIds));
@@ -221,9 +221,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param autoSnapshotPolicyName Automatic snapshot policy name. Naming rules: The first character must be Chinese, a letter, or an underscore (*). It can include Chinese, letters, numbers, underscores (*), hyphens (-), or periods (.). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoSnapshotPolicyName(Output<String> autoSnapshotPolicyName) {
             $.autoSnapshotPolicyName = autoSnapshotPolicyName;
@@ -232,9 +232,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param autoSnapshotPolicyName Automatic snapshot policy name. Naming rules: The first character must be Chinese, a letter, or an underscore (*). It can include Chinese, letters, numbers, underscores (*), hyphens (-), or periods (.). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoSnapshotPolicyName(String autoSnapshotPolicyName) {
             return autoSnapshotPolicyName(Output.of(autoSnapshotPolicyName));
@@ -242,9 +242,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName Project associated with the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -253,9 +253,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName Project associated with the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -263,9 +263,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param removeVolumeIds List of cloud disk IDs to disassociate from the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder removeVolumeIds(@Nullable Output<List<String>> removeVolumeIds) {
             $.removeVolumeIds = removeVolumeIds;
@@ -274,9 +274,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param removeVolumeIds List of cloud disk IDs to disassociate from the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder removeVolumeIds(List<String> removeVolumeIds) {
             return removeVolumeIds(Output.of(removeVolumeIds));
@@ -284,9 +284,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param removeVolumeIds List of cloud disk IDs to disassociate from the automatic snapshot policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder removeVolumeIds(String... removeVolumeIds) {
             return removeVolumeIds(List.of(removeVolumeIds));
@@ -294,9 +294,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatDays Create snapshots on a daily basis, with a specified interval in days. The value range is [1, 30]. When repeating snapshot creation daily, the day you create the automatic snapshot policy is considered Day 1. Snapshots will not be created for past time points. If all scheduled snapshot times for the day have passed, the day is still counted as Day 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(@Nullable Output<Integer> repeatDays) {
             $.repeatDays = repeatDays;
@@ -305,9 +305,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatDays Create snapshots on a daily basis, with a specified interval in days. The value range is [1, 30]. When repeating snapshot creation daily, the day you create the automatic snapshot policy is considered Day 1. Snapshots will not be created for past time points. If all scheduled snapshot times for the day have passed, the day is still counted as Day 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatDays(Integer repeatDays) {
             return repeatDays(Output.of(repeatDays));
@@ -315,9 +315,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatWeekdays Create snapshots on a weekly basis by selecting one or more days from Monday to Sunday. The value range is 1–7. When creating an automatic snapshot policy, you must set either the RepeatWeekdays.N or RepeatDays parameter. Setting both parameters at the same time is not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatWeekdays(@Nullable Output<List<String>> repeatWeekdays) {
             $.repeatWeekdays = repeatWeekdays;
@@ -326,9 +326,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatWeekdays Create snapshots on a weekly basis by selecting one or more days from Monday to Sunday. The value range is 1–7. When creating an automatic snapshot policy, you must set either the RepeatWeekdays.N or RepeatDays parameter. Setting both parameters at the same time is not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatWeekdays(List<String> repeatWeekdays) {
             return repeatWeekdays(Output.of(repeatWeekdays));
@@ -336,9 +336,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param repeatWeekdays Create snapshots on a weekly basis by selecting one or more days from Monday to Sunday. The value range is 1–7. When creating an automatic snapshot policy, you must set either the RepeatWeekdays.N or RepeatDays parameter. Setting both parameters at the same time is not supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder repeatWeekdays(String... repeatWeekdays) {
             return repeatWeekdays(List.of(repeatWeekdays));
@@ -346,9 +346,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param retentionDays Retention period for automatic snapshots, in days. -1: Save permanently; 1–65536: Specify number of days to retain.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder retentionDays(Output<Integer> retentionDays) {
             $.retentionDays = retentionDays;
@@ -357,9 +357,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param retentionDays Retention period for automatic snapshots, in days. -1: Save permanently; 1–65536: Specify number of days to retain.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder retentionDays(Integer retentionDays) {
             return retentionDays(Output.of(retentionDays));
@@ -368,9 +368,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SnapshotPolicyTagArgs>> tags) {
             $.tags = tags;
@@ -380,9 +380,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SnapshotPolicyTagArgs> tags) {
             return tags(Output.of(tags));
@@ -391,9 +391,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SnapshotPolicyTagArgs... tags) {
             return tags(List.of(tags));
@@ -401,9 +401,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param timePoints Snapshot creation time points, using UTC +8 time. Unit: hour. Value range: 0–23.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timePoints(Output<List<String>> timePoints) {
             $.timePoints = timePoints;
@@ -412,9 +412,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param timePoints Snapshot creation time points, using UTC +8 time. Unit: hour. Value range: 0–23.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timePoints(List<String> timePoints) {
             return timePoints(Output.of(timePoints));
@@ -422,9 +422,9 @@ public final class SnapshotPolicyArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param timePoints Snapshot creation time points, using UTC +8 time. Unit: hour. Value range: 0–23.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timePoints(String... timePoints) {
             return timePoints(List.of(timePoints));

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
     /// Cloud Assistant is a native automated operations tool developed by Volcano Engine. You can create jobs for immediate, periodic, or scheduled execution. After creation, the Cloud Assistant client automatically starts execution according to the execution mode.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var invocationDemo = new Bytepluscc.Ecs.Invocation("InvocationDemo", new()
     ///     {
@@ -51,12 +51,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     ///         CommandId = "cmd-ye28kugp249tzrexxxxx",
     ///         Parameters = "{\"dirname\":\"10\"}",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:ecs/invocation:Invocation example "invocation_id"
     /// ```

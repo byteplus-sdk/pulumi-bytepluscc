@@ -19,14 +19,14 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the corresponding user, role, or user group.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Name of the corresponding user, role, or user group.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -35,7 +35,7 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
     /**
      * List of projects bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="policyScopes")
     private @Nullable Output<List<PolicyPolicyUserPolicyScopeArgs>> policyScopes;
@@ -43,7 +43,7 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return List of projects bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PolicyPolicyUserPolicyScopeArgs>>> policyScopes() {
         return Optional.ofNullable(this.policyScopes);
@@ -76,9 +76,9 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param name Name of the corresponding user, role, or user group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -87,9 +87,9 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param name Name of the corresponding user, role, or user group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -98,9 +98,9 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param policyScopes List of projects bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyScopes(@Nullable Output<List<PolicyPolicyUserPolicyScopeArgs>> policyScopes) {
             $.policyScopes = policyScopes;
@@ -110,9 +110,9 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param policyScopes List of projects bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyScopes(List<PolicyPolicyUserPolicyScopeArgs> policyScopes) {
             return policyScopes(Output.of(policyScopes));
@@ -121,9 +121,9 @@ public final class PolicyPolicyUserArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param policyScopes List of projects bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyScopes(PolicyPolicyUserPolicyScopeArgs... policyScopes) {
             return policyScopes(List.of(policyScopes));

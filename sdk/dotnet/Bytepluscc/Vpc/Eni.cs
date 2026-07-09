@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// A network interface is a virtual network interface. In a private network, it serves as a network interface attached to cloud servers, load balancers, and other cloud resources. Each network interface has a primary private IP address. You can manually assign multiple auxiliary private IP addresses if needed.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eniDemo = new Bytepluscc.Vpc.Eni("EniDemo", new()
     ///     {
@@ -36,7 +36,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///         PrimaryIpAddress = new Bytepluscc.Vpc.Inputs.EniPrimaryIpAddressArgs
     ///         {
     ///             Private_ip_address = "192.168.x.130",
-    ///             Associated_elastic_ip =
+    ///             Associated_elastic_ip = 
     ///             {
     ///                 { "allocationId", "eip-2f80zqjduo6ps4f4pzzcxxxxx" },
     ///             },
@@ -51,12 +51,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/eni:Eni example "network_interface_id"
     /// ```

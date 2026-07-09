@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
 {
     /// <summary>
     /// User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eMRClusterUserGroupDemo = new Bytepluscc.Emr.ClusterUserGroup("EMRClusterUserGroupDemo", new()
     ///     {
@@ -34,12 +34,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Emr
     ///             "emrclusteruserdemo3",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:emr/clusterUserGroup:ClusterUserGroup example "cluster_id|user_group_name"
     /// ```

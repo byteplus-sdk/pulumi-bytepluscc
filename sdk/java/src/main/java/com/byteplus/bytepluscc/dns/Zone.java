@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * The zone in the resource is the domain name, which can be a primary domain such as example.com or a subdomain such as abc.example.com
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var dnsZoneDemo = new Zone("dnsZoneDemo", ZoneArgs.builder()
  *             .zoneName("DnsZoneDemo")
@@ -55,256 +55,256 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:dns/zone:Zone example &#34;zid&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:dns/zone:Zone")
 public class Zone extends com.pulumi.resources.CustomResource {
     /**
      * List of DNS servers assigned to the domain by Cloud DNS
-     *
+     * 
      */
     @Export(name="allocateDnsServerLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allocateDnsServerLists;
 
     /**
      * @return List of DNS servers assigned to the domain by Cloud DNS
-     *
+     * 
      */
     public Output<List<String>> allocateDnsServerLists() {
         return this.allocateDnsServerLists;
     }
     /**
      * Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
-     *
+     * 
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
      * @return Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
-     *
+     * 
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
     }
     /**
      * Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is &#39;domain reclaim pending.&#39; To manage DNS resolution, you must verify domain ownership in the console as prompted.
-     *
+     * 
      */
     @Export(name="cacheStage", refs={Integer.class}, tree="[0]")
     private Output<Integer> cacheStage;
 
     /**
      * @return Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is &#39;domain reclaim pending.&#39; To manage DNS resolution, you must verify domain ownership in the console as prompted.
-     *
+     * 
      */
     public Output<Integer> cacheStage() {
         return this.cacheStage;
     }
     /**
      * Domain creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Domain creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. &#34;&#34;: No protection edition.
-     *
+     * 
      */
     @Export(name="dnsSecurity", refs={String.class}, tree="[0]")
     private Output<String> dnsSecurity;
 
     /**
      * @return Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. &#34;&#34;: No protection edition.
-     *
+     * 
      */
     public Output<String> dnsSecurity() {
         return this.dnsSecurity;
     }
     /**
      * Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> expiredTime;
 
     /**
      * @return Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
-     *
+     * 
      */
     public Output<Integer> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Instance ID. For Cloud DNS Free Edition, this field is null.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID. For Cloud DNS Free Edition, this field is null.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance ID. For Cloud DNS Free Edition, this field is null.
-     *
+     * 
      */
     @Export(name="instanceNo", refs={String.class}, tree="[0]")
     private Output<String> instanceNo;
 
     /**
      * @return Instance ID. For Cloud DNS Free Edition, this field is null.
-     *
+     * 
      */
     public Output<String> instanceNo() {
         return this.instanceNo;
     }
     /**
      * Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
-     *
+     * 
      */
     @Export(name="isNsCorrect", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isNsCorrect;
 
     /**
      * @return Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
-     *
+     * 
      */
     public Output<Boolean> isNsCorrect() {
         return this.isNsCorrect;
     }
     /**
      * Whether it is a subdomain. true: Subdomain. false: Primary domain.
-     *
+     * 
      */
     @Export(name="isSubDomain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSubDomain;
 
     /**
      * @return Whether it is a subdomain. true: Subdomain. false: Primary domain.
-     *
+     * 
      */
     public Output<Boolean> isSubDomain() {
         return this.isSubDomain;
     }
     /**
      * ID of the account that created the domain.
-     *
+     * 
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
      * @return ID of the account that created the domain.
-     *
+     * 
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
      * Domain project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Domain project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * List of DNS servers actually used by the domain.
-     *
+     * 
      */
     @Export(name="realDnsServerLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> realDnsServerLists;
 
     /**
      * @return List of DNS servers actually used by the domain.
-     *
+     * 
      */
     public Output<List<String>> realDnsServerLists() {
         return this.realDnsServerLists;
     }
     /**
      * Total number of DNS records contained in the domain.
-     *
+     * 
      */
     @Export(name="recordCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> recordCount;
 
     /**
      * @return Total number of DNS records contained in the domain.
-     *
+     * 
      */
     public Output<Integer> recordCount() {
         return this.recordCount;
     }
     /**
      * Domain notes
-     *
+     * 
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Domain notes
-     *
+     * 
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
      * Domain status. This parameter has the following values: 0: Normal. In this state, the domain&#39;s DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain&#39;s DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain&#39;s DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain&#39;s DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain&#39;s DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
-     *
+     * 
      */
     @Export(name="stage", refs={Integer.class}, tree="[0]")
     private Output<Integer> stage;
 
     /**
      * @return Domain status. This parameter has the following values: 0: Normal. In this state, the domain&#39;s DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain&#39;s DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain&#39;s DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain&#39;s DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain&#39;s DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
-     *
+     * 
      */
     public Output<Integer> stage() {
         return this.stage;
     }
     /**
      * Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
-     *
+     * 
      */
     @Export(name="subDomainHost", refs={String.class}, tree="[0]")
     private Output<String> subDomainHost;
 
     /**
      * @return Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
-     *
+     * 
      */
     public Output<String> subDomainHost() {
         return this.subDomainHost;
@@ -312,7 +312,7 @@ public class Zone extends com.pulumi.resources.CustomResource {
     /**
      * Tags for the domain. Default is empty.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ZoneTag.class}, tree="[0,1]")
     private Output<List<ZoneTag>> tags;
@@ -320,63 +320,63 @@ public class Zone extends com.pulumi.resources.CustomResource {
     /**
      * @return Tags for the domain. Default is empty.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ZoneTag>> tags() {
         return this.tags;
     }
     /**
      * Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
-     *
+     * 
      */
     @Export(name="tradeCode", refs={String.class}, tree="[0]")
     private Output<String> tradeCode;
 
     /**
      * @return Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
-     *
+     * 
      */
     public Output<String> tradeCode() {
         return this.tradeCode;
     }
     /**
      * Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Domain ID.
-     *
+     * 
      */
     @Export(name="zid", refs={String.class}, tree="[0]")
     private Output<String> zid;
 
     /**
      * @return Domain ID.
-     *
+     * 
      */
     public Output<String> zid() {
         return this.zid;
     }
     /**
      * Domain name.
-     *
+     * 
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Domain name.
-     *
+     * 
      */
     public Output<String> zoneName() {
         return this.zoneName;

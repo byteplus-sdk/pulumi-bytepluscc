@@ -13,26 +13,26 @@ import java.util.Objects;
 public final class GetDomainBrowserCache {
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     private GetDomainBrowserCacheCacheAction cacheAction;
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     private GetDomainBrowserCacheCondition condition;
 
     private GetDomainBrowserCache() {}
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     public GetDomainBrowserCacheCacheAction cacheAction() {
         return this.cacheAction;
     }
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public GetDomainBrowserCacheCondition condition() {
         return this.condition;

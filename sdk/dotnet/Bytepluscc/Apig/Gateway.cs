@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
     /// API Gateway (Gateway) is the core component of the API management service. It receives, processes, and forwards API requests, and provides security authentication, traffic control, and other features
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var aPIGGatewayDemo = new Bytepluscc.Apig.Gateway("APIGGatewayDemo", new()
     ///     {
@@ -41,7 +41,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     ///             Clb_spec_code = "small_1",
     ///             Public_network_bandwidth = 1,
     ///             Public_network_billing_type = "bandwidth",
-    ///             Network_type =
+    ///             Network_type = 
     ///             {
     ///                 { "enablePublicNetwork", true },
     ///                 { "enablePrivateNetwork", true },
@@ -62,7 +62,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     ///         {
     ///             Enable = true,
     ///             Trace_type = "tls",
-    ///             Tls_trace_spec =
+    ///             Tls_trace_spec = 
     ///             {
     ///                 { "projectId", "***" },
     ///                 { "iamUserAk", "***" },
@@ -70,12 +70,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:apig/gateway:Gateway example "gateway_id"
     /// ```

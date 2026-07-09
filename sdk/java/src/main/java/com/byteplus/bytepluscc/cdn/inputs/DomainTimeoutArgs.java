@@ -19,14 +19,14 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
-     *
+     * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
-     *
+     * 
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -35,7 +35,7 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="timeoutRules")
     private @Nullable Output<List<DomainTimeoutTimeoutRuleArgs>> timeoutRules;
@@ -43,7 +43,7 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainTimeoutTimeoutRuleArgs>>> timeoutRules() {
         return Optional.ofNullable(this.timeoutRules);
@@ -76,9 +76,9 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param switch_ Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -87,9 +87,9 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param switch_ Specify whether to enable origin timeout configuration. This parameter has the following values: true: enables origin timeout configuration. false: disables origin timeout configuration. In this case, the system default timeout values are used for TCP and HTTP requests, which are 2 seconds and 60 seconds respectively.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));
@@ -98,9 +98,9 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeoutRules Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeoutRules(@Nullable Output<List<DomainTimeoutTimeoutRuleArgs>> timeoutRules) {
             $.timeoutRules = timeoutRules;
@@ -110,9 +110,9 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeoutRules Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeoutRules(List<DomainTimeoutTimeoutRuleArgs> timeoutRules) {
             return timeoutRules(Output.of(timeoutRules));
@@ -121,9 +121,9 @@ public final class DomainTimeoutArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param timeoutRules Represents a set of timeout configurations. Currently, you can specify only one configuration. This parameter is required when Switch is true.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeoutRules(DomainTimeoutTimeoutRuleArgs... timeoutRules) {
             return timeoutRules(List.of(timeoutRules));

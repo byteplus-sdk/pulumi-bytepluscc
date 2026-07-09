@@ -25,14 +25,14 @@ import javax.annotation.Nullable;
 
 /**
  * The basic unit of Redis cache database is the instance. An instance is an independent, virtualized database runtime environment, consisting of multiple data nodes and proxy nodes. The Redis engine runs on the data nodes.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -46,15 +46,15 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var redisInstanceDemo = new Instance("redisInstanceDemo", InstanceArgs.builder()
- *             .configureNodes(
+ *             .configureNodes(            
  *                 InstanceConfigureNodeArgs.builder()
  *                     .az("cn-beijing-a")
  *                     .build(),
@@ -86,74 +86,74 @@ import javax.annotation.Nullable;
  *             .continuousBackup(true)
  *             .createBackup(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:redis/instance:Instance example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:redis/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-     *
+     * 
      */
     @Export(name="allowListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-     *
+     * 
      */
     public Output<List<String>> allowListIds() {
         return this.allowListIds;
     }
     /**
      * Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
-     *
+     * 
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
      * @return Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
-     *
+     * 
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
     }
     /**
      * Set a backup name for the full backup created before changes.
-     *
+     * 
      */
     @Export(name="backupPointName", refs={String.class}, tree="[0]")
     private Output<String> backupPointName;
 
     /**
      * @return Set a backup name for the full backup created before changes.
-     *
+     * 
      */
     public Output<String> backupPointName() {
         return this.backupPointName;
     }
     /**
      * Restore data from the backup set to the original Redis instance.
-     *
+     * 
      */
     @Export(name="backupRestore", refs={InstanceBackupRestore.class}, tree="[0]")
     private Output<InstanceBackupRestore> backupRestore;
 
     /**
      * @return Restore data from the backup set to the original Redis instance.
-     *
+     * 
      */
     public Output<InstanceBackupRestore> backupRestore() {
         return this.backupRestore;
@@ -161,7 +161,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Backup list information for the instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="backups", refs={List.class,InstanceBackup.class}, tree="[0,1]")
     private Output<List<InstanceBackup>> backups;
@@ -169,49 +169,49 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Backup list information for the instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceBackup>> backups() {
         return this.backups;
     }
     /**
      * Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
-     *
+     * 
      */
     @Export(name="blueGreenRole", refs={String.class}, tree="[0]")
     private Output<String> blueGreenRole;
 
     /**
      * @return Blue-green deployment role of the instance. Valid values: Blue: blue instance. Green: green instance. This parameter is returned only for Redis instances that have used the blue-green deployment feature.
-     *
+     * 
      */
     public Output<String> blueGreenRole() {
         return this.blueGreenRole;
     }
     /**
      * Capacity information of the instance.
-     *
+     * 
      */
     @Export(name="capacity", refs={InstanceCapacity.class}, tree="[0]")
     private Output<InstanceCapacity> capacity;
 
     /**
      * @return Capacity information of the instance.
-     *
+     * 
      */
     public Output<InstanceCapacity> capacity() {
         return this.capacity;
     }
     /**
      * Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
-     *
+     * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
-     *
+     * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
@@ -219,7 +219,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Set the list of availability zones to which the node belongs.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="configureNodes", refs={List.class,InstanceConfigureNode.class}, tree="[0,1]")
     private Output<List<InstanceConfigureNode>> configureNodes;
@@ -227,147 +227,147 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Set the list of availability zones to which the node belongs.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceConfigureNode>> configureNodes() {
         return this.configureNodes;
     }
     /**
      * Enable data flashback
-     *
+     * 
      */
     @Export(name="continuousBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> continuousBackup;
 
     /**
      * @return Enable data flashback
-     *
+     * 
      */
     public Output<Boolean> continuousBackup() {
         return this.continuousBackup;
     }
     /**
      * Whether to create a backup before making changes.
-     *
+     * 
      */
     @Export(name="createBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> createBackup;
 
     /**
      * @return Whether to create a backup before making changes.
-     *
+     * 
      */
     public Output<Boolean> createBackup() {
         return this.createBackup;
     }
     /**
      * Creation time of the instance.
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the instance.
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
-     *
+     * 
      */
     @Export(name="dataLayout", refs={String.class}, tree="[0]")
     private Output<String> dataLayout;
 
     /**
      * @return Data storage type of the instance. This parameter is only relevant for Enterprise Edition instances (ServiceType=Enterprise). Community Edition instances (ServiceType=Basic) do not involve data storage type, and DataLayout is always set to RAM. If this parameter is left empty, data storage type is not used as a filter.
-     *
+     * 
      */
     public Output<String> dataLayout() {
         return this.dataLayout;
     }
     /**
      * Enable or disable instance deletion protection. disabled: Off. enabled: On.
-     *
+     * 
      */
     @Export(name="deletionProtection", refs={String.class}, tree="[0]")
     private Output<String> deletionProtection;
 
     /**
      * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
-     *
+     * 
      */
     public Output<String> deletionProtection() {
         return this.deletionProtection;
     }
     /**
      * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
-     *
+     * 
      */
     @Export(name="engineVersion", refs={String.class}, tree="[0]")
     private Output<String> engineVersion;
 
     /**
      * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
-     *
+     * 
      */
     public Output<String> engineVersion() {
         return this.engineVersion;
     }
     /**
      * Instance expiration time.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Instance expiration time.
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
-     *
+     * 
      */
     @Export(name="instanceClass", refs={String.class}, tree="[0]")
     private Output<String> instanceClass;
 
     /**
      * @return Type of Redis instance. Valid values: PrimarySecondary: primary-secondary instance; Standalone: single-node instance. If this parameter is left empty, instance type is not used as a filter. For more information about instance types, see Product Architecture.
-     *
+     * 
      */
     public Output<String> instanceClass() {
         return this.instanceClass;
     }
     /**
      * Instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-     *
+     * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-     *
+     * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
@@ -375,7 +375,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Detailed list of all shards in the instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="instanceShards", refs={List.class,InstanceInstanceShard.class}, tree="[0,1]")
     private Output<List<InstanceInstanceShard>> instanceShards;
@@ -383,301 +383,301 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Detailed list of all shards in the instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceInstanceShard>> instanceShards() {
         return this.instanceShards;
     }
     /**
      * Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
-     *
+     * 
      */
     @Export(name="maintenanceTime", refs={String.class}, tree="[0]")
     private Output<String> maintenanceTime;
 
     /**
      * @return Maintenance window for the instance, format: HH:mm-HH:mm (UTC+8).
-     *
+     * 
      */
     public Output<String> maintenanceTime() {
         return this.maintenanceTime;
     }
     /**
      * Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
-     *
+     * 
      */
     @Export(name="maxConnections", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxConnections;
 
     /**
      * @return Current maximum connections per shard for the instance. The default connection limit per shard is 10,000. You can also call the ModifyDBInstanceMaxConn API to adjust the maximum connections per shard based on your business needs.
-     *
+     * 
      */
     public Output<Integer> maxConnections() {
         return this.maxConnections;
     }
     /**
      * Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
-     *
+     * 
      */
     @Export(name="multiAz", refs={String.class}, tree="[0]")
     private Output<String> multiAz;
 
     /**
      * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
-     *
+     * 
      */
     public Output<String> multiAz() {
         return this.multiAz;
     }
     /**
      * Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
-     *
+     * 
      */
     @Export(name="noAuthMode", refs={String.class}, tree="[0]")
     private Output<String> noAuthMode;
 
     /**
      * @return Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
-     *
+     * 
      */
     public Output<String> noAuthMode() {
         return this.noAuthMode;
     }
     /**
      * List of Proxy and Server node IDs.
-     *
+     * 
      */
     @Export(name="nodeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nodeIds;
 
     /**
      * @return List of Proxy and Server node IDs.
-     *
+     * 
      */
     public Output<List<String>> nodeIds() {
         return this.nodeIds;
     }
     /**
      * Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
-     *
+     * 
      */
     @Export(name="nodeNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeNumber;
 
     /**
      * @return Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
-     *
+     * 
      */
     public Output<Integer> nodeNumber() {
         return this.nodeNumber;
     }
     /**
      * The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
-     *
+     * 
      */
     @Export(name="parameterGroupId", refs={String.class}, tree="[0]")
     private Output<String> parameterGroupId;
 
     /**
      * @return The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
-     *
+     * 
      */
     public Output<String> parameterGroupId() {
         return this.parameterGroupId;
     }
     /**
      * Set the password for the default account of the default database.
-     *
+     * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return Set the password for the default account of the default database.
-     *
+     * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
      * Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
-     *
+     * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * The domain name for the instance&#39;s private network connection address.
-     *
+     * 
      */
     @Export(name="privateAddress", refs={String.class}, tree="[0]")
     private Output<String> privateAddress;
 
     /**
      * @return The domain name for the instance&#39;s private network connection address.
-     *
+     * 
      */
     public Output<String> privateAddress() {
         return this.privateAddress;
     }
     /**
      * Port number for the instance&#39;s private network connection address.
-     *
+     * 
      */
     @Export(name="privatePort", refs={String.class}, tree="[0]")
     private Output<String> privatePort;
 
     /**
      * @return Port number for the instance&#39;s private network connection address.
-     *
+     * 
      */
     public Output<String> privatePort() {
         return this.privatePort;
     }
     /**
      * Project to which the instance belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the instance belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
-     *
+     * 
      */
     @Export(name="purchaseMonths", refs={Integer.class}, tree="[0]")
     private Output<Integer> purchaseMonths;
 
     /**
      * @return Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
-     *
+     * 
      */
     public Output<Integer> purchaseMonths() {
         return this.purchaseMonths;
     }
     /**
      * Set whether to reserve additional bandwidth
-     *
+     * 
      */
     @Export(name="reserveAdditionalBandwidth", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> reserveAdditionalBandwidth;
 
     /**
      * @return Set whether to reserve additional bandwidth
-     *
+     * 
      */
     public Output<Boolean> reserveAdditionalBandwidth() {
         return this.reserveAdditionalBandwidth;
     }
     /**
      * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
-     *
+     * 
      */
     @Export(name="restartInstance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> restartInstance;
 
     /**
      * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
-     *
+     * 
      */
     public Output<Boolean> restartInstance() {
         return this.restartInstance;
     }
     /**
      * Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
-     *
+     * 
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
      * @return Instance service type. Valid values: Basic: Community Edition. Enterprise: Enterprise Edition.
-     *
+     * 
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
      * Memory capacity of each shard in the instance. Unit: MiB.
-     *
+     * 
      */
     @Export(name="shardCapacity", refs={Integer.class}, tree="[0]")
     private Output<Integer> shardCapacity;
 
     /**
      * @return Memory capacity of each shard in the instance. Unit: MiB.
-     *
+     * 
      */
     public Output<Integer> shardCapacity() {
         return this.shardCapacity;
     }
     /**
      * Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
-     *
+     * 
      */
     @Export(name="shardNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> shardNumber;
 
     /**
      * @return Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
-     *
+     * 
      */
     public Output<Integer> shardNumber() {
         return this.shardNumber;
     }
     /**
      * Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-     *
+     * 
      */
     @Export(name="shardedCluster", refs={Integer.class}, tree="[0]")
     private Output<Integer> shardedCluster;
 
     /**
      * @return Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-     *
+     * 
      */
     public Output<Integer> shardedCluster() {
         return this.shardedCluster;
     }
     /**
      * Current status of the instance.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Current status of the instance.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -685,7 +685,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Set the tag list for the instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -693,35 +693,35 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Set the tag list for the instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * The IPv6 address corresponding to the instance&#39;s private network connection address. This parameter is returned only if the instance uses an IPv6 address.
-     *
+     * 
      */
     @Export(name="viPv6", refs={String.class}, tree="[0]")
     private Output<String> viPv6;
 
     /**
      * @return The IPv6 address corresponding to the instance&#39;s private network connection address. This parameter is returned only if the instance uses an IPv6 address.
-     *
+     * 
      */
     public Output<String> viPv6() {
         return this.viPv6;
     }
     /**
      * IPv4 address corresponding to the instance&#39;s private network connection address.
-     *
+     * 
      */
     @Export(name="vip", refs={String.class}, tree="[0]")
     private Output<String> vip;
 
     /**
      * @return IPv4 address corresponding to the instance&#39;s private network connection address.
-     *
+     * 
      */
     public Output<String> vip() {
         return this.vip;
@@ -729,7 +729,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Connection address information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="visitAddrs", refs={List.class,InstanceVisitAddr.class}, tree="[0,1]")
     private Output<List<InstanceVisitAddr>> visitAddrs;
@@ -737,49 +737,49 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Connection address information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceVisitAddr>> visitAddrs() {
         return this.visitAddrs;
     }
     /**
      * Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
-     *
+     * 
      */
     @Export(name="vpcAuthMode", refs={String.class}, tree="[0]")
     private Output<String> vpcAuthMode;
 
     /**
      * @return Enable or disable password-free access. Valid values: open: enable password-free access; close: disable password-free access. Values are case-insensitive.
-     *
+     * 
      */
     public Output<String> vpcAuthMode() {
         return this.vpcAuthMode;
     }
     /**
      * Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * List of available zones where the instance is located.
-     *
+     * 
      */
     @Export(name="zoneIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIds;
 
     /**
      * @return List of available zones where the instance is located.
-     *
+     * 
      */
     public Output<List<String>> zoneIds() {
         return this.zoneIds;

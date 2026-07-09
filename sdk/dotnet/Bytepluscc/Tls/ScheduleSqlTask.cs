@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// Resource definition for the scheduled SQL analysis task.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSScheduleSqlTaskDemo = new Bytepluscc.Tls.ScheduleSqlTask("TLSScheduleSqlTaskDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         Status = 1,
     ///         TaskName = "test",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask example "task_id"
     /// ```

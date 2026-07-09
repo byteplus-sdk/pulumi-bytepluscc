@@ -26,14 +26,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
-     *
+     * 
      */
     @Import(name="additionalContainerStorageEnabled")
     private @Nullable Output<Boolean> additionalContainerStorageEnabled;
 
     /**
      * @return Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
-     *
+     * 
      */
     public Optional<Output<Boolean>> additionalContainerStorageEnabled() {
         return Optional.ofNullable(this.additionalContainerStorageEnabled);
@@ -41,14 +41,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-     *
+     * 
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -56,14 +56,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
-     *
+     * 
      */
     @Import(name="autoRenewPeriod")
     private @Nullable Output<Integer> autoRenewPeriod;
 
     /**
      * @return Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
-     *
+     * 
      */
     public Optional<Output<Integer>> autoRenewPeriod() {
         return Optional.ofNullable(this.autoRenewPeriod);
@@ -72,7 +72,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     /**
      * Data disk configuration for the node
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="dataVolumes")
     private @Nullable Output<List<DefaultNodePoolNodeConfigDataVolumeArgs>> dataVolumes;
@@ -80,7 +80,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     /**
      * @return Data disk configuration for the node
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DefaultNodePoolNodeConfigDataVolumeArgs>>> dataVolumes() {
         return Optional.ofNullable(this.dataVolumes);
@@ -88,14 +88,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Group number of the instance in the deployment set. 0 means not set
-     *
+     * 
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
      * @return Group number of the instance in the deployment set. 0 means not set
-     *
+     * 
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
@@ -103,14 +103,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Deployment set ID to be added to the instance
-     *
+     * 
      */
     @Import(name="deploymentSetId")
     private @Nullable Output<String> deploymentSetId;
 
     /**
      * @return Deployment set ID to be added to the instance
-     *
+     * 
      */
     public Optional<Output<String>> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
@@ -118,14 +118,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Host name corresponding to the node
-     *
+     * 
      */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
     /**
      * @return Host name corresponding to the node
-     *
+     * 
      */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
@@ -133,14 +133,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-     *
+     * 
      */
     @Import(name="hpcClusterIds")
     private @Nullable Output<List<String>> hpcClusterIds;
 
     /**
      * @return High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-     *
+     * 
      */
     public Optional<Output<List<String>>> hpcClusterIds() {
         return Optional.ofNullable(this.hpcClusterIds);
@@ -148,14 +148,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Image ID used by the cloud server corresponding to the node
-     *
+     * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
      * @return Image ID used by the cloud server corresponding to the node
-     *
+     * 
      */
     public Optional<Output<String>> imageId() {
         return Optional.ofNullable(this.imageId);
@@ -163,14 +163,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Custom script executed after creating and initializing the node. Shell script in Base64 encoding
-     *
+     * 
      */
     @Import(name="initializeScript")
     private @Nullable Output<String> initializeScript;
 
     /**
      * @return Custom script executed after creating and initializing the node. Shell script in Base64 encoding
-     *
+     * 
      */
     public Optional<Output<String>> initializeScript() {
         return Optional.ofNullable(this.initializeScript);
@@ -178,14 +178,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-     *
+     * 
      */
     @Import(name="instanceChargeType")
     private @Nullable Output<String> instanceChargeType;
 
     /**
      * @return Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-     *
+     * 
      */
     public Optional<Output<String>> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
@@ -193,14 +193,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Node (instance) name
-     *
+     * 
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Node (instance) name
-     *
+     * 
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -208,14 +208,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * List of cloud server instance type IDs corresponding to the node
-     *
+     * 
      */
     @Import(name="instanceTypeIds")
     private @Nullable Output<List<String>> instanceTypeIds;
 
     /**
      * @return List of cloud server instance type IDs corresponding to the node
-     *
+     * 
      */
     public Optional<Output<List<String>>> instanceTypeIds() {
         return Optional.ofNullable(this.instanceTypeIds);
@@ -223,14 +223,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
-     *
+     * 
      */
     @Import(name="instancesDistribution")
     private @Nullable Output<DefaultNodePoolNodeConfigInstancesDistributionArgs> instancesDistribution;
 
     /**
      * @return Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
-     *
+     * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigInstancesDistributionArgs>> instancesDistribution() {
         return Optional.ofNullable(this.instancesDistribution);
@@ -238,14 +238,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Node name prefix. An empty string or nil means the node name prefix policy is not enabled
-     *
+     * 
      */
     @Import(name="namePrefix")
     private @Nullable Output<String> namePrefix;
 
     /**
      * @return Node name prefix. An empty string or nil means the node name prefix policy is not enabled
-     *
+     * 
      */
     public Optional<Output<String>> namePrefix() {
         return Optional.ofNullable(this.namePrefix);
@@ -253,14 +253,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Network communication mode between nodes
-     *
+     * 
      */
     @Import(name="networkTrafficMode")
     private @Nullable Output<String> networkTrafficMode;
 
     /**
      * @return Network communication mode between nodes
-     *
+     * 
      */
     public Optional<Output<String>> networkTrafficMode() {
         return Optional.ofNullable(this.networkTrafficMode);
@@ -268,14 +268,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
-     *
+     * 
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -283,14 +283,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Script executed before deploying nodes
-     *
+     * 
      */
     @Import(name="preScript")
     private @Nullable Output<String> preScript;
 
     /**
      * @return Script executed before deploying nodes
-     *
+     * 
      */
     public Optional<Output<String>> preScript() {
         return Optional.ofNullable(this.preScript);
@@ -298,14 +298,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * The project to which the ECS belongs. Each ECS can only belong to one project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return The project to which the ECS belongs. Each ECS can only belong to one project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -313,14 +313,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Configuration for automatic public network access for nodes
-     *
+     * 
      */
     @Import(name="publicAccessConfig")
     private @Nullable Output<DefaultNodePoolNodeConfigPublicAccessConfigArgs> publicAccessConfig;
 
     /**
      * @return Configuration for automatic public network access for nodes
-     *
+     * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigPublicAccessConfigArgs>> publicAccessConfig() {
         return Optional.ofNullable(this.publicAccessConfig);
@@ -328,14 +328,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
-     *
+     * 
      */
     @Import(name="publicAccessEnabled")
     private @Nullable Output<Boolean> publicAccessEnabled;
 
     /**
      * @return Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> publicAccessEnabled() {
         return Optional.ofNullable(this.publicAccessEnabled);
@@ -343,14 +343,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Node security configuration.
-     *
+     * 
      */
     @Import(name="security")
     private @Nullable Output<DefaultNodePoolNodeConfigSecurityArgs> security;
 
     /**
      * @return Node security configuration.
-     *
+     * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigSecurityArgs>> security() {
         return Optional.ofNullable(this.security);
@@ -358,14 +358,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
-     *
+     * 
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
      * @return Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
-     *
+     * 
      */
     public Optional<Output<String>> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
@@ -373,14 +373,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * List of subnet IDs to which the node network belongs.
-     *
+     * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
      * @return List of subnet IDs to which the node network belongs.
-     *
+     * 
      */
     public Optional<Output<List<String>>> subnetIds() {
         return Optional.ofNullable(this.subnetIds);
@@ -388,14 +388,14 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
     /**
      * System disk configuration for the node
-     *
+     * 
      */
     @Import(name="systemVolume")
     private @Nullable Output<DefaultNodePoolNodeConfigSystemVolumeArgs> systemVolume;
 
     /**
      * @return System disk configuration for the node
-     *
+     * 
      */
     public Optional<Output<DefaultNodePoolNodeConfigSystemVolumeArgs>> systemVolume() {
         return Optional.ofNullable(this.systemVolume);
@@ -404,7 +404,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     /**
      * Label information configured for the node pool
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DefaultNodePoolNodeConfigTagArgs>> tags;
@@ -412,7 +412,7 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
     /**
      * @return Label information configured for the node pool
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DefaultNodePoolNodeConfigTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -469,9 +469,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param additionalContainerStorageEnabled Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder additionalContainerStorageEnabled(@Nullable Output<Boolean> additionalContainerStorageEnabled) {
             $.additionalContainerStorageEnabled = additionalContainerStorageEnabled;
@@ -480,9 +480,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param additionalContainerStorageEnabled Whether the first data disk on the node has been configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted true: configured and formatted
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder additionalContainerStorageEnabled(Boolean additionalContainerStorageEnabled) {
             return additionalContainerStorageEnabled(Output.of(additionalContainerStorageEnabled));
@@ -490,9 +490,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param autoRenew Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -501,9 +501,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param autoRenew Whether the cloud server instance is automatically renewed upon expiration. Parameter values: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -511,9 +511,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param autoRenewPeriod Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenewPeriod(@Nullable Output<Integer> autoRenewPeriod) {
             $.autoRenewPeriod = autoRenewPeriod;
@@ -522,9 +522,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param autoRenewPeriod Automatic renewal duration for cloud server instance, in months. This parameter is returned only when AutoRenew=true.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoRenewPeriod(Integer autoRenewPeriod) {
             return autoRenewPeriod(Output.of(autoRenewPeriod));
@@ -533,9 +533,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         /**
          * @param dataVolumes Data disk configuration for the node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dataVolumes(@Nullable Output<List<DefaultNodePoolNodeConfigDataVolumeArgs>> dataVolumes) {
             $.dataVolumes = dataVolumes;
@@ -545,9 +545,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         /**
          * @param dataVolumes Data disk configuration for the node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dataVolumes(List<DefaultNodePoolNodeConfigDataVolumeArgs> dataVolumes) {
             return dataVolumes(Output.of(dataVolumes));
@@ -556,9 +556,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         /**
          * @param dataVolumes Data disk configuration for the node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dataVolumes(DefaultNodePoolNodeConfigDataVolumeArgs... dataVolumes) {
             return dataVolumes(List.of(dataVolumes));
@@ -566,9 +566,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param deploymentSetGroupNumber Group number of the instance in the deployment set. 0 means not set
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deploymentSetGroupNumber(@Nullable Output<Integer> deploymentSetGroupNumber) {
             $.deploymentSetGroupNumber = deploymentSetGroupNumber;
@@ -577,9 +577,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param deploymentSetGroupNumber Group number of the instance in the deployment set. 0 means not set
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deploymentSetGroupNumber(Integer deploymentSetGroupNumber) {
             return deploymentSetGroupNumber(Output.of(deploymentSetGroupNumber));
@@ -587,9 +587,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param deploymentSetId Deployment set ID to be added to the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deploymentSetId(@Nullable Output<String> deploymentSetId) {
             $.deploymentSetId = deploymentSetId;
@@ -598,9 +598,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param deploymentSetId Deployment set ID to be added to the instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deploymentSetId(String deploymentSetId) {
             return deploymentSetId(Output.of(deploymentSetId));
@@ -608,9 +608,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param hostname Host name corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
@@ -619,9 +619,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param hostname Host name corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
@@ -629,9 +629,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param hpcClusterIds High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterIds(@Nullable Output<List<String>> hpcClusterIds) {
             $.hpcClusterIds = hpcClusterIds;
@@ -640,9 +640,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param hpcClusterIds High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterIds(List<String> hpcClusterIds) {
             return hpcClusterIds(Output.of(hpcClusterIds));
@@ -650,9 +650,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param hpcClusterIds High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterIds(String... hpcClusterIds) {
             return hpcClusterIds(List.of(hpcClusterIds));
@@ -660,9 +660,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param imageId Image ID used by the cloud server corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder imageId(@Nullable Output<String> imageId) {
             $.imageId = imageId;
@@ -671,9 +671,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param imageId Image ID used by the cloud server corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder imageId(String imageId) {
             return imageId(Output.of(imageId));
@@ -681,9 +681,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param initializeScript Custom script executed after creating and initializing the node. Shell script in Base64 encoding
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder initializeScript(@Nullable Output<String> initializeScript) {
             $.initializeScript = initializeScript;
@@ -692,9 +692,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param initializeScript Custom script executed after creating and initializing the node. Shell script in Base64 encoding
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder initializeScript(String initializeScript) {
             return initializeScript(Output.of(initializeScript));
@@ -702,9 +702,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceChargeType Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceChargeType(@Nullable Output<String> instanceChargeType) {
             $.instanceChargeType = instanceChargeType;
@@ -713,9 +713,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceChargeType Billing type for cloud server instance. Parameter value description: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceChargeType(String instanceChargeType) {
             return instanceChargeType(Output.of(instanceChargeType));
@@ -723,9 +723,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceName Node (instance) name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -734,9 +734,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceName Node (instance) name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -744,9 +744,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceTypeIds List of cloud server instance type IDs corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeIds(@Nullable Output<List<String>> instanceTypeIds) {
             $.instanceTypeIds = instanceTypeIds;
@@ -755,9 +755,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceTypeIds List of cloud server instance type IDs corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeIds(List<String> instanceTypeIds) {
             return instanceTypeIds(Output.of(instanceTypeIds));
@@ -765,9 +765,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instanceTypeIds List of cloud server instance type IDs corresponding to the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeIds(String... instanceTypeIds) {
             return instanceTypeIds(List.of(instanceTypeIds));
@@ -775,9 +775,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instancesDistribution Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instancesDistribution(@Nullable Output<DefaultNodePoolNodeConfigInstancesDistributionArgs> instancesDistribution) {
             $.instancesDistribution = instancesDistribution;
@@ -786,9 +786,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param instancesDistribution Configure the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is set to SpotAsPriceGo
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instancesDistribution(DefaultNodePoolNodeConfigInstancesDistributionArgs instancesDistribution) {
             return instancesDistribution(Output.of(instancesDistribution));
@@ -796,9 +796,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param namePrefix Node name prefix. An empty string or nil means the node name prefix policy is not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder namePrefix(@Nullable Output<String> namePrefix) {
             $.namePrefix = namePrefix;
@@ -807,9 +807,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param namePrefix Node name prefix. An empty string or nil means the node name prefix policy is not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder namePrefix(String namePrefix) {
             return namePrefix(Output.of(namePrefix));
@@ -817,9 +817,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param networkTrafficMode Network communication mode between nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkTrafficMode(@Nullable Output<String> networkTrafficMode) {
             $.networkTrafficMode = networkTrafficMode;
@@ -828,9 +828,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param networkTrafficMode Network communication mode between nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkTrafficMode(String networkTrafficMode) {
             return networkTrafficMode(Output.of(networkTrafficMode));
@@ -838,9 +838,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param period Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -849,9 +849,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param period Duration for purchasing cloud server instance, in months. This parameter is returned only when InstanceChargeType=PrePaid
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -859,9 +859,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param preScript Script executed before deploying nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder preScript(@Nullable Output<String> preScript) {
             $.preScript = preScript;
@@ -870,9 +870,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param preScript Script executed before deploying nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder preScript(String preScript) {
             return preScript(Output.of(preScript));
@@ -880,9 +880,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param projectName The project to which the ECS belongs. Each ECS can only belong to one project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -891,9 +891,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param projectName The project to which the ECS belongs. Each ECS can only belong to one project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -901,9 +901,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param publicAccessConfig Configuration for automatic public network access for nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicAccessConfig(@Nullable Output<DefaultNodePoolNodeConfigPublicAccessConfigArgs> publicAccessConfig) {
             $.publicAccessConfig = publicAccessConfig;
@@ -912,9 +912,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param publicAccessConfig Configuration for automatic public network access for nodes
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicAccessConfig(DefaultNodePoolNodeConfigPublicAccessConfigArgs publicAccessConfig) {
             return publicAccessConfig(Output.of(publicAccessConfig));
@@ -922,9 +922,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param publicAccessEnabled Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicAccessEnabled(@Nullable Output<Boolean> publicAccessEnabled) {
             $.publicAccessEnabled = publicAccessEnabled;
@@ -933,9 +933,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param publicAccessEnabled Whether the node automatically enables public network access. Values:   - false: disabled   - true: enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder publicAccessEnabled(Boolean publicAccessEnabled) {
             return publicAccessEnabled(Output.of(publicAccessEnabled));
@@ -943,9 +943,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param security Node security configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder security(@Nullable Output<DefaultNodePoolNodeConfigSecurityArgs> security) {
             $.security = security;
@@ -954,9 +954,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param security Node security configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder security(DefaultNodePoolNodeConfigSecurityArgs security) {
             return security(Output.of(security));
@@ -964,9 +964,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param spotStrategy Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder spotStrategy(@Nullable Output<String> spotStrategy) {
             $.spotStrategy = spotStrategy;
@@ -975,9 +975,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param spotStrategy Preemptive policy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: regular pay-as-you-go instance. SpotAsPriceGo: system auto-bidding, follows current market price.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder spotStrategy(String spotStrategy) {
             return spotStrategy(Output.of(spotStrategy));
@@ -985,9 +985,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param subnetIds List of subnet IDs to which the node network belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -996,9 +996,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param subnetIds List of subnet IDs to which the node network belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -1006,9 +1006,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param subnetIds List of subnet IDs to which the node network belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -1016,9 +1016,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param systemVolume System disk configuration for the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemVolume(@Nullable Output<DefaultNodePoolNodeConfigSystemVolumeArgs> systemVolume) {
             $.systemVolume = systemVolume;
@@ -1027,9 +1027,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
 
         /**
          * @param systemVolume System disk configuration for the node
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemVolume(DefaultNodePoolNodeConfigSystemVolumeArgs systemVolume) {
             return systemVolume(Output.of(systemVolume));
@@ -1038,9 +1038,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         /**
          * @param tags Label information configured for the node pool
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<DefaultNodePoolNodeConfigTagArgs>> tags) {
             $.tags = tags;
@@ -1050,9 +1050,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         /**
          * @param tags Label information configured for the node pool
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<DefaultNodePoolNodeConfigTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1061,9 +1061,9 @@ public final class DefaultNodePoolNodeConfigArgs extends com.pulumi.resources.Re
         /**
          * @param tags Label information configured for the node pool
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(DefaultNodePoolNodeConfigTagArgs... tags) {
             return tags(List.of(tags));

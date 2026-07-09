@@ -20,14 +20,14 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
     /**
      * Whether there is an end node afterwards.
-     *
+     * 
      */
     @Import(name="hasEndNode")
     private @Nullable Output<Boolean> hasEndNode;
 
     /**
      * @return Whether there is an end node afterwards.
-     *
+     * 
      */
     public Optional<Output<Boolean>> hasEndNode() {
         return Optional.ofNullable(this.hasEndNode);
@@ -35,14 +35,14 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
     /**
      * Condition for whether to proceed to the next level.
-     *
+     * 
      */
     @Import(name="hasNext")
     private @Nullable Output<Boolean> hasNext;
 
     /**
      * @return Condition for whether to proceed to the next level.
-     *
+     * 
      */
     public Optional<Output<Boolean>> hasNext() {
         return Optional.ofNullable(this.hasNext);
@@ -51,7 +51,7 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
     /**
      * Notification channel information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="receiverInfos")
     private @Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs>> receiverInfos;
@@ -59,7 +59,7 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
     /**
      * @return Notification channel information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs>>> receiverInfos() {
         return Optional.ofNullable(this.receiverInfos);
@@ -67,14 +67,14 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
     /**
      * Rule node. JSON format.
-     *
+     * 
      */
     @Import(name="ruleNode")
     private @Nullable Output<String> ruleNode;
 
     /**
      * @return Rule node. JSON format.
-     *
+     * 
      */
     public Optional<Output<String>> ruleNode() {
         return Optional.ofNullable(this.ruleNode);
@@ -109,9 +109,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param hasEndNode Whether there is an end node afterwards.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hasEndNode(@Nullable Output<Boolean> hasEndNode) {
             $.hasEndNode = hasEndNode;
@@ -120,9 +120,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param hasEndNode Whether there is an end node afterwards.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hasEndNode(Boolean hasEndNode) {
             return hasEndNode(Output.of(hasEndNode));
@@ -130,9 +130,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param hasNext Condition for whether to proceed to the next level.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hasNext(@Nullable Output<Boolean> hasNext) {
             $.hasNext = hasNext;
@@ -141,9 +141,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param hasNext Condition for whether to proceed to the next level.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hasNext(Boolean hasNext) {
             return hasNext(Output.of(hasNext));
@@ -152,9 +152,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
         /**
          * @param receiverInfos Notification channel information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receiverInfos(@Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs>> receiverInfos) {
             $.receiverInfos = receiverInfos;
@@ -164,9 +164,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
         /**
          * @param receiverInfos Notification channel information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receiverInfos(List<AlarmNotifyGroupNoticeRuleReceiverInfoArgs> receiverInfos) {
             return receiverInfos(Output.of(receiverInfos));
@@ -175,9 +175,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
         /**
          * @param receiverInfos Notification channel information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder receiverInfos(AlarmNotifyGroupNoticeRuleReceiverInfoArgs... receiverInfos) {
             return receiverInfos(List.of(receiverInfos));
@@ -185,9 +185,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param ruleNode Rule node. JSON format.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleNode(@Nullable Output<String> ruleNode) {
             $.ruleNode = ruleNode;
@@ -196,9 +196,9 @@ public final class AlarmNotifyGroupNoticeRuleArgs extends com.pulumi.resources.R
 
         /**
          * @param ruleNode Rule node. JSON format.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleNode(String ruleNode) {
             return ruleNode(Output.of(ruleNode));

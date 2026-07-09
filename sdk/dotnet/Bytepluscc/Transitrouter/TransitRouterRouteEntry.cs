@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// By creating or deleting static routes in route tables associated with network instance connections or cross-region connections, you can flexibly control traffic direction in the transit router
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterRouteEntryDemo = new Bytepluscc.Transitrouter.TransitRouterRouteEntry("TransitRouterRouteEntryDemo", new()
     ///     {
@@ -33,12 +33,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///         TransitRouterRouteEntryNextHopType = "Attachment",
     ///         TransitRouterRouteEntryType = "Propagated",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry example "transit_router_route_table_id|transit_router_route_entry_id"
     /// ```

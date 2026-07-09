@@ -12,28 +12,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// Forwarding association of the transit router route table.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterRouteTableAssociationDemo = new Bytepluscc.Transitrouter.TransitRouterRouteTableAssociation("TransitRouterRouteTableAssociationDemo", new()
     ///     {
     ///         TransitRouterAttachmentId = "tr-attach-mjoxz9mx5ji85***",
     ///         TransitRouterRouteTableId = "tr-rtb-mjoxx4ofrt345sm****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/transitRouterRouteTableAssociation:TransitRouterRouteTableAssociation example "transit_router_route_table_id|transit_router_attachment_id"
     /// ```

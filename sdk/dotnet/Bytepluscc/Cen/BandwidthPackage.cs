@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
 {
     /// <summary>
     /// Provides cross-region communication bandwidth for Cloud Enterprise Network instances. You can allocate bandwidth to different inter-region connections. By creating a bandwidth package and assigning inter-region bandwidth, you enable connectivity between network instances in different regions.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cENBandwidthPackageDemo = new Bytepluscc.Cen.BandwidthPackage("CENBandwidthPackageDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cen
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cen/bandwidthPackage:BandwidthPackage example "cen_bandwidth_package_id"
     /// ```

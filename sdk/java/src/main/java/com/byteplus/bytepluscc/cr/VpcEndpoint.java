@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * VPC access endpoint
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cRVpcEndpointDemo = new VpcEndpoint("cRVpcEndpointDemo", VpcEndpointArgs.builder()
  *             .registry("registry_xxxxxx")
@@ -52,32 +52,32 @@ import javax.annotation.Nullable;
  *                 .vpc_id("vpc_id_xxxx")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cr/vpcEndpoint:VpcEndpoint example &#34;registry&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cr/vpcEndpoint:VpcEndpoint")
 public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Image repository instance name
-     *
+     * 
      */
     @Export(name="registry", refs={String.class}, tree="[0]")
     private Output<String> registry;
 
     /**
      * @return Image repository instance name
-     *
+     * 
      */
     public Output<String> registry() {
         return this.registry;
@@ -85,7 +85,7 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Specify which VPCs can access this Standard Edition image repository instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="vpcs", refs={List.class,VpcEndpointVpc.class}, tree="[0,1]")
     private Output<List<VpcEndpointVpc>> vpcs;
@@ -93,7 +93,7 @@ public class VpcEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * @return Specify which VPCs can access this Standard Edition image repository instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcEndpointVpc>> vpcs() {
         return this.vpcs;

@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Event rule details
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cloudMonitorEventRuleDemo = new EventRule("cloudMonitorEventRuleDemo", EventRuleArgs.builder()
  *             .ruleName("ccapi-test-1001")
@@ -57,53 +57,53 @@ import javax.annotation.Nullable;
  *                 jsonObject(
  *                     jsonProperty("Data", jsonObject(
  *                         jsonProperty("autoscaling", jsonArray(
- *                             "1",
+ *                             "1", 
  *                             "3"
  *                         )),
  *                         jsonProperty("ecs", jsonArray("2"))
  *                     ))
  *                 )))
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cloudmonitor/eventRule:EventRule example &#34;rule_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cloudmonitor/eventRule:EventRule")
 public class EventRule extends com.pulumi.resources.CustomResource {
     /**
      * Main account ID
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Main account ID
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Event rule creation time
-     *
+     * 
      */
     @Export(name="createdAt", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdAt;
 
     /**
      * @return Event rule creation time
-     *
+     * 
      */
     public Output<Integer> createdAt() {
         return this.createdAt;
@@ -113,7 +113,7 @@ public class EventRule extends com.pulumi.resources.CustomResource {
      *   Must not start with a digit, hyphen (-), or Chinese punctuation
      *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
      *   Length limit: 0–255 characters
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
@@ -123,139 +123,139 @@ public class EventRule extends com.pulumi.resources.CustomResource {
      *   Must not start with a digit, hyphen (-), or Chinese punctuation
      *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
      *   Length limit: 0–255 characters
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Rule status
-     *
+     * 
      *   enable: Rule enabled
      *   disable: Rule disabled
-     *
+     * 
      */
     @Export(name="enableState", refs={String.class}, tree="[0]")
     private Output<String> enableState;
 
     /**
      * @return Rule status
-     *
+     * 
      *   enable: Rule enabled
      *   disable: Rule disabled
-     *
+     * 
      */
     public Output<String> enableState() {
         return this.enableState;
     }
     /**
      * Event bus name. Currently, only &#39;default&#39; can be entered
-     *
+     * 
      */
     @Export(name="eventBusName", refs={String.class}, tree="[0]")
     private Output<String> eventBusName;
 
     /**
      * @return Event bus name. Currently, only &#39;default&#39; can be entered
-     *
+     * 
      */
     public Output<String> eventBusName() {
         return this.eventBusName;
     }
     /**
      * Event source
-     *
+     * 
      */
     @Export(name="eventSource", refs={String.class}, tree="[0]")
     private Output<String> eventSource;
 
     /**
      * @return Event source
-     *
+     * 
      */
     public Output<String> eventSource() {
         return this.eventSource;
     }
     /**
      * Event type
-     *
+     * 
      */
     @Export(name="eventTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> eventTypes;
 
     /**
      * @return Event type
-     *
+     * 
      */
     public Output<List<String>> eventTypes() {
         return this.eventTypes;
     }
     /**
      * Filter mode, also known as event matching rule. Read-only
-     *
+     * 
      */
     @Export(name="filterPattern", refs={String.class}, tree="[0]")
     private Output<String> filterPattern;
 
     /**
      * @return Filter mode, also known as event matching rule. Read-only
-     *
+     * 
      */
     public Output<String> filterPattern() {
         return this.filterPattern;
     }
     /**
      * Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
-     *
+     * 
      */
     @Export(name="filterPatternInput", refs={String.class}, tree="[0]")
     private Output<String> filterPatternInput;
 
     /**
      * @return Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
-     *
+     * 
      */
     public Output<String> filterPatternInput() {
         return this.filterPatternInput;
     }
     /**
      * Alert rule severity
-     *
+     * 
      */
     @Export(name="level", refs={String.class}, tree="[0]")
     private Output<String> level;
 
     /**
      * @return Alert rule severity
-     *
+     * 
      */
     public Output<String> level() {
         return this.level;
     }
     /**
      * Policy ID
-     *
+     * 
      */
     @Export(name="notificationId", refs={String.class}, tree="[0]")
     private Output<String> notificationId;
 
     /**
      * @return Policy ID
-     *
+     * 
      */
     public Output<String> notificationId() {
         return this.notificationId;
     }
     /**
      * Event rule ID
-     *
+     * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Event rule ID
-     *
+     * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
@@ -264,7 +264,7 @@ public class EventRule extends com.pulumi.resources.CustomResource {
      * Rule name
      *   Length limit: 1–128 characters
      *   Must not start with a digit or hyphen (-)
-     *
+     * 
      */
     @Export(name="ruleName", refs={String.class}, tree="[0]")
     private Output<String> ruleName;
@@ -273,21 +273,21 @@ public class EventRule extends com.pulumi.resources.CustomResource {
      * @return Rule name
      *   Length limit: 1–128 characters
      *   Must not start with a digit or hyphen (-)
-     *
+     * 
      */
     public Output<String> ruleName() {
         return this.ruleName;
     }
     /**
      * Event rule update time
-     *
+     * 
      */
     @Export(name="updatedAt", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedAt;
 
     /**
      * @return Event rule update time
-     *
+     * 
      */
     public Output<Integer> updatedAt() {
         return this.updatedAt;

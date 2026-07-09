@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * Redis Cache Database supports creating multiple accounts. You can select different roles when creating an account. Each role grants different permissions, helping you manage the database with greater precision and enhance data security.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,12 +34,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var redisAccountDemo = new Account("redisAccountDemo", AccountArgs.builder()
  *             .instanceId("redis-mlrfiqivjttxxxxx")
@@ -48,102 +48,102 @@ import javax.annotation.Nullable;
  *             .password("******")
  *             .roleName("Administrator")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:redis/account:Account example &#34;instance_id|account_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:redis/account:Account")
 public class Account extends com.pulumi.resources.CustomResource {
     /**
      * Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
-     *
+     * 
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
      * @return Account name. The name must meet the following requirements: It must start with a lowercase letter. It must end with a lowercase letter or number. The length must be 2–16 characters. It can only contain lowercase letters, numbers, and underscores (_).
-     *
+     * 
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
      * Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
-     *
+     * 
      */
     @Export(name="accountStatus", refs={String.class}, tree="[0]")
     private Output<String> accountStatus;
 
     /**
      * @return Account status. The value range is as follows: Available: Available. Unavailable: Unavailable.
-     *
+     * 
      */
     public Output<String> accountStatus() {
         return this.accountStatus;
     }
     /**
      * Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Account description, up to 256 characters. Note: If this parameter is empty, no account description is set.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
-     *
+     * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return Account password. The password must meet the following requirements: Length of 8–32 characters. Must include at least two of the following: uppercase letters, lowercase letters, numbers, or special characters. Supported special characters: ()`~!{@literal @}#$%^&amp;*-+=_|{}[];&lt;&gt;,.?
-     *
+     * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
      * Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role&#39;s ACL rules, see ACL syntax.
-     *
+     * 
      */
     @Export(name="roleName", refs={String.class}, tree="[0]")
     private Output<String> roleName;
 
     /**
      * @return Account role. The following default roles are supported: Administrator: Allows all Redis instance-supported commands on all Keys. ReadWrite: Allows all commands except admin class commands on all Keys. ReadOnly: Allows all read class commands on all Keys. NotDangerous: Allows all commands except dangerous class commands on all Keys. Note: For details on the specific commands supported by each role&#39;s ACL rules, see ACL syntax.
-     *
+     * 
      */
     public Output<String> roleName() {
         return this.roleName;

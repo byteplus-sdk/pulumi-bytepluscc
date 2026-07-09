@@ -14,50 +14,50 @@ import java.util.Objects;
 public final class GetDomainNegativeCacheNegativeCacheRule {
     /**
      * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     private String action;
     /**
      * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-     *
+     * 
      */
     private Boolean ignoreCase;
     /**
      * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-     *
+     * 
      */
     private String statusCode;
     /**
      * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-     *
+     * 
      */
     private Integer ttl;
 
     private GetDomainNegativeCacheNegativeCacheRule() {}
     /**
      * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     public String action() {
         return this.action;
     }
     /**
      * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-     *
+     * 
      */
     public Boolean ignoreCase() {
         return this.ignoreCase;
     }
     /**
      * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-     *
+     * 
      */
     public String statusCode() {
         return this.statusCode;
     }
     /**
      * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-     *
+     * 
      */
     public Integer ttl() {
         return this.ttl;

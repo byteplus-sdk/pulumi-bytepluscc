@@ -22,14 +22,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
-     *
+     * 
      */
     @Import(name="architecture")
     private @Nullable Output<String> architecture;
 
     /**
      * @return Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
-     *
+     * 
      */
     public Optional<Output<String>> architecture() {
         return Optional.ofNullable(this.architecture);
@@ -37,14 +37,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image boot mode. You can select BIOS or UEFI
-     *
+     * 
      */
     @Import(name="bootMode")
     private @Nullable Output<String> bootMode;
 
     /**
      * @return Image boot mode. You can select BIOS or UEFI
-     *
+     * 
      */
     public Optional<Output<String>> bootMode() {
         return Optional.ofNullable(this.bootMode);
@@ -52,14 +52,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
-     *
+     * 
      */
     @Import(name="createWholeImage")
     private @Nullable Output<Boolean> createWholeImage;
 
     /**
      * @return Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
-     *
+     * 
      */
     public Optional<Output<Boolean>> createWholeImage() {
         return Optional.ofNullable(this.createWholeImage);
@@ -67,14 +67,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -82,14 +82,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
-     *
+     * 
      */
     @Import(name="imageName", required=true)
     private Output<String> imageName;
 
     /**
      * @return Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
-     *
+     * 
      */
     public Output<String> imageName() {
         return this.imageName;
@@ -97,14 +97,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Imported image information
-     *
+     * 
      */
     @Import(name="importImage")
     private @Nullable Output<ImageImportImageArgs> importImage;
 
     /**
      * @return Imported image information
-     *
+     * 
      */
     public Optional<Output<ImageImportImageArgs>> importImage() {
         return Optional.ofNullable(this.importImage);
@@ -112,14 +112,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -127,14 +127,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
-     *
+     * 
      */
     @Import(name="licenseType")
     private @Nullable Output<String> licenseType;
 
     /**
      * @return Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
-     *
+     * 
      */
     public Optional<Output<String>> licenseType() {
         return Optional.ofNullable(this.licenseType);
@@ -142,14 +142,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
-     *
+     * 
      */
     @Import(name="needDetection")
     private @Nullable Output<Boolean> needDetection;
 
     /**
      * @return Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> needDetection() {
         return Optional.ofNullable(this.needDetection);
@@ -157,14 +157,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Operating system type
-     *
+     * 
      */
     @Import(name="osType")
     private @Nullable Output<String> osType;
 
     /**
      * @return Operating system type
-     *
+     * 
      */
     public Optional<Output<String>> osType() {
         return Optional.ofNullable(this.osType);
@@ -172,14 +172,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
-     *
+     * 
      */
     @Import(name="platform")
     private @Nullable Output<String> platform;
 
     /**
      * @return Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
-     *
+     * 
      */
     public Optional<Output<String>> platform() {
         return Optional.ofNullable(this.platform);
@@ -187,14 +187,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image release version.
-     *
+     * 
      */
     @Import(name="platformVersion")
     private @Nullable Output<String> platformVersion;
 
     /**
      * @return Image release version.
-     *
+     * 
      */
     public Optional<Output<String>> platformVersion() {
         return Optional.ofNullable(this.platformVersion);
@@ -202,14 +202,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -217,14 +217,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Accounts with which the image is shared
-     *
+     * 
      */
     @Import(name="sharePermissions")
     private @Nullable Output<List<String>> sharePermissions;
 
     /**
      * @return Accounts with which the image is shared
-     *
+     * 
      */
     public Optional<Output<List<String>>> sharePermissions() {
         return Optional.ofNullable(this.sharePermissions);
@@ -232,14 +232,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
-     *
+     * 
      */
     @Import(name="snapshotGroupId")
     private @Nullable Output<String> snapshotGroupId;
 
     /**
      * @return Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
-     *
+     * 
      */
     public Optional<Output<String>> snapshotGroupId() {
         return Optional.ofNullable(this.snapshotGroupId);
@@ -247,14 +247,14 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
      * @return System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-     *
+     * 
      */
     public Optional<Output<String>> snapshotId() {
         return Optional.ofNullable(this.snapshotId);
@@ -263,7 +263,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of tags bound to the image.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ImageTagArgs>> tags;
@@ -271,7 +271,7 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of tags bound to the image.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ImageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -319,9 +319,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param architecture Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder architecture(@Nullable Output<String> architecture) {
             $.architecture = architecture;
@@ -330,9 +330,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param architecture Image architecture type. Options: amd64 (x86 compute), arm64 (ARM compute).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder architecture(String architecture) {
             return architecture(Output.of(architecture));
@@ -340,9 +340,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bootMode Image boot mode. You can select BIOS or UEFI
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bootMode(@Nullable Output<String> bootMode) {
             $.bootMode = bootMode;
@@ -351,9 +351,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bootMode Image boot mode. You can select BIOS or UEFI
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bootMode(String bootMode) {
             return bootMode(Output.of(bootMode));
@@ -361,9 +361,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createWholeImage Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createWholeImage(@Nullable Output<Boolean> createWholeImage) {
             $.createWholeImage = createWholeImage;
@@ -372,9 +372,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createWholeImage Whether to create a full instance image. Values: false: Default, do not create a full instance image. true: Create a full instance image.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createWholeImage(Boolean createWholeImage) {
             return createWholeImage(Output.of(createWholeImage));
@@ -382,9 +382,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -393,9 +393,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Image description. Must start with a letter or Chinese character. Can contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, equals signs &#34;=&#34;, English commas &#34;,&#34;, English periods &#34;.&#34;, Chinese commas &#34;，&#34;, Chinese periods &#34;。&#34;, and spaces. Length: 0–255 characters. If left blank, defaults to empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -403,9 +403,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param imageName Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder imageName(Output<String> imageName) {
             $.imageName = imageName;
@@ -414,9 +414,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param imageName Image name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;. Length: 1–128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder imageName(String imageName) {
             return imageName(Output.of(imageName));
@@ -424,9 +424,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param importImage Imported image information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder importImage(@Nullable Output<ImageImportImageArgs> importImage) {
             $.importImage = importImage;
@@ -435,9 +435,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param importImage Imported image information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder importImage(ImageImportImageArgs importImage) {
             return importImage(Output.of(importImage));
@@ -445,9 +445,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -456,9 +456,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -466,9 +466,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param licenseType Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder licenseType(@Nullable Output<String> licenseType) {
             $.licenseType = licenseType;
@@ -477,9 +477,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param licenseType Image license type. VolcanoEngine: Default, uses the official license based on your platform setting. BYOL: Bring Your Own License (BYOL)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder licenseType(String licenseType) {
             return licenseType(Output.of(licenseType));
@@ -487,9 +487,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param needDetection Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder needDetection(@Nullable Output<Boolean> needDetection) {
             $.needDetection = needDetection;
@@ -498,9 +498,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param needDetection Whether to perform image check. Values: true: Default, check enabled. false: Check disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder needDetection(Boolean needDetection) {
             return needDetection(Output.of(needDetection));
@@ -508,9 +508,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param osType Operating system type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder osType(@Nullable Output<String> osType) {
             $.osType = osType;
@@ -519,9 +519,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param osType Operating system type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder osType(String osType) {
             return osType(Output.of(osType));
@@ -529,9 +529,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param platform Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder platform(@Nullable Output<String> platform) {
             $.platform = platform;
@@ -540,9 +540,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param platform Release version of the image operating system. Options: CentOS, Debian, veLinux, Windows Server, Fedora, OpenSUSE, Ubuntu.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder platform(String platform) {
             return platform(Output.of(platform));
@@ -550,9 +550,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param platformVersion Image release version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder platformVersion(@Nullable Output<String> platformVersion) {
             $.platformVersion = platformVersion;
@@ -561,9 +561,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param platformVersion Image release version.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder platformVersion(String platformVersion) {
             return platformVersion(Output.of(platformVersion));
@@ -571,9 +571,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -582,9 +582,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. If the API caller account only has permissions for certain projects, you must provide a project with the required permissions
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -592,9 +592,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sharePermissions Accounts with which the image is shared
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sharePermissions(@Nullable Output<List<String>> sharePermissions) {
             $.sharePermissions = sharePermissions;
@@ -603,9 +603,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sharePermissions Accounts with which the image is shared
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sharePermissions(List<String> sharePermissions) {
             return sharePermissions(Output.of(sharePermissions));
@@ -613,9 +613,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sharePermissions Accounts with which the image is shared
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sharePermissions(String... sharePermissions) {
             return sharePermissions(List.of(sharePermissions));
@@ -623,9 +623,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotGroupId Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotGroupId(@Nullable Output<String> snapshotGroupId) {
             $.snapshotGroupId = snapshotGroupId;
@@ -634,9 +634,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotGroupId Snapshot consistency group ID, used to create a custom image from a snapshot consistency group. One of Snapshot consistency group ID, SnapshotId, or InstanceId must be provided
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotGroupId(String snapshotGroupId) {
             return snapshotGroupId(Output.of(snapshotGroupId));
@@ -644,9 +644,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotId System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotId(@Nullable Output<String> snapshotId) {
             $.snapshotId = snapshotId;
@@ -655,9 +655,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotId System disk snapshot ID, used to create a custom image from a system disk snapshot. You must specify one of InstanceId, SnapshotId, or SnapshotGroupId.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snapshotId(String snapshotId) {
             return snapshotId(Output.of(snapshotId));
@@ -666,9 +666,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags List of tags bound to the image.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ImageTagArgs>> tags) {
             $.tags = tags;
@@ -678,9 +678,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags List of tags bound to the image.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ImageTagArgs> tags) {
             return tags(Output.of(tags));
@@ -689,9 +689,9 @@ public final class ImageArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags List of tags bound to the image.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ImageTagArgs... tags) {
             return tags(List.of(tags));

@@ -24,14 +24,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Forwarding rule description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -39,14 +39,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name of the forwarding rule.
-     *
+     * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return Domain name of the forwarding rule.
-     *
+     * 
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
@@ -54,14 +54,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule server group configuration.
-     *
+     * 
      */
     @Import(name="forwardGroupConfig")
     private @Nullable Output<RuleForwardGroupConfigArgs> forwardGroupConfig;
 
     /**
      * @return Forwarding rule server group configuration.
-     *
+     * 
      */
     public Optional<Output<RuleForwardGroupConfigArgs>> forwardGroupConfig() {
         return Optional.ofNullable(this.forwardGroupConfig);
@@ -69,14 +69,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener ID.
-     *
+     * 
      */
     @Import(name="listenerId")
     private @Nullable Output<String> listenerId;
 
     /**
      * @return Listener ID.
-     *
+     * 
      */
     public Optional<Output<String>> listenerId() {
         return Optional.ofNullable(this.listenerId);
@@ -84,14 +84,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Standard edition forwarding rule priority.
-     *
+     * 
      */
     @Import(name="priority")
     private @Nullable Output<Integer> priority;
 
     /**
      * @return Standard edition forwarding rule priority.
-     *
+     * 
      */
     public Optional<Output<Integer>> priority() {
         return Optional.ofNullable(this.priority);
@@ -99,14 +99,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Redirect-related configuration information.
-     *
+     * 
      */
     @Import(name="redirectConfig")
     private @Nullable Output<RuleRedirectConfigArgs> redirectConfig;
 
     /**
      * @return Redirect-related configuration information.
-     *
+     * 
      */
     public Optional<Output<RuleRedirectConfigArgs>> redirectConfig() {
         return Optional.ofNullable(this.redirectConfig);
@@ -114,14 +114,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Redirect-related configuration information.
-     *
+     * 
      */
     @Import(name="rewriteConfig")
     private @Nullable Output<RuleRewriteConfigArgs> rewriteConfig;
 
     /**
      * @return Redirect-related configuration information.
-     *
+     * 
      */
     public Optional<Output<RuleRewriteConfigArgs>> rewriteConfig() {
         return Optional.ofNullable(this.rewriteConfig);
@@ -129,14 +129,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
-     *
+     * 
      */
     @Import(name="rewriteEnabled")
     private @Nullable Output<String> rewriteEnabled;
 
     /**
      * @return Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
-     *
+     * 
      */
     public Optional<Output<String>> rewriteEnabled() {
         return Optional.ofNullable(this.rewriteEnabled);
@@ -144,14 +144,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
-     *
+     * 
      */
     @Import(name="ruleAction")
     private @Nullable Output<String> ruleAction;
 
     /**
      * @return Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
-     *
+     * 
      */
     public Optional<Output<String>> ruleAction() {
         return Optional.ofNullable(this.ruleAction);
@@ -160,7 +160,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     /**
      * Standard edition forwarding rule action.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="ruleActions")
     private @Nullable Output<List<RuleRuleActionArgs>> ruleActions;
@@ -168,7 +168,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Standard edition forwarding rule action.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleRuleActionArgs>>> ruleActions() {
         return Optional.ofNullable(this.ruleActions);
@@ -177,7 +177,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     /**
      * Standard edition forwarding rule condition.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="ruleConditions")
     private @Nullable Output<List<RuleRuleConditionArgs>> ruleConditions;
@@ -185,7 +185,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Standard edition forwarding rule condition.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleRuleConditionArgs>>> ruleConditions() {
         return Optional.ofNullable(this.ruleConditions);
@@ -193,14 +193,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule ID.
-     *
+     * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Forwarding rule ID.
-     *
+     * 
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -208,14 +208,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backend server group ID associated with the forwarding rule.
-     *
+     * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
      * @return Backend server group ID associated with the forwarding rule.
-     *
+     * 
      */
     public Optional<Output<String>> serverGroupId() {
         return Optional.ofNullable(this.serverGroupId);
@@ -223,14 +223,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
-     *
+     * 
      */
     @Import(name="trafficLimitEnabled")
     private @Nullable Output<String> trafficLimitEnabled;
 
     /**
      * @return Forwarding rule QPS throttling switch. on: enabled. off: disabled.
-     *
+     * 
      */
     public Optional<Output<String>> trafficLimitEnabled() {
         return Optional.ofNullable(this.trafficLimitEnabled);
@@ -238,14 +238,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Requests per second. Range: 100–100000.
-     *
+     * 
      */
     @Import(name="trafficLimitQps")
     private @Nullable Output<Integer> trafficLimitQps;
 
     /**
      * @return Requests per second. Range: 100–100000.
-     *
+     * 
      */
     public Optional<Output<Integer>> trafficLimitQps() {
         return Optional.ofNullable(this.trafficLimitQps);
@@ -253,14 +253,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule URL.
-     *
+     * 
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
      * @return Forwarding rule URL.
-     *
+     * 
      */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
@@ -307,9 +307,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Forwarding rule description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -318,9 +318,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Forwarding rule description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -328,9 +328,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Domain name of the forwarding rule.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
@@ -339,9 +339,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Domain name of the forwarding rule.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
@@ -349,9 +349,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param forwardGroupConfig Forwarding rule server group configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forwardGroupConfig(@Nullable Output<RuleForwardGroupConfigArgs> forwardGroupConfig) {
             $.forwardGroupConfig = forwardGroupConfig;
@@ -360,9 +360,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param forwardGroupConfig Forwarding rule server group configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forwardGroupConfig(RuleForwardGroupConfigArgs forwardGroupConfig) {
             return forwardGroupConfig(Output.of(forwardGroupConfig));
@@ -370,9 +370,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerId Listener ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerId(@Nullable Output<String> listenerId) {
             $.listenerId = listenerId;
@@ -381,9 +381,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerId Listener ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerId(String listenerId) {
             return listenerId(Output.of(listenerId));
@@ -391,9 +391,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param priority Standard edition forwarding rule priority.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder priority(@Nullable Output<Integer> priority) {
             $.priority = priority;
@@ -402,9 +402,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param priority Standard edition forwarding rule priority.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder priority(Integer priority) {
             return priority(Output.of(priority));
@@ -412,9 +412,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param redirectConfig Redirect-related configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder redirectConfig(@Nullable Output<RuleRedirectConfigArgs> redirectConfig) {
             $.redirectConfig = redirectConfig;
@@ -423,9 +423,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param redirectConfig Redirect-related configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder redirectConfig(RuleRedirectConfigArgs redirectConfig) {
             return redirectConfig(Output.of(redirectConfig));
@@ -433,9 +433,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rewriteConfig Redirect-related configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rewriteConfig(@Nullable Output<RuleRewriteConfigArgs> rewriteConfig) {
             $.rewriteConfig = rewriteConfig;
@@ -444,9 +444,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rewriteConfig Redirect-related configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rewriteConfig(RuleRewriteConfigArgs rewriteConfig) {
             return rewriteConfig(Output.of(rewriteConfig));
@@ -454,9 +454,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rewriteEnabled Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rewriteEnabled(@Nullable Output<String> rewriteEnabled) {
             $.rewriteEnabled = rewriteEnabled;
@@ -465,9 +465,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rewriteEnabled Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rewriteEnabled(String rewriteEnabled) {
             return rewriteEnabled(Output.of(rewriteEnabled));
@@ -475,9 +475,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleAction Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleAction(@Nullable Output<String> ruleAction) {
             $.ruleAction = ruleAction;
@@ -486,9 +486,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleAction Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleAction(String ruleAction) {
             return ruleAction(Output.of(ruleAction));
@@ -497,9 +497,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ruleActions Standard edition forwarding rule action.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleActions(@Nullable Output<List<RuleRuleActionArgs>> ruleActions) {
             $.ruleActions = ruleActions;
@@ -509,9 +509,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ruleActions Standard edition forwarding rule action.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleActions(List<RuleRuleActionArgs> ruleActions) {
             return ruleActions(Output.of(ruleActions));
@@ -520,9 +520,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ruleActions Standard edition forwarding rule action.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleActions(RuleRuleActionArgs... ruleActions) {
             return ruleActions(List.of(ruleActions));
@@ -531,9 +531,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ruleConditions Standard edition forwarding rule condition.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleConditions(@Nullable Output<List<RuleRuleConditionArgs>> ruleConditions) {
             $.ruleConditions = ruleConditions;
@@ -543,9 +543,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ruleConditions Standard edition forwarding rule condition.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleConditions(List<RuleRuleConditionArgs> ruleConditions) {
             return ruleConditions(Output.of(ruleConditions));
@@ -554,9 +554,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param ruleConditions Standard edition forwarding rule condition.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleConditions(RuleRuleConditionArgs... ruleConditions) {
             return ruleConditions(List.of(ruleConditions));
@@ -564,9 +564,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Forwarding rule ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -575,9 +575,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Forwarding rule ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -585,9 +585,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Backend server group ID associated with the forwarding rule.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(@Nullable Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -596,9 +596,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Backend server group ID associated with the forwarding rule.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
@@ -606,9 +606,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trafficLimitEnabled Forwarding rule QPS throttling switch. on: enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder trafficLimitEnabled(@Nullable Output<String> trafficLimitEnabled) {
             $.trafficLimitEnabled = trafficLimitEnabled;
@@ -617,9 +617,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trafficLimitEnabled Forwarding rule QPS throttling switch. on: enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder trafficLimitEnabled(String trafficLimitEnabled) {
             return trafficLimitEnabled(Output.of(trafficLimitEnabled));
@@ -627,9 +627,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trafficLimitQps Requests per second. Range: 100–100000.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder trafficLimitQps(@Nullable Output<Integer> trafficLimitQps) {
             $.trafficLimitQps = trafficLimitQps;
@@ -638,9 +638,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trafficLimitQps Requests per second. Range: 100–100000.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder trafficLimitQps(Integer trafficLimitQps) {
             return trafficLimitQps(Output.of(trafficLimitQps));
@@ -648,9 +648,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url Forwarding rule URL.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
@@ -659,9 +659,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url Forwarding rule URL.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder url(String url) {
             return url(Output.of(url));

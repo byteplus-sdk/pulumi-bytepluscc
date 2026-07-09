@@ -14,7 +14,7 @@ public final class UpstreamUpstreamSpecDomain {
     /**
      * @return Domain name list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<UpstreamUpstreamSpecDomainDomainList> domainLists;
 
@@ -22,7 +22,7 @@ public final class UpstreamUpstreamSpecDomain {
     /**
      * @return Domain name list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<UpstreamUpstreamSpecDomainDomainList> domainLists() {
         return this.domainLists == null ? List.of() : this.domainLists;

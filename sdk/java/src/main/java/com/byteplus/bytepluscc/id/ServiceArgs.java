@@ -22,14 +22,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backend service configuration
-     *
+     * 
      */
     @Import(name="backend", required=true)
     private Output<ServiceBackendArgs> backend;
 
     /**
      * @return Backend service configuration
-     *
+     * 
      */
     public Output<ServiceBackendArgs> backend() {
         return this.backend;
@@ -37,14 +37,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Service description, up to 256 characters
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Service description, up to 256 characters
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -52,14 +52,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Permission space ID, for example ps_123456
-     *
+     * 
      */
     @Import(name="permissionSpaceId", required=true)
     private Output<String> permissionSpaceId;
 
     /**
      * @return Permission space ID, for example ps_123456
-     *
+     * 
      */
     public Output<String> permissionSpaceId() {
         return this.permissionSpaceId;
@@ -67,14 +67,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Permission space name
-     *
+     * 
      */
     @Import(name="permissionSpaceName")
     private @Nullable Output<String> permissionSpaceName;
 
     /**
      * @return Permission space name
-     *
+     * 
      */
     public Optional<Output<String>> permissionSpaceName() {
         return Optional.ofNullable(this.permissionSpaceName);
@@ -82,14 +82,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name. Optional at creation, default value is &#34;default&#34;
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name. Optional at creation, default value is &#34;default&#34;
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -98,7 +98,7 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of routes created simultaneously. This field is only written at creation, not returned by read interface
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="routes")
     private @Nullable Output<List<ServiceRouteArgs>> routes;
@@ -106,7 +106,7 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of routes created simultaneously. This field is only written at creation, not returned by read interface
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServiceRouteArgs>>> routes() {
         return Optional.ofNullable(this.routes);
@@ -114,14 +114,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Service name, 1–64 characters, unique within the account
-     *
+     * 
      */
     @Import(name="serviceName", required=true)
     private Output<String> serviceName;
 
     /**
      * @return Service name, 1–64 characters, unique within the account
-     *
+     * 
      */
     public Output<String> serviceName() {
         return this.serviceName;
@@ -129,14 +129,14 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Service status. inactive: not enabled. active: enabled (configuration synced to APIGateway). draft: draft status (changes not synced to APIGateway)
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Service status. inactive: not enabled. active: enabled (configuration synced to APIGateway). draft: draft status (changes not synced to APIGateway)
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -145,7 +145,7 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Service tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ServiceTagArgs>> tags;
@@ -153,7 +153,7 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Service tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServiceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -193,9 +193,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backend Backend service configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backend(Output<ServiceBackendArgs> backend) {
             $.backend = backend;
@@ -204,9 +204,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backend Backend service configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backend(ServiceBackendArgs backend) {
             return backend(Output.of(backend));
@@ -214,9 +214,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Service description, up to 256 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -225,9 +225,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Service description, up to 256 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -235,9 +235,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionSpaceId Permission space ID, for example ps_123456
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionSpaceId(Output<String> permissionSpaceId) {
             $.permissionSpaceId = permissionSpaceId;
@@ -246,9 +246,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionSpaceId Permission space ID, for example ps_123456
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionSpaceId(String permissionSpaceId) {
             return permissionSpaceId(Output.of(permissionSpaceId));
@@ -256,9 +256,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionSpaceName Permission space name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionSpaceName(@Nullable Output<String> permissionSpaceName) {
             $.permissionSpaceName = permissionSpaceName;
@@ -267,9 +267,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param permissionSpaceName Permission space name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionSpaceName(String permissionSpaceName) {
             return permissionSpaceName(Output.of(permissionSpaceName));
@@ -277,9 +277,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name. Optional at creation, default value is &#34;default&#34;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -288,9 +288,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name. Optional at creation, default value is &#34;default&#34;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -299,9 +299,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param routes List of routes created simultaneously. This field is only written at creation, not returned by read interface
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routes(@Nullable Output<List<ServiceRouteArgs>> routes) {
             $.routes = routes;
@@ -311,9 +311,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param routes List of routes created simultaneously. This field is only written at creation, not returned by read interface
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routes(List<ServiceRouteArgs> routes) {
             return routes(Output.of(routes));
@@ -322,9 +322,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param routes List of routes created simultaneously. This field is only written at creation, not returned by read interface
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routes(ServiceRouteArgs... routes) {
             return routes(List.of(routes));
@@ -332,9 +332,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceName Service name, 1–64 characters, unique within the account
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceName(Output<String> serviceName) {
             $.serviceName = serviceName;
@@ -343,9 +343,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceName Service name, 1–64 characters, unique within the account
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
@@ -353,9 +353,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Service status. inactive: not enabled. active: enabled (configuration synced to APIGateway). draft: draft status (changes not synced to APIGateway)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -364,9 +364,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Service status. inactive: not enabled. active: enabled (configuration synced to APIGateway). draft: draft status (changes not synced to APIGateway)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -375,9 +375,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Service tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ServiceTagArgs>> tags) {
             $.tags = tags;
@@ -387,9 +387,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Service tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ServiceTagArgs> tags) {
             return tags(Output.of(tags));
@@ -398,9 +398,9 @@ public final class ServiceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Service tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ServiceTagArgs... tags) {
             return tags(List.of(tags));

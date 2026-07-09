@@ -20,7 +20,7 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
     /**
      * Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="signedUrlAuthRules")
     private @Nullable Output<List<DomainSignedUrlAuthSignedUrlAuthRuleArgs>> signedUrlAuthRules;
@@ -28,7 +28,7 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
     /**
      * @return Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainSignedUrlAuthSignedUrlAuthRuleArgs>>> signedUrlAuthRules() {
         return Optional.ofNullable(this.signedUrlAuthRules);
@@ -36,14 +36,14 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
 
     /**
      * Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
-     *
+     * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
-     *
+     * 
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -77,9 +77,9 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
         /**
          * @param signedUrlAuthRules Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signedUrlAuthRules(@Nullable Output<List<DomainSignedUrlAuthSignedUrlAuthRuleArgs>> signedUrlAuthRules) {
             $.signedUrlAuthRules = signedUrlAuthRules;
@@ -89,9 +89,9 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
         /**
          * @param signedUrlAuthRules Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signedUrlAuthRules(List<DomainSignedUrlAuthSignedUrlAuthRuleArgs> signedUrlAuthRules) {
             return signedUrlAuthRules(Output.of(signedUrlAuthRules));
@@ -100,9 +100,9 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
         /**
          * @param signedUrlAuthRules Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signedUrlAuthRules(DomainSignedUrlAuthSignedUrlAuthRuleArgs... signedUrlAuthRules) {
             return signedUrlAuthRules(List.of(signedUrlAuthRules));
@@ -110,9 +110,9 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
 
         /**
          * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -121,9 +121,9 @@ public final class DomainSignedUrlAuthArgs extends com.pulumi.resources.Resource
 
         /**
          * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

@@ -19,14 +19,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * CA certificate information.
-     *
+     * 
      */
     @Import(name="caCertificate")
     private @Nullable Output<String> caCertificate;
 
     /**
      * @return CA certificate information.
-     *
+     * 
      */
     public Optional<Output<String>> caCertificate() {
         return Optional.ofNullable(this.caCertificate);
@@ -34,14 +34,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * SSL client certificate status. Available: available; Expiring: expiring, displays this status when the expiration time is less than or equal to one week; Expired: expired.
-     *
+     * 
      */
     @Import(name="certificateStatus")
     private @Nullable Output<String> certificateStatus;
 
     /**
      * @return SSL client certificate status. Available: available; Expiring: expiring, displays this status when the expiration time is less than or equal to one week; Expired: expired.
-     *
+     * 
      */
     public Optional<Output<String>> certificateStatus() {
         return Optional.ofNullable(this.certificateStatus);
@@ -49,14 +49,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Client certificate information.
-     *
+     * 
      */
     @Import(name="clientCertificate")
     private @Nullable Output<String> clientCertificate;
 
     /**
      * @return Client certificate information.
-     *
+     * 
      */
     public Optional<Output<String>> clientCertificate() {
         return Optional.ofNullable(this.clientCertificate);
@@ -64,14 +64,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Client key information.
-     *
+     * 
      */
     @Import(name="clientKey")
     private @Nullable Output<String> clientKey;
 
     /**
      * @return Client key information.
-     *
+     * 
      */
     public Optional<Output<String>> clientKey() {
         return Optional.ofNullable(this.clientKey);
@@ -79,14 +79,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Creation time of the SSL client certificate.
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the SSL client certificate.
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -94,14 +94,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -109,14 +109,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Expiration time of the SSL client certificate.
-     *
+     * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Expiration time of the SSL client certificate.
-     *
+     * 
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -124,14 +124,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * OpenVPN client configuration.
-     *
+     * 
      */
     @Import(name="openVpnClientConfig")
     private @Nullable Output<String> openVpnClientConfig;
 
     /**
      * @return OpenVPN client configuration.
-     *
+     * 
      */
     public Optional<Output<String>> openVpnClientConfig() {
         return Optional.ofNullable(this.openVpnClientConfig);
@@ -139,14 +139,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * SSL client certificate ID.
-     *
+     * 
      */
     @Import(name="sslVpnClientCertId")
     private @Nullable Output<String> sslVpnClientCertId;
 
     /**
      * @return SSL client certificate ID.
-     *
+     * 
      */
     public Optional<Output<String>> sslVpnClientCertId() {
         return Optional.ofNullable(this.sslVpnClientCertId);
@@ -154,14 +154,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-     *
+     * 
      */
     @Import(name="sslVpnClientCertName")
     private @Nullable Output<String> sslVpnClientCertName;
 
     /**
      * @return Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-     *
+     * 
      */
     public Optional<Output<String>> sslVpnClientCertName() {
         return Optional.ofNullable(this.sslVpnClientCertName);
@@ -169,14 +169,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-     *
+     * 
      */
     @Import(name="sslVpnServerId")
     private @Nullable Output<String> sslVpnServerId;
 
     /**
      * @return ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-     *
+     * 
      */
     public Optional<Output<String>> sslVpnServerId() {
         return Optional.ofNullable(this.sslVpnServerId);
@@ -184,14 +184,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * SSL client status. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return SSL client status. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -200,7 +200,7 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
     /**
      * SSL client certificate tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<SslVpnClientCertTagArgs>> tags;
@@ -208,7 +208,7 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
     /**
      * @return SSL client certificate tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<SslVpnClientCertTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -216,14 +216,14 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
     /**
      * Modification time of the SSL client certificate.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Modification time of the SSL client certificate.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -268,9 +268,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param caCertificate CA certificate information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificate(@Nullable Output<String> caCertificate) {
             $.caCertificate = caCertificate;
@@ -279,9 +279,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param caCertificate CA certificate information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificate(String caCertificate) {
             return caCertificate(Output.of(caCertificate));
@@ -289,9 +289,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param certificateStatus SSL client certificate status. Available: available; Expiring: expiring, displays this status when the expiration time is less than or equal to one week; Expired: expired.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateStatus(@Nullable Output<String> certificateStatus) {
             $.certificateStatus = certificateStatus;
@@ -300,9 +300,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param certificateStatus SSL client certificate status. Available: available; Expiring: expiring, displays this status when the expiration time is less than or equal to one week; Expired: expired.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateStatus(String certificateStatus) {
             return certificateStatus(Output.of(certificateStatus));
@@ -310,9 +310,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param clientCertificate Client certificate information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientCertificate(@Nullable Output<String> clientCertificate) {
             $.clientCertificate = clientCertificate;
@@ -321,9 +321,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param clientCertificate Client certificate information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientCertificate(String clientCertificate) {
             return clientCertificate(Output.of(clientCertificate));
@@ -331,9 +331,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param clientKey Client key information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientKey(@Nullable Output<String> clientKey) {
             $.clientKey = clientKey;
@@ -342,9 +342,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param clientKey Client key information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientKey(String clientKey) {
             return clientKey(Output.of(clientKey));
@@ -352,9 +352,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Creation time of the SSL client certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -363,9 +363,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Creation time of the SSL client certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -373,9 +373,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -384,9 +384,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0–255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -394,9 +394,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param expiredTime Expiration time of the SSL client certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -405,9 +405,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param expiredTime Expiration time of the SSL client certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -415,9 +415,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param openVpnClientConfig OpenVPN client configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder openVpnClientConfig(@Nullable Output<String> openVpnClientConfig) {
             $.openVpnClientConfig = openVpnClientConfig;
@@ -426,9 +426,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param openVpnClientConfig OpenVPN client configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder openVpnClientConfig(String openVpnClientConfig) {
             return openVpnClientConfig(Output.of(openVpnClientConfig));
@@ -436,9 +436,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sslVpnClientCertId SSL client certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnClientCertId(@Nullable Output<String> sslVpnClientCertId) {
             $.sslVpnClientCertId = sslVpnClientCertId;
@@ -447,9 +447,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sslVpnClientCertId SSL client certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnClientCertId(String sslVpnClientCertId) {
             return sslVpnClientCertId(Output.of(sslVpnClientCertId));
@@ -457,9 +457,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sslVpnClientCertName Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnClientCertName(@Nullable Output<String> sslVpnClientCertName) {
             $.sslVpnClientCertName = sslVpnClientCertName;
@@ -468,9 +468,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sslVpnClientCertName Name of the SSL client certificate. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1–128 characters. If not specified, defaults to the SSL client certificate ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnClientCertName(String sslVpnClientCertName) {
             return sslVpnClientCertName(Output.of(sslVpnClientCertName));
@@ -478,9 +478,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sslVpnServerId ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnServerId(@Nullable Output<String> sslVpnServerId) {
             $.sslVpnServerId = sslVpnServerId;
@@ -489,9 +489,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param sslVpnServerId ID of the SSL server used to create the SSL client certificate. You can call DescribeSslVpnServers to query the SSL server ID information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sslVpnServerId(String sslVpnServerId) {
             return sslVpnServerId(Output.of(sslVpnServerId));
@@ -499,9 +499,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status SSL client status. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -510,9 +510,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status SSL client status. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -521,9 +521,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
         /**
          * @param tags SSL client certificate tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<SslVpnClientCertTagArgs>> tags) {
             $.tags = tags;
@@ -533,9 +533,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
         /**
          * @param tags SSL client certificate tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<SslVpnClientCertTagArgs> tags) {
             return tags(Output.of(tags));
@@ -544,9 +544,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
         /**
          * @param tags SSL client certificate tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(SslVpnClientCertTagArgs... tags) {
             return tags(List.of(tags));
@@ -554,9 +554,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updateTime Modification time of the SSL client certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -565,9 +565,9 @@ public final class SslVpnClientCertState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updateTime Modification time of the SSL client certificate.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

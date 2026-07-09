@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// Basis for Transit Router to forward traffic, supporting associated forwarding, static routing, route learning, and route synchronization. Multiple TR routing tables can be created under each TR instance to forward traffic for network instances with different access requirements. Multiple network instance connections can be associated with the same TR routing table.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterTransitRouterRouteTableDemo = new Bytepluscc.Transitrouter.TransitRouterRouteTable("TransitRouterTransitRouterRouteTableDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable example "transit_router_id|transit_router_route_table_id"
     /// ```

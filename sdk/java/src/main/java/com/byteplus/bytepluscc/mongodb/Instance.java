@@ -25,14 +25,14 @@ import javax.annotation.Nullable;
 
 /**
  * MongoDB document database supports multiple architectures for flexible business deployment. In addition to replica set instances, MongoDB document database also provides sharded cluster architecture for large-scale data scenarios, along with disaster recovery, backup and restore, monitoring, and a complete solution set. It is widely used in industries such as internet (gaming, e-commerce, live streaming, news, social), new retail, online education, finance, IoT, and government/enterprise.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -45,12 +45,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var mongoDBInstanceDemo = new Instance("mongoDBInstanceDemo", InstanceArgs.builder()
  *             .zoneId("cn-beijing-a,cn-beijing-c,cn-beijing-d")
@@ -77,120 +77,120 @@ import javax.annotation.Nullable;
  *                 .key("env")
  *                 .value("test")
  *                 .build())
- *             .allowListIds(
+ *             .allowListIds(            
  *                 "acl-c972e7b4ce4941a1a8d5xxxe57xxxxx",
  *                 "acl-70dbb8ee8893467dbafxxxc964xxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:mongodb/instance:Instance example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:mongodb/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Allowlist ID list. New instances are bound to the specified allowlist.
-     *
+     * 
      */
     @Export(name="allowListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID list. New instances are bound to the specified allowlist.
-     *
+     * 
      */
     public Output<List<String>> allowListIds() {
         return this.allowListIds;
     }
     /**
      * Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
-     *
+     * 
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
      * @return Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
-     *
+     * 
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
     }
     /**
      * Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
-     *
+     * 
      */
     @Export(name="chargeStatus", refs={String.class}, tree="[0]")
     private Output<String> chargeStatus;
 
     /**
      * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
-     *
+     * 
      */
     public Output<String> chargeStatus() {
         return this.chargeStatus;
     }
     /**
      * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
-     *
+     * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
-     *
+     * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
      * Scheduled shutdown time (UTC).
-     *
+     * 
      */
     @Export(name="closedTime", refs={String.class}, tree="[0]")
     private Output<String> closedTime;
 
     /**
      * @return Scheduled shutdown time (UTC).
-     *
+     * 
      */
     public Output<String> closedTime() {
         return this.closedTime;
     }
     /**
      * ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
-     *
+     * 
      */
     @Export(name="configServerNodeSpec", refs={String.class}, tree="[0]")
     private Output<String> configServerNodeSpec;
 
     /**
      * @return ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
-     *
+     * 
      */
     public Output<String> configServerNodeSpec() {
         return this.configServerNodeSpec;
     }
     /**
      * ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
-     *
+     * 
      */
     @Export(name="configServerStorageSpaceGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> configServerStorageSpaceGb;
 
     /**
      * @return ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
-     *
+     * 
      */
     public Output<Integer> configServerStorageSpaceGb() {
         return this.configServerStorageSpaceGb;
@@ -198,7 +198,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * ConfigServer information list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="configServers", refs={List.class,InstanceConfigServer.class}, tree="[0,1]")
     private Output<List<InstanceConfigServer>> configServers;
@@ -206,133 +206,133 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return ConfigServer information list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceConfigServer>> configServers() {
         return this.configServers;
     }
     /**
      * ConfigServer ID
-     *
+     * 
      */
     @Export(name="configServersId", refs={String.class}, tree="[0]")
     private Output<String> configServersId;
 
     /**
      * @return ConfigServer ID
-     *
+     * 
      */
     public Output<String> configServersId() {
         return this.configServersId;
     }
     /**
      * Instance creation time (UTC).
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Instance creation time (UTC).
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Database engine. The value is fixed as MongoDB
-     *
+     * 
      */
     @Export(name="dbEngine", refs={String.class}, tree="[0]")
     private Output<String> dbEngine;
 
     /**
      * @return Database engine. The value is fixed as MongoDB
-     *
+     * 
      */
     public Output<String> dbEngine() {
         return this.dbEngine;
     }
     /**
      * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
-     *
+     * 
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
      * @return Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
-     *
+     * 
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
      * Database engine version string
-     *
+     * 
      */
     @Export(name="dbEngineVersionStr", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersionStr;
 
     /**
      * @return Database engine version string
-     *
+     * 
      */
     public Output<String> dbEngineVersionStr() {
         return this.dbEngineVersionStr;
     }
     /**
      * Instance expiration time (UTC).
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Instance expiration time (UTC).
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
-     *
+     * 
      */
     @Export(name="instanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceCount;
 
     /**
      * @return Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
-     *
+     * 
      */
     public Output<Integer> instanceCount() {
         return this.instanceCount;
     }
     /**
      * Instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-     *
+     * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
-     *
+     * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
@@ -340,7 +340,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Instance parameter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="instanceParameters", refs={List.class,InstanceInstanceParameter.class}, tree="[0,1]")
     private Output<List<InstanceInstanceParameter>> instanceParameters;
@@ -348,35 +348,35 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance parameter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceInstanceParameter>> instanceParameters() {
         return this.instanceParameters;
     }
     /**
      * Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
-     *
+     * 
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Instance status. Creating: Creating. Running: Running. Allowlist maintenance: AllowListMaintaining. Scaling: Scaling. Restarting: Restarting. Network maintaining: NetworkMaintaining. Restoring: Restoring. Upgrading: Upgrading. Unavailable: Unavailable. Closing: Closing. Deleting: Deleting. Closed: Closed. SSL updating: SSLUpdating. Switch mastering: SwitchMastering. Role changing: RoleChanging. Migrating: Migrating.
-     *
+     * 
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
-     *
+     * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return MongoDB instance type. Valid values: ReplicaSet (default): replica set. ShardedCluster: sharded cluster.
-     *
+     * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
@@ -384,7 +384,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Mongos information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="mongos", refs={List.class,InstanceMongo.class}, tree="[0,1]")
     private Output<List<InstanceMongo>> mongos;
@@ -392,49 +392,49 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Mongos information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceMongo>> mongos() {
         return this.mongos;
     }
     /**
      * Mongos ID.
-     *
+     * 
      */
     @Export(name="mongosId", refs={String.class}, tree="[0]")
     private Output<String> mongosId;
 
     /**
      * @return Mongos ID.
-     *
+     * 
      */
     public Output<String> mongosId() {
         return this.mongosId;
     }
     /**
      * Number of Mongos nodes in the sharded cluster. Range: 2~32.
-     *
+     * 
      */
     @Export(name="mongosNodeNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> mongosNodeNumber;
 
     /**
      * @return Number of Mongos nodes in the sharded cluster. Range: 2~32.
-     *
+     * 
      */
     public Output<Integer> mongosNodeNumber() {
         return this.mongosNodeNumber;
     }
     /**
      * Specification code for Mongos nodes in a sharded cluster.
-     *
+     * 
      */
     @Export(name="mongosNodeSpec", refs={String.class}, tree="[0]")
     private Output<String> mongosNodeSpec;
 
     /**
      * @return Specification code for Mongos nodes in a sharded cluster.
-     *
+     * 
      */
     public Output<String> mongosNodeSpec() {
         return this.mongosNodeSpec;
@@ -442,7 +442,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Add read-only node information, including the availability zone and quantity of read-only nodes.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="nodeAvailabilityZones", refs={List.class,InstanceNodeAvailabilityZone.class}, tree="[0,1]")
     private Output<List<InstanceNodeAvailabilityZone>> nodeAvailabilityZones;
@@ -450,35 +450,35 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Add read-only node information, including the availability zone and quantity of read-only nodes.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceNodeAvailabilityZone>> nodeAvailabilityZones() {
         return this.nodeAvailabilityZones;
     }
     /**
      * Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
-     *
+     * 
      */
     @Export(name="nodeNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeNumber;
 
     /**
      * @return Node count. When the instance type is ReplicaSet, this parameter indicates the number of compute nodes in the replica set instance. When the instance type is ShardedCluster, it indicates the number of nodes in each shard.
-     *
+     * 
      */
     public Output<Integer> nodeNumber() {
         return this.nodeNumber;
     }
     /**
      * Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
-     *
+     * 
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
      * @return Instance specification code. When the instance type is ReplicaSet (InstanceType is ReplicaSet), this parameter specifies the compute node specification for the replica set instance. When the instance type is ShardedCluster (InstanceType is ShardedCluster), this parameter specifies the specification for Shard nodes.
-     *
+     * 
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
@@ -486,7 +486,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Information list for each node in the replica set instance or each node in the sharded cluster shard
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="nodes", refs={List.class,InstanceNode.class}, tree="[0,1]")
     private Output<List<InstanceNode>> nodes;
@@ -494,105 +494,105 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Information list for each node in the replica set instance or each node in the sharded cluster shard
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceNode>> nodes() {
         return this.nodes;
     }
     /**
      * Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
-     *
+     * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
-     *
+     * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
-     *
+     * 
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
      * @return Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
-     *
+     * 
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * String information for the instance&#39;s private network connection address.
-     *
+     * 
      */
     @Export(name="privateEndpoint", refs={String.class}, tree="[0]")
     private Output<String> privateEndpoint;
 
     /**
      * @return String information for the instance&#39;s private network connection address.
-     *
+     * 
      */
     public Output<String> privateEndpoint() {
         return this.privateEndpoint;
     }
     /**
      * Select the project for the instance. If left blank, the new instance will be added to the default project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Select the project for the instance. If left blank, the new instance will be added to the default project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Number of read-only nodes in the instance
-     *
+     * 
      */
     @Export(name="readOnlyNodeNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> readOnlyNodeNumber;
 
     /**
      * @return Number of read-only nodes in the instance
-     *
+     * 
      */
     public Output<Integer> readOnlyNodeNumber() {
         return this.readOnlyNodeNumber;
     }
     /**
      * Scheduled recycle time for the instance (UTC)
-     *
+     * 
      */
     @Export(name="reclaimTime", refs={String.class}, tree="[0]")
     private Output<String> reclaimTime;
 
     /**
      * @return Scheduled recycle time for the instance (UTC)
-     *
+     * 
      */
     public Output<String> reclaimTime() {
         return this.reclaimTime;
     }
     /**
      * Number of shards in the sharded cluster. Range: 2–32.
-     *
+     * 
      */
     @Export(name="shardNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> shardNumber;
 
     /**
      * @return Number of shards in the sharded cluster. Range: 2–32.
-     *
+     * 
      */
     public Output<Integer> shardNumber() {
         return this.shardNumber;
@@ -600,7 +600,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Shard information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="shards", refs={List.class,InstanceShard.class}, tree="[0,1]")
     private Output<List<InstanceShard>> shards;
@@ -608,77 +608,77 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Shard information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceShard>> shards() {
         return this.shards;
     }
     /**
      * Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
-     *
+     * 
      */
     @Export(name="storageSpaceGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpaceGb;
 
     /**
      * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
-     *
+     * 
      */
     public Output<Integer> storageSpaceGb() {
         return this.storageSpaceGb;
     }
     /**
      * Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
-     *
+     * 
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
-     *
+     * 
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
      * Subnet ID.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
-     *
+     * 
      */
     @Export(name="superAccountName", refs={String.class}, tree="[0]")
     private Output<String> superAccountName;
 
     /**
      * @return Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
-     *
+     * 
      */
     public Output<String> superAccountName() {
         return this.superAccountName;
     }
     /**
      * Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
-     *
+     * 
      */
     @Export(name="superAccountPassword", refs={String.class}, tree="[0]")
     private Output<String> superAccountPassword;
 
     /**
      * @return Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!{@literal @}$%^&amp;*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin{@literal @}123) are not allowed.
-     *
+     * 
      */
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
@@ -686,7 +686,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * MongoDB instance tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -694,49 +694,49 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return MongoDB instance tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Instance update time (UTC).
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Instance update time (UTC).
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Private network ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
 {
     /// <summary>
     /// A snapshot is a backup method. Each snapshot is a backup file of cloud disk data at a specific point in time. When data is lost or a failure occurs, you can roll back cloud disk data using the snapshot to recover lost data.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var storageEBSSnapshotDemo = new Bytepluscc.Storageebs.Snapshot("StorageEBSSnapshotDemo", new()
     ///     {
@@ -38,12 +38,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:storageebs/snapshot:Snapshot example "snapshot_id"
     /// ```

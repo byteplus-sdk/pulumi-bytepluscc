@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * The virtual interface is built on top of a physical dedicated line. It is a logical interface that enables the local data center (IDC) to connect to different private networks in the cloud via the physical dedicated line. Supports both static routing and BGP routing. This operation uses BGP routing.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var directConnectVirtualInterfaceDemo = new VirtualInterface("directConnectVirtualInterfaceDemo", VirtualInterfaceArgs.builder()
  *             .localIpv6Ip("2408:xxxx:cc:400::1/64")
@@ -68,284 +68,284 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .bfdDetectInterval(1000)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:directconnect/virtualInterface:VirtualInterface example &#34;virtual_interface_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:directconnect/virtualInterface:VirtualInterface")
 public class VirtualInterface extends com.pulumi.resources.CustomResource {
     /**
      * ID of the account to which the dedicated line gateway belongs.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return ID of the account to which the dedicated line gateway belongs.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Bandwidth limit of the virtual interface, in Mbps.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth limit of the virtual interface, in Mbps.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * BFD detection interval (ms).
-     *
+     * 
      */
     @Export(name="bfdDetectInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> bfdDetectInterval;
 
     /**
      * @return BFD detection interval (ms).
-     *
+     * 
      */
     public Output<Integer> bfdDetectInterval() {
         return this.bfdDetectInterval;
     }
     /**
      * BFD detection count.
-     *
+     * 
      */
     @Export(name="bfdDetectMultiplier", refs={Integer.class}, tree="[0]")
     private Output<Integer> bfdDetectMultiplier;
 
     /**
      * @return BFD detection count.
-     *
+     * 
      */
     public Output<Integer> bfdDetectMultiplier() {
         return this.bfdDetectMultiplier;
     }
     /**
      * Time when the virtual interface was created.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the virtual interface was created.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the virtual interface.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the virtual interface.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the physical dedicated line associated with the virtual interface.
-     *
+     * 
      */
     @Export(name="directConnectConnectionId", refs={String.class}, tree="[0]")
     private Output<String> directConnectConnectionId;
 
     /**
      * @return ID of the physical dedicated line associated with the virtual interface.
-     *
+     * 
      */
     public Output<String> directConnectConnectionId() {
         return this.directConnectConnectionId;
     }
     /**
      * ID of the dedicated gateway associated with the virtual interface.
-     *
+     * 
      */
     @Export(name="directConnectGatewayId", refs={String.class}, tree="[0]")
     private Output<String> directConnectGatewayId;
 
     /**
      * @return ID of the dedicated gateway associated with the virtual interface.
-     *
+     * 
      */
     public Output<String> directConnectGatewayId() {
         return this.directConnectGatewayId;
     }
     /**
      * Enable BFD detection. true: enabled false: disabled.
-     *
+     * 
      */
     @Export(name="enableBfd", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableBfd;
 
     /**
      * @return Enable BFD detection. true: enabled false: disabled.
-     *
+     * 
      */
     public Output<Boolean> enableBfd() {
         return this.enableBfd;
     }
     /**
      * Enable BFD detection echo packet mode. true: enabled false: disabled.
-     *
+     * 
      */
     @Export(name="enableBfdEcho", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableBfdEcho;
 
     /**
      * @return Enable BFD detection echo packet mode. true: enabled false: disabled.
-     *
+     * 
      */
     public Output<Boolean> enableBfdEcho() {
         return this.enableBfdEcho;
     }
     /**
      * Is NQA detection enabled? true: enabled false: not enabled.
-     *
+     * 
      */
     @Export(name="enableNqa", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableNqa;
 
     /**
      * @return Is NQA detection enabled? true: enabled false: not enabled.
-     *
+     * 
      */
     public Output<Boolean> enableNqa() {
         return this.enableNqa;
     }
     /**
      * Local gateway interconnection IP address of the virtual interface.
-     *
+     * 
      */
     @Export(name="localIp", refs={String.class}, tree="[0]")
     private Output<String> localIp;
 
     /**
      * @return Local gateway interconnection IP address of the virtual interface.
-     *
+     * 
      */
     public Output<String> localIp() {
         return this.localIp;
     }
     /**
      * IPv6 address of the local gateway interconnection IP for the virtual interface.
-     *
+     * 
      */
     @Export(name="localIpv6Ip", refs={String.class}, tree="[0]")
     private Output<String> localIpv6Ip;
 
     /**
      * @return IPv6 address of the local gateway interconnection IP for the virtual interface.
-     *
+     * 
      */
     public Output<String> localIpv6Ip() {
         return this.localIpv6Ip;
     }
     /**
      * Interval for sending consecutive probe packets in NQA detection.
-     *
+     * 
      */
     @Export(name="nqaDetectInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> nqaDetectInterval;
 
     /**
      * @return Interval for sending consecutive probe packets in NQA detection.
-     *
+     * 
      */
     public Output<Integer> nqaDetectInterval() {
         return this.nqaDetectInterval;
     }
     /**
      * NQA detection count. If the number of consecutive NQA detection failures reaches the set count, the link is considered faulty.
-     *
+     * 
      */
     @Export(name="nqaDetectMultiplier", refs={Integer.class}, tree="[0]")
     private Output<Integer> nqaDetectMultiplier;
 
     /**
      * @return NQA detection count. If the number of consecutive NQA detection failures reaches the set count, the link is considered faulty.
-     *
+     * 
      */
     public Output<Integer> nqaDetectMultiplier() {
         return this.nqaDetectMultiplier;
     }
     /**
      * Peer gateway interconnection IP address of the virtual interface.
-     *
+     * 
      */
     @Export(name="peerIp", refs={String.class}, tree="[0]")
     private Output<String> peerIp;
 
     /**
      * @return Peer gateway interconnection IP address of the virtual interface.
-     *
+     * 
      */
     public Output<String> peerIp() {
         return this.peerIp;
     }
     /**
      * IPv6 address of the peer gateway interconnection IP for the virtual interface.
-     *
+     * 
      */
     @Export(name="peerIpv6Ip", refs={String.class}, tree="[0]")
     private Output<String> peerIpv6Ip;
 
     /**
      * @return IPv6 address of the peer gateway interconnection IP for the virtual interface.
-     *
+     * 
      */
     public Output<String> peerIpv6Ip() {
         return this.peerIpv6Ip;
     }
     /**
      * Route type of the virtual interface.
-     *
+     * 
      */
     @Export(name="routeType", refs={String.class}, tree="[0]")
     private Output<String> routeType;
 
     /**
      * @return Route type of the virtual interface.
-     *
+     * 
      */
     public Output<String> routeType() {
         return this.routeType;
     }
     /**
      * Status of the virtual interface. Creating: creating Deleting: deleting Pending: configuring Available: available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the virtual interface. Creating: creating Deleting: deleting Pending: configuring Available: available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -353,7 +353,7 @@ public class VirtualInterface extends com.pulumi.resources.CustomResource {
     /**
      * All tag information added to the virtual interface.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,VirtualInterfaceTag.class}, tree="[0,1]")
     private Output<List<VirtualInterfaceTag>> tags;
@@ -361,63 +361,63 @@ public class VirtualInterface extends com.pulumi.resources.CustomResource {
     /**
      * @return All tag information added to the virtual interface.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VirtualInterfaceTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the virtual interface was updated.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the virtual interface was updated.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the virtual interface.
-     *
+     * 
      */
     @Export(name="virtualInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> virtualInterfaceId;
 
     /**
      * @return ID of the virtual interface.
-     *
+     * 
      */
     public Output<String> virtualInterfaceId() {
         return this.virtualInterfaceId;
     }
     /**
      * Name of the virtual interface.
-     *
+     * 
      */
     @Export(name="virtualInterfaceName", refs={String.class}, tree="[0]")
     private Output<String> virtualInterfaceName;
 
     /**
      * @return Name of the virtual interface.
-     *
+     * 
      */
     public Output<String> virtualInterfaceName() {
         return this.virtualInterfaceName;
     }
     /**
      * VLAN ID of the virtual interface.
-     *
+     * 
      */
     @Export(name="vlanId", refs={Integer.class}, tree="[0]")
     private Output<Integer> vlanId;
 
     /**
      * @return VLAN ID of the virtual interface.
-     *
+     * 
      */
     public Output<Integer> vlanId() {
         return this.vlanId;

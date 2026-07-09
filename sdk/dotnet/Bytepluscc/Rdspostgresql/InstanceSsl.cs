@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
     /// Instance SSL configuration.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSPostgreSQLInstanceSSLDemo = new Bytepluscc.Rdspostgresql.InstanceSsl("RDSPostgreSQLInstanceSSLDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     ///         InstanceId = "postgres-60xxxx5ed9",
     ///         ForceEncryption = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdspostgresql/instanceSsl:InstanceSsl example "instance_id"
     /// ```

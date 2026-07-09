@@ -20,14 +20,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account remarks.
-     *
+     * 
      */
     @Import(name="accountDesc")
     private @Nullable Output<String> accountDesc;
 
     /**
      * @return Account remarks.
-     *
+     * 
      */
     public Optional<Output<String>> accountDesc() {
         return Optional.ofNullable(this.accountDesc);
@@ -35,14 +35,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account name.
-     *
+     * 
      */
     @Import(name="accountName")
     private @Nullable Output<String> accountName;
 
     /**
      * @return Account name.
-     *
+     * 
      */
     public Optional<Output<String>> accountName() {
         return Optional.ofNullable(this.accountName);
@@ -50,14 +50,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account password.
-     *
+     * 
      */
     @Import(name="accountPassword")
     private @Nullable Output<String> accountPassword;
 
     /**
      * @return Account password.
-     *
+     * 
      */
     public Optional<Output<String>> accountPassword() {
         return Optional.ofNullable(this.accountPassword);
@@ -66,7 +66,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     /**
      * List of database permissions currently owned by the account.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="accountPrivileges")
     private @Nullable Output<List<AccountAccountPrivilegeArgs>> accountPrivileges;
@@ -74,7 +74,7 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of database permissions currently owned by the account.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AccountAccountPrivilegeArgs>>> accountPrivileges() {
         return Optional.ofNullable(this.accountPrivileges);
@@ -82,14 +82,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account type. Value options: Super: Super administrator account, that is, root account; UserAdmin: High-privilege account, that is, an account with any permissions on the admin database; Normal: Regular account, that is, an account with no permissions on the admin database.
-     *
+     * 
      */
     @Import(name="accountType")
     private @Nullable Output<String> accountType;
 
     /**
      * @return Account type. Value options: Super: Super administrator account, that is, root account; UserAdmin: High-privilege account, that is, an account with any permissions on the admin database; Normal: Regular account, that is, an account with no permissions on the admin database.
-     *
+     * 
      */
     public Optional<Output<String>> accountType() {
         return Optional.ofNullable(this.accountType);
@@ -97,14 +97,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database associated with the account.
-     *
+     * 
      */
     @Import(name="authDb")
     private @Nullable Output<String> authDb;
 
     /**
      * @return Database associated with the account.
-     *
+     * 
      */
     public Optional<Output<String>> authDb() {
         return Optional.ofNullable(this.authDb);
@@ -112,14 +112,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Account creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -127,14 +127,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -142,14 +142,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last update time of the account. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     *
+     * 
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
      * @return Last update time of the account. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     *
+     * 
      */
     public Optional<Output<String>> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
@@ -157,14 +157,14 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to reset the root account permissions to the initial state (that is, restore all permissions that can be granted to the super administrator account). Value options: false (default): Do not reset. true: Reset. Note: This parameter only applies to the root account in the admin database (that is, AuthDB is admin and AccountName is root).
-     *
+     * 
      */
     @Import(name="resetDbAccount")
     private @Nullable Output<Boolean> resetDbAccount;
 
     /**
      * @return Whether to reset the root account permissions to the initial state (that is, restore all permissions that can be granted to the super administrator account). Value options: false (default): Do not reset. true: Reset. Note: This parameter only applies to the root account in the admin database (that is, AuthDB is admin and AccountName is root).
-     *
+     * 
      */
     public Optional<Output<Boolean>> resetDbAccount() {
         return Optional.ofNullable(this.resetDbAccount);
@@ -205,9 +205,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountDesc Account remarks.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountDesc(@Nullable Output<String> accountDesc) {
             $.accountDesc = accountDesc;
@@ -216,9 +216,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountDesc Account remarks.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountDesc(String accountDesc) {
             return accountDesc(Output.of(accountDesc));
@@ -226,9 +226,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountName Account name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountName(@Nullable Output<String> accountName) {
             $.accountName = accountName;
@@ -237,9 +237,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountName Account name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountName(String accountName) {
             return accountName(Output.of(accountName));
@@ -247,9 +247,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountPassword Account password.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountPassword(@Nullable Output<String> accountPassword) {
             $.accountPassword = accountPassword;
@@ -258,9 +258,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountPassword Account password.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountPassword(String accountPassword) {
             return accountPassword(Output.of(accountPassword));
@@ -269,9 +269,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param accountPrivileges List of database permissions currently owned by the account.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountPrivileges(@Nullable Output<List<AccountAccountPrivilegeArgs>> accountPrivileges) {
             $.accountPrivileges = accountPrivileges;
@@ -281,9 +281,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param accountPrivileges List of database permissions currently owned by the account.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountPrivileges(List<AccountAccountPrivilegeArgs> accountPrivileges) {
             return accountPrivileges(Output.of(accountPrivileges));
@@ -292,9 +292,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param accountPrivileges List of database permissions currently owned by the account.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountPrivileges(AccountAccountPrivilegeArgs... accountPrivileges) {
             return accountPrivileges(List.of(accountPrivileges));
@@ -302,9 +302,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountType Account type. Value options: Super: Super administrator account, that is, root account; UserAdmin: High-privilege account, that is, an account with any permissions on the admin database; Normal: Regular account, that is, an account with no permissions on the admin database.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountType(@Nullable Output<String> accountType) {
             $.accountType = accountType;
@@ -313,9 +313,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountType Account type. Value options: Super: Super administrator account, that is, root account; UserAdmin: High-privilege account, that is, an account with any permissions on the admin database; Normal: Regular account, that is, an account with no permissions on the admin database.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountType(String accountType) {
             return accountType(Output.of(accountType));
@@ -323,9 +323,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param authDb Database associated with the account.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder authDb(@Nullable Output<String> authDb) {
             $.authDb = authDb;
@@ -334,9 +334,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param authDb Database associated with the account.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder authDb(String authDb) {
             return authDb(Output.of(authDb));
@@ -344,9 +344,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Account creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -355,9 +355,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Account creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -365,9 +365,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -376,9 +376,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -386,9 +386,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Last update time of the account. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyTime(@Nullable Output<String> modifyTime) {
             $.modifyTime = modifyTime;
@@ -397,9 +397,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Last update time of the account. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyTime(String modifyTime) {
             return modifyTime(Output.of(modifyTime));
@@ -407,9 +407,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resetDbAccount Whether to reset the root account permissions to the initial state (that is, restore all permissions that can be granted to the super administrator account). Value options: false (default): Do not reset. true: Reset. Note: This parameter only applies to the root account in the admin database (that is, AuthDB is admin and AccountName is root).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resetDbAccount(@Nullable Output<Boolean> resetDbAccount) {
             $.resetDbAccount = resetDbAccount;
@@ -418,9 +418,9 @@ public final class AccountState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resetDbAccount Whether to reset the root account permissions to the initial state (that is, restore all permissions that can be granted to the super administrator account). Value options: false (default): Do not reset. true: Reset. Note: This parameter only applies to the root account in the admin database (that is, AuthDB is admin and AccountName is root).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resetDbAccount(Boolean resetDbAccount) {
             return resetDbAccount(Output.of(resetDbAccount));

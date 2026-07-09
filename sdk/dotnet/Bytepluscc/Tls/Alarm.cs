@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// Alert policy. The logging service periodically analyzes data and sends alerts that meet the trigger conditions to the specified notification objects
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSAlarmDemo = new Bytepluscc.Tls.Alarm("TLSAlarmDemo", new()
     ///     {
@@ -141,12 +141,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/alarm:Alarm example "alarm_id"
     /// ```

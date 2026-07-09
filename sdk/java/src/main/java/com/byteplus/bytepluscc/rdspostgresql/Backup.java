@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * RDS PostgreSQL backup resources support both physical and logical backups. Physical backups can be created and queried; logical backups can be created, deleted, downloaded, and queried.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rDSPostgreSQLBackupDemo = new Backup("rDSPostgreSQLBackupDemo", BackupArgs.builder()
  *             .backupMethod("Logical")
@@ -66,102 +66,102 @@ import javax.annotation.Nullable;
  *                 .wal_log_space_limit_enable(true)
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/backup:Backup example &#34;backup_id|instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdspostgresql/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup data size (bytes).
-     *
+     * 
      */
     @Export(name="backupDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupDataSize;
 
     /**
      * @return Backup data size (bytes).
-     *
+     * 
      */
     public Output<Integer> backupDataSize() {
         return this.backupDataSize;
     }
     /**
      * Backup description.
-     *
+     * 
      */
     @Export(name="backupDescription", refs={String.class}, tree="[0]")
     private Output<String> backupDescription;
 
     /**
      * @return Backup description.
-     *
+     * 
      */
     public Output<String> backupDescription() {
         return this.backupDescription;
     }
     /**
      * Backup end time.
-     *
+     * 
      */
     @Export(name="backupEndTime", refs={String.class}, tree="[0]")
     private Output<String> backupEndTime;
 
     /**
      * @return Backup end time.
-     *
+     * 
      */
     public Output<String> backupEndTime() {
         return this.backupEndTime;
     }
     /**
      * Backup file name.
-     *
+     * 
      */
     @Export(name="backupFileName", refs={String.class}, tree="[0]")
     private Output<String> backupFileName;
 
     /**
      * @return Backup file name.
-     *
+     * 
      */
     public Output<String> backupFileName() {
         return this.backupFileName;
     }
     /**
      * Backup file size (bytes).
-     *
+     * 
      */
     @Export(name="backupFileSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFileSize;
 
     /**
      * @return Backup file size (bytes).
-     *
+     * 
      */
     public Output<Integer> backupFileSize() {
         return this.backupFileSize;
     }
     /**
      * Backup ID.
-     *
+     * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
      * @return Backup ID.
-     *
+     * 
      */
     public Output<String> backupId() {
         return this.backupId;
@@ -169,7 +169,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup metadata, used to specify the database list for logical backups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="backupMetas", refs={List.class,BackupBackupMeta.class}, tree="[0,1]")
     private Output<List<BackupBackupMeta>> backupMetas;
@@ -177,175 +177,175 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * @return Backup metadata, used to specify the database list for logical backups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BackupBackupMeta>> backupMetas() {
         return this.backupMetas;
     }
     /**
      * Backup method: Physical for physical backup, Logical for logical backup.
-     *
+     * 
      */
     @Export(name="backupMethod", refs={String.class}, tree="[0]")
     private Output<String> backupMethod;
 
     /**
      * @return Backup method: Physical for physical backup, Logical for logical backup.
-     *
+     * 
      */
     public Output<String> backupMethod() {
         return this.backupMethod;
     }
     /**
      * Backup policy configuration information.
-     *
+     * 
      */
     @Export(name="backupPolicy", refs={BackupBackupPolicy.class}, tree="[0]")
     private Output<BackupBackupPolicy> backupPolicy;
 
     /**
      * @return Backup policy configuration information.
-     *
+     * 
      */
     public Output<BackupBackupPolicy> backupPolicy() {
         return this.backupPolicy;
     }
     /**
      * Backup progress percentage.
-     *
+     * 
      */
     @Export(name="backupProgress", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupProgress;
 
     /**
      * @return Backup progress percentage.
-     *
+     * 
      */
     public Output<Integer> backupProgress() {
         return this.backupProgress;
     }
     /**
      * Backup scope: Instance for instance-level backup, Database for database-level backup.
-     *
+     * 
      */
     @Export(name="backupScope", refs={String.class}, tree="[0]")
     private Output<String> backupScope;
 
     /**
      * @return Backup scope: Instance for instance-level backup, Database for database-level backup.
-     *
+     * 
      */
     public Output<String> backupScope() {
         return this.backupScope;
     }
     /**
      * Backup start time.
-     *
+     * 
      */
     @Export(name="backupStartTime", refs={String.class}, tree="[0]")
     private Output<String> backupStartTime;
 
     /**
      * @return Backup start time.
-     *
+     * 
      */
     public Output<String> backupStartTime() {
         return this.backupStartTime;
     }
     /**
      * Backup status, such as Success, Running, Failed.
-     *
+     * 
      */
     @Export(name="backupStatus", refs={String.class}, tree="[0]")
     private Output<String> backupStatus;
 
     /**
      * @return Backup status, such as Success, Running, Failed.
-     *
+     * 
      */
     public Output<String> backupStatus() {
         return this.backupStatus;
     }
     /**
      * Backup type: Full for full backup, Increment for incremental backup.
-     *
+     * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
      * @return Backup type: Full for full backup, Increment for incremental backup.
-     *
+     * 
      */
     public Output<String> backupType() {
         return this.backupType;
     }
     /**
      * Creation method: Manual for manual creation, Automated for automatic creation.
-     *
+     * 
      */
     @Export(name="createType", refs={String.class}, tree="[0]")
     private Output<String> createType;
 
     /**
      * @return Creation method: Manual for manual creation, Automated for automatic creation.
-     *
+     * 
      */
     public Output<String> createType() {
         return this.createType;
     }
     /**
      * Download logical backup file after creation. Only valid for logical backups.
-     *
+     * 
      */
     @Export(name="downloadBackup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> downloadBackup;
 
     /**
      * @return Download logical backup file after creation. Only valid for logical backups.
-     *
+     * 
      */
     public Output<Boolean> downloadBackup() {
         return this.downloadBackup;
     }
     /**
      * Download preparation progress percentage.
-     *
+     * 
      */
     @Export(name="downloadProgress", refs={Integer.class}, tree="[0]")
     private Output<Integer> downloadProgress;
 
     /**
      * @return Download preparation progress percentage.
-     *
+     * 
      */
     public Output<Integer> downloadProgress() {
         return this.downloadProgress;
     }
     /**
      * Download status.
-     *
+     * 
      */
     @Export(name="downloadStatus", refs={String.class}, tree="[0]")
     private Output<String> downloadStatus;
 
     /**
      * @return Download status.
-     *
+     * 
      */
     public Output<String> downloadStatus() {
         return this.downloadStatus;
     }
     /**
      * RDS PostgreSQL instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return RDS PostgreSQL instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;

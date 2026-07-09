@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * Backups are important runtime files for the database. Based on backup files, the database can achieve disaster recovery and restoration. MySQL Cloud Database provides two backup capabilities: data backup and log backup. Data backup allows you to restore the database to a specific backup set, while log backup enables restoration to a specified point in time
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rdsmysqlbackupDemo = new Backup("rdsmysqlbackupDemo", BackupArgs.builder()
  *             .instanceId("mysql-9e2c59****")
@@ -55,74 +55,74 @@ import javax.annotation.Nullable;
  *                 .tables()
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/backup:Backup example &#34;instance_id|backup_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdsmysql/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup creation end time (UTC)
-     *
+     * 
      */
     @Export(name="backupEndTime", refs={String.class}, tree="[0]")
     private Output<String> backupEndTime;
 
     /**
      * @return Backup creation end time (UTC)
-     *
+     * 
      */
     public Output<String> backupEndTime() {
         return this.backupEndTime;
     }
     /**
      * Backup file name
-     *
+     * 
      */
     @Export(name="backupFileName", refs={String.class}, tree="[0]")
     private Output<String> backupFileName;
 
     /**
      * @return Backup file name
-     *
+     * 
      */
     public Output<String> backupFileName() {
         return this.backupFileName;
     }
     /**
      * Backup file size (bytes)
-     *
+     * 
      */
     @Export(name="backupFileSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFileSize;
 
     /**
      * @return Backup file size (bytes)
-     *
+     * 
      */
     public Output<Integer> backupFileSize() {
         return this.backupFileSize;
     }
     /**
      * Backup ID
-     *
+     * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
      * @return Backup ID
-     *
+     * 
      */
     public Output<String> backupId() {
         return this.backupId;
@@ -130,7 +130,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="backupMetas", refs={List.class,BackupBackupMeta.class}, tree="[0,1]")
     private Output<List<BackupBackupMeta>> backupMetas;
@@ -138,133 +138,133 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BackupBackupMeta>> backupMetas() {
         return this.backupMetas;
     }
     /**
      * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
-     *
+     * 
      */
     @Export(name="backupMethod", refs={String.class}, tree="[0]")
     private Output<String> backupMethod;
 
     /**
      * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
-     *
+     * 
      */
     public Output<String> backupMethod() {
         return this.backupMethod;
     }
     /**
      * Backup name
-     *
+     * 
      */
     @Export(name="backupName", refs={String.class}, tree="[0]")
     private Output<String> backupName;
 
     /**
      * @return Backup name
-     *
+     * 
      */
     public Output<String> backupName() {
         return this.backupName;
     }
     /**
      * Backup region
-     *
+     * 
      */
     @Export(name="backupRegion", refs={String.class}, tree="[0]")
     private Output<String> backupRegion;
 
     /**
      * @return Backup region
-     *
+     * 
      */
     public Output<String> backupRegion() {
         return this.backupRegion;
     }
     /**
      * Backup creation start time (UTC)
-     *
+     * 
      */
     @Export(name="backupStartTime", refs={String.class}, tree="[0]")
     private Output<String> backupStartTime;
 
     /**
      * @return Backup creation start time (UTC)
-     *
+     * 
      */
     public Output<String> backupStartTime() {
         return this.backupStartTime;
     }
     /**
      * Backup status. Values: Success, Failed, Running
-     *
+     * 
      */
     @Export(name="backupStatus", refs={String.class}, tree="[0]")
     private Output<String> backupStatus;
 
     /**
      * @return Backup status. Values: Success, Failed, Running
-     *
+     * 
      */
     public Output<String> backupStatus() {
         return this.backupStatus;
     }
     /**
      * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
-     *
+     * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
      * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
-     *
+     * 
      */
     public Output<String> backupType() {
         return this.backupType;
     }
     /**
      * Consistency time point
-     *
+     * 
      */
     @Export(name="consistentTime", refs={String.class}, tree="[0]")
     private Output<String> consistentTime;
 
     /**
      * @return Consistency time point
-     *
+     * 
      */
     public Output<String> consistentTime() {
         return this.consistentTime;
     }
     /**
      * Backup creator. Values: System (system), User (user)
-     *
+     * 
      */
     @Export(name="createType", refs={String.class}, tree="[0]")
     private Output<String> createType;
 
     /**
      * @return Backup creator. Values: System (system), User (user)
-     *
+     * 
      */
     public Output<String> createType() {
         return this.createType;
     }
     /**
      * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
-     *
+     * 
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
      * @return Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
-     *
+     * 
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
@@ -272,7 +272,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Database and table information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="dbTableInfos", refs={List.class,BackupDbTableInfo.class}, tree="[0,1]")
     private Output<List<BackupDbTableInfo>> dbTableInfos;
@@ -280,105 +280,105 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * @return Database and table information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BackupDbTableInfo>> dbTableInfos() {
         return this.dbTableInfos;
     }
     /**
      * Download status
-     *
+     * 
      */
     @Export(name="downloadStatus", refs={String.class}, tree="[0]")
     private Output<String> downloadStatus;
 
     /**
      * @return Download status
-     *
+     * 
      */
     public Output<String> downloadStatus() {
         return this.downloadStatus;
     }
     /**
      * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
-     *
+     * 
      */
     @Export(name="engineType", refs={String.class}, tree="[0]")
     private Output<String> engineType;
 
     /**
      * @return Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
-     *
+     * 
      */
     public Output<String> engineType() {
         return this.engineType;
     }
     /**
      * Error message for backup failure
-     *
+     * 
      */
     @Export(name="errorMessage", refs={String.class}, tree="[0]")
     private Output<String> errorMessage;
 
     /**
      * @return Error message for backup failure
-     *
+     * 
      */
     public Output<String> errorMessage() {
         return this.errorMessage;
     }
     /**
      * Backup expiration time (UTC)
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Backup expiration time (UTC)
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Whether encrypted
-     *
+     * 
      */
     @Export(name="isEncrypted", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEncrypted;
 
     /**
      * @return Whether encrypted
-     *
+     * 
      */
     public Output<Boolean> isEncrypted() {
         return this.isEncrypted;
     }
     /**
      * Whether expired
-     *
+     * 
      */
     @Export(name="isExpired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isExpired;
 
     /**
      * @return Whether expired
-     *
+     * 
      */
     public Output<Boolean> isExpired() {
         return this.isExpired;

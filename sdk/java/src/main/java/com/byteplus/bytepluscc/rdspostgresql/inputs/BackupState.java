@@ -22,14 +22,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup data size (bytes).
-     *
+     * 
      */
     @Import(name="backupDataSize")
     private @Nullable Output<Integer> backupDataSize;
 
     /**
      * @return Backup data size (bytes).
-     *
+     * 
      */
     public Optional<Output<Integer>> backupDataSize() {
         return Optional.ofNullable(this.backupDataSize);
@@ -37,14 +37,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup description.
-     *
+     * 
      */
     @Import(name="backupDescription")
     private @Nullable Output<String> backupDescription;
 
     /**
      * @return Backup description.
-     *
+     * 
      */
     public Optional<Output<String>> backupDescription() {
         return Optional.ofNullable(this.backupDescription);
@@ -52,14 +52,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup end time.
-     *
+     * 
      */
     @Import(name="backupEndTime")
     private @Nullable Output<String> backupEndTime;
 
     /**
      * @return Backup end time.
-     *
+     * 
      */
     public Optional<Output<String>> backupEndTime() {
         return Optional.ofNullable(this.backupEndTime);
@@ -67,14 +67,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup file name.
-     *
+     * 
      */
     @Import(name="backupFileName")
     private @Nullable Output<String> backupFileName;
 
     /**
      * @return Backup file name.
-     *
+     * 
      */
     public Optional<Output<String>> backupFileName() {
         return Optional.ofNullable(this.backupFileName);
@@ -82,14 +82,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup file size (bytes).
-     *
+     * 
      */
     @Import(name="backupFileSize")
     private @Nullable Output<Integer> backupFileSize;
 
     /**
      * @return Backup file size (bytes).
-     *
+     * 
      */
     public Optional<Output<Integer>> backupFileSize() {
         return Optional.ofNullable(this.backupFileSize);
@@ -97,14 +97,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup ID.
-     *
+     * 
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
      * @return Backup ID.
-     *
+     * 
      */
     public Optional<Output<String>> backupId() {
         return Optional.ofNullable(this.backupId);
@@ -113,7 +113,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Backup metadata, used to specify the database list for logical backups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="backupMetas")
     private @Nullable Output<List<BackupBackupMetaArgs>> backupMetas;
@@ -121,7 +121,7 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Backup metadata, used to specify the database list for logical backups.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<BackupBackupMetaArgs>>> backupMetas() {
         return Optional.ofNullable(this.backupMetas);
@@ -129,14 +129,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup method: Physical for physical backup, Logical for logical backup.
-     *
+     * 
      */
     @Import(name="backupMethod")
     private @Nullable Output<String> backupMethod;
 
     /**
      * @return Backup method: Physical for physical backup, Logical for logical backup.
-     *
+     * 
      */
     public Optional<Output<String>> backupMethod() {
         return Optional.ofNullable(this.backupMethod);
@@ -144,14 +144,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup policy configuration information.
-     *
+     * 
      */
     @Import(name="backupPolicy")
     private @Nullable Output<BackupBackupPolicyArgs> backupPolicy;
 
     /**
      * @return Backup policy configuration information.
-     *
+     * 
      */
     public Optional<Output<BackupBackupPolicyArgs>> backupPolicy() {
         return Optional.ofNullable(this.backupPolicy);
@@ -159,14 +159,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup progress percentage.
-     *
+     * 
      */
     @Import(name="backupProgress")
     private @Nullable Output<Integer> backupProgress;
 
     /**
      * @return Backup progress percentage.
-     *
+     * 
      */
     public Optional<Output<Integer>> backupProgress() {
         return Optional.ofNullable(this.backupProgress);
@@ -174,14 +174,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup scope: Instance for instance-level backup, Database for database-level backup.
-     *
+     * 
      */
     @Import(name="backupScope")
     private @Nullable Output<String> backupScope;
 
     /**
      * @return Backup scope: Instance for instance-level backup, Database for database-level backup.
-     *
+     * 
      */
     public Optional<Output<String>> backupScope() {
         return Optional.ofNullable(this.backupScope);
@@ -189,14 +189,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup start time.
-     *
+     * 
      */
     @Import(name="backupStartTime")
     private @Nullable Output<String> backupStartTime;
 
     /**
      * @return Backup start time.
-     *
+     * 
      */
     public Optional<Output<String>> backupStartTime() {
         return Optional.ofNullable(this.backupStartTime);
@@ -204,14 +204,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup status, such as Success, Running, Failed.
-     *
+     * 
      */
     @Import(name="backupStatus")
     private @Nullable Output<String> backupStatus;
 
     /**
      * @return Backup status, such as Success, Running, Failed.
-     *
+     * 
      */
     public Optional<Output<String>> backupStatus() {
         return Optional.ofNullable(this.backupStatus);
@@ -219,14 +219,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup type: Full for full backup, Increment for incremental backup.
-     *
+     * 
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
      * @return Backup type: Full for full backup, Increment for incremental backup.
-     *
+     * 
      */
     public Optional<Output<String>> backupType() {
         return Optional.ofNullable(this.backupType);
@@ -234,14 +234,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation method: Manual for manual creation, Automated for automatic creation.
-     *
+     * 
      */
     @Import(name="createType")
     private @Nullable Output<String> createType;
 
     /**
      * @return Creation method: Manual for manual creation, Automated for automatic creation.
-     *
+     * 
      */
     public Optional<Output<String>> createType() {
         return Optional.ofNullable(this.createType);
@@ -249,14 +249,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Download logical backup file after creation. Only valid for logical backups.
-     *
+     * 
      */
     @Import(name="downloadBackup")
     private @Nullable Output<Boolean> downloadBackup;
 
     /**
      * @return Download logical backup file after creation. Only valid for logical backups.
-     *
+     * 
      */
     public Optional<Output<Boolean>> downloadBackup() {
         return Optional.ofNullable(this.downloadBackup);
@@ -264,14 +264,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Download preparation progress percentage.
-     *
+     * 
      */
     @Import(name="downloadProgress")
     private @Nullable Output<Integer> downloadProgress;
 
     /**
      * @return Download preparation progress percentage.
-     *
+     * 
      */
     public Optional<Output<Integer>> downloadProgress() {
         return Optional.ofNullable(this.downloadProgress);
@@ -279,14 +279,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Download status.
-     *
+     * 
      */
     @Import(name="downloadStatus")
     private @Nullable Output<String> downloadStatus;
 
     /**
      * @return Download status.
-     *
+     * 
      */
     public Optional<Output<String>> downloadStatus() {
         return Optional.ofNullable(this.downloadStatus);
@@ -294,14 +294,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * RDS PostgreSQL instance ID.
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return RDS PostgreSQL instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -351,9 +351,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupDataSize Backup data size (bytes).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupDataSize(@Nullable Output<Integer> backupDataSize) {
             $.backupDataSize = backupDataSize;
@@ -362,9 +362,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupDataSize Backup data size (bytes).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupDataSize(Integer backupDataSize) {
             return backupDataSize(Output.of(backupDataSize));
@@ -372,9 +372,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupDescription Backup description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupDescription(@Nullable Output<String> backupDescription) {
             $.backupDescription = backupDescription;
@@ -383,9 +383,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupDescription Backup description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupDescription(String backupDescription) {
             return backupDescription(Output.of(backupDescription));
@@ -393,9 +393,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupEndTime Backup end time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupEndTime(@Nullable Output<String> backupEndTime) {
             $.backupEndTime = backupEndTime;
@@ -404,9 +404,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupEndTime Backup end time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupEndTime(String backupEndTime) {
             return backupEndTime(Output.of(backupEndTime));
@@ -414,9 +414,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileName Backup file name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupFileName(@Nullable Output<String> backupFileName) {
             $.backupFileName = backupFileName;
@@ -425,9 +425,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileName Backup file name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupFileName(String backupFileName) {
             return backupFileName(Output.of(backupFileName));
@@ -435,9 +435,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileSize Backup file size (bytes).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupFileSize(@Nullable Output<Integer> backupFileSize) {
             $.backupFileSize = backupFileSize;
@@ -446,9 +446,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileSize Backup file size (bytes).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupFileSize(Integer backupFileSize) {
             return backupFileSize(Output.of(backupFileSize));
@@ -456,9 +456,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupId Backup ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupId(@Nullable Output<String> backupId) {
             $.backupId = backupId;
@@ -467,9 +467,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupId Backup ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupId(String backupId) {
             return backupId(Output.of(backupId));
@@ -478,9 +478,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backupMetas Backup metadata, used to specify the database list for logical backups.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMetas(@Nullable Output<List<BackupBackupMetaArgs>> backupMetas) {
             $.backupMetas = backupMetas;
@@ -490,9 +490,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backupMetas Backup metadata, used to specify the database list for logical backups.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMetas(List<BackupBackupMetaArgs> backupMetas) {
             return backupMetas(Output.of(backupMetas));
@@ -501,9 +501,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backupMetas Backup metadata, used to specify the database list for logical backups.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMetas(BackupBackupMetaArgs... backupMetas) {
             return backupMetas(List.of(backupMetas));
@@ -511,9 +511,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupMethod Backup method: Physical for physical backup, Logical for logical backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMethod(@Nullable Output<String> backupMethod) {
             $.backupMethod = backupMethod;
@@ -522,9 +522,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupMethod Backup method: Physical for physical backup, Logical for logical backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupMethod(String backupMethod) {
             return backupMethod(Output.of(backupMethod));
@@ -532,9 +532,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupPolicy Backup policy configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupPolicy(@Nullable Output<BackupBackupPolicyArgs> backupPolicy) {
             $.backupPolicy = backupPolicy;
@@ -543,9 +543,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupPolicy Backup policy configuration information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupPolicy(BackupBackupPolicyArgs backupPolicy) {
             return backupPolicy(Output.of(backupPolicy));
@@ -553,9 +553,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupProgress Backup progress percentage.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupProgress(@Nullable Output<Integer> backupProgress) {
             $.backupProgress = backupProgress;
@@ -564,9 +564,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupProgress Backup progress percentage.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupProgress(Integer backupProgress) {
             return backupProgress(Output.of(backupProgress));
@@ -574,9 +574,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupScope Backup scope: Instance for instance-level backup, Database for database-level backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupScope(@Nullable Output<String> backupScope) {
             $.backupScope = backupScope;
@@ -585,9 +585,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupScope Backup scope: Instance for instance-level backup, Database for database-level backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupScope(String backupScope) {
             return backupScope(Output.of(backupScope));
@@ -595,9 +595,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStartTime Backup start time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupStartTime(@Nullable Output<String> backupStartTime) {
             $.backupStartTime = backupStartTime;
@@ -606,9 +606,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStartTime Backup start time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupStartTime(String backupStartTime) {
             return backupStartTime(Output.of(backupStartTime));
@@ -616,9 +616,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStatus Backup status, such as Success, Running, Failed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupStatus(@Nullable Output<String> backupStatus) {
             $.backupStatus = backupStatus;
@@ -627,9 +627,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStatus Backup status, such as Success, Running, Failed.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupStatus(String backupStatus) {
             return backupStatus(Output.of(backupStatus));
@@ -637,9 +637,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup type: Full for full backup, Increment for incremental backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupType(@Nullable Output<String> backupType) {
             $.backupType = backupType;
@@ -648,9 +648,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup type: Full for full backup, Increment for incremental backup.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backupType(String backupType) {
             return backupType(Output.of(backupType));
@@ -658,9 +658,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createType Creation method: Manual for manual creation, Automated for automatic creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createType(@Nullable Output<String> createType) {
             $.createType = createType;
@@ -669,9 +669,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createType Creation method: Manual for manual creation, Automated for automatic creation.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createType(String createType) {
             return createType(Output.of(createType));
@@ -679,9 +679,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadBackup Download logical backup file after creation. Only valid for logical backups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadBackup(@Nullable Output<Boolean> downloadBackup) {
             $.downloadBackup = downloadBackup;
@@ -690,9 +690,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadBackup Download logical backup file after creation. Only valid for logical backups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadBackup(Boolean downloadBackup) {
             return downloadBackup(Output.of(downloadBackup));
@@ -700,9 +700,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadProgress Download preparation progress percentage.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadProgress(@Nullable Output<Integer> downloadProgress) {
             $.downloadProgress = downloadProgress;
@@ -711,9 +711,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadProgress Download preparation progress percentage.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadProgress(Integer downloadProgress) {
             return downloadProgress(Output.of(downloadProgress));
@@ -721,9 +721,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadStatus Download status.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadStatus(@Nullable Output<String> downloadStatus) {
             $.downloadStatus = downloadStatus;
@@ -732,9 +732,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadStatus Download status.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder downloadStatus(String downloadStatus) {
             return downloadStatus(Output.of(downloadStatus));
@@ -742,9 +742,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId RDS PostgreSQL instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -753,9 +753,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId RDS PostgreSQL instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));

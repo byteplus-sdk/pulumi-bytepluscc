@@ -19,7 +19,7 @@ public final class DomainResponseHeaderResponseHeaderActionArgs extends com.pulu
     /**
      * Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="responseHeaderInstances")
     private @Nullable Output<List<DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs>> responseHeaderInstances;
@@ -27,7 +27,7 @@ public final class DomainResponseHeaderResponseHeaderActionArgs extends com.pulu
     /**
      * @return Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs>>> responseHeaderInstances() {
         return Optional.ofNullable(this.responseHeaderInstances);
@@ -60,9 +60,9 @@ public final class DomainResponseHeaderResponseHeaderActionArgs extends com.pulu
         /**
          * @param responseHeaderInstances Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder responseHeaderInstances(@Nullable Output<List<DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs>> responseHeaderInstances) {
             $.responseHeaderInstances = responseHeaderInstances;
@@ -72,9 +72,9 @@ public final class DomainResponseHeaderResponseHeaderActionArgs extends com.pulu
         /**
          * @param responseHeaderInstances Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder responseHeaderInstances(List<DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs> responseHeaderInstances) {
             return responseHeaderInstances(Output.of(responseHeaderInstances));
@@ -83,9 +83,9 @@ public final class DomainResponseHeaderResponseHeaderActionArgs extends com.pulu
         /**
          * @param responseHeaderInstances Specifies a list of configuration rules for response headers Each rule includes settings for header-related operations You can add up to 50 rules
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder responseHeaderInstances(DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs... responseHeaderInstances) {
             return responseHeaderInstances(List.of(responseHeaderInstances));

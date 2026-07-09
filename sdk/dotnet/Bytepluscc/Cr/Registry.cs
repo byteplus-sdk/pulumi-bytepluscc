@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
     /// Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cRRegistryDemo = new Bytepluscc.Cr.Registry("CRRegistryDemo", new()
     ///     {
@@ -41,12 +41,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cr/registry:Registry example "name"
     /// ```

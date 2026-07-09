@@ -20,7 +20,7 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Status condition list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="conditions")
     private @Nullable Output<List<ClusterStatusConditionArgs>> conditions;
@@ -28,7 +28,7 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Status condition list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ClusterStatusConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
@@ -36,14 +36,14 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster status phase.
-     *
+     * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
      * @return Cluster status phase.
-     *
+     * 
      */
     public Optional<Output<String>> phase() {
         return Optional.ofNullable(this.phase);
@@ -77,9 +77,9 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param conditions Status condition list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(@Nullable Output<List<ClusterStatusConditionArgs>> conditions) {
             $.conditions = conditions;
@@ -89,9 +89,9 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param conditions Status condition list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(List<ClusterStatusConditionArgs> conditions) {
             return conditions(Output.of(conditions));
@@ -100,9 +100,9 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param conditions Status condition list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(ClusterStatusConditionArgs... conditions) {
             return conditions(List.of(conditions));
@@ -110,9 +110,9 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param phase Cluster status phase.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder phase(@Nullable Output<String> phase) {
             $.phase = phase;
@@ -121,9 +121,9 @@ public final class ClusterStatusArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param phase Cluster status phase.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder phase(String phase) {
             return phase(Output.of(phase));

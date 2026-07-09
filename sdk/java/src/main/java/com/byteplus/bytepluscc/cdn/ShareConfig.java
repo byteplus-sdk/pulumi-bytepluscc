@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * Global configuration extends domain configuration capabilities with the following advantages: increases the capacity of denylist and allowlist. For example, an IP denylist can contain up to 30,000 entries. Improves domain configuration efficiency. A single global configuration can be associated with multiple domains. Provides a common list type that can be used in additional domain configurations. Modifications to a global configuration are immediately applied to all associated domains.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cDNShareConfigDemo = new ShareConfig("cDNShareConfigDemo", ShareConfigArgs.builder()
  *             .configName("CDNShareConfigDemo")
@@ -56,178 +56,178 @@ import javax.annotation.Nullable;
  *                 .allow_empty(true)
  *                 .common_type(Map.ofEntries(
  *                     Map.entry("ignoreCase", true),
- *                     Map.entry("rules", Arrays.asList(
+ *                     Map.entry("rules", Arrays.asList(                    
  *                         "139.x.x.1",
  *                         "139.x.x.2"))
  *                 ))
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cdn/shareConfig:ShareConfig example &#34;config_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cdn/shareConfig:ShareConfig")
 public class ShareConfig extends com.pulumi.resources.CustomResource {
     /**
      * Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
-     *
+     * 
      */
     @Export(name="allowIpAccessRule", refs={ShareConfigAllowIpAccessRule.class}, tree="[0]")
     private Output<ShareConfigAllowIpAccessRule> allowIpAccessRule;
 
     /**
      * @return Specifies the configuration for an IP allowlist, where ConfigType is allow*ip*access*rule.
-     *
+     * 
      */
     public Output<ShareConfigAllowIpAccessRule> allowIpAccessRule() {
         return this.allowIpAccessRule;
     }
     /**
      * Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
-     *
+     * 
      */
     @Export(name="allowRefererAccessRule", refs={ShareConfigAllowRefererAccessRule.class}, tree="[0]")
     private Output<ShareConfigAllowRefererAccessRule> allowRefererAccessRule;
 
     /**
      * @return Indicates a configuration for a Referer allowlist. The corresponding ConfigType is allow*referer*access*rule.
-     *
+     * 
      */
     public Output<ShareConfigAllowRefererAccessRule> allowRefererAccessRule() {
         return this.allowRefererAccessRule;
     }
     /**
      * Specifies the configuration for a common list, where ConfigType is common*match*list.
-     *
+     * 
      */
     @Export(name="commonMatchList", refs={ShareConfigCommonMatchList.class}, tree="[0]")
     private Output<ShareConfigCommonMatchList> commonMatchList;
 
     /**
      * @return Specifies the configuration for a common list, where ConfigType is common*match*list.
-     *
+     * 
      */
     public Output<ShareConfigCommonMatchList> commonMatchList() {
         return this.commonMatchList;
     }
     /**
      * Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
-     *
+     * 
      */
     @Export(name="configName", refs={String.class}, tree="[0]")
     private Output<String> configName;
 
     /**
      * @return Specifies the name of the global configuration. Naming requirements: Names can include Chinese characters, letters, numbers, and underscores (_), and must be 3–45 characters long. One Chinese character counts as 3 characters. The name cannot be the same as any existing global configuration name under the primary account.
-     *
+     * 
      */
     public Output<String> configName() {
         return this.configName;
     }
     /**
      * This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
-     *
+     * 
      */
     @Export(name="configType", refs={String.class}, tree="[0]")
     private Output<String> configType;
 
     /**
      * @return This parameter specifies the type of global configuration. Available values are: deny*ip*access*rule: indicates an IP denylist. allow*ip*access*rule: indicates an IP allowlist. deny*referer*access*rule: indicates a Referer denylist. allow*referer*access*rule: indicates a Referer allowlist. common*match*list: indicates a common list.
-     *
+     * 
      */
     public Output<String> configType() {
         return this.configType;
     }
     /**
      * Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
-     *
+     * 
      */
     @Export(name="denyIpAccessRule", refs={ShareConfigDenyIpAccessRule.class}, tree="[0]")
     private Output<ShareConfigDenyIpAccessRule> denyIpAccessRule;
 
     /**
      * @return Specifies the configuration for an IP denylist, where ConfigType is deny*ip*access*rule.
-     *
+     * 
      */
     public Output<ShareConfigDenyIpAccessRule> denyIpAccessRule() {
         return this.denyIpAccessRule;
     }
     /**
      * Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
-     *
+     * 
      */
     @Export(name="denyRefererAccessRule", refs={ShareConfigDenyRefererAccessRule.class}, tree="[0]")
     private Output<ShareConfigDenyRefererAccessRule> denyRefererAccessRule;
 
     /**
      * @return Indicates a configuration for a Referer denylist. The corresponding ConfigType is deny*referer*access*rule.
-     *
+     * 
      */
     public Output<ShareConfigDenyRefererAccessRule> denyRefererAccessRule() {
         return this.denyRefererAccessRule;
     }
     /**
      * Indicates the number of accelerated domains associated with this global configuration.
-     *
+     * 
      */
     @Export(name="domainCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> domainCount;
 
     /**
      * @return Indicates the number of accelerated domains associated with this global configuration.
-     *
+     * 
      */
     public Output<Integer> domainCount() {
         return this.domainCount;
     }
     /**
      * Specifies the project name to which the global configuration belongs.
-     *
+     * 
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
      * @return Specifies the project name to which the global configuration belongs.
-     *
+     * 
      */
     public Output<String> project() {
         return this.project;
     }
     /**
      * Specifies the HTML code for the custom error page.
-     *
+     * 
      */
     @Export(name="ruleContent", refs={String.class}, tree="[0]")
     private Output<String> ruleContent;
 
     /**
      * @return Specifies the HTML code for the custom error page.
-     *
+     * 
      */
     public Output<String> ruleContent() {
         return this.ruleContent;
     }
     /**
      * Indicates the last modification time of this global configuration, in Unix timestamp.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
      * @return Indicates the last modification time of this global configuration, in Unix timestamp.
-     *
+     * 
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;

@@ -20,14 +20,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-     *
+     * 
      */
     @Import(name="ciphers", required=true)
     private Output<List<String>> ciphers;
 
     /**
      * @return Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-     *
+     * 
      */
     public Output<List<String>> ciphers() {
         return this.ciphers;
@@ -35,14 +35,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -50,14 +50,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
-     *
+     * 
      */
     @Import(name="securityPolicyName")
     private @Nullable Output<String> securityPolicyName;
 
     /**
      * @return Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
-     *
+     * 
      */
     public Optional<Output<String>> securityPolicyName() {
         return Optional.ofNullable(this.securityPolicyName);
@@ -66,7 +66,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<NlbSecurityPolicyTagArgs>> tags;
@@ -74,7 +74,7 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NlbSecurityPolicyTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -82,14 +82,14 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-     *
+     * 
      */
     @Import(name="tlsVersions", required=true)
     private Output<List<String>> tlsVersions;
 
     /**
      * @return Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-     *
+     * 
      */
     public Output<List<String>> tlsVersions() {
         return this.tlsVersions;
@@ -125,9 +125,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ciphers Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ciphers(Output<List<String>> ciphers) {
             $.ciphers = ciphers;
@@ -136,9 +136,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ciphers Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ciphers(List<String> ciphers) {
             return ciphers(Output.of(ciphers));
@@ -146,9 +146,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ciphers Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ciphers(String... ciphers) {
             return ciphers(List.of(ciphers));
@@ -156,9 +156,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -167,9 +167,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -177,9 +177,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityPolicyName Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityPolicyName(@Nullable Output<String> securityPolicyName) {
             $.securityPolicyName = securityPolicyName;
@@ -188,9 +188,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityPolicyName Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityPolicyName(String securityPolicyName) {
             return securityPolicyName(Output.of(securityPolicyName));
@@ -199,9 +199,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<NlbSecurityPolicyTagArgs>> tags) {
             $.tags = tags;
@@ -211,9 +211,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<NlbSecurityPolicyTagArgs> tags) {
             return tags(Output.of(tags));
@@ -222,9 +222,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(NlbSecurityPolicyTagArgs... tags) {
             return tags(List.of(tags));
@@ -232,9 +232,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param tlsVersions Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsVersions(Output<List<String>> tlsVersions) {
             $.tlsVersions = tlsVersions;
@@ -243,9 +243,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param tlsVersions Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsVersions(List<String> tlsVersions) {
             return tlsVersions(Output.of(tlsVersions));
@@ -253,9 +253,9 @@ public final class NlbSecurityPolicyArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param tlsVersions Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsVersions(String... tlsVersions) {
             return tlsVersions(List.of(tlsVersions));

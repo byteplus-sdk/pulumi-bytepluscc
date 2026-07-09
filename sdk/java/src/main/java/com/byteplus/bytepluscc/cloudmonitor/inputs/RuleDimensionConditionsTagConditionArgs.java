@@ -19,14 +19,14 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
 
     /**
      * Condition. and: All conditions met. or: Any condition met.
-     *
+     * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
      * @return Condition. and: All conditions met. or: Any condition met.
-     *
+     * 
      */
     public Optional<Output<String>> condition() {
         return Optional.ofNullable(this.condition);
@@ -35,7 +35,7 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
     /**
      * Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<RuleDimensionConditionsTagConditionTagArgs>> tags;
@@ -43,7 +43,7 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
     /**
      * @return Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleDimensionConditionsTagConditionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -76,9 +76,9 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
 
         /**
          * @param condition Condition. and: All conditions met. or: Any condition met.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(@Nullable Output<String> condition) {
             $.condition = condition;
@@ -87,9 +87,9 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
 
         /**
          * @param condition Condition. and: All conditions met. or: Any condition met.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(String condition) {
             return condition(Output.of(condition));
@@ -98,9 +98,9 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
         /**
          * @param tags Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<RuleDimensionConditionsTagConditionTagArgs>> tags) {
             $.tags = tags;
@@ -110,9 +110,9 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
         /**
          * @param tags Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<RuleDimensionConditionsTagConditionTagArgs> tags) {
             return tags(Output.of(tags));
@@ -121,9 +121,9 @@ public final class RuleDimensionConditionsTagConditionArgs extends com.pulumi.re
         /**
          * @param tags Tag list. Supports up to 10 tag lists. Tag value cannot exceed 50 characters.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(RuleDimensionConditionsTagConditionTagArgs... tags) {
             return tags(List.of(tags));

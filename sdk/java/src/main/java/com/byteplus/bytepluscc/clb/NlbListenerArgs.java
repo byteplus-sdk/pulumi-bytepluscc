@@ -23,14 +23,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
-     *
+     * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
-     *
+     * 
      */
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
@@ -38,14 +38,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener connection timeout (seconds)
-     *
+     * 
      */
     @Import(name="connectionTimeout")
     private @Nullable Output<Integer> connectionTimeout;
 
     /**
      * @return Listener connection timeout (seconds)
-     *
+     * 
      */
     public Optional<Output<Integer>> connectionTimeout() {
         return Optional.ofNullable(this.connectionTimeout);
@@ -53,14 +53,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Listener description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -68,14 +68,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener enabled: true (enabled); false (disabled)
-     *
+     * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
      * @return Listener enabled: true (enabled); false (disabled)
-     *
+     * 
      */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
@@ -83,14 +83,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * End port for all-port listening. Valid only when Port is 0.
-     *
+     * 
      */
     @Import(name="endPort")
     private @Nullable Output<Integer> endPort;
 
     /**
      * @return End port for all-port listening. Valid only when Port is 0.
-     *
+     * 
      */
     public Optional<Output<Integer>> endPort() {
         return Optional.ofNullable(this.endPort);
@@ -99,7 +99,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Backend instance health check response information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="healths")
     private @Nullable Output<List<NlbListenerHealthArgs>> healths;
@@ -107,7 +107,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Backend instance health check response information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NlbListenerHealthArgs>>> healths() {
         return Optional.ofNullable(this.healths);
@@ -115,14 +115,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener name
-     *
+     * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
      * @return Listener name
-     *
+     * 
      */
     public Optional<Output<String>> listenerName() {
         return Optional.ofNullable(this.listenerName);
@@ -130,14 +130,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Load balancer instance ID
-     *
+     * 
      */
     @Import(name="loadBalancerId", required=true)
     private Output<String> loadBalancerId;
 
     /**
      * @return Load balancer instance ID
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
@@ -145,14 +145,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port on which the listener receives requests. 0 indicates all-port listening is enabled.
-     *
+     * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
      * @return Port on which the listener receives requests. 0 indicates all-port listening is enabled.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
@@ -160,14 +160,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener protocol type: TCP, UDP, TLS
-     *
+     * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
      * @return Listener protocol type: TCP, UDP, TLS
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
@@ -175,14 +175,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
-     *
+     * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
      * @return TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
-     *
+     * 
      */
     public Optional<Output<String>> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
@@ -190,14 +190,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Server group ID associated with the listener
-     *
+     * 
      */
     @Import(name="serverGroupId", required=true)
     private Output<String> serverGroupId;
 
     /**
      * @return Server group ID associated with the listener
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
@@ -205,14 +205,14 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Start port for all-port listening. Valid only when Port is 0.
-     *
+     * 
      */
     @Import(name="startPort")
     private @Nullable Output<Integer> startPort;
 
     /**
      * @return Start port for all-port listening. Valid only when Port is 0.
-     *
+     * 
      */
     public Optional<Output<Integer>> startPort() {
         return Optional.ofNullable(this.startPort);
@@ -221,7 +221,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Resource tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<NlbListenerTagArgs>> tags;
@@ -229,7 +229,7 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Resource tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NlbListenerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -274,9 +274,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
@@ -285,9 +285,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
@@ -295,9 +295,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionTimeout Listener connection timeout (seconds)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionTimeout(@Nullable Output<Integer> connectionTimeout) {
             $.connectionTimeout = connectionTimeout;
@@ -306,9 +306,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionTimeout Listener connection timeout (seconds)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionTimeout(Integer connectionTimeout) {
             return connectionTimeout(Output.of(connectionTimeout));
@@ -316,9 +316,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Listener description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -327,9 +327,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Listener description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -337,9 +337,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enabled Listener enabled: true (enabled); false (disabled)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
@@ -348,9 +348,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enabled Listener enabled: true (enabled); false (disabled)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
@@ -358,9 +358,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endPort End port for all-port listening. Valid only when Port is 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endPort(@Nullable Output<Integer> endPort) {
             $.endPort = endPort;
@@ -369,9 +369,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endPort End port for all-port listening. Valid only when Port is 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endPort(Integer endPort) {
             return endPort(Output.of(endPort));
@@ -380,9 +380,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param healths Backend instance health check response information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healths(@Nullable Output<List<NlbListenerHealthArgs>> healths) {
             $.healths = healths;
@@ -392,9 +392,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param healths Backend instance health check response information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healths(List<NlbListenerHealthArgs> healths) {
             return healths(Output.of(healths));
@@ -403,9 +403,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param healths Backend instance health check response information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healths(NlbListenerHealthArgs... healths) {
             return healths(List.of(healths));
@@ -413,9 +413,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerName Listener name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerName(@Nullable Output<String> listenerName) {
             $.listenerName = listenerName;
@@ -424,9 +424,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerName Listener name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerName(String listenerName) {
             return listenerName(Output.of(listenerName));
@@ -434,9 +434,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId Load balancer instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(Output<String> loadBalancerId) {
             $.loadBalancerId = loadBalancerId;
@@ -445,9 +445,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId Load balancer instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(String loadBalancerId) {
             return loadBalancerId(Output.of(loadBalancerId));
@@ -455,9 +455,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port on which the listener receives requests. 0 indicates all-port listening is enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Output<Integer> port) {
             $.port = port;
@@ -466,9 +466,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port on which the listener receives requests. 0 indicates all-port listening is enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -476,9 +476,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Listener protocol type: TCP, UDP, TLS
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(Output<String> protocol) {
             $.protocol = protocol;
@@ -487,9 +487,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Listener protocol type: TCP, UDP, TLS
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -497,9 +497,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityPolicyId TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityPolicyId(@Nullable Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
@@ -508,9 +508,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityPolicyId TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
@@ -518,9 +518,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Server group ID associated with the listener
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -529,9 +529,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Server group ID associated with the listener
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
@@ -539,9 +539,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param startPort Start port for all-port listening. Valid only when Port is 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startPort(@Nullable Output<Integer> startPort) {
             $.startPort = startPort;
@@ -550,9 +550,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param startPort Start port for all-port listening. Valid only when Port is 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startPort(Integer startPort) {
             return startPort(Output.of(startPort));
@@ -561,9 +561,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Resource tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<NlbListenerTagArgs>> tags) {
             $.tags = tags;
@@ -573,9 +573,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Resource tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<NlbListenerTagArgs> tags) {
             return tags(Output.of(tags));
@@ -584,9 +584,9 @@ public final class NlbListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Resource tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(NlbListenerTagArgs... tags) {
             return tags(List.of(tags));

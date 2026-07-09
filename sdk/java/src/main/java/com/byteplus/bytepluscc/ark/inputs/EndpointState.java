@@ -24,14 +24,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
-     *
+     * 
      */
     @Import(name="batchOnly")
     private @Nullable Output<Boolean> batchOnly;
 
     /**
      * @return Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
-     *
+     * 
      */
     public Optional<Output<Boolean>> batchOnly() {
         return Optional.ofNullable(this.batchOnly);
@@ -39,14 +39,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate information
-     *
+     * 
      */
     @Import(name="certificate")
     private @Nullable Output<EndpointCertificateArgs> certificate;
 
     /**
      * @return Certificate information
-     *
+     * 
      */
     public Optional<Output<EndpointCertificateArgs>> certificate() {
         return Optional.ofNullable(this.certificate);
@@ -54,14 +54,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint creation time, RFC3339 format
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Endpoint creation time, RFC3339 format
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -69,14 +69,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Endpoint description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -84,14 +84,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Inference access point ID.
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Inference access point ID.
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -99,14 +99,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
-     *
+     * 
      */
     @Import(name="endpointModelType")
     private @Nullable Output<String> endpointModelType;
 
     /**
      * @return Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
-     *
+     * 
      */
     public Optional<Output<String>> endpointModelType() {
         return Optional.ofNullable(this.endpointModelType);
@@ -114,14 +114,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint access model
-     *
+     * 
      */
     @Import(name="modelReference")
     private @Nullable Output<EndpointModelReferenceArgs> modelReference;
 
     /**
      * @return Endpoint access model
-     *
+     * 
      */
     public Optional<Output<EndpointModelReferenceArgs>> modelReference() {
         return Optional.ofNullable(this.modelReference);
@@ -129,14 +129,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Model unit. If empty, indicates postpaid; otherwise, prepaid.
-     *
+     * 
      */
     @Import(name="modelUnitId")
     private @Nullable Output<String> modelUnitId;
 
     /**
      * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
-     *
+     * 
      */
     public Optional<Output<String>> modelUnitId() {
         return Optional.ofNullable(this.modelUnitId);
@@ -144,14 +144,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Content guardrail scheme
-     *
+     * 
      */
     @Import(name="moderation")
     private @Nullable Output<EndpointModerationArgs> moderation;
 
     /**
      * @return Content guardrail scheme
-     *
+     * 
      */
     public Optional<Output<EndpointModerationArgs>> moderation() {
         return Optional.ofNullable(this.moderation);
@@ -159,14 +159,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint name
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Endpoint name
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -174,14 +174,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name the resource belongs to; default value is &#34;default&#34;
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name the resource belongs to; default value is &#34;default&#34;
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -189,14 +189,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint rate limiting
-     *
+     * 
      */
     @Import(name="rateLimit")
     private @Nullable Output<EndpointRateLimitArgs> rateLimit;
 
     /**
      * @return Endpoint rate limiting
-     *
+     * 
      */
     public Optional<Output<EndpointRateLimitArgs>> rateLimit() {
         return Optional.ofNullable(this.rateLimit);
@@ -204,14 +204,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint switch ID
-     *
+     * 
      */
     @Import(name="rollingId")
     private @Nullable Output<String> rollingId;
 
     /**
      * @return Endpoint switch ID
-     *
+     * 
      */
     public Optional<Output<String>> rollingId() {
         return Optional.ofNullable(this.rollingId);
@@ -219,14 +219,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * If a TPM protection package exists, this is the TPM protection package ID.
-     *
+     * 
      */
     @Import(name="scaleTierId")
     private @Nullable Output<String> scaleTierId;
 
     /**
      * @return If a TPM protection package exists, this is the TPM protection package ID.
-     *
+     * 
      */
     public Optional<Output<String>> scaleTierId() {
         return Optional.ofNullable(this.scaleTierId);
@@ -234,14 +234,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint status
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Endpoint status
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -249,14 +249,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Additional status information
-     *
+     * 
      */
     @Import(name="statusReason")
     private @Nullable Output<String> statusReason;
 
     /**
      * @return Additional status information
-     *
+     * 
      */
     public Optional<Output<String>> statusReason() {
         return Optional.ofNullable(this.statusReason);
@@ -264,14 +264,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether endpoint supports switching model versions
-     *
+     * 
      */
     @Import(name="supportRolling")
     private @Nullable Output<Boolean> supportRolling;
 
     /**
      * @return Whether endpoint supports switching model versions
-     *
+     * 
      */
     public Optional<Output<Boolean>> supportRolling() {
         return Optional.ofNullable(this.supportRolling);
@@ -279,14 +279,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether TPM protection package is supported
-     *
+     * 
      */
     @Import(name="supportScaleTier")
     private @Nullable Output<Boolean> supportScaleTier;
 
     /**
      * @return Whether TPM protection package is supported
-     *
+     * 
      */
     public Optional<Output<Boolean>> supportScaleTier() {
         return Optional.ofNullable(this.supportScaleTier);
@@ -295,7 +295,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tags bound to the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<EndpointTagArgs>> tags;
@@ -303,7 +303,7 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tags bound to the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<EndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -311,14 +311,14 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint update time, RFC3339 format
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Endpoint update time, RFC3339 format
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -369,9 +369,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param batchOnly Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder batchOnly(@Nullable Output<Boolean> batchOnly) {
             $.batchOnly = batchOnly;
@@ -380,9 +380,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param batchOnly Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder batchOnly(Boolean batchOnly) {
             return batchOnly(Output.of(batchOnly));
@@ -390,9 +390,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificate Certificate information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificate(@Nullable Output<EndpointCertificateArgs> certificate) {
             $.certificate = certificate;
@@ -401,9 +401,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificate Certificate information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificate(EndpointCertificateArgs certificate) {
             return certificate(Output.of(certificate));
@@ -411,9 +411,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Endpoint creation time, RFC3339 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -422,9 +422,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Endpoint creation time, RFC3339 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -432,9 +432,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Endpoint description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -443,9 +443,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Endpoint description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -453,9 +453,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Inference access point ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -464,9 +464,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Inference access point ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -474,9 +474,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointModelType Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointModelType(@Nullable Output<String> endpointModelType) {
             $.endpointModelType = endpointModelType;
@@ -485,9 +485,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointModelType Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointModelType(String endpointModelType) {
             return endpointModelType(Output.of(endpointModelType));
@@ -495,9 +495,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelReference Endpoint access model
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelReference(@Nullable Output<EndpointModelReferenceArgs> modelReference) {
             $.modelReference = modelReference;
@@ -506,9 +506,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelReference Endpoint access model
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelReference(EndpointModelReferenceArgs modelReference) {
             return modelReference(Output.of(modelReference));
@@ -516,9 +516,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelUnitId(@Nullable Output<String> modelUnitId) {
             $.modelUnitId = modelUnitId;
@@ -527,9 +527,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modelUnitId Model unit. If empty, indicates postpaid; otherwise, prepaid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modelUnitId(String modelUnitId) {
             return modelUnitId(Output.of(modelUnitId));
@@ -537,9 +537,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param moderation Content guardrail scheme
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder moderation(@Nullable Output<EndpointModerationArgs> moderation) {
             $.moderation = moderation;
@@ -548,9 +548,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param moderation Content guardrail scheme
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder moderation(EndpointModerationArgs moderation) {
             return moderation(Output.of(moderation));
@@ -558,9 +558,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Endpoint name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -569,9 +569,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Endpoint name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -579,9 +579,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -590,9 +590,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name the resource belongs to; default value is &#34;default&#34;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -600,9 +600,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rateLimit Endpoint rate limiting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rateLimit(@Nullable Output<EndpointRateLimitArgs> rateLimit) {
             $.rateLimit = rateLimit;
@@ -611,9 +611,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rateLimit Endpoint rate limiting
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rateLimit(EndpointRateLimitArgs rateLimit) {
             return rateLimit(Output.of(rateLimit));
@@ -621,9 +621,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rollingId Endpoint switch ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rollingId(@Nullable Output<String> rollingId) {
             $.rollingId = rollingId;
@@ -632,9 +632,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rollingId Endpoint switch ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rollingId(String rollingId) {
             return rollingId(Output.of(rollingId));
@@ -642,9 +642,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scaleTierId If a TPM protection package exists, this is the TPM protection package ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scaleTierId(@Nullable Output<String> scaleTierId) {
             $.scaleTierId = scaleTierId;
@@ -653,9 +653,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scaleTierId If a TPM protection package exists, this is the TPM protection package ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scaleTierId(String scaleTierId) {
             return scaleTierId(Output.of(scaleTierId));
@@ -663,9 +663,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Endpoint status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -674,9 +674,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Endpoint status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -684,9 +684,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statusReason Additional status information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusReason(@Nullable Output<String> statusReason) {
             $.statusReason = statusReason;
@@ -695,9 +695,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statusReason Additional status information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusReason(String statusReason) {
             return statusReason(Output.of(statusReason));
@@ -705,9 +705,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportRolling Whether endpoint supports switching model versions
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder supportRolling(@Nullable Output<Boolean> supportRolling) {
             $.supportRolling = supportRolling;
@@ -716,9 +716,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportRolling Whether endpoint supports switching model versions
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder supportRolling(Boolean supportRolling) {
             return supportRolling(Output.of(supportRolling));
@@ -726,9 +726,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportScaleTier Whether TPM protection package is supported
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder supportScaleTier(@Nullable Output<Boolean> supportScaleTier) {
             $.supportScaleTier = supportScaleTier;
@@ -737,9 +737,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportScaleTier Whether TPM protection package is supported
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder supportScaleTier(Boolean supportScaleTier) {
             return supportScaleTier(Output.of(supportScaleTier));
@@ -748,9 +748,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<EndpointTagArgs>> tags) {
             $.tags = tags;
@@ -760,9 +760,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<EndpointTagArgs> tags) {
             return tags(Output.of(tags));
@@ -771,9 +771,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tags bound to the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(EndpointTagArgs... tags) {
             return tags(List.of(tags));
@@ -781,9 +781,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Endpoint update time, RFC3339 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -792,9 +792,9 @@ public final class EndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Endpoint update time, RFC3339 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

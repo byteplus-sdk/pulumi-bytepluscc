@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// A virtual collection of multiple consumers. When consuming log data at the consumer group level, all consumers in the group subscribe to the same log topic and jointly consume data from that log topic. Each consumer consumes data from one or more Shards in the log topic, and there is no duplicate consumption of data among consumers.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSConsumerGroupDemo = new Bytepluscc.Tls.ConsumerGroup("TLSConsumerGroupDemo", new()
     ///     {
@@ -34,12 +34,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         HeartbeatTtl = 10,
     ///         OrderedConsume = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/consumerGroup:ConsumerGroup example "project_id|consumer_group_name"
     /// ```

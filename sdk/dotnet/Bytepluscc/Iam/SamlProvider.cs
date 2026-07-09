@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
     /// SAML identity provider is a user authentication service provider responsible for collecting and storing user identity data such as usernames and passwords. In access control (IAM), it is an entity that contains external identity provider metadata and provides identity management services.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var iAMSamlProviderDemo = new Bytepluscc.Iam.SamlProvider("IAMSamlProviderDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     ///         SsoType = 1,
     ///         Status = 1,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:iam/samlProvider:SamlProvider example "saml_provider_name"
     /// ```

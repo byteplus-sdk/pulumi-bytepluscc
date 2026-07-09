@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * A user group is a collection of users. When a user group is associated with a policy, all users in the group gain the corresponding policy permissions. A user can belong to multiple user groups and have permissions from each group.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var groupDemo = new Group("groupDemo", GroupArgs.builder()
  *             .userGroupName("GroupDemo")
@@ -65,32 +65,32 @@ import javax.annotation.Nullable;
  *                 )))
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:iam/group:Group example &#34;user_group_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:iam/group:Group")
 public class Group extends com.pulumi.resources.CustomResource {
     /**
      * ID of the primary account to which the user group belongs.
-     *
+     * 
      */
     @Export(name="accountId", refs={Integer.class}, tree="[0]")
     private Output<Integer> accountId;
 
     /**
      * @return ID of the primary account to which the user group belongs.
-     *
+     * 
      */
     public Output<Integer> accountId() {
         return this.accountId;
@@ -98,7 +98,7 @@ public class Group extends com.pulumi.resources.CustomResource {
     /**
      * Policy information bound to the user group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="attachedPolicies", refs={List.class,GroupAttachedPolicy.class}, tree="[0,1]")
     private Output<List<GroupAttachedPolicy>> attachedPolicies;
@@ -106,91 +106,91 @@ public class Group extends com.pulumi.resources.CustomResource {
     /**
      * @return Policy information bound to the user group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<GroupAttachedPolicy>> attachedPolicies() {
         return this.attachedPolicies;
     }
     /**
      * User group creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return User group creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * User group description. Maximum length: 128 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return User group description. Maximum length: 128 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * User group display name. Maximum length: 64 characters.
-     *
+     * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return User group display name. Maximum length: 64 characters.
-     *
+     * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
      * User group update time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return User group update time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * User group ID.
-     *
+     * 
      */
     @Export(name="userGroupId", refs={Integer.class}, tree="[0]")
     private Output<Integer> userGroupId;
 
     /**
      * @return User group ID.
-     *
+     * 
      */
     public Output<Integer> userGroupId() {
         return this.userGroupId;
     }
     /**
      * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-     *
+     * 
      */
     @Export(name="userGroupName", refs={String.class}, tree="[0]")
     private Output<String> userGroupName;
 
     /**
      * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-     *
+     * 
      */
     public Output<String> userGroupName() {
         return this.userGroupName;
@@ -198,7 +198,7 @@ public class Group extends com.pulumi.resources.CustomResource {
     /**
      * User information associated with the user group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="users", refs={List.class,GroupUser.class}, tree="[0,1]")
     private Output<List<GroupUser>> users;
@@ -206,7 +206,7 @@ public class Group extends com.pulumi.resources.CustomResource {
     /**
      * @return User information associated with the user group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<GroupUser>> users() {
         return this.users;

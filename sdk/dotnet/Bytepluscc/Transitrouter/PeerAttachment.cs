@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// A connection established between TR instances in two different regions enables cross-region communication.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var transitRouterPeerAttachmentDemo = new Bytepluscc.Transitrouter.PeerAttachment("TransitRouterPeerAttachmentDemo", new()
     ///     {
@@ -41,12 +41,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/peerAttachment:PeerAttachment example "transit_router_attachment_id"
     /// ```

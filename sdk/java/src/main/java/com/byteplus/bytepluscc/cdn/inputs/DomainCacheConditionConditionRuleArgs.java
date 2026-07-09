@@ -17,14 +17,14 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
     /**
      * When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -32,14 +32,14 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
     /**
      * Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-     *
+     * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
      * @return Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-     *
+     * 
      */
     public Optional<Output<String>> object() {
         return Optional.ofNullable(this.object);
@@ -47,14 +47,14 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
     /**
      * Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-     *
+     * 
      */
     @Import(name="operator")
     private @Nullable Output<String> operator;
 
     /**
      * @return Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-     *
+     * 
      */
     public Optional<Output<String>> operator() {
         return Optional.ofNullable(this.operator);
@@ -62,14 +62,14 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
     /**
      * Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -77,14 +77,14 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
     /**
      * Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-     *
+     * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-     *
+     * 
      */
     public Optional<Output<String>> value() {
         return Optional.ofNullable(this.value);
@@ -120,9 +120,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param name When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -131,9 +131,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param name When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -141,9 +141,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param object Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder object(@Nullable Output<String> object) {
             $.object = object;
@@ -152,9 +152,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param object Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder object(String object) {
             return object(Output.of(object));
@@ -162,9 +162,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param operator Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder operator(@Nullable Output<String> operator) {
             $.operator = operator;
@@ -173,9 +173,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param operator Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder operator(String operator) {
             return operator(Output.of(operator));
@@ -183,9 +183,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param type Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -194,9 +194,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param type Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -204,9 +204,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param value Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder value(@Nullable Output<String> value) {
             $.value = value;
@@ -215,9 +215,9 @@ public final class DomainCacheConditionConditionRuleArgs extends com.pulumi.reso
 
         /**
          * @param value Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder value(String value) {
             return value(Output.of(value));

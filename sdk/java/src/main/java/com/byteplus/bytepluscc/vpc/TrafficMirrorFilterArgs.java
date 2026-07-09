@@ -19,14 +19,14 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
     /**
      * Filter condition instance description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Filter condition instance description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -34,14 +34,14 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
     /**
      * Project name of the filter condition
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name of the filter condition
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -50,7 +50,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<TrafficMirrorFilterTagArgs>> tags;
@@ -58,7 +58,7 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<TrafficMirrorFilterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -66,14 +66,14 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
     /**
      * Filter condition name
-     *
+     * 
      */
     @Import(name="trafficMirrorFilterName")
     private @Nullable Output<String> trafficMirrorFilterName;
 
     /**
      * @return Filter condition name
-     *
+     * 
      */
     public Optional<Output<String>> trafficMirrorFilterName() {
         return Optional.ofNullable(this.trafficMirrorFilterName);
@@ -108,9 +108,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param description Filter condition instance description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -119,9 +119,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param description Filter condition instance description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -129,9 +129,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param projectName Project name of the filter condition
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -140,9 +140,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param projectName Project name of the filter condition
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -151,9 +151,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<TrafficMirrorFilterTagArgs>> tags) {
             $.tags = tags;
@@ -163,9 +163,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<TrafficMirrorFilterTagArgs> tags) {
             return tags(Output.of(tags));
@@ -174,9 +174,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(TrafficMirrorFilterTagArgs... tags) {
             return tags(List.of(tags));
@@ -184,9 +184,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param trafficMirrorFilterName Filter condition name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder trafficMirrorFilterName(@Nullable Output<String> trafficMirrorFilterName) {
             $.trafficMirrorFilterName = trafficMirrorFilterName;
@@ -195,9 +195,9 @@ public final class TrafficMirrorFilterArgs extends com.pulumi.resources.Resource
 
         /**
          * @param trafficMirrorFilterName Filter condition name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder trafficMirrorFilterName(String trafficMirrorFilterName) {
             return trafficMirrorFilterName(Output.of(trafficMirrorFilterName));

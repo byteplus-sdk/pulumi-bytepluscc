@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
 {
     /// <summary>
     /// After the scaling group triggers scaling rules, health checks, and instance count checks, the lifecycle hook can suspend instances that are in the 'joining', 'removing', or 'disabling' state, putting them into the joining/removing suspended state. The instances are now in a waiting state, and you can perform custom operations during this period until the lifecycle hook times out or you manually end the suspension.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var scalingLifecycleHookDemo = new Bytepluscc.Autoscaling.ScalingLifecycleHook("ScalingLifecycleHookDemo", new()
     ///     {
@@ -36,12 +36,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     ///             Parameters = "{\"KEY_PAIR_ID\":\"1024\",\"KEY_PAIR_TIMEOUT\":\"360\"}",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook example "scaling_group_id|lifecycle_hook_id"
     /// ```

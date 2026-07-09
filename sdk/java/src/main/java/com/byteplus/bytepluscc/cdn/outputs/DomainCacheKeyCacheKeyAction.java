@@ -14,7 +14,7 @@ public final class DomainCacheKeyCacheKeyAction {
     /**
      * @return Indicates a list of operation configurations. Currently, you can only set one operation configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainCacheKeyCacheKeyActionCacheKeyComponent> cacheKeyComponents;
 
@@ -22,7 +22,7 @@ public final class DomainCacheKeyCacheKeyAction {
     /**
      * @return Indicates a list of operation configurations. Currently, you can only set one operation configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainCacheKeyCacheKeyActionCacheKeyComponent> cacheKeyComponents() {
         return this.cacheKeyComponents == null ? List.of() : this.cacheKeyComponents;

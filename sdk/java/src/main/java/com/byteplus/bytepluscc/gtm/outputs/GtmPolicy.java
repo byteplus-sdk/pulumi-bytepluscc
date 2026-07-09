@@ -17,56 +17,56 @@ import javax.annotation.Nullable;
 public final class GtmPolicy {
     /**
      * @return If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
-     *
+     * 
      */
     private @Nullable Boolean alarmOnly;
     /**
      * @return Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
-     *
+     * 
      */
     private @Nullable String perfMode;
     /**
      * @return Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user&#39;s geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user&#39;s geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
-     *
+     * 
      */
     private @Nullable String routingMode;
     /**
      * @return Statistics for addresses associated with the scheduling policy.
-     *
+     * 
      */
     private @Nullable GtmPolicyStatistics statistics;
     /**
      * @return List of target address pools associated with the scheduling policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<GtmPolicyTarget> targets;
 
     private GtmPolicy() {}
     /**
      * @return If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
-     *
+     * 
      */
     public Optional<Boolean> alarmOnly() {
         return Optional.ofNullable(this.alarmOnly);
     }
     /**
      * @return Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
-     *
+     * 
      */
     public Optional<String> perfMode() {
         return Optional.ofNullable(this.perfMode);
     }
     /**
      * @return Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user&#39;s geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user&#39;s geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
-     *
+     * 
      */
     public Optional<String> routingMode() {
         return Optional.ofNullable(this.routingMode);
     }
     /**
      * @return Statistics for addresses associated with the scheduling policy.
-     *
+     * 
      */
     public Optional<GtmPolicyStatistics> statistics() {
         return Optional.ofNullable(this.statistics);
@@ -74,7 +74,7 @@ public final class GtmPolicy {
     /**
      * @return List of target address pools associated with the scheduling policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<GtmPolicyTarget> targets() {
         return this.targets == null ? List.of() : this.targets;

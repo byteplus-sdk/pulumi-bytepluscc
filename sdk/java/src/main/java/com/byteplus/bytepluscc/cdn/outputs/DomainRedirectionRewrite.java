@@ -16,12 +16,12 @@ public final class DomainRedirectionRewrite {
     /**
      * @return Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainRedirectionRewriteRedirectionRule> redirectionRules;
     /**
      * @return Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
-     *
+     * 
      */
     private @Nullable Boolean switch_;
 
@@ -29,14 +29,14 @@ public final class DomainRedirectionRewrite {
     /**
      * @return Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainRedirectionRewriteRedirectionRule> redirectionRules() {
         return this.redirectionRules == null ? List.of() : this.redirectionRules;
     }
     /**
      * @return Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
-     *
+     * 
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

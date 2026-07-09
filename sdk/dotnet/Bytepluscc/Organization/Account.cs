@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
 {
     /// <summary>
     /// View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var organizationAccountDemo = new Bytepluscc.Organization.Account("OrganizationAccountDemo", new()
     ///     {
@@ -44,12 +44,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Organization
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:organization/account:Account example "account_id"
     /// ```

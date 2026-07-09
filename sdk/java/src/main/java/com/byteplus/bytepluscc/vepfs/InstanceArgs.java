@@ -22,14 +22,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system capacity, unit: TiB.
-     *
+     * 
      */
     @Import(name="capacity", required=true)
     private Output<Integer> capacity;
 
     /**
      * @return File system capacity, unit: TiB.
-     *
+     * 
      */
     public Output<Integer> capacity() {
         return this.capacity;
@@ -37,14 +37,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
-     *
+     * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
-     *
+     * 
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
@@ -52,14 +52,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return File system description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -67,14 +67,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
-     *
+     * 
      */
     @Import(name="enableRestripe")
     private @Nullable Output<Boolean> enableRestripe;
 
     /**
      * @return Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableRestripe() {
         return Optional.ofNullable(this.enableRestripe);
@@ -82,14 +82,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Import(name="fileSystemName", required=true)
     private Output<String> fileSystemName;
 
     /**
      * @return File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Output<String> fileSystemName() {
         return this.fileSystemName;
@@ -97,14 +97,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system type. Default is VePFS.
-     *
+     * 
      */
     @Import(name="fileSystemType")
     private @Nullable Output<String> fileSystemType;
 
     /**
      * @return File system type. Default is VePFS.
-     *
+     * 
      */
     public Optional<Output<String>> fileSystemType() {
         return Optional.ofNullable(this.fileSystemType);
@@ -112,14 +112,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the file system belongs. Default is default.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the file system belongs. Default is default.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -127,14 +127,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protocol type. Default is VePFS.
-     *
+     * 
      */
     @Import(name="protocolType")
     private @Nullable Output<String> protocolType;
 
     /**
      * @return Protocol type. Default is VePFS.
-     *
+     * 
      */
     public Optional<Output<String>> protocolType() {
         return Optional.ofNullable(this.protocolType);
@@ -142,14 +142,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
-     *
+     * 
      */
     @Import(name="storeType", required=true)
     private Output<String> storeType;
 
     /**
      * @return File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
-     *
+     * 
      */
     public Output<String> storeType() {
         return this.storeType;
@@ -157,14 +157,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID. The subnet must belong to the selected availability zone.
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID. The subnet must belong to the selected availability zone.
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -173,7 +173,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
@@ -181,7 +181,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -189,14 +189,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * File system version number.
-     *
+     * 
      */
     @Import(name="versionNumber")
     private @Nullable Output<String> versionNumber;
 
     /**
      * @return File system version number.
-     *
+     * 
      */
     public Optional<Output<String>> versionNumber() {
         return Optional.ofNullable(this.versionNumber);
@@ -204,14 +204,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -219,14 +219,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID.
-     *
+     * 
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -271,9 +271,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacity File system capacity, unit: TiB.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacity(Output<Integer> capacity) {
             $.capacity = capacity;
@@ -282,9 +282,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacity File system capacity, unit: TiB.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder capacity(Integer capacity) {
             return capacity(Output.of(capacity));
@@ -292,9 +292,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -303,9 +303,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -313,9 +313,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description File system description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -324,9 +324,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description File system description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -334,9 +334,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableRestripe Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableRestripe(@Nullable Output<Boolean> enableRestripe) {
             $.enableRestripe = enableRestripe;
@@ -345,9 +345,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableRestripe Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableRestripe(Boolean enableRestripe) {
             return enableRestripe(Output.of(enableRestripe));
@@ -355,9 +355,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemName File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemName(Output<String> fileSystemName) {
             $.fileSystemName = fileSystemName;
@@ -366,9 +366,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemName File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemName(String fileSystemName) {
             return fileSystemName(Output.of(fileSystemName));
@@ -376,9 +376,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemType File system type. Default is VePFS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemType(@Nullable Output<String> fileSystemType) {
             $.fileSystemType = fileSystemType;
@@ -387,9 +387,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fileSystemType File system type. Default is VePFS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder fileSystemType(String fileSystemType) {
             return fileSystemType(Output.of(fileSystemType));
@@ -397,9 +397,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the file system belongs. Default is default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -408,9 +408,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the file system belongs. Default is default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -418,9 +418,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolType Protocol type. Default is VePFS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocolType(@Nullable Output<String> protocolType) {
             $.protocolType = protocolType;
@@ -429,9 +429,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolType Protocol type. Default is VePFS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocolType(String protocolType) {
             return protocolType(Output.of(protocolType));
@@ -439,9 +439,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storeType File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storeType(Output<String> storeType) {
             $.storeType = storeType;
@@ -450,9 +450,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storeType File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder storeType(String storeType) {
             return storeType(Output.of(storeType));
@@ -460,9 +460,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -471,9 +471,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID. The subnet must belong to the selected availability zone.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -482,9 +482,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
@@ -494,9 +494,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
@@ -505,9 +505,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
@@ -515,9 +515,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param versionNumber File system version number.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionNumber(@Nullable Output<String> versionNumber) {
             $.versionNumber = versionNumber;
@@ -526,9 +526,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param versionNumber File system version number.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionNumber(String versionNumber) {
             return versionNumber(Output.of(versionNumber));
@@ -536,9 +536,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -547,9 +547,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -557,9 +557,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -568,9 +568,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Backup list.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rDSMsSQLBackupDemo = new Backup("rDSMsSQLBackupDemo", BackupArgs.builder()
  *             .instanceId("mssql-099bda9abfaf")
@@ -53,26 +53,26 @@ import javax.annotation.Nullable;
  *                 .db_name("user")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdsmssql/backup:Backup example &#34;instance_id|backup_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdsmssql/backup:Backup")
 public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="backupDatabaseDetails", refs={List.class,BackupBackupDatabaseDetail.class}, tree="[0,1]")
     private Output<List<BackupBackupDatabaseDetail>> backupDatabaseDetails;
@@ -80,49 +80,49 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * @return Backup information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BackupBackupDatabaseDetail>> backupDatabaseDetails() {
         return this.backupDatabaseDetails;
     }
     /**
      * Backup end time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
-     *
+     * 
      */
     @Export(name="backupEndTime", refs={String.class}, tree="[0]")
     private Output<String> backupEndTime;
 
     /**
      * @return Backup end time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
-     *
+     * 
      */
     public Output<String> backupEndTime() {
         return this.backupEndTime;
     }
     /**
      * Backup file size (Bytes).
-     *
+     * 
      */
     @Export(name="backupFileSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFileSize;
 
     /**
      * @return Backup file size (Bytes).
-     *
+     * 
      */
     public Output<Integer> backupFileSize() {
         return this.backupFileSize;
     }
     /**
      * Backup ID.
-     *
+     * 
      */
     @Export(name="backupId", refs={String.class}, tree="[0]")
     private Output<String> backupId;
 
     /**
      * @return Backup ID.
-     *
+     * 
      */
     public Output<String> backupId() {
         return this.backupId;
@@ -130,7 +130,7 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * Backup database information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="backupMetas", refs={List.class,BackupBackupMeta.class}, tree="[0,1]")
     private Output<List<BackupBackupMeta>> backupMetas;
@@ -138,119 +138,119 @@ public class Backup extends com.pulumi.resources.CustomResource {
     /**
      * @return Backup database information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BackupBackupMeta>> backupMetas() {
         return this.backupMetas;
     }
     /**
      * Backup method. Values: Logical (logical backup), Physical (physical backup), Snapshot (snapshot backup).
-     *
+     * 
      */
     @Export(name="backupMethod", refs={String.class}, tree="[0]")
     private Output<String> backupMethod;
 
     /**
      * @return Backup method. Values: Logical (logical backup), Physical (physical backup), Snapshot (snapshot backup).
-     *
+     * 
      */
     public Output<String> backupMethod() {
         return this.backupMethod;
     }
     /**
      * Backup start time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
-     *
+     * 
      */
     @Export(name="backupStartTime", refs={String.class}, tree="[0]")
     private Output<String> backupStartTime;
 
     /**
      * @return Backup start time. Format: yyyy-MM-ddTHH:mm:sssZ (UTC time).
-     *
+     * 
      */
     public Output<String> backupStartTime() {
         return this.backupStartTime;
     }
     /**
      * Backup status. Values: Success (successful), Failed (failed), Running (in progress).
-     *
+     * 
      */
     @Export(name="backupStatus", refs={String.class}, tree="[0]")
     private Output<String> backupStatus;
 
     /**
      * @return Backup status. Values: Success (successful), Failed (failed), Running (in progress).
-     *
+     * 
      */
     public Output<String> backupStatus() {
         return this.backupStatus;
     }
     /**
      * Backup type. Values: Full (full backup), Diff (incremental/differential backup), Log (log backup).
-     *
+     * 
      */
     @Export(name="backupType", refs={String.class}, tree="[0]")
     private Output<String> backupType;
 
     /**
      * @return Backup type. Values: Full (full backup), Diff (incremental/differential backup), Log (log backup).
-     *
+     * 
      */
     public Output<String> backupType() {
         return this.backupType;
     }
     /**
      * Creation type. Values: System (system), User (user).
-     *
+     * 
      */
     @Export(name="createType", refs={String.class}, tree="[0]")
     private Output<String> createType;
 
     /**
      * @return Creation type. Values: System (system), User (user).
-     *
+     * 
      */
     public Output<String> createType() {
         return this.createType;
     }
     /**
      * Backup file preparation progress (%).
-     *
+     * 
      */
     @Export(name="downloadProgress", refs={Integer.class}, tree="[0]")
     private Output<Integer> downloadProgress;
 
     /**
      * @return Backup file preparation progress (%).
-     *
+     * 
      */
     public Output<Integer> downloadProgress() {
         return this.downloadProgress;
     }
     /**
      * Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
-     *
+     * 
      */
     @Export(name="downloadStatus", refs={String.class}, tree="[0]")
     private Output<String> downloadStatus;
 
     /**
      * @return Backup file preparation status. Values: Success (preparation completed), Failed (preparation failed), Running (preparing), NotDownload (not downloaded).
-     *
+     * 
      */
     public Output<String> downloadStatus() {
         return this.downloadStatus;
     }
     /**
      * Instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;

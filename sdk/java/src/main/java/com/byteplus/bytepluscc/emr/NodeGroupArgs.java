@@ -26,7 +26,7 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of component names that can be deployed in the current node group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="applicationLayouts")
     private @Nullable Output<List<NodeGroupApplicationLayoutArgs>> applicationLayouts;
@@ -34,7 +34,7 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of component names that can be deployed in the current node group.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NodeGroupApplicationLayoutArgs>>> applicationLayouts() {
         return Optional.ofNullable(this.applicationLayouts);
@@ -42,14 +42,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subscription payment configuration.
-     *
+     * 
      */
     @Import(name="chargePreConfig")
     private @Nullable Output<NodeGroupChargePreConfigArgs> chargePreConfig;
 
     /**
      * @return Subscription payment configuration.
-     *
+     * 
      */
     public Optional<Output<NodeGroupChargePreConfigArgs>> chargePreConfig() {
         return Optional.ofNullable(this.chargePreConfig);
@@ -57,14 +57,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
-     *
+     * 
      */
     @Import(name="chargeType", required=true)
     private Output<String> chargeType;
 
     /**
      * @return Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
-     *
+     * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
@@ -72,14 +72,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster ID.
-     *
+     * 
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID.
-     *
+     * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
@@ -88,7 +88,7 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Data disk configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="dataDisks")
     private @Nullable Output<List<NodeGroupDataDiskArgs>> dataDisks;
@@ -96,7 +96,7 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Data disk configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NodeGroupDataDiskArgs>>> dataDisks() {
         return Optional.ofNullable(this.dataDisks);
@@ -104,14 +104,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ECS instance specification list. Currently, only a single instance specification can be modified.
-     *
+     * 
      */
     @Import(name="ecsInstanceTypes")
     private @Nullable Output<List<String>> ecsInstanceTypes;
 
     /**
      * @return ECS instance specification list. Currently, only a single instance specification can be modified.
-     *
+     * 
      */
     public Optional<Output<List<String>>> ecsInstanceTypes() {
         return Optional.ofNullable(this.ecsInstanceTypes);
@@ -119,14 +119,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node count. Value range: 1~1000.
-     *
+     * 
      */
     @Import(name="nodeCount", required=true)
     private Output<Integer> nodeCount;
 
     /**
      * @return Node count. Value range: 1~1000.
-     *
+     * 
      */
     public Output<Integer> nodeCount() {
         return this.nodeCount;
@@ -134,14 +134,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node group name.
-     *
+     * 
      */
     @Import(name="nodeGroupName", required=true)
     private Output<String> nodeGroupName;
 
     /**
      * @return Node group name.
-     *
+     * 
      */
     public Output<String> nodeGroupName() {
         return this.nodeGroupName;
@@ -149,14 +149,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node group type.
-     *
+     * 
      */
     @Import(name="nodeGroupType", required=true)
     private Output<String> nodeGroupType;
 
     /**
      * @return Node group type.
-     *
+     * 
      */
     public Output<String> nodeGroupType() {
         return this.nodeGroupType;
@@ -164,14 +164,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID list.
-     *
+     * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
      * @return Subnet ID list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> subnetIds() {
         return Optional.ofNullable(this.subnetIds);
@@ -179,14 +179,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * System disk.
-     *
+     * 
      */
     @Import(name="systemDisk")
     private @Nullable Output<NodeGroupSystemDiskArgs> systemDisk;
 
     /**
      * @return System disk.
-     *
+     * 
      */
     public Optional<Output<NodeGroupSystemDiskArgs>> systemDisk() {
         return Optional.ofNullable(this.systemDisk);
@@ -194,14 +194,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
-     *
+     * 
      */
     @Import(name="targetDiskSize")
     private @Nullable Output<Integer> targetDiskSize;
 
     /**
      * @return Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
-     *
+     * 
      */
     public Optional<Output<Integer>> targetDiskSize() {
         return Optional.ofNullable(this.targetDiskSize);
@@ -209,14 +209,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the ECS instance includes a public IP.
-     *
+     * 
      */
     @Import(name="withPublicIp")
     private @Nullable Output<Boolean> withPublicIp;
 
     /**
      * @return Whether the ECS instance includes a public IP.
-     *
+     * 
      */
     public Optional<Output<Boolean>> withPublicIp() {
         return Optional.ofNullable(this.withPublicIp);
@@ -224,14 +224,14 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * zoneId. If empty, the cluster&#39;s zoneId is reused by default.
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return zoneId. If empty, the cluster&#39;s zoneId is reused by default.
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -277,9 +277,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param applicationLayouts List of component names that can be deployed in the current node group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationLayouts(@Nullable Output<List<NodeGroupApplicationLayoutArgs>> applicationLayouts) {
             $.applicationLayouts = applicationLayouts;
@@ -289,9 +289,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param applicationLayouts List of component names that can be deployed in the current node group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationLayouts(List<NodeGroupApplicationLayoutArgs> applicationLayouts) {
             return applicationLayouts(Output.of(applicationLayouts));
@@ -300,9 +300,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param applicationLayouts List of component names that can be deployed in the current node group.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applicationLayouts(NodeGroupApplicationLayoutArgs... applicationLayouts) {
             return applicationLayouts(List.of(applicationLayouts));
@@ -310,9 +310,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargePreConfig Subscription payment configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargePreConfig(@Nullable Output<NodeGroupChargePreConfigArgs> chargePreConfig) {
             $.chargePreConfig = chargePreConfig;
@@ -321,9 +321,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargePreConfig Subscription payment configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargePreConfig(NodeGroupChargePreConfigArgs chargePreConfig) {
             return chargePreConfig(Output.of(chargePreConfig));
@@ -331,9 +331,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -342,9 +342,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Payment type. PRE indicates monthly subscription, POST indicates pay-as-you-go.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -352,9 +352,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId Cluster ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clusterId(Output<String> clusterId) {
             $.clusterId = clusterId;
@@ -363,9 +363,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId Cluster ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
@@ -374,9 +374,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param dataDisks Data disk configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dataDisks(@Nullable Output<List<NodeGroupDataDiskArgs>> dataDisks) {
             $.dataDisks = dataDisks;
@@ -386,9 +386,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param dataDisks Data disk configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dataDisks(List<NodeGroupDataDiskArgs> dataDisks) {
             return dataDisks(Output.of(dataDisks));
@@ -397,9 +397,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param dataDisks Data disk configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dataDisks(NodeGroupDataDiskArgs... dataDisks) {
             return dataDisks(List.of(dataDisks));
@@ -407,9 +407,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ecsInstanceTypes ECS instance specification list. Currently, only a single instance specification can be modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ecsInstanceTypes(@Nullable Output<List<String>> ecsInstanceTypes) {
             $.ecsInstanceTypes = ecsInstanceTypes;
@@ -418,9 +418,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ecsInstanceTypes ECS instance specification list. Currently, only a single instance specification can be modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ecsInstanceTypes(List<String> ecsInstanceTypes) {
             return ecsInstanceTypes(Output.of(ecsInstanceTypes));
@@ -428,9 +428,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ecsInstanceTypes ECS instance specification list. Currently, only a single instance specification can be modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ecsInstanceTypes(String... ecsInstanceTypes) {
             return ecsInstanceTypes(List.of(ecsInstanceTypes));
@@ -438,9 +438,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeCount Node count. Value range: 1~1000.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeCount(Output<Integer> nodeCount) {
             $.nodeCount = nodeCount;
@@ -449,9 +449,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeCount Node count. Value range: 1~1000.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeCount(Integer nodeCount) {
             return nodeCount(Output.of(nodeCount));
@@ -459,9 +459,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeGroupName Node group name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupName(Output<String> nodeGroupName) {
             $.nodeGroupName = nodeGroupName;
@@ -470,9 +470,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeGroupName Node group name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupName(String nodeGroupName) {
             return nodeGroupName(Output.of(nodeGroupName));
@@ -480,9 +480,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeGroupType Node group type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupType(Output<String> nodeGroupType) {
             $.nodeGroupType = nodeGroupType;
@@ -491,9 +491,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeGroupType Node group type.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeGroupType(String nodeGroupType) {
             return nodeGroupType(Output.of(nodeGroupType));
@@ -501,9 +501,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds Subnet ID list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -512,9 +512,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds Subnet ID list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -522,9 +522,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds Subnet ID list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -532,9 +532,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemDisk System disk.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemDisk(@Nullable Output<NodeGroupSystemDiskArgs> systemDisk) {
             $.systemDisk = systemDisk;
@@ -543,9 +543,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemDisk System disk.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder systemDisk(NodeGroupSystemDiskArgs systemDisk) {
             return systemDisk(Output.of(systemDisk));
@@ -553,9 +553,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targetDiskSize Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targetDiskSize(@Nullable Output<Integer> targetDiskSize) {
             $.targetDiskSize = targetDiskSize;
@@ -564,9 +564,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targetDiskSize Target disk size for expansion. Minimum 60GB, maximum 2048GB, unit: GB.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targetDiskSize(Integer targetDiskSize) {
             return targetDiskSize(Output.of(targetDiskSize));
@@ -574,9 +574,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param withPublicIp Whether the ECS instance includes a public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder withPublicIp(@Nullable Output<Boolean> withPublicIp) {
             $.withPublicIp = withPublicIp;
@@ -585,9 +585,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param withPublicIp Whether the ECS instance includes a public IP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder withPublicIp(Boolean withPublicIp) {
             return withPublicIp(Output.of(withPublicIp));
@@ -595,9 +595,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId zoneId. If empty, the cluster&#39;s zoneId is reused by default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -606,9 +606,9 @@ public final class NodeGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId zoneId. If empty, the cluster&#39;s zoneId is reused by default.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

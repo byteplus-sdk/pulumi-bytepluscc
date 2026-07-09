@@ -20,14 +20,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-     *
+     * 
      */
     @Import(name="allowList")
     private @Nullable Output<String> allowList;
 
     /**
      * @return IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-     *
+     * 
      */
     public Optional<Output<String>> allowList() {
         return Optional.ofNullable(this.allowList);
@@ -35,14 +35,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist category
-     *
+     * 
      */
     @Import(name="allowListCategory")
     private @Nullable Output<String> allowListCategory;
 
     /**
      * @return Allowlist category
-     *
+     * 
      */
     public Optional<Output<String>> allowListCategory() {
         return Optional.ofNullable(this.allowListCategory);
@@ -50,14 +50,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist description
-     *
+     * 
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
      * @return Allowlist description
-     *
+     * 
      */
     public Optional<Output<String>> allowListDesc() {
         return Optional.ofNullable(this.allowListDesc);
@@ -65,14 +65,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist ID
-     *
+     * 
      */
     @Import(name="allowListId")
     private @Nullable Output<String> allowListId;
 
     /**
      * @return Allowlist ID
-     *
+     * 
      */
     public Optional<Output<String>> allowListId() {
         return Optional.ofNullable(this.allowListId);
@@ -80,14 +80,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist IP count
-     *
+     * 
      */
     @Import(name="allowListIpNum")
     private @Nullable Output<Integer> allowListIpNum;
 
     /**
      * @return Allowlist IP count
-     *
+     * 
      */
     public Optional<Output<Integer>> allowListIpNum() {
         return Optional.ofNullable(this.allowListIpNum);
@@ -95,14 +95,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist name
-     *
+     * 
      */
     @Import(name="allowListName")
     private @Nullable Output<String> allowListName;
 
     /**
      * @return Allowlist name
-     *
+     * 
      */
     public Optional<Output<String>> allowListName() {
         return Optional.ofNullable(this.allowListName);
@@ -110,14 +110,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type in the allowlist. Only IPv4 is supported
-     *
+     * 
      */
     @Import(name="allowListType")
     private @Nullable Output<String> allowListType;
 
     /**
      * @return IP address type in the allowlist. Only IPv4 is supported
-     *
+     * 
      */
     public Optional<Output<String>> allowListType() {
         return Optional.ofNullable(this.allowListType);
@@ -125,14 +125,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of bound instances. Required when unbinding an instance from the allowlist
-     *
+     * 
      */
     @Import(name="associatedInstanceNum")
     private @Nullable Output<Integer> associatedInstanceNum;
 
     /**
      * @return Number of bound instances. Required when unbinding an instance from the allowlist
-     *
+     * 
      */
     public Optional<Output<Integer>> associatedInstanceNum() {
         return Optional.ofNullable(this.associatedInstanceNum);
@@ -141,7 +141,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     /**
      * Bound instance list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="associatedInstances")
     private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
@@ -149,7 +149,7 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Bound instance list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
         return Optional.ofNullable(this.associatedInstances);
@@ -157,14 +157,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     *
+     * 
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -172,14 +172,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -187,14 +187,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
-     *
+     * 
      */
     @Import(name="userAllowList")
     private @Nullable Output<String> userAllowList;
 
     /**
      * @return IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
-     *
+     * 
      */
     public Optional<Output<String>> userAllowList() {
         return Optional.ofNullable(this.userAllowList);
@@ -237,9 +237,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowList(@Nullable Output<String> allowList) {
             $.allowList = allowList;
@@ -248,9 +248,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowList(String allowList) {
             return allowList(Output.of(allowList));
@@ -258,9 +258,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListCategory Allowlist category
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListCategory(@Nullable Output<String> allowListCategory) {
             $.allowListCategory = allowListCategory;
@@ -269,9 +269,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListCategory Allowlist category
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListCategory(String allowListCategory) {
             return allowListCategory(Output.of(allowListCategory));
@@ -279,9 +279,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListDesc(@Nullable Output<String> allowListDesc) {
             $.allowListDesc = allowListDesc;
@@ -290,9 +290,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListDesc(String allowListDesc) {
             return allowListDesc(Output.of(allowListDesc));
@@ -300,9 +300,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListId Allowlist ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListId(@Nullable Output<String> allowListId) {
             $.allowListId = allowListId;
@@ -311,9 +311,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListId Allowlist ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListId(String allowListId) {
             return allowListId(Output.of(allowListId));
@@ -321,9 +321,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIpNum Allowlist IP count
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListIpNum(@Nullable Output<Integer> allowListIpNum) {
             $.allowListIpNum = allowListIpNum;
@@ -332,9 +332,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIpNum Allowlist IP count
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListIpNum(Integer allowListIpNum) {
             return allowListIpNum(Output.of(allowListIpNum));
@@ -342,9 +342,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListName(@Nullable Output<String> allowListName) {
             $.allowListName = allowListName;
@@ -353,9 +353,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListName(String allowListName) {
             return allowListName(Output.of(allowListName));
@@ -363,9 +363,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListType IP address type in the allowlist. Only IPv4 is supported
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListType(@Nullable Output<String> allowListType) {
             $.allowListType = allowListType;
@@ -374,9 +374,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListType IP address type in the allowlist. Only IPv4 is supported
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder allowListType(String allowListType) {
             return allowListType(Output.of(allowListType));
@@ -384,9 +384,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceNum Number of bound instances. Required when unbinding an instance from the allowlist
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceNum(@Nullable Output<Integer> associatedInstanceNum) {
             $.associatedInstanceNum = associatedInstanceNum;
@@ -395,9 +395,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceNum Number of bound instances. Required when unbinding an instance from the allowlist
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstanceNum(Integer associatedInstanceNum) {
             return associatedInstanceNum(Output.of(associatedInstanceNum));
@@ -406,9 +406,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances Bound instance list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
             $.associatedInstances = associatedInstances;
@@ -418,9 +418,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances Bound instance list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
             return associatedInstances(Output.of(associatedInstances));
@@ -429,9 +429,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param associatedInstances Bound instance list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
             return associatedInstances(List.of(associatedInstances));
@@ -439,9 +439,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -450,9 +450,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -460,9 +460,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -471,9 +471,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -481,9 +481,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userAllowList IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userAllowList(@Nullable Output<String> userAllowList) {
             $.userAllowList = userAllowList;
@@ -492,9 +492,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userAllowList IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userAllowList(String userAllowList) {
             return userAllowList(Output.of(userAllowList));

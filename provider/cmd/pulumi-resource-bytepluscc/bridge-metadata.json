@@ -1470,6 +1470,9 @@
             "bytepluscc_ecs_instance": {
                 "current": "bytepluscc:ecs/instance:Instance",
                 "fields": {
+                    "data_volumes": {
+                        "maxItemsOne": false
+                    },
                     "eip_address": {
                         "fields": {
                             "security_protection_types": {
@@ -6428,6 +6431,9 @@
             "bytepluscc_ecs_instance": {
                 "current": "bytepluscc:ecs/getInstance:getInstance",
                 "fields": {
+                    "data_volumes": {
+                        "maxItemsOne": false
+                    },
                     "eip_address": {
                         "fields": {
                             "security_protection_types": {

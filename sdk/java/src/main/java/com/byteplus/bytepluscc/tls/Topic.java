@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Log topic is the basic unit for log management in the log service. Log ingestion, search and analysis, and consumption are all performed at the log topic level.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var tlsTopicDemo = new Topic("tlsTopicDemo", TopicArgs.builder()
  *             .ttl(187)
@@ -67,214 +67,214 @@ import javax.annotation.Nullable;
  *             .enableHotTtl(false)
  *             .allowConsume(false)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/topic:Topic example &#34;topic_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/topic:Topic")
 public class Topic extends com.pulumi.resources.CustomResource {
     /**
      * Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
-     *
+     * 
      */
     @Export(name="allowConsume", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allowConsume;
 
     /**
      * @return Indicates whether Kafka protocol consumption is enabled for the log topic. true: enabled. false: not enabled.
-     *
+     * 
      */
     public Output<Boolean> allowConsume() {
         return this.allowConsume;
     }
     /**
      * Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
-     *
+     * 
      */
     @Export(name="archiveTtl", refs={Integer.class}, tree="[0]")
     private Output<Integer> archiveTtl;
 
     /**
      * @return Archive storage duration. The value range is 60~3650. Archive storage can be enabled if any of the following conditions are met: Standard storage duration is 30 days or longer; standard storage duration is 7 days or longer and infrequent storage duration is 30 days or longer. This parameter is only effective when EnableHotTtl is set to true.
-     *
+     * 
      */
     public Output<Integer> archiveTtl() {
         return this.archiveTtl;
     }
     /**
      * Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
-     *
+     * 
      */
     @Export(name="autoSplit", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoSplit;
 
     /**
      * @return Enable automatic partition splitting. true: If the amount of data written exceeds the capacity of existing partitions for 5 consecutive minutes, the log service will automatically split partitions based on data volume to meet business needs, but the number of partitions after splitting cannot exceed the maximum split limit. New partitions created within the last 15 minutes will not be automatically split. false: Disable automatic partition splitting.
-     *
+     * 
      */
     public Output<Boolean> autoSplit() {
         return this.autoSplit;
     }
     /**
      * Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     @Export(name="coldTtl", refs={Integer.class}, tree="[0]")
     private Output<Integer> coldTtl;
 
     /**
      * @return Low-frequency storage duration. Value range: 30–3650. Low-frequency storage is available when standard storage duration is 7 days or longer. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     public Output<Integer> coldTtl() {
         return this.coldTtl;
     }
     /**
      * Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
-     *
+     * 
      */
     @Export(name="consumeTopic", refs={String.class}, tree="[0]")
     private Output<String> consumeTopic;
 
     /**
      * @return Kafka protocol consumption topic ID, formatted as out+log topic ID. When consuming log data from this log topic via the Kafka protocol, set Topic to this ID.
-     *
+     * 
      */
     public Output<String> consumeTopic() {
         return this.consumeTopic;
     }
     /**
      * Log topic creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Log topic creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Log topic description. Does not support &lt;&gt;, &#39;, \, \, or any emoji symbols. Length: 0–64 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Log topic description. Does not support &lt;&gt;, &#39;, \, \, or any emoji symbols. Length: 0–64 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
-     *
+     * 
      */
     @Export(name="enableHotTtl", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableHotTtl;
 
     /**
      * @return Enable tiered storage. When enabled, the log service supports standard storage, low-frequency storage, and archive storage. After setting HotTtl, ArchiveTtl, and ColdTtl, if data storage duration exceeds the corresponding value, data will automatically move to low-frequency or archive storage for continued retention until the total log retention duration reaches Ttl, after which backend services will automatically clean up the data.
-     *
+     * 
      */
     public Output<Boolean> enableHotTtl() {
         return this.enableHotTtl;
     }
     /**
      * Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
-     *
+     * 
      */
     @Export(name="enableTracking", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableTracking;
 
     /**
      * @return Enable WebTracking. When enabled, you can quickly collect frontend tracking data using WebTracking. true: Enable WebTracking. false (default): Disable WebTracking. After enabling Web Tracking for the log topic, data written via the WebTracks API does not require authentication, which grants anonymous write access to the public network and may result in dirty data.
-     *
+     * 
      */
     public Output<Boolean> enableTracking() {
         return this.enableTracking;
     }
     /**
      * Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     @Export(name="hotTtl", refs={Integer.class}, tree="[0]")
     private Output<Integer> hotTtl;
 
     /**
      * @return Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
-     *
+     * 
      */
     public Output<Integer> hotTtl() {
         return this.hotTtl;
     }
     /**
      * Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service&#39;s private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
-     *
+     * 
      */
     @Export(name="logPublicIp", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> logPublicIp;
 
     /**
      * @return Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service&#39;s private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
-     *
+     * 
      */
     public Output<Boolean> logPublicIp() {
         return this.logPublicIp;
     }
     /**
      * Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
-     *
+     * 
      */
     @Export(name="maxSplitShard", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxSplitShard;
 
     /**
      * @return Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
-     *
+     * 
      */
     public Output<Integer> maxSplitShard() {
         return this.maxSplitShard;
     }
     /**
      * Log project ID to which the log topic belongs.
-     *
+     * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return Log project ID to which the log topic belongs.
-     *
+     * 
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
-     *
+     * 
      */
     @Export(name="shardCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> shardCount;
 
     /**
      * @return Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
-     *
+     * 
      */
     public Output<Integer> shardCount() {
         return this.shardCount;
@@ -282,7 +282,7 @@ public class Topic extends com.pulumi.resources.CustomResource {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,TopicTag.class}, tree="[0,1]")
     private Output<List<TopicTag>> tags;
@@ -290,91 +290,91 @@ public class Topic extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<TopicTag>> tags() {
         return this.tags;
     }
     /**
      * Time format
-     *
+     * 
      */
     @Export(name="timeFormat", refs={String.class}, tree="[0]")
     private Output<String> timeFormat;
 
     /**
      * @return Time format
-     *
+     * 
      */
     public Output<String> timeFormat() {
         return this.timeFormat;
     }
     /**
      * Time field name
-     *
+     * 
      */
     @Export(name="timeKey", refs={String.class}, tree="[0]")
     private Output<String> timeKey;
 
     /**
      * @return Time field name
-     *
+     * 
      */
     public Output<String> timeKey() {
         return this.timeKey;
     }
     /**
      * Log topic ID.
-     *
+     * 
      */
     @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**
      * @return Log topic ID.
-     *
+     * 
      */
     public Output<String> topicId() {
         return this.topicId;
     }
     /**
      * Log topic name.
-     *
+     * 
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
      * @return Log topic name.
-     *
+     * 
      */
     public Output<String> topicName() {
         return this.topicName;
     }
     /**
      * Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
-     *
+     * 
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output<Integer> ttl;
 
     /**
      * @return Total log retention time in the log service. After the specified log storage duration is exceeded, expired logs in this log topic will be automatically cleared. Unit: days. Default is 30 days. Value range is 1–3650. Setting to 3650 days means permanent storage.
-     *
+     * 
      */
     public Output<Integer> ttl() {
         return this.ttl;
     }
     /**
      * Log topic modification time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Log topic modification time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

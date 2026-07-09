@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Identity Center users are mapped one-to-one with enterprise employee identities. A Cloud Identity Center user is an identity type that can be uniquely linked to an IAM user under an account for single sign-on. Cloud Identity Center provides full lifecycle management and permission management for enterprise employee identities. We recommend that you centrally manage employee identities within this product.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App }{{@code
  *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
  *     }}{@code
- *
+ * 
  *     public static void stack(Context ctx) }{{@code
  *         var cloudIdentityUserDemo = new User("cloudIdentityUserDemo", UserArgs.builder()
  *             .userName("CloudIdentityUserDemo")
@@ -51,186 +51,186 @@ import javax.annotation.Nullable;
  *             .password("********")
  *             .passwordResetRequired(true)
  *             .build());
- *
+ * 
  *     }}{@code
  * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cloudidentity/user:User example &#34;user_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cloudidentity/user:User")
 public class User extends com.pulumi.resources.CustomResource {
     /**
      * Creation Time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation Time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * User Description.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return User Description.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * User Display Name.
-     *
+     * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return User Display Name.
-     *
+     * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
      * Email.
-     *
+     * 
      */
     @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
      * @return Email.
-     *
+     * 
      */
     public Output<String> email() {
         return this.email;
     }
     /**
      * Identity Type.
-     *
+     * 
      */
     @Export(name="identityType", refs={String.class}, tree="[0]")
     private Output<String> identityType;
 
     /**
      * @return Identity Type.
-     *
+     * 
      */
     public Output<String> identityType() {
         return this.identityType;
     }
     /**
      * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
-     *
+     * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
-     *
+     * 
      */
     public Output<String> password() {
         return this.password;
     }
     /**
      * Is password reset required on first login?
-     *
+     * 
      */
     @Export(name="passwordResetRequired", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> passwordResetRequired;
 
     /**
      * @return Is password reset required on first login?
-     *
+     * 
      */
     public Output<Boolean> passwordResetRequired() {
         return this.passwordResetRequired;
     }
     /**
      * Mobile Number.
-     *
+     * 
      */
     @Export(name="phone", refs={String.class}, tree="[0]")
     private Output<String> phone;
 
     /**
      * @return Mobile Number.
-     *
+     * 
      */
     public Output<String> phone() {
         return this.phone;
     }
     /**
      * User Source.
-     *
+     * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
      * @return User Source.
-     *
+     * 
      */
     public Output<String> source() {
         return this.source;
     }
     /**
      * Update Time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update Time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * User ID.
-     *
+     * 
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
      * @return User ID.
-     *
+     * 
      */
     public Output<String> userId() {
         return this.userId;
     }
     /**
      * Username.
-     *
+     * 
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
      * @return Username.
-     *
+     * 
      */
     public Output<String> userName() {
         return this.userName;

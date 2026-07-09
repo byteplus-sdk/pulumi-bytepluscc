@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * File storage vePFS is a newly launched high-throughput, low-latency, scalable parallel file system service designed to meet the high-throughput and low-latency data read/write requirements in high-performance computing scenarios. It can be widely used in HPC (high-performance computing), AI training or inference, energy exploration, industrial simulation, film rendering, life sciences, meteorological analysis, and other scenarios. vePFS also provides one-click deployment and integrated monitoring and alerting capabilities, eliminating deployment and maintenance costs while maximizing your business efficiency.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vEPFSInstanceDemo = new Instance("vEPFSInstanceDemo", InstanceArgs.builder()
  *             .fileSystemName("VEPFSInstanceDemo")
@@ -65,354 +65,354 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vepfs/instance:Instance example &#34;file_system_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vepfs/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Account ID.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * VePFS file system throughput limit.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return VePFS file system throughput limit.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * File system capacity, unit: TiB.
-     *
+     * 
      */
     @Export(name="capacity", refs={Integer.class}, tree="[0]")
     private Output<Integer> capacity;
 
     /**
      * @return File system capacity, unit: TiB.
-     *
+     * 
      */
     public Output<Integer> capacity() {
         return this.capacity;
     }
     /**
      * Capacity information.
-     *
+     * 
      */
     @Export(name="capacityInfo", refs={InstanceCapacityInfo.class}, tree="[0]")
     private Output<InstanceCapacityInfo> capacityInfo;
 
     /**
      * @return Capacity information.
-     *
+     * 
      */
     public Output<InstanceCapacityInfo> capacityInfo() {
         return this.capacityInfo;
     }
     /**
      * Billing status. Default is Normal, indicating standard billing.
-     *
+     * 
      */
     @Export(name="chargeStatus", refs={String.class}, tree="[0]")
     private Output<String> chargeStatus;
 
     /**
      * @return Billing status. Default is Normal, indicating standard billing.
-     *
+     * 
      */
     public Output<String> chargeStatus() {
         return this.chargeStatus;
     }
     /**
      * Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
-     *
+     * 
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Billing type. Value descriptions are as follows: PayAsYouGo: Pay-as-you-go billing.
-     *
+     * 
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
      * Creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * File system description.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return File system description.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
-     *
+     * 
      */
     @Export(name="enableRestripe", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableRestripe;
 
     /**
      * @return Whether to enable data balancing after expansion. Value description: true: Enable data balancing immediately after expansion. false: Do not enable data balancing after expansion. Note: Only file systems with a specification of 100MB/s/TiB support the data balancing feature. Because the data balancing process consumes the network and disk bandwidth of storage nodes and causes file system performance degradation, we recommend that you evaluate your business needs and enable with caution. The duration of data balancing mainly depends on the amount of existing data. If you have a large amount of existing data, the balancing process may take longer. Depending on the expansion size and file system status, this process may take several hours to up to 2 days. We recommend enabling it during off-peak hours and waiting patiently.
-     *
+     * 
      */
     public Output<Boolean> enableRestripe() {
         return this.enableRestripe;
     }
     /**
      * Expiration time.
-     *
+     * 
      */
     @Export(name="expireTime", refs={String.class}, tree="[0]")
     private Output<String> expireTime;
 
     /**
      * @return Expiration time.
-     *
+     * 
      */
     public Output<String> expireTime() {
         return this.expireTime;
     }
     /**
      * File system ID.
-     *
+     * 
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
      * @return File system ID.
-     *
+     * 
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
      * File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Export(name="fileSystemName", refs={String.class}, tree="[0]")
     private Output<String> fileSystemName;
 
     /**
      * @return File system name. Naming rules are as follows: Must start with a Chinese or English letter. Can only contain Chinese characters, letters, numbers, period (.), underscore (_), or hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Output<String> fileSystemName() {
         return this.fileSystemName;
     }
     /**
      * File system type. Default is VePFS.
-     *
+     * 
      */
     @Export(name="fileSystemType", refs={String.class}, tree="[0]")
     private Output<String> fileSystemType;
 
     /**
      * @return File system type. Default is VePFS.
-     *
+     * 
      */
     public Output<String> fileSystemType() {
         return this.fileSystemType;
     }
     /**
      * File system release time.
-     *
+     * 
      */
     @Export(name="freeTime", refs={String.class}, tree="[0]")
     private Output<String> freeTime;
 
     /**
      * @return File system release time.
-     *
+     * 
      */
     public Output<String> freeTime() {
         return this.freeTime;
     }
     /**
      * Project to which the file system belongs. Default is default.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the file system belongs. Default is default.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Protocol type. Default is VePFS.
-     *
+     * 
      */
     @Export(name="protocolType", refs={String.class}, tree="[0]")
     private Output<String> protocolType;
 
     /**
      * @return Protocol type. Default is VePFS.
-     *
+     * 
      */
     public Output<String> protocolType() {
         return this.protocolType;
     }
     /**
      * Read bandwidth value, unit: MB/s.
-     *
+     * 
      */
     @Export(name="readBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> readBandwidth;
 
     /**
      * @return Read bandwidth value, unit: MB/s.
-     *
+     * 
      */
     public Output<Integer> readBandwidth() {
         return this.readBandwidth;
     }
     /**
      * Security group ID for the generated auxiliary NIC.
-     *
+     * 
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
      * @return Security group ID for the generated auxiliary NIC.
-     *
+     * 
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
      * File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return File system status. Value descriptions are as follows: Running: Instance is running. Creating: Instance is being created. CreateError: Instance creation failed. Updating: Instance is being updated. UpdateError: Instance update failed. Expanding: Instance is being expanded. ExpandError: Instance expansion failed. Deleting: Instance is being deleted. DeleteError: Instance deletion failed. Stopped: Instance is stopped. Error: Instance is in an error state.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * File system shutdown time.
-     *
+     * 
      */
     @Export(name="stopServiceTime", refs={String.class}, tree="[0]")
     private Output<String> stopServiceTime;
 
     /**
      * @return File system shutdown time.
-     *
+     * 
      */
     public Output<String> stopServiceTime() {
         return this.stopServiceTime;
     }
     /**
      * File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
-     *
+     * 
      */
     @Export(name="storeType", refs={String.class}, tree="[0]")
     private Output<String> storeType;
 
     /**
      * @return File system specification. Value descriptions are as follows: Advance*100: 100MB/s/TiB. Performance: Performance. Intelligent*Computing: Intelligent Computing.
-     *
+     * 
      */
     public Output<String> storeType() {
         return this.storeType;
     }
     /**
      * File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
-     *
+     * 
      */
     @Export(name="storeTypeCn", refs={String.class}, tree="[0]")
     private Output<String> storeTypeCn;
 
     /**
      * @return File system specification name in Chinese. Supported options: 100MB/s/TiB. Performance. Intelligent Computing.
-     *
+     * 
      */
     public Output<String> storeTypeCn() {
         return this.storeTypeCn;
     }
     /**
      * Storage type English name.
-     *
+     * 
      */
     @Export(name="storeTypeEn", refs={String.class}, tree="[0]")
     private Output<String> storeTypeEn;
 
     /**
      * @return Storage type English name.
-     *
+     * 
      */
     public Output<String> storeTypeEn() {
         return this.storeTypeEn;
     }
     /**
      * Subnet ID. The subnet must belong to the selected availability zone.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID. The subnet must belong to the selected availability zone.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -420,7 +420,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -428,91 +428,91 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * File system update time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return File system update time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * File system version number.
-     *
+     * 
      */
     @Export(name="versionNumber", refs={String.class}, tree="[0]")
     private Output<String> versionNumber;
 
     /**
      * @return File system version number.
-     *
+     * 
      */
     public Output<String> versionNumber() {
         return this.versionNumber;
     }
     /**
      * Private network ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Write bandwidth value, measured in MB/s.
-     *
+     * 
      */
     @Export(name="writeBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> writeBandwidth;
 
     /**
      * @return Write bandwidth value, measured in MB/s.
-     *
+     * 
      */
     public Output<Integer> writeBandwidth() {
         return this.writeBandwidth;
     }
     /**
      * Availability zone ID.
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
      * Availability zone name.
-     *
+     * 
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Availability zone name.
-     *
+     * 
      */
     public Output<String> zoneName() {
         return this.zoneName;

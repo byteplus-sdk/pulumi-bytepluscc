@@ -19,14 +19,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time, formatted according to RFC3339
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time, formatted according to RFC3339
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -34,14 +34,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High performance compute cluster ID
-     *
+     * 
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
      * @return High performance compute cluster ID
-     *
+     * 
      */
     public Optional<Output<String>> hpcClusterId() {
         return Optional.ofNullable(this.hpcClusterId);
@@ -64,14 +64,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -79,14 +79,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -95,7 +95,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<HpcClusterTagArgs>> tags;
@@ -103,7 +103,7 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<HpcClusterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -111,14 +111,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update time, formatted according to RFC3339
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update time, formatted according to RFC3339
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -126,14 +126,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -141,14 +141,14 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID of the high performance compute cluster
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID of the high performance compute cluster
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -188,9 +188,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time, formatted according to RFC3339
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -199,9 +199,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time, formatted according to RFC3339
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -209,9 +209,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -220,9 +220,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -230,9 +230,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hpcClusterId High performance compute cluster ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterId(@Nullable Output<String> hpcClusterId) {
             $.hpcClusterId = hpcClusterId;
@@ -241,9 +241,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hpcClusterId High performance compute cluster ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder hpcClusterId(String hpcClusterId) {
             return hpcClusterId(Output.of(hpcClusterId));
@@ -251,9 +251,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -262,9 +262,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -272,9 +272,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -283,9 +283,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -294,9 +294,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<HpcClusterTagArgs>> tags) {
             $.tags = tags;
@@ -306,9 +306,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<HpcClusterTagArgs> tags) {
             return tags(Output.of(tags));
@@ -317,9 +317,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag information
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(HpcClusterTagArgs... tags) {
             return tags(List.of(tags));
@@ -327,9 +327,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Update time, formatted according to RFC3339
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -338,9 +338,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Update time, formatted according to RFC3339
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -348,9 +348,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -359,9 +359,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -369,9 +369,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID of the high performance compute cluster
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -380,9 +380,9 @@ public final class HpcClusterState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID of the high performance compute cluster
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

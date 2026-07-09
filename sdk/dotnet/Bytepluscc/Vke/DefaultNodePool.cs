@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
     /// In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vkeDefaultNodePoolDemo = new Bytepluscc.Vke.DefaultNodePool("VkeDefaultNodePoolDemo", new()
     ///     {
@@ -88,12 +88,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vke/defaultNodePool:DefaultNodePool example "cluster_id|node_pool_id"
     /// ```

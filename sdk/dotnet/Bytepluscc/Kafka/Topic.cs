@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 {
     /// <summary>
     /// Topic refers to the message subject and is used to categorize messages. Supports resource management at the Topic level, including creating, viewing, and deleting Topics.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var kafkaTopicDemo = new Bytepluscc.Kafka.Topic("KafkaTopicDemo", new()
     ///     {
@@ -64,12 +64,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:kafka/topic:Topic example "instance_id|topic_name"
     /// ```

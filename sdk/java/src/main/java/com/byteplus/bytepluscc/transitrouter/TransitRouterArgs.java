@@ -21,14 +21,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
-     *
+     * 
      */
     @Import(name="asn")
     private @Nullable Output<Integer> asn;
 
     /**
      * @return ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
-     *
+     * 
      */
     public Optional<Output<Integer>> asn() {
         return Optional.ofNullable(this.asn);
@@ -36,14 +36,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
-     *
+     * 
      */
     @Import(name="multicastEnabled")
     private @Nullable Output<Boolean> multicastEnabled;
 
     /**
      * @return Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> multicastEnabled() {
         return Optional.ofNullable(this.multicastEnabled);
@@ -66,14 +66,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -82,7 +82,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterTagArgs>> tags;
@@ -90,7 +90,7 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<TransitRouterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -98,14 +98,14 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     *
+     * 
      */
     @Import(name="transitRouterName")
     private @Nullable Output<String> transitRouterName;
 
     /**
      * @return Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterName() {
         return Optional.ofNullable(this.transitRouterName);
@@ -142,9 +142,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asn ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asn(@Nullable Output<Integer> asn) {
             $.asn = asn;
@@ -153,9 +153,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asn ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asn(Integer asn) {
             return asn(Output.of(asn));
@@ -163,9 +163,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -174,9 +174,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -184,9 +184,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multicastEnabled Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder multicastEnabled(@Nullable Output<Boolean> multicastEnabled) {
             $.multicastEnabled = multicastEnabled;
@@ -195,9 +195,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multicastEnabled Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder multicastEnabled(Boolean multicastEnabled) {
             return multicastEnabled(Output.of(multicastEnabled));
@@ -205,9 +205,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -216,9 +216,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -227,9 +227,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<TransitRouterTagArgs>> tags) {
             $.tags = tags;
@@ -239,9 +239,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<TransitRouterTagArgs> tags) {
             return tags(Output.of(tags));
@@ -250,9 +250,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(TransitRouterTagArgs... tags) {
             return tags(List.of(tags));
@@ -260,9 +260,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterName Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterName(@Nullable Output<String> transitRouterName) {
             $.transitRouterName = transitRouterName;
@@ -271,9 +271,9 @@ public final class TransitRouterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterName Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterName(String transitRouterName) {
             return transitRouterName(Output.of(transitRouterName));

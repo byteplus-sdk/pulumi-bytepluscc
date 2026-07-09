@@ -23,14 +23,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-     *
+     * 
      */
     @Import(name="aclIds")
     private @Nullable Output<List<String>> aclIds;
 
     /**
      * @return ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-     *
+     * 
      */
     public Optional<Output<List<String>>> aclIds() {
         return Optional.ofNullable(this.aclIds);
@@ -38,14 +38,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable access control. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     @Import(name="aclStatus")
     private @Nullable Output<String> aclStatus;
 
     /**
      * @return Enable access control. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     public Optional<Output<String>> aclStatus() {
         return Optional.ofNullable(this.aclStatus);
@@ -53,14 +53,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
-     *
+     * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
      * @return Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
-     *
+     * 
      */
     public Optional<Output<String>> aclType() {
         return Optional.ofNullable(this.aclType);
@@ -68,14 +68,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-     *
+     * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -83,14 +83,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CA certificate for mutual authentication.
-     *
+     * 
      */
     @Import(name="caCertificateId")
     private @Nullable Output<String> caCertificateId;
 
     /**
      * @return CA certificate for mutual authentication.
-     *
+     * 
      */
     public Optional<Output<String>> caCertificateId() {
         return Optional.ofNullable(this.caCertificateId);
@@ -98,14 +98,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
-     *
+     * 
      */
     @Import(name="caEnabled")
     private @Nullable Output<String> caEnabled;
 
     /**
      * @return Enable mutual authentication. on: enabled. off (default): disabled.
-     *
+     * 
      */
     public Optional<Output<String>> caEnabled() {
         return Optional.ofNullable(this.caEnabled);
@@ -113,14 +113,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID from Certificate Center.
-     *
+     * 
      */
     @Import(name="certCenterCertificateId")
     private @Nullable Output<String> certCenterCertificateId;
 
     /**
      * @return Certificate ID from Certificate Center.
-     *
+     * 
      */
     public Optional<Output<String>> certCenterCertificateId() {
         return Optional.ofNullable(this.certCenterCertificateId);
@@ -128,14 +128,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID from the CLB certificate management module.
-     *
+     * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return Certificate ID from the CLB certificate management module.
-     *
+     * 
      */
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
@@ -143,14 +143,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-     *
+     * 
      */
     @Import(name="certificateSource")
     private @Nullable Output<String> certificateSource;
 
     /**
      * @return Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-     *
+     * 
      */
     public Optional<Output<String>> certificateSource() {
         return Optional.ofNullable(this.certificateSource);
@@ -158,14 +158,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="clientBodyTimeout")
     private @Nullable Output<Integer> clientBodyTimeout;
 
     /**
      * @return Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> clientBodyTimeout() {
         return Optional.ofNullable(this.clientBodyTimeout);
@@ -173,14 +173,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="clientHeaderTimeout")
     private @Nullable Output<Integer> clientHeaderTimeout;
 
     /**
      * @return Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> clientHeaderTimeout() {
         return Optional.ofNullable(this.clientHeaderTimeout);
@@ -188,14 +188,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
-     *
+     * 
      */
     @Import(name="connectionDrainEnabled")
     private @Nullable Output<String> connectionDrainEnabled;
 
     /**
      * @return Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
-     *
+     * 
      */
     public Optional<Output<String>> connectionDrainEnabled() {
         return Optional.ofNullable(this.connectionDrainEnabled);
@@ -203,14 +203,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
-     *
+     * 
      */
     @Import(name="connectionDrainTimeout")
     private @Nullable Output<Integer> connectionDrainTimeout;
 
     /**
      * @return Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
-     *
+     * 
      */
     public Optional<Output<Integer>> connectionDrainTimeout() {
         return Optional.ofNullable(this.connectionDrainTimeout);
@@ -218,14 +218,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
-     *
+     * 
      */
     @Import(name="cookie")
     private @Nullable Output<String> cookie;
 
     /**
      * @return Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
-     *
+     * 
      */
     public Optional<Output<String>> cookie() {
         return Optional.ofNullable(this.cookie);
@@ -233,14 +233,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
-     *
+     * 
      */
     @Import(name="cps")
     private @Nullable Output<Integer> cps;
 
     /**
      * @return Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
-     *
+     * 
      */
     public Optional<Output<Integer>> cps() {
         return Optional.ofNullable(this.cps);
@@ -248,14 +248,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -264,7 +264,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="domainExtensions")
     private @Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions;
@@ -272,7 +272,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ListenerDomainExtensionArgs>>> domainExtensions() {
         return Optional.ofNullable(this.domainExtensions);
@@ -280,14 +280,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable listener. on (default): enabled. off: disabled.
-     *
+     * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
      * @return Enable listener. on (default): enabled. off: disabled.
-     *
+     * 
      */
     public Optional<Output<String>> enabled() {
         return Optional.ofNullable(this.enabled);
@@ -295,14 +295,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
-     *
+     * 
      */
     @Import(name="endPort")
     private @Nullable Output<Integer> endPort;
 
     /**
      * @return End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
-     *
+     * 
      */
     public Optional<Output<Integer>> endPort() {
         return Optional.ofNullable(this.endPort);
@@ -310,14 +310,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
-     *
+     * 
      */
     @Import(name="establishedTimeout")
     private @Nullable Output<Integer> establishedTimeout;
 
     /**
      * @return Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
-     *
+     * 
      */
     public Optional<Output<Integer>> establishedTimeout() {
         return Optional.ofNullable(this.establishedTimeout);
@@ -325,14 +325,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Health check information.
-     *
+     * 
      */
     @Import(name="healthCheck")
     private @Nullable Output<ListenerHealthCheckArgs> healthCheck;
 
     /**
      * @return Health check information.
-     *
+     * 
      */
     public Optional<Output<ListenerHealthCheckArgs>> healthCheck() {
         return Optional.ofNullable(this.healthCheck);
@@ -340,14 +340,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     @Import(name="http2Enabled")
     private @Nullable Output<String> http2Enabled;
 
     /**
      * @return Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     public Optional<Output<String>> http2Enabled() {
         return Optional.ofNullable(this.http2Enabled);
@@ -355,14 +355,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="keepaliveTimeout")
     private @Nullable Output<Integer> keepaliveTimeout;
 
     /**
      * @return Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> keepaliveTimeout() {
         return Optional.ofNullable(this.keepaliveTimeout);
@@ -370,14 +370,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
-     *
+     * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
      * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
-     *
+     * 
      */
     public Optional<Output<String>> listenerName() {
         return Optional.ofNullable(this.listenerName);
@@ -385,14 +385,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the CLB instance.
-     *
+     * 
      */
     @Import(name="loadBalancerId", required=true)
     private Output<String> loadBalancerId;
 
     /**
      * @return ID of the CLB instance.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
@@ -400,14 +400,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
-     *
+     * 
      */
     @Import(name="maxConnections")
     private @Nullable Output<Integer> maxConnections;
 
     /**
      * @return Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
-     *
+     * 
      */
     public Optional<Output<Integer>> maxConnections() {
         return Optional.ofNullable(this.maxConnections);
@@ -415,14 +415,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
-     *
+     * 
      */
     @Import(name="persistenceTimeout")
     private @Nullable Output<Integer> persistenceTimeout;
 
     /**
      * @return Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
-     *
+     * 
      */
     public Optional<Output<Integer>> persistenceTimeout() {
         return Optional.ofNullable(this.persistenceTimeout);
@@ -430,14 +430,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
-     *
+     * 
      */
     @Import(name="persistenceType")
     private @Nullable Output<String> persistenceType;
 
     /**
      * @return Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
-     *
+     * 
      */
     public Optional<Output<String>> persistenceType() {
         return Optional.ofNullable(this.persistenceType);
@@ -445,14 +445,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
-     *
+     * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
      * @return Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
@@ -460,14 +460,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
-     *
+     * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
      * @return Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
@@ -475,14 +475,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="proxyConnectTimeout")
     private @Nullable Output<Integer> proxyConnectTimeout;
 
     /**
      * @return Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> proxyConnectTimeout() {
         return Optional.ofNullable(this.proxyConnectTimeout);
@@ -490,14 +490,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
-     *
+     * 
      */
     @Import(name="proxyProtocolType")
     private @Nullable Output<String> proxyProtocolType;
 
     /**
      * @return Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
-     *
+     * 
      */
     public Optional<Output<String>> proxyProtocolType() {
         return Optional.ofNullable(this.proxyProtocolType);
@@ -505,14 +505,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="proxyReadTimeout")
     private @Nullable Output<Integer> proxyReadTimeout;
 
     /**
      * @return Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> proxyReadTimeout() {
         return Optional.ofNullable(this.proxyReadTimeout);
@@ -520,14 +520,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="proxySendTimeout")
     private @Nullable Output<Integer> proxySendTimeout;
 
     /**
      * @return Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> proxySendTimeout() {
         return Optional.ofNullable(this.proxySendTimeout);
@@ -535,14 +535,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
-     *
+     * 
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
      * @return Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
-     *
+     * 
      */
     public Optional<Output<String>> scheduler() {
         return Optional.ofNullable(this.scheduler);
@@ -550,14 +550,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
-     *
+     * 
      */
     @Import(name="securityPolicyId")
     private @Nullable Output<String> securityPolicyId;
 
     /**
      * @return TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
-     *
+     * 
      */
     public Optional<Output<String>> securityPolicyId() {
         return Optional.ofNullable(this.securityPolicyId);
@@ -565,14 +565,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Import(name="sendTimeout")
     private @Nullable Output<Integer> sendTimeout;
 
     /**
      * @return Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Optional<Output<Integer>> sendTimeout() {
         return Optional.ofNullable(this.sendTimeout);
@@ -580,14 +580,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the backend server group associated with the listener.
-     *
+     * 
      */
     @Import(name="serverGroupId", required=true)
     private Output<String> serverGroupId;
 
     /**
      * @return ID of the backend server group associated with the listener.
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
@@ -595,14 +595,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
-     *
+     * 
      */
     @Import(name="startPort")
     private @Nullable Output<Integer> startPort;
 
     /**
      * @return Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
-     *
+     * 
      */
     public Optional<Output<Integer>> startPort() {
         return Optional.ofNullable(this.startPort);
@@ -611,7 +611,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ListenerTagArgs>> tags;
@@ -619,7 +619,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ListenerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -690,9 +690,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclIds ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclIds(@Nullable Output<List<String>> aclIds) {
             $.aclIds = aclIds;
@@ -701,9 +701,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclIds ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclIds(List<String> aclIds) {
             return aclIds(Output.of(aclIds));
@@ -711,9 +711,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclIds ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclIds(String... aclIds) {
             return aclIds(List.of(aclIds));
@@ -721,9 +721,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclStatus Enable access control. Values: on: enabled. off (default): disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclStatus(@Nullable Output<String> aclStatus) {
             $.aclStatus = aclStatus;
@@ -732,9 +732,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclStatus Enable access control. Values: on: enabled. off (default): disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclStatus(String aclStatus) {
             return aclStatus(Output.of(aclStatus));
@@ -742,9 +742,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclType Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclType(@Nullable Output<String> aclType) {
             $.aclType = aclType;
@@ -753,9 +753,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclType Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclType(String aclType) {
             return aclType(Output.of(aclType));
@@ -763,9 +763,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -774,9 +774,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -784,9 +784,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificateId CA certificate for mutual authentication.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificateId(@Nullable Output<String> caCertificateId) {
             $.caCertificateId = caCertificateId;
@@ -795,9 +795,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificateId CA certificate for mutual authentication.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificateId(String caCertificateId) {
             return caCertificateId(Output.of(caCertificateId));
@@ -805,9 +805,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caEnabled Enable mutual authentication. on: enabled. off (default): disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caEnabled(@Nullable Output<String> caEnabled) {
             $.caEnabled = caEnabled;
@@ -816,9 +816,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caEnabled Enable mutual authentication. on: enabled. off (default): disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caEnabled(String caEnabled) {
             return caEnabled(Output.of(caEnabled));
@@ -826,9 +826,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certCenterCertificateId Certificate ID from Certificate Center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certCenterCertificateId(@Nullable Output<String> certCenterCertificateId) {
             $.certCenterCertificateId = certCenterCertificateId;
@@ -837,9 +837,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certCenterCertificateId Certificate ID from Certificate Center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certCenterCertificateId(String certCenterCertificateId) {
             return certCenterCertificateId(Output.of(certCenterCertificateId));
@@ -847,9 +847,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID from the CLB certificate management module.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
@@ -858,9 +858,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID from the CLB certificate management module.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
@@ -868,9 +868,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateSource Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateSource(@Nullable Output<String> certificateSource) {
             $.certificateSource = certificateSource;
@@ -879,9 +879,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateSource Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateSource(String certificateSource) {
             return certificateSource(Output.of(certificateSource));
@@ -889,9 +889,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientBodyTimeout Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientBodyTimeout(@Nullable Output<Integer> clientBodyTimeout) {
             $.clientBodyTimeout = clientBodyTimeout;
@@ -900,9 +900,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientBodyTimeout Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientBodyTimeout(Integer clientBodyTimeout) {
             return clientBodyTimeout(Output.of(clientBodyTimeout));
@@ -910,9 +910,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientHeaderTimeout Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientHeaderTimeout(@Nullable Output<Integer> clientHeaderTimeout) {
             $.clientHeaderTimeout = clientHeaderTimeout;
@@ -921,9 +921,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientHeaderTimeout Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder clientHeaderTimeout(Integer clientHeaderTimeout) {
             return clientHeaderTimeout(Output.of(clientHeaderTimeout));
@@ -931,9 +931,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionDrainEnabled Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainEnabled(@Nullable Output<String> connectionDrainEnabled) {
             $.connectionDrainEnabled = connectionDrainEnabled;
@@ -942,9 +942,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionDrainEnabled Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainEnabled(String connectionDrainEnabled) {
             return connectionDrainEnabled(Output.of(connectionDrainEnabled));
@@ -952,9 +952,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionDrainTimeout Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainTimeout(@Nullable Output<Integer> connectionDrainTimeout) {
             $.connectionDrainTimeout = connectionDrainTimeout;
@@ -963,9 +963,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionDrainTimeout Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainTimeout(Integer connectionDrainTimeout) {
             return connectionDrainTimeout(Output.of(connectionDrainTimeout));
@@ -973,9 +973,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cookie Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cookie(@Nullable Output<String> cookie) {
             $.cookie = cookie;
@@ -984,9 +984,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cookie Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cookie(String cookie) {
             return cookie(Output.of(cookie));
@@ -994,9 +994,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cps Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cps(@Nullable Output<Integer> cps) {
             $.cps = cps;
@@ -1005,9 +1005,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cps Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cps(Integer cps) {
             return cps(Output.of(cps));
@@ -1015,9 +1015,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -1026,9 +1026,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -1037,9 +1037,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param domainExtensions List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainExtensions(@Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions) {
             $.domainExtensions = domainExtensions;
@@ -1049,9 +1049,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param domainExtensions List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainExtensions(List<ListenerDomainExtensionArgs> domainExtensions) {
             return domainExtensions(Output.of(domainExtensions));
@@ -1060,9 +1060,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param domainExtensions List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainExtensions(ListenerDomainExtensionArgs... domainExtensions) {
             return domainExtensions(List.of(domainExtensions));
@@ -1070,9 +1070,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enabled Enable listener. on (default): enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enabled(@Nullable Output<String> enabled) {
             $.enabled = enabled;
@@ -1081,9 +1081,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enabled Enable listener. on (default): enabled. off: disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enabled(String enabled) {
             return enabled(Output.of(enabled));
@@ -1091,9 +1091,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endPort End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endPort(@Nullable Output<Integer> endPort) {
             $.endPort = endPort;
@@ -1102,9 +1102,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endPort End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endPort(Integer endPort) {
             return endPort(Output.of(endPort));
@@ -1112,9 +1112,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param establishedTimeout Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder establishedTimeout(@Nullable Output<Integer> establishedTimeout) {
             $.establishedTimeout = establishedTimeout;
@@ -1123,9 +1123,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param establishedTimeout Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder establishedTimeout(Integer establishedTimeout) {
             return establishedTimeout(Output.of(establishedTimeout));
@@ -1133,9 +1133,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheck Health check information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healthCheck(@Nullable Output<ListenerHealthCheckArgs> healthCheck) {
             $.healthCheck = healthCheck;
@@ -1144,9 +1144,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheck Health check information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healthCheck(ListenerHealthCheckArgs healthCheck) {
             return healthCheck(Output.of(healthCheck));
@@ -1154,9 +1154,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param http2Enabled Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder http2Enabled(@Nullable Output<String> http2Enabled) {
             $.http2Enabled = http2Enabled;
@@ -1165,9 +1165,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param http2Enabled Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder http2Enabled(String http2Enabled) {
             return http2Enabled(Output.of(http2Enabled));
@@ -1175,9 +1175,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keepaliveTimeout Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keepaliveTimeout(@Nullable Output<Integer> keepaliveTimeout) {
             $.keepaliveTimeout = keepaliveTimeout;
@@ -1186,9 +1186,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keepaliveTimeout Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keepaliveTimeout(Integer keepaliveTimeout) {
             return keepaliveTimeout(Output.of(keepaliveTimeout));
@@ -1196,9 +1196,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerName(@Nullable Output<String> listenerName) {
             $.listenerName = listenerName;
@@ -1207,9 +1207,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerName(String listenerName) {
             return listenerName(Output.of(listenerName));
@@ -1217,9 +1217,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId ID of the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(Output<String> loadBalancerId) {
             $.loadBalancerId = loadBalancerId;
@@ -1228,9 +1228,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId ID of the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(String loadBalancerId) {
             return loadBalancerId(Output.of(loadBalancerId));
@@ -1238,9 +1238,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxConnections Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxConnections(@Nullable Output<Integer> maxConnections) {
             $.maxConnections = maxConnections;
@@ -1249,9 +1249,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxConnections Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder maxConnections(Integer maxConnections) {
             return maxConnections(Output.of(maxConnections));
@@ -1259,9 +1259,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param persistenceTimeout Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder persistenceTimeout(@Nullable Output<Integer> persistenceTimeout) {
             $.persistenceTimeout = persistenceTimeout;
@@ -1270,9 +1270,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param persistenceTimeout Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder persistenceTimeout(Integer persistenceTimeout) {
             return persistenceTimeout(Output.of(persistenceTimeout));
@@ -1280,9 +1280,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param persistenceType Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder persistenceType(@Nullable Output<String> persistenceType) {
             $.persistenceType = persistenceType;
@@ -1291,9 +1291,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param persistenceType Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder persistenceType(String persistenceType) {
             return persistenceType(Output.of(persistenceType));
@@ -1301,9 +1301,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Output<Integer> port) {
             $.port = port;
@@ -1312,9 +1312,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -1322,9 +1322,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(Output<String> protocol) {
             $.protocol = protocol;
@@ -1333,9 +1333,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -1343,9 +1343,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyConnectTimeout Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyConnectTimeout(@Nullable Output<Integer> proxyConnectTimeout) {
             $.proxyConnectTimeout = proxyConnectTimeout;
@@ -1354,9 +1354,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyConnectTimeout Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyConnectTimeout(Integer proxyConnectTimeout) {
             return proxyConnectTimeout(Output.of(proxyConnectTimeout));
@@ -1364,9 +1364,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyProtocolType Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyProtocolType(@Nullable Output<String> proxyProtocolType) {
             $.proxyProtocolType = proxyProtocolType;
@@ -1375,9 +1375,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyProtocolType Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyProtocolType(String proxyProtocolType) {
             return proxyProtocolType(Output.of(proxyProtocolType));
@@ -1385,9 +1385,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyReadTimeout Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyReadTimeout(@Nullable Output<Integer> proxyReadTimeout) {
             $.proxyReadTimeout = proxyReadTimeout;
@@ -1396,9 +1396,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyReadTimeout Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyReadTimeout(Integer proxyReadTimeout) {
             return proxyReadTimeout(Output.of(proxyReadTimeout));
@@ -1406,9 +1406,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxySendTimeout Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxySendTimeout(@Nullable Output<Integer> proxySendTimeout) {
             $.proxySendTimeout = proxySendTimeout;
@@ -1417,9 +1417,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxySendTimeout Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxySendTimeout(Integer proxySendTimeout) {
             return proxySendTimeout(Output.of(proxySendTimeout));
@@ -1427,9 +1427,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduler Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scheduler(@Nullable Output<String> scheduler) {
             $.scheduler = scheduler;
@@ -1438,9 +1438,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduler Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scheduler(String scheduler) {
             return scheduler(Output.of(scheduler));
@@ -1448,9 +1448,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityPolicyId TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityPolicyId(@Nullable Output<String> securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
@@ -1459,9 +1459,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityPolicyId TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
@@ -1469,9 +1469,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sendTimeout Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sendTimeout(@Nullable Output<Integer> sendTimeout) {
             $.sendTimeout = sendTimeout;
@@ -1480,9 +1480,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sendTimeout Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sendTimeout(Integer sendTimeout) {
             return sendTimeout(Output.of(sendTimeout));
@@ -1490,9 +1490,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId ID of the backend server group associated with the listener.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -1501,9 +1501,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId ID of the backend server group associated with the listener.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
@@ -1511,9 +1511,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param startPort Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startPort(@Nullable Output<Integer> startPort) {
             $.startPort = startPort;
@@ -1522,9 +1522,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param startPort Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder startPort(Integer startPort) {
             return startPort(Output.of(startPort));
@@ -1533,9 +1533,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag associated with the listener.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ListenerTagArgs>> tags) {
             $.tags = tags;
@@ -1545,9 +1545,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag associated with the listener.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ListenerTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1556,9 +1556,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag associated with the listener.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ListenerTagArgs... tags) {
             return tags(List.of(tags));

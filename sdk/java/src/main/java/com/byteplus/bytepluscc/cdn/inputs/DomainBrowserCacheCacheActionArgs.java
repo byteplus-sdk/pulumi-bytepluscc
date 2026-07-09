@@ -19,14 +19,14 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
     /**
      * Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
      * @return Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     public Optional<Output<String>> action() {
         return Optional.ofNullable(this.action);
@@ -34,14 +34,14 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
     /**
      * This parameter is shared by multiple CDN features.
-     *
+     * 
      */
     @Import(name="defaultPolicy")
     private @Nullable Output<String> defaultPolicy;
 
     /**
      * @return This parameter is shared by multiple CDN features.
-     *
+     * 
      */
     public Optional<Output<String>> defaultPolicy() {
         return Optional.ofNullable(this.defaultPolicy);
@@ -49,14 +49,14 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
     /**
      * Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-     *
+     * 
      */
     @Import(name="ignoreCase")
     private @Nullable Output<Boolean> ignoreCase;
 
     /**
      * @return Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-     *
+     * 
      */
     public Optional<Output<Boolean>> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
@@ -64,14 +64,14 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
     /**
      * Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-     *
+     * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-     *
+     * 
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -106,9 +106,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param action Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(@Nullable Output<String> action) {
             $.action = action;
@@ -117,9 +117,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param action Indicates caching behavior. Currently, you can only specify cache. cache means the behavior is caching.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(String action) {
             return action(Output.of(action));
@@ -127,9 +127,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param defaultPolicy This parameter is shared by multiple CDN features.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder defaultPolicy(@Nullable Output<String> defaultPolicy) {
             $.defaultPolicy = defaultPolicy;
@@ -138,9 +138,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param defaultPolicy This parameter is shared by multiple CDN features.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder defaultPolicy(String defaultPolicy) {
             return defaultPolicy(Output.of(defaultPolicy));
@@ -148,9 +148,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param ignoreCase Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ignoreCase(@Nullable Output<Boolean> ignoreCase) {
             $.ignoreCase = ignoreCase;
@@ -159,9 +159,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param ignoreCase Indicates whether Value is case sensitive. The parameter has the following values: true: not case sensitive. false: case sensitive. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ignoreCase(Boolean ignoreCase) {
             return ignoreCase(Output.of(ignoreCase));
@@ -169,9 +169,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param ttl Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -180,9 +180,9 @@ public final class DomainBrowserCacheCacheActionArgs extends com.pulumi.resource
 
         /**
          * @param ttl Indicates the cache duration in seconds. The valid range is 0–315,360,000. 315,360,000 represents 10 years. If you do not want the content delivery network to cache the specified content, set this parameter to 0.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));

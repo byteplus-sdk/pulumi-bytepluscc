@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * Each ALB instance must have at least one listener to function properly. The listener receives client requests and distributes them to backend servers based on your configured forwarding rules and load balancing algorithm. You can create multiple listeners under one ALB instance and configure different protocols for each listener to handle client requests using different protocols.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var aLBListenerDemo = new Listener("aLBListenerDemo", ListenerArgs.builder()
  *             .loadBalancerId("alb-bdazuxj87hts8dv40noxxxxx")
@@ -76,186 +76,186 @@ import javax.annotation.Nullable;
  *                 .domain("")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:alb/listener:Listener example &#34;listener_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:alb/listener:Listener")
 public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
-     *
+     * 
      */
     @Export(name="accessLogRecordCustomizedHeadersEnabled", refs={String.class}, tree="[0]")
     private Output<String> accessLogRecordCustomizedHeadersEnabled;
 
     /**
      * @return Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
-     *
+     * 
      */
     public Output<String> accessLogRecordCustomizedHeadersEnabled() {
         return this.accessLogRecordCustomizedHeadersEnabled;
     }
     /**
      * Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-     *
+     * 
      */
     @Export(name="aclIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> aclIds;
 
     /**
      * @return Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-     *
+     * 
      */
     public Output<List<String>> aclIds() {
         return this.aclIds;
     }
     /**
      * Enable access control. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     @Export(name="aclStatus", refs={String.class}, tree="[0]")
     private Output<String> aclStatus;
 
     /**
      * @return Enable access control. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     public Output<String> aclStatus() {
         return this.aclStatus;
     }
     /**
      * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
-     *
+     * 
      */
     @Export(name="aclType", refs={String.class}, tree="[0]")
     private Output<String> aclType;
 
     /**
      * @return Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
-     *
+     * 
      */
     public Output<String> aclType() {
         return this.aclType;
     }
     /**
      * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
-     *
+     * 
      */
     @Export(name="caCertificateId", refs={String.class}, tree="[0]")
     private Output<String> caCertificateId;
 
     /**
      * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
-     *
+     * 
      */
     public Output<String> caCertificateId() {
         return this.caCertificateId;
     }
     /**
      * Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
-     *
+     * 
      */
     @Export(name="caCertificateSource", refs={String.class}, tree="[0]")
     private Output<String> caCertificateSource;
 
     /**
      * @return Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
-     *
+     * 
      */
     public Output<String> caCertificateSource() {
         return this.caCertificateSource;
     }
     /**
      * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
-     *
+     * 
      */
     @Export(name="certCenterCertificateId", refs={String.class}, tree="[0]")
     private Output<String> certCenterCertificateId;
 
     /**
      * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
-     *
+     * 
      */
     public Output<String> certCenterCertificateId() {
         return this.certCenterCertificateId;
     }
     /**
      * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
-     *
+     * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
-     *
+     * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
-     *
+     * 
      */
     @Export(name="certificateSource", refs={String.class}, tree="[0]")
     private Output<String> certificateSource;
 
     /**
      * @return The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
-     *
+     * 
      */
     public Output<String> certificateSource() {
         return this.certificateSource;
     }
     /**
      * Listener creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Listener creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Personalized configuration ID. If not bound, the value is an empty string.
-     *
+     * 
      */
     @Export(name="customizedCfgId", refs={String.class}, tree="[0]")
     private Output<String> customizedCfgId;
 
     /**
      * @return Personalized configuration ID. If not bound, the value is an empty string.
-     *
+     * 
      */
     public Output<String> customizedCfgId() {
         return this.customizedCfgId;
     }
     /**
      * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -263,7 +263,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="domainExtensions", refs={List.class,ListenerDomainExtension.class}, tree="[0,1]")
     private Output<List<ListenerDomainExtension>> domainExtensions;
@@ -271,189 +271,189 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * @return List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ListenerDomainExtension>> domainExtensions() {
         return this.domainExtensions;
     }
     /**
      * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     @Export(name="enableHttp2", refs={String.class}, tree="[0]")
     private Output<String> enableHttp2;
 
     /**
      * @return HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     public Output<String> enableHttp2() {
         return this.enableHttp2;
     }
     /**
      * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
-     *
+     * 
      */
     @Export(name="enableQuic", refs={String.class}, tree="[0]")
     private Output<String> enableQuic;
 
     /**
      * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
-     *
+     * 
      */
     public Output<String> enableQuic() {
         return this.enableQuic;
     }
     /**
      * Listener on/off status. Values: on: On (default). off: Off.
-     *
+     * 
      */
     @Export(name="enabled", refs={String.class}, tree="[0]")
     private Output<String> enabled;
 
     /**
      * @return Listener on/off status. Values: on: On (default). off: Off.
-     *
+     * 
      */
     public Output<String> enabled() {
         return this.enabled;
     }
     /**
      * Listener ID.
-     *
+     * 
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
      * @return Listener ID.
-     *
+     * 
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
      * Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Export(name="listenerName", refs={String.class}, tree="[0]")
     private Output<String> listenerName;
 
     /**
      * @return Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Output<String> listenerName() {
         return this.listenerName;
     }
     /**
      * Load balancer instance ID to which the listener belongs.
-     *
+     * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return Load balancer instance ID to which the listener belongs.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-     *
+     * 
      */
     @Export(name="pcaLeafCertificateId", refs={String.class}, tree="[0]")
     private Output<String> pcaLeafCertificateId;
 
     /**
      * @return Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-     *
+     * 
      */
     public Output<String> pcaLeafCertificateId() {
         return this.pcaLeafCertificateId;
     }
     /**
      * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
-     *
+     * 
      */
     @Export(name="pcaRootCaCertificateId", refs={String.class}, tree="[0]")
     private Output<String> pcaRootCaCertificateId;
 
     /**
      * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
-     *
+     * 
      */
     public Output<String> pcaRootCaCertificateId() {
         return this.pcaRootCaCertificateId;
     }
     /**
      * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
-     *
+     * 
      */
     @Export(name="pcaSubCaCertificateId", refs={String.class}, tree="[0]")
     private Output<String> pcaSubCaCertificateId;
 
     /**
      * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
-     *
+     * 
      */
     public Output<String> pcaSubCaCertificateId() {
         return this.pcaSubCaCertificateId;
     }
     /**
      * The listener port. Values: 1   - 65535.
-     *
+     * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return The listener port. Values: 1   - 65535.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Name of the project to which the listener belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the listener belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Listener protocol. Supports HTTP and HTTPS protocols.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Listener protocol. Supports HTTP and HTTPS protocols.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * Default server group for the listener.
-     *
+     * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return Default server group for the listener.
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
@@ -461,7 +461,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * All server groups associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="serverGroups", refs={List.class,ListenerServerGroup.class}, tree="[0,1]")
     private Output<List<ListenerServerGroup>> serverGroups;
@@ -469,21 +469,21 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * @return All server groups associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ListenerServerGroup>> serverGroups() {
         return this.serverGroups;
     }
     /**
      * Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Listener status. Values: Creating: Creating. Active: Running. Pending: Changing configuration. Disabled: Stopped. Deleting: Deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -491,7 +491,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * Listener tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ListenerTag.class}, tree="[0,1]")
     private Output<List<ListenerTag>> tags;
@@ -499,21 +499,21 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * @return Listener tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ListenerTag>> tags() {
         return this.tags;
     }
     /**
      * Time of the listener&#39;s most recent operation.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Time of the listener&#39;s most recent operation.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

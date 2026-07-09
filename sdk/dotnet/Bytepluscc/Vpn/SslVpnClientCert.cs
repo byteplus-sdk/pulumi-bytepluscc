@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
 {
     /// <summary>
     /// SSL client certificate is a sub-resource of the SSL server.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPNSslVpnClientCertDemo = new Bytepluscc.Vpn.SslVpnClientCert("VPNSslVpnClientCertDemo", new()
     ///     {
@@ -37,12 +37,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpn/sslVpnClientCert:SslVpnClientCert example "ssl_vpn_client_cert_id"
     /// ```

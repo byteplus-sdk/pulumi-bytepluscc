@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// A shared bandwidth package is a cloud resource that supports multiplexing and sharing bandwidth. Add multiple public IPs or IPv6 public bandwidths within a single region to a shared bandwidth package instance to share one bandwidth.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var bandwidthPackageDemo = new Bytepluscc.Vpc.BandwidthPackage("BandwidthPackageDemo", new()
     ///     {
@@ -51,12 +51,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/bandwidthPackage:BandwidthPackage example "bandwidth_package_id"
     /// ```

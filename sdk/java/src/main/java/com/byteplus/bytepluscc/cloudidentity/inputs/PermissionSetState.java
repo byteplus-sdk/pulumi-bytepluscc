@@ -20,14 +20,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Creation Time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation Time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -35,14 +35,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Permission Set Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Permission Set Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Permission Set Name
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Permission Set Name
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -66,7 +66,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     /**
      * Policy List Under Permission Set
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="permissionPolicies")
     private @Nullable Output<List<PermissionSetPermissionPolicyArgs>> permissionPolicies;
@@ -74,7 +74,7 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Policy List Under Permission Set
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PermissionSetPermissionPolicyArgs>>> permissionPolicies() {
         return Optional.ofNullable(this.permissionPolicies);
@@ -82,14 +82,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Permission Set ID
-     *
+     * 
      */
     @Import(name="permissionSetId")
     private @Nullable Output<String> permissionSetId;
 
     /**
      * @return Permission Set ID
-     *
+     * 
      */
     public Optional<Output<String>> permissionSetId() {
         return Optional.ofNullable(this.permissionSetId);
@@ -97,14 +97,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Console Redirect URL
-     *
+     * 
      */
     @Import(name="relayState")
     private @Nullable Output<String> relayState;
 
     /**
      * @return Console Redirect URL
-     *
+     * 
      */
     public Optional<Output<String>> relayState() {
         return Optional.ofNullable(this.relayState);
@@ -112,14 +112,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Session Expiration Time (seconds)
-     *
+     * 
      */
     @Import(name="sessionDuration")
     private @Nullable Output<Integer> sessionDuration;
 
     /**
      * @return Session Expiration Time (seconds)
-     *
+     * 
      */
     public Optional<Output<Integer>> sessionDuration() {
         return Optional.ofNullable(this.sessionDuration);
@@ -127,14 +127,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Status Notification Configuration
-     *
+     * 
      */
     @Import(name="statusNotifications")
     private @Nullable Output<List<String>> statusNotifications;
 
     /**
      * @return Status Notification Configuration
-     *
+     * 
      */
     public Optional<Output<List<String>>> statusNotifications() {
         return Optional.ofNullable(this.statusNotifications);
@@ -142,14 +142,14 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Update Time
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update Time
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -189,9 +189,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Creation Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -200,9 +200,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Creation Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -210,9 +210,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Permission Set Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -221,9 +221,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Permission Set Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -231,9 +231,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param name Permission Set Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -242,9 +242,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param name Permission Set Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -253,9 +253,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param permissionPolicies Policy List Under Permission Set
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionPolicies(@Nullable Output<List<PermissionSetPermissionPolicyArgs>> permissionPolicies) {
             $.permissionPolicies = permissionPolicies;
@@ -265,9 +265,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param permissionPolicies Policy List Under Permission Set
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionPolicies(List<PermissionSetPermissionPolicyArgs> permissionPolicies) {
             return permissionPolicies(Output.of(permissionPolicies));
@@ -276,9 +276,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param permissionPolicies Policy List Under Permission Set
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionPolicies(PermissionSetPermissionPolicyArgs... permissionPolicies) {
             return permissionPolicies(List.of(permissionPolicies));
@@ -286,9 +286,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param permissionSetId Permission Set ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionSetId(@Nullable Output<String> permissionSetId) {
             $.permissionSetId = permissionSetId;
@@ -297,9 +297,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param permissionSetId Permission Set ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionSetId(String permissionSetId) {
             return permissionSetId(Output.of(permissionSetId));
@@ -307,9 +307,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param relayState Console Redirect URL
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relayState(@Nullable Output<String> relayState) {
             $.relayState = relayState;
@@ -318,9 +318,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param relayState Console Redirect URL
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relayState(String relayState) {
             return relayState(Output.of(relayState));
@@ -328,9 +328,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sessionDuration Session Expiration Time (seconds)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionDuration(@Nullable Output<Integer> sessionDuration) {
             $.sessionDuration = sessionDuration;
@@ -339,9 +339,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param sessionDuration Session Expiration Time (seconds)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionDuration(Integer sessionDuration) {
             return sessionDuration(Output.of(sessionDuration));
@@ -349,9 +349,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param statusNotifications Status Notification Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusNotifications(@Nullable Output<List<String>> statusNotifications) {
             $.statusNotifications = statusNotifications;
@@ -360,9 +360,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param statusNotifications Status Notification Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusNotifications(List<String> statusNotifications) {
             return statusNotifications(Output.of(statusNotifications));
@@ -370,9 +370,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param statusNotifications Status Notification Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusNotifications(String... statusNotifications) {
             return statusNotifications(List.of(statusNotifications));
@@ -380,9 +380,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updatedTime Update Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -391,9 +391,9 @@ public final class PermissionSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updatedTime Update Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

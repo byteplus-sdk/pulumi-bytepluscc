@@ -193,21 +193,21 @@ class EndpointDbAddressArgsDict(TypedDict):
     address_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Connection address type of the node. Possible values:
-
+      
       Primary: Primary node connection address
       Secondary: Secondary node connection address
       Hidden: Hidden node connection address
       ReadOnly: Read-only node connection address
-
-
+      
+      
       **Note:**
       Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
     """
     eip_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     EIP ID bound to the instance's public address
-
-
+      
+      
       **Note:**
       This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
     """
@@ -235,18 +235,18 @@ class EndpointDbAddressArgs:
         :param pulumi.Input[_builtins.str] address_ip: IP corresponding to the connection address
         :param pulumi.Input[_builtins.str] address_port: Port number of the connection address
         :param pulumi.Input[_builtins.str] address_type: Connection address type of the node. Possible values:
-
+                 
                  Primary: Primary node connection address
                  Secondary: Secondary node connection address
                  Hidden: Hidden node connection address
                  ReadOnly: Read-only node connection address
-
-
+                 
+                 
                  **Note:**
                  Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         :param pulumi.Input[_builtins.str] eip_id: EIP ID bound to the instance's public address
-
-
+                 
+                 
                  **Note:**
                  This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         :param pulumi.Input[_builtins.str] node_id: Node ID associated with the connection address
@@ -308,13 +308,13 @@ class EndpointDbAddressArgs:
     def address_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Connection address type of the node. Possible values:
-
+          
           Primary: Primary node connection address
           Secondary: Secondary node connection address
           Hidden: Hidden node connection address
           ReadOnly: Read-only node connection address
-
-
+          
+          
           **Note:**
           Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         """
@@ -329,8 +329,8 @@ class EndpointDbAddressArgs:
     def eip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         EIP ID bound to the instance's public address
-
-
+          
+          
           **Note:**
           This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         """

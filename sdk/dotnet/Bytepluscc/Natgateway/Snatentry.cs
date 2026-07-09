@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
 {
     /// <summary>
     /// When multiple cloud server instances in a private network need to access the public network, you can use SNAT rules of the public NAT gateway to save public IPs and avoid exposing cloud server IPs directly to the public network for secure, convenient, and efficient access. SNAT rules support four granularities: private network, subnet, cloud server, and custom network segment. Configure flexibly based on your business needs.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var natGatewaySnatentryDemo = new Bytepluscc.Natgateway.Snatentry("NatGatewaySnatentryDemo", new()
     ///     {
@@ -30,12 +30,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Natgateway
     ///         SnatEntryName = "test",
     ///         SourceCidr = "0.0.0.0/0",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:natgateway/snatentry:Snatentry example "snat_entry_id"
     /// ```

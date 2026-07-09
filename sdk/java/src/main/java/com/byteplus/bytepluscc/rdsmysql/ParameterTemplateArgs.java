@@ -20,14 +20,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Database engine type. Values: InnoDB (InnoDB engine), RocksDB (RocksDB engine). Default: InnoDB
-     *
+     * 
      */
     @Import(name="engineType")
     private @Nullable Output<String> engineType;
 
     /**
      * @return Database engine type. Values: InnoDB (InnoDB engine), RocksDB (RocksDB engine). Default: InnoDB
-     *
+     * 
      */
     public Optional<Output<String>> engineType() {
         return Optional.ofNullable(this.engineType);
@@ -35,14 +35,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Associated project
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Associated project
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -50,14 +50,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Parameter template description
-     *
+     * 
      */
     @Import(name="templateDesc")
     private @Nullable Output<String> templateDesc;
 
     /**
      * @return Parameter template description
-     *
+     * 
      */
     public Optional<Output<String>> templateDesc() {
         return Optional.ofNullable(this.templateDesc);
@@ -65,14 +65,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Parameter template name
-     *
+     * 
      */
     @Import(name="templateName", required=true)
     private Output<String> templateName;
 
     /**
      * @return Parameter template name
-     *
+     * 
      */
     public Output<String> templateName() {
         return this.templateName;
@@ -81,7 +81,7 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
     /**
      * Parameters included in the parameter template
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="templateParams", required=true)
     private Output<List<ParameterTemplateTemplateParamArgs>> templateParams;
@@ -89,7 +89,7 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
     /**
      * @return Parameters included in the parameter template
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ParameterTemplateTemplateParamArgs>> templateParams() {
         return this.templateParams;
@@ -97,14 +97,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Database type of the parameter template. Default: Mysql
-     *
+     * 
      */
     @Import(name="templateType")
     private @Nullable Output<String> templateType;
 
     /**
      * @return Database type of the parameter template. Default: Mysql
-     *
+     * 
      */
     public Optional<Output<String>> templateType() {
         return Optional.ofNullable(this.templateType);
@@ -112,14 +112,14 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Database version of the parameter template. Value range: MySQL*5*7 (MySQL 5.7 version), MySQL*8*0 (MySQL 8.0 version)
-     *
+     * 
      */
     @Import(name="templateTypeVersion")
     private @Nullable Output<String> templateTypeVersion;
 
     /**
      * @return Database version of the parameter template. Value range: MySQL*5*7 (MySQL 5.7 version), MySQL*8*0 (MySQL 8.0 version)
-     *
+     * 
      */
     public Optional<Output<String>> templateTypeVersion() {
         return Optional.ofNullable(this.templateTypeVersion);
@@ -157,9 +157,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param engineType Database engine type. Values: InnoDB (InnoDB engine), RocksDB (RocksDB engine). Default: InnoDB
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder engineType(@Nullable Output<String> engineType) {
             $.engineType = engineType;
@@ -168,9 +168,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param engineType Database engine type. Values: InnoDB (InnoDB engine), RocksDB (RocksDB engine). Default: InnoDB
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder engineType(String engineType) {
             return engineType(Output.of(engineType));
@@ -178,9 +178,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Associated project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -189,9 +189,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Associated project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -199,9 +199,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateDesc Parameter template description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateDesc(@Nullable Output<String> templateDesc) {
             $.templateDesc = templateDesc;
@@ -210,9 +210,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateDesc Parameter template description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateDesc(String templateDesc) {
             return templateDesc(Output.of(templateDesc));
@@ -220,9 +220,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateName Parameter template name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateName(Output<String> templateName) {
             $.templateName = templateName;
@@ -231,9 +231,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateName Parameter template name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateName(String templateName) {
             return templateName(Output.of(templateName));
@@ -242,9 +242,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param templateParams Parameters included in the parameter template
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateParams(Output<List<ParameterTemplateTemplateParamArgs>> templateParams) {
             $.templateParams = templateParams;
@@ -254,9 +254,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param templateParams Parameters included in the parameter template
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateParams(List<ParameterTemplateTemplateParamArgs> templateParams) {
             return templateParams(Output.of(templateParams));
@@ -265,9 +265,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
         /**
          * @param templateParams Parameters included in the parameter template
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateParams(ParameterTemplateTemplateParamArgs... templateParams) {
             return templateParams(List.of(templateParams));
@@ -275,9 +275,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateType Database type of the parameter template. Default: Mysql
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateType(@Nullable Output<String> templateType) {
             $.templateType = templateType;
@@ -286,9 +286,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateType Database type of the parameter template. Default: Mysql
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateType(String templateType) {
             return templateType(Output.of(templateType));
@@ -296,9 +296,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateTypeVersion Database version of the parameter template. Value range: MySQL*5*7 (MySQL 5.7 version), MySQL*8*0 (MySQL 8.0 version)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateTypeVersion(@Nullable Output<String> templateTypeVersion) {
             $.templateTypeVersion = templateTypeVersion;
@@ -307,9 +307,9 @@ public final class ParameterTemplateArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param templateTypeVersion Database version of the parameter template. Value range: MySQL*5*7 (MySQL 5.7 version), MySQL*8*0 (MySQL 8.0 version)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder templateTypeVersion(String templateTypeVersion) {
             return templateTypeVersion(Output.of(templateTypeVersion));

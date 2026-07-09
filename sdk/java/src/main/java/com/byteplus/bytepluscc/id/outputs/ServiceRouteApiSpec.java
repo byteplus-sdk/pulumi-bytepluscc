@@ -17,48 +17,48 @@ import javax.annotation.Nullable;
 public final class ServiceRouteApiSpec {
     /**
      * @return Operation type, for example READ
-     *
+     * 
      */
     private @Nullable String actionType;
     /**
      * @return Operation value, for example search
-     *
+     * 
      */
     private @Nullable String actionValue;
     /**
      * @return Attribute extractor list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<ServiceRouteApiSpecExtractor> extractors;
     /**
      * @return Resource identifier type
-     *
+     * 
      */
     private @Nullable Integer identifierType;
     /**
      * @return Resource identifier value, for example JSON Pointer
-     *
+     * 
      */
     private @Nullable String identifierValue;
     /**
      * @return Response filter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<ServiceRouteApiSpecResponseFilter> responseFilters;
 
     private ServiceRouteApiSpec() {}
     /**
      * @return Operation type, for example READ
-     *
+     * 
      */
     public Optional<String> actionType() {
         return Optional.ofNullable(this.actionType);
     }
     /**
      * @return Operation value, for example search
-     *
+     * 
      */
     public Optional<String> actionValue() {
         return Optional.ofNullable(this.actionValue);
@@ -66,21 +66,21 @@ public final class ServiceRouteApiSpec {
     /**
      * @return Attribute extractor list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<ServiceRouteApiSpecExtractor> extractors() {
         return this.extractors == null ? List.of() : this.extractors;
     }
     /**
      * @return Resource identifier type
-     *
+     * 
      */
     public Optional<Integer> identifierType() {
         return Optional.ofNullable(this.identifierType);
     }
     /**
      * @return Resource identifier value, for example JSON Pointer
-     *
+     * 
      */
     public Optional<String> identifierValue() {
         return Optional.ofNullable(this.identifierValue);
@@ -88,7 +88,7 @@ public final class ServiceRouteApiSpec {
     /**
      * @return Response filter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<ServiceRouteApiSpecResponseFilter> responseFilters() {
         return this.responseFilters == null ? List.of() : this.responseFilters;

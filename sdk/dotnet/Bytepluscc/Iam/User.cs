@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
 {
     /// <summary>
     /// An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var userDemo = new Bytepluscc.Iam.User("UserDemo", new()
     ///     {
@@ -48,12 +48,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Iam
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:iam/user:User example "user_name"
     /// ```

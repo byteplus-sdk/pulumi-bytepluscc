@@ -23,14 +23,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
-     *
+     * 
      */
     @Import(name="accessLogRecordCustomizedHeadersEnabled")
     private @Nullable Output<String> accessLogRecordCustomizedHeadersEnabled;
 
     /**
      * @return Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
-     *
+     * 
      */
     public Optional<Output<String>> accessLogRecordCustomizedHeadersEnabled() {
         return Optional.ofNullable(this.accessLogRecordCustomizedHeadersEnabled);
@@ -38,14 +38,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-     *
+     * 
      */
     @Import(name="aclIds")
     private @Nullable Output<List<String>> aclIds;
 
     /**
      * @return Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-     *
+     * 
      */
     public Optional<Output<List<String>>> aclIds() {
         return Optional.ofNullable(this.aclIds);
@@ -53,14 +53,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable access control. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     @Import(name="aclStatus")
     private @Nullable Output<String> aclStatus;
 
     /**
      * @return Enable access control. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     public Optional<Output<String>> aclStatus() {
         return Optional.ofNullable(this.aclStatus);
@@ -68,14 +68,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
-     *
+     * 
      */
     @Import(name="aclType")
     private @Nullable Output<String> aclType;
 
     /**
      * @return Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
-     *
+     * 
      */
     public Optional<Output<String>> aclType() {
         return Optional.ofNullable(this.aclType);
@@ -83,14 +83,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
-     *
+     * 
      */
     @Import(name="caCertificateId")
     private @Nullable Output<String> caCertificateId;
 
     /**
      * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
-     *
+     * 
      */
     public Optional<Output<String>> caCertificateId() {
         return Optional.ofNullable(this.caCertificateId);
@@ -98,14 +98,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
-     *
+     * 
      */
     @Import(name="caCertificateSource")
     private @Nullable Output<String> caCertificateSource;
 
     /**
      * @return Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
-     *
+     * 
      */
     public Optional<Output<String>> caCertificateSource() {
         return Optional.ofNullable(this.caCertificateSource);
@@ -113,14 +113,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
-     *
+     * 
      */
     @Import(name="certCenterCertificateId")
     private @Nullable Output<String> certCenterCertificateId;
 
     /**
      * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
-     *
+     * 
      */
     public Optional<Output<String>> certCenterCertificateId() {
         return Optional.ofNullable(this.certCenterCertificateId);
@@ -128,14 +128,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
-     *
+     * 
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
-     *
+     * 
      */
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
@@ -143,14 +143,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
-     *
+     * 
      */
     @Import(name="certificateSource")
     private @Nullable Output<String> certificateSource;
 
     /**
      * @return The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
-     *
+     * 
      */
     public Optional<Output<String>> certificateSource() {
         return Optional.ofNullable(this.certificateSource);
@@ -158,14 +158,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Personalized configuration ID. If not bound, the value is an empty string.
-     *
+     * 
      */
     @Import(name="customizedCfgId")
     private @Nullable Output<String> customizedCfgId;
 
     /**
      * @return Personalized configuration ID. If not bound, the value is an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> customizedCfgId() {
         return Optional.ofNullable(this.customizedCfgId);
@@ -173,14 +173,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -189,7 +189,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="domainExtensions")
     private @Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions;
@@ -197,7 +197,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ListenerDomainExtensionArgs>>> domainExtensions() {
         return Optional.ofNullable(this.domainExtensions);
@@ -205,14 +205,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     @Import(name="enableHttp2")
     private @Nullable Output<String> enableHttp2;
 
     /**
      * @return HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
-     *
+     * 
      */
     public Optional<Output<String>> enableHttp2() {
         return Optional.ofNullable(this.enableHttp2);
@@ -220,14 +220,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
-     *
+     * 
      */
     @Import(name="enableQuic")
     private @Nullable Output<String> enableQuic;
 
     /**
      * @return QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
-     *
+     * 
      */
     public Optional<Output<String>> enableQuic() {
         return Optional.ofNullable(this.enableQuic);
@@ -235,14 +235,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener on/off status. Values: on: On (default). off: Off.
-     *
+     * 
      */
     @Import(name="enabled")
     private @Nullable Output<String> enabled;
 
     /**
      * @return Listener on/off status. Values: on: On (default). off: Off.
-     *
+     * 
      */
     public Optional<Output<String>> enabled() {
         return Optional.ofNullable(this.enabled);
@@ -250,14 +250,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Import(name="listenerName")
     private @Nullable Output<String> listenerName;
 
     /**
      * @return Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> listenerName() {
         return Optional.ofNullable(this.listenerName);
@@ -265,14 +265,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Load balancer instance ID to which the listener belongs.
-     *
+     * 
      */
     @Import(name="loadBalancerId", required=true)
     private Output<String> loadBalancerId;
 
     /**
      * @return Load balancer instance ID to which the listener belongs.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
@@ -280,14 +280,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-     *
+     * 
      */
     @Import(name="pcaLeafCertificateId")
     private @Nullable Output<String> pcaLeafCertificateId;
 
     /**
      * @return Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-     *
+     * 
      */
     public Optional<Output<String>> pcaLeafCertificateId() {
         return Optional.ofNullable(this.pcaLeafCertificateId);
@@ -295,14 +295,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
-     *
+     * 
      */
     @Import(name="pcaRootCaCertificateId")
     private @Nullable Output<String> pcaRootCaCertificateId;
 
     /**
      * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
-     *
+     * 
      */
     public Optional<Output<String>> pcaRootCaCertificateId() {
         return Optional.ofNullable(this.pcaRootCaCertificateId);
@@ -310,14 +310,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
-     *
+     * 
      */
     @Import(name="pcaSubCaCertificateId")
     private @Nullable Output<String> pcaSubCaCertificateId;
 
     /**
      * @return CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
-     *
+     * 
      */
     public Optional<Output<String>> pcaSubCaCertificateId() {
         return Optional.ofNullable(this.pcaSubCaCertificateId);
@@ -325,14 +325,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The listener port. Values: 1   - 65535.
-     *
+     * 
      */
     @Import(name="port", required=true)
     private Output<Integer> port;
 
     /**
      * @return The listener port. Values: 1   - 65535.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
@@ -340,14 +340,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener protocol. Supports HTTP and HTTPS protocols.
-     *
+     * 
      */
     @Import(name="protocol", required=true)
     private Output<String> protocol;
 
     /**
      * @return Listener protocol. Supports HTTP and HTTPS protocols.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
@@ -355,14 +355,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Default server group for the listener.
-     *
+     * 
      */
     @Import(name="serverGroupId", required=true)
     private Output<String> serverGroupId;
 
     /**
      * @return Default server group for the listener.
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
@@ -371,7 +371,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * All server groups associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="serverGroups")
     private @Nullable Output<List<ListenerServerGroupArgs>> serverGroups;
@@ -379,7 +379,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return All server groups associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ListenerServerGroupArgs>>> serverGroups() {
         return Optional.ofNullable(this.serverGroups);
@@ -388,7 +388,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Listener tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ListenerTagArgs>> tags;
@@ -396,7 +396,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Listener tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ListenerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -452,9 +452,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessLogRecordCustomizedHeadersEnabled Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accessLogRecordCustomizedHeadersEnabled(@Nullable Output<String> accessLogRecordCustomizedHeadersEnabled) {
             $.accessLogRecordCustomizedHeadersEnabled = accessLogRecordCustomizedHeadersEnabled;
@@ -463,9 +463,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessLogRecordCustomizedHeadersEnabled Whether the listener has enabled the &#39;Log custom header in access logs&#39; feature: on: Feature is enabled. off: Feature is not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accessLogRecordCustomizedHeadersEnabled(String accessLogRecordCustomizedHeadersEnabled) {
             return accessLogRecordCustomizedHeadersEnabled(Output.of(accessLogRecordCustomizedHeadersEnabled));
@@ -473,9 +473,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclIds Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclIds(@Nullable Output<List<String>> aclIds) {
             $.aclIds = aclIds;
@@ -484,9 +484,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclIds Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclIds(List<String> aclIds) {
             return aclIds(Output.of(aclIds));
@@ -494,9 +494,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclIds Access control policy group ID bound to the listener. When the AclStatus parameter is set to on, AclIds is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclIds(String... aclIds) {
             return aclIds(List.of(aclIds));
@@ -504,9 +504,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclStatus Enable access control. Values: on: enabled. off: disabled (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclStatus(@Nullable Output<String> aclStatus) {
             $.aclStatus = aclStatus;
@@ -515,9 +515,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclStatus Enable access control. Values: on: enabled. off: disabled (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclStatus(String aclStatus) {
             return aclStatus(Output.of(aclStatus));
@@ -525,9 +525,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclType Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclType(@Nullable Output<String> aclType) {
             $.aclType = aclType;
@@ -536,9 +536,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclType Access control method. Values: white: allowlist mode. The listener only forwards requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener does not forward any requests. black: denylist mode. The listener only rejects requests from IP addresses or address ranges set in the selected access control policy group. If no IP is added to the selected policy group, the listener forwards all requests. When the AclStatus parameter is set to on, AclType is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aclType(String aclType) {
             return aclType(Output.of(aclType));
@@ -546,9 +546,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificateId(@Nullable Output<String> caCertificateId) {
             $.caCertificateId = caCertificateId;
@@ -557,9 +557,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication in HTTPS listeners. If the certificate source is alb, you must specify the CACertificateId parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificateId(String caCertificateId) {
             return caCertificateId(Output.of(caCertificateId));
@@ -567,9 +567,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificateSource Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificateSource(@Nullable Output<String> caCertificateSource) {
             $.caCertificateSource = caCertificateSource;
@@ -578,9 +578,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param caCertificateSource Source of the CA certificate associated with the HTTPS listener, used for mutual authentication. alb (default): Certificate uploaded via ALB. Standard ALB instances do not support certificates from this source. pca*root: Private root CA certificate purchased or uploaded via Volcano Engine Certificate Center. pca*sub: Private subordinate CA certificate purchased or uploaded via Volcano Engine Certificate Center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder caCertificateSource(String caCertificateSource) {
             return caCertificateSource(Output.of(caCertificateSource));
@@ -588,9 +588,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certCenterCertificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certCenterCertificateId(@Nullable Output<String> certCenterCertificateId) {
             $.certCenterCertificateId = certCenterCertificateId;
@@ -599,9 +599,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certCenterCertificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener with the certificate source set to cert_center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certCenterCertificateId(String certCenterCertificateId) {
             return certCenterCertificateId(Output.of(certCenterCertificateId));
@@ -609,9 +609,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
@@ -620,9 +620,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is alb.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
@@ -630,9 +630,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateSource The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateSource(@Nullable Output<String> certificateSource) {
             $.certificateSource = certificateSource;
@@ -641,9 +641,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateSource The source of the default certificate associated with the HTTPS listener. Values: alb: certificate uploaded via ALB. cert*center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center. pca*leaf: private leaf certificate purchased or uploaded through Volcano Engine Certificate Center.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder certificateSource(String certificateSource) {
             return certificateSource(Output.of(certificateSource));
@@ -651,9 +651,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customizedCfgId Personalized configuration ID. If not bound, the value is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgId(@Nullable Output<String> customizedCfgId) {
             $.customizedCfgId = customizedCfgId;
@@ -662,9 +662,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customizedCfgId Personalized configuration ID. If not bound, the value is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customizedCfgId(String customizedCfgId) {
             return customizedCfgId(Output.of(customizedCfgId));
@@ -672,9 +672,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -683,9 +683,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Listener description. Cannot start with http:// or https://. Must start with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -694,9 +694,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param domainExtensions List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainExtensions(@Nullable Output<List<ListenerDomainExtensionArgs>> domainExtensions) {
             $.domainExtensions = domainExtensions;
@@ -706,9 +706,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param domainExtensions List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainExtensions(List<ListenerDomainExtensionArgs> domainExtensions) {
             return domainExtensions(Output.of(domainExtensions));
@@ -717,9 +717,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param domainExtensions List of additional domain names associated with the HTTPS listener. A single HTTPS listener can be associated with up to 20 additional domain names.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainExtensions(ListenerDomainExtensionArgs... domainExtensions) {
             return domainExtensions(List.of(domainExtensions));
@@ -727,9 +727,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableHttp2 HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHttp2(@Nullable Output<String> enableHttp2) {
             $.enableHttp2 = enableHttp2;
@@ -738,9 +738,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableHttp2 HTTP2.0 feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableHttp2(String enableHttp2) {
             return enableHttp2(Output.of(enableHttp2));
@@ -748,9 +748,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableQuic QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableQuic(@Nullable Output<String> enableQuic) {
             $.enableQuic = enableQuic;
@@ -759,9 +759,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableQuic QUIC feature switch. This parameter is only valid for HTTPS listeners. Values: on: enabled. off: disabled (default). Only standard ALB instances support QUIC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableQuic(String enableQuic) {
             return enableQuic(Output.of(enableQuic));
@@ -769,9 +769,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enabled Listener on/off status. Values: on: On (default). off: Off.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enabled(@Nullable Output<String> enabled) {
             $.enabled = enabled;
@@ -780,9 +780,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enabled Listener on/off status. Values: on: On (default). off: Off.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enabled(String enabled) {
             return enabled(Output.of(enabled));
@@ -790,9 +790,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerName Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerName(@Nullable Output<String> listenerName) {
             $.listenerName = listenerName;
@@ -801,9 +801,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerName Listener name. If not specified, named in the format &#39;protocol-port&#39;. Cannot start with http:// or https://. Must start with a letter or Chinese character and can include numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder listenerName(String listenerName) {
             return listenerName(Output.of(listenerName));
@@ -811,9 +811,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId Load balancer instance ID to which the listener belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(Output<String> loadBalancerId) {
             $.loadBalancerId = loadBalancerId;
@@ -822,9 +822,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerId Load balancer instance ID to which the listener belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerId(String loadBalancerId) {
             return loadBalancerId(Output.of(loadBalancerId));
@@ -832,9 +832,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pcaLeafCertificateId Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pcaLeafCertificateId(@Nullable Output<String> pcaLeafCertificateId) {
             $.pcaLeafCertificateId = pcaLeafCertificateId;
@@ -843,9 +843,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pcaLeafCertificateId Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pcaLeafCertificateId(String pcaLeafCertificateId) {
             return pcaLeafCertificateId(Output.of(pcaLeafCertificateId));
@@ -853,9 +853,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pcaRootCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pcaRootCaCertificateId(@Nullable Output<String> pcaRootCaCertificateId) {
             $.pcaRootCaCertificateId = pcaRootCaCertificateId;
@@ -864,9 +864,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pcaRootCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_root, you must specify the PcaRootCACertificateId parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pcaRootCaCertificateId(String pcaRootCaCertificateId) {
             return pcaRootCaCertificateId(Output.of(pcaRootCaCertificateId));
@@ -874,9 +874,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pcaSubCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pcaSubCaCertificateId(@Nullable Output<String> pcaSubCaCertificateId) {
             $.pcaSubCaCertificateId = pcaSubCaCertificateId;
@@ -885,9 +885,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pcaSubCaCertificateId CA certificate ID associated with the HTTPS listener. This parameter is used for mutual authentication on HTTPS listeners. When the certificate source is pca_sub, you must specify the PcaSubCACertificateId parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pcaSubCaCertificateId(String pcaSubCaCertificateId) {
             return pcaSubCaCertificateId(Output.of(pcaSubCaCertificateId));
@@ -895,9 +895,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port The listener port. Values: 1   - 65535.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Output<Integer> port) {
             $.port = port;
@@ -906,9 +906,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port The listener port. Values: 1   - 65535.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -916,9 +916,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Listener protocol. Supports HTTP and HTTPS protocols.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(Output<String> protocol) {
             $.protocol = protocol;
@@ -927,9 +927,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Listener protocol. Supports HTTP and HTTPS protocols.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -937,9 +937,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Default server group for the listener.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -948,9 +948,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId Default server group for the listener.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
@@ -959,9 +959,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param serverGroups All server groups associated with the listener.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroups(@Nullable Output<List<ListenerServerGroupArgs>> serverGroups) {
             $.serverGroups = serverGroups;
@@ -971,9 +971,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param serverGroups All server groups associated with the listener.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroups(List<ListenerServerGroupArgs> serverGroups) {
             return serverGroups(Output.of(serverGroups));
@@ -982,9 +982,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param serverGroups All server groups associated with the listener.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroups(ListenerServerGroupArgs... serverGroups) {
             return serverGroups(List.of(serverGroups));
@@ -993,9 +993,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Listener tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ListenerTagArgs>> tags) {
             $.tags = tags;
@@ -1005,9 +1005,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Listener tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ListenerTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1016,9 +1016,9 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Listener tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ListenerTagArgs... tags) {
             return tags(List.of(tags));

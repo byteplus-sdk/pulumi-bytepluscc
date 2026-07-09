@@ -28,21 +28,21 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
         public readonly string? AddressPort;
         /// <summary>
         /// Connection address type of the node. Possible values:
-        ///
+        ///   
         ///   Primary: Primary node connection address
         ///   Secondary: Secondary node connection address
         ///   Hidden: Hidden node connection address
         ///   ReadOnly: Read-only node connection address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         /// </summary>
         public readonly string? AddressType;
         /// <summary>
         /// EIP ID bound to the instance's public address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         /// </summary>

@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * When creating a Kafka instance, you can bind an allowlist as needed. After binding the allowlist to the Kafka instance, only IP addresses and address ranges specified in the allowlist can access the Kafka message queue instance. For security, we recommend creating an allowlist and adding the client IP address or IP address range to the Kafka instance&#39;s allowlist. Regularly maintain and manage the allowlist to enhance the security of Kafka instance access
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,18 +38,18 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var kafkaAllowListDemo = new AllowList("kafkaAllowListDemo", AllowListArgs.builder()
  *             .allowList("127.0.0.2")
  *             .allowListDesc("test")
  *             .allowListName("ccapi-text")
- *             .associatedInstances(
+ *             .associatedInstances(            
  *                 AllowListAssociatedInstanceArgs.builder()
  *                     .instance_id("kafka-cnng9x9s***")
  *                     .build(),
@@ -58,116 +58,116 @@ import javax.annotation.Nullable;
  *                     .build())
  *             .applyInstanceNum(2)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:kafka/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:kafka/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
-     *
+     * 
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
      * @return Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
-     *
+     * 
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
      * Allowlist description. Maximum length: 200 characters
-     *
+     * 
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist description. Maximum length: 200 characters
-     *
+     * 
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID
-     *
+     * 
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID
-     *
+     * 
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Number of rules specified in the allowlist
-     *
+     * 
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Number of rules specified in the allowlist
-     *
+     * 
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
-     *
+     * 
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
-     *
+     * 
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
-     *
+     * 
      */
     @Export(name="applyInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> applyInstanceNum;
 
     /**
      * @return Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
-     *
+     * 
      */
     public Output<Integer> applyInstanceNum() {
         return this.applyInstanceNum;
     }
     /**
      * Number of instances bound to the allowlist
-     *
+     * 
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Number of instances bound to the allowlist
-     *
+     * 
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
@@ -175,7 +175,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * Information about the instance bound to the allowlist
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
@@ -183,7 +183,7 @@ public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about the instance bound to the allowlist
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;

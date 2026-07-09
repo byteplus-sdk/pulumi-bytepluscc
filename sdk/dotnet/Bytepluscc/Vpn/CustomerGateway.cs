@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
 {
     /// <summary>
     /// The user gateway is a collection and abstraction of information on your local gateway side. With the user gateway, you can register local gateway information to the cloud VPC. One user gateway can connect to multiple VPN gateways
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vpncustomergatewayDemo = new Bytepluscc.Vpn.CustomerGateway("vpncustomergatewayDemo", new()
     ///     {
@@ -32,12 +32,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     ///         IpVersion = "ipv4",
     ///         ProjectName = "default",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpn/customerGateway:CustomerGateway example "customer_gateway_id"
     /// ```

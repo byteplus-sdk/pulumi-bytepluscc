@@ -21,14 +21,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
-     *
+     * 
      */
     @Import(name="associateType")
     private @Nullable Output<String> associateType;
 
     /**
      * @return Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
-     *
+     * 
      */
     public Optional<Output<String>> associateType() {
         return Optional.ofNullable(this.associateType);
@@ -37,7 +37,7 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of custom route entries associated with the route table
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="customRouteEntries")
     private @Nullable Output<List<RouteTableCustomRouteEntryArgs>> customRouteEntries;
@@ -45,7 +45,7 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of custom route entries associated with the route table
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RouteTableCustomRouteEntryArgs>>> customRouteEntries() {
         return Optional.ofNullable(this.customRouteEntries);
@@ -53,14 +53,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route Table Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Route Table Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -68,14 +68,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv4 Gateway ID associated with the route table
-     *
+     * 
      */
     @Import(name="ipv4GatewayId")
     private @Nullable Output<String> ipv4GatewayId;
 
     /**
      * @return IPv4 Gateway ID associated with the route table
-     *
+     * 
      */
     public Optional<Output<String>> ipv4GatewayId() {
         return Optional.ofNullable(this.ipv4GatewayId);
@@ -83,14 +83,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv6 Gateway ID associated with the route table
-     *
+     * 
      */
     @Import(name="ipv6GatewayId")
     private @Nullable Output<String> ipv6GatewayId;
 
     /**
      * @return IPv6 Gateway ID associated with the route table
-     *
+     * 
      */
     public Optional<Output<String>> ipv6GatewayId() {
         return Optional.ofNullable(this.ipv6GatewayId);
@@ -98,14 +98,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project owning the route table
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project owning the route table
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -113,14 +113,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route Table Name
-     *
+     * 
      */
     @Import(name="routeTableName")
     private @Nullable Output<String> routeTableName;
 
     /**
      * @return Route Table Name
-     *
+     * 
      */
     public Optional<Output<String>> routeTableName() {
         return Optional.ofNullable(this.routeTableName);
@@ -128,14 +128,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of associated subnet IDs
-     *
+     * 
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
      * @return List of associated subnet IDs
-     *
+     * 
      */
     public Optional<Output<List<String>>> subnetIds() {
         return Optional.ofNullable(this.subnetIds);
@@ -144,7 +144,7 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag List
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<RouteTableTagArgs>> tags;
@@ -152,7 +152,7 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag List
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RouteTableTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -160,14 +160,14 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the VPC owning the route table
-     *
+     * 
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC owning the route table
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -208,9 +208,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associateType Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associateType(@Nullable Output<String> associateType) {
             $.associateType = associateType;
@@ -219,9 +219,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associateType Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder associateType(String associateType) {
             return associateType(Output.of(associateType));
@@ -230,9 +230,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param customRouteEntries List of custom route entries associated with the route table
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customRouteEntries(@Nullable Output<List<RouteTableCustomRouteEntryArgs>> customRouteEntries) {
             $.customRouteEntries = customRouteEntries;
@@ -242,9 +242,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param customRouteEntries List of custom route entries associated with the route table
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customRouteEntries(List<RouteTableCustomRouteEntryArgs> customRouteEntries) {
             return customRouteEntries(Output.of(customRouteEntries));
@@ -253,9 +253,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param customRouteEntries List of custom route entries associated with the route table
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customRouteEntries(RouteTableCustomRouteEntryArgs... customRouteEntries) {
             return customRouteEntries(List.of(customRouteEntries));
@@ -263,9 +263,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Route Table Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -274,9 +274,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Route Table Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -284,9 +284,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4GatewayId IPv4 Gateway ID associated with the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv4GatewayId(@Nullable Output<String> ipv4GatewayId) {
             $.ipv4GatewayId = ipv4GatewayId;
@@ -295,9 +295,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4GatewayId IPv4 Gateway ID associated with the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv4GatewayId(String ipv4GatewayId) {
             return ipv4GatewayId(Output.of(ipv4GatewayId));
@@ -305,9 +305,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6GatewayId IPv6 Gateway ID associated with the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6GatewayId(@Nullable Output<String> ipv6GatewayId) {
             $.ipv6GatewayId = ipv6GatewayId;
@@ -316,9 +316,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6GatewayId IPv6 Gateway ID associated with the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6GatewayId(String ipv6GatewayId) {
             return ipv6GatewayId(Output.of(ipv6GatewayId));
@@ -326,9 +326,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project owning the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -337,9 +337,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project owning the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -347,9 +347,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableName Route Table Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTableName(@Nullable Output<String> routeTableName) {
             $.routeTableName = routeTableName;
@@ -358,9 +358,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableName Route Table Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeTableName(String routeTableName) {
             return routeTableName(Output.of(routeTableName));
@@ -368,9 +368,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of associated subnet IDs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -379,9 +379,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of associated subnet IDs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -389,9 +389,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of associated subnet IDs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -400,9 +400,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<RouteTableTagArgs>> tags) {
             $.tags = tags;
@@ -412,9 +412,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<RouteTableTagArgs> tags) {
             return tags(Output.of(tags));
@@ -423,9 +423,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(RouteTableTagArgs... tags) {
             return tags(List.of(tags));
@@ -433,9 +433,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC owning the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -444,9 +444,9 @@ public final class RouteTableArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC owning the route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

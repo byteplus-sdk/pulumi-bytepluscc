@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * SSL encryption settings for the MongoDB instance, including whether the feature is enabled, SSL certificate expiration time, and other information.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,99 +35,99 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var mongoDBSSLStateDemo = new SslState("mongoDBSSLStateDemo", SslStateArgs.builder()
  *             .instanceId("mongo-replica-d1****")
  *             .sslAction("Open")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:mongodb/sslState:SslState example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:mongodb/sslState:SslState")
 public class SslState extends com.pulumi.resources.CustomResource {
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Whether the SSL certificate is valid. Possible values:   - true: Valid   - false: Invalid
-     *
+     * 
      */
     @Export(name="isValid", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isValid;
 
     /**
      * @return Whether the SSL certificate is valid. Possible values:   - true: Valid   - false: Invalid
-     *
+     * 
      */
     public Output<Boolean> isValid() {
         return this.isValid;
     }
     /**
      * Perform operations on the SSL encryption feature. Possible values:   - Open (default): Enable SSL encryption   - Close: Disable SSL encryption   - Update: Update SSL certificate validity period. You can update the SSL certificate validity period only after SSL encryption is enabled.
-     *
+     * 
      */
     @Export(name="sslAction", refs={String.class}, tree="[0]")
     private Output<String> sslAction;
 
     /**
      * @return Perform operations on the SSL encryption feature. Possible values:   - Open (default): Enable SSL encryption   - Close: Disable SSL encryption   - Update: Update SSL certificate validity period. You can update the SSL certificate validity period only after SSL encryption is enabled.
-     *
+     * 
      */
     public Output<String> sslAction() {
         return this.sslAction;
     }
     /**
      * Whether SSL encryption is enabled. Possible values:   - true: Enabled   - false: Disabled
-     *
+     * 
      */
     @Export(name="sslEnable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslEnable;
 
     /**
      * @return Whether SSL encryption is enabled. Possible values:   - true: Enabled   - false: Disabled
-     *
+     * 
      */
     public Output<Boolean> sslEnable() {
         return this.sslEnable;
     }
     /**
      * SSL certificate expiration time, formatted as yyyy-MM-ddTHH:mm:ssZ (UTC). This parameter is returned only when the SSL certificate is valid (that is, IsValid is true).
-     *
+     * 
      */
     @Export(name="sslExpiredTime", refs={String.class}, tree="[0]")
     private Output<String> sslExpiredTime;
 
     /**
      * @return SSL certificate expiration time, formatted as yyyy-MM-ddTHH:mm:ssZ (UTC). This parameter is returned only when the SSL certificate is valid (that is, IsValid is true).
-     *
+     * 
      */
     public Output<String> sslExpiredTime() {
         return this.sslExpiredTime;

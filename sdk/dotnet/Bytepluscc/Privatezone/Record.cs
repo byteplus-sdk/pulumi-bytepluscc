@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
 {
     /// <summary>
     /// A DNS record maps a domain name to resource information within a VPC.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var privateZoneRecordDemo = new Bytepluscc.Privatezone.Record("PrivateZoneRecordDemo", new()
     ///     {
@@ -35,12 +35,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Privatezone
     ///         Zid = 403215,
     ///         Enable = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:privatezone/record:Record example "record_id"
     /// ```

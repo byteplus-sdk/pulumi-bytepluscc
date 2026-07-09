@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 {
     /// <summary>
     /// SASL user details
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var kafkaUserDemo = new Bytepluscc.Kafka.User("KafkaUserDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
     ///         AllAuthority = true,
     ///         Description = "vip",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:kafka/user:User example "instance_id|user_name"
     /// ```
@@ -74,7 +74,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
         /// SASL user type (password type). Supported types:
         ///     - Scram: SASL user of SCRAM type
         ///     - Plain: SASL user of PLAIN type
-        ///
+        ///   
         ///   **Note:**
         ///   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         /// </summary>
@@ -83,7 +83,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 
         /// <summary>
         /// SASL username. Must meet the following requirements:
-        ///
+        ///   
         ///     - Consists of letters, numbers, hyphens (-), or underscores (_)
         ///     - Length: 3–64 characters
         ///     - Username cannot be set to admin or monitor, and must be unique within the instance
@@ -93,7 +93,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 
         /// <summary>
         /// SASL user password. Must meet the following requirements:
-        ///
+        ///   
         ///     - Length: 8–32 characters
         ///     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
         ///     - Supported special characters: `!@#$%^&amp;*()_+-=`
@@ -172,7 +172,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
         /// SASL user type (password type). Supported types:
         ///     - Scram: SASL user of SCRAM type
         ///     - Plain: SASL user of PLAIN type
-        ///
+        ///   
         ///   **Note:**
         ///   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 
         /// <summary>
         /// SASL username. Must meet the following requirements:
-        ///
+        ///   
         ///     - Consists of letters, numbers, hyphens (-), or underscores (_)
         ///     - Length: 3–64 characters
         ///     - Username cannot be set to admin or monitor, and must be unique within the instance
@@ -191,7 +191,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 
         /// <summary>
         /// SASL user password. Must meet the following requirements:
-        ///
+        ///   
         ///     - Length: 8–32 characters
         ///     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
         ///     - Supported special characters: `!@#$%^&amp;*()_+-=`
@@ -237,7 +237,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
         /// SASL user type (password type). Supported types:
         ///     - Scram: SASL user of SCRAM type
         ///     - Plain: SASL user of PLAIN type
-        ///
+        ///   
         ///   **Note:**
         ///   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
         /// </summary>
@@ -246,7 +246,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 
         /// <summary>
         /// SASL username. Must meet the following requirements:
-        ///
+        ///   
         ///     - Consists of letters, numbers, hyphens (-), or underscores (_)
         ///     - Length: 3–64 characters
         ///     - Username cannot be set to admin or monitor, and must be unique within the instance
@@ -256,7 +256,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kafka
 
         /// <summary>
         /// SASL user password. Must meet the following requirements:
-        ///
+        ///   
         ///     - Length: 8–32 characters
         ///     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
         ///     - Supported special characters: `!@#$%^&amp;*()_+-=`

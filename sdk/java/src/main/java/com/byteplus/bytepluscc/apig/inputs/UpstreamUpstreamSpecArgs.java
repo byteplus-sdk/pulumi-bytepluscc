@@ -23,14 +23,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
     /**
      * AI model proxy
-     *
+     * 
      */
     @Import(name="aiProvider")
     private @Nullable Output<UpstreamUpstreamSpecAiProviderArgs> aiProvider;
 
     /**
      * @return AI model proxy
-     *
+     * 
      */
     public Optional<Output<UpstreamUpstreamSpecAiProviderArgs>> aiProvider() {
         return Optional.ofNullable(this.aiProvider);
@@ -38,14 +38,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
     /**
      * Fixed domain name
-     *
+     * 
      */
     @Import(name="domain")
     private @Nullable Output<UpstreamUpstreamSpecDomainArgs> domain;
 
     /**
      * @return Fixed domain name
-     *
+     * 
      */
     public Optional<Output<UpstreamUpstreamSpecDomainArgs>> domain() {
         return Optional.ofNullable(this.domain);
@@ -54,7 +54,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     /**
      * Cloud server
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="ecsInstances")
     private @Nullable Output<List<UpstreamUpstreamSpecEcsInstanceArgs>> ecsInstances;
@@ -62,7 +62,7 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
     /**
      * @return Cloud server
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<UpstreamUpstreamSpecEcsInstanceArgs>>> ecsInstances() {
         return Optional.ofNullable(this.ecsInstances);
@@ -70,14 +70,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
     /**
      * Container Service
-     *
+     * 
      */
     @Import(name="k8SService")
     private @Nullable Output<UpstreamUpstreamSpecK8SServiceArgs> k8SService;
 
     /**
      * @return Container Service
-     *
+     * 
      */
     public Optional<Output<UpstreamUpstreamSpecK8SServiceArgs>> k8SService() {
         return Optional.ofNullable(this.k8SService);
@@ -85,14 +85,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
     /**
      * Registry Center
-     *
+     * 
      */
     @Import(name="nacosService")
     private @Nullable Output<UpstreamUpstreamSpecNacosServiceArgs> nacosService;
 
     /**
      * @return Registry Center
-     *
+     * 
      */
     public Optional<Output<UpstreamUpstreamSpecNacosServiceArgs>> nacosService() {
         return Optional.ofNullable(this.nacosService);
@@ -100,14 +100,14 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
     /**
      * Function service
-     *
+     * 
      */
     @Import(name="veFaas")
     private @Nullable Output<UpstreamUpstreamSpecVeFaasArgs> veFaas;
 
     /**
      * @return Function service
-     *
+     * 
      */
     public Optional<Output<UpstreamUpstreamSpecVeFaasArgs>> veFaas() {
         return Optional.ofNullable(this.veFaas);
@@ -144,9 +144,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param aiProvider AI model proxy
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aiProvider(@Nullable Output<UpstreamUpstreamSpecAiProviderArgs> aiProvider) {
             $.aiProvider = aiProvider;
@@ -155,9 +155,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param aiProvider AI model proxy
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder aiProvider(UpstreamUpstreamSpecAiProviderArgs aiProvider) {
             return aiProvider(Output.of(aiProvider));
@@ -165,9 +165,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param domain Fixed domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(@Nullable Output<UpstreamUpstreamSpecDomainArgs> domain) {
             $.domain = domain;
@@ -176,9 +176,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param domain Fixed domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domain(UpstreamUpstreamSpecDomainArgs domain) {
             return domain(Output.of(domain));
@@ -187,9 +187,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         /**
          * @param ecsInstances Cloud server
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ecsInstances(@Nullable Output<List<UpstreamUpstreamSpecEcsInstanceArgs>> ecsInstances) {
             $.ecsInstances = ecsInstances;
@@ -199,9 +199,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         /**
          * @param ecsInstances Cloud server
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ecsInstances(List<UpstreamUpstreamSpecEcsInstanceArgs> ecsInstances) {
             return ecsInstances(Output.of(ecsInstances));
@@ -210,9 +210,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
         /**
          * @param ecsInstances Cloud server
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ecsInstances(UpstreamUpstreamSpecEcsInstanceArgs... ecsInstances) {
             return ecsInstances(List.of(ecsInstances));
@@ -220,9 +220,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param k8SService Container Service
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder k8SService(@Nullable Output<UpstreamUpstreamSpecK8SServiceArgs> k8SService) {
             $.k8SService = k8SService;
@@ -231,9 +231,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param k8SService Container Service
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder k8SService(UpstreamUpstreamSpecK8SServiceArgs k8SService) {
             return k8SService(Output.of(k8SService));
@@ -241,9 +241,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param nacosService Registry Center
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nacosService(@Nullable Output<UpstreamUpstreamSpecNacosServiceArgs> nacosService) {
             $.nacosService = nacosService;
@@ -252,9 +252,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param nacosService Registry Center
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nacosService(UpstreamUpstreamSpecNacosServiceArgs nacosService) {
             return nacosService(Output.of(nacosService));
@@ -262,9 +262,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param veFaas Function service
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder veFaas(@Nullable Output<UpstreamUpstreamSpecVeFaasArgs> veFaas) {
             $.veFaas = veFaas;
@@ -273,9 +273,9 @@ public final class UpstreamUpstreamSpecArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param veFaas Function service
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder veFaas(UpstreamUpstreamSpecVeFaasArgs veFaas) {
             return veFaas(Output.of(veFaas));

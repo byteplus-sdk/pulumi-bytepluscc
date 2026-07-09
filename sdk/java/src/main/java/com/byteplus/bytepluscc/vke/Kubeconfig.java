@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cluster Management Kubeconfig
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,156 +35,156 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vKEKubeconfigDemo = new Kubeconfig("vKEKubeconfigDemo", KubeconfigArgs.builder()
  *             .clusterId("cd****")
  *             .type("Private")
  *             .validDuration(2)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vke/kubeconfig:Kubeconfig example &#34;cluster_id|kubeconfig_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vke/kubeconfig:Kubeconfig")
 public class Kubeconfig extends com.pulumi.resources.CustomResource {
     /**
      * Cluster ID
-     *
+     * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID
-     *
+     * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Kubeconfig Creation Time
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Kubeconfig Creation Time
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Kubeconfig Expiration Time
-     *
+     * 
      */
     @Export(name="expireTime", refs={String.class}, tree="[0]")
     private Output<String> expireTime;
 
     /**
      * @return Kubeconfig Expiration Time
-     *
+     * 
      */
     public Output<String> expireTime() {
         return this.expireTime;
     }
     /**
      * Kubeconfig Text
-     *
+     * 
      */
     @Export(name="kubeconfig", refs={String.class}, tree="[0]")
     private Output<String> kubeconfig;
 
     /**
      * @return Kubeconfig Text
-     *
+     * 
      */
     public Output<String> kubeconfig() {
         return this.kubeconfig;
     }
     /**
      * KubeconfigID。
-     *
+     * 
      */
     @Export(name="kubeconfigId", refs={String.class}, tree="[0]")
     private Output<String> kubeconfigId;
 
     /**
      * @return KubeconfigID。
-     *
+     * 
      */
     public Output<String> kubeconfigId() {
         return this.kubeconfigId;
     }
     /**
      * Role ID
-     *
+     * 
      */
     @Export(name="roleId", refs={Integer.class}, tree="[0]")
     private Output<Integer> roleId;
 
     /**
      * @return Role ID
-     *
+     * 
      */
     public Output<Integer> roleId() {
         return this.roleId;
     }
     /**
      * Cluster Kubeconfig File Type
-     *
+     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Cluster Kubeconfig File Type
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * User ID
-     *
+     * 
      */
     @Export(name="userId", refs={Integer.class}, tree="[0]")
     private Output<Integer> userId;
 
     /**
      * @return User ID
-     *
+     * 
      */
     public Output<Integer> userId() {
         return this.userId;
     }
     /**
      * Kubeconfig File Validity Period
-     *
+     * 
      */
     @Export(name="validDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> validDuration;
 
     /**
      * @return Kubeconfig File Validity Period
-     *
+     * 
      */
     public Output<Integer> validDuration() {
         return this.validDuration;

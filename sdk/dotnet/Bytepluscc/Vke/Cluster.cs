@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
 {
     /// <summary>
     /// Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vKEClusterDemo = new Bytepluscc.Vke.Cluster("VKEClusterDemo", new()
     ///     {
@@ -36,9 +36,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///                 "subnet-***",
     ///             },
     ///             Api_server_public_access_enabled = true,
-    ///             Api_server_public_access_config =
+    ///             Api_server_public_access_config = 
     ///             {
-    ///                 { "publicAccessNetworkConfig",
+    ///                 { "publicAccessNetworkConfig", 
     ///                 {
     ///                     { "billingType", 3 },
     ///                     { "bandwidth", 1 },
@@ -50,7 +50,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///         PodsConfig = new Bytepluscc.Vke.Inputs.ClusterPodsConfigArgs
     ///         {
     ///             Pod_network_mode = "VpcCniShared",
-    ///             Vpc_cni_config =
+    ///             Vpc_cni_config = 
     ///             {
     ///                 { "subnetIds", new[]
     ///                 {
@@ -76,12 +76,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke
     ///         },
     ///         KubernetesVersionCreate = "1.30",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vke/cluster:Cluster example "cluster_id"
     /// ```

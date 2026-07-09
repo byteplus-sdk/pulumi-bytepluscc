@@ -20,7 +20,7 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
     /**
      * Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="conditionRules")
     private @Nullable Output<List<DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs>> conditionRules;
@@ -28,7 +28,7 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
     /**
      * @return Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs>>> conditionRules() {
         return Optional.ofNullable(this.conditionRules);
@@ -36,14 +36,14 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
 
     /**
      * Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
-     *
+     * 
      */
     @Import(name="connective")
     private @Nullable Output<String> connective;
 
     /**
      * @return Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
-     *
+     * 
      */
     public Optional<Output<String>> connective() {
         return Optional.ofNullable(this.connective);
@@ -77,9 +77,9 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
         /**
          * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditionRules(@Nullable Output<List<DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs>> conditionRules) {
             $.conditionRules = conditionRules;
@@ -89,9 +89,9 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
         /**
          * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditionRules(List<DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs> conditionRules) {
             return conditionRules(Output.of(conditionRules));
@@ -100,9 +100,9 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
         /**
          * @param conditionRules Indicates a rule set. When a user request is received, the content delivery network matches the rules in the set to the request in order. If a rule matches the request, the content delivery network stops matching the remaining rules.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditionRules(DomainOriginRewriteOriginRewriteRuleConditionConditionRuleArgs... conditionRules) {
             return conditionRules(List.of(conditionRules));
@@ -110,9 +110,9 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
 
         /**
          * @param connective Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connective(@Nullable Output<String> connective) {
             $.connective = connective;
@@ -121,9 +121,9 @@ public final class DomainOriginRewriteOriginRewriteRuleConditionArgs extends com
 
         /**
          * @param connective Represents the logical relationship between multiple ConditionRule entries. This parameter has the following values: AND: indicates the logical relationship is &#39;AND&#39;. OR: indicates the logical relationship is &#39;OR&#39;. The default value is OR.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connective(String connective) {
             return connective(Output.of(connective));

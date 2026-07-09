@@ -13,62 +13,62 @@ import javax.annotation.Nullable;
 public final class DomainBrowserCacheConditionConditionRule {
     /**
      * @return When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-     *
+     * 
      */
     private @Nullable String name;
     /**
      * @return Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-     *
+     * 
      */
     private @Nullable String object;
     /**
      * @return Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-     *
+     * 
      */
     private @Nullable String operator;
     /**
      * @return Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-     *
+     * 
      */
     private @Nullable String type;
     /**
      * @return Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-     *
+     * 
      */
     private @Nullable String value;
 
     private DomainBrowserCacheConditionConditionRule() {}
     /**
      * @return When Object is query*name or customize, this parameter is valid. If Object is query*name, this parameter indicates the name of a query parameter. If Object is customize, this parameter indicates the name of a custom header. The length of Name cannot exceed 256 characters and can include digits, letters, percent sign (%), underscore (_), and hyphen (-).
-     *
+     * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
      * @return Specifies the type of matching object. The content delivery network applies matching rules to objects of the specified type in the target. This parameter supports the following values: path: matches the path in the target. directory: matches the directory in the target. filetype: matches the file extension in the target.
-     *
+     * 
      */
     public Optional<String> object() {
         return Optional.ofNullable(this.object);
     }
     /**
      * @return Indicates the matching method. This parameter has the following value: match: If any value in Value exists, it is considered a match.
-     *
+     * 
      */
     public Optional<String> operator() {
         return Optional.ofNullable(this.operator);
     }
     /**
      * @return Specifies the target type. The value of this parameter is url, indicating the target is a URL.
-     *
+     * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
      * @return Represents a set of values separated by semicolons (;). The total length must not exceed 1,024 characters. Printable ASCII characters are allowed, except for the following: consecutive slashes (//), spaces, dollar sign ($), question mark (?), and Delete (ASCII code 127). If any value in the set matches the request, it is considered a match. When Object is path, this parameter specifies one or more paths. Paths must start with a slash (/). You can use one or more asterisks (*) in the path, where each asterisk represents one or more characters. When Object is directory, this parameter specifies one or more directories. Directories must start and end with a slash (/). You can use one or more asterisks (*) in the directory, where each asterisk represents one or more characters. When Object is filetype, this parameter specifies one or more file extensions. Extensions do not need to start with a period (.).
-     *
+     * 
      */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
 {
     /// <summary>
     /// A snapshot consistency group is a combination of snapshots from multiple cloud disks. In scenarios where business systems span multiple cloud disks, you can use a snapshot consistency group to ensure write order consistency and crash consistency for data written to the disks
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var storageEBSSnapshotGroupDemo = new Bytepluscc.Storageebs.SnapshotGroup("StorageEBSSnapshotGroupDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Storageebs
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:storageebs/snapshotGroup:SnapshotGroup example "snapshot_group_id"
     /// ```

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
 {
     /// <summary>
     /// Fileset details
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vEPFSFilesetDemo = new Bytepluscc.Vepfs.Fileset("VEPFSFilesetDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
     ///         FileSystemId = "vepfs-cnbj81448xxxxx",
     ///         FilesetPathOnCreate = "/test1/",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vepfs/fileset:Fileset example "file_system_id|fileset_id"
     /// ```
@@ -122,7 +122,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
 
         /// <summary>
         /// Fileset status. The possible values are:
-        ///
+        ///   
         ///     - `Creating`: Creating
         ///     - `CreateError`: Creation failed
         ///     - `Running`: Running
@@ -313,7 +313,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vepfs
 
         /// <summary>
         /// Fileset status. The possible values are:
-        ///
+        ///   
         ///     - `Creating`: Creating
         ///     - `CreateError`: Creation failed
         ///     - `Running`: Running

@@ -23,14 +23,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
-     *
+     * 
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
-     *
+     * 
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
@@ -38,14 +38,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the container registry instance
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time of the container registry instance
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -53,14 +53,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Public endpoint information for the image repository instance.
-     *
+     * 
      */
     @Import(name="endpoint")
     private @Nullable Output<RegistryEndpointArgs> endpoint;
 
     /**
      * @return Public endpoint information for the image repository instance.
-     *
+     * 
      */
     public Optional<Output<RegistryEndpointArgs>> endpoint() {
         return Optional.ofNullable(this.endpoint);
@@ -68,14 +68,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance expiration time is only available for HybridCharge billing type
-     *
+     * 
      */
     @Import(name="expireTime")
     private @Nullable Output<String> expireTime;
 
     /**
      * @return Instance expiration time is only available for HybridCharge billing type
-     *
+     * 
      */
     public Optional<Output<String>> expireTime() {
         return Optional.ofNullable(this.expireTime);
@@ -83,14 +83,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -98,14 +98,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enter the project to associate with the instance. Each instance can only be associated with one project
-     *
+     * 
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
      * @return Enter the project to associate with the instance. Each instance can only be associated with one project
-     *
+     * 
      */
     public Optional<Output<String>> project() {
         return Optional.ofNullable(this.project);
@@ -113,14 +113,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ProxyCache configuration. Required when set as ProxyCache
-     *
+     * 
      */
     @Import(name="proxyCache")
     private @Nullable Output<RegistryProxyCacheArgs> proxyCache;
 
     /**
      * @return ProxyCache configuration. Required when set as ProxyCache
-     *
+     * 
      */
     public Optional<Output<RegistryProxyCacheArgs>> proxyCache() {
         return Optional.ofNullable(this.proxyCache);
@@ -128,14 +128,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set as ProxyCache instance
-     *
+     * 
      */
     @Import(name="proxyCacheEnabled")
     private @Nullable Output<Boolean> proxyCacheEnabled;
 
     /**
      * @return Set as ProxyCache instance
-     *
+     * 
      */
     public Optional<Output<Boolean>> proxyCacheEnabled() {
         return Optional.ofNullable(this.proxyCacheEnabled);
@@ -143,14 +143,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance auto-renewal type is only available for HybridCharge billing type
-     *
+     * 
      */
     @Import(name="renewType")
     private @Nullable Output<String> renewType;
 
     /**
      * @return Instance auto-renewal type is only available for HybridCharge billing type
-     *
+     * 
      */
     public Optional<Output<String>> renewType() {
         return Optional.ofNullable(this.renewType);
@@ -158,14 +158,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<RegistryStatusArgs> status;
 
     /**
      * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-     *
+     * 
      */
     public Optional<Output<RegistryStatusArgs>> status() {
         return Optional.ofNullable(this.status);
@@ -174,7 +174,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     /**
      * Instance tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<RegistryTagArgs>> tags;
@@ -182,7 +182,7 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Instance tags
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RegistryTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -190,14 +190,14 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -240,9 +240,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -251,9 +251,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -261,9 +261,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time of the container registry instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -272,9 +272,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time of the container registry instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -282,9 +282,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoint Public endpoint information for the image repository instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpoint(@Nullable Output<RegistryEndpointArgs> endpoint) {
             $.endpoint = endpoint;
@@ -293,9 +293,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoint Public endpoint information for the image repository instance.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpoint(RegistryEndpointArgs endpoint) {
             return endpoint(Output.of(endpoint));
@@ -303,9 +303,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expireTime Instance expiration time is only available for HybridCharge billing type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expireTime(@Nullable Output<String> expireTime) {
             $.expireTime = expireTime;
@@ -314,9 +314,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expireTime Instance expiration time is only available for HybridCharge billing type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expireTime(String expireTime) {
             return expireTime(Output.of(expireTime));
@@ -324,9 +324,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -335,9 +335,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -345,9 +345,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder project(@Nullable Output<String> project) {
             $.project = project;
@@ -356,9 +356,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder project(String project) {
             return project(Output.of(project));
@@ -366,9 +366,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyCache ProxyCache configuration. Required when set as ProxyCache
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyCache(@Nullable Output<RegistryProxyCacheArgs> proxyCache) {
             $.proxyCache = proxyCache;
@@ -377,9 +377,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyCache ProxyCache configuration. Required when set as ProxyCache
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyCache(RegistryProxyCacheArgs proxyCache) {
             return proxyCache(Output.of(proxyCache));
@@ -387,9 +387,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyCacheEnabled Set as ProxyCache instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyCacheEnabled(@Nullable Output<Boolean> proxyCacheEnabled) {
             $.proxyCacheEnabled = proxyCacheEnabled;
@@ -398,9 +398,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyCacheEnabled Set as ProxyCache instance
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyCacheEnabled(Boolean proxyCacheEnabled) {
             return proxyCacheEnabled(Output.of(proxyCacheEnabled));
@@ -408,9 +408,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewType Instance auto-renewal type is only available for HybridCharge billing type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder renewType(@Nullable Output<String> renewType) {
             $.renewType = renewType;
@@ -419,9 +419,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewType Instance auto-renewal type is only available for HybridCharge billing type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder renewType(String renewType) {
             return renewType(Output.of(renewType));
@@ -429,9 +429,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<RegistryStatusArgs> status) {
             $.status = status;
@@ -440,9 +440,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(RegistryStatusArgs status) {
             return status(Output.of(status));
@@ -451,9 +451,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Instance tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<RegistryTagArgs>> tags) {
             $.tags = tags;
@@ -463,9 +463,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Instance tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<RegistryTagArgs> tags) {
             return tags(Output.of(tags));
@@ -474,9 +474,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Instance tags
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(RegistryTagArgs... tags) {
             return tags(List.of(tags));
@@ -484,9 +484,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -495,9 +495,9 @@ public final class RegistryState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));

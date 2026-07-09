@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * Public IP (Elastic IP Address, EIP) and its public outbound bandwidth are IP connectivity services provided by Volcano Engine for cloud resources, which can be purchased and held independently. Public IP supports direct binding to cloud servers (including ECS cloud servers, EBM bare metal servers, GPU cloud servers), and also supports binding to public NAT gateways, load balancers, and secondary network interfaces, providing public network connectivity for cloud servers.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var eipDemo = new Eip("eipDemo", EipArgs.builder()
  *             .name("EipDemo")
@@ -63,452 +63,452 @@ import javax.annotation.Nullable;
  *             .instanceType("EcsInstance")
  *             .directMode(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/eip:Eip example &#34;allocation_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/eip:Eip")
 public class Eip extends com.pulumi.resources.CustomResource {
     /**
      * Public IP ID.
-     *
+     * 
      */
     @Export(name="allocationId", refs={String.class}, tree="[0]")
     private Output<String> allocationId;
 
     /**
      * @return Public IP ID.
-     *
+     * 
      */
     public Output<String> allocationId() {
         return this.allocationId;
     }
     /**
      * Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Maximum bandwidth of the public IP. Default is &#39;1&#39;, unit: Mbps. If BillingType is 1: range is 1~500. If BillingType is 2: range is 1~500. If BillingType is 3: range is 1~200.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
-     *
+     * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
      * @return Shared bandwidth package ID, indicating the public IP is added to a shared bandwidth package. To add a public IP to a shared bandwidth package, the following conditions must be met: Both have the same security protection type. Both are in the same region. The public IP must use pay-as-you-go billing. The shared bandwidth package must be IPv4 type.
-     *
+     * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
      * Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Billing method for public IP. Values: 1: annual/monthly. 2: pay-as-you-go   - based on bandwidth cap. 3: pay-as-you-go   - based on actual traffic.
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Whether the public IP is locked. Normal: normal. FinancialLocked: locked.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time of the public IP.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the public IP.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Expected forced resource recycle time. For subscription public IPs, this parameter returns a value. For pay-as-you-go public IPs, this parameter returns a value only when frozen due to overdue payment.
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the public IP.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the public IP.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
-     *
+     * 
      */
     @Export(name="directMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> directMode;
 
     /**
      * @return Whether to enable passthrough mode when binding public IP. Enter the following enum values exactly as shown; do not use other values. false (default): passthrough mode not enabled. true: passthrough mode enabled.
-     *
+     * 
      */
     public Output<Boolean> directMode() {
         return this.directMode;
     }
     /**
      * Public IP address.
-     *
+     * 
      */
     @Export(name="eipAddress", refs={String.class}, tree="[0]")
     private Output<String> eipAddress;
 
     /**
      * @return Public IP address.
-     *
+     * 
      */
     public Output<String> eipAddress() {
         return this.eipAddress;
     }
     /**
      * Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time of the public IP. For subscription billing, the return value is the expiration time. For pay-as-you-go billing, the return value is empty.
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Currently bound instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Currently bound instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
-     *
+     * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Current bound instance type. Nat: public NAT gateway. NetworkInterface: elastic network interface. ClbInstance: load balancer. EcsInstance: cloud server. HaVip: high availability virtual IP.
-     *
+     * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
-     *
+     * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
      * @return Apply for a specified public IP address. Only supports entering IP addresses that have been released after use; if not specified, the IP address is assigned automatically. Specified public IP address
-     *
+     * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
      * IP address pool ID.
-     *
+     * 
      */
     @Export(name="ipAddressPoolId", refs={String.class}, tree="[0]")
     private Output<String> ipAddressPoolId;
 
     /**
      * @return IP address pool ID.
-     *
+     * 
      */
     public Output<String> ipAddressPoolId() {
         return this.ipAddressPoolId;
     }
     /**
      * Whether it is blocked. true: yes. false: no.
-     *
+     * 
      */
     @Export(name="isBlocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBlocked;
 
     /**
      * @return Whether it is blocked. true: yes. false: no.
-     *
+     * 
      */
     public Output<Boolean> isBlocked() {
         return this.isBlocked;
     }
     /**
      * Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
-     *
+     * 
      */
     @Export(name="isp", refs={String.class}, tree="[0]")
     private Output<String> isp;
 
     /**
      * @return Line type. BGP: BGP (multi-line). ChinaMobile: China Mobile static single line. ChinaTelecom: China Telecom static single line. ChinaUnicom: China Unicom static single line. SingleLine*BGP: BGP single line. Fusion*BGP: Fusion BGP. ChinaMobile*Value: China Mobile Value static single line. ChinaUnicom*Value: China Unicom Value static single line. ChinaTelecom_Value: China Telecom Value static single line.
-     *
+     * 
      */
     public Output<String> isp() {
         return this.isp;
     }
     /**
      * Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
-     *
+     * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason for public IP lock. financial: locked due to overdue payment. unlock: restoring after recharge following suspension for overdue payment. Empty value: not locked.
-     *
+     * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Name of the public IP.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Name of the public IP.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
-     *
+     * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Resource freeze time. This parameter returns a value only when the resource is frozen due to overdue payment.
-     *
+     * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
-     *
+     * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return When representing the duration for purchasing a subscription public IP, the default is &#39;1&#39;. If PeriodUnit is set to 1, Period can be 1~9, 12, 24, 36, 48, or 60. If PeriodUnit is set to 2, Period can be 1~5. When representing the duration for temporary upgrade, the unit is hours, and the range is 1~720.
-     *
+     * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
-     *
+     * 
      */
     @Export(name="periodUnit", refs={Integer.class}, tree="[0]")
     private Output<Integer> periodUnit;
 
     /**
      * @return Unit for the duration when purchasing annual/monthly public IP. Values: 1 (default): month. 2: year.
-     *
+     * 
      */
     public Output<Integer> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
-     *
+     * 
      */
     @Export(name="privateIpAddress", refs={String.class}, tree="[0]")
     private Output<String> privateIpAddress;
 
     /**
      * @return Private IP address of the instance to bind the public IP to. Only ECS primary network interface private IP addresses and secondary network interface IP addresses are supported. If not specified: If InstanceType is EcsInstance, binds to the primary private IP address of the ECS primary network interface. If InstanceType is NetworkInterface, binds to the primary private IP address of the secondary network interface.
-     *
+     * 
      */
     public Output<String> privateIpAddress() {
         return this.privateIpAddress;
     }
     /**
      * Name of the project to which the public IP belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the public IP belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
-     *
+     * 
      */
     @Export(name="releaseWithInstance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> releaseWithInstance;
 
     /**
      * @return Whether to release the public IP when the cloud server instance is deleted. Only valid for pay-as-you-go public IPs. When enabled, the public IP is released together with the instance when the system automatically recycles the instance (24 hours after unsubscription, upon expiration, or due to overdue payment) or when the DeleteInstances API is called. true: yes. false: no.
-     *
+     * 
      */
     public Output<Boolean> releaseWithInstance() {
         return this.releaseWithInstance;
     }
     /**
      * Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
-     *
+     * 
      */
     @Export(name="renewPeriodTimes", refs={Integer.class}, tree="[0]")
     private Output<Integer> renewPeriodTimes;
 
     /**
      * @return Duration for automatic renewal. Valid values: 1, 2, 3, 6, 12. Unit: month. If RenewType is 2, RenewPeriodTimes must be specified.
-     *
+     * 
      */
     public Output<Integer> renewPeriodTimes() {
         return this.renewPeriodTimes;
     }
     /**
      * Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
-     *
+     * 
      */
     @Export(name="renewType", refs={Integer.class}, tree="[0]")
     private Output<Integer> renewType;
 
     /**
      * @return Renewal method for annual/monthly public IP. Values: 1 (default): manual renewal. 2: automatic renewal. 3: do not renew upon expiration.
-     *
+     * 
      */
     public Output<Integer> renewType() {
         return this.renewType;
     }
     /**
      * DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
-     *
+     * 
      */
     @Export(name="securityProtectionInstanceId", refs={Integer.class}, tree="[0]")
     private Output<Integer> securityProtectionInstanceId;
 
     /**
      * @return DDoS native protection (Enterprise Edition) ID. You can call the DescInstanceList API to query the ID of DDoS native protection (Enterprise Edition). When SecurityProtectionTypes is set to AntiDDoS_Enhanced, this parameter is required.
-     *
+     * 
      */
     public Output<Integer> securityProtectionInstanceId() {
         return this.securityProtectionInstanceId;
     }
     /**
      * Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-     *
+     * 
      */
     @Export(name="securityProtectionTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityProtectionTypes;
 
     /**
      * @return Protection type. AntiDDoS_Enhanced: Public IPs with enhanced protection can be added to DDoS Native Protection (Enterprise Edition) instances. Null value: Public IPs with default protection type.
-     *
+     * 
      */
     public Output<List<String>> securityProtectionTypes() {
         return this.securityProtectionTypes;
     }
     /**
      * Managed by service
-     *
+     * 
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Managed by service
-     *
+     * 
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the public IP. Attaching: binding in progress. Detaching: unbinding in progress. Attached: bound. Available: available. Deleting: deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -516,7 +516,7 @@ public class Eip extends com.pulumi.resources.CustomResource {
     /**
      * Tag information of the public IP
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,EipTag.class}, tree="[0,1]")
     private Output<List<EipTag>> tags;
@@ -524,21 +524,21 @@ public class Eip extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information of the public IP
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<EipTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the public IP was updated.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Time when the public IP was updated.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

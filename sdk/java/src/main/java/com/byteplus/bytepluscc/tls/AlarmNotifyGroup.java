@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * The logging service notification group is a collection of alarm notification channels used to specify the action strategy after an alarm is triggered. You can add notification rules, and the logging service will intelligently assign different alarm notification channels based on these rules.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,26 +38,26 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var tLSAlarmNotifyGroupDemo = new AlarmNotifyGroup("tLSAlarmNotifyGroupDemo", AlarmNotifyGroupArgs.builder()
  *             .alarmNotifyGroupName("ccapi-test")
  *             .iamProjectName("default")
- *             .noticeRules(
+ *             .noticeRules(            
  *                 AlarmNotifyGroupNoticeRuleArgs.builder()
  *                     .rule_node("{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"notice\\\"]\"]},{\"Type\":\"Condition\",\"Value\":[\"Duration\",\">=\",\"5\"]}]},{\"Type\":\"Condition\",\"Value\":[\"NotifyTime\",\"in\",\"[\\\"1776669310\\\",\\\"1777014911\\\"]\"]}]},{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"warning\\\",\\\"critical\\\"]\"]}]}")
- *                     .receiver_infos(Arrays.asList(
+ *                     .receiver_infos(Arrays.asList(                    
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "User"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxx",
  *                                 "xxxxxxx")),
- *                             Map.entry("receiverChannels", Arrays.asList(
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
  *                                 "Email",
  *                                 "Sms",
  *                                 "Phone",
@@ -80,7 +80,7 @@ import javax.annotation.Nullable;
  *                         ),
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "User"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("receiverChannels", Arrays.asList("Lark")),
@@ -103,7 +103,7 @@ import javax.annotation.Nullable;
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "UserGroup"),
  *                             Map.entry("receiverNames", Arrays.asList("xxxxxxxxx")),
- *                             Map.entry("receiverChannels", Arrays.asList(
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
  *                                 "Email",
  *                                 "Phone",
  *                                 "GeneralWebhook")),
@@ -128,13 +128,13 @@ import javax.annotation.Nullable;
  *                     .build(),
  *                 AlarmNotifyGroupNoticeRuleArgs.builder()
  *                     .rule_node("{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"notice\\\"]\"]},{\"Type\":\"Condition\",\"Value\":[\"Alarm\",\"in\",\"[\\\"test1\\\"]\"]}]},{\"Type\":\"Condition\",\"Value\":[\"AlarmID\",\"in\",\"[\\\"66fff5a0-af57-43d1-a40d-f2d32605aa61\\\"]\"]}]},{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Duration\",\"==\",\"5\"]},{\"Type\":\"Condition\",\"Value\":[\"NotifyTime\",\"in\",\"[\\\"1776653008\\\",\\\"1776998606\\\"]\"]}]}]}")
- *                     .receiver_infos(Arrays.asList(
+ *                     .receiver_infos(Arrays.asList(                    
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "User"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
- *                             Map.entry("receiverChannels", Arrays.asList(
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
  *                                 "Email",
  *                                 "Sms",
  *                                 "Phone")),
@@ -142,7 +142,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("endTime", "23:59:59"),
  *                             Map.entry("generalWebhookUrl", ""),
  *                             Map.entry("generalWebhookMethod", ""),
- *                             Map.entry("generalWebhookHeaders", Arrays.asList(
+ *                             Map.entry("generalWebhookHeaders", Arrays.asList(                            
  *                                 Map.ofEntries(
  *                                     Map.entry("key", "Content-Type"),
  *                                     Map.entry("value", "application/json")
@@ -156,17 +156,17 @@ import javax.annotation.Nullable;
  *                             Map.entry("alarmWebhookIntegrationId", "aa6d01cd-5cf4-449d-a944-xxxxxxxxx"),
  *                             Map.entry("alarmWebhookIntegrationName", "test"),
  *                             Map.entry("alarmWebhookIsAtAll", false),
- *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
  *                         ),
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "UserGroup"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
- *                             Map.entry("receiverChannels", Arrays.asList(
+ *                             Map.entry("receiverChannels", Arrays.asList(                            
  *                                 "Email",
  *                                 "Sms",
  *                                 "Phone")),
@@ -183,14 +183,14 @@ import javax.annotation.Nullable;
  *                             Map.entry("alarmWebhookIntegrationId", "aa6d01cd-5cf4-449d-a944-xxxxxxxxx"),
  *                             Map.entry("alarmWebhookIntegrationName", "test"),
  *                             Map.entry("alarmWebhookIsAtAll", false),
- *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
  *                         ),
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "User"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("receiverChannels", Arrays.asList("Lark")),
@@ -207,14 +207,14 @@ import javax.annotation.Nullable;
  *                             Map.entry("alarmWebhookIntegrationId", "abc47ee4-9ad3-4c25-803f-xxxxxxxxx"),
  *                             Map.entry("alarmWebhookIntegrationName", "飞书test"),
  *                             Map.entry("alarmWebhookIsAtAll", false),
- *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
  *                         ),
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "User"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("receiverChannels", Arrays.asList("DingTalk")),
@@ -231,14 +231,14 @@ import javax.annotation.Nullable;
  *                             Map.entry("alarmWebhookIntegrationId", "3eaaef0a-134a-4d62-bf48-xxxxxxxxx"),
  *                             Map.entry("alarmWebhookIntegrationName", "钉钉test"),
  *                             Map.entry("alarmWebhookIsAtAll", false),
- *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
  *                         ),
  *                         Map.ofEntries(
  *                             Map.entry("receiverType", "User"),
- *                             Map.entry("receiverNames", Arrays.asList(
+ *                             Map.entry("receiverNames", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("receiverChannels", Arrays.asList("WeChat")),
@@ -255,7 +255,7 @@ import javax.annotation.Nullable;
  *                             Map.entry("alarmWebhookIntegrationId", "c0454fd5-6597-4fc9-ad53-xxxxxxxxx"),
  *                             Map.entry("alarmWebhookIntegrationName", "企业微信test"),
  *                             Map.entry("alarmWebhookIsAtAll", false),
- *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(
+ *                             Map.entry("alarmWebhookAtUsers", Arrays.asList(                            
  *                                 "xxxxxxxxx",
  *                                 "xxxxxxxxx")),
  *                             Map.entry("alarmWebhookAtGroups", Arrays.asList("xxxxxxxxx"))
@@ -264,74 +264,74 @@ import javax.annotation.Nullable;
  *                     .has_end_node(false)
  *                     .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup example &#34;alarm_notify_group_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup")
 public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     /**
      * Alarm notification group ID.
-     *
+     * 
      */
     @Export(name="alarmNotifyGroupId", refs={String.class}, tree="[0]")
     private Output<String> alarmNotifyGroupId;
 
     /**
      * @return Alarm notification group ID.
-     *
+     * 
      */
     public Output<String> alarmNotifyGroupId() {
         return this.alarmNotifyGroupId;
     }
     /**
      * Alarm notification group name. Refer to the resource naming rules.
-     *
+     * 
      */
     @Export(name="alarmNotifyGroupName", refs={String.class}, tree="[0]")
     private Output<String> alarmNotifyGroupName;
 
     /**
      * @return Alarm notification group name. Refer to the resource naming rules.
-     *
+     * 
      */
     public Output<String> alarmNotifyGroupName() {
         return this.alarmNotifyGroupName;
     }
     /**
      * Time when the alarm notification group was created.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Time when the alarm notification group was created.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-     *
+     * 
      */
     @Export(name="iamProjectName", refs={String.class}, tree="[0]")
     private Output<String> iamProjectName;
 
     /**
      * @return Name of the IAM project to which the alarm group belongs. If not specified, the logging service adds the alarm group to the IAM project named default.
-     *
+     * 
      */
     public Output<String> iamProjectName() {
         return this.iamProjectName;
@@ -339,7 +339,7 @@ public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     /**
      * Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="noticeRules", refs={List.class,AlarmNotifyGroupNoticeRule.class}, tree="[0,1]")
     private Output<List<AlarmNotifyGroupNoticeRule>> noticeRules;
@@ -347,21 +347,21 @@ public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Alarm notification group configuration. Note: If the NoticeRules parameter is configured, leave the NotifyType and Receivers parameters empty. If NoticeRules is empty, you must configure the NotifyType and Receivers parameters. When modifying, do not change NoticeRules, NotifyType, and Receivers at the same time, as some fields may not take effect.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AlarmNotifyGroupNoticeRule>> noticeRules() {
         return this.noticeRules;
     }
     /**
      * Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-     *
+     * 
      */
     @Export(name="notifyTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> notifyTypes;
 
     /**
      * @return Type of alarm notification. Trigger: alarm triggered. Recovery: alarm recovered.
-     *
+     * 
      */
     public Output<List<String>> notifyTypes() {
         return this.notifyTypes;
@@ -369,7 +369,7 @@ public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     /**
      * IAM user list to receive alarms. You can set 1–10 IAM users.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="receivers", refs={List.class,AlarmNotifyGroupReceiver.class}, tree="[0,1]")
     private Output<List<AlarmNotifyGroupReceiver>> receivers;
@@ -377,21 +377,21 @@ public class AlarmNotifyGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return IAM user list to receive alarms. You can set 1–10 IAM users.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<AlarmNotifyGroupReceiver>> receivers() {
         return this.receivers;
     }
     /**
      * Time when the alarm notification group was modified.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Time when the alarm notification group was modified.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

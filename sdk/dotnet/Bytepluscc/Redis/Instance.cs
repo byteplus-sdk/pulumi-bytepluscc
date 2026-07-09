@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 {
     /// <summary>
     /// The basic unit of Redis cache database is the instance. An instance is an independent, virtualized database runtime environment, consisting of multiple data nodes and proxy nodes. The Redis engine runs on the data nodes.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var redisInstanceDemo = new Bytepluscc.Redis.Instance("RedisInstanceDemo", new()
     ///     {
@@ -68,12 +68,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
     ///         ContinuousBackup = true,
     ///         CreateBackup = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:redis/instance:Instance example "instance_id"
     /// ```

@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * The data processing task cleanses, transforms, and distributes log data in the log service, processing data from the source log topic and outputting it to the target log topic
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var tLSEtlDemo = new Etl("tLSEtlDemo", EtlArgs.builder()
  *             .dslType("NORMAL")
@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * # åˆ é™¤contentå­—æ®µ
  * f_drop("content")            """)
  *             .sourceTopicId("b881e3cd-3c45-42e7-966f-fe98xxxxxx")
- *             .targetResources(
+ *             .targetResources(            
  *                 EtlTargetResourceArgs.builder()
  *                     .alias("test-dst12")
  *                     .region("cn-shanghai")
@@ -72,214 +72,214 @@ import javax.annotation.Nullable;
  *             .taskType("Resident")
  *             .toTime(1780475069)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/etl:Etl example &#34;task_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/etl:Etl")
 public class Etl extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the data processing task
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the data processing task
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Brief description of the data processing task. Does not support &lt;&gt;, &#39;, \, or \. Length: 0–64 characters
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Brief description of the data processing task. Does not support &lt;&gt;, &#39;, \, or \. Length: 0–64 characters
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Syntax type of the processing rule. Fixed as NORMAL
-     *
+     * 
      */
     @Export(name="dslType", refs={String.class}, tree="[0]")
     private Output<String> dslType;
 
     /**
      * @return Syntax type of the processing rule. Fixed as NORMAL
-     *
+     * 
      */
     public Output<String> dslType() {
         return this.dslType;
     }
     /**
      * Whether the data processing task is enabled. true: Enabled. false: Disabled
-     *
+     * 
      */
     @Export(name="enable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enable;
 
     /**
      * @return Whether the data processing task is enabled. true: Enabled. false: Disabled
-     *
+     * 
      */
     public Output<Boolean> enable() {
         return this.enable;
     }
     /**
      * Task scheduling status. WAITING: Preparing. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. RESTARTING: Restarting
-     *
+     * 
      */
     @Export(name="etlStatus", refs={String.class}, tree="[0]")
     private Output<String> etlStatus;
 
     /**
      * @return Task scheduling status. WAITING: Preparing. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. RESTARTING: Restarting
-     *
+     * 
      */
     public Output<String> etlStatus() {
         return this.etlStatus;
     }
     /**
      * The processing start time of the data processing task, in seconds as a Unix timestamp
-     *
+     * 
      */
     @Export(name="fromTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> fromTime;
 
     /**
      * @return The processing start time of the data processing task, in seconds as a Unix timestamp
-     *
+     * 
      */
     public Output<Integer> fromTime() {
         return this.fromTime;
     }
     /**
      * The most recent activation time of the data processing task
-     *
+     * 
      */
     @Export(name="lastEnableTime", refs={String.class}, tree="[0]")
     private Output<String> lastEnableTime;
 
     /**
      * @return The most recent activation time of the data processing task
-     *
+     * 
      */
     public Output<String> lastEnableTime() {
         return this.lastEnableTime;
     }
     /**
      * Modification time of the data processing task
-     *
+     * 
      */
     @Export(name="modifyTime", refs={String.class}, tree="[0]")
     private Output<String> modifyTime;
 
     /**
      * @return Modification time of the data processing task
-     *
+     * 
      */
     public Output<String> modifyTime() {
         return this.modifyTime;
     }
     /**
      * Data processing task name
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Data processing task name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Log project ID to which the data processing task belongs
-     *
+     * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return Log project ID to which the data processing task belongs
-     *
+     * 
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Log project name to which the data processing task belongs
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Log project name to which the data processing task belongs
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Processing rule script used by the data processing task
-     *
+     * 
      */
     @Export(name="script", refs={String.class}, tree="[0]")
     private Output<String> script;
 
     /**
      * @return Processing rule script used by the data processing task
-     *
+     * 
      */
     public Output<String> script() {
         return this.script;
     }
     /**
      * Source log topic ID of the data processing task
-     *
+     * 
      */
     @Export(name="sourceTopicId", refs={String.class}, tree="[0]")
     private Output<String> sourceTopicId;
 
     /**
      * @return Source log topic ID of the data processing task
-     *
+     * 
      */
     public Output<String> sourceTopicId() {
         return this.sourceTopicId;
     }
     /**
      * Source log topic name of the data processing task
-     *
+     * 
      */
     @Export(name="sourceTopicName", refs={String.class}, tree="[0]")
     private Output<String> sourceTopicName;
 
     /**
      * @return Source log topic name of the data processing task
-     *
+     * 
      */
     public Output<String> sourceTopicName() {
         return this.sourceTopicName;
@@ -287,7 +287,7 @@ public class Etl extends com.pulumi.resources.CustomResource {
     /**
      * Information about the output target
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="targetResources", refs={List.class,EtlTargetResource.class}, tree="[0,1]")
     private Output<List<EtlTargetResource>> targetResources;
@@ -295,49 +295,49 @@ public class Etl extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about the output target
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<EtlTargetResource>> targetResources() {
         return this.targetResources;
     }
     /**
      * Data processing task ID
-     *
+     * 
      */
     @Export(name="taskId", refs={String.class}, tree="[0]")
     private Output<String> taskId;
 
     /**
      * @return Data processing task ID
-     *
+     * 
      */
     public Output<String> taskId() {
         return this.taskId;
     }
     /**
      * Type of the data processing task. Fixed as Resident
-     *
+     * 
      */
     @Export(name="taskType", refs={String.class}, tree="[0]")
     private Output<String> taskType;
 
     /**
      * @return Type of the data processing task. Fixed as Resident
-     *
+     * 
      */
     public Output<String> taskType() {
         return this.taskType;
     }
     /**
      * The processing end time of the data processing task, in seconds as a Unix timestamp
-     *
+     * 
      */
     @Export(name="toTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> toTime;
 
     /**
      * @return The processing end time of the data processing task, in seconds as a Unix timestamp
-     *
+     * 
      */
     public Output<Integer> toTime() {
         return this.toTime;

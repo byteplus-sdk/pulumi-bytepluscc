@@ -38,6 +38,7 @@ type LookupInstanceResult struct {
 	CpuMemory                    GetInstanceCpuMemory                    `pulumi:"cpuMemory"`
 	CreatedAt                    string                                  `pulumi:"createdAt"`
 	CreditSpecification          string                                  `pulumi:"creditSpecification"`
+	DataVolumes                  []GetInstanceDataVolume                 `pulumi:"dataVolumes"`
 	DeletionProtection           bool                                    `pulumi:"deletionProtection"`
 	DeploymentSetGroupNumber     int                                     `pulumi:"deploymentSetGroupNumber"`
 	DeploymentSetId              string                                  `pulumi:"deploymentSetId"`
@@ -149,6 +150,10 @@ func (o LookupInstanceResultOutput) CreatedAt() pulumi.StringOutput {
 
 func (o LookupInstanceResultOutput) CreditSpecification() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreditSpecification }).(pulumi.StringOutput)
+}
+
+func (o LookupInstanceResultOutput) DataVolumes() GetInstanceDataVolumeArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceDataVolume { return v.DataVolumes }).(GetInstanceDataVolumeArrayOutput)
 }
 
 func (o LookupInstanceResultOutput) DeletionProtection() pulumi.BoolOutput {

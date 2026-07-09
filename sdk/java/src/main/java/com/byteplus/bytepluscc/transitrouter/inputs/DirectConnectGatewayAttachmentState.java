@@ -21,14 +21,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Account ID to which the network instance connection belongs
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Account ID to which the network instance connection belongs
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -36,14 +36,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Whether to automatically synchronize TR routes to the network instance route table
-     *
+     * 
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
         return Optional.ofNullable(this.autoPublishRouteEnabled);
@@ -51,14 +51,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Maximum bandwidth of the network instance connection, in Gbps
-     *
+     * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Maximum bandwidth of the network instance connection, in Gbps
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -66,14 +66,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Creation time of the network instance connection
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the network instance connection
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -81,14 +81,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -96,14 +96,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-     *
+     * 
      */
     @Import(name="directConnectGatewayId")
     private @Nullable Output<String> directConnectGatewayId;
 
     /**
      * @return Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-     *
+     * 
      */
     public Optional<Output<String>> directConnectGatewayId() {
         return Optional.ofNullable(this.directConnectGatewayId);
@@ -111,14 +111,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Whether to enable IPv6
-     *
+     * 
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether to enable IPv6
-     *
+     * 
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
         return Optional.ofNullable(this.ipv6Enabled);
@@ -126,14 +126,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Status of the network instance connection. Creating means being created, Deleting means being deleted, Pending means being configured, Available means available
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the network instance connection. Creating means being created, Deleting means being deleted, Pending means being configured, Available means available
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -142,7 +142,7 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
     /**
      * Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<DirectConnectGatewayAttachmentTagArgs>> tags;
@@ -150,7 +150,7 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
     /**
      * @return Tag information of the network instance connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DirectConnectGatewayAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -158,14 +158,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Network instance connection ID
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentId")
     private @Nullable Output<String> transitRouterAttachmentId;
 
     /**
      * @return Network instance connection ID
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentId() {
         return Optional.ofNullable(this.transitRouterAttachmentId);
@@ -173,14 +173,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -188,14 +188,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-     *
+     * 
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterId() {
         return Optional.ofNullable(this.transitRouterId);
@@ -203,14 +203,14 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
     /**
      * Most recent operation time of the network instance connection
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the network instance connection
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -254,9 +254,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param accountId Account ID to which the network instance connection belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -265,9 +265,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param accountId Account ID to which the network instance connection belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -275,9 +275,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoPublishRouteEnabled(@Nullable Output<Boolean> autoPublishRouteEnabled) {
             $.autoPublishRouteEnabled = autoPublishRouteEnabled;
@@ -286,9 +286,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
             return autoPublishRouteEnabled(Output.of(autoPublishRouteEnabled));
@@ -296,9 +296,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param bandwidth Maximum bandwidth of the network instance connection, in Gbps
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -307,9 +307,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param bandwidth Maximum bandwidth of the network instance connection, in Gbps
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -317,9 +317,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param creationTime Creation time of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -328,9 +328,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param creationTime Creation time of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -338,9 +338,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -349,9 +349,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -359,9 +359,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param directConnectGatewayId Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectGatewayId(@Nullable Output<String> directConnectGatewayId) {
             $.directConnectGatewayId = directConnectGatewayId;
@@ -370,9 +370,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param directConnectGatewayId Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectGatewayId(String directConnectGatewayId) {
             return directConnectGatewayId(Output.of(directConnectGatewayId));
@@ -380,9 +380,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param ipv6Enabled Whether to enable IPv6
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Enabled(@Nullable Output<Boolean> ipv6Enabled) {
             $.ipv6Enabled = ipv6Enabled;
@@ -391,9 +391,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param ipv6Enabled Whether to enable IPv6
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Enabled(Boolean ipv6Enabled) {
             return ipv6Enabled(Output.of(ipv6Enabled));
@@ -401,9 +401,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param status Status of the network instance connection. Creating means being created, Deleting means being deleted, Pending means being configured, Available means available
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -412,9 +412,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param status Status of the network instance connection. Creating means being created, Deleting means being deleted, Pending means being configured, Available means available
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -423,9 +423,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<DirectConnectGatewayAttachmentTagArgs>> tags) {
             $.tags = tags;
@@ -435,9 +435,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<DirectConnectGatewayAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
@@ -446,9 +446,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
         /**
          * @param tags Tag information of the network instance connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(DirectConnectGatewayAttachmentTagArgs... tags) {
             return tags(List.of(tags));
@@ -456,9 +456,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param transitRouterAttachmentId Network instance connection ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentId(@Nullable Output<String> transitRouterAttachmentId) {
             $.transitRouterAttachmentId = transitRouterAttachmentId;
@@ -467,9 +467,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param transitRouterAttachmentId Network instance connection ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentId(String transitRouterAttachmentId) {
             return transitRouterAttachmentId(Output.of(transitRouterAttachmentId));
@@ -477,9 +477,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -488,9 +488,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -498,9 +498,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param transitRouterId Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(@Nullable Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -509,9 +509,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param transitRouterId Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -519,9 +519,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param updateTime Most recent operation time of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -530,9 +530,9 @@ public final class DirectConnectGatewayAttachmentState extends com.pulumi.resour
 
         /**
          * @param updateTime Most recent operation time of the network instance connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

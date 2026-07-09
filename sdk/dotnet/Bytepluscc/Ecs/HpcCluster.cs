@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 {
     /// <summary>
     /// A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eCSHpcClusterDemo = new Bytepluscc.Ecs.HpcCluster("ECSHpcClusterDemo", new()
     ///     {
@@ -38,12 +38,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:ecs/hpcCluster:HpcCluster example "hpc_cluster_id"
     /// ```

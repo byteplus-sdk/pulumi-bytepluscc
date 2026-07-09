@@ -20,14 +20,14 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Workload pool description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -51,7 +51,7 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<WorkloadPoolTagArgs>> tags;
@@ -59,7 +59,7 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<WorkloadPoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -67,14 +67,14 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool name
-     *
+     * 
      */
     @Import(name="workloadPoolName", required=true)
     private Output<String> workloadPoolName;
 
     /**
      * @return Workload pool name
-     *
+     * 
      */
     public Output<String> workloadPoolName() {
         return this.workloadPoolName;
@@ -109,9 +109,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Workload pool description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -120,9 +120,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Workload pool description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -130,9 +130,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -141,9 +141,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -152,9 +152,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<WorkloadPoolTagArgs>> tags) {
             $.tags = tags;
@@ -164,9 +164,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<WorkloadPoolTagArgs> tags) {
             return tags(Output.of(tags));
@@ -175,9 +175,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(WorkloadPoolTagArgs... tags) {
             return tags(List.of(tags));
@@ -185,9 +185,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadPoolName Workload pool name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder workloadPoolName(Output<String> workloadPoolName) {
             $.workloadPoolName = workloadPoolName;
@@ -196,9 +196,9 @@ public final class WorkloadPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadPoolName Workload pool name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder workloadPoolName(String workloadPoolName) {
             return workloadPoolName(Output.of(workloadPoolName));

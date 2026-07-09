@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// Load balancer instance
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cLBDemo = new Bytepluscc.Clb.Clb("CLBDemo", new()
     ///     {
@@ -62,12 +62,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
     ///             Tls_topic_id = "7f3bc374-5e1d-4984-83fc-0e5a5xxxxx",
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/clb:Clb example "load_balancer_id"
     /// ```

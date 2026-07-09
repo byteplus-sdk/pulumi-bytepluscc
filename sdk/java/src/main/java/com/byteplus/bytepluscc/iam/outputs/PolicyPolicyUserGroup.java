@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 public final class PolicyPolicyUserGroup {
     /**
      * @return Name of the corresponding user, role, or user group.
-     *
+     * 
      */
     private @Nullable String name;
     /**
      * @return List of projects bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<PolicyPolicyUserGroupPolicyScope> policyScopes;
 
     private PolicyPolicyUserGroup() {}
     /**
      * @return Name of the corresponding user, role, or user group.
-     *
+     * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
@@ -36,7 +36,7 @@ public final class PolicyPolicyUserGroup {
     /**
      * @return List of projects bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<PolicyPolicyUserGroupPolicyScope> policyScopes() {
         return this.policyScopes == null ? List.of() : this.policyScopes;

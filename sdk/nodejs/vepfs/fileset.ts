@@ -108,7 +108,7 @@ export class Fileset extends pulumi.CustomResource {
     declare public /*out*/ readonly maxInodeNum: pulumi.Output<number>;
     /**
      * Fileset status. The possible values are:
-     *
+     *   
      *     - `Creating`: Creating
      *     - `CreateError`: Creation failed
      *     - `Running`: Running
@@ -237,7 +237,7 @@ export interface FilesetState {
     maxInodeNum?: pulumi.Input<number | undefined>;
     /**
      * Fileset status. The possible values are:
-     *
+     *   
      *     - `Creating`: Creating
      *     - `CreateError`: Creation failed
      *     - `Running`: Running

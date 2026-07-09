@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// Machine group in Log Service, used to manage a group of log collection machines.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSHostGroupDemo = new Bytepluscc.Tls.HostGroup("TLSHostGroupDemo", new()
     ///     {
@@ -38,12 +38,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         UpdateStartTime = "00:00",
     ///         IamProjectName = "default",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/hostGroup:HostGroup example "host_group_id"
     /// ```

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// The log service provides log collection tools such as LogCollector and multi-language SDKs, supports various log collection methods, is compatible with open-source protocol frameworks like Kafka and OpenTelemetry, and supports log data collection from host applications, K8s clusters, mobile clients, Volcano Engine cloud products, and other cloud vendors.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSRuleDemo = new Bytepluscc.Tls.Rule("TLSRuleDemo", new()
     ///     {
@@ -30,7 +30,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             Container_name_regex = "ccapi-test",
     ///             Env_tag = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "key", "k1" },
     ///                     { "val", "v1" },
@@ -38,7 +38,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///             Exclude_container_env_regex = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "key", "k2" },
     ///                     { "val", "v2" },
@@ -46,7 +46,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///             Exclude_container_label_regex = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "key", "k2" },
     ///                     { "val", "v2" },
@@ -54,7 +54,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///             Include_container_env_regex = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "key", "k1" },
     ///                     { "val", "v1" },
@@ -62,17 +62,17 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///             Include_container_label_regex = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "key", "k1" },
     ///                     { "val", "v1" },
     ///                 },
     ///             },
-    ///             Kubernetes_rule =
+    ///             Kubernetes_rule = 
     ///             {
     ///                 { "annotationTag", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "k1" },
     ///                         { "val", "v1" },
@@ -81,7 +81,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 { "enableAllLabelTag", true },
     ///                 { "excludePodAnnotationRegex", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "k2" },
     ///                         { "val", "v2" },
@@ -89,7 +89,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 } },
     ///                 { "excludePodLabelRegex", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "k2" },
     ///                         { "val", "v2" },
@@ -97,7 +97,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 } },
     ///                 { "includePodAnnotationRegex", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "k1" },
     ///                         { "val", "v1" },
@@ -105,7 +105,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 } },
     ///                 { "includePodLabelRegex", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "k1" },
     ///                         { "val", "v1" },
@@ -113,7 +113,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 } },
     ///                 { "labelTag", new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "key", "k1" },
     ///                         { "val", "v1" },
@@ -141,7 +141,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             Enable_nanosecond = true,
     ///             Filter_key_regex = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "key", "k1" },
     ///                     { "regex", "v1" },
@@ -152,7 +152,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 "k1",
     ///             },
     ///             Log_regex = "",
-    ///             Log_template =
+    ///             Log_template = 
     ///             {
     ///                 { "format", "" },
     ///                 { "type", "" },
@@ -208,7 +208,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             Hostname_key = "hostname",
     ///             Ignore_older = 72,
     ///             Multi_collects_type = "RuleID",
-    ///             Parse_path_rule =
+    ///             Parse_path_rule = 
     ///             {
     ///                 { "keys", new[]
     ///                 {
@@ -223,7 +223,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 Processors = "{}",
     ///             },
     ///             Raw_log_key = "raw",
-    ///             Shard_hash_key =
+    ///             Shard_hash_key = 
     ///             {
     ///                 { "hashKey", "2342134" },
     ///             },
@@ -231,12 +231,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             Tail_size_kb = 10240,
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/rule:Rule example "rule_id"
     /// ```

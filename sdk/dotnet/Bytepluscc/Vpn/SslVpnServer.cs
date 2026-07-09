@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
 {
     /// <summary>
     /// The SSL server is a service module in SSL VPN that provides SSL services and handles packet encapsulation and decapsulation.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPNSslVpnServerDemo = new Bytepluscc.Vpn.SslVpnServer("VPNSslVpnServerDemo", new()
     ///     {
@@ -50,12 +50,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpn/sslVpnServer:SslVpnServer example "ssl_vpn_server_id"
     /// ```

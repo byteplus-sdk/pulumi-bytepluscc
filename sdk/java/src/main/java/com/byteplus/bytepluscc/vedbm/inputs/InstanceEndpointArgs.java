@@ -22,7 +22,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * Connection address information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="addresses")
     private @Nullable Output<List<InstanceEndpointAddressArgs>> addresses;
@@ -30,7 +30,7 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return Connection address information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceEndpointAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
@@ -38,14 +38,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
-     *
+     * 
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<Boolean> autoAddNewNodes;
 
     /**
      * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
@@ -53,14 +53,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
-     *
+     * 
      */
     @Import(name="consistLevel")
     private @Nullable Output<String> consistLevel;
 
     /**
      * @return Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
-     *
+     * 
      */
     public Optional<Output<String>> consistLevel() {
         return Optional.ofNullable(this.consistLevel);
@@ -68,14 +68,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
-     *
+     * 
      */
     @Import(name="consistTimeout")
     private @Nullable Output<Integer> consistTimeout;
 
     /**
      * @return When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
-     *
+     * 
      */
     public Optional<Output<Integer>> consistTimeout() {
         return Optional.ofNullable(this.consistTimeout);
@@ -83,14 +83,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
-     *
+     * 
      */
     @Import(name="consistTimeoutAction")
     private @Nullable Output<String> consistTimeoutAction;
 
     /**
      * @return Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
-     *
+     * 
      */
     public Optional<Output<String>> consistTimeoutAction() {
         return Optional.ofNullable(this.consistTimeoutAction);
@@ -98,14 +98,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Address description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Address description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -113,14 +113,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
-     *
+     * 
      */
     @Import(name="distributedTransaction")
     private @Nullable Output<Boolean> distributedTransaction;
 
     /**
      * @return Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
-     *
+     * 
      */
     public Optional<Output<Boolean>> distributedTransaction() {
         return Optional.ofNullable(this.distributedTransaction);
@@ -128,14 +128,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Instance connection endpoint ID.
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -143,14 +143,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Instance connection endpoint name.
-     *
+     * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Instance connection endpoint name.
-     *
+     * 
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -158,14 +158,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
-     *
+     * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
-     *
+     * 
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -173,14 +173,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
-     *
+     * 
      */
     @Import(name="masterAcceptReadRequests")
     private @Nullable Output<Boolean> masterAcceptReadRequests;
 
     /**
      * @return Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
-     *
+     * 
      */
     public Optional<Output<Boolean>> masterAcceptReadRequests() {
         return Optional.ofNullable(this.masterAcceptReadRequests);
@@ -188,14 +188,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Node list configured for the connection endpoint.
-     *
+     * 
      */
     @Import(name="nodeIds")
     private @Nullable Output<List<String>> nodeIds;
 
     /**
      * @return Node list configured for the connection endpoint.
-     *
+     * 
      */
     public Optional<Output<List<String>>> nodeIds() {
         return Optional.ofNullable(this.nodeIds);
@@ -203,14 +203,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
-     *
+     * 
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
      * @return Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
-     *
+     * 
      */
     public Optional<Output<String>> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);
@@ -255,9 +255,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param addresses Connection address information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(@Nullable Output<List<InstanceEndpointAddressArgs>> addresses) {
             $.addresses = addresses;
@@ -267,9 +267,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param addresses Connection address information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(List<InstanceEndpointAddressArgs> addresses) {
             return addresses(Output.of(addresses));
@@ -278,9 +278,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param addresses Connection address information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(InstanceEndpointAddressArgs... addresses) {
             return addresses(List.of(addresses));
@@ -288,9 +288,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAddNewNodes Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAddNewNodes(@Nullable Output<Boolean> autoAddNewNodes) {
             $.autoAddNewNodes = autoAddNewNodes;
@@ -299,9 +299,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAddNewNodes Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoAddNewNodes(Boolean autoAddNewNodes) {
             return autoAddNewNodes(Output.of(autoAddNewNodes));
@@ -309,9 +309,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param consistLevel Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consistLevel(@Nullable Output<String> consistLevel) {
             $.consistLevel = consistLevel;
@@ -320,9 +320,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param consistLevel Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consistLevel(String consistLevel) {
             return consistLevel(Output.of(consistLevel));
@@ -330,9 +330,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param consistTimeout When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consistTimeout(@Nullable Output<Integer> consistTimeout) {
             $.consistTimeout = consistTimeout;
@@ -341,9 +341,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param consistTimeout When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consistTimeout(Integer consistTimeout) {
             return consistTimeout(Output.of(consistTimeout));
@@ -351,9 +351,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param consistTimeoutAction Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consistTimeoutAction(@Nullable Output<String> consistTimeoutAction) {
             $.consistTimeoutAction = consistTimeoutAction;
@@ -362,9 +362,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param consistTimeoutAction Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder consistTimeoutAction(String consistTimeoutAction) {
             return consistTimeoutAction(Output.of(consistTimeoutAction));
@@ -372,9 +372,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Address description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -383,9 +383,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Address description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -393,9 +393,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param distributedTransaction Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder distributedTransaction(@Nullable Output<Boolean> distributedTransaction) {
             $.distributedTransaction = distributedTransaction;
@@ -404,9 +404,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param distributedTransaction Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder distributedTransaction(Boolean distributedTransaction) {
             return distributedTransaction(Output.of(distributedTransaction));
@@ -414,9 +414,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -425,9 +425,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -435,9 +435,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Instance connection endpoint name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -446,9 +446,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Instance connection endpoint name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -456,9 +456,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -467,9 +467,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
@@ -477,9 +477,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param masterAcceptReadRequests Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterAcceptReadRequests(@Nullable Output<Boolean> masterAcceptReadRequests) {
             $.masterAcceptReadRequests = masterAcceptReadRequests;
@@ -488,9 +488,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param masterAcceptReadRequests Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder masterAcceptReadRequests(Boolean masterAcceptReadRequests) {
             return masterAcceptReadRequests(Output.of(masterAcceptReadRequests));
@@ -498,9 +498,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeIds Node list configured for the connection endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeIds(@Nullable Output<List<String>> nodeIds) {
             $.nodeIds = nodeIds;
@@ -509,9 +509,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeIds Node list configured for the connection endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeIds(List<String> nodeIds) {
             return nodeIds(Output.of(nodeIds));
@@ -519,9 +519,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeIds Node list configured for the connection endpoint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nodeIds(String... nodeIds) {
             return nodeIds(List.of(nodeIds));
@@ -529,9 +529,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteMode Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteMode(@Nullable Output<String> readWriteMode) {
             $.readWriteMode = readWriteMode;
@@ -540,9 +540,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteMode Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder readWriteMode(String readWriteMode) {
             return readWriteMode(Output.of(readWriteMode));

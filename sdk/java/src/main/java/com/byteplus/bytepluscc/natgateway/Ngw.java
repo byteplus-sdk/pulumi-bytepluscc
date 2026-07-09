@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * NAT Gateway provides network address translation services for cloud servers within the private network
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var natGatewayNGWDemo = new Ngw("natGatewayNGWDemo", NgwArgs.builder()
  *             .spec("Small")
@@ -62,116 +62,116 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:natgateway/ngw:Ngw example &#34;nat_gateway_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:natgateway/ngw:Ngw")
 public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Deletion time
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
-     *
+     * 
      */
     @Export(name="directMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> directMode;
 
     /**
      * @return Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
-     *
+     * 
      */
     public Output<Boolean> directMode() {
         return this.directMode;
     }
     /**
      * DNAT rule ID list.
-     *
+     * 
      */
     @Export(name="dnatEntryIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnatEntryIds;
 
     /**
      * @return DNAT rule ID list.
-     *
+     * 
      */
     public Output<List<String>> dnatEntryIds() {
         return this.dnatEntryIds;
@@ -179,7 +179,7 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * Information about the public IP bound to the NAT Gateway
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="eipAddresses", refs={List.class,NgwEipAddress.class}, tree="[0,1]")
     private Output<List<NgwEipAddress>> eipAddresses;
@@ -187,63 +187,63 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * @return Information about the public IP bound to the NAT Gateway
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<NgwEipAddress>> eipAddresses() {
         return this.eipAddresses;
     }
     /**
      * Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
-     *
+     * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
-     *
+     * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * NAT gateway ID.
-     *
+     * 
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
      * @return NAT gateway ID.
-     *
+     * 
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
      * Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-     *
+     * 
      */
     @Export(name="natGatewayName", refs={String.class}, tree="[0]")
     private Output<String> natGatewayName;
 
     /**
      * @return Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-     *
+     * 
      */
     public Output<String> natGatewayName() {
         return this.natGatewayName;
@@ -251,7 +251,7 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * Transit IP list for private NAT instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="natIpAddresses", refs={List.class,NgwNatIpAddress.class}, tree="[0,1]")
     private Output<List<NgwNatIpAddress>> natIpAddresses;
@@ -259,175 +259,175 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * @return Transit IP list for private NAT instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<NgwNatIpAddress>> natIpAddresses() {
         return this.natIpAddresses;
     }
     /**
      * Network interface ID occupied by the NAT gateway.
-     *
+     * 
      */
     @Export(name="networkInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceId;
 
     /**
      * @return Network interface ID occupied by the NAT gateway.
-     *
+     * 
      */
     public Output<String> networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
      * NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-     *
+     * 
      */
     @Export(name="networkType", refs={String.class}, tree="[0]")
     private Output<String> networkType;
 
     /**
      * @return NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-     *
+     * 
      */
     public Output<String> networkType() {
         return this.networkType;
     }
     /**
      * Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
-     *
+     * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
-     *
+     * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-     *
+     * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-     *
+     * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-     *
+     * 
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
      * @return Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-     *
+     * 
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Whether to enable intelligent scheduling
-     *
+     * 
      */
     @Export(name="smartScheduleEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> smartScheduleEnabled;
 
     /**
      * @return Whether to enable intelligent scheduling
-     *
+     * 
      */
     public Output<Boolean> smartScheduleEnabled() {
         return this.smartScheduleEnabled;
     }
     /**
      * Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-     *
+     * 
      */
     @Export(name="smartScheduleRule", refs={String.class}, tree="[0]")
     private Output<String> smartScheduleRule;
 
     /**
      * @return Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-     *
+     * 
      */
     public Output<String> smartScheduleRule() {
         return this.smartScheduleRule;
     }
     /**
      * SNAT rule ID list
-     *
+     * 
      */
     @Export(name="snatEntryIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> snatEntryIds;
 
     /**
      * @return SNAT rule ID list
-     *
+     * 
      */
     public Output<List<String>> snatEntryIds() {
         return this.snatEntryIds;
     }
     /**
      * NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-     *
+     * 
      */
     @Export(name="spec", refs={String.class}, tree="[0]")
     private Output<String> spec;
 
     /**
      * @return NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-     *
+     * 
      */
     public Output<String> spec() {
         return this.spec;
     }
     /**
      * Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -435,7 +435,7 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,NgwTag.class}, tree="[0,1]")
     private Output<List<NgwTag>> tags;
@@ -443,49 +443,49 @@ public class Ngw extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<NgwTag>> tags() {
         return this.tags;
     }
     /**
      * Last operation time of the NAT Gateway
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last operation time of the NAT Gateway
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * ID of the private network where the NAT Gateway is located
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the private network where the NAT Gateway is located
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * ID of the primary availability zone the NAT Gateway belongs to
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return ID of the primary availability zone the NAT Gateway belongs to
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

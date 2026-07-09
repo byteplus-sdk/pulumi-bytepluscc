@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,175 +36,175 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var apigCustomDomainDemo = new CustomDomain("apigCustomDomainDemo", CustomDomainArgs.builder()
  *             .serviceId("sd50d3h5xxxm0t5xxxxx")
  *             .domain("www.****.com")
- *             .protocols(
+ *             .protocols(            
  *                 "HTTP",
  *                 "HTTPS")
  *             .certificateId("cert-775906d873xxx5bc9d1d372b5dxxxxx")
  *             .comments("ApigCustomDomainDemo custom domain")
  *             .sslRedirect(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:apig/customDomain:CustomDomain example &#34;custom_domain_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:apig/customDomain:CustomDomain")
 public class CustomDomain extends com.pulumi.resources.CustomResource {
     /**
      * Custom Domain Certificate ID
-     *
+     * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return Custom Domain Certificate ID
-     *
+     * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * Remarks
-     *
+     * 
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
      * @return Remarks
-     *
+     * 
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
      * Creation Time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation Time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Custom Domain ID
-     *
+     * 
      */
     @Export(name="customDomainId", refs={String.class}, tree="[0]")
     private Output<String> customDomainId;
 
     /**
      * @return Custom Domain ID
-     *
+     * 
      */
     public Output<String> customDomainId() {
         return this.customDomainId;
     }
     /**
      * Custom Domain
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Custom Domain
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * Protocol. Values: HTTP, HTTPS
-     *
+     * 
      */
     @Export(name="protocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> protocols;
 
     /**
      * @return Protocol. Values: HTTP, HTTPS
-     *
+     * 
      */
     public Output<List<String>> protocols() {
         return this.protocols;
     }
     /**
      * Service ID
-     *
+     * 
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return Service ID
-     *
+     * 
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Redirect to HTTPS
-     *
+     * 
      */
     @Export(name="sslRedirect", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslRedirect;
 
     /**
      * @return Redirect to HTTPS
-     *
+     * 
      */
     public Output<Boolean> sslRedirect() {
         return this.sslRedirect;
     }
     /**
      * Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status. Values: Creating: configuring; CreationFailed: configuration failed; Deleting: deleting; DeletionFailed: deletion failed; Verified: active
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Update Time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update Time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

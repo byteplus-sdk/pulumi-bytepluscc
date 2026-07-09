@@ -13,26 +13,26 @@ import java.util.Objects;
 public final class GetDomainCache {
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     private GetDomainCacheCacheAction cacheAction;
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     private GetDomainCacheCondition condition;
 
     private GetDomainCache() {}
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     public GetDomainCacheCacheAction cacheAction() {
         return this.cacheAction;
     }
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public GetDomainCacheCondition condition() {
         return this.condition;

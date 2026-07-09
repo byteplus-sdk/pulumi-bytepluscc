@@ -22,14 +22,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
     /**
      * Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
-     *
+     * 
      */
     @Import(name="autoSyncDisabled")
     private @Nullable Output<Boolean> autoSyncDisabled;
 
     /**
      * @return Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoSyncDisabled() {
         return Optional.ofNullable(this.autoSyncDisabled);
@@ -37,14 +37,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
     /**
      * Node blocking configuration. Parameter value description: false: not blocked. true: blocked
-     *
+     * 
      */
     @Import(name="cordon")
     private @Nullable Output<Boolean> cordon;
 
     /**
      * @return Node blocking configuration. Parameter value description: false: not blocked. true: blocked
-     *
+     * 
      */
     public Optional<Output<Boolean>> cordon() {
         return Optional.ofNullable(this.cordon);
@@ -52,14 +52,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
     /**
      * Kubelet component configuration
-     *
+     * 
      */
     @Import(name="kubeletConfig")
     private @Nullable Output<DefaultNodePoolKubernetesConfigKubeletConfigArgs> kubeletConfig;
 
     /**
      * @return Kubelet component configuration
-     *
+     * 
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigKubeletConfigArgs>> kubeletConfig() {
         return Optional.ofNullable(this.kubeletConfig);
@@ -68,7 +68,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     /**
      * Kubernetes label information for node pool/node
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="labels")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigLabelArgs>> labels;
@@ -76,7 +76,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     /**
      * @return Kubernetes label information for node pool/node
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigLabelArgs>>> labels() {
         return Optional.ofNullable(this.labels);
@@ -84,14 +84,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
     /**
      * Prefix of the metadata name for node objects in Kubernetes.
-     *
+     * 
      */
     @Import(name="namePrefix")
     private @Nullable Output<String> namePrefix;
 
     /**
      * @return Prefix of the metadata name for node objects in Kubernetes.
-     *
+     * 
      */
     public Optional<Output<String>> namePrefix() {
         return Optional.ofNullable(this.namePrefix);
@@ -99,14 +99,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
     /**
      * Suffix of the metadata name for node objects in Kubernetes.
-     *
+     * 
      */
     @Import(name="nameSuffix")
     private @Nullable Output<String> nameSuffix;
 
     /**
      * @return Suffix of the metadata name for node objects in Kubernetes.
-     *
+     * 
      */
     public Optional<Output<String>> nameSuffix() {
         return Optional.ofNullable(this.nameSuffix);
@@ -114,14 +114,14 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
     /**
      * Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
-     *
+     * 
      */
     @Import(name="nameUseHostname")
     private @Nullable Output<Boolean> nameUseHostname;
 
     /**
      * @return Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
-     *
+     * 
      */
     public Optional<Output<Boolean>> nameUseHostname() {
         return Optional.ofNullable(this.nameUseHostname);
@@ -130,7 +130,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     /**
      * Kubernetes taint information for the node pool/node
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="taints")
     private @Nullable Output<List<DefaultNodePoolKubernetesConfigTaintArgs>> taints;
@@ -138,7 +138,7 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
     /**
      * @return Kubernetes taint information for the node pool/node
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DefaultNodePoolKubernetesConfigTaintArgs>>> taints() {
         return Optional.ofNullable(this.taints);
@@ -177,9 +177,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param autoSyncDisabled Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoSyncDisabled(@Nullable Output<Boolean> autoSyncDisabled) {
             $.autoSyncDisabled = autoSyncDisabled;
@@ -188,9 +188,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param autoSyncDisabled Whether to disable the automatic synchronization of label taints to existing nodes. Parameter value description: true: disabled, automatic synchronization is turned off. false: not disabled, automatic synchronization is turned on.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoSyncDisabled(Boolean autoSyncDisabled) {
             return autoSyncDisabled(Output.of(autoSyncDisabled));
@@ -198,9 +198,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param cordon Node blocking configuration. Parameter value description: false: not blocked. true: blocked
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cordon(@Nullable Output<Boolean> cordon) {
             $.cordon = cordon;
@@ -209,9 +209,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param cordon Node blocking configuration. Parameter value description: false: not blocked. true: blocked
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cordon(Boolean cordon) {
             return cordon(Output.of(cordon));
@@ -219,9 +219,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param kubeletConfig Kubelet component configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeletConfig(@Nullable Output<DefaultNodePoolKubernetesConfigKubeletConfigArgs> kubeletConfig) {
             $.kubeletConfig = kubeletConfig;
@@ -230,9 +230,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param kubeletConfig Kubelet component configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder kubeletConfig(DefaultNodePoolKubernetesConfigKubeletConfigArgs kubeletConfig) {
             return kubeletConfig(Output.of(kubeletConfig));
@@ -241,9 +241,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         /**
          * @param labels Kubernetes label information for node pool/node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder labels(@Nullable Output<List<DefaultNodePoolKubernetesConfigLabelArgs>> labels) {
             $.labels = labels;
@@ -253,9 +253,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         /**
          * @param labels Kubernetes label information for node pool/node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder labels(List<DefaultNodePoolKubernetesConfigLabelArgs> labels) {
             return labels(Output.of(labels));
@@ -264,9 +264,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         /**
          * @param labels Kubernetes label information for node pool/node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder labels(DefaultNodePoolKubernetesConfigLabelArgs... labels) {
             return labels(List.of(labels));
@@ -274,9 +274,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param namePrefix Prefix of the metadata name for node objects in Kubernetes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder namePrefix(@Nullable Output<String> namePrefix) {
             $.namePrefix = namePrefix;
@@ -285,9 +285,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param namePrefix Prefix of the metadata name for node objects in Kubernetes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder namePrefix(String namePrefix) {
             return namePrefix(Output.of(namePrefix));
@@ -295,9 +295,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param nameSuffix Suffix of the metadata name for node objects in Kubernetes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nameSuffix(@Nullable Output<String> nameSuffix) {
             $.nameSuffix = nameSuffix;
@@ -306,9 +306,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param nameSuffix Suffix of the metadata name for node objects in Kubernetes.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nameSuffix(String nameSuffix) {
             return nameSuffix(Output.of(nameSuffix));
@@ -316,9 +316,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param nameUseHostname Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nameUseHostname(@Nullable Output<Boolean> nameUseHostname) {
             $.nameUseHostname = nameUseHostname;
@@ -327,9 +327,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
 
         /**
          * @param nameUseHostname Whether the metadata name of the node object in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name. false: do not use ECS host name as node name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nameUseHostname(Boolean nameUseHostname) {
             return nameUseHostname(Output.of(nameUseHostname));
@@ -338,9 +338,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         /**
          * @param taints Kubernetes taint information for the node pool/node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder taints(@Nullable Output<List<DefaultNodePoolKubernetesConfigTaintArgs>> taints) {
             $.taints = taints;
@@ -350,9 +350,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         /**
          * @param taints Kubernetes taint information for the node pool/node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder taints(List<DefaultNodePoolKubernetesConfigTaintArgs> taints) {
             return taints(Output.of(taints));
@@ -361,9 +361,9 @@ public final class DefaultNodePoolKubernetesConfigArgs extends com.pulumi.resour
         /**
          * @param taints Kubernetes taint information for the node pool/node
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder taints(DefaultNodePoolKubernetesConfigTaintArgs... taints) {
             return taints(List.of(taints));

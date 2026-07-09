@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Enable public network access so that devices outside the VPC can access the Redis instance.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,156 +36,156 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var redisEndpointPublicAddressDemo = new EndpointPublicAddress("redisEndpointPublicAddressDemo", EndpointPublicAddressArgs.builder()
  *             .instanceId("redis-cnlfii2cw1xxxxxx")
  *             .port(6379)
  *             .eipId("eip-w08rcc38bsw0865yxxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress example &#34;instance_id|eip_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:redis/endpointPublicAddress:EndpointPublicAddress")
 public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
     /**
      * Connection address type. Valid values: Private: Private network connection address. Public: Public network connection address. DirectLink: Direct connection address. Note: Direct connection address information is returned only when a sharded Redis cluster instance has applied for a direct connection address. For more information about connection address types, see Connection Address Types.
-     *
+     * 
      */
     @Export(name="addrType", refs={String.class}, tree="[0]")
     private Output<String> addrType;
 
     /**
      * @return Connection address type. Valid values: Private: Private network connection address. Public: Public network connection address. DirectLink: Direct connection address. Note: Direct connection address information is returned only when a sharded Redis cluster instance has applied for a direct connection address. For more information about connection address types, see Connection Address Types.
-     *
+     * 
      */
     public Output<String> addrType() {
         return this.addrType;
     }
     /**
      * IP address or domain name
-     *
+     * 
      */
     @Export(name="address", refs={String.class}, tree="[0]")
     private Output<String> address;
 
     /**
      * @return IP address or domain name
-     *
+     * 
      */
     public Output<String> address() {
         return this.address;
     }
     /**
      * ID of the Elastic Public IP
-     *
+     * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return ID of the Elastic Public IP
-     *
+     * 
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
-     *
+     * 
      */
     @Export(name="newAddressPrefix", refs={String.class}, tree="[0]")
     private Output<String> newAddressPrefix;
 
     /**
      * @return Modified connection address prefix. The connection address prefix must meet the following requirements: Consist of lowercase letters, numbers, or hyphens (-). Start with a letter and end with a letter or number. Length must be 8–53 characters. The modified connection address must be globally unique and must not duplicate any connection address in any region of Volcano Engine.
-     *
+     * 
      */
     public Output<String> newAddressPrefix() {
         return this.newAddressPrefix;
     }
     /**
      * Port number
-     *
+     * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Port number
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
-     *
+     * 
      */
     @Export(name="upgradeRegionDomain", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> upgradeRegionDomain;
 
     /**
      * @return Whether to upgrade the domain suffix of the connection address. Valid values: true: Upgrade. false (default): Do not upgrade. Note: When upgrading the domain suffix (i.e., UpgradeRegionDomain is true), you must also provide the connection address prefix (i.e., the Address parameter cannot be empty). After upgrading the domain suffix, existing connections will be disconnected. Please promptly update your client connection information and use the new connection address to connect to the instance. For details on connecting to an instance, see Connect to Instance. Once the domain suffix of the connection address is upgraded, it cannot be downgraded to the original suffix. Please proceed with caution. The upgraded domain suffix will automatically include the region information of the instance. The old connection address will be retained for 12 hours and will be automatically released after the retention period expires. For more details, see Upgrade Domain Suffix.
-     *
+     * 
      */
     public Output<Boolean> upgradeRegionDomain() {
         return this.upgradeRegionDomain;
     }
     /**
      * IPv6 address corresponding to the connection address. Note: This parameter is returned only if the instance uses an IPv6 address. Only private network addresses and direct connection addresses support IPv6; public network addresses do not. Therefore, when the connection address type is Public (i.e., AddrType is Public), this parameter is always empty.
-     *
+     * 
      */
     @Export(name="viPv6", refs={String.class}, tree="[0]")
     private Output<String> viPv6;
 
     /**
      * @return IPv6 address corresponding to the connection address. Note: This parameter is returned only if the instance uses an IPv6 address. Only private network addresses and direct connection addresses support IPv6; public network addresses do not. Therefore, when the connection address type is Public (i.e., AddrType is Public), this parameter is always empty.
-     *
+     * 
      */
     public Output<String> viPv6() {
         return this.viPv6;
     }
     /**
      * IPv4 address corresponding to the connection address
-     *
+     * 
      */
     @Export(name="vip", refs={String.class}, tree="[0]")
     private Output<String> vip;
 
     /**
      * @return IPv4 address corresponding to the connection address
-     *
+     * 
      */
     public Output<String> vip() {
         return this.vip;

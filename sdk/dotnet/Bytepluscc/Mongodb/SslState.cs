@@ -12,28 +12,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 {
     /// <summary>
     /// SSL encryption settings for the MongoDB instance, including whether the feature is enabled, SSL certificate expiration time, and other information.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var mongoDBSSLStateDemo = new Bytepluscc.Mongodb.SslState("MongoDBSSLStateDemo", new()
     ///     {
     ///         InstanceId = "mongo-replica-d1****",
     ///         SslAction = "Open",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:mongodb/sslState:SslState example "instance_id"
     /// ```

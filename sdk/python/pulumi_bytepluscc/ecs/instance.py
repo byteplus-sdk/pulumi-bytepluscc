@@ -33,6 +33,7 @@ class InstanceArgs:
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
                  deployment_set_group_number: pulumi.Input[Optional[_builtins.int]] = None,
                  deployment_set_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -74,7 +75,7 @@ class InstanceArgs:
         :param pulumi.Input['InstanceSystemVolumeArgs'] system_volume: The system volume of the instance.
         :param pulumi.Input[_builtins.str] zone_id: The availability zone ID where the instance is located.
         :param pulumi.Input[_builtins.int] affinity_group_size: Affinity group specification. Value: 2.
-
+                 
                  **Note:**
                    - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
                    - This feature is in invitation testing. To try it, please contact your account manager.
@@ -82,24 +83,26 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.bool] auto_renew: Whether the instance will be automatically renewed upon expiration. Values:
                    - true: Auto renewal
                    - false (default): No auto renewal
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.int] auto_renew_period: Duration for each automatic renewal.
                    - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
                    - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
         :param pulumi.Input[_builtins.float] cpu_max_frequency: Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+                 
                  **Note:**
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
                    - Unlimited: Unlimited performance mode (not supported yet).
-
+                 
                  **Note:**
                    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
                    - If not specified or left empty, burstable instances default to `Standard` mode.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceDataVolumeArgs']]] data_volumes: Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.bool] deletion_protection: Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
                    - true: Enable instance deletion protection
                    - false (default): Disable instance deletion protection
@@ -126,7 +129,7 @@ class InstanceArgs:
                      - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
                      - Windows system hostname length must be between 2 and 15 characters.
         :param pulumi.Input[_builtins.str] hpc_cluster_id: ID of the high performance computing cluster to which the instance belongs.
-
+                 
                  **Note:**
                  This parameter is only effective and required when creating high performance computing GPU instances.
         :param pulumi.Input[_builtins.bool] include_data_volumes: Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
@@ -139,13 +142,13 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.int] period: Resource purchase duration (N).
                    - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
                    - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+                 
                  **Note:**
                  This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.str] period_unit: The unit for the duration of resource purchase. Values:
                    - Month (default): Month
                    - Year: Year
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input['InstancePlacementArgs'] placement: The deployment information of the instance.
@@ -204,6 +207,8 @@ class InstanceArgs:
             pulumi.set(__self__, "cpu_max_frequency", cpu_max_frequency)
         if credit_specification is not None:
             pulumi.set(__self__, "credit_specification", credit_specification)
+        if data_volumes is not None:
+            pulumi.set(__self__, "data_volumes", data_volumes)
         if deletion_protection is not None:
             pulumi.set(__self__, "deletion_protection", deletion_protection)
         if deployment_set_group_number is not None:
@@ -339,7 +344,7 @@ class InstanceArgs:
     def affinity_group_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Affinity group specification. Value: 2.
-
+          
           **Note:**
             - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
             - This feature is in invitation testing. To try it, please contact your account manager.
@@ -369,7 +374,7 @@ class InstanceArgs:
         Whether the instance will be automatically renewed upon expiration. Values:
             - true: Auto renewal
             - false (default): No auto renewal
-
+          
           **Note:**
           This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -398,7 +403,7 @@ class InstanceArgs:
     def cpu_max_frequency(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+          
           **Note:**
             - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
             - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -416,7 +421,7 @@ class InstanceArgs:
         Burstable instance operating mode. Values:
             - Standard: Standard mode.
             - Unlimited: Unlimited performance mode (not supported yet).
-
+          
           **Note:**
             - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
             - If not specified or left empty, burstable instances default to `Standard` mode.
@@ -426,6 +431,19 @@ class InstanceArgs:
     @credit_specification.setter
     def credit_specification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credit_specification", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataVolumes")
+    def data_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]]:
+        """
+        Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "data_volumes")
+
+    @data_volumes.setter
+    def data_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]]):
+        pulumi.set(self, "data_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionProtection")
@@ -534,7 +552,7 @@ class InstanceArgs:
     def hpc_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the high performance computing cluster to which the instance belongs.
-
+          
           **Note:**
           This parameter is only effective and required when creating high performance computing GPU instances.
         """
@@ -613,7 +631,7 @@ class InstanceArgs:
         Resource purchase duration (N).
             - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
             - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+          
           **Note:**
           This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -630,7 +648,7 @@ class InstanceArgs:
         The unit for the duration of resource purchase. Values:
             - Month (default): Month
             - Year: Year
-
+          
           **Note:**
           This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -811,6 +829,7 @@ class _InstanceState:
                  cpu_memory: pulumi.Input[Optional['InstanceCpuMemoryArgs']] = None,
                  created_at: pulumi.Input[Optional[_builtins.str]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
                  deployment_set_group_number: pulumi.Input[Optional[_builtins.int]] = None,
                  deployment_set_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -857,7 +876,7 @@ class _InstanceState:
 
         :param pulumi.Input[_builtins.str] affinity_group_id: Affinity group ID.
         :param pulumi.Input[_builtins.int] affinity_group_size: Affinity group specification. Value: 2.
-
+                 
                  **Note:**
                    - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
                    - This feature is in invitation testing. To try it, please contact your account manager.
@@ -865,14 +884,14 @@ class _InstanceState:
         :param pulumi.Input[_builtins.bool] auto_renew: Whether the instance will be automatically renewed upon expiration. Values:
                    - true: Auto renewal
                    - false (default): No auto renewal
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.int] auto_renew_period: Duration for each automatic renewal.
                    - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
                    - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
         :param pulumi.Input[_builtins.float] cpu_max_frequency: Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+                 
                  **Note:**
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -881,10 +900,12 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
                    - Unlimited: Unlimited performance mode (not supported yet).
-
+                 
                  **Note:**
                    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
                    - If not specified or left empty, burstable instances default to `Standard` mode.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceDataVolumeArgs']]] data_volumes: Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.bool] deletion_protection: Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
                    - true: Enable instance deletion protection
                    - false (default): Disable instance deletion protection
@@ -913,7 +934,7 @@ class _InstanceState:
                      - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
                      - Windows system hostname length must be between 2 and 15 characters.
         :param pulumi.Input[_builtins.str] hpc_cluster_id: ID of the high performance computing cluster to which the instance belongs.
-
+                 
                  **Note:**
                  This parameter is only effective and required when creating high performance computing GPU instances.
         :param pulumi.Input['InstanceImageArgs'] image: The image of the instance.
@@ -938,13 +959,13 @@ class _InstanceState:
         :param pulumi.Input[_builtins.int] period: Resource purchase duration (N).
                    - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
                    - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+                 
                  **Note:**
                  This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.str] period_unit: The unit for the duration of resource purchase. Values:
                    - Month (default): Month
                    - Year: Year
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input['InstancePlacementArgs'] placement: The deployment information of the instance.
@@ -1011,6 +1032,8 @@ class _InstanceState:
             pulumi.set(__self__, "created_at", created_at)
         if credit_specification is not None:
             pulumi.set(__self__, "credit_specification", credit_specification)
+        if data_volumes is not None:
+            pulumi.set(__self__, "data_volumes", data_volumes)
         if deletion_protection is not None:
             pulumi.set(__self__, "deletion_protection", deletion_protection)
         if deployment_set_group_number is not None:
@@ -1111,7 +1134,7 @@ class _InstanceState:
     def affinity_group_size(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
         Affinity group specification. Value: 2.
-
+          
           **Note:**
             - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
             - This feature is in invitation testing. To try it, please contact your account manager.
@@ -1141,7 +1164,7 @@ class _InstanceState:
         Whether the instance will be automatically renewed upon expiration. Values:
             - true: Auto renewal
             - false (default): No auto renewal
-
+          
           **Note:**
           This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -1170,7 +1193,7 @@ class _InstanceState:
     def cpu_max_frequency(self) -> pulumi.Input[Optional[_builtins.float]]:
         """
         Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+          
           **Note:**
             - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
             - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -1212,7 +1235,7 @@ class _InstanceState:
         Burstable instance operating mode. Values:
             - Standard: Standard mode.
             - Unlimited: Unlimited performance mode (not supported yet).
-
+          
           **Note:**
             - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
             - If not specified or left empty, burstable instances default to `Standard` mode.
@@ -1222,6 +1245,19 @@ class _InstanceState:
     @credit_specification.setter
     def credit_specification(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "credit_specification", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataVolumes")
+    def data_volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]]:
+        """
+        Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "data_volumes")
+
+    @data_volumes.setter
+    def data_volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]]):
+        pulumi.set(self, "data_volumes", value)
 
     @_builtins.property
     @pulumi.getter(name="deletionProtection")
@@ -1354,7 +1390,7 @@ class _InstanceState:
     def hpc_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         ID of the high performance computing cluster to which the instance belongs.
-
+          
           **Note:**
           This parameter is only effective and required when creating high performance computing GPU instances.
         """
@@ -1511,7 +1547,7 @@ class _InstanceState:
         Resource purchase duration (N).
             - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
             - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+          
           **Note:**
           This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -1528,7 +1564,7 @@ class _InstanceState:
         The unit for the duration of resource purchase. Values:
             - Month (default): Month
             - Year: Year
-
+          
           **Note:**
           This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -1794,6 +1830,7 @@ class Instance(pulumi.CustomResource):
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
                  deployment_set_group_number: pulumi.Input[Optional[_builtins.int]] = None,
                  deployment_set_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1892,7 +1929,7 @@ class Instance(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] affinity_group_size: Affinity group specification. Value: 2.
-
+                 
                  **Note:**
                    - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
                    - This feature is in invitation testing. To try it, please contact your account manager.
@@ -1900,24 +1937,26 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] auto_renew: Whether the instance will be automatically renewed upon expiration. Values:
                    - true: Auto renewal
                    - false (default): No auto renewal
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.int] auto_renew_period: Duration for each automatic renewal.
                    - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
                    - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
         :param pulumi.Input[_builtins.float] cpu_max_frequency: Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+                 
                  **Note:**
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
                    - Unlimited: Unlimited performance mode (not supported yet).
-
+                 
                  **Note:**
                    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
                    - If not specified or left empty, burstable instances default to `Standard` mode.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]] data_volumes: Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.bool] deletion_protection: Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
                    - true: Enable instance deletion protection
                    - false (default): Disable instance deletion protection
@@ -1944,7 +1983,7 @@ class Instance(pulumi.CustomResource):
                      - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
                      - Windows system hostname length must be between 2 and 15 characters.
         :param pulumi.Input[_builtins.str] hpc_cluster_id: ID of the high performance computing cluster to which the instance belongs.
-
+                 
                  **Note:**
                  This parameter is only effective and required when creating high performance computing GPU instances.
         :param pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']] image: The image of the instance.
@@ -1965,13 +2004,13 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] period: Resource purchase duration (N).
                    - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
                    - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+                 
                  **Note:**
                  This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.str] period_unit: The unit for the duration of resource purchase. Values:
                    - Month (default): Month
                    - Year: Year
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']] placement: The deployment information of the instance.
@@ -2104,6 +2143,7 @@ class Instance(pulumi.CustomResource):
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
+                 data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
                  deployment_set_group_number: pulumi.Input[Optional[_builtins.int]] = None,
                  deployment_set_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2151,6 +2191,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["auto_renew_period"] = auto_renew_period
             __props__.__dict__["cpu_max_frequency"] = cpu_max_frequency
             __props__.__dict__["credit_specification"] = credit_specification
+            __props__.__dict__["data_volumes"] = data_volumes
             __props__.__dict__["deletion_protection"] = deletion_protection
             __props__.__dict__["deployment_set_group_number"] = deployment_set_group_number
             __props__.__dict__["deployment_set_id"] = deployment_set_id
@@ -2226,6 +2267,7 @@ class Instance(pulumi.CustomResource):
             cpu_memory: pulumi.Input[Optional[Union['InstanceCpuMemoryArgs', 'InstanceCpuMemoryArgsDict']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
+            data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]]] = None,
             deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
             deployment_set_group_number: pulumi.Input[Optional[_builtins.int]] = None,
             deployment_set_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2276,7 +2318,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] affinity_group_id: Affinity group ID.
         :param pulumi.Input[_builtins.int] affinity_group_size: Affinity group specification. Value: 2.
-
+                 
                  **Note:**
                    - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
                    - This feature is in invitation testing. To try it, please contact your account manager.
@@ -2284,14 +2326,14 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] auto_renew: Whether the instance will be automatically renewed upon expiration. Values:
                    - true: Auto renewal
                    - false (default): No auto renewal
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.int] auto_renew_period: Duration for each automatic renewal.
                    - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
                    - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
         :param pulumi.Input[_builtins.float] cpu_max_frequency: Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+                 
                  **Note:**
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -2300,10 +2342,12 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
                    - Unlimited: Unlimited performance mode (not supported yet).
-
+                 
                  **Note:**
                    - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
                    - If not specified or left empty, burstable instances default to `Standard` mode.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]] data_volumes: Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.bool] deletion_protection: Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
                    - true: Enable instance deletion protection
                    - false (default): Disable instance deletion protection
@@ -2332,7 +2376,7 @@ class Instance(pulumi.CustomResource):
                      - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
                      - Windows system hostname length must be between 2 and 15 characters.
         :param pulumi.Input[_builtins.str] hpc_cluster_id: ID of the high performance computing cluster to which the instance belongs.
-
+                 
                  **Note:**
                  This parameter is only effective and required when creating high performance computing GPU instances.
         :param pulumi.Input[Union['InstanceImageArgs', 'InstanceImageArgsDict']] image: The image of the instance.
@@ -2357,13 +2401,13 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] period: Resource purchase duration (N).
                    - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
                    - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+                 
                  **Note:**
                  This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[_builtins.str] period_unit: The unit for the duration of resource purchase. Values:
                    - Month (default): Month
                    - Year: Year
-
+                 
                  **Note:**
                  This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         :param pulumi.Input[Union['InstancePlacementArgs', 'InstancePlacementArgsDict']] placement: The deployment information of the instance.
@@ -2425,6 +2469,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["cpu_memory"] = cpu_memory
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["credit_specification"] = credit_specification
+        __props__.__dict__["data_volumes"] = data_volumes
         __props__.__dict__["deletion_protection"] = deletion_protection
         __props__.__dict__["deployment_set_group_number"] = deployment_set_group_number
         __props__.__dict__["deployment_set_id"] = deployment_set_id
@@ -2481,7 +2526,7 @@ class Instance(pulumi.CustomResource):
     def affinity_group_size(self) -> pulumi.Output[_builtins.int]:
         """
         Affinity group specification. Value: 2.
-
+          
           **Note:**
             - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
             - This feature is in invitation testing. To try it, please contact your account manager.
@@ -2503,7 +2548,7 @@ class Instance(pulumi.CustomResource):
         Whether the instance will be automatically renewed upon expiration. Values:
             - true: Auto renewal
             - false (default): No auto renewal
-
+          
           **Note:**
           This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -2524,7 +2569,7 @@ class Instance(pulumi.CustomResource):
     def cpu_max_frequency(self) -> pulumi.Output[_builtins.float]:
         """
         Specify the maximum CPU frequency, in GHz. Value range: between the CPU's base frequency and turbo frequency.
-
+          
           **Note:**
             - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
             - This feature is in invitation-only testing. To use it, please contact your account manager.
@@ -2554,12 +2599,21 @@ class Instance(pulumi.CustomResource):
         Burstable instance operating mode. Values:
             - Standard: Standard mode.
             - Unlimited: Unlimited performance mode (not supported yet).
-
+          
           **Note:**
             - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
             - If not specified or left empty, burstable instances default to `Standard` mode.
         """
         return pulumi.get(self, "credit_specification")
+
+    @_builtins.property
+    @pulumi.getter(name="dataVolumes")
+    def data_volumes(self) -> pulumi.Output[Sequence['outputs.InstanceDataVolume']]:
+        """
+        Instance data disks. Supports up to 15 data disks. When creating, data disks are created together with the system disk via RunInstances. When querying, cloud disk details are completed through the Elastic Block Storage DescribeVolumes API.
+         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "data_volumes")
 
     @_builtins.property
     @pulumi.getter(name="deletionProtection")
@@ -2656,7 +2710,7 @@ class Instance(pulumi.CustomResource):
     def hpc_cluster_id(self) -> pulumi.Output[_builtins.str]:
         """
         ID of the high performance computing cluster to which the instance belongs.
-
+          
           **Note:**
           This parameter is only effective and required when creating high performance computing GPU instances.
         """
@@ -2765,7 +2819,7 @@ class Instance(pulumi.CustomResource):
         Resource purchase duration (N).
             - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
             - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
-
+          
           **Note:**
           This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
         """
@@ -2778,7 +2832,7 @@ class Instance(pulumi.CustomResource):
         The unit for the duration of resource purchase. Values:
             - Month (default): Month
             - Year: Year
-
+          
           **Note:**
           This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
         """

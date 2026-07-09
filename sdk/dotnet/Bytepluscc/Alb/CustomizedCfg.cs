@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
     /// ALB provides personalized configuration functionality at the listener level. You can create and manage standard NGINX configuration policies in the console, associate configuration policies with listeners in one click on the listener details page, and complete personalized configurations to meet business requirements without submitting a ticket.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var aLBCustomizedCfgDemo = new Bytepluscc.Alb.CustomizedCfg("ALBCustomizedCfgDemo", new()
     ///     {
@@ -51,12 +51,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:alb/customizedCfg:CustomizedCfg example "customized_cfg_id"
     /// ```

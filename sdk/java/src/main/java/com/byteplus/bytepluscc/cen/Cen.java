@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Enterprise Network (CEN) provides fast, high-quality, and stable networking capabilities to quickly build private networks (VPC) across regions and between on-premises data centers (IDC), helping you create a global cloud network with enterprise-scale and communication capabilities
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cENCENDemo = new Cen("cENCENDemo", CenArgs.builder()
  *             .cenName("CENCENDemo")
@@ -61,102 +61,102 @@ import javax.annotation.Nullable;
  *                 .instance_type("VPC")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cen/cen:Cen example &#34;cen_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cen/cen:Cen")
 public class Cen extends com.pulumi.resources.CustomResource {
     /**
      * Account ID to which the CEN instance belongs
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID to which the CEN instance belongs
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Bandwidth package ID
-     *
+     * 
      */
     @Export(name="cenBandwidthPackageIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> cenBandwidthPackageIds;
 
     /**
      * @return Bandwidth package ID
-     *
+     * 
      */
     public Output<List<String>> cenBandwidthPackageIds() {
         return this.cenBandwidthPackageIds;
     }
     /**
      * CEN instance ID
-     *
+     * 
      */
     @Export(name="cenId", refs={String.class}, tree="[0]")
     private Output<String> cenId;
 
     /**
      * @return CEN instance ID
-     *
+     * 
      */
     public Output<String> cenId() {
         return this.cenId;
     }
     /**
      * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
-     *
+     * 
      */
     @Export(name="cenName", refs={String.class}, tree="[0]")
     private Output<String> cenName;
 
     /**
      * @return Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
-     *
+     * 
      */
     public Output<String> cenName() {
         return this.cenName;
     }
     /**
      * Time when the CEN instance was created
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the CEN instance was created
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -164,7 +164,7 @@ public class Cen extends com.pulumi.resources.CustomResource {
     /**
      * List of associated network instances
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="instances", refs={List.class,CenInstance.class}, tree="[0,1]")
     private Output<List<CenInstance>> instances;
@@ -172,35 +172,35 @@ public class Cen extends com.pulumi.resources.CustomResource {
     /**
      * @return List of associated network instances
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<CenInstance>> instances() {
         return this.instances;
     }
     /**
      * Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -208,7 +208,7 @@ public class Cen extends com.pulumi.resources.CustomResource {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,CenTag.class}, tree="[0,1]")
     private Output<List<CenTag>> tags;
@@ -216,21 +216,21 @@ public class Cen extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<CenTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the CEN instance was updated
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the CEN instance was updated
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

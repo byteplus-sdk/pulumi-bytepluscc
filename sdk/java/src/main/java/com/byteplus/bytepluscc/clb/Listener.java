@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * The listener monitors user access requests received by the CLB instance based on the specified protocol and port. CLB forwards access requests to healthy backend servers in the associated backend server group according to the scheduling algorithm configured for the listener.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var clbListenerDemo = new Listener("clbListenerDemo", ListenerArgs.builder()
  *             .aclIds("acl-mjd01crvppts5smt1bsxxxxx")
@@ -82,256 +82,256 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/listener:Listener example &#34;listener_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/listener:Listener")
 public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-     *
+     * 
      */
     @Export(name="aclIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> aclIds;
 
     /**
      * @return ID of the access control policy group bound to the listener. Returned only when the AclStatus parameter is set to on.
-     *
+     * 
      */
     public Output<List<String>> aclIds() {
         return this.aclIds;
     }
     /**
      * Enable access control. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     @Export(name="aclStatus", refs={String.class}, tree="[0]")
     private Output<String> aclStatus;
 
     /**
      * @return Enable access control. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     public Output<String> aclStatus() {
         return this.aclStatus;
     }
     /**
      * Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
-     *
+     * 
      */
     @Export(name="aclType", refs={String.class}, tree="[0]")
     private Output<String> aclType;
 
     /**
      * @return Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
-     *
+     * 
      */
     public Output<String> aclType() {
         return this.aclType;
     }
     /**
      * Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * CA certificate for mutual authentication.
-     *
+     * 
      */
     @Export(name="caCertificateId", refs={String.class}, tree="[0]")
     private Output<String> caCertificateId;
 
     /**
      * @return CA certificate for mutual authentication.
-     *
+     * 
      */
     public Output<String> caCertificateId() {
         return this.caCertificateId;
     }
     /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
-     *
+     * 
      */
     @Export(name="caEnabled", refs={String.class}, tree="[0]")
     private Output<String> caEnabled;
 
     /**
      * @return Enable mutual authentication. on: enabled. off (default): disabled.
-     *
+     * 
      */
     public Output<String> caEnabled() {
         return this.caEnabled;
     }
     /**
      * Certificate ID from Certificate Center.
-     *
+     * 
      */
     @Export(name="certCenterCertificateId", refs={String.class}, tree="[0]")
     private Output<String> certCenterCertificateId;
 
     /**
      * @return Certificate ID from Certificate Center.
-     *
+     * 
      */
     public Output<String> certCenterCertificateId() {
         return this.certCenterCertificateId;
     }
     /**
      * Certificate ID from the CLB certificate management module.
-     *
+     * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return Certificate ID from the CLB certificate management module.
-     *
+     * 
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-     *
+     * 
      */
     @Export(name="certificateSource", refs={String.class}, tree="[0]")
     private Output<String> certificateSource;
 
     /**
      * @return Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-     *
+     * 
      */
     public Output<String> certificateSource() {
         return this.certificateSource;
     }
     /**
      * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="clientBodyTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> clientBodyTimeout;
 
     /**
      * @return Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> clientBodyTimeout() {
         return this.clientBodyTimeout;
     }
     /**
      * Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="clientHeaderTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> clientHeaderTimeout;
 
     /**
      * @return Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> clientHeaderTimeout() {
         return this.clientHeaderTimeout;
     }
     /**
      * Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
-     *
+     * 
      */
     @Export(name="connectionDrainEnabled", refs={String.class}, tree="[0]")
     private Output<String> connectionDrainEnabled;
 
     /**
      * @return Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
-     *
+     * 
      */
     public Output<String> connectionDrainEnabled() {
         return this.connectionDrainEnabled;
     }
     /**
      * Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
-     *
+     * 
      */
     @Export(name="connectionDrainTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionDrainTimeout;
 
     /**
      * @return Timeout for graceful connection termination, in seconds. If ConnectionDrainEnabled returns off, this parameter returns 0.
-     *
+     * 
      */
     public Output<Integer> connectionDrainTimeout() {
         return this.connectionDrainTimeout;
     }
     /**
      * Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
-     *
+     * 
      */
     @Export(name="cookie", refs={String.class}, tree="[0]")
     private Output<String> cookie;
 
     /**
      * @return Name of the session persistence cookie configured on the backend server. This parameter is valid and required only when PersistenceType is set to server. Only letters, numbers, underscores (_), and hyphens (-) are allowed. Length must be between 1 and 200 characters.
-     *
+     * 
      */
     public Output<String> cookie() {
         return this.cookie;
     }
     /**
      * Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
-     *
+     * 
      */
     @Export(name="cps", refs={Integer.class}, tree="[0]")
     private Output<Integer> cps;
 
     /**
      * @return Maximum number of new connections per second. -1 (default): No limit, which means the maximum number of new connections allowed by the CLB instance. Value range: 1 to the maximum number of new connections allowed by the CLB instance.
-     *
+     * 
      */
     public Output<Integer> cps() {
         return this.cps;
     }
     /**
      * Creation time of the listener.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the listener.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Listener description. Must start with a letter, digit, or Chinese character. Can include letters, digits, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0–255 characters. If not specified, the default is an empty string.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -339,7 +339,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="domainExtensions", refs={List.class,ListenerDomainExtension.class}, tree="[0,1]")
     private Output<List<ListenerDomainExtension>> domainExtensions;
@@ -347,357 +347,357 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * @return List of extended domain names associated with the HTTPS listener. Each HTTPS listener can be associated with up to 20 extended domain names.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ListenerDomainExtension>> domainExtensions() {
         return this.domainExtensions;
     }
     /**
      * Enable listener. on (default): enabled. off: disabled.
-     *
+     * 
      */
     @Export(name="enabled", refs={String.class}, tree="[0]")
     private Output<String> enabled;
 
     /**
      * @return Enable listener. on (default): enabled. off: disabled.
-     *
+     * 
      */
     public Output<String> enabled() {
         return this.enabled;
     }
     /**
      * End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
-     *
+     * 
      */
     @Export(name="endPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> endPort;
 
     /**
      * @return End port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required and must be greater than startPort.
-     *
+     * 
      */
     public Output<Integer> endPort() {
         return this.endPort;
     }
     /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
-     *
+     * 
      */
     @Export(name="establishedTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> establishedTimeout;
 
     /**
      * @return Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
-     *
+     * 
      */
     public Output<Integer> establishedTimeout() {
         return this.establishedTimeout;
     }
     /**
      * Health check information.
-     *
+     * 
      */
     @Export(name="healthCheck", refs={ListenerHealthCheck.class}, tree="[0]")
     private Output<ListenerHealthCheck> healthCheck;
 
     /**
      * @return Health check information.
-     *
+     * 
      */
     public Output<ListenerHealthCheck> healthCheck() {
         return this.healthCheck;
     }
     /**
      * Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     @Export(name="http2Enabled", refs={String.class}, tree="[0]")
     private Output<String> http2Enabled;
 
     /**
      * @return Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
-     *
+     * 
      */
     public Output<String> http2Enabled() {
         return this.http2Enabled;
     }
     /**
      * Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="keepaliveTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> keepaliveTimeout;
 
     /**
      * @return Keep-alive timeout between the client and CLB. Range: 0–900 seconds, default is 75 seconds. 0 disables keep-alive. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> keepaliveTimeout() {
         return this.keepaliveTimeout;
     }
     /**
      * Listener ID.
-     *
+     * 
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
      * @return Listener ID.
-     *
+     * 
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
      * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
-     *
+     * 
      */
     @Export(name="listenerName", refs={String.class}, tree="[0]")
     private Output<String> listenerName;
 
     /**
      * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If left blank, &#39;Protocol-Port&#39; will be used as the default listener name.
-     *
+     * 
      */
     public Output<String> listenerName() {
         return this.listenerName;
     }
     /**
      * ID of the CLB instance.
-     *
+     * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return ID of the CLB instance.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
-     *
+     * 
      */
     @Export(name="maxConnections", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxConnections;
 
     /**
      * @return Maximum concurrent connections limit. -1 (default): unlimited (up to the maximum concurrent connections supported by the CLB instance). Value range: 1 to the maximum concurrent connections limit of the CLB instance.
-     *
+     * 
      */
     public Output<Integer> maxConnections() {
         return this.maxConnections;
     }
     /**
      * Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
-     *
+     * 
      */
     @Export(name="persistenceTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> persistenceTimeout;
 
     /**
      * @return Session persistence timeout, in seconds. The value range depends on the PersistenceType parameter. When PersistenceType is set to source_ip, the range is 1–3600. When PersistenceType is set to insert, the range is 1–86400.
-     *
+     * 
      */
     public Output<Integer> persistenceTimeout() {
         return this.persistenceTimeout;
     }
     /**
      * Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
-     *
+     * 
      */
     @Export(name="persistenceType", refs={String.class}, tree="[0]")
     private Output<String> persistenceType;
 
     /**
      * @return Session persistence type. Values: off (default): session persistence disabled. source_ip: source IP address, valid only when Protocol is TCP or UDP. insert: insert Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr. server: rewrite Cookie, valid only when Protocol is HTTP or HTTPS and Scheduler is wrr.
-     *
+     * 
      */
     public Output<String> persistenceType() {
         return this.persistenceType;
     }
     /**
      * Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
-     *
+     * 
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Port used by the listener to receive requests. Value range: 0–65535. When the Protocol parameter is &#39;TCP&#39; or &#39;UDP&#39;, 0 is supported, which enables listening on all ports.
-     *
+     * 
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Listener protocol. Includes: TCP, UDP, HTTP, HTTPS.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="proxyConnectTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyConnectTimeout;
 
     /**
      * @return Connection establishment timeout between CLB and backend server. Recommended to be greater than the health check timeout. Range: 4–120 seconds, default is 4. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> proxyConnectTimeout() {
         return this.proxyConnectTimeout;
     }
     /**
      * Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
-     *
+     * 
      */
     @Export(name="proxyProtocolType", refs={String.class}, tree="[0]")
     private Output<String> proxyProtocolType;
 
     /**
      * @return Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
-     *
+     * 
      */
     public Output<String> proxyProtocolType() {
         return this.proxyProtocolType;
     }
     /**
      * Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="proxyReadTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxyReadTimeout;
 
     /**
      * @return Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> proxyReadTimeout() {
         return this.proxyReadTimeout;
     }
     /**
      * Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="proxySendTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> proxySendTimeout;
 
     /**
      * @return Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> proxySendTimeout() {
         return this.proxySendTimeout;
     }
     /**
      * List of rule IDs bound to the listener.
-     *
+     * 
      */
     @Export(name="ruleIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ruleIds;
 
     /**
      * @return List of rule IDs bound to the listener.
-     *
+     * 
      */
     public Output<List<String>> ruleIds() {
         return this.ruleIds;
     }
     /**
      * Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
-     *
+     * 
      */
     @Export(name="scheduler", refs={String.class}, tree="[0]")
     private Output<String> scheduler;
 
     /**
      * @return Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
-     *
+     * 
      */
     public Output<String> scheduler() {
         return this.scheduler;
     }
     /**
      * TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
-     *
+     * 
      */
     @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
      * @return TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
-     *
+     * 
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
      * Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     @Export(name="sendTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> sendTimeout;
 
     /**
      * @return Timeout for CLB to send responses to the client. This timeout applies only between two consecutive write operations, not the entire response transmission. Range: 1–3600 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
-     *
+     * 
      */
     public Output<Integer> sendTimeout() {
         return this.sendTimeout;
     }
     /**
      * ID of the backend server group associated with the listener.
-     *
+     * 
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return ID of the backend server group associated with the listener.
-     *
+     * 
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
      * Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
-     *
+     * 
      */
     @Export(name="startPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> startPort;
 
     /**
      * @return Start port for all-port listening. Range: 1–65535. When Port is &#39;0&#39;, this parameter is required.
-     *
+     * 
      */
     public Output<Integer> startPort() {
         return this.startPort;
     }
     /**
      * Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Listener status. Creating: being created. Active: running. Deleting: being deleted. Disabled: disabled.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -705,7 +705,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * Tag associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,ListenerTag.class}, tree="[0,1]")
     private Output<List<ListenerTag>> tags;
@@ -713,35 +713,35 @@ public class Listener extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag associated with the listener.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<ListenerTag>> tags() {
         return this.tags;
     }
     /**
      * Last operation time of the listener.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last operation time of the listener.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
-     *
+     * 
      */
     @Export(name="wafProtectionEnabled", refs={String.class}, tree="[0]")
     private Output<String> wafProtectionEnabled;
 
     /**
      * @return Send traffic passing through the Layer 7 listener to the Web Application Firewall for inspection and filtering. on: yes. off: no.
-     *
+     * 
      */
     public Output<String> wafProtectionEnabled() {
         return this.wafProtectionEnabled;

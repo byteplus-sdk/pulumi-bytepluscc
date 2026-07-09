@@ -20,8 +20,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
         public readonly string AddressDomain;
         /// <summary>
         /// IP corresponding to the connection address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   It is not recommended to connect to the instance using the `IP:port` format, as the IP address may change after switching subnets. If the client code is not updated in time, instance connection failures may occur. We recommend accessing the MongoDB instance using the `domain:port` format to avoid connection issues caused by IP address changes. For detailed steps to connect to a MongoDB instance, see Connect to an Instance Using the Mongo Shell Tool.
         /// </summary>
@@ -32,21 +32,21 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb.Outputs
         public readonly string AddressPort;
         /// <summary>
         /// Connection address type of the node. Possible values:
-        ///
+        ///   
         ///   Primary: Primary node connection address
         ///   Secondary: Secondary node connection address
         ///   Hidden: Hidden node connection address
         ///   ReadOnly: Read-only node connection address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   Hidden node connection address information is returned only when the connection address type is a private connection address (that is, when `NetworkType` is set to `Private`).
         /// </summary>
         public readonly string AddressType;
         /// <summary>
         /// EIP ID bound to the instance's public address
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:**
         ///   This parameter is returned only when the connection address type is a public connection address (that is, when `NetworkType` is set to `Public`).
         /// </summary>

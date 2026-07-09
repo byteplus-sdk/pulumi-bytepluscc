@@ -19,14 +19,14 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
     /**
      * Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
      * @return Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-     *
+     * 
      */
     public Optional<Output<String>> action() {
         return Optional.ofNullable(this.action);
@@ -34,14 +34,14 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
     /**
      * Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-     *
+     * 
      */
     @Import(name="ignoreCase")
     private @Nullable Output<Boolean> ignoreCase;
 
     /**
      * @return Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-     *
+     * 
      */
     public Optional<Output<Boolean>> ignoreCase() {
         return Optional.ofNullable(this.ignoreCase);
@@ -49,14 +49,14 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
     /**
      * Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-     *
+     * 
      */
     @Import(name="statusCode")
     private @Nullable Output<String> statusCode;
 
     /**
      * @return Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-     *
+     * 
      */
     public Optional<Output<String>> statusCode() {
         return Optional.ofNullable(this.statusCode);
@@ -64,14 +64,14 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
     /**
      * Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-     *
+     * 
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-     *
+     * 
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -106,9 +106,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param action Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(@Nullable Output<String> action) {
             $.action = action;
@@ -117,9 +117,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param action Represents the cache behavior. Currently, you can only specify cache. cache means the behavior is caching.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder action(String action) {
             return action(Output.of(action));
@@ -127,9 +127,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param ignoreCase Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ignoreCase(@Nullable Output<Boolean> ignoreCase) {
             $.ignoreCase = ignoreCase;
@@ -138,9 +138,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param ignoreCase Indicates whether the CDN ignores case when matching files in a request with ConditionRule. The parameter has the following options: true: ignore case. false: do not ignore case. The default value is false.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ignoreCase(Boolean ignoreCase) {
             return ignoreCase(Output.of(ignoreCase));
@@ -148,9 +148,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param statusCode Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusCode(@Nullable Output<String> statusCode) {
             $.statusCode = statusCode;
@@ -159,9 +159,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param statusCode Specify a status code to cache. The status code range is 400–599. You can also specify 4xx or 5xx. 4xx refers to all status codes from 400 to 499. 5xx refers to all status codes from 500 to 599.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statusCode(String statusCode) {
             return statusCode(Output.of(statusCode));
@@ -169,9 +169,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param ttl Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -180,9 +180,9 @@ public final class DomainNegativeCacheNegativeCacheRuleArgs extends com.pulumi.r
 
         /**
          * @param ttl Indicates the cache duration for status codes, in seconds. The range is 1–315,360,000. 315,360,000 means 10 years.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));

@@ -20,7 +20,7 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
     /**
      * AS path information traversed by the BGP route entry.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="asPaths")
     private @Nullable Output<List<VpnGatewayRouteAsPathArgs>> asPaths;
@@ -28,7 +28,7 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
     /**
      * @return AS path information traversed by the BGP route entry.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<VpnGatewayRouteAsPathArgs>>> asPaths() {
         return Optional.ofNullable(this.asPaths);
@@ -36,14 +36,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * Time when the VPN gateway route entry was created.
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Time when the VPN gateway route entry was created.
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -51,14 +51,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * Destination network segment of the VPN gateway route entry.
-     *
+     * 
      */
     @Import(name="destinationCidrBlock")
     private @Nullable Output<String> destinationCidrBlock;
 
     /**
      * @return Destination network segment of the VPN gateway route entry.
-     *
+     * 
      */
     public Optional<Output<String>> destinationCidrBlock() {
         return Optional.ofNullable(this.destinationCidrBlock);
@@ -66,14 +66,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the IPsec connection for the route&#39;s next hop. You can call DescribeVpnConnections to query the IPsec connection ID.
-     *
+     * 
      */
     @Import(name="nextHopId")
     private @Nullable Output<String> nextHopId;
 
     /**
      * @return ID of the IPsec connection for the route&#39;s next hop. You can call DescribeVpnConnections to query the IPsec connection ID.
-     *
+     * 
      */
     public Optional<Output<String>> nextHopId() {
         return Optional.ofNullable(this.nextHopId);
@@ -81,14 +81,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * Next hop tunnel ID. This parameter is returned only for VPN gateways in dual-tunnel mode.
-     *
+     * 
      */
     @Import(name="nextTunnelId")
     private @Nullable Output<String> nextTunnelId;
 
     /**
      * @return Next hop tunnel ID. This parameter is returned only for VPN gateways in dual-tunnel mode.
-     *
+     * 
      */
     public Optional<Output<String>> nextTunnelId() {
         return Optional.ofNullable(this.nextTunnelId);
@@ -96,14 +96,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * Route type. Static: static route; BGP: BGP route; Cloud: VPC route in the cloud. Note: Route types synchronized from transit routers (TR) are not currently supported for display.
-     *
+     * 
      */
     @Import(name="routeType")
     private @Nullable Output<String> routeType;
 
     /**
      * @return Route type. Static: static route; BGP: BGP route; Cloud: VPC route in the cloud. Note: Route types synchronized from transit routers (TR) are not currently supported for display.
-     *
+     * 
      */
     public Optional<Output<String>> routeType() {
         return Optional.ofNullable(this.routeType);
@@ -111,14 +111,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * Status of the VPN gateway route entry. Creating: being created; Deleting: being deleted; Pending: being configured; Available: preferred route in effect; Conflicted: not preferred or not in effect. Note: When route prefixes are the same, the route priority is Cloud &gt; Static route &gt; BGP route. Therefore, there may be multiple routes with the same prefix, some with status Available and others with status Conflicted.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the VPN gateway route entry. Creating: being created; Deleting: being deleted; Pending: being configured; Available: preferred route in effect; Conflicted: not preferred or not in effect. Note: When route prefixes are the same, the route priority is Cloud &gt; Static route &gt; BGP route. Therefore, there may be multiple routes with the same prefix, some with status Available and others with status Conflicted.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -126,14 +126,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * Time when the VPN gateway route entry was modified.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Time when the VPN gateway route entry was modified.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -141,14 +141,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the VPN gateway for the route entry to be added.
-     *
+     * 
      */
     @Import(name="vpnGatewayId")
     private @Nullable Output<String> vpnGatewayId;
 
     /**
      * @return ID of the VPN gateway for the route entry to be added.
-     *
+     * 
      */
     public Optional<Output<String>> vpnGatewayId() {
         return Optional.ofNullable(this.vpnGatewayId);
@@ -156,14 +156,14 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the VPN gateway route entry.
-     *
+     * 
      */
     @Import(name="vpnGatewayRouteId")
     private @Nullable Output<String> vpnGatewayRouteId;
 
     /**
      * @return ID of the VPN gateway route entry.
-     *
+     * 
      */
     public Optional<Output<String>> vpnGatewayRouteId() {
         return Optional.ofNullable(this.vpnGatewayRouteId);
@@ -205,9 +205,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
         /**
          * @param asPaths AS path information traversed by the BGP route entry.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asPaths(@Nullable Output<List<VpnGatewayRouteAsPathArgs>> asPaths) {
             $.asPaths = asPaths;
@@ -217,9 +217,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
         /**
          * @param asPaths AS path information traversed by the BGP route entry.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asPaths(List<VpnGatewayRouteAsPathArgs> asPaths) {
             return asPaths(Output.of(asPaths));
@@ -228,9 +228,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
         /**
          * @param asPaths AS path information traversed by the BGP route entry.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder asPaths(VpnGatewayRouteAsPathArgs... asPaths) {
             return asPaths(List.of(asPaths));
@@ -238,9 +238,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param creationTime Time when the VPN gateway route entry was created.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -249,9 +249,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param creationTime Time when the VPN gateway route entry was created.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -259,9 +259,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param destinationCidrBlock Destination network segment of the VPN gateway route entry.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrBlock(@Nullable Output<String> destinationCidrBlock) {
             $.destinationCidrBlock = destinationCidrBlock;
@@ -270,9 +270,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param destinationCidrBlock Destination network segment of the VPN gateway route entry.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder destinationCidrBlock(String destinationCidrBlock) {
             return destinationCidrBlock(Output.of(destinationCidrBlock));
@@ -280,9 +280,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nextHopId ID of the IPsec connection for the route&#39;s next hop. You can call DescribeVpnConnections to query the IPsec connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nextHopId(@Nullable Output<String> nextHopId) {
             $.nextHopId = nextHopId;
@@ -291,9 +291,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nextHopId ID of the IPsec connection for the route&#39;s next hop. You can call DescribeVpnConnections to query the IPsec connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nextHopId(String nextHopId) {
             return nextHopId(Output.of(nextHopId));
@@ -301,9 +301,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nextTunnelId Next hop tunnel ID. This parameter is returned only for VPN gateways in dual-tunnel mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nextTunnelId(@Nullable Output<String> nextTunnelId) {
             $.nextTunnelId = nextTunnelId;
@@ -312,9 +312,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nextTunnelId Next hop tunnel ID. This parameter is returned only for VPN gateways in dual-tunnel mode.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder nextTunnelId(String nextTunnelId) {
             return nextTunnelId(Output.of(nextTunnelId));
@@ -322,9 +322,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param routeType Route type. Static: static route; BGP: BGP route; Cloud: VPC route in the cloud. Note: Route types synchronized from transit routers (TR) are not currently supported for display.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeType(@Nullable Output<String> routeType) {
             $.routeType = routeType;
@@ -333,9 +333,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param routeType Route type. Static: static route; BGP: BGP route; Cloud: VPC route in the cloud. Note: Route types synchronized from transit routers (TR) are not currently supported for display.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routeType(String routeType) {
             return routeType(Output.of(routeType));
@@ -343,9 +343,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Status of the VPN gateway route entry. Creating: being created; Deleting: being deleted; Pending: being configured; Available: preferred route in effect; Conflicted: not preferred or not in effect. Note: When route prefixes are the same, the route priority is Cloud &gt; Static route &gt; BGP route. Therefore, there may be multiple routes with the same prefix, some with status Available and others with status Conflicted.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -354,9 +354,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Status of the VPN gateway route entry. Creating: being created; Deleting: being deleted; Pending: being configured; Available: preferred route in effect; Conflicted: not preferred or not in effect. Note: When route prefixes are the same, the route priority is Cloud &gt; Static route &gt; BGP route. Therefore, there may be multiple routes with the same prefix, some with status Available and others with status Conflicted.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -364,9 +364,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param updateTime Time when the VPN gateway route entry was modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -375,9 +375,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param updateTime Time when the VPN gateway route entry was modified.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -385,9 +385,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpnGatewayId ID of the VPN gateway for the route entry to be added.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpnGatewayId(@Nullable Output<String> vpnGatewayId) {
             $.vpnGatewayId = vpnGatewayId;
@@ -396,9 +396,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpnGatewayId ID of the VPN gateway for the route entry to be added.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpnGatewayId(String vpnGatewayId) {
             return vpnGatewayId(Output.of(vpnGatewayId));
@@ -406,9 +406,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpnGatewayRouteId ID of the VPN gateway route entry.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpnGatewayRouteId(@Nullable Output<String> vpnGatewayRouteId) {
             $.vpnGatewayRouteId = vpnGatewayRouteId;
@@ -417,9 +417,9 @@ public final class VpnGatewayRouteState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpnGatewayRouteId ID of the VPN gateway route entry.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpnGatewayRouteId(String vpnGatewayRouteId) {
             return vpnGatewayRouteId(Output.of(vpnGatewayRouteId));

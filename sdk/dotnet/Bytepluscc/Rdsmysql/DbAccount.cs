@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// Database account.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSMySQLDBAccountDemo = new Bytepluscc.Rdsmysql.DbAccount("RDSMySQLDBAccountDemo", new()
     ///     {
@@ -61,12 +61,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///         Host = "%",
     ///         TableColumnPrivileges = new[] {},
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/dbAccount:DbAccount example "instance_id|account_name|host"
     /// ```

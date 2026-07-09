@@ -16,12 +16,12 @@ public final class DomainCompression {
     /**
      * @return Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<DomainCompressionCompressionRule> compressionRules;
     /**
      * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
-     *
+     * 
      */
     private @Nullable Boolean switch_;
 
@@ -29,14 +29,14 @@ public final class DomainCompression {
     /**
      * @return Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<DomainCompressionCompressionRule> compressionRules() {
         return this.compressionRules == null ? List.of() : this.compressionRules;
     }
     /**
      * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
-     *
+     * 
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

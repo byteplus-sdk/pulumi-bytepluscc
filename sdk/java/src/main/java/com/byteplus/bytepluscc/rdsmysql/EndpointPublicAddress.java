@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Instance connection endpoint public address.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var endpointPublicAddressDemo = new EndpointPublicAddress("endpointPublicAddressDemo", EndpointPublicAddressArgs.builder()
  *             .instanceId("mysql-f9fe535xxxxx")
@@ -49,26 +49,26 @@ import javax.annotation.Nullable;
  *             .domainPrefix("ccapi-terraform")
  *             .port("23306")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/endpointPublicAddress:EndpointPublicAddress example &#34;instance_id|endpoint_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdsmysql/endpointPublicAddress:EndpointPublicAddress")
 public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
     /**
      * - false: private network resolution (default)
      *     - true: private and public network resolution
-     *
+     * 
      */
     @Export(name="dnsVisibility", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dnsVisibility;
@@ -76,49 +76,49 @@ public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
     /**
      * @return - false: private network resolution (default)
      *     - true: private and public network resolution
-     *
+     * 
      */
     public Output<Boolean> dnsVisibility() {
         return this.dnsVisibility;
     }
     /**
      * Connection domain name.
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Connection domain name.
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-     *
+     * 
      */
     @Export(name="domainPrefix", refs={String.class}, tree="[0]")
     private Output<String> domainPrefix;
 
     /**
      * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-     *
+     * 
      */
     public Output<String> domainPrefix() {
         return this.domainPrefix;
     }
     /**
      * EIP ID, valid only for Public addresses.
-     *
+     * 
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return EIP ID, valid only for Public addresses.
-     *
+     * 
      */
     public Output<String> eipId() {
         return this.eipId;
@@ -127,7 +127,7 @@ public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
      * Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
      *     - true: Yes
      *     - false: No
-     *
+     * 
      */
     @Export(name="eipLocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> eipLocked;
@@ -136,105 +136,105 @@ public class EndpointPublicAddress extends com.pulumi.resources.CustomResource {
      * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
      *     - true: Yes
      *     - false: No
-     *
+     * 
      */
     public Output<Boolean> eipLocked() {
         return this.eipLocked;
     }
     /**
      * Instance connection endpoint ID.
-     *
+     * 
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     *
+     * 
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Instance ID.
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * IP protocol version. Value: IPv4.
-     *
+     * 
      */
     @Export(name="internetProtocol", refs={String.class}, tree="[0]")
     private Output<String> internetProtocol;
 
     /**
      * @return IP protocol version. Value: IPv4.
-     *
+     * 
      */
     public Output<String> internetProtocol() {
         return this.internetProtocol;
     }
     /**
      * IP address.
-     *
+     * 
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
      * @return IP address.
-     *
+     * 
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
      * Network address type. Valid values: Private: Private address. Public: Public address.
-     *
+     * 
      */
     @Export(name="networkType", refs={String.class}, tree="[0]")
     private Output<String> networkType;
 
     /**
      * @return Network address type. Valid values: Private: Private address. Public: Public address.
-     *
+     * 
      */
     public Output<String> networkType() {
         return this.networkType;
     }
     /**
      * Port.
-     *
+     * 
      */
     @Export(name="port", refs={String.class}, tree="[0]")
     private Output<String> port;
 
     /**
      * @return Port.
-     *
+     * 
      */
     public Output<String> port() {
         return this.port;
     }
     /**
      * Subnet ID, valid only for Private addresses.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID, valid only for Private addresses.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;

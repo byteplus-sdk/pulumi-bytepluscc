@@ -23,14 +23,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-     *
+     * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-     *
+     * 
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -38,14 +38,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
-     *
+     * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
-     *
+     * 
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -53,14 +53,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -68,14 +68,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Deletion time
-     *
+     * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return Deletion time
-     *
+     * 
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -83,14 +83,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -98,14 +98,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
-     *
+     * 
      */
     @Import(name="directMode")
     private @Nullable Output<Boolean> directMode;
 
     /**
      * @return Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
-     *
+     * 
      */
     public Optional<Output<Boolean>> directMode() {
         return Optional.ofNullable(this.directMode);
@@ -113,14 +113,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNAT rule ID list.
-     *
+     * 
      */
     @Import(name="dnatEntryIds")
     private @Nullable Output<List<String>> dnatEntryIds;
 
     /**
      * @return DNAT rule ID list.
-     *
+     * 
      */
     public Optional<Output<List<String>>> dnatEntryIds() {
         return Optional.ofNullable(this.dnatEntryIds);
@@ -129,7 +129,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     /**
      * Information about the public IP bound to the NAT Gateway
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="eipAddresses")
     private @Nullable Output<List<NgwEipAddressArgs>> eipAddresses;
@@ -137,7 +137,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Information about the public IP bound to the NAT Gateway
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NgwEipAddressArgs>>> eipAddresses() {
         return Optional.ofNullable(this.eipAddresses);
@@ -145,14 +145,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
-     *
+     * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
-     *
+     * 
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -160,14 +160,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
-     *
+     * 
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
      * @return Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
-     *
+     * 
      */
     public Optional<Output<String>> lockReason() {
         return Optional.ofNullable(this.lockReason);
@@ -175,14 +175,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT gateway ID.
-     *
+     * 
      */
     @Import(name="natGatewayId")
     private @Nullable Output<String> natGatewayId;
 
     /**
      * @return NAT gateway ID.
-     *
+     * 
      */
     public Optional<Output<String>> natGatewayId() {
         return Optional.ofNullable(this.natGatewayId);
@@ -190,14 +190,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-     *
+     * 
      */
     @Import(name="natGatewayName")
     private @Nullable Output<String> natGatewayName;
 
     /**
      * @return Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> natGatewayName() {
         return Optional.ofNullable(this.natGatewayName);
@@ -206,7 +206,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     /**
      * Transit IP list for private NAT instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="natIpAddresses")
     private @Nullable Output<List<NgwNatIpAddressArgs>> natIpAddresses;
@@ -214,7 +214,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Transit IP list for private NAT instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NgwNatIpAddressArgs>>> natIpAddresses() {
         return Optional.ofNullable(this.natIpAddresses);
@@ -222,14 +222,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network interface ID occupied by the NAT gateway.
-     *
+     * 
      */
     @Import(name="networkInterfaceId")
     private @Nullable Output<String> networkInterfaceId;
 
     /**
      * @return Network interface ID occupied by the NAT gateway.
-     *
+     * 
      */
     public Optional<Output<String>> networkInterfaceId() {
         return Optional.ofNullable(this.networkInterfaceId);
@@ -237,14 +237,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-     *
+     * 
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
      * @return NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-     *
+     * 
      */
     public Optional<Output<String>> networkType() {
         return Optional.ofNullable(this.networkType);
@@ -252,14 +252,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
-     *
+     * 
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
      * @return Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
-     *
+     * 
      */
     public Optional<Output<String>> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
@@ -267,14 +267,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-     *
+     * 
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-     *
+     * 
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -282,14 +282,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-     *
+     * 
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-     *
+     * 
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -297,14 +297,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -312,14 +312,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable intelligent scheduling
-     *
+     * 
      */
     @Import(name="smartScheduleEnabled")
     private @Nullable Output<Boolean> smartScheduleEnabled;
 
     /**
      * @return Whether to enable intelligent scheduling
-     *
+     * 
      */
     public Optional<Output<Boolean>> smartScheduleEnabled() {
         return Optional.ofNullable(this.smartScheduleEnabled);
@@ -327,14 +327,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-     *
+     * 
      */
     @Import(name="smartScheduleRule")
     private @Nullable Output<String> smartScheduleRule;
 
     /**
      * @return Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-     *
+     * 
      */
     public Optional<Output<String>> smartScheduleRule() {
         return Optional.ofNullable(this.smartScheduleRule);
@@ -342,14 +342,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SNAT rule ID list
-     *
+     * 
      */
     @Import(name="snatEntryIds")
     private @Nullable Output<List<String>> snatEntryIds;
 
     /**
      * @return SNAT rule ID list
-     *
+     * 
      */
     public Optional<Output<List<String>>> snatEntryIds() {
         return Optional.ofNullable(this.snatEntryIds);
@@ -357,14 +357,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-     *
+     * 
      */
     @Import(name="spec")
     private @Nullable Output<String> spec;
 
     /**
      * @return NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-     *
+     * 
      */
     public Optional<Output<String>> spec() {
         return Optional.ofNullable(this.spec);
@@ -372,14 +372,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -387,14 +387,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-     *
+     * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-     *
+     * 
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -403,7 +403,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<NgwTagArgs>> tags;
@@ -411,7 +411,7 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NgwTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -419,14 +419,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last operation time of the NAT Gateway
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Last operation time of the NAT Gateway
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -434,14 +434,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the private network where the NAT Gateway is located
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the private network where the NAT Gateway is located
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -449,14 +449,14 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the primary availability zone the NAT Gateway belongs to
-     *
+     * 
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return ID of the primary availability zone the NAT Gateway belongs to
-     *
+     * 
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -516,9 +516,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -527,9 +527,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -537,9 +537,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param businessStatus Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -548,9 +548,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param businessStatus Indicates whether the NAT gateway is locked. Empty: Normal, not locked. Normal: Normal, not locked. FinancialLocked: Locked due to overdue payment.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -558,9 +558,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -569,9 +569,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -579,9 +579,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletedTime Deletion time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -590,9 +590,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletedTime Deletion time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -600,9 +600,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -611,9 +611,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -621,9 +621,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directMode Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directMode(@Nullable Output<Boolean> directMode) {
             $.directMode = directMode;
@@ -632,9 +632,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directMode Indicates whether the NAT is direct or non-direct.   - true (default): EIP direct NAT gateway.   - false: Non-EIP direct NAT gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directMode(Boolean directMode) {
             return directMode(Output.of(directMode));
@@ -642,9 +642,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnatEntryIds DNAT rule ID list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dnatEntryIds(@Nullable Output<List<String>> dnatEntryIds) {
             $.dnatEntryIds = dnatEntryIds;
@@ -653,9 +653,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnatEntryIds DNAT rule ID list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dnatEntryIds(List<String> dnatEntryIds) {
             return dnatEntryIds(Output.of(dnatEntryIds));
@@ -663,9 +663,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnatEntryIds DNAT rule ID list.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder dnatEntryIds(String... dnatEntryIds) {
             return dnatEntryIds(List.of(dnatEntryIds));
@@ -674,9 +674,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param eipAddresses Information about the public IP bound to the NAT Gateway
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eipAddresses(@Nullable Output<List<NgwEipAddressArgs>> eipAddresses) {
             $.eipAddresses = eipAddresses;
@@ -686,9 +686,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param eipAddresses Information about the public IP bound to the NAT Gateway
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eipAddresses(List<NgwEipAddressArgs> eipAddresses) {
             return eipAddresses(Output.of(eipAddresses));
@@ -697,9 +697,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param eipAddresses Information about the public IP bound to the NAT Gateway
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder eipAddresses(NgwEipAddressArgs... eipAddresses) {
             return eipAddresses(List.of(eipAddresses));
@@ -707,9 +707,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -718,9 +718,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Expiration time for subscription NAT Gateway. Only NAT Gateways with subscription billing return this parameter.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -728,9 +728,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lockReason Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lockReason(@Nullable Output<String> lockReason) {
             $.lockReason = lockReason;
@@ -739,9 +739,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lockReason Reason for NAT lock. financial: Locked due to overdue payment. security: Locked for security reasons.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lockReason(String lockReason) {
             return lockReason(Output.of(lockReason));
@@ -749,9 +749,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayId NAT gateway ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayId(@Nullable Output<String> natGatewayId) {
             $.natGatewayId = natGatewayId;
@@ -760,9 +760,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayId NAT gateway ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayId(String natGatewayId) {
             return natGatewayId(Output.of(natGatewayId));
@@ -770,9 +770,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayName Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayName(@Nullable Output<String> natGatewayName) {
             $.natGatewayName = natGatewayName;
@@ -781,9 +781,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayName Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natGatewayName(String natGatewayName) {
             return natGatewayName(Output.of(natGatewayName));
@@ -792,9 +792,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param natIpAddresses Transit IP list for private NAT instance
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natIpAddresses(@Nullable Output<List<NgwNatIpAddressArgs>> natIpAddresses) {
             $.natIpAddresses = natIpAddresses;
@@ -804,9 +804,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param natIpAddresses Transit IP list for private NAT instance
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natIpAddresses(List<NgwNatIpAddressArgs> natIpAddresses) {
             return natIpAddresses(Output.of(natIpAddresses));
@@ -815,9 +815,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param natIpAddresses Transit IP list for private NAT instance
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder natIpAddresses(NgwNatIpAddressArgs... natIpAddresses) {
             return natIpAddresses(List.of(natIpAddresses));
@@ -825,9 +825,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkInterfaceId Network interface ID occupied by the NAT gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkInterfaceId(@Nullable Output<String> networkInterfaceId) {
             $.networkInterfaceId = networkInterfaceId;
@@ -836,9 +836,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkInterfaceId Network interface ID occupied by the NAT gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkInterfaceId(String networkInterfaceId) {
             return networkInterfaceId(Output.of(networkInterfaceId));
@@ -846,9 +846,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkType NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkType(@Nullable Output<String> networkType) {
             $.networkType = networkType;
@@ -857,9 +857,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkType NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
@@ -867,9 +867,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param overdueTime Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder overdueTime(@Nullable Output<String> overdueTime) {
             $.overdueTime = overdueTime;
@@ -878,9 +878,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param overdueTime Resource freeze time. This parameter is returned only when the resource is frozen due to overdue payment.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder overdueTime(String overdueTime) {
             return overdueTime(Output.of(overdueTime));
@@ -888,9 +888,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -899,9 +899,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -909,9 +909,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -920,9 +920,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -930,9 +930,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -941,9 +941,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -951,9 +951,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleEnabled Whether to enable intelligent scheduling
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smartScheduleEnabled(@Nullable Output<Boolean> smartScheduleEnabled) {
             $.smartScheduleEnabled = smartScheduleEnabled;
@@ -962,9 +962,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleEnabled Whether to enable intelligent scheduling
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smartScheduleEnabled(Boolean smartScheduleEnabled) {
             return smartScheduleEnabled(Output.of(smartScheduleEnabled));
@@ -972,9 +972,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleRule Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smartScheduleRule(@Nullable Output<String> smartScheduleRule) {
             $.smartScheduleRule = smartScheduleRule;
@@ -983,9 +983,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleRule Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smartScheduleRule(String smartScheduleRule) {
             return smartScheduleRule(Output.of(smartScheduleRule));
@@ -993,9 +993,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snatEntryIds SNAT rule ID list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snatEntryIds(@Nullable Output<List<String>> snatEntryIds) {
             $.snatEntryIds = snatEntryIds;
@@ -1004,9 +1004,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snatEntryIds SNAT rule ID list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snatEntryIds(List<String> snatEntryIds) {
             return snatEntryIds(Output.of(snatEntryIds));
@@ -1014,9 +1014,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snatEntryIds SNAT rule ID list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder snatEntryIds(String... snatEntryIds) {
             return snatEntryIds(List.of(snatEntryIds));
@@ -1024,9 +1024,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param spec NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder spec(@Nullable Output<String> spec) {
             $.spec = spec;
@@ -1035,9 +1035,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param spec NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder spec(String spec) {
             return spec(Output.of(spec));
@@ -1045,9 +1045,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -1056,9 +1056,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the NAT Gateway. Available: Available. Creating: Creating. Pending: In progress. Deleting: Deleting.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -1066,9 +1066,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -1077,9 +1077,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -1088,9 +1088,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<NgwTagArgs>> tags) {
             $.tags = tags;
@@ -1100,9 +1100,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<NgwTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1111,9 +1111,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(NgwTagArgs... tags) {
             return tags(List.of(tags));
@@ -1121,9 +1121,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Last operation time of the NAT Gateway
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -1132,9 +1132,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Last operation time of the NAT Gateway
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -1142,9 +1142,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the private network where the NAT Gateway is located
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1153,9 +1153,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the private network where the NAT Gateway is located
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -1163,9 +1163,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId ID of the primary availability zone the NAT Gateway belongs to
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1174,9 +1174,9 @@ public final class NgwState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId ID of the primary availability zone the NAT Gateway belongs to
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

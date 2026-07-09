@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * A virtual collection of multiple consumers. When consuming log data at the consumer group level, all consumers in the group subscribe to the same log topic and jointly consume data from that log topic. Each consumer consumes data from one or more Shards in the log topic, and there is no duplicate consumption of data among consumers.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var tLSConsumerGroupDemo = new ConsumerGroup("tLSConsumerGroupDemo", ConsumerGroupArgs.builder()
  *             .projectId("c6fef4c1-041f-43*****")
@@ -51,102 +51,102 @@ import javax.annotation.Nullable;
  *             .heartbeatTtl(10)
  *             .orderedConsume(true)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:tls/consumerGroup:ConsumerGroup example &#34;project_id|consumer_group_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:tls/consumerGroup:ConsumerGroup")
 public class ConsumerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Consumer group name.
-     *
+     * 
      */
     @Export(name="consumerGroupName", refs={String.class}, tree="[0]")
     private Output<String> consumerGroupName;
 
     /**
      * @return Consumer group name.
-     *
+     * 
      */
     public Output<String> consumerGroupName() {
         return this.consumerGroupName;
     }
     /**
      * Heartbeat timeout in seconds. Value range: 1~300.
-     *
+     * 
      */
     @Export(name="heartbeatTtl", refs={Integer.class}, tree="[0]")
     private Output<Integer> heartbeatTtl;
 
     /**
      * @return Heartbeat timeout in seconds. Value range: 1~300.
-     *
+     * 
      */
     public Output<Integer> heartbeatTtl() {
         return this.heartbeatTtl;
     }
     /**
      * Whether to consume in order. true: Consume in order within the Shard. After a Shard splits, finish consuming data from the original Shard first, then consume data from the new Shards created by the split in parallel. After a Shard merges, finish consuming data from the original Shard first, then consume data from the new Shard created by the merge. false: Do not consume in order. All Shards are consumed simultaneously, and any new Shards created by splitting or merging are also consumed immediately.
-     *
+     * 
      */
     @Export(name="orderedConsume", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> orderedConsume;
 
     /**
      * @return Whether to consume in order. true: Consume in order within the Shard. After a Shard splits, finish consuming data from the original Shard first, then consume data from the new Shards created by the split in parallel. After a Shard merges, finish consuming data from the original Shard first, then consume data from the new Shard created by the merge. false: Do not consume in order. All Shards are consumed simultaneously, and any new Shards created by splitting or merging are also consumed immediately.
-     *
+     * 
      */
     public Output<Boolean> orderedConsume() {
         return this.orderedConsume;
     }
     /**
      * ID of the log project to which the consumer group belongs.
-     *
+     * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return ID of the log project to which the consumer group belongs.
-     *
+     * 
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Name of the log project to which the consumer group belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the log project to which the consumer group belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * List of log topic IDs to be consumed by the consumer group.
-     *
+     * 
      */
     @Export(name="topicIdLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> topicIdLists;
 
     /**
      * @return List of log topic IDs to be consumed by the consumer group.
-     *
+     * 
      */
     public Output<List<String>> topicIdLists() {
         return this.topicIdLists;

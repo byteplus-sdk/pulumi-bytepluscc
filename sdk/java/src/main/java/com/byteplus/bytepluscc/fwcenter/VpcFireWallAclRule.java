@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * VPC border firewall access control policy (ACL rule), used to define allow, block, or observe rules for traffic between VPCs.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -40,12 +40,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var example = new VpcFireWallAclRule("example", VpcFireWallAclRuleArgs.builder()
  *             .action("accept")
@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .ipType("v4")
  *             .prio(1)
  *             .proto("TCP")
- *             .repeatDays(
+ *             .repeatDays(            
  *                 2,
  *                 3)
  *             .repeatEndTime("04:00")
@@ -71,88 +71,88 @@ import javax.annotation.Nullable;
  *             .status(true)
  *             .vpcFirewallId("vfw-yeoxxxxxx4vvsy6xj")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule example &#34;vpc_firewall_id|rule_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule")
 public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * User unique ID.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return User unique ID.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Policy action: accept (allow); deny (block); monitor (observe).
-     *
+     * 
      */
     @Export(name="action", refs={String.class}, tree="[0]")
     private Output<String> action;
 
     /**
      * @return Policy action: accept (allow); deny (block); monitor (observe).
-     *
+     * 
      */
     public Output<String> action() {
         return this.action;
     }
     /**
      * Policy description, used to explain the purpose and function of the policy.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Policy description, used to explain the purpose and function of the policy.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Destination port, single port or port range (e.g., 22/22, 100/200). If DestPortType is group, it is a list of port address book UUIDs, separated by commas. Leave blank if protocol is ICMP or ANY.
-     *
+     * 
      */
     @Export(name="destPort", refs={String.class}, tree="[0]")
     private Output<String> destPort;
 
     /**
      * @return Destination port, single port or port range (e.g., 22/22, 100/200). If DestPortType is group, it is a list of port address book UUIDs, separated by commas. Leave blank if protocol is ICMP or ANY.
-     *
+     * 
      */
     public Output<String> destPort() {
         return this.destPort;
     }
     /**
      * Destination port book type.
-     *
+     * 
      */
     @Export(name="destPortGroupType", refs={String.class}, tree="[0]")
     private Output<String> destPortGroupType;
 
     /**
      * @return Destination port book type.
-     *
+     * 
      */
     public Output<String> destPortGroupType() {
         return this.destPortGroupType;
@@ -160,7 +160,7 @@ public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * Destination port list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="destPortListV1s", refs={List.class,VpcFireWallAclRuleDestPortListV1.class}, tree="[0,1]")
     private Output<List<VpcFireWallAclRuleDestPortListV1>> destPortListV1s;
@@ -168,49 +168,49 @@ public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * @return Destination port list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcFireWallAclRuleDestPortListV1>> destPortListV1s() {
         return this.destPortListV1s;
     }
     /**
      * Destination port list.
-     *
+     * 
      */
     @Export(name="destPortLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> destPortLists;
 
     /**
      * @return Destination port list.
-     *
+     * 
      */
     public Output<List<String>> destPortLists() {
         return this.destPortLists;
     }
     /**
      * Destination port type: port (single port or port range); group (port address book).
-     *
+     * 
      */
     @Export(name="destPortType", refs={String.class}, tree="[0]")
     private Output<String> destPortType;
 
     /**
      * @return Destination port type: port (single port or port range); group (port address book).
-     *
+     * 
      */
     public Output<String> destPortType() {
         return this.destPortType;
     }
     /**
      * Destination address. The value depends on DestinationType: net for destination CIDR address; group for destination address book UUIDs, separated by commas; domain for destination domain name.
-     *
+     * 
      */
     @Export(name="destination", refs={String.class}, tree="[0]")
     private Output<String> destination;
 
     /**
      * @return Destination address. The value depends on DestinationType: net for destination CIDR address; group for destination address book UUIDs, separated by commas; domain for destination domain name.
-     *
+     * 
      */
     public Output<String> destination() {
         return this.destination;
@@ -218,7 +218,7 @@ public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * Destination CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="destinationCidrListV1s", refs={List.class,VpcFireWallAclRuleDestinationCidrListV1.class}, tree="[0,1]")
     private Output<List<VpcFireWallAclRuleDestinationCidrListV1>> destinationCidrListV1s;
@@ -226,259 +226,259 @@ public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * @return Destination CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcFireWallAclRuleDestinationCidrListV1>> destinationCidrListV1s() {
         return this.destinationCidrListV1s;
     }
     /**
      * Destination CIDR list.
-     *
+     * 
      */
     @Export(name="destinationCidrLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> destinationCidrLists;
 
     /**
      * @return Destination CIDR list.
-     *
+     * 
      */
     public Output<List<String>> destinationCidrLists() {
         return this.destinationCidrLists;
     }
     /**
      * Destination domain name list.
-     *
+     * 
      */
     @Export(name="destinationDomainLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> destinationDomainLists;
 
     /**
      * @return Destination domain name list.
-     *
+     * 
      */
     public Output<List<String>> destinationDomainLists() {
         return this.destinationDomainLists;
     }
     /**
      * Destination address book type.
-     *
+     * 
      */
     @Export(name="destinationGroupType", refs={String.class}, tree="[0]")
     private Output<String> destinationGroupType;
 
     /**
      * @return Destination address book type.
-     *
+     * 
      */
     public Output<String> destinationGroupType() {
         return this.destinationGroupType;
     }
     /**
      * Destination address type: net for subnet (CIDR format); group for address book (UUID format); domain for domain name.
-     *
+     * 
      */
     @Export(name="destinationType", refs={String.class}, tree="[0]")
     private Output<String> destinationType;
 
     /**
      * @return Destination address type: net for subnet (CIDR format); group for address book (UUID format); domain for domain name.
-     *
+     * 
      */
     public Output<String> destinationType() {
         return this.destinationType;
     }
     /**
      * Domain name resolution mode: fqdn for full domain name resolution; dns for dynamic DNS resolution.
-     *
+     * 
      */
     @Export(name="domainResolutionMode", refs={String.class}, tree="[0]")
     private Output<String> domainResolutionMode;
 
     /**
      * @return Domain name resolution mode: fqdn for full domain name resolution; dns for dynamic DNS resolution.
-     *
+     * 
      */
     public Output<String> domainResolutionMode() {
         return this.domainResolutionMode;
     }
     /**
      * Effectiveness status of the access control policy. 1: not effective; 2: deploying; 3: effective.
-     *
+     * 
      */
     @Export(name="effectStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> effectStatus;
 
     /**
      * @return Effectiveness status of the access control policy. 1: not effective; 2: deploying; 3: effective.
-     *
+     * 
      */
     public Output<Integer> effectStatus() {
         return this.effectStatus;
     }
     /**
      * Policy activation end time, Unix timestamp. Fill in only when RepeatType is Once, Daily, Weekly, or Monthly.
-     *
+     * 
      */
     @Export(name="endTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> endTime;
 
     /**
      * @return Policy activation end time, Unix timestamp. Fill in only when RepeatType is Once, Daily, Weekly, or Monthly.
-     *
+     * 
      */
     public Output<Integer> endTime() {
         return this.endTime;
     }
     /**
      * Hit count of the access control policy.
-     *
+     * 
      */
     @Export(name="hitCnt", refs={Integer.class}, tree="[0]")
     private Output<Integer> hitCnt;
 
     /**
      * @return Hit count of the access control policy.
-     *
+     * 
      */
     public Output<Integer> hitCnt() {
         return this.hitCnt;
     }
     /**
      * IP version: v4 indicates IPv4; v6 indicates IPv6.
-     *
+     * 
      */
     @Export(name="ipType", refs={String.class}, tree="[0]")
     private Output<String> ipType;
 
     /**
      * @return IP version: v4 indicates IPv4; v6 indicates IPv6.
-     *
+     * 
      */
     public Output<String> ipType() {
         return this.ipType;
     }
     /**
      * Whether the access control policy is effective. true: effective; false: not effective.
-     *
+     * 
      */
     @Export(name="isEffected", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEffected;
 
     /**
      * @return Whether the access control policy is effective. true: effective; false: not effective.
-     *
+     * 
      */
     public Output<Boolean> isEffected() {
         return this.isEffected;
     }
     /**
      * Policy priority. Lower values indicate higher priority. 0 is the lowest priority, 1 is the highest. When modifying, the minimum value for this parameter is 1.
-     *
+     * 
      */
     @Export(name="prio", refs={Integer.class}, tree="[0]")
     private Output<Integer> prio;
 
     /**
      * @return Policy priority. Lower values indicate higher priority. 0 is the lowest priority, 1 is the highest. When modifying, the minimum value for this parameter is 1.
-     *
+     * 
      */
     public Output<Integer> prio() {
         return this.prio;
     }
     /**
      * Protocol type: ICMP, TCP, UDP, ANY. Only TCP is supported when the destination address type is domain.
-     *
+     * 
      */
     @Export(name="proto", refs={String.class}, tree="[0]")
     private Output<String> proto;
 
     /**
      * @return Protocol type: ICMP, TCP, UDP, ANY. Only TCP is supported when the destination address type is domain.
-     *
+     * 
      */
     public Output<String> proto() {
         return this.proto;
     }
     /**
      * Specific dates for repeated activation. Valid only when RepeatType is Weekly (0-6 for Sunday to Saturday) or Monthly (1-31 for each day of the month).
-     *
+     * 
      */
     @Export(name="repeatDays", refs={List.class,Integer.class}, tree="[0,1]")
     private Output<List<Integer>> repeatDays;
 
     /**
      * @return Specific dates for repeated activation. Valid only when RepeatType is Weekly (0-6 for Sunday to Saturday) or Monthly (1-31 for each day of the month).
-     *
+     * 
      */
     public Output<List<Integer>> repeatDays() {
         return this.repeatDays;
     }
     /**
      * Recurring daily end time, format: hh:mm. Valid only when RepeatType is Weekly or Monthly.
-     *
+     * 
      */
     @Export(name="repeatEndTime", refs={String.class}, tree="[0]")
     private Output<String> repeatEndTime;
 
     /**
      * @return Recurring daily end time, format: hh:mm. Valid only when RepeatType is Weekly or Monthly.
-     *
+     * 
      */
     public Output<String> repeatEndTime() {
         return this.repeatEndTime;
     }
     /**
      * Recurring daily start time, format: hh:mm. Valid only when RepeatType is Daily, Weekly, or Monthly.
-     *
+     * 
      */
     @Export(name="repeatStartTime", refs={String.class}, tree="[0]")
     private Output<String> repeatStartTime;
 
     /**
      * @return Recurring daily start time, format: hh:mm. Valid only when RepeatType is Daily, Weekly, or Monthly.
-     *
+     * 
      */
     public Output<String> repeatStartTime() {
         return this.repeatStartTime;
     }
     /**
      * Activation repeat type: Permanent always effective; Once single activation; Daily repeat daily; Weekly repeat weekly; Monthly repeat monthly.
-     *
+     * 
      */
     @Export(name="repeatType", refs={String.class}, tree="[0]")
     private Output<String> repeatType;
 
     /**
      * @return Activation repeat type: Permanent always effective; Once single activation; Daily repeat daily; Weekly repeat weekly; Monthly repeat monthly.
-     *
+     * 
      */
     public Output<String> repeatType() {
         return this.repeatType;
     }
     /**
      * Unique ID of the access control policy.
-     *
+     * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Unique ID of the access control policy.
-     *
+     * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * Source address. The value depends on SourceType: net for source CIDR address; group for source address book UUIDs, separated by commas.
-     *
+     * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
      * @return Source address. The value depends on SourceType: net for source CIDR address; group for source address book UUIDs, separated by commas.
-     *
+     * 
      */
     public Output<String> source() {
         return this.source;
@@ -486,7 +486,7 @@ public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * Source CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="sourceCidrListV1s", refs={List.class,VpcFireWallAclRuleSourceCidrListV1.class}, tree="[0,1]")
     private Output<List<VpcFireWallAclRuleSourceCidrListV1>> sourceCidrListV1s;
@@ -494,133 +494,133 @@ public class VpcFireWallAclRule extends com.pulumi.resources.CustomResource {
     /**
      * @return Source CIDR list (structured).
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<VpcFireWallAclRuleSourceCidrListV1>> sourceCidrListV1s() {
         return this.sourceCidrListV1s;
     }
     /**
      * Source CIDR list.
-     *
+     * 
      */
     @Export(name="sourceCidrLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sourceCidrLists;
 
     /**
      * @return Source CIDR list.
-     *
+     * 
      */
     public Output<List<String>> sourceCidrLists() {
         return this.sourceCidrLists;
     }
     /**
      * Source address book type.
-     *
+     * 
      */
     @Export(name="sourceGroupType", refs={String.class}, tree="[0]")
     private Output<String> sourceGroupType;
 
     /**
      * @return Source address book type.
-     *
+     * 
      */
     public Output<String> sourceGroupType() {
         return this.sourceGroupType;
     }
     /**
      * Source address type: net for subnet (CIDR format); group for address book (UUID format).
-     *
+     * 
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
      * @return Source address type: net for subnet (CIDR format); group for address book (UUID format).
-     *
+     * 
      */
     public Output<String> sourceType() {
         return this.sourceType;
     }
     /**
      * Policy activation start time, Unix timestamp. Fill in only when RepeatType is Once, Daily, Weekly, or Monthly.
-     *
+     * 
      */
     @Export(name="startTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> startTime;
 
     /**
      * @return Policy activation start time, Unix timestamp. Fill in only when RepeatType is Once, Daily, Weekly, or Monthly.
-     *
+     * 
      */
     public Output<Integer> startTime() {
         return this.startTime;
     }
     /**
      * Policy enable status: true enabled; false disabled.
-     *
+     * 
      */
     @Export(name="status", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> status;
 
     /**
      * @return Policy enable status: true enabled; false disabled.
-     *
+     * 
      */
     public Output<Boolean> status() {
         return this.status;
     }
     /**
      * Last policy update time, Unix timestamp.
-     *
+     * 
      */
     @Export(name="updateTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updateTime;
 
     /**
      * @return Last policy update time, Unix timestamp.
-     *
+     * 
      */
     public Output<Integer> updateTime() {
         return this.updateTime;
     }
     /**
      * Number of policies used.
-     *
+     * 
      */
     @Export(name="useCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> useCount;
 
     /**
      * @return Number of policies used.
-     *
+     * 
      */
     public Output<Integer> useCount() {
         return this.useCount;
     }
     /**
      * VPC border firewall instance ID.
-     *
+     * 
      */
     @Export(name="vpcFirewallId", refs={String.class}, tree="[0]")
     private Output<String> vpcFirewallId;
 
     /**
      * @return VPC border firewall instance ID.
-     *
+     * 
      */
     public Output<String> vpcFirewallId() {
         return this.vpcFirewallId;
     }
     /**
      * VPC border firewall instance name.
-     *
+     * 
      */
     @Export(name="vpcFirewallName", refs={String.class}, tree="[0]")
     private Output<String> vpcFirewallName;
 
     /**
      * @return VPC border firewall instance name.
-     *
+     * 
      */
     public Output<String> vpcFirewallName() {
         return this.vpcFirewallName;

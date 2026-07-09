@@ -67,6 +67,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public readonly Outputs.GetInstanceCpuMemoryResult CpuMemory;
         public readonly string CreatedAt;
         public readonly string CreditSpecification;
+        public readonly ImmutableArray<Outputs.GetInstanceDataVolumeResult> DataVolumes;
         public readonly bool DeletionProtection;
         public readonly int DeploymentSetGroupNumber;
         public readonly string DeploymentSetId;
@@ -129,6 +130,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             string createdAt,
 
             string creditSpecification,
+
+            ImmutableArray<Outputs.GetInstanceDataVolumeResult> dataVolumes,
 
             bool deletionProtection,
 
@@ -223,6 +226,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             CpuMemory = cpuMemory;
             CreatedAt = createdAt;
             CreditSpecification = creditSpecification;
+            DataVolumes = dataVolumes;
             DeletionProtection = deletionProtection;
             DeploymentSetGroupNumber = deploymentSetGroupNumber;
             DeploymentSetId = deploymentSetId;

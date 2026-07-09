@@ -26,7 +26,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     /**
      * Backend node. Not valid when the upstream source type is VeFaas
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="backendTargets")
     private @Nullable Output<List<UpstreamBackendTargetArgs>> backendTargets;
@@ -34,7 +34,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Backend node. Not valid when the upstream source type is VeFaas
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<UpstreamBackendTargetArgs>>> backendTargets() {
         return Optional.ofNullable(this.backendTargets);
@@ -42,14 +42,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Service circuit breaking configuration
-     *
+     * 
      */
     @Import(name="circuitBreakingSettings")
     private @Nullable Output<UpstreamCircuitBreakingSettingsArgs> circuitBreakingSettings;
 
     /**
      * @return Service circuit breaking configuration
-     *
+     * 
      */
     public Optional<Output<UpstreamCircuitBreakingSettingsArgs>> circuitBreakingSettings() {
         return Optional.ofNullable(this.circuitBreakingSettings);
@@ -57,14 +57,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Remarks
-     *
+     * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
      * @return Remarks
-     *
+     * 
      */
     public Optional<Output<String>> comments() {
         return Optional.ofNullable(this.comments);
@@ -72,14 +72,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Connection Pool Configuration
-     *
+     * 
      */
     @Import(name="connectionPoolSettings")
     private @Nullable Output<UpstreamConnectionPoolSettingsArgs> connectionPoolSettings;
 
     /**
      * @return Connection Pool Configuration
-     *
+     * 
      */
     public Optional<Output<UpstreamConnectionPoolSettingsArgs>> connectionPoolSettings() {
         return Optional.ofNullable(this.connectionPoolSettings);
@@ -87,14 +87,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Upstream creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Upstream creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -102,14 +102,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Gateway Instance ID
-     *
+     * 
      */
     @Import(name="gatewayId")
     private @Nullable Output<String> gatewayId;
 
     /**
      * @return Gateway Instance ID
-     *
+     * 
      */
     public Optional<Output<String>> gatewayId() {
         return Optional.ofNullable(this.gatewayId);
@@ -117,14 +117,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Load Balancing Configuration
-     *
+     * 
      */
     @Import(name="loadBalancerSettings")
     private @Nullable Output<UpstreamLoadBalancerSettingsArgs> loadBalancerSettings;
 
     /**
      * @return Load Balancing Configuration
-     *
+     * 
      */
     public Optional<Output<UpstreamLoadBalancerSettingsArgs>> loadBalancerSettings() {
         return Optional.ofNullable(this.loadBalancerSettings);
@@ -132,14 +132,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Upstream name
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Upstream name
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -147,14 +147,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
-     *
+     * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
-     *
+     * 
      */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
@@ -162,14 +162,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
-     *
+     * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
      * @return Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
-     *
+     * 
      */
     public Optional<Output<String>> sourceType() {
         return Optional.ofNullable(this.sourceType);
@@ -177,14 +177,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TLS Configuration
-     *
+     * 
      */
     @Import(name="tlsSettings")
     private @Nullable Output<UpstreamTlsSettingsArgs> tlsSettings;
 
     /**
      * @return TLS Configuration
-     *
+     * 
      */
     public Optional<Output<UpstreamTlsSettingsArgs>> tlsSettings() {
         return Optional.ofNullable(this.tlsSettings);
@@ -192,14 +192,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Upstream update time
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Upstream update time
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -207,14 +207,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Upstream ID。
-     *
+     * 
      */
     @Import(name="upstreamId")
     private @Nullable Output<String> upstreamId;
 
     /**
      * @return Upstream ID。
-     *
+     * 
      */
     public Optional<Output<String>> upstreamId() {
         return Optional.ofNullable(this.upstreamId);
@@ -222,14 +222,14 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Upstream Configuration
-     *
+     * 
      */
     @Import(name="upstreamSpec")
     private @Nullable Output<UpstreamUpstreamSpecArgs> upstreamSpec;
 
     /**
      * @return Upstream Configuration
-     *
+     * 
      */
     public Optional<Output<UpstreamUpstreamSpecArgs>> upstreamSpec() {
         return Optional.ofNullable(this.upstreamSpec);
@@ -238,7 +238,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     /**
      * Upstream version, only valid when the upstream source type is K8S
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="versionDetails")
     private @Nullable Output<List<UpstreamVersionDetailArgs>> versionDetails;
@@ -246,7 +246,7 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Upstream version, only valid when the upstream source type is K8S
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<UpstreamVersionDetailArgs>>> versionDetails() {
         return Optional.ofNullable(this.versionDetails);
@@ -293,9 +293,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backendTargets Backend node. Not valid when the upstream source type is VeFaas
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backendTargets(@Nullable Output<List<UpstreamBackendTargetArgs>> backendTargets) {
             $.backendTargets = backendTargets;
@@ -305,9 +305,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backendTargets Backend node. Not valid when the upstream source type is VeFaas
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backendTargets(List<UpstreamBackendTargetArgs> backendTargets) {
             return backendTargets(Output.of(backendTargets));
@@ -316,9 +316,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param backendTargets Backend node. Not valid when the upstream source type is VeFaas
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder backendTargets(UpstreamBackendTargetArgs... backendTargets) {
             return backendTargets(List.of(backendTargets));
@@ -326,9 +326,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param circuitBreakingSettings Service circuit breaking configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder circuitBreakingSettings(@Nullable Output<UpstreamCircuitBreakingSettingsArgs> circuitBreakingSettings) {
             $.circuitBreakingSettings = circuitBreakingSettings;
@@ -337,9 +337,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param circuitBreakingSettings Service circuit breaking configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder circuitBreakingSettings(UpstreamCircuitBreakingSettingsArgs circuitBreakingSettings) {
             return circuitBreakingSettings(Output.of(circuitBreakingSettings));
@@ -347,9 +347,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param comments Remarks
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder comments(@Nullable Output<String> comments) {
             $.comments = comments;
@@ -358,9 +358,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param comments Remarks
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder comments(String comments) {
             return comments(Output.of(comments));
@@ -368,9 +368,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionPoolSettings Connection Pool Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionPoolSettings(@Nullable Output<UpstreamConnectionPoolSettingsArgs> connectionPoolSettings) {
             $.connectionPoolSettings = connectionPoolSettings;
@@ -379,9 +379,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionPoolSettings Connection Pool Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionPoolSettings(UpstreamConnectionPoolSettingsArgs connectionPoolSettings) {
             return connectionPoolSettings(Output.of(connectionPoolSettings));
@@ -389,9 +389,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Upstream creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -400,9 +400,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Upstream creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -410,9 +410,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gatewayId Gateway Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayId(@Nullable Output<String> gatewayId) {
             $.gatewayId = gatewayId;
@@ -421,9 +421,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gatewayId Gateway Instance ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayId(String gatewayId) {
             return gatewayId(Output.of(gatewayId));
@@ -431,9 +431,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerSettings Load Balancing Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerSettings(@Nullable Output<UpstreamLoadBalancerSettingsArgs> loadBalancerSettings) {
             $.loadBalancerSettings = loadBalancerSettings;
@@ -442,9 +442,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerSettings Load Balancing Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder loadBalancerSettings(UpstreamLoadBalancerSettingsArgs loadBalancerSettings) {
             return loadBalancerSettings(Output.of(loadBalancerSettings));
@@ -452,9 +452,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Upstream name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -463,9 +463,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Upstream name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -473,9 +473,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
@@ -484,9 +484,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -494,9 +494,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceType Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(@Nullable Output<String> sourceType) {
             $.sourceType = sourceType;
@@ -505,9 +505,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceType Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sourceType(String sourceType) {
             return sourceType(Output.of(sourceType));
@@ -515,9 +515,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsSettings TLS Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsSettings(@Nullable Output<UpstreamTlsSettingsArgs> tlsSettings) {
             $.tlsSettings = tlsSettings;
@@ -526,9 +526,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsSettings TLS Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tlsSettings(UpstreamTlsSettingsArgs tlsSettings) {
             return tlsSettings(Output.of(tlsSettings));
@@ -536,9 +536,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Upstream update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -547,9 +547,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Upstream update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -557,9 +557,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param upstreamId Upstream ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder upstreamId(@Nullable Output<String> upstreamId) {
             $.upstreamId = upstreamId;
@@ -568,9 +568,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param upstreamId Upstream ID。
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder upstreamId(String upstreamId) {
             return upstreamId(Output.of(upstreamId));
@@ -578,9 +578,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param upstreamSpec Upstream Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder upstreamSpec(@Nullable Output<UpstreamUpstreamSpecArgs> upstreamSpec) {
             $.upstreamSpec = upstreamSpec;
@@ -589,9 +589,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param upstreamSpec Upstream Configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder upstreamSpec(UpstreamUpstreamSpecArgs upstreamSpec) {
             return upstreamSpec(Output.of(upstreamSpec));
@@ -600,9 +600,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param versionDetails Upstream version, only valid when the upstream source type is K8S
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionDetails(@Nullable Output<List<UpstreamVersionDetailArgs>> versionDetails) {
             $.versionDetails = versionDetails;
@@ -612,9 +612,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param versionDetails Upstream version, only valid when the upstream source type is K8S
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionDetails(List<UpstreamVersionDetailArgs> versionDetails) {
             return versionDetails(Output.of(versionDetails));
@@ -623,9 +623,9 @@ public final class UpstreamState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param versionDetails Upstream version, only valid when the upstream source type is K8S
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder versionDetails(UpstreamVersionDetailArgs... versionDetails) {
             return versionDetails(List.of(versionDetails));

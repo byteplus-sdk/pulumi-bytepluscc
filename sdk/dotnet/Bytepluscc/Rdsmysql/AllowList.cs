@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// The allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rdsMysqlAllowListDemo = new Bytepluscc.Rdsmysql.AllowList("RdsMysqlAllowListDemo", new()
     ///     {
@@ -50,12 +50,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/allowList:AllowList example "allow_list_id"
     /// ```

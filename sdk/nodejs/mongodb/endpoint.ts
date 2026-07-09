@@ -78,7 +78,7 @@ export class Endpoint extends pulumi.CustomResource {
     declare public /*out*/ readonly endpointStr: pulumi.Output<string>;
     /**
      * Node type corresponding to the connection address. Possible values:
-     *
+     *   
      *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
      *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
      */
@@ -93,15 +93,15 @@ export class Endpoint extends pulumi.CustomResource {
     declare public readonly mongosNodeIds: pulumi.Output<string[]>;
     /**
      * Network type of the connection address. Possible values:
-     *
+     *   
      *     - `Private`: Private connection address
      *     - `Public`: Public connection address
      */
     declare public readonly networkType: pulumi.Output<string>;
     /**
      * ID of the component associated with the current connection address
-     *
-     *
+     *   
+     *   
      *   **Note:**
      *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      */
@@ -184,7 +184,7 @@ export interface EndpointState {
     endpointStr?: pulumi.Input<string | undefined>;
     /**
      * Node type corresponding to the connection address. Possible values:
-     *
+     *   
      *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
      *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
      */
@@ -199,15 +199,15 @@ export interface EndpointState {
     mongosNodeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Network type of the connection address. Possible values:
-     *
+     *   
      *     - `Private`: Private connection address
      *     - `Public`: Public connection address
      */
     networkType?: pulumi.Input<string | undefined>;
     /**
      * ID of the component associated with the current connection address
-     *
-     *
+     *   
+     *   
      *   **Note:**
      *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      */
@@ -240,15 +240,15 @@ export interface EndpointArgs {
     mongosNodeIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Network type of the connection address. Possible values:
-     *
+     *   
      *     - `Private`: Private connection address
      *     - `Public`: Public connection address
      */
     networkType?: pulumi.Input<string | undefined>;
     /**
      * ID of the component associated with the current connection address
-     *
-     *
+     *   
+     *   
      *   **Note:**
      *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
      */

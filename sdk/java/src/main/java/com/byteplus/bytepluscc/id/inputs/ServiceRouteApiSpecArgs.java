@@ -21,14 +21,14 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
     /**
      * Operation type, for example READ
-     *
+     * 
      */
     @Import(name="actionType")
     private @Nullable Output<String> actionType;
 
     /**
      * @return Operation type, for example READ
-     *
+     * 
      */
     public Optional<Output<String>> actionType() {
         return Optional.ofNullable(this.actionType);
@@ -36,14 +36,14 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
     /**
      * Operation value, for example search
-     *
+     * 
      */
     @Import(name="actionValue")
     private @Nullable Output<String> actionValue;
 
     /**
      * @return Operation value, for example search
-     *
+     * 
      */
     public Optional<Output<String>> actionValue() {
         return Optional.ofNullable(this.actionValue);
@@ -52,7 +52,7 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
     /**
      * Attribute extractor list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="extractors")
     private @Nullable Output<List<ServiceRouteApiSpecExtractorArgs>> extractors;
@@ -60,7 +60,7 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
     /**
      * @return Attribute extractor list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServiceRouteApiSpecExtractorArgs>>> extractors() {
         return Optional.ofNullable(this.extractors);
@@ -68,14 +68,14 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
     /**
      * Resource identifier type
-     *
+     * 
      */
     @Import(name="identifierType")
     private @Nullable Output<Integer> identifierType;
 
     /**
      * @return Resource identifier type
-     *
+     * 
      */
     public Optional<Output<Integer>> identifierType() {
         return Optional.ofNullable(this.identifierType);
@@ -83,14 +83,14 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
     /**
      * Resource identifier value, for example JSON Pointer
-     *
+     * 
      */
     @Import(name="identifierValue")
     private @Nullable Output<String> identifierValue;
 
     /**
      * @return Resource identifier value, for example JSON Pointer
-     *
+     * 
      */
     public Optional<Output<String>> identifierValue() {
         return Optional.ofNullable(this.identifierValue);
@@ -99,7 +99,7 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
     /**
      * Response filter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="responseFilters")
     private @Nullable Output<List<ServiceRouteApiSpecResponseFilterArgs>> responseFilters;
@@ -107,7 +107,7 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
     /**
      * @return Response filter list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ServiceRouteApiSpecResponseFilterArgs>>> responseFilters() {
         return Optional.ofNullable(this.responseFilters);
@@ -144,9 +144,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param actionType Operation type, for example READ
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder actionType(@Nullable Output<String> actionType) {
             $.actionType = actionType;
@@ -155,9 +155,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param actionType Operation type, for example READ
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder actionType(String actionType) {
             return actionType(Output.of(actionType));
@@ -165,9 +165,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param actionValue Operation value, for example search
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder actionValue(@Nullable Output<String> actionValue) {
             $.actionValue = actionValue;
@@ -176,9 +176,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param actionValue Operation value, for example search
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder actionValue(String actionValue) {
             return actionValue(Output.of(actionValue));
@@ -187,9 +187,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         /**
          * @param extractors Attribute extractor list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractors(@Nullable Output<List<ServiceRouteApiSpecExtractorArgs>> extractors) {
             $.extractors = extractors;
@@ -199,9 +199,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         /**
          * @param extractors Attribute extractor list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractors(List<ServiceRouteApiSpecExtractorArgs> extractors) {
             return extractors(Output.of(extractors));
@@ -210,9 +210,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         /**
          * @param extractors Attribute extractor list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder extractors(ServiceRouteApiSpecExtractorArgs... extractors) {
             return extractors(List.of(extractors));
@@ -220,9 +220,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param identifierType Resource identifier type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder identifierType(@Nullable Output<Integer> identifierType) {
             $.identifierType = identifierType;
@@ -231,9 +231,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param identifierType Resource identifier type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder identifierType(Integer identifierType) {
             return identifierType(Output.of(identifierType));
@@ -241,9 +241,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param identifierValue Resource identifier value, for example JSON Pointer
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder identifierValue(@Nullable Output<String> identifierValue) {
             $.identifierValue = identifierValue;
@@ -252,9 +252,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
 
         /**
          * @param identifierValue Resource identifier value, for example JSON Pointer
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder identifierValue(String identifierValue) {
             return identifierValue(Output.of(identifierValue));
@@ -263,9 +263,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         /**
          * @param responseFilters Response filter list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder responseFilters(@Nullable Output<List<ServiceRouteApiSpecResponseFilterArgs>> responseFilters) {
             $.responseFilters = responseFilters;
@@ -275,9 +275,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         /**
          * @param responseFilters Response filter list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder responseFilters(List<ServiceRouteApiSpecResponseFilterArgs> responseFilters) {
             return responseFilters(Output.of(responseFilters));
@@ -286,9 +286,9 @@ public final class ServiceRouteApiSpecArgs extends com.pulumi.resources.Resource
         /**
          * @param responseFilters Response filter list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder responseFilters(ServiceRouteApiSpecResponseFilterArgs... responseFilters) {
             return responseFilters(List.of(responseFilters));

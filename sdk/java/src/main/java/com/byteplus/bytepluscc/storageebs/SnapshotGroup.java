@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * A snapshot consistency group is a combination of snapshots from multiple cloud disks. In scenarios where business systems span multiple cloud disks, you can use a snapshot consistency group to ensure write order consistency and crash consistency for data written to the disks
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -38,19 +38,19 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var storageEBSSnapshotGroupDemo = new SnapshotGroup("storageEBSSnapshotGroupDemo", SnapshotGroupArgs.builder()
  *             .name("ccapi-test")
  *             .projectName("default")
  *             .description("this-is_test")
  *             .instanceId("i-yekg7jsw00bw8xxxxx")
- *             .volumeIds(
+ *             .volumeIds(            
  *                 "vol-3x1q75ir0t4qbgxxxxx",
  *                 "vol-3x1q75ir0t4qbgxxxxx",
  *                 "vol-3x1q75ir0t4qbgxxxxx",
@@ -60,116 +60,116 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:storageebs/snapshotGroup:SnapshotGroup example &#34;snapshot_group_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:storageebs/snapshotGroup:SnapshotGroup")
 public class SnapshotGroup extends com.pulumi.resources.CustomResource {
     /**
      * Snapshot consistency group creation time
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Snapshot consistency group creation time
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Snapshot consistency group description
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Snapshot consistency group description
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Image ID of the snapshot consistency group
-     *
+     * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID of the snapshot consistency group
-     *
+     * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * ECS instance ID of the snapshot consistency group
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return ECS instance ID of the snapshot consistency group
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Snapshot consistency group name
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Snapshot consistency group name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Project name
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Snapshot consistency group ID
-     *
+     * 
      */
     @Export(name="snapshotGroupId", refs={String.class}, tree="[0]")
     private Output<String> snapshotGroupId;
 
     /**
      * @return Snapshot consistency group ID
-     *
+     * 
      */
     public Output<String> snapshotGroupId() {
         return this.snapshotGroupId;
@@ -177,7 +177,7 @@ public class SnapshotGroup extends com.pulumi.resources.CustomResource {
     /**
      * Snapshot details
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="snapshots", refs={List.class,SnapshotGroupSnapshot.class}, tree="[0,1]")
     private Output<List<SnapshotGroupSnapshot>> snapshots;
@@ -185,21 +185,21 @@ public class SnapshotGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Snapshot details
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SnapshotGroupSnapshot>> snapshots() {
         return this.snapshots;
     }
     /**
      * Snapshot consistency group status
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Snapshot consistency group status
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -207,7 +207,7 @@ public class SnapshotGroup extends com.pulumi.resources.CustomResource {
     /**
      * Tags of the snapshot consistency group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,SnapshotGroupTag.class}, tree="[0,1]")
     private Output<List<SnapshotGroupTag>> tags;
@@ -215,21 +215,21 @@ public class SnapshotGroup extends com.pulumi.resources.CustomResource {
     /**
      * @return Tags of the snapshot consistency group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SnapshotGroupTag>> tags() {
         return this.tags;
     }
     /**
      * Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-     *
+     * 
      */
     @Export(name="volumeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> volumeIds;
 
     /**
      * @return Cloud disk ID. Note: The cloud disk must be in &#39;attached&#39; status. If multiple cloud disks are set, they must be attached to the same ECS instance
-     *
+     * 
      */
     public Output<List<String>> volumeIds() {
         return this.volumeIds;

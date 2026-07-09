@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 {
     /// <summary>
     /// Read-only node resources for RDS MySQL instances (NodeType=ReadOnly). Create, delete, or modify specifications using CreateDBNodes/DeleteDBNodes/ModifyDBNodeSpec; retrieve node details using DescribeDBInstanceHAConfig + DescribeReadOnlyNodeDelay; modify replication delay configuration using ModifyReadOnlyNodeDelayReplicationTime
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Rdsmysql.InstanceReadonlyNode("Example", new()
     ///     {
@@ -34,12 +34,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
     ///         },
     ///         DelayReplicationTime = 300,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmysql/instanceReadonlyNode:InstanceReadonlyNode example "instance_id|node_id"
     /// ```

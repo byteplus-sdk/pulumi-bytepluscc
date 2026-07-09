@@ -20,7 +20,7 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
     /**
      * Alert severity configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="conditions")
     private @Nullable Output<List<RuleLevelConditionConditionArgs>> conditions;
@@ -28,7 +28,7 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
     /**
      * @return Alert severity configuration.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<RuleLevelConditionConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
@@ -36,14 +36,14 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
-     *
+     * 
      */
     @Import(name="level")
     private @Nullable Output<String> level;
 
     /**
      * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
-     *
+     * 
      */
     public Optional<Output<String>> level() {
         return Optional.ofNullable(this.level);
@@ -77,9 +77,9 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
         /**
          * @param conditions Alert severity configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(@Nullable Output<List<RuleLevelConditionConditionArgs>> conditions) {
             $.conditions = conditions;
@@ -89,9 +89,9 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
         /**
          * @param conditions Alert severity configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(List<RuleLevelConditionConditionArgs> conditions) {
             return conditions(Output.of(conditions));
@@ -100,9 +100,9 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
         /**
          * @param conditions Alert severity configuration.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder conditions(RuleLevelConditionConditionArgs... conditions) {
             return conditions(List.of(conditions));
@@ -110,9 +110,9 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param level Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder level(@Nullable Output<String> level) {
             $.level = level;
@@ -121,9 +121,9 @@ public final class RuleLevelConditionArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param level Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder level(String level) {
             return level(Output.of(level));

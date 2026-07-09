@@ -21,7 +21,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
     /**
      * List of monitoring component configurations.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="componentConfigs")
     private @Nullable Output<List<ClusterMonitoringConfigComponentConfigArgs>> componentConfigs;
@@ -29,7 +29,7 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
     /**
      * @return List of monitoring component configurations.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ClusterMonitoringConfigComponentConfigArgs>>> componentConfigs() {
         return Optional.ofNullable(this.componentConfigs);
@@ -37,14 +37,14 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
     /**
      * Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
-     *
+     * 
      */
     @Import(name="enableMetricsExternalCollection")
     private @Nullable Output<Boolean> enableMetricsExternalCollection;
 
     /**
      * @return Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableMetricsExternalCollection() {
         return Optional.ofNullable(this.enableMetricsExternalCollection);
@@ -52,14 +52,14 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
     /**
      * Workspace ID to which the monitoring data belongs.
-     *
+     * 
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
      * @return Workspace ID to which the monitoring data belongs.
-     *
+     * 
      */
     public Optional<Output<String>> workspaceId() {
         return Optional.ofNullable(this.workspaceId);
@@ -94,9 +94,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         /**
          * @param componentConfigs List of monitoring component configurations.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder componentConfigs(@Nullable Output<List<ClusterMonitoringConfigComponentConfigArgs>> componentConfigs) {
             $.componentConfigs = componentConfigs;
@@ -106,9 +106,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         /**
          * @param componentConfigs List of monitoring component configurations.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder componentConfigs(List<ClusterMonitoringConfigComponentConfigArgs> componentConfigs) {
             return componentConfigs(Output.of(componentConfigs));
@@ -117,9 +117,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
         /**
          * @param componentConfigs List of monitoring component configurations.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder componentConfigs(ClusterMonitoringConfigComponentConfigArgs... componentConfigs) {
             return componentConfigs(List.of(componentConfigs));
@@ -127,9 +127,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
         /**
          * @param enableMetricsExternalCollection Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableMetricsExternalCollection(@Nullable Output<Boolean> enableMetricsExternalCollection) {
             $.enableMetricsExternalCollection = enableMetricsExternalCollection;
@@ -138,9 +138,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
         /**
          * @param enableMetricsExternalCollection Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableMetricsExternalCollection(Boolean enableMetricsExternalCollection) {
             return enableMetricsExternalCollection(Output.of(enableMetricsExternalCollection));
@@ -148,9 +148,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
         /**
          * @param workspaceId Workspace ID to which the monitoring data belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder workspaceId(@Nullable Output<String> workspaceId) {
             $.workspaceId = workspaceId;
@@ -159,9 +159,9 @@ public final class ClusterMonitoringConfigArgs extends com.pulumi.resources.Reso
 
         /**
          * @param workspaceId Workspace ID to which the monitoring data belongs.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder workspaceId(String workspaceId) {
             return workspaceId(Output.of(workspaceId));

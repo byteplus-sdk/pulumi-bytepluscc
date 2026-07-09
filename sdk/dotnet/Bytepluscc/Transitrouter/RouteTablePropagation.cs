@@ -12,28 +12,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Transitrouter
 {
     /// <summary>
     /// Details of route learning that meet the criteria.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var routeTablePropagationDemo = new Bytepluscc.Transitrouter.RouteTablePropagation("RouteTablePropagationDemo", new()
     ///     {
     ///         TransitRouterAttachmentId = "tr-attach-mjoxz9mx5ji85***",
     ///         TransitRouterRouteTableId = "tr-rtb-mjoxx4ofrt345sm****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:transitrouter/routeTablePropagation:RouteTablePropagation example "transit_router_route_table_id|transit_router_attachment_id"
     /// ```

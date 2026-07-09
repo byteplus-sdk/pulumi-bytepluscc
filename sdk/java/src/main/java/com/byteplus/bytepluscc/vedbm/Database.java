@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Database Management
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vEDBMDatabaseDemo = new Database("vEDBMDatabaseDemo", DatabaseArgs.builder()
  *             .dbName("testdb-tf")
@@ -52,38 +52,38 @@ import javax.annotation.Nullable;
  *             .databasesPrivileges(DatabaseDatabasesPrivilegeArgs.builder()
  *                 .account_name("test")
  *                 .account_privilege("Custom")
- *                 .account_privilege_detail(Arrays.asList(
+ *                 .account_privilege_detail(Arrays.asList(                
  *                     "SELECT",
  *                     "UPDATE",
  *                     "INSERT"))
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vedbm/database:Database example &#34;instance_id|db_name&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vedbm/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
     /**
      * Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
-     *
+     * 
      */
     @Export(name="characterSetName", refs={String.class}, tree="[0]")
     private Output<String> characterSetName;
 
     /**
      * @return Database character set. Options: utf8mb4 (default), utf8, latin1, ascii
-     *
+     * 
      */
     public Output<String> characterSetName() {
         return this.characterSetName;
@@ -91,7 +91,7 @@ public class Database extends com.pulumi.resources.CustomResource {
     /**
      * Database permission information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="databasesPrivileges", refs={List.class,DatabaseDatabasesPrivilege.class}, tree="[0,1]")
     private Output<List<DatabaseDatabasesPrivilege>> databasesPrivileges;
@@ -99,49 +99,49 @@ public class Database extends com.pulumi.resources.CustomResource {
     /**
      * @return Database permission information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DatabaseDatabasesPrivilege>> databasesPrivileges() {
         return this.databasesPrivileges;
     }
     /**
      * Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
-     *
+     * 
      */
     @Export(name="dbDesc", refs={String.class}, tree="[0]")
     private Output<String> dbDesc;
 
     /**
      * @return Database description, length 0–256 characters; can include numbers, Chinese and English characters, underscores (_), and hyphens (-)
-     *
+     * 
      */
     public Output<String> dbDesc() {
         return this.dbDesc;
     }
     /**
      * Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
-     *
+     * 
      */
     @Export(name="dbName", refs={String.class}, tree="[0]")
     private Output<String> dbName;
 
     /**
      * @return Database name. Naming rules: Must be unique within the current instance; length 2–64 characters; starts with a letter, ends with a letter or number; can contain letters, numbers, underscores (_), and hyphens (-); reserved words are not allowed
-     *
+     * 
      */
     public Output<String> dbName() {
         return this.dbName;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;

@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * Binding relationship between the health check log topic and the CLB instance.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -34,57 +34,57 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cLBCheckLogTopicDemo = new CheckLogTopic("cLBCheckLogTopicDemo", CheckLogTopicArgs.builder()
  *             .loadBalancerId("clb-minr2d8brqps5smt1ax***")
  *             .logTopicId("t45227e2e-5637-470b-a7e****")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/checkLogTopic:CheckLogTopic example &#34;load_balancer_id|log_topic_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/checkLogTopic:CheckLogTopic")
 public class CheckLogTopic extends com.pulumi.resources.CustomResource {
     /**
      * CLB ID information that meets the criteria.
-     *
+     * 
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return CLB ID information that meets the criteria.
-     *
+     * 
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * ID of the created log topic. You can call the DescribeTopics API to query the log topic ID.
-     *
+     * 
      */
     @Export(name="logTopicId", refs={String.class}, tree="[0]")
     private Output<String> logTopicId;
 
     /**
      * @return ID of the created log topic. You can call the DescribeTopics API to query the log topic ID.
-     *
+     * 
      */
     public Output<String> logTopicId() {
         return this.logTopicId;

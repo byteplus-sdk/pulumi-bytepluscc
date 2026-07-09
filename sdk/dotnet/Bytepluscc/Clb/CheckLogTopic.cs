@@ -12,28 +12,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 {
     /// <summary>
     /// Binding relationship between the health check log topic and the CLB instance.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var cLBCheckLogTopicDemo = new Bytepluscc.Clb.CheckLogTopic("CLBCheckLogTopicDemo", new()
     ///     {
     ///         LoadBalancerId = "clb-minr2d8brqps5smt1ax***",
     ///         LogTopicId = "t45227e2e-5637-470b-a7e****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:clb/checkLogTopic:CheckLogTopic example "load_balancer_id|log_topic_id"
     /// ```

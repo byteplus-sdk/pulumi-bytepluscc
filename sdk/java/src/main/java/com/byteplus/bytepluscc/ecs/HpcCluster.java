@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * A high performance compute cluster (HPC cluster) is a cluster computing environment designed for large-scale computational tasks. It typically consists of numerous compute nodes interconnected via RDMA (Remote Direct Memory Access) high-speed networks, working together to handle complex computational workloads. High performance compute clusters provide powerful computing capabilities, large memory, high-speed storage, and high-speed networking to meet the demands of compute-intensive, data-intensive, or combined workloads
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var eCSHpcClusterDemo = new HpcCluster("eCSHpcClusterDemo", HpcClusterArgs.builder()
  *             .name("ECSHpcClusterDemo")
@@ -54,88 +54,88 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:ecs/hpcCluster:HpcCluster example &#34;hpc_cluster_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:ecs/hpcCluster:HpcCluster")
 public class HpcCluster extends com.pulumi.resources.CustomResource {
     /**
      * Creation time, formatted according to RFC3339
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time, formatted according to RFC3339
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return High performance compute cluster description. Defaults to an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 0 and 255 characters
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * High performance compute cluster ID
-     *
+     * 
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
      * @return High performance compute cluster ID
-     *
+     * 
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
      * High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return High performance compute cluster name. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length must be between 1 and 128 characters
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Project name
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -143,7 +143,7 @@ public class HpcCluster extends com.pulumi.resources.CustomResource {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,HpcClusterTag.class}, tree="[0,1]")
     private Output<List<HpcClusterTag>> tags;
@@ -151,49 +151,49 @@ public class HpcCluster extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<HpcClusterTag>> tags() {
         return this.tags;
     }
     /**
      * Update time, formatted according to RFC3339
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time, formatted according to RFC3339
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Private network ID
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID of the high performance compute cluster
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID of the high performance compute cluster
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

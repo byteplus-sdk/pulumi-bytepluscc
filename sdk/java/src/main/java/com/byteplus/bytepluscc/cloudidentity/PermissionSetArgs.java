@@ -21,14 +21,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Permission Set Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Permission Set Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -36,14 +36,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Permission Set Name
-     *
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Permission Set Name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
@@ -52,7 +52,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Policy List Under Permission Set
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="permissionPolicies")
     private @Nullable Output<List<PermissionSetPermissionPolicyArgs>> permissionPolicies;
@@ -60,7 +60,7 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Policy List Under Permission Set
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PermissionSetPermissionPolicyArgs>>> permissionPolicies() {
         return Optional.ofNullable(this.permissionPolicies);
@@ -68,14 +68,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Console Redirect URL
-     *
+     * 
      */
     @Import(name="relayState")
     private @Nullable Output<String> relayState;
 
     /**
      * @return Console Redirect URL
-     *
+     * 
      */
     public Optional<Output<String>> relayState() {
         return Optional.ofNullable(this.relayState);
@@ -83,14 +83,14 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Session Expiration Time (seconds)
-     *
+     * 
      */
     @Import(name="sessionDuration")
     private @Nullable Output<Integer> sessionDuration;
 
     /**
      * @return Session Expiration Time (seconds)
-     *
+     * 
      */
     public Optional<Output<Integer>> sessionDuration() {
         return Optional.ofNullable(this.sessionDuration);
@@ -126,9 +126,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Permission Set Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -137,9 +137,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Permission Set Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -147,9 +147,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Permission Set Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -158,9 +158,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Permission Set Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -169,9 +169,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param permissionPolicies Policy List Under Permission Set
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionPolicies(@Nullable Output<List<PermissionSetPermissionPolicyArgs>> permissionPolicies) {
             $.permissionPolicies = permissionPolicies;
@@ -181,9 +181,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param permissionPolicies Policy List Under Permission Set
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionPolicies(List<PermissionSetPermissionPolicyArgs> permissionPolicies) {
             return permissionPolicies(Output.of(permissionPolicies));
@@ -192,9 +192,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param permissionPolicies Policy List Under Permission Set
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder permissionPolicies(PermissionSetPermissionPolicyArgs... permissionPolicies) {
             return permissionPolicies(List.of(permissionPolicies));
@@ -202,9 +202,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param relayState Console Redirect URL
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relayState(@Nullable Output<String> relayState) {
             $.relayState = relayState;
@@ -213,9 +213,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param relayState Console Redirect URL
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relayState(String relayState) {
             return relayState(Output.of(relayState));
@@ -223,9 +223,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sessionDuration Session Expiration Time (seconds)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionDuration(@Nullable Output<Integer> sessionDuration) {
             $.sessionDuration = sessionDuration;
@@ -234,9 +234,9 @@ public final class PermissionSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sessionDuration Session Expiration Time (seconds)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionDuration(Integer sessionDuration) {
             return sessionDuration(Output.of(sessionDuration));

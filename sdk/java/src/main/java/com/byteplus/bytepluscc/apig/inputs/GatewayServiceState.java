@@ -23,14 +23,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Authentication configuration.
-     *
+     * 
      */
     @Import(name="authSpec")
     private @Nullable Output<GatewayServiceAuthSpecArgs> authSpec;
 
     /**
      * @return Authentication configuration.
-     *
+     * 
      */
     public Optional<Output<GatewayServiceAuthSpecArgs>> authSpec() {
         return Optional.ofNullable(this.authSpec);
@@ -38,14 +38,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Remarks. Length must be 0–253 characters.
-     *
+     * 
      */
     @Import(name="comments")
     private @Nullable Output<String> comments;
 
     /**
      * @return Remarks. Length must be 0–253 characters.
-     *
+     * 
      */
     public Optional<Output<String>> comments() {
         return Optional.ofNullable(this.comments);
@@ -53,14 +53,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Creation time.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -69,7 +69,7 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
     /**
      * Custom domain list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="customDomains")
     private @Nullable Output<List<GatewayServiceCustomDomainArgs>> customDomains;
@@ -77,7 +77,7 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
     /**
      * @return Custom domain list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GatewayServiceCustomDomainArgs>>> customDomains() {
         return Optional.ofNullable(this.customDomains);
@@ -85,14 +85,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Domain details.
-     *
+     * 
      */
     @Import(name="domainSpec")
     private @Nullable Output<GatewayServiceDomainSpecArgs> domainSpec;
 
     /**
      * @return Domain details.
-     *
+     * 
      */
     public Optional<Output<GatewayServiceDomainSpecArgs>> domainSpec() {
         return Optional.ofNullable(this.domainSpec);
@@ -100,14 +100,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
-     *
+     * 
      */
     @Import(name="domainType")
     private @Nullable Output<String> domainType;
 
     /**
      * @return Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
-     *
+     * 
      */
     public Optional<Output<String>> domainType() {
         return Optional.ofNullable(this.domainType);
@@ -116,7 +116,7 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
     /**
      * Default domain.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="domains")
     private @Nullable Output<List<GatewayServiceDomainArgs>> domains;
@@ -124,7 +124,7 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
     /**
      * @return Default domain.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GatewayServiceDomainArgs>>> domains() {
         return Optional.ofNullable(this.domains);
@@ -132,14 +132,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Gateway ID.
-     *
+     * 
      */
     @Import(name="gatewayId")
     private @Nullable Output<String> gatewayId;
 
     /**
      * @return Gateway ID.
-     *
+     * 
      */
     public Optional<Output<String>> gatewayId() {
         return Optional.ofNullable(this.gatewayId);
@@ -147,14 +147,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Gateway name.
-     *
+     * 
      */
     @Import(name="gatewayName")
     private @Nullable Output<String> gatewayName;
 
     /**
      * @return Gateway name.
-     *
+     * 
      */
     public Optional<Output<String>> gatewayName() {
         return Optional.ofNullable(this.gatewayName);
@@ -162,14 +162,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Error message for service creation failure, deletion failure, or abnormal status.
-     *
+     * 
      */
     @Import(name="message")
     private @Nullable Output<String> message;
 
     /**
      * @return Error message for service creation failure, deletion failure, or abnormal status.
-     *
+     * 
      */
     public Optional<Output<String>> message() {
         return Optional.ofNullable(this.message);
@@ -177,14 +177,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-     *
+     * 
      */
     @Import(name="protocols")
     private @Nullable Output<List<String>> protocols;
 
     /**
      * @return Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-     *
+     * 
      */
     public Optional<Output<List<String>>> protocols() {
         return Optional.ofNullable(this.protocols);
@@ -192,14 +192,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Service ID.
-     *
+     * 
      */
     @Import(name="serviceId")
     private @Nullable Output<String> serviceId;
 
     /**
      * @return Service ID.
-     *
+     * 
      */
     public Optional<Output<String>> serviceId() {
         return Optional.ofNullable(this.serviceId);
@@ -207,14 +207,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
-     *
+     * 
      */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
     /**
      * @return Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
-     *
+     * 
      */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
@@ -222,14 +222,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Default domain network configuration..
-     *
+     * 
      */
     @Import(name="serviceNetworkSpec")
     private @Nullable Output<GatewayServiceServiceNetworkSpecArgs> serviceNetworkSpec;
 
     /**
      * @return Default domain network configuration..
-     *
+     * 
      */
     public Optional<Output<GatewayServiceServiceNetworkSpecArgs>> serviceNetworkSpec() {
         return Optional.ofNullable(this.serviceNetworkSpec);
@@ -237,14 +237,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Service type. Options: AIProvider: AI model proxy.
-     *
+     * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
      * @return Service type. Options: AIProvider: AI model proxy.
-     *
+     * 
      */
     public Optional<Output<String>> serviceType() {
         return Optional.ofNullable(this.serviceType);
@@ -252,14 +252,14 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -306,9 +306,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param authSpec Authentication configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder authSpec(@Nullable Output<GatewayServiceAuthSpecArgs> authSpec) {
             $.authSpec = authSpec;
@@ -317,9 +317,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param authSpec Authentication configuration.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder authSpec(GatewayServiceAuthSpecArgs authSpec) {
             return authSpec(Output.of(authSpec));
@@ -327,9 +327,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param comments Remarks. Length must be 0–253 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder comments(@Nullable Output<String> comments) {
             $.comments = comments;
@@ -338,9 +338,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param comments Remarks. Length must be 0–253 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder comments(String comments) {
             return comments(Output.of(comments));
@@ -348,9 +348,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param createdTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -359,9 +359,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param createdTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -370,9 +370,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         /**
          * @param customDomains Custom domain list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customDomains(@Nullable Output<List<GatewayServiceCustomDomainArgs>> customDomains) {
             $.customDomains = customDomains;
@@ -382,9 +382,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         /**
          * @param customDomains Custom domain list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customDomains(List<GatewayServiceCustomDomainArgs> customDomains) {
             return customDomains(Output.of(customDomains));
@@ -393,9 +393,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         /**
          * @param customDomains Custom domain list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customDomains(GatewayServiceCustomDomainArgs... customDomains) {
             return customDomains(List.of(customDomains));
@@ -403,9 +403,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param domainSpec Domain details.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainSpec(@Nullable Output<GatewayServiceDomainSpecArgs> domainSpec) {
             $.domainSpec = domainSpec;
@@ -414,9 +414,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param domainSpec Domain details.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainSpec(GatewayServiceDomainSpecArgs domainSpec) {
             return domainSpec(Output.of(domainSpec));
@@ -424,9 +424,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param domainType Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainType(@Nullable Output<String> domainType) {
             $.domainType = domainType;
@@ -435,9 +435,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param domainType Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domainType(String domainType) {
             return domainType(Output.of(domainType));
@@ -446,9 +446,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         /**
          * @param domains Default domain.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domains(@Nullable Output<List<GatewayServiceDomainArgs>> domains) {
             $.domains = domains;
@@ -458,9 +458,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         /**
          * @param domains Default domain.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domains(List<GatewayServiceDomainArgs> domains) {
             return domains(Output.of(domains));
@@ -469,9 +469,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
         /**
          * @param domains Default domain.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder domains(GatewayServiceDomainArgs... domains) {
             return domains(List.of(domains));
@@ -479,9 +479,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param gatewayId Gateway ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayId(@Nullable Output<String> gatewayId) {
             $.gatewayId = gatewayId;
@@ -490,9 +490,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param gatewayId Gateway ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayId(String gatewayId) {
             return gatewayId(Output.of(gatewayId));
@@ -500,9 +500,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param gatewayName Gateway name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayName(@Nullable Output<String> gatewayName) {
             $.gatewayName = gatewayName;
@@ -511,9 +511,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param gatewayName Gateway name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder gatewayName(String gatewayName) {
             return gatewayName(Output.of(gatewayName));
@@ -521,9 +521,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param message Error message for service creation failure, deletion failure, or abnormal status.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder message(@Nullable Output<String> message) {
             $.message = message;
@@ -532,9 +532,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param message Error message for service creation failure, deletion failure, or abnormal status.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder message(String message) {
             return message(Output.of(message));
@@ -542,9 +542,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param protocols Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocols(@Nullable Output<List<String>> protocols) {
             $.protocols = protocols;
@@ -553,9 +553,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param protocols Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocols(List<String> protocols) {
             return protocols(Output.of(protocols));
@@ -563,9 +563,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param protocols Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocols(String... protocols) {
             return protocols(List.of(protocols));
@@ -573,9 +573,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceId Service ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceId(@Nullable Output<String> serviceId) {
             $.serviceId = serviceId;
@@ -584,9 +584,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceId Service ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceId(String serviceId) {
             return serviceId(Output.of(serviceId));
@@ -594,9 +594,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceName Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceName(@Nullable Output<String> serviceName) {
             $.serviceName = serviceName;
@@ -605,9 +605,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceName Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
@@ -615,9 +615,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceNetworkSpec Default domain network configuration..
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceNetworkSpec(@Nullable Output<GatewayServiceServiceNetworkSpecArgs> serviceNetworkSpec) {
             $.serviceNetworkSpec = serviceNetworkSpec;
@@ -626,9 +626,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceNetworkSpec Default domain network configuration..
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceNetworkSpec(GatewayServiceServiceNetworkSpecArgs serviceNetworkSpec) {
             return serviceNetworkSpec(Output.of(serviceNetworkSpec));
@@ -636,9 +636,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceType Service type. Options: AIProvider: AI model proxy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceType(@Nullable Output<String> serviceType) {
             $.serviceType = serviceType;
@@ -647,9 +647,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serviceType Service type. Options: AIProvider: AI model proxy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serviceType(String serviceType) {
             return serviceType(Output.of(serviceType));
@@ -657,9 +657,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param status Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -668,9 +668,9 @@ public final class GatewayServiceState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param status Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));

@@ -20,14 +20,14 @@ import javax.annotation.Nullable;
 
 /**
  * A shared bandwidth package is a cloud resource that supports multiplexing and sharing bandwidth. Add multiple public IPs or IPv6 public bandwidths within a single region to a shared bandwidth package instance to share one bandwidth.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var bandwidthPackageDemo = new BandwidthPackage("bandwidthPackageDemo", BandwidthPackageArgs.builder()
  *             .period(1)
@@ -67,130 +67,130 @@ import javax.annotation.Nullable;
  *                 .eip_address("101.126.*.143")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/bandwidthPackage:BandwidthPackage example &#34;bandwidth_package_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/bandwidthPackage:BandwidthPackage")
 public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Bandwidth package ID
-     *
+     * 
      */
     @Export(name="bandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageId;
 
     /**
      * @return Bandwidth package ID
-     *
+     * 
      */
     public Output<String> bandwidthPackageId() {
         return this.bandwidthPackageId;
     }
     /**
      * Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     *
+     * 
      */
     @Export(name="bandwidthPackageName", refs={String.class}, tree="[0]")
     private Output<String> bandwidthPackageName;
 
     /**
      * @return Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     *
+     * 
      */
     public Output<String> bandwidthPackageName() {
         return this.bandwidthPackageName;
     }
     /**
      * Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
-     *
+     * 
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
-     *
+     * 
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Billing status
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Billing status
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Deletion time
-     *
+     * 
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time
-     *
+     * 
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
@@ -198,7 +198,7 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="eipAddresses", refs={List.class,BandwidthPackageEipAddress.class}, tree="[0,1]")
     private Output<List<BandwidthPackageEipAddress>> eipAddresses;
@@ -206,161 +206,161 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * @return List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BandwidthPackageEipAddress>> eipAddresses() {
         return this.eipAddresses;
     }
     /**
      * Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
-     *
+     * 
      */
     @Export(name="enableDualStack", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableDualStack;
 
     /**
      * @return Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
-     *
+     * 
      */
     public Output<Boolean> enableDualStack() {
         return this.enableDualStack;
     }
     /**
      * Expiration time
-     *
+     * 
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time
-     *
+     * 
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
-     *
+     * 
      */
     @Export(name="isp", refs={String.class}, tree="[0]")
     private Output<String> isp;
 
     /**
      * @return Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
-     *
+     * 
      */
     public Output<String> isp() {
         return this.isp;
     }
     /**
      * Overdue time
-     *
+     * 
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Overdue time
-     *
+     * 
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Duration for purchasing yearly/monthly shared bandwidth package, default is &#39;1&#39;. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
-     *
+     * 
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return Duration for purchasing yearly/monthly shared bandwidth package, default is &#39;1&#39;. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
-     *
+     * 
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
-     *
+     * 
      */
     @Export(name="periodUnit", refs={Integer.class}, tree="[0]")
     private Output<Integer> periodUnit;
 
     /**
      * @return Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
-     *
+     * 
      */
     public Output<Integer> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Project name. If not specified, added to the default project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name. If not specified, added to the default project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
-     *
+     * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
-     *
+     * 
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
-     *
+     * 
      */
     @Export(name="ratio", refs={Integer.class}, tree="[0]")
     private Output<Integer> ratio;
 
     /**
      * @return 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
-     *
+     * 
      */
     public Output<Integer> ratio() {
         return this.ratio;
     }
     /**
      * Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-     *
+     * 
      */
     @Export(name="securityProtectionTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityProtectionTypes;
 
     /**
      * @return Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-     *
+     * 
      */
     public Output<List<String>> securityProtectionTypes() {
         return this.securityProtectionTypes;
     }
     /**
      * Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -368,7 +368,7 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,BandwidthPackageTag.class}, tree="[0,1]")
     private Output<List<BandwidthPackageTag>> tags;
@@ -376,21 +376,21 @@ public class BandwidthPackage extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<BandwidthPackageTag>> tags() {
         return this.tags;
     }
     /**
      * Update time
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

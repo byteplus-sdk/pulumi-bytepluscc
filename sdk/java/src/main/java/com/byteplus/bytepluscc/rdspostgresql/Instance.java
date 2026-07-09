@@ -24,14 +24,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud database instance management
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -45,16 +45,16 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var rDSPostgreSQLInstanceDemo = new Instance("rDSPostgreSQLInstanceDemo", InstanceArgs.builder()
  *             .dbEngineVersion("PostgreSQL_14")
- *             .nodeInfos(
+ *             .nodeInfos(            
  *                 InstanceNodeInfoArgs.builder()
  *                     .zone_id("cn-beijing-a")
  *                     .node_spec("rds.postgres.1c2g")
@@ -72,88 +72,88 @@ import javax.annotation.Nullable;
  *                 .charge_type("PostPaid")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/instance:Instance example &#34;instance_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:rdspostgresql/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-     *
+     * 
      */
     @Export(name="allowListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-     *
+     * 
      */
     public Output<List<String>> allowListIds() {
         return this.allowListIds;
     }
     /**
      * Payment method
-     *
+     * 
      */
     @Export(name="chargeDetail", refs={InstanceChargeDetail.class}, tree="[0]")
     private Output<InstanceChargeDetail> chargeDetail;
 
     /**
      * @return Payment method
-     *
+     * 
      */
     public Output<InstanceChargeDetail> chargeDetail() {
         return this.chargeDetail;
     }
     /**
      * Instance creation time
-     *
+     * 
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Instance creation time
-     *
+     * 
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Synchronization mode. Value: Async (asynchronous synchronization)
-     *
+     * 
      */
     @Export(name="dataSyncMode", refs={String.class}, tree="[0]")
     private Output<String> dataSyncMode;
 
     /**
      * @return Synchronization mode. Value: Async (asynchronous synchronization)
-     *
+     * 
      */
     public Output<String> dataSyncMode() {
         return this.dataSyncMode;
     }
     /**
      * Compatible version
-     *
+     * 
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
      * @return Compatible version
-     *
+     * 
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
@@ -161,7 +161,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Instance connection information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
@@ -169,91 +169,91 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance connection information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
     /**
      * Instance ID
-     *
+     * 
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     *
+     * 
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name
-     *
+     * 
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name
-     *
+     * 
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance status
-     *
+     * 
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Instance status
-     *
+     * 
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * Instance type. Value: HA (high availability edition)
-     *
+     * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Instance type. Value: HA (high availability edition)
-     *
+     * 
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Instance maintenance window
-     *
+     * 
      */
     @Export(name="maintenanceWindow", refs={InstanceMaintenanceWindow.class}, tree="[0]")
     private Output<InstanceMaintenanceWindow> maintenanceWindow;
 
     /**
      * @return Instance maintenance window
-     *
+     * 
      */
     public Output<InstanceMaintenanceWindow> maintenanceWindow() {
         return this.maintenanceWindow;
     }
     /**
      * Memory size, unit: GB
-     *
+     * 
      */
     @Export(name="memory", refs={Double.class}, tree="[0]")
     private Output<Double> memory;
 
     /**
      * @return Memory size, unit: GB
-     *
+     * 
      */
     public Output<Double> memory() {
         return this.memory;
@@ -261,7 +261,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Instance specification configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="nodeInfos", refs={List.class,InstanceNodeInfo.class}, tree="[0,1]")
     private Output<List<InstanceNodeInfo>> nodeInfos;
@@ -269,49 +269,49 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance specification configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceNodeInfo>> nodeInfos() {
         return this.nodeInfos;
     }
     /**
      * Number of nodes
-     *
+     * 
      */
     @Export(name="nodeNumber", refs={Double.class}, tree="[0]")
     private Output<Double> nodeNumber;
 
     /**
      * @return Number of nodes
-     *
+     * 
      */
     public Output<Double> nodeNumber() {
         return this.nodeNumber;
     }
     /**
      * Primary node specification
-     *
+     * 
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
      * @return Primary node specification
-     *
+     * 
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
     /**
      * Project. Default value: default project
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project. Default value: default project
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -319,7 +319,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Replication slot list for the instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="replicationSlots", refs={List.class,InstanceReplicationSlot.class}, tree="[0,1]")
     private Output<List<InstanceReplicationSlot>> replicationSlots;
@@ -327,133 +327,133 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Replication slot list for the instance
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceReplicationSlot>> replicationSlots() {
         return this.replicationSlots;
     }
     /**
      * Restore backup data to the current instance
-     *
+     * 
      */
     @Export(name="restoreToExistedInstance", refs={InstanceRestoreToExistedInstance.class}, tree="[0]")
     private Output<InstanceRestoreToExistedInstance> restoreToExistedInstance;
 
     /**
      * @return Restore backup data to the current instance
-     *
+     * 
      */
     public Output<InstanceRestoreToExistedInstance> restoreToExistedInstance() {
         return this.restoreToExistedInstance;
     }
     /**
      * Data file space used by the primary node. Unit: Byte
-     *
+     * 
      */
     @Export(name="storageDataUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageDataUse;
 
     /**
      * @return Data file space used by the primary node. Unit: Byte
-     *
+     * 
      */
     public Output<Double> storageDataUse() {
         return this.storageDataUse;
     }
     /**
      * Log file space used by the primary node. Unit: Byte
-     *
+     * 
      */
     @Export(name="storageLogUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageLogUse;
 
     /**
      * @return Log file space used by the primary node. Unit: Byte
-     *
+     * 
      */
     public Output<Double> storageLogUse() {
         return this.storageLogUse;
     }
     /**
      * Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
-     *
+     * 
      */
     @Export(name="storageSpace", refs={Double.class}, tree="[0]")
     private Output<Double> storageSpace;
 
     /**
      * @return Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
-     *
+     * 
      */
     public Output<Double> storageSpace() {
         return this.storageSpace;
     }
     /**
      * Temporary file space used by the primary node. Unit: Byte
-     *
+     * 
      */
     @Export(name="storageTempUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageTempUse;
 
     /**
      * @return Temporary file space used by the primary node. Unit: Byte
-     *
+     * 
      */
     public Output<Double> storageTempUse() {
         return this.storageTempUse;
     }
     /**
      * Instance storage type, fixed value LocalSSD (local SSD disk)
-     *
+     * 
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Instance storage type, fixed value LocalSSD (local SSD disk)
-     *
+     * 
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
      * Used storage space of the instance. Unit: Byte
-     *
+     * 
      */
     @Export(name="storageUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageUse;
 
     /**
      * @return Used storage space of the instance. Unit: Byte
-     *
+     * 
      */
     public Output<Double> storageUse() {
         return this.storageUse;
     }
     /**
      * Used WAL file space of the instance&#39;s primary node. Unit: Byte
-     *
+     * 
      */
     @Export(name="storageWalUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageWalUse;
 
     /**
      * @return Used WAL file space of the instance&#39;s primary node. Unit: Byte
-     *
+     * 
      */
     public Output<Double> storageWalUse() {
         return this.storageWalUse;
     }
     /**
      * Subnet ID
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -461,7 +461,7 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Tag information of the cloud disk
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
@@ -469,63 +469,63 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information of the cloud disk
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Instance update time
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Instance update time
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * CPU size. For example: 1 means 1U
-     *
+     * 
      */
     @Export(name="vcpu", refs={Double.class}, tree="[0]")
     private Output<Double> vcpu;
 
     /**
      * @return CPU size. For example: 1 means 1U
-     *
+     * 
      */
     public Output<Double> vcpu() {
         return this.vcpu;
     }
     /**
      * Use this parameter to specify the private network for the instance
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Use this parameter to specify the private network for the instance
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

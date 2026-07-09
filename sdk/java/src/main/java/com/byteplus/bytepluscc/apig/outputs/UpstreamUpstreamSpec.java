@@ -19,47 +19,47 @@ import javax.annotation.Nullable;
 public final class UpstreamUpstreamSpec {
     /**
      * @return AI model proxy
-     *
+     * 
      */
     private @Nullable UpstreamUpstreamSpecAiProvider aiProvider;
     /**
      * @return Fixed domain name
-     *
+     * 
      */
     private @Nullable UpstreamUpstreamSpecDomain domain;
     /**
      * @return Cloud server
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<UpstreamUpstreamSpecEcsInstance> ecsInstances;
     /**
      * @return Container Service
-     *
+     * 
      */
     private @Nullable UpstreamUpstreamSpecK8SService k8SService;
     /**
      * @return Registry Center
-     *
+     * 
      */
     private @Nullable UpstreamUpstreamSpecNacosService nacosService;
     /**
      * @return Function service
-     *
+     * 
      */
     private @Nullable UpstreamUpstreamSpecVeFaas veFaas;
 
     private UpstreamUpstreamSpec() {}
     /**
      * @return AI model proxy
-     *
+     * 
      */
     public Optional<UpstreamUpstreamSpecAiProvider> aiProvider() {
         return Optional.ofNullable(this.aiProvider);
     }
     /**
      * @return Fixed domain name
-     *
+     * 
      */
     public Optional<UpstreamUpstreamSpecDomain> domain() {
         return Optional.ofNullable(this.domain);
@@ -67,28 +67,28 @@ public final class UpstreamUpstreamSpec {
     /**
      * @return Cloud server
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<UpstreamUpstreamSpecEcsInstance> ecsInstances() {
         return this.ecsInstances == null ? List.of() : this.ecsInstances;
     }
     /**
      * @return Container Service
-     *
+     * 
      */
     public Optional<UpstreamUpstreamSpecK8SService> k8SService() {
         return Optional.ofNullable(this.k8SService);
     }
     /**
      * @return Registry Center
-     *
+     * 
      */
     public Optional<UpstreamUpstreamSpecNacosService> nacosService() {
         return Optional.ofNullable(this.nacosService);
     }
     /**
      * @return Function service
-     *
+     * 
      */
     public Optional<UpstreamUpstreamSpecVeFaas> veFaas() {
         return Optional.ofNullable(this.veFaas);

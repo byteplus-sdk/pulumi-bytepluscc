@@ -26,14 +26,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy ID.
-     *
+     * 
      */
     @Import(name="alarmId")
     private @Nullable Output<String> alarmId;
 
     /**
      * @return Alert policy ID.
-     *
+     * 
      */
     public Optional<Output<String>> alarmId() {
         return Optional.ofNullable(this.alarmId);
@@ -41,14 +41,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy name
-     *
+     * 
      */
     @Import(name="alarmName")
     private @Nullable Output<String> alarmName;
 
     /**
      * @return Alert policy name
-     *
+     * 
      */
     public Optional<Output<String>> alarmName() {
         return Optional.ofNullable(this.alarmName);
@@ -57,7 +57,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * List of notification groups corresponding to the alert.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="alarmNotifyGroups")
     private @Nullable Output<List<AlarmAlarmNotifyGroupArgs>> alarmNotifyGroups;
@@ -65,7 +65,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of notification groups corresponding to the alert.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmAlarmNotifyGroupArgs>>> alarmNotifyGroups() {
         return Optional.ofNullable(this.alarmNotifyGroups);
@@ -73,14 +73,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod limit, the log service sends alert notifications at the specified interval. Value range: 10–1440, unit: minutes. This parameter sets the sending interval for alert notifications across all channels. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence.
-     *
+     * 
      */
     @Import(name="alarmPeriod")
     private @Nullable Output<Integer> alarmPeriod;
 
     /**
      * @return Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod limit, the log service sends alert notifications at the specified interval. Value range: 10–1440, unit: minutes. This parameter sets the sending interval for alert notifications across all channels. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence.
-     *
+     * 
      */
     public Optional<Output<Integer>> alarmPeriod() {
         return Optional.ofNullable(this.alarmPeriod);
@@ -88,14 +88,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod, the logging service sends alert notifications according to the specified interval. Value range: 10–1440, in minutes. This parameter is used to set the sending interval for each channel. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence
-     *
+     * 
      */
     @Import(name="alarmPeriodDetail")
     private @Nullable Output<AlarmAlarmPeriodDetailArgs> alarmPeriodDetail;
 
     /**
      * @return Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod, the logging service sends alert notifications according to the specified interval. Value range: 10–1440, in minutes. This parameter is used to set the sending interval for each channel. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence
-     *
+     * 
      */
     public Optional<Output<AlarmAlarmPeriodDetailArgs>> alarmPeriodDetail() {
         return Optional.ofNullable(this.alarmPeriodDetail);
@@ -103,14 +103,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert trigger conditions. Alert policies support referencing query analysis results using the $N.keyname expression. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, both Condition and Severity fields are required.
-     *
+     * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
      * @return Alert trigger conditions. Alert policies support referencing query analysis results using the $N.keyname expression. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, both Condition and Severity fields are required.
-     *
+     * 
      */
     public Optional<Output<String>> condition() {
         return Optional.ofNullable(this.condition);
@@ -118,14 +118,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy creation time
-     *
+     * 
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Alert policy creation time
-     *
+     * 
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -134,7 +134,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="joinConfigurations")
     private @Nullable Output<List<AlarmJoinConfigurationArgs>> joinConfigurations;
@@ -142,7 +142,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmJoinConfigurationArgs>>> joinConfigurations() {
         return Optional.ofNullable(this.joinConfigurations);
@@ -150,14 +150,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last modified time of the alert policy.
-     *
+     * 
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
      * @return Last modified time of the alert policy.
-     *
+     * 
      */
     public Optional<Output<String>> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
@@ -165,14 +165,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the log project where the monitored log topic resides
-     *
+     * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
      * @return ID of the log project where the monitored log topic resides
-     *
+     * 
      */
     public Optional<Output<String>> projectId() {
         return Optional.ofNullable(this.projectId);
@@ -181,7 +181,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * Monitoring task execution statement.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="queryRequests")
     private @Nullable Output<List<AlarmQueryRequestArgs>> queryRequests;
@@ -189,7 +189,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Monitoring task execution statement.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmQueryRequestArgs>>> queryRequests() {
         return Optional.ofNullable(this.queryRequests);
@@ -197,14 +197,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Monitoring task execution statement.
-     *
+     * 
      */
     @Import(name="requestCycle")
     private @Nullable Output<AlarmRequestCycleArgs> requestCycle;
 
     /**
      * @return Monitoring task execution statement.
-     *
+     * 
      */
     public Optional<Output<AlarmRequestCycleArgs>> requestCycle() {
         return Optional.ofNullable(this.requestCycle);
@@ -212,14 +212,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable alert policy. Default is true (enabled)
-     *
+     * 
      */
     @Import(name="sendResolved")
     private @Nullable Output<Boolean> sendResolved;
 
     /**
      * @return Enable alert policy. Default is true (enabled)
-     *
+     * 
      */
     public Optional<Output<Boolean>> sendResolved() {
         return Optional.ofNullable(this.sendResolved);
@@ -227,14 +227,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert notification level, indicating the severity of the alert. Supported values: notice, warning, or critical. Default is notice
-     *
+     * 
      */
     @Import(name="severity")
     private @Nullable Output<String> severity;
 
     /**
      * @return Alert notification level, indicating the severity of the alert. Supported values: notice, warning, or critical. Default is notice
-     *
+     * 
      */
     public Optional<Output<String>> severity() {
         return Optional.ofNullable(this.severity);
@@ -242,14 +242,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable alert policy. Default is true (enabled)
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<Boolean> status;
 
     /**
      * @return Enable alert policy. Default is true (enabled)
-     *
+     * 
      */
     public Optional<Output<Boolean>> status() {
         return Optional.ofNullable(this.status);
@@ -258,7 +258,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="triggerConditions")
     private @Nullable Output<List<AlarmTriggerConditionArgs>> triggerConditions;
@@ -266,7 +266,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AlarmTriggerConditionArgs>>> triggerConditions() {
         return Optional.ofNullable(this.triggerConditions);
@@ -274,14 +274,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration period. An alert is triggered after the trigger condition is continuously met for TriggerPeriod cycles. Minimum value: 1, maximum value: 10, default is 1.
-     *
+     * 
      */
     @Import(name="triggerPeriod")
     private @Nullable Output<Integer> triggerPeriod;
 
     /**
      * @return Duration period. An alert is triggered after the trigger condition is continuously met for TriggerPeriod cycles. Minimum value: 1, maximum value: 10, default is 1.
-     *
+     * 
      */
     public Optional<Output<Integer>> triggerPeriod() {
         return Optional.ofNullable(this.triggerPeriod);
@@ -289,14 +289,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Customize alert notification content. You can insert content variables and functions. For details, see the documentation for content variables and content functions. To display this content in the actual alert notification, reference it in the content template using the NotifyMsg variable.
-     *
+     * 
      */
     @Import(name="userDefineMsg")
     private @Nullable Output<String> userDefineMsg;
 
     /**
      * @return Customize alert notification content. You can insert content variables and functions. For details, see the documentation for content variables and content functions. To display this content in the actual alert notification, reference it in the content template using the NotifyMsg variable.
-     *
+     * 
      */
     public Optional<Output<String>> userDefineMsg() {
         return Optional.ofNullable(this.userDefineMsg);
@@ -345,9 +345,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmId Alert policy ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmId(@Nullable Output<String> alarmId) {
             $.alarmId = alarmId;
@@ -356,9 +356,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmId Alert policy ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmId(String alarmId) {
             return alarmId(Output.of(alarmId));
@@ -366,9 +366,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmName Alert policy name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmName(@Nullable Output<String> alarmName) {
             $.alarmName = alarmName;
@@ -377,9 +377,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmName Alert policy name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmName(String alarmName) {
             return alarmName(Output.of(alarmName));
@@ -388,9 +388,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param alarmNotifyGroups List of notification groups corresponding to the alert.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroups(@Nullable Output<List<AlarmAlarmNotifyGroupArgs>> alarmNotifyGroups) {
             $.alarmNotifyGroups = alarmNotifyGroups;
@@ -400,9 +400,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param alarmNotifyGroups List of notification groups corresponding to the alert.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroups(List<AlarmAlarmNotifyGroupArgs> alarmNotifyGroups) {
             return alarmNotifyGroups(Output.of(alarmNotifyGroups));
@@ -411,9 +411,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param alarmNotifyGroups List of notification groups corresponding to the alert.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmNotifyGroups(AlarmAlarmNotifyGroupArgs... alarmNotifyGroups) {
             return alarmNotifyGroups(List.of(alarmNotifyGroups));
@@ -421,9 +421,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmPeriod Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod limit, the log service sends alert notifications at the specified interval. Value range: 10–1440, unit: minutes. This parameter sets the sending interval for alert notifications across all channels. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmPeriod(@Nullable Output<Integer> alarmPeriod) {
             $.alarmPeriod = alarmPeriod;
@@ -432,9 +432,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmPeriod Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod limit, the log service sends alert notifications at the specified interval. Value range: 10–1440, unit: minutes. This parameter sets the sending interval for alert notifications across all channels. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmPeriod(Integer alarmPeriod) {
             return alarmPeriod(Output.of(alarmPeriod));
@@ -442,9 +442,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmPeriodDetail Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod, the logging service sends alert notifications according to the specified interval. Value range: 10–1440, in minutes. This parameter is used to set the sending interval for each channel. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmPeriodDetail(@Nullable Output<AlarmAlarmPeriodDetailArgs> alarmPeriodDetail) {
             $.alarmPeriodDetail = alarmPeriodDetail;
@@ -453,9 +453,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmPeriodDetail Alert notification sending interval. When the alert is triggered continuously and reaches the specified TriggerPeriod, the logging service sends alert notifications according to the specified interval. Value range: 10–1440, in minutes. This parameter is used to set the sending interval for each channel. AlarmPeriod and AlarmPeriodDetail cannot both be empty. If both are specified, AlarmPeriodDetail takes precedence
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmPeriodDetail(AlarmAlarmPeriodDetailArgs alarmPeriodDetail) {
             return alarmPeriodDetail(Output.of(alarmPeriodDetail));
@@ -463,9 +463,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param condition Alert trigger conditions. Alert policies support referencing query analysis results using the $N.keyname expression. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, both Condition and Severity fields are required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(@Nullable Output<String> condition) {
             $.condition = condition;
@@ -474,9 +474,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param condition Alert trigger conditions. Alert policies support referencing query analysis results using the $N.keyname expression. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, both Condition and Severity fields are required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(String condition) {
             return condition(Output.of(condition));
@@ -484,9 +484,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Alert policy creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -495,9 +495,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Alert policy creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -506,9 +506,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param joinConfigurations Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinConfigurations(@Nullable Output<List<AlarmJoinConfigurationArgs>> joinConfigurations) {
             $.joinConfigurations = joinConfigurations;
@@ -518,9 +518,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param joinConfigurations Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinConfigurations(List<AlarmJoinConfigurationArgs> joinConfigurations) {
             return joinConfigurations(Output.of(joinConfigurations));
@@ -529,9 +529,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param joinConfigurations Configuration for set operations on alert query analysis results. Log Service treats each query analysis result as a set and determines whether to trigger an alert based on the set result. When multiple execution statements (QueryRequest) are configured, multi-set association monitoring is supported. Supported set operations include Cartesian product, left join, and right join.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinConfigurations(AlarmJoinConfigurationArgs... joinConfigurations) {
             return joinConfigurations(List.of(joinConfigurations));
@@ -539,9 +539,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Last modified time of the alert policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyTime(@Nullable Output<String> modifyTime) {
             $.modifyTime = modifyTime;
@@ -550,9 +550,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Last modified time of the alert policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder modifyTime(String modifyTime) {
             return modifyTime(Output.of(modifyTime));
@@ -560,9 +560,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId ID of the log project where the monitored log topic resides
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectId(@Nullable Output<String> projectId) {
             $.projectId = projectId;
@@ -571,9 +571,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId ID of the log project where the monitored log topic resides
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
@@ -582,9 +582,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param queryRequests Monitoring task execution statement.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder queryRequests(@Nullable Output<List<AlarmQueryRequestArgs>> queryRequests) {
             $.queryRequests = queryRequests;
@@ -594,9 +594,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param queryRequests Monitoring task execution statement.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder queryRequests(List<AlarmQueryRequestArgs> queryRequests) {
             return queryRequests(Output.of(queryRequests));
@@ -605,9 +605,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param queryRequests Monitoring task execution statement.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder queryRequests(AlarmQueryRequestArgs... queryRequests) {
             return queryRequests(List.of(queryRequests));
@@ -615,9 +615,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestCycle Monitoring task execution statement.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestCycle(@Nullable Output<AlarmRequestCycleArgs> requestCycle) {
             $.requestCycle = requestCycle;
@@ -626,9 +626,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestCycle Monitoring task execution statement.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requestCycle(AlarmRequestCycleArgs requestCycle) {
             return requestCycle(Output.of(requestCycle));
@@ -636,9 +636,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sendResolved Enable alert policy. Default is true (enabled)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sendResolved(@Nullable Output<Boolean> sendResolved) {
             $.sendResolved = sendResolved;
@@ -647,9 +647,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sendResolved Enable alert policy. Default is true (enabled)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sendResolved(Boolean sendResolved) {
             return sendResolved(Output.of(sendResolved));
@@ -657,9 +657,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param severity Alert notification level, indicating the severity of the alert. Supported values: notice, warning, or critical. Default is notice
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder severity(@Nullable Output<String> severity) {
             $.severity = severity;
@@ -668,9 +668,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param severity Alert notification level, indicating the severity of the alert. Supported values: notice, warning, or critical. Default is notice
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder severity(String severity) {
             return severity(Output.of(severity));
@@ -678,9 +678,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Enable alert policy. Default is true (enabled)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<Boolean> status) {
             $.status = status;
@@ -689,9 +689,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Enable alert policy. Default is true (enabled)
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(Boolean status) {
             return status(Output.of(status));
@@ -700,9 +700,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param triggerConditions Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder triggerConditions(@Nullable Output<List<AlarmTriggerConditionArgs>> triggerConditions) {
             $.triggerConditions = triggerConditions;
@@ -712,9 +712,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param triggerConditions Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder triggerConditions(List<AlarmTriggerConditionArgs> triggerConditions) {
             return triggerConditions(Output.of(triggerConditions));
@@ -723,9 +723,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param triggerConditions Alert trigger condition list. You can configure up to 10 alert trigger conditions. If you configure the TriggerConditions field, the Condition and Severity fields will be ignored. If you do not configure the TriggerConditions field, the Condition and Severity fields are required
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder triggerConditions(AlarmTriggerConditionArgs... triggerConditions) {
             return triggerConditions(List.of(triggerConditions));
@@ -733,9 +733,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param triggerPeriod Duration period. An alert is triggered after the trigger condition is continuously met for TriggerPeriod cycles. Minimum value: 1, maximum value: 10, default is 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder triggerPeriod(@Nullable Output<Integer> triggerPeriod) {
             $.triggerPeriod = triggerPeriod;
@@ -744,9 +744,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param triggerPeriod Duration period. An alert is triggered after the trigger condition is continuously met for TriggerPeriod cycles. Minimum value: 1, maximum value: 10, default is 1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder triggerPeriod(Integer triggerPeriod) {
             return triggerPeriod(Output.of(triggerPeriod));
@@ -754,9 +754,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userDefineMsg Customize alert notification content. You can insert content variables and functions. For details, see the documentation for content variables and content functions. To display this content in the actual alert notification, reference it in the content template using the NotifyMsg variable.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userDefineMsg(@Nullable Output<String> userDefineMsg) {
             $.userDefineMsg = userDefineMsg;
@@ -765,9 +765,9 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userDefineMsg Customize alert notification content. You can insert content variables and functions. For details, see the documentation for content variables and content functions. To display this content in the actual alert notification, reference it in the content template using the NotifyMsg variable.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder userDefineMsg(String userDefineMsg) {
             return userDefineMsg(Output.of(userDefineMsg));

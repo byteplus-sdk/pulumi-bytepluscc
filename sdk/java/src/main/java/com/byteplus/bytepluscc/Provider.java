@@ -18,118 +18,118 @@ import javax.annotation.Nullable;
  * settings, however an explicit `Provider` instance may be created and passed during resource
  * construction to achieve fine-grained programmatic control over provider settings. See the
  * [documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.
- *
+ * 
  */
 @ResourceType(type="pulumi:providers:bytepluscc")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
      * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
-     *
+     * 
      */
     @Export(name="accessKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> accessKey;
 
     /**
      * @return The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
-     *
+     * 
      */
     public Output<Optional<String>> accessKey() {
         return Codegen.optional(this.accessKey);
     }
     /**
      * CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
-     *
+     * 
      */
     @Export(name="customerHeaders", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> customerHeaders;
 
     /**
      * @return CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
-     *
+     * 
      */
     public Output<Optional<String>> customerHeaders() {
         return Codegen.optional(this.customerHeaders);
     }
     /**
      * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
-     *
+     * 
      */
     @Export(name="filePath", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> filePath;
 
     /**
      * @return The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
-     *
+     * 
      */
     public Output<Optional<String>> filePath() {
         return Codegen.optional(this.filePath);
     }
     /**
      * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
-     *
+     * 
      */
     @Export(name="profile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> profile;
 
     /**
      * @return The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
-     *
+     * 
      */
     public Output<Optional<String>> profile() {
         return Codegen.optional(this.profile);
     }
     /**
      * PROXY URL for Byteplus Provider
-     *
+     * 
      */
     @Export(name="proxyUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> proxyUrl;
 
     /**
      * @return PROXY URL for Byteplus Provider
-     *
+     * 
      */
     public Output<Optional<String>> proxyUrl() {
         return Codegen.optional(this.proxyUrl);
     }
     /**
      * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
-     *
+     * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> region;
 
     /**
      * @return The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
-     *
+     * 
      */
     public Output<Optional<String>> region() {
         return Codegen.optional(this.region);
     }
     /**
      * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
-     *
+     * 
      */
     @Export(name="secretKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secretKey;
 
     /**
      * @return he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
-     *
+     * 
      */
     public Output<Optional<String>> secretKey() {
         return Codegen.optional(this.secretKey);
     }
     /**
      * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
-     *
+     * 
      */
     @Export(name="sessionToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sessionToken;
 
     /**
      * @return The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
-     *
+     * 
      */
     public Output<Optional<String>> sessionToken() {
         return Codegen.optional(this.sessionToken);

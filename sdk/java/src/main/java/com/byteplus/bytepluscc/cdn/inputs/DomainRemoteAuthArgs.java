@@ -20,7 +20,7 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
     /**
      * Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="remoteAuthRules")
     private @Nullable Output<List<DomainRemoteAuthRemoteAuthRuleArgs>> remoteAuthRules;
@@ -28,7 +28,7 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
     /**
      * @return Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<DomainRemoteAuthRemoteAuthRuleArgs>>> remoteAuthRules() {
         return Optional.ofNullable(this.remoteAuthRules);
@@ -36,14 +36,14 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
-     *
+     * 
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
-     *
+     * 
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -77,9 +77,9 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param remoteAuthRules Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remoteAuthRules(@Nullable Output<List<DomainRemoteAuthRemoteAuthRuleArgs>> remoteAuthRules) {
             $.remoteAuthRules = remoteAuthRules;
@@ -89,9 +89,9 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param remoteAuthRules Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remoteAuthRules(List<DomainRemoteAuthRemoteAuthRuleArgs> remoteAuthRules) {
             return remoteAuthRules(Output.of(remoteAuthRules));
@@ -100,9 +100,9 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
         /**
          * @param remoteAuthRules Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder remoteAuthRules(DomainRemoteAuthRemoteAuthRuleArgs... remoteAuthRules) {
             return remoteAuthRules(List.of(remoteAuthRules));
@@ -110,9 +110,9 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param switch_ Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -121,9 +121,9 @@ public final class DomainRemoteAuthArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param switch_ Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

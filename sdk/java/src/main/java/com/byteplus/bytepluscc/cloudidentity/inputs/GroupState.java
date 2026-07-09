@@ -19,14 +19,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation Time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation Time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -34,14 +34,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Display Name
-     *
+     * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return Display Name
-     *
+     * 
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -64,14 +64,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User Group ID
-     *
+     * 
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
      * @return User Group ID
-     *
+     * 
      */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
@@ -79,14 +79,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User Group Name
-     *
+     * 
      */
     @Import(name="groupName")
     private @Nullable Output<String> groupName;
 
     /**
      * @return User Group Name
-     *
+     * 
      */
     public Optional<Output<String>> groupName() {
         return Optional.ofNullable(this.groupName);
@@ -94,14 +94,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User Group Type
-     *
+     * 
      */
     @Import(name="joinType")
     private @Nullable Output<String> joinType;
 
     /**
      * @return User Group Type
-     *
+     * 
      */
     public Optional<Output<String>> joinType() {
         return Optional.ofNullable(this.joinType);
@@ -110,7 +110,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * User Group Member List
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="members")
     private @Nullable Output<List<GroupMemberArgs>> members;
@@ -118,7 +118,7 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return User Group Member List
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GroupMemberArgs>>> members() {
         return Optional.ofNullable(this.members);
@@ -126,14 +126,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User Group Source
-     *
+     * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
      * @return User Group Source
-     *
+     * 
      */
     public Optional<Output<String>> source() {
         return Optional.ofNullable(this.source);
@@ -141,14 +141,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update Time
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update Time
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -188,9 +188,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -199,9 +199,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -209,9 +209,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -220,9 +220,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -230,9 +230,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName Display Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
@@ -241,9 +241,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName Display Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
@@ -251,9 +251,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId User Group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
@@ -262,9 +262,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId User Group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
@@ -272,9 +272,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName User Group Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(@Nullable Output<String> groupName) {
             $.groupName = groupName;
@@ -283,9 +283,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName User Group Name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(String groupName) {
             return groupName(Output.of(groupName));
@@ -293,9 +293,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param joinType User Group Type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinType(@Nullable Output<String> joinType) {
             $.joinType = joinType;
@@ -304,9 +304,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param joinType User Group Type
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder joinType(String joinType) {
             return joinType(Output.of(joinType));
@@ -315,9 +315,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members User Group Member List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder members(@Nullable Output<List<GroupMemberArgs>> members) {
             $.members = members;
@@ -327,9 +327,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members User Group Member List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder members(List<GroupMemberArgs> members) {
             return members(Output.of(members));
@@ -338,9 +338,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param members User Group Member List
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder members(GroupMemberArgs... members) {
             return members(List.of(members));
@@ -348,9 +348,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param source User Group Source
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(@Nullable Output<String> source) {
             $.source = source;
@@ -359,9 +359,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param source User Group Source
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder source(String source) {
             return source(Output.of(source));
@@ -369,9 +369,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Update Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -380,9 +380,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Update Time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

@@ -23,14 +23,14 @@ import javax.annotation.Nullable;
 
 /**
  * In addition to standard custom node pools, container service supports the default node pool (fixed name vke-default-nodepool) for managing existing cloud server (ECS) instances. The default node pool has the same security, advanced, and additional configuration capabilities as standard node pools, but does not support scaling or editing the number of nodes.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -50,12 +50,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vkeDefaultNodePoolDemo = new DefaultNodePool("vkeDefaultNodePoolDemo", DefaultNodePoolArgs.builder()
  *             .clusterId("cd60pbhxxxxxxc4f31a0")
@@ -95,158 +95,158 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vke/defaultNodePool:DefaultNodePool example &#34;cluster_id|node_pool_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vke/defaultNodePool:DefaultNodePool")
 public class DefaultNodePool extends com.pulumi.resources.CustomResource {
     /**
      * Node pool scaling policy configuration
-     *
+     * 
      */
     @Export(name="autoScaling", refs={DefaultNodePoolAutoScaling.class}, tree="[0]")
     private Output<DefaultNodePoolAutoScaling> autoScaling;
 
     /**
      * @return Node pool scaling policy configuration
-     *
+     * 
      */
     public Output<DefaultNodePoolAutoScaling> autoScaling() {
         return this.autoScaling;
     }
     /**
      * Cluster ID where the node pool is located
-     *
+     * 
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID where the node pool is located
-     *
+     * 
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Node pool creation time
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Node pool creation time
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Kubernetes-related configuration for the node pool
-     *
+     * 
      */
     @Export(name="kubernetesConfig", refs={DefaultNodePoolKubernetesConfig.class}, tree="[0]")
     private Output<DefaultNodePoolKubernetesConfig> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node pool
-     *
+     * 
      */
     public Output<DefaultNodePoolKubernetesConfig> kubernetesConfig() {
         return this.kubernetesConfig;
     }
     /**
      * Managed node pool configuration
-     *
+     * 
      */
     @Export(name="management", refs={DefaultNodePoolManagement.class}, tree="[0]")
     private Output<DefaultNodePoolManagement> management;
 
     /**
      * @return Managed node pool configuration
-     *
+     * 
      */
     public Output<DefaultNodePoolManagement> management() {
         return this.management;
     }
     /**
      * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Cloud server (ECS) instance configuration in the node pool
-     *
+     * 
      */
     @Export(name="nodeConfig", refs={DefaultNodePoolNodeConfig.class}, tree="[0]")
     private Output<DefaultNodePoolNodeConfig> nodeConfig;
 
     /**
      * @return Cloud server (ECS) instance configuration in the node pool
-     *
+     * 
      */
     public Output<DefaultNodePoolNodeConfig> nodeConfig() {
         return this.nodeConfig;
     }
     /**
      * Node pool ID
-     *
+     * 
      */
     @Export(name="nodePoolId", refs={String.class}, tree="[0]")
     private Output<String> nodePoolId;
 
     /**
      * @return Node pool ID
-     *
+     * 
      */
     public Output<String> nodePoolId() {
         return this.nodePoolId;
     }
     /**
      * Node statistics in the node pool.
-     *
+     * 
      */
     @Export(name="nodeStatistics", refs={DefaultNodePoolNodeStatistics.class}, tree="[0]")
     private Output<DefaultNodePoolNodeStatistics> nodeStatistics;
 
     /**
      * @return Node statistics in the node pool.
-     *
+     * 
      */
     public Output<DefaultNodePoolNodeStatistics> nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
      * Node pool status
-     *
+     * 
      */
     @Export(name="status", refs={DefaultNodePoolStatus.class}, tree="[0]")
     private Output<DefaultNodePoolStatus> status;
 
     /**
      * @return Node pool status
-     *
+     * 
      */
     public Output<DefaultNodePoolStatus> status() {
         return this.status;
@@ -254,7 +254,7 @@ public class DefaultNodePool extends com.pulumi.resources.CustomResource {
     /**
      * Node pool tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,DefaultNodePoolTag.class}, tree="[0,1]")
     private Output<List<DefaultNodePoolTag>> tags;
@@ -262,21 +262,21 @@ public class DefaultNodePool extends com.pulumi.resources.CustomResource {
     /**
      * @return Node pool tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<DefaultNodePoolTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the node pool was updated
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Time when the node pool was updated
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

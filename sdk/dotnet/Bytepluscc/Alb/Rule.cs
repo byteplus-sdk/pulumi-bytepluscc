@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
 {
     /// <summary>
     /// ALB distributes incoming traffic based on the forwarding rules you set. You can configure multiple forwarding rules for a single listener. Basic edition ALB instances support forwarding rules based on domain and path. Standard edition ALB instances support forwarding rules based on domain, path, and HTTP headers, and support composite forwarding conditions.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var albRuleDemo = new Bytepluscc.Alb.Rule("AlbRuleDemo", new()
     ///     {
@@ -41,12 +41,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     ///         {
     ///             Server_group_tuples = new[]
     ///             {
-    ///
+    ///                 
     ///                 {
     ///                     { "serverGroupId", "rsp-1pf4pgyq8zitc845wfxxxxxx" },
     ///                     { "weight", 100 },
     ///                 },
-    ///
+    ///                 
     ///                 {
     ///                     { "serverGroupId", "rsp-1pf4pgyq8zitc845wfxxxxxx" },
     ///                     { "weight", 100 },
@@ -56,12 +56,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb
     ///             Sticky_session_timeout = 2000,
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:alb/rule:Rule example "listener_id|rule_id"
     /// ```

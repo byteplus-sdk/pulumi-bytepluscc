@@ -18,14 +18,14 @@ import javax.annotation.Nullable;
 
 /**
  * Mount point is the connection point for the NAS file system in a network environment. The NAS file system must be mounted on a compute node to enable data access and storage. Mounting is the operation that connects the compute node to the NAS file system.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var fileNASMountPointDemo = new MountPoint("fileNASMountPointDemo", MountPointArgs.builder()
  *             .fileSystemId("enas-cnbja0f8*****")
@@ -51,26 +51,26 @@ import javax.annotation.Nullable;
  *             .subnetId("subnet-btepcsc5*****")
  *             .vpcId("vpc-3nr6adcn064u8931*****")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:filenas/mountPoint:MountPoint example &#34;file_system_id|mount_point_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:filenas/mountPoint:MountPoint")
 public class MountPoint extends com.pulumi.resources.CustomResource {
     /**
      * Client information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="clients", refs={List.class,MountPointClient.class}, tree="[0,1]")
     private Output<List<MountPointClient>> clients;
@@ -78,203 +78,203 @@ public class MountPoint extends com.pulumi.resources.CustomResource {
     /**
      * @return Client information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<MountPointClient>> clients() {
         return this.clients;
     }
     /**
      * Mount point creation time.
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Mount point creation time.
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * DNS address.
-     *
+     * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return DNS address.
-     *
+     * 
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * File system ID.
-     *
+     * 
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
      * @return File system ID.
-     *
+     * 
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
      * Mount point address.
-     *
+     * 
      */
     @Export(name="ip", refs={String.class}, tree="[0]")
     private Output<String> ip;
 
     /**
      * @return Mount point address.
-     *
+     * 
      */
     public Output<String> ip() {
         return this.ip;
     }
     /**
      * Mount point ID.
-     *
+     * 
      */
     @Export(name="mountPointId", refs={String.class}, tree="[0]")
     private Output<String> mountPointId;
 
     /**
      * @return Mount point ID.
-     *
+     * 
      */
     public Output<String> mountPointId() {
         return this.mountPointId;
     }
     /**
      * Mount point name.
-     *
+     * 
      */
     @Export(name="mountPointName", refs={String.class}, tree="[0]")
     private Output<String> mountPointName;
 
     /**
      * @return Mount point name.
-     *
+     * 
      */
     public Output<String> mountPointName() {
         return this.mountPointName;
     }
     /**
      * Permission group information bound to the mount point.
-     *
+     * 
      */
     @Export(name="permissionGroup", refs={MountPointPermissionGroup.class}, tree="[0]")
     private Output<MountPointPermissionGroup> permissionGroup;
 
     /**
      * @return Permission group information bound to the mount point.
-     *
+     * 
      */
     public Output<MountPointPermissionGroup> permissionGroup() {
         return this.permissionGroup;
     }
     /**
      * Permission group ID.
-     *
+     * 
      */
     @Export(name="permissionGroupId", refs={String.class}, tree="[0]")
     private Output<String> permissionGroupId;
 
     /**
      * @return Permission group ID.
-     *
+     * 
      */
     public Output<String> permissionGroupId() {
         return this.permissionGroupId;
     }
     /**
      * Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Mount point status. Values: Running: Running. Creating: Creating. Updating: Updating. Error: Error. Deleting: Deleting. DeleteError: Delete error. Deleted: Deleted. Stopped: Stopped.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Subnet ID.
-     *
+     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     *
+     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * Subnet name.
-     *
+     * 
      */
     @Export(name="subnetName", refs={String.class}, tree="[0]")
     private Output<String> subnetName;
 
     /**
      * @return Subnet name.
-     *
+     * 
      */
     public Output<String> subnetName() {
         return this.subnetName;
     }
     /**
      * Mount point update time.
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Mount point update time.
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Private network ID.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Private network name.
-     *
+     * 
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
      * @return Private network name.
-     *
+     * 
      */
     public Output<String> vpcName() {
         return this.vpcName;

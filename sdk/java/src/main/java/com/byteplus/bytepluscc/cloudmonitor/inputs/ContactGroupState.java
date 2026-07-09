@@ -19,14 +19,14 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account ID that created this contact group
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Account ID that created this contact group
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -34,14 +34,14 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact group ID
-     *
+     * 
      */
     @Import(name="contactGroupId")
     private @Nullable Output<String> contactGroupId;
 
     /**
      * @return Contact group ID
-     *
+     * 
      */
     public Optional<Output<String>> contactGroupId() {
         return Optional.ofNullable(this.contactGroupId);
@@ -50,7 +50,7 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * Contact information in the contact group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="contacts")
     private @Nullable Output<List<ContactGroupContactArgs>> contacts;
@@ -58,7 +58,7 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Contact information in the contact group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ContactGroupContactArgs>>> contacts() {
         return Optional.ofNullable(this.contacts);
@@ -66,14 +66,14 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact group creation time
-     *
+     * 
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Contact group creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -81,14 +81,14 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -96,14 +96,14 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -111,14 +111,14 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact group update time
-     *
+     * 
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Contact group update time
-     *
+     * 
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -156,9 +156,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID that created this contact group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -167,9 +167,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID that created this contact group
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -177,9 +177,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupId Contact group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactGroupId(@Nullable Output<String> contactGroupId) {
             $.contactGroupId = contactGroupId;
@@ -188,9 +188,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupId Contact group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactGroupId(String contactGroupId) {
             return contactGroupId(Output.of(contactGroupId));
@@ -199,9 +199,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param contacts Contact information in the contact group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contacts(@Nullable Output<List<ContactGroupContactArgs>> contacts) {
             $.contacts = contacts;
@@ -211,9 +211,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param contacts Contact information in the contact group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contacts(List<ContactGroupContactArgs> contacts) {
             return contacts(Output.of(contacts));
@@ -222,9 +222,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param contacts Contact information in the contact group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contacts(ContactGroupContactArgs... contacts) {
             return contacts(List.of(contacts));
@@ -232,9 +232,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Contact group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -243,9 +243,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Contact group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -253,9 +253,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -264,9 +264,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -274,9 +274,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -285,9 +285,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -295,9 +295,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Contact group update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -306,9 +306,9 @@ public final class ContactGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Contact group update time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));

@@ -12,28 +12,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Rabbitmq
 {
     /// <summary>
     /// After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var instancepluginDemo = new Bytepluscc.Rabbitmq.InstancePlugin("instancepluginDemo", new()
     ///     {
     ///         InstanceId = "rbtmq-db26b7****",
     ///         PluginName = "ccapi-test",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rabbitmq/instancePlugin:InstancePlugin example "instance_id|plugin_name"
     /// ```

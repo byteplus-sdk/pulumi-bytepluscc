@@ -15,20 +15,20 @@ import javax.annotation.Nullable;
 public final class SandboxInstanceTosMountConfig {
     /**
      * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
-     *
+     * 
      */
     private @Nullable Boolean enable;
     /**
      * @return Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<SandboxInstanceTosMountConfigTosMountPoint> tosMountPoints;
 
     private SandboxInstanceTosMountConfig() {}
     /**
      * @return Whether instance-level TOS mount is enabled for the sandbox instance. Parameter description: true: yes, false: no
-     *
+     * 
      */
     public Optional<Boolean> enable() {
         return Optional.ofNullable(this.enable);
@@ -36,7 +36,7 @@ public final class SandboxInstanceTosMountConfig {
     /**
      * @return Detailed TOS mount directory information for sandbox instances with instance-level TOS mount enabled
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<SandboxInstanceTosMountConfigTosMountPoint> tosMountPoints() {
         return this.tosMountPoints == null ? List.of() : this.tosMountPoints;

@@ -20,14 +20,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account ID of the physical connection owner
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Account ID of the physical connection owner
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -35,14 +35,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-     *
+     * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -50,14 +50,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Connection billing type. Currently only 1 is supported, indicating annual/monthly subscription billing
-     *
+     * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return Connection billing type. Currently only 1 is supported, indicating annual/monthly subscription billing
-     *
+     * 
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -65,14 +65,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing status of the connection. Normal: normal; FinancialLocked: locked
-     *
+     * 
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Billing status of the connection. Normal: normal; FinancialLocked: locked
-     *
+     * 
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -80,14 +80,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of the physical connection. DedicatedConnection: dedicated connection; SharedConnection: shared connection
-     *
+     * 
      */
     @Import(name="connectionType")
     private @Nullable Output<String> connectionType;
 
     /**
      * @return Type of the physical connection. DedicatedConnection: dedicated connection; SharedConnection: shared connection
-     *
+     * 
      */
     public Optional<Output<String>> connectionType() {
         return Optional.ofNullable(this.connectionType);
@@ -95,14 +95,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the physical connection was created
-     *
+     * 
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Time when the physical connection was created
-     *
+     * 
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -110,14 +110,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Email address of the dedicated connection contact
-     *
+     * 
      */
     @Import(name="customerContactEmail")
     private @Nullable Output<String> customerContactEmail;
 
     /**
      * @return Email address of the dedicated connection contact
-     *
+     * 
      */
     public Optional<Output<String>> customerContactEmail() {
         return Optional.ofNullable(this.customerContactEmail);
@@ -125,14 +125,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Phone number of the dedicated connection contact
-     *
+     * 
      */
     @Import(name="customerContactPhone")
     private @Nullable Output<String> customerContactPhone;
 
     /**
      * @return Phone number of the dedicated connection contact
-     *
+     * 
      */
     public Optional<Output<String>> customerContactPhone() {
         return Optional.ofNullable(this.customerContactPhone);
@@ -140,14 +140,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the dedicated connection contact
-     *
+     * 
      */
     @Import(name="customerName")
     private @Nullable Output<String> customerName;
 
     /**
      * @return Name of the dedicated connection contact
-     *
+     * 
      */
     public Optional<Output<String>> customerName() {
         return Optional.ofNullable(this.customerName);
@@ -155,14 +155,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expected resource forced reclaim time
-     *
+     * 
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return Expected resource forced reclaim time
-     *
+     * 
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -170,14 +170,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the physical connection. Length limit: 0 ~ 255 characters
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the physical connection. Length limit: 0 ~ 255 characters
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -185,14 +185,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-     *
+     * 
      */
     @Import(name="directConnectAccessPointId")
     private @Nullable Output<String> directConnectAccessPointId;
 
     /**
      * @return ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-     *
+     * 
      */
     public Optional<Output<String>> directConnectAccessPointId() {
         return Optional.ofNullable(this.directConnectAccessPointId);
@@ -200,14 +200,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the physical dedicated line.
-     *
+     * 
      */
     @Import(name="directConnectConnectionId")
     private @Nullable Output<String> directConnectConnectionId;
 
     /**
      * @return ID of the physical dedicated line.
-     *
+     * 
      */
     public Optional<Output<String>> directConnectConnectionId() {
         return Optional.ofNullable(this.directConnectConnectionId);
@@ -215,14 +215,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-     *
+     * 
      */
     @Import(name="directConnectConnectionName")
     private @Nullable Output<String> directConnectConnectionName;
 
     /**
      * @return Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-     *
+     * 
      */
     public Optional<Output<String>> directConnectConnectionName() {
         return Optional.ofNullable(this.directConnectConnectionName);
@@ -230,14 +230,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expected bandwidth of the physical connection in Mbps
-     *
+     * 
      */
     @Import(name="expectBandwidth")
     private @Nullable Output<Integer> expectBandwidth;
 
     /**
      * @return Expected bandwidth of the physical connection in Mbps
-     *
+     * 
      */
     public Optional<Output<Integer>> expectBandwidth() {
         return Optional.ofNullable(this.expectBandwidth);
@@ -245,14 +245,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Connection expiration time
-     *
+     * 
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Connection expiration time
-     *
+     * 
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -260,14 +260,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-     *
+     * 
      */
     @Import(name="lineOperator")
     private @Nullable Output<String> lineOperator;
 
     /**
      * @return Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-     *
+     * 
      */
     public Optional<Output<String>> lineOperator() {
         return Optional.ofNullable(this.lineOperator);
@@ -275,14 +275,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account ID of the physical connection associated with the shared connection. If the physical connection type is DedicatedConnection, this parameter returns empty
-     *
+     * 
      */
     @Import(name="parentConnectionAccountId")
     private @Nullable Output<String> parentConnectionAccountId;
 
     /**
      * @return Account ID of the physical connection associated with the shared connection. If the physical connection type is DedicatedConnection, this parameter returns empty
-     *
+     * 
      */
     public Optional<Output<String>> parentConnectionAccountId() {
         return Optional.ofNullable(this.parentConnectionAccountId);
@@ -290,14 +290,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the physical dedicated line to which the shared dedicated line belongs. If the physical dedicated line type is dedicated, this parameter returns empty.
-     *
+     * 
      */
     @Import(name="parentConnectionId")
     private @Nullable Output<String> parentConnectionId;
 
     /**
      * @return ID of the physical dedicated line to which the shared dedicated line belongs. If the physical dedicated line type is dedicated, this parameter returns empty.
-     *
+     * 
      */
     public Optional<Output<String>> parentConnectionId() {
         return Optional.ofNullable(this.parentConnectionId);
@@ -305,14 +305,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Local IDC address or the remote access point of the physical dedicated line.
-     *
+     * 
      */
     @Import(name="peerLocation")
     private @Nullable Output<String> peerLocation;
 
     /**
      * @return Local IDC address or the remote access point of the physical dedicated line.
-     *
+     * 
      */
     public Optional<Output<String>> peerLocation() {
         return Optional.ofNullable(this.peerLocation);
@@ -320,14 +320,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-     *
+     * 
      */
     @Import(name="portSpec")
     private @Nullable Output<String> portSpec;
 
     /**
      * @return Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-     *
+     * 
      */
     public Optional<Output<String>> portSpec() {
         return Optional.ofNullable(this.portSpec);
@@ -335,14 +335,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-     *
+     * 
      */
     @Import(name="portType")
     private @Nullable Output<String> portType;
 
     /**
      * @return Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-     *
+     * 
      */
     public Optional<Output<String>> portType() {
         return Optional.ofNullable(this.portType);
@@ -350,14 +350,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the physical dedicated line belongs. If left blank, the default project is used.
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the physical dedicated line belongs. If left blank, the default project is used.
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -365,14 +365,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the physical connection. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available; Initial: applying; Allocated: under construction; Rejected: application rejected; UnConfirmed: waiting for acceptance; NoPayment: pending payment
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the physical connection. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available; Initial: applying; Allocated: under construction; Rejected: application rejected; UnConfirmed: waiting for acceptance; NoPayment: pending payment
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -381,7 +381,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     /**
      * All tag information added to the physical connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ConnectionTagArgs>> tags;
@@ -389,7 +389,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return All tag information added to the physical connection
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ConnectionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -397,14 +397,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the physical dedicated line was updated.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Time when the physical dedicated line was updated.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -412,14 +412,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VLAN ID of the shared connection. If the physical connection type is DedicatedConnection, returns 0
-     *
+     * 
      */
     @Import(name="vlanId")
     private @Nullable Output<Integer> vlanId;
 
     /**
      * @return VLAN ID of the shared connection. If the physical connection type is DedicatedConnection, returns 0
-     *
+     * 
      */
     public Optional<Output<Integer>> vlanId() {
         return Optional.ofNullable(this.vlanId);
@@ -477,9 +477,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID of the physical connection owner
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -488,9 +488,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID of the physical connection owner
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -498,9 +498,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -509,9 +509,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -519,9 +519,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType Connection billing type. Currently only 1 is supported, indicating annual/monthly subscription billing
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -530,9 +530,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType Connection billing type. Currently only 1 is supported, indicating annual/monthly subscription billing
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -540,9 +540,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param businessStatus Billing status of the connection. Normal: normal; FinancialLocked: locked
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -551,9 +551,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param businessStatus Billing status of the connection. Normal: normal; FinancialLocked: locked
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -561,9 +561,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionType Type of the physical connection. DedicatedConnection: dedicated connection; SharedConnection: shared connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionType(@Nullable Output<String> connectionType) {
             $.connectionType = connectionType;
@@ -572,9 +572,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param connectionType Type of the physical connection. DedicatedConnection: dedicated connection; SharedConnection: shared connection
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionType(String connectionType) {
             return connectionType(Output.of(connectionType));
@@ -582,9 +582,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Time when the physical connection was created
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -593,9 +593,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Time when the physical connection was created
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -603,9 +603,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactEmail Email address of the dedicated connection contact
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customerContactEmail(@Nullable Output<String> customerContactEmail) {
             $.customerContactEmail = customerContactEmail;
@@ -614,9 +614,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactEmail Email address of the dedicated connection contact
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customerContactEmail(String customerContactEmail) {
             return customerContactEmail(Output.of(customerContactEmail));
@@ -624,9 +624,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactPhone Phone number of the dedicated connection contact
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customerContactPhone(@Nullable Output<String> customerContactPhone) {
             $.customerContactPhone = customerContactPhone;
@@ -635,9 +635,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactPhone Phone number of the dedicated connection contact
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customerContactPhone(String customerContactPhone) {
             return customerContactPhone(Output.of(customerContactPhone));
@@ -645,9 +645,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerName Name of the dedicated connection contact
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customerName(@Nullable Output<String> customerName) {
             $.customerName = customerName;
@@ -656,9 +656,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerName Name of the dedicated connection contact
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customerName(String customerName) {
             return customerName(Output.of(customerName));
@@ -666,9 +666,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletedTime Expected resource forced reclaim time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -677,9 +677,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletedTime Expected resource forced reclaim time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -687,9 +687,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the physical connection. Length limit: 0 ~ 255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -698,9 +698,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the physical connection. Length limit: 0 ~ 255 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -708,9 +708,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectAccessPointId ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectAccessPointId(@Nullable Output<String> directConnectAccessPointId) {
             $.directConnectAccessPointId = directConnectAccessPointId;
@@ -719,9 +719,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectAccessPointId ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectAccessPointId(String directConnectAccessPointId) {
             return directConnectAccessPointId(Output.of(directConnectAccessPointId));
@@ -729,9 +729,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectConnectionId ID of the physical dedicated line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectConnectionId(@Nullable Output<String> directConnectConnectionId) {
             $.directConnectConnectionId = directConnectConnectionId;
@@ -740,9 +740,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectConnectionId ID of the physical dedicated line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectConnectionId(String directConnectConnectionId) {
             return directConnectConnectionId(Output.of(directConnectConnectionId));
@@ -750,9 +750,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectConnectionName Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectConnectionName(@Nullable Output<String> directConnectConnectionName) {
             $.directConnectConnectionName = directConnectConnectionName;
@@ -761,9 +761,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectConnectionName Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder directConnectConnectionName(String directConnectConnectionName) {
             return directConnectConnectionName(Output.of(directConnectConnectionName));
@@ -771,9 +771,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expectBandwidth Expected bandwidth of the physical connection in Mbps
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expectBandwidth(@Nullable Output<Integer> expectBandwidth) {
             $.expectBandwidth = expectBandwidth;
@@ -782,9 +782,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expectBandwidth Expected bandwidth of the physical connection in Mbps
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expectBandwidth(Integer expectBandwidth) {
             return expectBandwidth(Output.of(expectBandwidth));
@@ -792,9 +792,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Connection expiration time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -803,9 +803,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Connection expiration time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -813,9 +813,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lineOperator Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lineOperator(@Nullable Output<String> lineOperator) {
             $.lineOperator = lineOperator;
@@ -824,9 +824,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lineOperator Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder lineOperator(String lineOperator) {
             return lineOperator(Output.of(lineOperator));
@@ -834,9 +834,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parentConnectionAccountId Account ID of the physical connection associated with the shared connection. If the physical connection type is DedicatedConnection, this parameter returns empty
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parentConnectionAccountId(@Nullable Output<String> parentConnectionAccountId) {
             $.parentConnectionAccountId = parentConnectionAccountId;
@@ -845,9 +845,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parentConnectionAccountId Account ID of the physical connection associated with the shared connection. If the physical connection type is DedicatedConnection, this parameter returns empty
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parentConnectionAccountId(String parentConnectionAccountId) {
             return parentConnectionAccountId(Output.of(parentConnectionAccountId));
@@ -855,9 +855,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parentConnectionId ID of the physical dedicated line to which the shared dedicated line belongs. If the physical dedicated line type is dedicated, this parameter returns empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parentConnectionId(@Nullable Output<String> parentConnectionId) {
             $.parentConnectionId = parentConnectionId;
@@ -866,9 +866,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parentConnectionId ID of the physical dedicated line to which the shared dedicated line belongs. If the physical dedicated line type is dedicated, this parameter returns empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder parentConnectionId(String parentConnectionId) {
             return parentConnectionId(Output.of(parentConnectionId));
@@ -876,9 +876,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param peerLocation Local IDC address or the remote access point of the physical dedicated line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder peerLocation(@Nullable Output<String> peerLocation) {
             $.peerLocation = peerLocation;
@@ -887,9 +887,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param peerLocation Local IDC address or the remote access point of the physical dedicated line.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder peerLocation(String peerLocation) {
             return peerLocation(Output.of(peerLocation));
@@ -897,9 +897,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portSpec Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder portSpec(@Nullable Output<String> portSpec) {
             $.portSpec = portSpec;
@@ -908,9 +908,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portSpec Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder portSpec(String portSpec) {
             return portSpec(Output.of(portSpec));
@@ -918,9 +918,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portType Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder portType(@Nullable Output<String> portType) {
             $.portType = portType;
@@ -929,9 +929,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portType Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder portType(String portType) {
             return portType(Output.of(portType));
@@ -939,9 +939,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the physical dedicated line belongs. If left blank, the default project is used.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -950,9 +950,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the physical dedicated line belongs. If left blank, the default project is used.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -960,9 +960,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the physical connection. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available; Initial: applying; Allocated: under construction; Rejected: application rejected; UnConfirmed: waiting for acceptance; NoPayment: pending payment
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -971,9 +971,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the physical connection. Creating: being created; Deleting: being deleted; Pending: being configured; Available: available; Initial: applying; Allocated: under construction; Rejected: application rejected; UnConfirmed: waiting for acceptance; NoPayment: pending payment
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -982,9 +982,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags All tag information added to the physical connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ConnectionTagArgs>> tags) {
             $.tags = tags;
@@ -994,9 +994,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags All tag information added to the physical connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ConnectionTagArgs> tags) {
             return tags(Output.of(tags));
@@ -1005,9 +1005,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags All tag information added to the physical connection
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ConnectionTagArgs... tags) {
             return tags(List.of(tags));
@@ -1015,9 +1015,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Time when the physical dedicated line was updated.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -1026,9 +1026,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Time when the physical dedicated line was updated.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -1036,9 +1036,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vlanId VLAN ID of the shared connection. If the physical connection type is DedicatedConnection, returns 0
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vlanId(@Nullable Output<Integer> vlanId) {
             $.vlanId = vlanId;
@@ -1047,9 +1047,9 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vlanId VLAN ID of the shared connection. If the physical connection type is DedicatedConnection, returns 0
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vlanId(Integer vlanId) {
             return vlanId(Output.of(vlanId));

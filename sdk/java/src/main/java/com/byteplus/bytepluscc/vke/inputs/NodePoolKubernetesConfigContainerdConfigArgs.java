@@ -19,14 +19,14 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
 
     /**
      * Specify the container image repository address to skip certificate verification.
-     *
+     * 
      */
     @Import(name="insecureRegistries")
     private @Nullable Output<List<String>> insecureRegistries;
 
     /**
      * @return Specify the container image repository address to skip certificate verification.
-     *
+     * 
      */
     public Optional<Output<List<String>>> insecureRegistries() {
         return Optional.ofNullable(this.insecureRegistries);
@@ -35,7 +35,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
     /**
      * Container image repository proxy configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="registryProxyConfigs")
     private @Nullable Output<List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs>> registryProxyConfigs;
@@ -43,7 +43,7 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
     /**
      * @return Container image repository proxy configuration
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs>>> registryProxyConfigs() {
         return Optional.ofNullable(this.registryProxyConfigs);
@@ -76,9 +76,9 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
 
         /**
          * @param insecureRegistries Specify the container image repository address to skip certificate verification.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder insecureRegistries(@Nullable Output<List<String>> insecureRegistries) {
             $.insecureRegistries = insecureRegistries;
@@ -87,9 +87,9 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
 
         /**
          * @param insecureRegistries Specify the container image repository address to skip certificate verification.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder insecureRegistries(List<String> insecureRegistries) {
             return insecureRegistries(Output.of(insecureRegistries));
@@ -97,9 +97,9 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
 
         /**
          * @param insecureRegistries Specify the container image repository address to skip certificate verification.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder insecureRegistries(String... insecureRegistries) {
             return insecureRegistries(List.of(insecureRegistries));
@@ -108,9 +108,9 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         /**
          * @param registryProxyConfigs Container image repository proxy configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryProxyConfigs(@Nullable Output<List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs>> registryProxyConfigs) {
             $.registryProxyConfigs = registryProxyConfigs;
@@ -120,9 +120,9 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         /**
          * @param registryProxyConfigs Container image repository proxy configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryProxyConfigs(List<NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs> registryProxyConfigs) {
             return registryProxyConfigs(Output.of(registryProxyConfigs));
@@ -131,9 +131,9 @@ public final class NodePoolKubernetesConfigContainerdConfigArgs extends com.pulu
         /**
          * @param registryProxyConfigs Container image repository proxy configuration
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder registryProxyConfigs(NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs... registryProxyConfigs) {
             return registryProxyConfigs(List.of(registryProxyConfigs));

@@ -22,7 +22,7 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="addressDetailLists")
     private @Nullable Output<List<AddressBookAddressDetailListArgs>> addressDetailLists;
@@ -30,7 +30,7 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AddressBookAddressDetailListArgs>>> addressDetailLists() {
         return Optional.ofNullable(this.addressDetailLists);
@@ -38,14 +38,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address list in the address book. The specific content depends on the address book type. Effective when `AutoUpdateType` is `Manual` and `AddressDetailList` is not empty. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-     *
+     * 
      */
     @Import(name="addressLists")
     private @Nullable Output<List<String>> addressLists;
 
     /**
      * @return Address list in the address book. The specific content depends on the address book type. Effective when `AutoUpdateType` is `Manual` and `AddressDetailList` is not empty. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-     *
+     * 
      */
     public Optional<Output<List<String>>> addressLists() {
         return Optional.ofNullable(this.addressLists);
@@ -53,14 +53,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address book auto-update type. Default is `Manual`. `Manual`: manual update; `Tag`: tag address book. Assets with new matching tags are automatically added to the current address book. This feature is currently only supported for the internet boundary.
-     *
+     * 
      */
     @Import(name="autoUpdateType")
     private @Nullable Output<String> autoUpdateType;
 
     /**
      * @return Address book auto-update type. Default is `Manual`. `Manual`: manual update; `Tag`: tag address book. Assets with new matching tags are automatically added to the current address book. This feature is currently only supported for the internet boundary.
-     *
+     * 
      */
     public Optional<Output<String>> autoUpdateType() {
         return Optional.ofNullable(this.autoUpdateType);
@@ -68,14 +68,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The unique identifier of the cloud firewall instance, used to specify which cloud firewall instance the address book belongs to.
-     *
+     * 
      */
     @Import(name="cloudFirewallId")
     private @Nullable Output<String> cloudFirewallId;
 
     /**
      * @return The unique identifier of the cloud firewall instance, used to specify which cloud firewall instance the address book belongs to.
-     *
+     * 
      */
     public Optional<Output<String>> cloudFirewallId() {
         return Optional.ofNullable(this.cloudFirewallId);
@@ -83,14 +83,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Detailed description of the address book, used to explain its purpose or other relevant information.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Detailed description of the address book, used to explain its purpose or other relevant information.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -98,14 +98,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the address book. Supports Chinese characters, uppercase and lowercase English letters, `-`, and `_`, with a maximum length of 64 characters.
-     *
+     * 
      */
     @Import(name="groupName", required=true)
     private Output<String> groupName;
 
     /**
      * @return Name of the address book. Supports Chinese characters, uppercase and lowercase English letters, `-`, and `_`, with a maximum length of 64 characters.
-     *
+     * 
      */
     public Output<String> groupName() {
         return this.groupName;
@@ -113,14 +113,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
-     *
+     * 
      */
     @Import(name="groupType", required=true)
     private Output<String> groupType;
 
     /**
      * @return The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
-     *
+     * 
      */
     public Output<String> groupType() {
         return this.groupType;
@@ -128,14 +128,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Asset type list, used to specify the types of assets included in the address book. Takes effect when `AutoUpdateType` is set to `Tag`. Supported values: `EcsInstance` (cloud server), `NetworkInterface` (network interface), `HaVip` (high-availability virtual IP), `Nat` (NAT gateway), `ClbInstance` (load balancer), `AlbInstance` (application load balancer), `VpnGateway` (VPN gateway).
-     *
+     * 
      */
     @Import(name="instanceTypeLists")
     private @Nullable Output<List<String>> instanceTypeLists;
 
     /**
      * @return Asset type list, used to specify the types of assets included in the address book. Takes effect when `AutoUpdateType` is set to `Tag`. Supported values: `EcsInstance` (cloud server), `NetworkInterface` (network interface), `HaVip` (high-availability virtual IP), `Nat` (NAT gateway), `ClbInstance` (load balancer), `AlbInstance` (application load balancer), `VpnGateway` (VPN gateway).
-     *
+     * 
      */
     public Optional<Output<List<String>>> instanceTypeLists() {
         return Optional.ofNullable(this.instanceTypeLists);
@@ -143,14 +143,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Tag type, used to specify the resource type in the address book. Effective when `AutoUpdateType` is `Tag`. `Eip`: public IP; `InternetAsset`: public asset.
-     *
+     * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return Tag type, used to specify the resource type in the address book. Effective when `AutoUpdateType` is `Tag`. `Eip`: public IP; `InternetAsset`: public asset.
-     *
+     * 
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
@@ -158,14 +158,14 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Logical relationship between tags, used to specify how multiple tags are combined. Effective when `AutoUpdateType` is `Tag`. `And`: all tags must be satisfied; `Or`: any tag can be satisfied.
-     *
+     * 
      */
     @Import(name="tagRelation")
     private @Nullable Output<String> tagRelation;
 
     /**
      * @return Logical relationship between tags, used to specify how multiple tags are combined. Effective when `AutoUpdateType` is `Tag`. `And`: all tags must be satisfied; `Or`: any tag can be satisfied.
-     *
+     * 
      */
     public Optional<Output<String>> tagRelation() {
         return Optional.ofNullable(this.tagRelation);
@@ -174,7 +174,7 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<AddressBookTagArgs>> tags;
@@ -182,7 +182,7 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<AddressBookTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -225,9 +225,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param addressDetailLists Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressDetailLists(@Nullable Output<List<AddressBookAddressDetailListArgs>> addressDetailLists) {
             $.addressDetailLists = addressDetailLists;
@@ -237,9 +237,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param addressDetailLists Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressDetailLists(List<AddressBookAddressDetailListArgs> addressDetailLists) {
             return addressDetailLists(Output.of(addressDetailLists));
@@ -248,9 +248,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param addressDetailLists Address list with detailed address information. Effective when `AutoUpdateType` is `Manual`.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressDetailLists(AddressBookAddressDetailListArgs... addressDetailLists) {
             return addressDetailLists(List.of(addressDetailLists));
@@ -258,9 +258,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressLists Address list in the address book. The specific content depends on the address book type. Effective when `AutoUpdateType` is `Manual` and `AddressDetailList` is not empty. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressLists(@Nullable Output<List<String>> addressLists) {
             $.addressLists = addressLists;
@@ -269,9 +269,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressLists Address list in the address book. The specific content depends on the address book type. Effective when `AutoUpdateType` is `Manual` and `AddressDetailList` is not empty. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressLists(List<String> addressLists) {
             return addressLists(Output.of(addressLists));
@@ -279,9 +279,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressLists Address list in the address book. The specific content depends on the address book type. Effective when `AutoUpdateType` is `Manual` and `AddressDetailList` is not empty. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addressLists(String... addressLists) {
             return addressLists(List.of(addressLists));
@@ -289,9 +289,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoUpdateType Address book auto-update type. Default is `Manual`. `Manual`: manual update; `Tag`: tag address book. Assets with new matching tags are automatically added to the current address book. This feature is currently only supported for the internet boundary.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoUpdateType(@Nullable Output<String> autoUpdateType) {
             $.autoUpdateType = autoUpdateType;
@@ -300,9 +300,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoUpdateType Address book auto-update type. Default is `Manual`. `Manual`: manual update; `Tag`: tag address book. Assets with new matching tags are automatically added to the current address book. This feature is currently only supported for the internet boundary.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoUpdateType(String autoUpdateType) {
             return autoUpdateType(Output.of(autoUpdateType));
@@ -310,9 +310,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cloudFirewallId The unique identifier of the cloud firewall instance, used to specify which cloud firewall instance the address book belongs to.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cloudFirewallId(@Nullable Output<String> cloudFirewallId) {
             $.cloudFirewallId = cloudFirewallId;
@@ -321,9 +321,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cloudFirewallId The unique identifier of the cloud firewall instance, used to specify which cloud firewall instance the address book belongs to.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cloudFirewallId(String cloudFirewallId) {
             return cloudFirewallId(Output.of(cloudFirewallId));
@@ -331,9 +331,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Detailed description of the address book, used to explain its purpose or other relevant information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -342,9 +342,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Detailed description of the address book, used to explain its purpose or other relevant information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -352,9 +352,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName Name of the address book. Supports Chinese characters, uppercase and lowercase English letters, `-`, and `_`, with a maximum length of 64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(Output<String> groupName) {
             $.groupName = groupName;
@@ -363,9 +363,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupName Name of the address book. Supports Chinese characters, uppercase and lowercase English letters, `-`, and `_`, with a maximum length of 64 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupName(String groupName) {
             return groupName(Output.of(groupName));
@@ -373,9 +373,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupType The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupType(Output<String> groupType) {
             $.groupType = groupType;
@@ -384,9 +384,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupType The type of the address book, used to specify the type of addresses stored in the address book. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port information; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name information.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder groupType(String groupType) {
             return groupType(Output.of(groupType));
@@ -394,9 +394,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTypeLists Asset type list, used to specify the types of assets included in the address book. Takes effect when `AutoUpdateType` is set to `Tag`. Supported values: `EcsInstance` (cloud server), `NetworkInterface` (network interface), `HaVip` (high-availability virtual IP), `Nat` (NAT gateway), `ClbInstance` (load balancer), `AlbInstance` (application load balancer), `VpnGateway` (VPN gateway).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeLists(@Nullable Output<List<String>> instanceTypeLists) {
             $.instanceTypeLists = instanceTypeLists;
@@ -405,9 +405,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTypeLists Asset type list, used to specify the types of assets included in the address book. Takes effect when `AutoUpdateType` is set to `Tag`. Supported values: `EcsInstance` (cloud server), `NetworkInterface` (network interface), `HaVip` (high-availability virtual IP), `Nat` (NAT gateway), `ClbInstance` (load balancer), `AlbInstance` (application load balancer), `VpnGateway` (VPN gateway).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeLists(List<String> instanceTypeLists) {
             return instanceTypeLists(Output.of(instanceTypeLists));
@@ -415,9 +415,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTypeLists Asset type list, used to specify the types of assets included in the address book. Takes effect when `AutoUpdateType` is set to `Tag`. Supported values: `EcsInstance` (cloud server), `NetworkInterface` (network interface), `HaVip` (high-availability virtual IP), `Nat` (NAT gateway), `ClbInstance` (load balancer), `AlbInstance` (application load balancer), `VpnGateway` (VPN gateway).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder instanceTypeLists(String... instanceTypeLists) {
             return instanceTypeLists(List.of(instanceTypeLists));
@@ -425,9 +425,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceType Tag type, used to specify the resource type in the address book. Effective when `AutoUpdateType` is `Tag`. `Eip`: public IP; `InternetAsset`: public asset.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceType(@Nullable Output<String> resourceType) {
             $.resourceType = resourceType;
@@ -436,9 +436,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceType Tag type, used to specify the resource type in the address book. Effective when `AutoUpdateType` is `Tag`. `Eip`: public IP; `InternetAsset`: public asset.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
@@ -446,9 +446,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tagRelation Logical relationship between tags, used to specify how multiple tags are combined. Effective when `AutoUpdateType` is `Tag`. `And`: all tags must be satisfied; `Or`: any tag can be satisfied.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tagRelation(@Nullable Output<String> tagRelation) {
             $.tagRelation = tagRelation;
@@ -457,9 +457,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tagRelation Logical relationship between tags, used to specify how multiple tags are combined. Effective when `AutoUpdateType` is `Tag`. `And`: all tags must be satisfied; `Or`: any tag can be satisfied.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tagRelation(String tagRelation) {
             return tagRelation(Output.of(tagRelation));
@@ -468,9 +468,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<AddressBookTagArgs>> tags) {
             $.tags = tags;
@@ -480,9 +480,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<AddressBookTagArgs> tags) {
             return tags(Output.of(tags));
@@ -491,9 +491,9 @@ public final class AddressBookArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags Tag list for the address book, used for categorization or marking. Effective when `AutoUpdateType` is `Tag`.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(AddressBookTagArgs... tags) {
             return tags(List.of(tags));

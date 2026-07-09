@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
     /// Database Account Management
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vEDBMAccountDemo = new Bytepluscc.Vedbm.Account("VEDBMAccountDemo", new()
     ///     {
@@ -31,12 +31,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     ///         AccountType = "Super",
     ///         AccountDesc = "this is a super account",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vedbm/account:Account example "instance_id|account_name"
     /// ```

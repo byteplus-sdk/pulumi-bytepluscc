@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// Public IP (Elastic IP Address, EIP) and its public outbound bandwidth are IP connectivity services provided by Volcano Engine for cloud resources, which can be purchased and held independently. Public IP supports direct binding to cloud servers (including ECS cloud servers, EBM bare metal servers, GPU cloud servers), and also supports binding to public NAT gateways, load balancers, and secondary network interfaces, providing public network connectivity for cloud servers.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var eipDemo = new Bytepluscc.Vpc.Eip("EipDemo", new()
     ///     {
@@ -45,12 +45,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///         InstanceType = "EcsInstance",
     ///         DirectMode = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/eip:Eip example "allocation_id"
     /// ```

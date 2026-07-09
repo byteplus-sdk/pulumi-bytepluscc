@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
 {
     /// <summary>
     /// The service serves as the entry point for external access. You can bind your custom domain to the service using the domain binding feature
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var apigCustomDomainDemo = new Bytepluscc.Apig.CustomDomain("ApigCustomDomainDemo", new()
     ///     {
@@ -36,12 +36,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig
     ///         Comments = "ApigCustomDomainDemo custom domain",
     ///         SslRedirect = true,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:apig/customDomain:CustomDomain example "custom_domain_id"
     /// ```

@@ -23,14 +23,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<Integer> endpointId;
 
     /**
      * @return Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-     *
+     * 
      */
     public Optional<Output<Integer>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -38,14 +38,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TRN of the endpoint
-     *
+     * 
      */
     @Import(name="endpointTrn")
     private @Nullable Output<String> endpointTrn;
 
     /**
      * @return TRN of the endpoint
-     *
+     * 
      */
     public Optional<Output<String>> endpointTrn() {
         return Optional.ofNullable(this.endpointTrn);
@@ -54,7 +54,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="forwardIPs")
     private @Nullable Output<List<ResolverRuleForwardIPArgs>> forwardIPs;
@@ -62,7 +62,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ResolverRuleForwardIPArgs>>> forwardIPs() {
         return Optional.ofNullable(this.forwardIPs);
@@ -70,14 +70,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
-     *
+     * 
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
      * @return Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
-     *
+     * 
      */
     public Optional<Output<String>> line() {
         return Optional.ofNullable(this.line);
@@ -85,14 +85,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the forwarding rule. Supports UTF-8 format
-     *
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Name of the forwarding rule. Supports UTF-8 format
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
@@ -100,14 +100,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name associated with the forwarding rule. Default is default
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name associated with the forwarding rule. Default is default
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -116,7 +116,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * One or more tags associated with the forwarding rule
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<ResolverRuleTagArgs>> tags;
@@ -124,7 +124,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return One or more tags associated with the forwarding rule
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ResolverRuleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -132,14 +132,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
-     *
+     * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
-     *
+     * 
      */
     public Output<String> type() {
         return this.type;
@@ -148,7 +148,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="vpCs")
     private @Nullable Output<List<ResolverRuleVpCArgs>> vpCs;
@@ -156,7 +156,7 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<ResolverRuleVpCArgs>>> vpCs() {
         return Optional.ofNullable(this.vpCs);
@@ -164,14 +164,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TRN of one or more VPCs associated with the domain name
-     *
+     * 
      */
     @Import(name="vpcTrns")
     private @Nullable Output<List<String>> vpcTrns;
 
     /**
      * @return TRN of one or more VPCs associated with the domain name
-     *
+     * 
      */
     public Optional<Output<List<String>>> vpcTrns() {
         return Optional.ofNullable(this.vpcTrns);
@@ -179,14 +179,14 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
-     *
+     * 
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
      * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
-     *
+     * 
      */
     public Optional<Output<String>> zoneName() {
         return Optional.ofNullable(this.zoneName);
@@ -228,9 +228,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<Integer> endpointId) {
             $.endpointId = endpointId;
@@ -239,9 +239,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointId Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(Integer endpointId) {
             return endpointId(Output.of(endpointId));
@@ -249,9 +249,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointTrn TRN of the endpoint
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointTrn(@Nullable Output<String> endpointTrn) {
             $.endpointTrn = endpointTrn;
@@ -260,9 +260,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointTrn TRN of the endpoint
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointTrn(String endpointTrn) {
             return endpointTrn(Output.of(endpointTrn));
@@ -271,9 +271,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param forwardIPs IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forwardIPs(@Nullable Output<List<ResolverRuleForwardIPArgs>> forwardIPs) {
             $.forwardIPs = forwardIPs;
@@ -283,9 +283,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param forwardIPs IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forwardIPs(List<ResolverRuleForwardIPArgs> forwardIPs) {
             return forwardIPs(Output.of(forwardIPs));
@@ -294,9 +294,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param forwardIPs IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder forwardIPs(ResolverRuleForwardIPArgs... forwardIPs) {
             return forwardIPs(List.of(forwardIPs));
@@ -304,9 +304,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder line(@Nullable Output<String> line) {
             $.line = line;
@@ -315,9 +315,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder line(String line) {
             return line(Output.of(line));
@@ -325,9 +325,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the forwarding rule. Supports UTF-8 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -336,9 +336,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the forwarding rule. Supports UTF-8 format
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -346,9 +346,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the forwarding rule. Default is default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -357,9 +357,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the forwarding rule. Default is default
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -368,9 +368,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags One or more tags associated with the forwarding rule
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<ResolverRuleTagArgs>> tags) {
             $.tags = tags;
@@ -380,9 +380,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags One or more tags associated with the forwarding rule
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<ResolverRuleTagArgs> tags) {
             return tags(Output.of(tags));
@@ -391,9 +391,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags One or more tags associated with the forwarding rule
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(ResolverRuleTagArgs... tags) {
             return tags(List.of(tags));
@@ -401,9 +401,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(Output<String> type) {
             $.type = type;
@@ -412,9 +412,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -423,9 +423,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vpCs VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpCs(@Nullable Output<List<ResolverRuleVpCArgs>> vpCs) {
             $.vpCs = vpCs;
@@ -435,9 +435,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vpCs VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpCs(List<ResolverRuleVpCArgs> vpCs) {
             return vpCs(Output.of(vpCs));
@@ -446,9 +446,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param vpCs VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpCs(ResolverRuleVpCArgs... vpCs) {
             return vpCs(List.of(vpCs));
@@ -456,9 +456,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcTrns TRN of one or more VPCs associated with the domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcTrns(@Nullable Output<List<String>> vpcTrns) {
             $.vpcTrns = vpcTrns;
@@ -467,9 +467,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcTrns TRN of one or more VPCs associated with the domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcTrns(List<String> vpcTrns) {
             return vpcTrns(Output.of(vpcTrns));
@@ -477,9 +477,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcTrns TRN of one or more VPCs associated with the domain name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcTrns(String... vpcTrns) {
             return vpcTrns(List.of(vpcTrns));
@@ -487,9 +487,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(@Nullable Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -498,9 +498,9 @@ public final class ResolverRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
 {
     /// <summary>
     /// Database connection terminal management
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vEDBMEndpointDemo = new Bytepluscc.Vedbm.Endpoint("VEDBMEndpointDemo", new()
     ///     {
@@ -43,12 +43,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vedbm
     ///         },
     ///         ReadWriteMode = "ReadOnly",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vedbm/endpoint:Endpoint example "instance_id|endpoint_id"
     /// ```

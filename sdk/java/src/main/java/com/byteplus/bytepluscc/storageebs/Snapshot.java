@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * A snapshot is a backup method. Each snapshot is a backup file of cloud disk data at a specific point in time. When data is lost or a failure occurs, you can roll back cloud disk data using the snapshot to recover lost data.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var storageEBSSnapshotDemo = new Snapshot("storageEBSSnapshotDemo", SnapshotArgs.builder()
  *             .volumeId("vol-3wt6pip1dy3qu*****")
@@ -56,200 +56,200 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:storageebs/snapshot:Snapshot example &#34;snapshot_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:storageebs/snapshot:Snapshot")
 public class Snapshot extends com.pulumi.resources.CustomResource {
     /**
      * Snapshot creation time.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Snapshot creation time.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Image ID
-     *
+     * 
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID
-     *
+     * 
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
-     *
+     * 
      */
     @Export(name="instantAccess", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> instantAccess;
 
     /**
      * @return Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
-     *
+     * 
      */
     public Output<Boolean> instantAccess() {
         return this.instantAccess;
     }
     /**
      * Snapshot dump progress.
-     *
+     * 
      */
     @Export(name="progress", refs={Integer.class}, tree="[0]")
     private Output<Integer> progress;
 
     /**
      * @return Snapshot dump progress.
-     *
+     * 
      */
     public Output<Integer> progress() {
         return this.progress;
     }
     /**
      * Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-     *
+     * 
      */
     @Export(name="retentionDays", refs={Integer.class}, tree="[0]")
     private Output<Integer> retentionDays;
 
     /**
      * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-     *
+     * 
      */
     public Output<Integer> retentionDays() {
         return this.retentionDays;
     }
     /**
      * Whether the snapshot is shared.
-     *
+     * 
      */
     @Export(name="shared", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shared;
 
     /**
      * @return Whether the snapshot is shared.
-     *
+     * 
      */
     public Output<Boolean> shared() {
         return this.shared;
     }
     /**
      * Snapshot consistency group ID.
-     *
+     * 
      */
     @Export(name="snapshotGroupId", refs={String.class}, tree="[0]")
     private Output<String> snapshotGroupId;
 
     /**
      * @return Snapshot consistency group ID.
-     *
+     * 
      */
     public Output<String> snapshotGroupId() {
         return this.snapshotGroupId;
     }
     /**
      * Snapshot ID.
-     *
+     * 
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
      * @return Snapshot ID.
-     *
+     * 
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
     /**
      * Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-     *
+     * 
      */
     @Export(name="snapshotName", refs={String.class}, tree="[0]")
     private Output<String> snapshotName;
 
     /**
      * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-     *
+     * 
      */
     public Output<String> snapshotName() {
         return this.snapshotName;
     }
     /**
      * Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
-     *
+     * 
      */
     @Export(name="snapshotType", refs={String.class}, tree="[0]")
     private Output<String> snapshotType;
 
     /**
      * @return Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
-     *
+     * 
      */
     public Output<String> snapshotType() {
         return this.snapshotType;
     }
     /**
      * Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -257,7 +257,7 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
     /**
      * Snapshot tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,SnapshotTag.class}, tree="[0,1]")
     private Output<List<SnapshotTag>> tags;
@@ -265,105 +265,105 @@ public class Snapshot extends com.pulumi.resources.CustomResource {
     /**
      * @return Snapshot tag information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<SnapshotTag>> tags() {
         return this.tags;
     }
     /**
      * Cloud disk ID associated with the snapshot.
-     *
+     * 
      */
     @Export(name="volumeId", refs={String.class}, tree="[0]")
     private Output<String> volumeId;
 
     /**
      * @return Cloud disk ID associated with the snapshot.
-     *
+     * 
      */
     public Output<String> volumeId() {
         return this.volumeId;
     }
     /**
      * Cloud disk category. Value options: system: system disk. data: data disk.
-     *
+     * 
      */
     @Export(name="volumeKind", refs={String.class}, tree="[0]")
     private Output<String> volumeKind;
 
     /**
      * @return Cloud disk category. Value options: system: system disk. data: data disk.
-     *
+     * 
      */
     public Output<String> volumeKind() {
         return this.volumeKind;
     }
     /**
      * Cloud disk name.
-     *
+     * 
      */
     @Export(name="volumeName", refs={String.class}, tree="[0]")
     private Output<String> volumeName;
 
     /**
      * @return Cloud disk name.
-     *
+     * 
      */
     public Output<String> volumeName() {
         return this.volumeName;
     }
     /**
      * Cloud disk size, in GiB.
-     *
+     * 
      */
     @Export(name="volumeSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> volumeSize;
 
     /**
      * @return Cloud disk size, in GiB.
-     *
+     * 
      */
     public Output<Integer> volumeSize() {
         return this.volumeSize;
     }
     /**
      * Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
-     *
+     * 
      */
     @Export(name="volumeStatus", refs={String.class}, tree="[0]")
     private Output<String> volumeStatus;
 
     /**
      * @return Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
-     *
+     * 
      */
     public Output<String> volumeStatus() {
         return this.volumeStatus;
     }
     /**
      * Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
-     *
+     * 
      */
     @Export(name="volumeType", refs={String.class}, tree="[0]")
     private Output<String> volumeType;
 
     /**
      * @return Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
-     *
+     * 
      */
     public Output<String> volumeType() {
         return this.volumeType;
     }
     /**
      * Availability zone ID where the snapshot is located.
-     *
+     * 
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID where the snapshot is located.
-     *
+     * 
      */
     public Output<String> zoneId() {
         return this.zoneId;

@@ -18,14 +18,14 @@ public final class DomainCacheArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     @Import(name="cacheAction")
     private @Nullable Output<DomainCacheCacheActionArgs> cacheAction;
 
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     public Optional<Output<DomainCacheCacheActionArgs>> cacheAction() {
         return Optional.ofNullable(this.cacheAction);
@@ -33,14 +33,14 @@ public final class DomainCacheArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     @Import(name="condition")
     private @Nullable Output<DomainCacheConditionArgs> condition;
 
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public Optional<Output<DomainCacheConditionArgs>> condition() {
         return Optional.ofNullable(this.condition);
@@ -73,9 +73,9 @@ public final class DomainCacheArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cacheAction Indicates the relevant configuration for cache behavior.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheAction(@Nullable Output<DomainCacheCacheActionArgs> cacheAction) {
             $.cacheAction = cacheAction;
@@ -84,9 +84,9 @@ public final class DomainCacheArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cacheAction Indicates the relevant configuration for cache behavior.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cacheAction(DomainCacheCacheActionArgs cacheAction) {
             return cacheAction(Output.of(cacheAction));
@@ -94,9 +94,9 @@ public final class DomainCacheArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(@Nullable Output<DomainCacheConditionArgs> condition) {
             $.condition = condition;
@@ -105,9 +105,9 @@ public final class DomainCacheArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param condition Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder condition(DomainCacheConditionArgs condition) {
             return condition(Output.of(condition));

@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
 {
     /// <summary>
     /// The mirror session links the mirror source, mirror destination, and filter conditions, enabling private network forwarding of traffic copied from the mirror source to the mirror destination. It serves as the carrier for traffic mirroring
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vPCTrafficMirrorSessionDemo = new Bytepluscc.Vpc.TrafficMirrorSession("VPCTrafficMirrorSessionDemo", new()
     ///     {
@@ -43,12 +43,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     ///         TrafficMirrorTargetId = "tmt-ij32u0acvta874o8ctxxxxx",
     ///         VirtualNetworkId = 13,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpc/trafficMirrorSession:TrafficMirrorSession example "traffic_mirror_session_id"
     /// ```

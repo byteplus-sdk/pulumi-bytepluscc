@@ -22,14 +22,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User pool brand display configuration
-     *
+     * 
      */
     @Import(name="brand")
     private @Nullable Output<UserPoolBrandArgs> brand;
 
     /**
      * @return User pool brand display configuration
-     *
+     * 
      */
     public Optional<Output<UserPoolBrandArgs>> brand() {
         return Optional.ofNullable(this.brand);
@@ -37,14 +37,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User pool description
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return User pool description
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -52,14 +52,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Email passwordless login enabled
-     *
+     * 
      */
     @Import(name="emailPasswordlessSignInEnabled")
     private @Nullable Output<Boolean> emailPasswordlessSignInEnabled;
 
     /**
      * @return Email passwordless login enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> emailPasswordlessSignInEnabled() {
         return Optional.ofNullable(this.emailPasswordlessSignInEnabled);
@@ -67,14 +67,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User pool name
-     *
+     * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return User pool name
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
@@ -82,14 +82,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Password login enabled
-     *
+     * 
      */
     @Import(name="passwordSignInEnabled")
     private @Nullable Output<Boolean> passwordSignInEnabled;
 
     /**
      * @return Password login enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> passwordSignInEnabled() {
         return Optional.ofNullable(this.passwordSignInEnabled);
@@ -97,14 +97,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -112,14 +112,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Required registration attribute list
-     *
+     * 
      */
     @Import(name="requiredSignUpAttributes")
     private @Nullable Output<List<String>> requiredSignUpAttributes;
 
     /**
      * @return Required registration attribute list
-     *
+     * 
      */
     public Optional<Output<List<String>>> requiredSignUpAttributes() {
         return Optional.ofNullable(this.requiredSignUpAttributes);
@@ -127,14 +127,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allow account self-recovery
-     *
+     * 
      */
     @Import(name="selfAccountRecoveryEnabled")
     private @Nullable Output<Boolean> selfAccountRecoveryEnabled;
 
     /**
      * @return Allow account self-recovery
-     *
+     * 
      */
     public Optional<Output<Boolean>> selfAccountRecoveryEnabled() {
         return Optional.ofNullable(this.selfAccountRecoveryEnabled);
@@ -142,14 +142,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allow user self-registration
-     *
+     * 
      */
     @Import(name="selfSignUpEnabled")
     private @Nullable Output<Boolean> selfSignUpEnabled;
 
     /**
      * @return Allow user self-registration
-     *
+     * 
      */
     public Optional<Output<Boolean>> selfSignUpEnabled() {
         return Optional.ofNullable(this.selfSignUpEnabled);
@@ -157,14 +157,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Supported login attribute list
-     *
+     * 
      */
     @Import(name="signInAttributes")
     private @Nullable Output<List<String>> signInAttributes;
 
     /**
      * @return Supported login attribute list
-     *
+     * 
      */
     public Optional<Output<List<String>>> signInAttributes() {
         return Optional.ofNullable(this.signInAttributes);
@@ -172,14 +172,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Registration auto-validation enabled
-     *
+     * 
      */
     @Import(name="signUpAutoVerificationEnabled")
     private @Nullable Output<Boolean> signUpAutoVerificationEnabled;
 
     /**
      * @return Registration auto-validation enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> signUpAutoVerificationEnabled() {
         return Optional.ofNullable(this.signUpAutoVerificationEnabled);
@@ -187,14 +187,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SMS anonymous registration enabled
-     *
+     * 
      */
     @Import(name="smsAnonymousSignUpEnabled")
     private @Nullable Output<Boolean> smsAnonymousSignUpEnabled;
 
     /**
      * @return SMS anonymous registration enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> smsAnonymousSignUpEnabled() {
         return Optional.ofNullable(this.smsAnonymousSignUpEnabled);
@@ -202,14 +202,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SMS passwordless login enabled
-     *
+     * 
      */
     @Import(name="smsPasswordlessSignInEnabled")
     private @Nullable Output<Boolean> smsPasswordlessSignInEnabled;
 
     /**
      * @return SMS passwordless login enabled
-     *
+     * 
      */
     public Optional<Output<Boolean>> smsPasswordlessSignInEnabled() {
         return Optional.ofNullable(this.smsPasswordlessSignInEnabled);
@@ -218,7 +218,7 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * User pool tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<UserPoolTagArgs>> tags;
@@ -226,7 +226,7 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return User pool tag list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<UserPoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -234,14 +234,14 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allow unconfirmed users to log in
-     *
+     * 
      */
     @Import(name="unconfirmedUserSignInEnabled")
     private @Nullable Output<Boolean> unconfirmedUserSignInEnabled;
 
     /**
      * @return Allow unconfirmed users to log in
-     *
+     * 
      */
     public Optional<Output<Boolean>> unconfirmedUserSignInEnabled() {
         return Optional.ofNullable(this.unconfirmedUserSignInEnabled);
@@ -287,9 +287,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param brand User pool brand display configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder brand(@Nullable Output<UserPoolBrandArgs> brand) {
             $.brand = brand;
@@ -298,9 +298,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param brand User pool brand display configuration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder brand(UserPoolBrandArgs brand) {
             return brand(Output.of(brand));
@@ -308,9 +308,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description User pool description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -319,9 +319,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description User pool description
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -329,9 +329,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param emailPasswordlessSignInEnabled Email passwordless login enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder emailPasswordlessSignInEnabled(@Nullable Output<Boolean> emailPasswordlessSignInEnabled) {
             $.emailPasswordlessSignInEnabled = emailPasswordlessSignInEnabled;
@@ -340,9 +340,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param emailPasswordlessSignInEnabled Email passwordless login enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder emailPasswordlessSignInEnabled(Boolean emailPasswordlessSignInEnabled) {
             return emailPasswordlessSignInEnabled(Output.of(emailPasswordlessSignInEnabled));
@@ -350,9 +350,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name User pool name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -361,9 +361,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name User pool name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -371,9 +371,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param passwordSignInEnabled Password login enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder passwordSignInEnabled(@Nullable Output<Boolean> passwordSignInEnabled) {
             $.passwordSignInEnabled = passwordSignInEnabled;
@@ -382,9 +382,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param passwordSignInEnabled Password login enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder passwordSignInEnabled(Boolean passwordSignInEnabled) {
             return passwordSignInEnabled(Output.of(passwordSignInEnabled));
@@ -392,9 +392,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -403,9 +403,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -413,9 +413,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requiredSignUpAttributes Required registration attribute list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requiredSignUpAttributes(@Nullable Output<List<String>> requiredSignUpAttributes) {
             $.requiredSignUpAttributes = requiredSignUpAttributes;
@@ -424,9 +424,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requiredSignUpAttributes Required registration attribute list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requiredSignUpAttributes(List<String> requiredSignUpAttributes) {
             return requiredSignUpAttributes(Output.of(requiredSignUpAttributes));
@@ -434,9 +434,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requiredSignUpAttributes Required registration attribute list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder requiredSignUpAttributes(String... requiredSignUpAttributes) {
             return requiredSignUpAttributes(List.of(requiredSignUpAttributes));
@@ -444,9 +444,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param selfAccountRecoveryEnabled Allow account self-recovery
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder selfAccountRecoveryEnabled(@Nullable Output<Boolean> selfAccountRecoveryEnabled) {
             $.selfAccountRecoveryEnabled = selfAccountRecoveryEnabled;
@@ -455,9 +455,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param selfAccountRecoveryEnabled Allow account self-recovery
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder selfAccountRecoveryEnabled(Boolean selfAccountRecoveryEnabled) {
             return selfAccountRecoveryEnabled(Output.of(selfAccountRecoveryEnabled));
@@ -465,9 +465,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param selfSignUpEnabled Allow user self-registration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder selfSignUpEnabled(@Nullable Output<Boolean> selfSignUpEnabled) {
             $.selfSignUpEnabled = selfSignUpEnabled;
@@ -476,9 +476,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param selfSignUpEnabled Allow user self-registration
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder selfSignUpEnabled(Boolean selfSignUpEnabled) {
             return selfSignUpEnabled(Output.of(selfSignUpEnabled));
@@ -486,9 +486,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signInAttributes Supported login attribute list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signInAttributes(@Nullable Output<List<String>> signInAttributes) {
             $.signInAttributes = signInAttributes;
@@ -497,9 +497,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signInAttributes Supported login attribute list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signInAttributes(List<String> signInAttributes) {
             return signInAttributes(Output.of(signInAttributes));
@@ -507,9 +507,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signInAttributes Supported login attribute list
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signInAttributes(String... signInAttributes) {
             return signInAttributes(List.of(signInAttributes));
@@ -517,9 +517,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signUpAutoVerificationEnabled Registration auto-validation enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signUpAutoVerificationEnabled(@Nullable Output<Boolean> signUpAutoVerificationEnabled) {
             $.signUpAutoVerificationEnabled = signUpAutoVerificationEnabled;
@@ -528,9 +528,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signUpAutoVerificationEnabled Registration auto-validation enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder signUpAutoVerificationEnabled(Boolean signUpAutoVerificationEnabled) {
             return signUpAutoVerificationEnabled(Output.of(signUpAutoVerificationEnabled));
@@ -538,9 +538,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smsAnonymousSignUpEnabled SMS anonymous registration enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smsAnonymousSignUpEnabled(@Nullable Output<Boolean> smsAnonymousSignUpEnabled) {
             $.smsAnonymousSignUpEnabled = smsAnonymousSignUpEnabled;
@@ -549,9 +549,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smsAnonymousSignUpEnabled SMS anonymous registration enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smsAnonymousSignUpEnabled(Boolean smsAnonymousSignUpEnabled) {
             return smsAnonymousSignUpEnabled(Output.of(smsAnonymousSignUpEnabled));
@@ -559,9 +559,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smsPasswordlessSignInEnabled SMS passwordless login enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smsPasswordlessSignInEnabled(@Nullable Output<Boolean> smsPasswordlessSignInEnabled) {
             $.smsPasswordlessSignInEnabled = smsPasswordlessSignInEnabled;
@@ -570,9 +570,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smsPasswordlessSignInEnabled SMS passwordless login enabled
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder smsPasswordlessSignInEnabled(Boolean smsPasswordlessSignInEnabled) {
             return smsPasswordlessSignInEnabled(Output.of(smsPasswordlessSignInEnabled));
@@ -581,9 +581,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags User pool tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<UserPoolTagArgs>> tags) {
             $.tags = tags;
@@ -593,9 +593,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags User pool tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<UserPoolTagArgs> tags) {
             return tags(Output.of(tags));
@@ -604,9 +604,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tags User pool tag list
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(UserPoolTagArgs... tags) {
             return tags(List.of(tags));
@@ -614,9 +614,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param unconfirmedUserSignInEnabled Allow unconfirmed users to log in
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unconfirmedUserSignInEnabled(@Nullable Output<Boolean> unconfirmedUserSignInEnabled) {
             $.unconfirmedUserSignInEnabled = unconfirmedUserSignInEnabled;
@@ -625,9 +625,9 @@ public final class UserPoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param unconfirmedUserSignInEnabled Allow unconfirmed users to log in
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unconfirmedUserSignInEnabled(Boolean unconfirmedUserSignInEnabled) {
             return unconfirmedUserSignInEnabled(Output.of(unconfirmedUserSignInEnabled));

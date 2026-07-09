@@ -17,14 +17,14 @@ import javax.annotation.Nullable;
 
 /**
  * Carrier for the IPv6 gateway service. Creating an IPv6 gateway instance is required for IPv6 public network configuration
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -37,12 +37,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var ipv6GatewayDemo = new Ipv6Gateway("ipv6GatewayDemo", Ipv6GatewayArgs.builder()
  *             .vpcId("vpc-3nrh1tqschwcg931exxxxx")
@@ -54,116 +54,116 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/ipv6Gateway:Ipv6Gateway example &#34;ipv6_gateway_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/ipv6Gateway:Ipv6Gateway")
 public class Ipv6Gateway extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the IPv6 gateway instance
-     *
+     * 
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the IPv6 gateway instance
-     *
+     * 
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * IPv6 gateway instance ID
-     *
+     * 
      */
     @Export(name="ipv6GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv6GatewayId;
 
     /**
      * @return IPv6 gateway instance ID
-     *
+     * 
      */
     public Output<String> ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
      * Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Name of the project to which the IPv6 gateway belongs
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the IPv6 gateway belongs
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Route table ID associated with the IPv6 gateway instance
-     *
+     * 
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
      * @return Route table ID associated with the IPv6 gateway instance
-     *
+     * 
      */
     public Output<String> routeTableId() {
         return this.routeTableId;
     }
     /**
      * Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -171,7 +171,7 @@ public class Ipv6Gateway extends com.pulumi.resources.CustomResource {
     /**
      * Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,Ipv6GatewayTag.class}, tree="[0,1]")
     private Output<List<Ipv6GatewayTag>> tags;
@@ -179,35 +179,35 @@ public class Ipv6Gateway extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<Ipv6GatewayTag>> tags() {
         return this.tags;
     }
     /**
      * Modification time of the IPv6 gateway instance
-     *
+     * 
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Modification time of the IPv6 gateway instance
-     *
+     * 
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;

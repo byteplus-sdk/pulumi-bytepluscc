@@ -21,14 +21,14 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
-     *
+     * 
      */
     @Import(name="alarmOnly")
     private @Nullable Output<Boolean> alarmOnly;
 
     /**
      * @return If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
-     *
+     * 
      */
     public Optional<Output<Boolean>> alarmOnly() {
         return Optional.ofNullable(this.alarmOnly);
@@ -36,14 +36,14 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
-     *
+     * 
      */
     @Import(name="perfMode")
     private @Nullable Output<String> perfMode;
 
     /**
      * @return Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
-     *
+     * 
      */
     public Optional<Output<String>> perfMode() {
         return Optional.ofNullable(this.perfMode);
@@ -51,14 +51,14 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user&#39;s geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user&#39;s geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
-     *
+     * 
      */
     @Import(name="routingMode")
     private @Nullable Output<String> routingMode;
 
     /**
      * @return Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user&#39;s geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user&#39;s geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
-     *
+     * 
      */
     public Optional<Output<String>> routingMode() {
         return Optional.ofNullable(this.routingMode);
@@ -66,14 +66,14 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Statistics for addresses associated with the scheduling policy.
-     *
+     * 
      */
     @Import(name="statistics")
     private @Nullable Output<GtmPolicyStatisticsArgs> statistics;
 
     /**
      * @return Statistics for addresses associated with the scheduling policy.
-     *
+     * 
      */
     public Optional<Output<GtmPolicyStatisticsArgs>> statistics() {
         return Optional.ofNullable(this.statistics);
@@ -82,7 +82,7 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of target address pools associated with the scheduling policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="targets")
     private @Nullable Output<List<GtmPolicyTargetArgs>> targets;
@@ -90,7 +90,7 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of target address pools associated with the scheduling policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<GtmPolicyTargetArgs>>> targets() {
         return Optional.ofNullable(this.targets);
@@ -126,9 +126,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmOnly If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmOnly(@Nullable Output<Boolean> alarmOnly) {
             $.alarmOnly = alarmOnly;
@@ -137,9 +137,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alarmOnly If the current address pool set is unavailable, does Cloud Scheduling GTM only trigger an alert notification without automatically switching to an available address pool? true: Cloud Scheduling GTM only triggers an alert notification. false: Cloud Scheduling GTM automatically switches to an available address pool.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder alarmOnly(Boolean alarmOnly) {
             return alarmOnly(Output.of(alarmOnly));
@@ -147,9 +147,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param perfMode Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder perfMode(@Nullable Output<String> perfMode) {
             $.perfMode = perfMode;
@@ -158,9 +158,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param perfMode Routing mode for intelligent routing policies. perf: Performance first. capacity: Capacity first. feedback: Load feedback.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder perfMode(String perfMode) {
             return perfMode(Output.of(perfMode));
@@ -168,9 +168,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routingMode Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user&#39;s geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user&#39;s geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routingMode(@Nullable Output<String> routingMode) {
             $.routingMode = routingMode;
@@ -179,9 +179,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routingMode Routing mode. The parameter values are: lb: Routes user traffic proportionally to different IDC data centers based on load balancing. geo: Routes user traffic to the nearest IDC data center on the same carrier line based on the user&#39;s geographic location and carrier. geo-lb (default): First routes user traffic to the nearest IDC data center access line on the same carrier based on the user&#39;s geographic location and carrier, then distributes user traffic proportionally to multiple IDC data centers based on load balancing.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder routingMode(String routingMode) {
             return routingMode(Output.of(routingMode));
@@ -189,9 +189,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statistics Statistics for addresses associated with the scheduling policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statistics(@Nullable Output<GtmPolicyStatisticsArgs> statistics) {
             $.statistics = statistics;
@@ -200,9 +200,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param statistics Statistics for addresses associated with the scheduling policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder statistics(GtmPolicyStatisticsArgs statistics) {
             return statistics(Output.of(statistics));
@@ -211,9 +211,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets List of target address pools associated with the scheduling policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targets(@Nullable Output<List<GtmPolicyTargetArgs>> targets) {
             $.targets = targets;
@@ -223,9 +223,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets List of target address pools associated with the scheduling policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targets(List<GtmPolicyTargetArgs> targets) {
             return targets(Output.of(targets));
@@ -234,9 +234,9 @@ public final class GtmPolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param targets List of target address pools associated with the scheduling policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder targets(GtmPolicyTargetArgs... targets) {
             return targets(List.of(targets));

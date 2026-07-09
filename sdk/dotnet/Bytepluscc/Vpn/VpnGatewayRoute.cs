@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
 {
     /// <summary>
     /// Add a route entry to the VPN gateway.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vpnGatewayRouteDemo = new Bytepluscc.Vpn.VpnGatewayRoute("VpnGatewayRouteDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpn
     ///         NextHopId = "vgc-****",
     ///         VpnGatewayId = "vgw-****",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute example "vpn_gateway_route_id"
     /// ```

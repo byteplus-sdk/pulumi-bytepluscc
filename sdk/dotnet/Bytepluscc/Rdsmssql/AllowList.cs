@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
 {
     /// <summary>
     /// API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSMsSQLAllowlistDemo = new Bytepluscc.Rdsmssql.AllowList("RDSMsSQLAllowlistDemo", new()
     ///     {
@@ -40,12 +40,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdsmssql/allowList:AllowList example "allow_list_id"
     /// ```

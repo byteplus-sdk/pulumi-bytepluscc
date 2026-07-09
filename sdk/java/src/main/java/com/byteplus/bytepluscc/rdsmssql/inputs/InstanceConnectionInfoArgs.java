@@ -20,7 +20,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     /**
      * Address list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="addresses")
     private @Nullable Output<List<InstanceConnectionInfoAddressArgs>> addresses;
@@ -28,7 +28,7 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
     /**
      * @return Address list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<InstanceConnectionInfoAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
@@ -36,14 +36,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
     /**
      * Description.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
     /**
      * Terminal ID.
-     *
+     * 
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Terminal ID.
-     *
+     * 
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -66,14 +66,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
     /**
      * Terminal name.
-     *
+     * 
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Terminal name.
-     *
+     * 
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -81,14 +81,14 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
     /**
      * Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
-     *
+     * 
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
-     *
+     * 
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -125,9 +125,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         /**
          * @param addresses Address list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(@Nullable Output<List<InstanceConnectionInfoAddressArgs>> addresses) {
             $.addresses = addresses;
@@ -137,9 +137,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         /**
          * @param addresses Address list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(List<InstanceConnectionInfoAddressArgs> addresses) {
             return addresses(Output.of(addresses));
@@ -148,9 +148,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
         /**
          * @param addresses Address list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder addresses(InstanceConnectionInfoAddressArgs... addresses) {
             return addresses(List.of(addresses));
@@ -158,9 +158,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param description Description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -169,9 +169,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param description Description.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -179,9 +179,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param endpointId Terminal ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -190,9 +190,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param endpointId Terminal ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -200,9 +200,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param endpointName Terminal name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -211,9 +211,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param endpointName Terminal name.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -221,9 +221,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param endpointType Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -232,9 +232,9 @@ public final class InstanceConnectionInfoArgs extends com.pulumi.resources.Resou
 
         /**
          * @param endpointType Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));

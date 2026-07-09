@@ -22,14 +22,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-     *
+     * 
      */
     @Import(name="applianceModeEnabled")
     private @Nullable Output<Boolean> applianceModeEnabled;
 
     /**
      * @return Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-     *
+     * 
      */
     public Optional<Output<Boolean>> applianceModeEnabled() {
         return Optional.ofNullable(this.applianceModeEnabled);
@@ -38,7 +38,7 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
     /**
      * Network instance connection list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="attachPoints")
     private @Nullable Output<List<VpcAttachmentAttachPointArgs>> attachPoints;
@@ -46,7 +46,7 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Network instance connection list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<VpcAttachmentAttachPointArgs>>> attachPoints() {
         return Optional.ofNullable(this.attachPoints);
@@ -54,14 +54,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-     *
+     * 
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-     *
+     * 
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
         return Optional.ofNullable(this.autoPublishRouteEnabled);
@@ -69,14 +69,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Maximum bandwidth for the network instance connection, in Gbps.
-     *
+     * 
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Maximum bandwidth for the network instance connection, in Gbps.
-     *
+     * 
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -84,14 +84,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Creation time.
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time.
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -99,14 +99,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -114,14 +114,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-     *
+     * 
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-     *
+     * 
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
         return Optional.ofNullable(this.ipv6Enabled);
@@ -129,14 +129,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -145,7 +145,7 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<VpcAttachmentTagArgs>> tags;
@@ -153,7 +153,7 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
     /**
      * @return Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<VpcAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -161,14 +161,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Network instance connection ID.
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentId")
     private @Nullable Output<String> transitRouterAttachmentId;
 
     /**
      * @return Network instance connection ID.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentId() {
         return Optional.ofNullable(this.transitRouterAttachmentId);
@@ -176,14 +176,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     *
+     * 
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -191,14 +191,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Transit router instance ID.
-     *
+     * 
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> transitRouterId() {
         return Optional.ofNullable(this.transitRouterId);
@@ -206,14 +206,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Update time.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update time.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -221,14 +221,14 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Private network instance ID.
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network instance ID.
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -273,9 +273,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param applianceModeEnabled Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applianceModeEnabled(@Nullable Output<Boolean> applianceModeEnabled) {
             $.applianceModeEnabled = applianceModeEnabled;
@@ -284,9 +284,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param applianceModeEnabled Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder applianceModeEnabled(Boolean applianceModeEnabled) {
             return applianceModeEnabled(Output.of(applianceModeEnabled));
@@ -295,9 +295,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param attachPoints Network instance connection list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder attachPoints(@Nullable Output<List<VpcAttachmentAttachPointArgs>> attachPoints) {
             $.attachPoints = attachPoints;
@@ -307,9 +307,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param attachPoints Network instance connection list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder attachPoints(List<VpcAttachmentAttachPointArgs> attachPoints) {
             return attachPoints(Output.of(attachPoints));
@@ -318,9 +318,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param attachPoints Network instance connection list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder attachPoints(VpcAttachmentAttachPointArgs... attachPoints) {
             return attachPoints(List.of(attachPoints));
@@ -328,9 +328,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoPublishRouteEnabled(@Nullable Output<Boolean> autoPublishRouteEnabled) {
             $.autoPublishRouteEnabled = autoPublishRouteEnabled;
@@ -339,9 +339,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder autoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
             return autoPublishRouteEnabled(Output.of(autoPublishRouteEnabled));
@@ -349,9 +349,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param bandwidth Maximum bandwidth for the network instance connection, in Gbps.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -360,9 +360,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param bandwidth Maximum bandwidth for the network instance connection, in Gbps.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -370,9 +370,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -381,9 +381,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Creation time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -391,9 +391,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -402,9 +402,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -412,9 +412,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param ipv6Enabled Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Enabled(@Nullable Output<Boolean> ipv6Enabled) {
             $.ipv6Enabled = ipv6Enabled;
@@ -423,9 +423,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param ipv6Enabled Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipv6Enabled(Boolean ipv6Enabled) {
             return ipv6Enabled(Output.of(ipv6Enabled));
@@ -433,9 +433,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -444,9 +444,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -455,9 +455,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<VpcAttachmentTagArgs>> tags) {
             $.tags = tags;
@@ -467,9 +467,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<VpcAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
@@ -478,9 +478,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
         /**
          * @param tags Tag list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(VpcAttachmentTagArgs... tags) {
             return tags(List.of(tags));
@@ -488,9 +488,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param transitRouterAttachmentId Network instance connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentId(@Nullable Output<String> transitRouterAttachmentId) {
             $.transitRouterAttachmentId = transitRouterAttachmentId;
@@ -499,9 +499,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param transitRouterAttachmentId Network instance connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentId(String transitRouterAttachmentId) {
             return transitRouterAttachmentId(Output.of(transitRouterAttachmentId));
@@ -509,9 +509,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -520,9 +520,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -530,9 +530,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param transitRouterId Transit router instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(@Nullable Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -541,9 +541,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param transitRouterId Transit router instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -551,9 +551,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updatedTime Update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -562,9 +562,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param updatedTime Update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -572,9 +572,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param vpcId Private network instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -583,9 +583,9 @@ public final class VpcAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param vpcId Private network instance ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

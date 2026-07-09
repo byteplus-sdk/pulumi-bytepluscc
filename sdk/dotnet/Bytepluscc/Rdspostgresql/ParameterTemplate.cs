@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
 {
     /// <summary>
     /// Volcano Engine Cloud Database PostgreSQL parameter template, used for managing and batch applying PostgreSQL instance parameter configurations
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var rDSPostgreSQLParameterTemplatDdemo = new Bytepluscc.Rdspostgresql.ParameterTemplate("RDSPostgreSQLParameterTemplatDdemo", new()
     ///     {
@@ -43,12 +43,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:rdspostgresql/parameterTemplate:ParameterTemplate example "template_id"
     /// ```

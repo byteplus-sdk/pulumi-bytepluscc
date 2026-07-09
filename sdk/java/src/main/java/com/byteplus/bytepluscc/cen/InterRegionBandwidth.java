@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * CEN inter-region bandwidth, used to allocate cross-region connectivity bandwidth for Cloud Enterprise Network instances.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cENInterRegionBandwidthDemo = new InterRegionBandwidth("cENInterRegionBandwidthDemo", InterRegionBandwidthArgs.builder()
  *             .localRegionId("cn-beijing")
@@ -49,144 +49,144 @@ import javax.annotation.Nullable;
  *             .cenId("cen-2v73nw1h8a03k6x7exxxxx")
  *             .cenBandwidthPackageId("cbp-mikp555wa4u85smt1xxxxxx")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth example &#34;inter_region_bandwidth_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cen/interRegionBandwidth:InterRegionBandwidth")
 public class InterRegionBandwidth extends com.pulumi.resources.CustomResource {
     /**
      * Peak bandwidth of CEN inter-region bandwidth, measured in Mbps. The value cannot exceed the bandwidth that can be allocated by the associated bandwidth package.
-     *
+     * 
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Peak bandwidth of CEN inter-region bandwidth, measured in Mbps. The value cannot exceed the bandwidth that can be allocated by the associated bandwidth package.
-     *
+     * 
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Instance ID of the bandwidth package.
-     *
+     * 
      */
     @Export(name="cenBandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> cenBandwidthPackageId;
 
     /**
      * @return Instance ID of the bandwidth package.
-     *
+     * 
      */
     public Output<String> cenBandwidthPackageId() {
         return this.cenBandwidthPackageId;
     }
     /**
      * ID of the Cloud Enterprise Network instance.
-     *
+     * 
      */
     @Export(name="cenId", refs={String.class}, tree="[0]")
     private Output<String> cenId;
 
     /**
      * @return ID of the Cloud Enterprise Network instance.
-     *
+     * 
      */
     public Output<String> cenId() {
         return this.cenId;
     }
     /**
      * Time when the CEN inter-region bandwidth was created.
-     *
+     * 
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the CEN inter-region bandwidth was created.
-     *
+     * 
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * ID of the CEN inter-region bandwidth.
-     *
+     * 
      */
     @Export(name="interRegionBandwidthId", refs={String.class}, tree="[0]")
     private Output<String> interRegionBandwidthId;
 
     /**
      * @return ID of the CEN inter-region bandwidth.
-     *
+     * 
      */
     public Output<String> interRegionBandwidthId() {
         return this.interRegionBandwidthId;
     }
     /**
      * ID of the local region for CEN inter-region bandwidth.
-     *
+     * 
      */
     @Export(name="localRegionId", refs={String.class}, tree="[0]")
     private Output<String> localRegionId;
 
     /**
      * @return ID of the local region for CEN inter-region bandwidth.
-     *
+     * 
      */
     public Output<String> localRegionId() {
         return this.localRegionId;
     }
     /**
      * ID of the remote region for CEN inter-region bandwidth.
-     *
+     * 
      */
     @Export(name="peerRegionId", refs={String.class}, tree="[0]")
     private Output<String> peerRegionId;
 
     /**
      * @return ID of the remote region for CEN inter-region bandwidth.
-     *
+     * 
      */
     public Output<String> peerRegionId() {
         return this.peerRegionId;
     }
     /**
      * Status of CEN inter-region bandwidth. Creating: Being created. Deleting: Being deleted. Pending: Configuring. Available: Available.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of CEN inter-region bandwidth. Creating: Being created. Deleting: Being deleted. Pending: Configuring. Available: Available.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Time when the CEN inter-region bandwidth was updated.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the CEN inter-region bandwidth was updated.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;

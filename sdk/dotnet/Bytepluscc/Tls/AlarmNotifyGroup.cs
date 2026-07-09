@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 {
     /// <summary>
     /// The logging service notification group is a collection of alarm notification channels used to specify the action strategy after an alarm is triggered. You can add notification rules, and the logging service will intelligently assign different alarm notification channels based on these rules.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var tLSAlarmNotifyGroupDemo = new Bytepluscc.Tls.AlarmNotifyGroup("TLSAlarmNotifyGroupDemo", new()
     ///     {
@@ -34,7 +34,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 Rule_node = "{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"notice\\\"]\"]},{\"Type\":\"Condition\",\"Value\":[\"Duration\",\"&gt;=\",\"5\"]}]},{\"Type\":\"Condition\",\"Value\":[\"NotifyTime\",\"in\",\"[\\\"1776669310\\\",\\\"1777014911\\\"]\"]}]},{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"warning\\\",\\\"critical\\\"]\"]}]}",
     ///                 Receiver_infos = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "User" },
     ///                         { "receiverNames", new[]
@@ -55,7 +55,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -75,7 +75,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                             "xxxxxxxxx",
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "User" },
     ///                         { "receiverNames", new[]
@@ -93,7 +93,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -113,7 +113,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                             "xxxxxxxxx",
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "UserGroup" },
     ///                         { "receiverNames", new[]
@@ -132,7 +132,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -161,7 +161,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                 Rule_node = "{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"OR\"],\"Children\":[{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Severity\",\"in\",\"[\\\"notice\\\"]\"]},{\"Type\":\"Condition\",\"Value\":[\"Alarm\",\"in\",\"[\\\"test1\\\"]\"]}]},{\"Type\":\"Condition\",\"Value\":[\"AlarmID\",\"in\",\"[\\\"66fff5a0-af57-43d1-a40d-f2d32605aa61\\\"]\"]}]},{\"Type\":\"Operation\",\"Value\":[\"AND\"],\"Children\":[{\"Type\":\"Condition\",\"Value\":[\"Duration\",\"==\",\"5\"]},{\"Type\":\"Condition\",\"Value\":[\"NotifyTime\",\"in\",\"[\\\"1776653008\\\",\\\"1776998606\\\"]\"]}]}]}",
     ///                 Receiver_infos = new[]
     ///                 {
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "User" },
     ///                         { "receiverNames", new[]
@@ -181,12 +181,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
     ///                             },
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "env" },
     ///                                 { "value", "test" },
@@ -207,7 +207,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                             "xxxxxxxxx",
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "UserGroup" },
     ///                         { "receiverNames", new[]
@@ -227,7 +227,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -248,7 +248,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                             "xxxxxxxxx",
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "User" },
     ///                         { "receiverNames", new[]
@@ -266,7 +266,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -287,7 +287,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                             "xxxxxxxxx",
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "User" },
     ///                         { "receiverNames", new[]
@@ -305,7 +305,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -326,7 +326,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                             "xxxxxxxxx",
     ///                         } },
     ///                     },
-    ///
+    ///                     
     ///                     {
     ///                         { "receiverType", "User" },
     ///                         { "receiverNames", new[]
@@ -344,7 +344,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///                         { "generalWebhookMethod", "" },
     ///                         { "generalWebhookHeaders", new[]
     ///                         {
-    ///
+    ///                             
     ///                             {
     ///                                 { "key", "Content-Type" },
     ///                                 { "value", "application/json" },
@@ -371,12 +371,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup example "alarm_notify_group_id"
     /// ```

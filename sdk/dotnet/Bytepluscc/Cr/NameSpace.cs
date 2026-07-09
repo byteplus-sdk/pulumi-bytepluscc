@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
 {
     /// <summary>
     /// A namespace is a collection of OCI artifact repositories that share related attributes. Namespace names are typically organization team names, product project names, or custom names within an enterprise.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var namespaceDemo = new Bytepluscc.Cr.NameSpace("NamespaceDemo", new()
     ///     {
@@ -29,12 +29,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cr
     ///         Name = "testnamespace",
     ///         Project = "default",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:cr/nameSpace:NameSpace example "registry|name"
     /// ```

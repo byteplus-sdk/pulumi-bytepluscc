@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, data_volumes=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
         if affinity_group_id and not isinstance(affinity_group_id, str):
             raise TypeError("Expected argument 'affinity_group_id' to be a str")
         pulumi.set(__self__, "affinity_group_id", affinity_group_id)
@@ -55,6 +55,9 @@ class GetInstanceResult:
         if credit_specification and not isinstance(credit_specification, str):
             raise TypeError("Expected argument 'credit_specification' to be a str")
         pulumi.set(__self__, "credit_specification", credit_specification)
+        if data_volumes and not isinstance(data_volumes, list):
+            raise TypeError("Expected argument 'data_volumes' to be a list")
+        pulumi.set(__self__, "data_volumes", data_volumes)
         if deletion_protection and not isinstance(deletion_protection, bool):
             raise TypeError("Expected argument 'deletion_protection' to be a bool")
         pulumi.set(__self__, "deletion_protection", deletion_protection)
@@ -226,6 +229,11 @@ class GetInstanceResult:
     @pulumi.getter(name="creditSpecification")
     def credit_specification(self) -> _builtins.str:
         return pulumi.get(self, "credit_specification")
+
+    @_builtins.property
+    @pulumi.getter(name="dataVolumes")
+    def data_volumes(self) -> Sequence['outputs.GetInstanceDataVolumeResult']:
+        return pulumi.get(self, "data_volumes")
 
     @_builtins.property
     @pulumi.getter(name="deletionProtection")
@@ -453,6 +461,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             cpu_memory=self.cpu_memory,
             created_at=self.created_at,
             credit_specification=self.credit_specification,
+            data_volumes=self.data_volumes,
             deletion_protection=self.deletion_protection,
             deployment_set_group_number=self.deployment_set_group_number,
             deployment_set_id=self.deployment_set_id,
@@ -517,6 +526,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         cpu_memory=pulumi.get(__ret__, 'cpu_memory'),
         created_at=pulumi.get(__ret__, 'created_at'),
         credit_specification=pulumi.get(__ret__, 'credit_specification'),
+        data_volumes=pulumi.get(__ret__, 'data_volumes'),
         deletion_protection=pulumi.get(__ret__, 'deletion_protection'),
         deployment_set_group_number=pulumi.get(__ret__, 'deployment_set_group_number'),
         deployment_set_id=pulumi.get(__ret__, 'deployment_set_id'),
@@ -578,6 +588,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         cpu_memory=pulumi.get(__response__, 'cpu_memory'),
         created_at=pulumi.get(__response__, 'created_at'),
         credit_specification=pulumi.get(__response__, 'credit_specification'),
+        data_volumes=pulumi.get(__response__, 'data_volumes'),
         deletion_protection=pulumi.get(__response__, 'deletion_protection'),
         deployment_set_group_number=pulumi.get(__response__, 'deployment_set_group_number'),
         deployment_set_id=pulumi.get(__response__, 'deployment_set_id'),

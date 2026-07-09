@@ -21,14 +21,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
-     *
+     * 
      */
     @Import(name="beginRegex")
     private @Nullable Output<String> beginRegex;
 
     /**
      * @return The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
-     *
+     * 
      */
     public Optional<Output<String>> beginRegex() {
         return Optional.ofNullable(this.beginRegex);
@@ -36,14 +36,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Log delimiter. Valid only when LogType is delimiter_log.
-     *
+     * 
      */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
     /**
      * @return Log delimiter. Valid only when LogType is delimiter_log.
-     *
+     * 
      */
     public Optional<Output<String>> delimiter() {
         return Optional.ofNullable(this.delimiter);
@@ -51,14 +51,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     *
+     * 
      */
     @Import(name="enableNanosecond")
     private @Nullable Output<Boolean> enableNanosecond;
 
     /**
      * @return Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     *
+     * 
      */
     public Optional<Output<Boolean>> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
@@ -67,7 +67,7 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
     /**
      * Filter rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="filterKeyRegexes")
     private @Nullable Output<List<HostGroupRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes;
@@ -75,7 +75,7 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
     /**
      * @return Filter rule list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<HostGroupRuleExtractRuleFilterKeyRegexArgs>>> filterKeyRegexes() {
         return Optional.ofNullable(this.filterKeyRegexes);
@@ -83,14 +83,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * List of log field names (Keys).
-     *
+     * 
      */
     @Import(name="keys")
     private @Nullable Output<List<String>> keys;
 
     /**
      * @return List of log field names (Keys).
-     *
+     * 
      */
     public Optional<Output<List<String>>> keys() {
         return Optional.ofNullable(this.keys);
@@ -98,14 +98,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
-     *
+     * 
      */
     @Import(name="logRegex")
     private @Nullable Output<String> logRegex;
 
     /**
      * @return The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
-     *
+     * 
      */
     public Optional<Output<String>> logRegex() {
         return Optional.ofNullable(this.logRegex);
@@ -113,14 +113,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Automatically extract log fields based on the specified log template.
-     *
+     * 
      */
     @Import(name="logTemplate")
     private @Nullable Output<HostGroupRuleExtractRuleLogTemplateArgs> logTemplate;
 
     /**
      * @return Automatically extract log fields based on the specified log template.
-     *
+     * 
      */
     public Optional<Output<HostGroupRuleExtractRuleLogTemplateArgs>> logTemplate() {
         return Optional.ofNullable(this.logTemplate);
@@ -128,14 +128,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     @Import(name="quote")
     private @Nullable Output<String> quote;
 
     /**
      * @return Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
-     *
+     * 
      */
     public Optional<Output<String>> quote() {
         return Optional.ofNullable(this.quote);
@@ -143,14 +143,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
-     *
+     * 
      */
     @Import(name="timeExtractRegex")
     private @Nullable Output<String> timeExtractRegex;
 
     /**
      * @return Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
-     *
+     * 
      */
     public Optional<Output<String>> timeExtractRegex() {
         return Optional.ofNullable(this.timeExtractRegex);
@@ -158,14 +158,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     *
+     * 
      */
     @Import(name="timeFormat")
     private @Nullable Output<String> timeFormat;
 
     /**
      * @return Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     *
+     * 
      */
     public Optional<Output<String>> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
@@ -173,14 +173,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     *
+     * 
      */
     @Import(name="timeKey")
     private @Nullable Output<String> timeKey;
 
     /**
      * @return Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     *
+     * 
      */
     public Optional<Output<String>> timeKey() {
         return Optional.ofNullable(this.timeKey);
@@ -188,14 +188,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Sample time. Used to verify whether the specified time parsing format is correct.
-     *
+     * 
      */
     @Import(name="timeSample")
     private @Nullable Output<String> timeSample;
 
     /**
      * @return Sample time. Used to verify whether the specified time parsing format is correct.
-     *
+     * 
      */
     public Optional<Output<String>> timeSample() {
         return Optional.ofNullable(this.timeSample);
@@ -203,14 +203,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
-     *
+     * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
-     *
+     * 
      */
     public Optional<Output<String>> timeZone() {
         return Optional.ofNullable(this.timeZone);
@@ -218,14 +218,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Key name for logs that failed to parse when uploading
-     *
+     * 
      */
     @Import(name="unMatchLogKey")
     private @Nullable Output<String> unMatchLogKey;
 
     /**
      * @return Key name for logs that failed to parse when uploading
-     *
+     * 
      */
     public Optional<Output<String>> unMatchLogKey() {
         return Optional.ofNullable(this.unMatchLogKey);
@@ -233,14 +233,14 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
     /**
      * Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     *
+     * 
      */
     @Import(name="unMatchUpLoadSwitch")
     private @Nullable Output<Boolean> unMatchUpLoadSwitch;
 
     /**
      * @return Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     *
+     * 
      */
     public Optional<Output<Boolean>> unMatchUpLoadSwitch() {
         return Optional.ofNullable(this.unMatchUpLoadSwitch);
@@ -286,9 +286,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param beginRegex The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder beginRegex(@Nullable Output<String> beginRegex) {
             $.beginRegex = beginRegex;
@@ -297,9 +297,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param beginRegex The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder beginRegex(String beginRegex) {
             return beginRegex(Output.of(beginRegex));
@@ -307,9 +307,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param delimiter Log delimiter. Valid only when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder delimiter(@Nullable Output<String> delimiter) {
             $.delimiter = delimiter;
@@ -318,9 +318,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param delimiter Log delimiter. Valid only when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder delimiter(String delimiter) {
             return delimiter(Output.of(delimiter));
@@ -328,9 +328,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param enableNanosecond Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNanosecond(@Nullable Output<Boolean> enableNanosecond) {
             $.enableNanosecond = enableNanosecond;
@@ -339,9 +339,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param enableNanosecond Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enableNanosecond(Boolean enableNanosecond) {
             return enableNanosecond(Output.of(enableNanosecond));
@@ -350,9 +350,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
         /**
          * @param filterKeyRegexes Filter rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(@Nullable Output<List<HostGroupRuleExtractRuleFilterKeyRegexArgs>> filterKeyRegexes) {
             $.filterKeyRegexes = filterKeyRegexes;
@@ -362,9 +362,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
         /**
          * @param filterKeyRegexes Filter rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(List<HostGroupRuleExtractRuleFilterKeyRegexArgs> filterKeyRegexes) {
             return filterKeyRegexes(Output.of(filterKeyRegexes));
@@ -373,9 +373,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
         /**
          * @param filterKeyRegexes Filter rule list.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder filterKeyRegexes(HostGroupRuleExtractRuleFilterKeyRegexArgs... filterKeyRegexes) {
             return filterKeyRegexes(List.of(filterKeyRegexes));
@@ -383,9 +383,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param keys List of log field names (Keys).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(@Nullable Output<List<String>> keys) {
             $.keys = keys;
@@ -394,9 +394,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param keys List of log field names (Keys).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(List<String> keys) {
             return keys(Output.of(keys));
@@ -404,9 +404,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param keys List of log field names (Keys).
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder keys(String... keys) {
             return keys(List.of(keys));
@@ -414,9 +414,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param logRegex The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logRegex(@Nullable Output<String> logRegex) {
             $.logRegex = logRegex;
@@ -425,9 +425,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param logRegex The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logRegex(String logRegex) {
             return logRegex(Output.of(logRegex));
@@ -435,9 +435,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param logTemplate Automatically extract log fields based on the specified log template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logTemplate(@Nullable Output<HostGroupRuleExtractRuleLogTemplateArgs> logTemplate) {
             $.logTemplate = logTemplate;
@@ -446,9 +446,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param logTemplate Automatically extract log fields based on the specified log template.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logTemplate(HostGroupRuleExtractRuleLogTemplateArgs logTemplate) {
             return logTemplate(Output.of(logTemplate));
@@ -456,9 +456,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param quote Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder quote(@Nullable Output<String> quote) {
             $.quote = quote;
@@ -467,9 +467,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param quote Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder quote(String quote) {
             return quote(Output.of(quote));
@@ -477,9 +477,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeExtractRegex Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeExtractRegex(@Nullable Output<String> timeExtractRegex) {
             $.timeExtractRegex = timeExtractRegex;
@@ -488,9 +488,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeExtractRegex Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeExtractRegex(String timeExtractRegex) {
             return timeExtractRegex(Output.of(timeExtractRegex));
@@ -498,9 +498,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeFormat Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(@Nullable Output<String> timeFormat) {
             $.timeFormat = timeFormat;
@@ -509,9 +509,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeFormat Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeFormat(String timeFormat) {
             return timeFormat(Output.of(timeFormat));
@@ -519,9 +519,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeKey Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(@Nullable Output<String> timeKey) {
             $.timeKey = timeKey;
@@ -530,9 +530,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeKey Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeKey(String timeKey) {
             return timeKey(Output.of(timeKey));
@@ -540,9 +540,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeSample Sample time. Used to verify whether the specified time parsing format is correct.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeSample(@Nullable Output<String> timeSample) {
             $.timeSample = timeSample;
@@ -551,9 +551,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeSample Sample time. Used to verify whether the specified time parsing format is correct.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeSample(String timeSample) {
             return timeSample(Output.of(timeSample));
@@ -561,9 +561,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeZone Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeZone(@Nullable Output<String> timeZone) {
             $.timeZone = timeZone;
@@ -572,9 +572,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param timeZone Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
@@ -582,9 +582,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param unMatchLogKey Key name for logs that failed to parse when uploading
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchLogKey(@Nullable Output<String> unMatchLogKey) {
             $.unMatchLogKey = unMatchLogKey;
@@ -593,9 +593,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param unMatchLogKey Key name for logs that failed to parse when uploading
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchLogKey(String unMatchLogKey) {
             return unMatchLogKey(Output.of(unMatchLogKey));
@@ -603,9 +603,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param unMatchUpLoadSwitch Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchUpLoadSwitch(@Nullable Output<Boolean> unMatchUpLoadSwitch) {
             $.unMatchUpLoadSwitch = unMatchUpLoadSwitch;
@@ -614,9 +614,9 @@ public final class HostGroupRuleExtractRuleArgs extends com.pulumi.resources.Res
 
         /**
          * @param unMatchUpLoadSwitch Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder unMatchUpLoadSwitch(Boolean unMatchUpLoadSwitch) {
             return unMatchUpLoadSwitch(Output.of(unMatchUpLoadSwitch));

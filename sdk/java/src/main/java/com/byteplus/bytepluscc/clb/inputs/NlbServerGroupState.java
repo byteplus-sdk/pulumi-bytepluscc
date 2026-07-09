@@ -23,14 +23,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Account ID
-     *
+     * 
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Account ID
-     *
+     * 
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -38,14 +38,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable all-port forwarding
-     *
+     * 
      */
     @Import(name="anyPortEnabled")
     private @Nullable Output<Boolean> anyPortEnabled;
 
     /**
      * @return Enable all-port forwarding
-     *
+     * 
      */
     public Optional<Output<Boolean>> anyPortEnabled() {
         return Optional.ofNullable(this.anyPortEnabled);
@@ -53,14 +53,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
-     *
+     * 
      */
     @Import(name="bypassSecurityGroupEnabled")
     private @Nullable Output<Boolean> bypassSecurityGroupEnabled;
 
     /**
      * @return Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
-     *
+     * 
      */
     public Optional<Output<Boolean>> bypassSecurityGroupEnabled() {
         return Optional.ofNullable(this.bypassSecurityGroupEnabled);
@@ -68,14 +68,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable graceful connection termination.
-     *
+     * 
      */
     @Import(name="connectionDrainEnabled")
     private @Nullable Output<Boolean> connectionDrainEnabled;
 
     /**
      * @return Enable graceful connection termination.
-     *
+     * 
      */
     public Optional<Output<Boolean>> connectionDrainEnabled() {
         return Optional.ofNullable(this.connectionDrainEnabled);
@@ -83,14 +83,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
-     *
+     * 
      */
     @Import(name="connectionDrainTimeout")
     private @Nullable Output<Integer> connectionDrainTimeout;
 
     /**
      * @return Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
-     *
+     * 
      */
     public Optional<Output<Integer>> connectionDrainTimeout() {
         return Optional.ofNullable(this.connectionDrainTimeout);
@@ -98,14 +98,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Backend server group creation time
-     *
+     * 
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Backend server group creation time
-     *
+     * 
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -113,14 +113,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -128,14 +128,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Health check parameters
-     *
+     * 
      */
     @Import(name="healthCheck")
     private @Nullable Output<NlbServerGroupHealthCheckArgs> healthCheck;
 
     /**
      * @return Health check parameters
-     *
+     * 
      */
     public Optional<Output<NlbServerGroupHealthCheckArgs>> healthCheck() {
         return Optional.ofNullable(this.healthCheck);
@@ -143,14 +143,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
-     *
+     * 
      */
     @Import(name="ipAddressVersion")
     private @Nullable Output<String> ipAddressVersion;
 
     /**
      * @return IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
-     *
+     * 
      */
     public Optional<Output<String>> ipAddressVersion() {
         return Optional.ofNullable(this.ipAddressVersion);
@@ -158,14 +158,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable source address persistence
-     *
+     * 
      */
     @Import(name="preserveClientIpEnabled")
     private @Nullable Output<Boolean> preserveClientIpEnabled;
 
     /**
      * @return Enable source address persistence
-     *
+     * 
      */
     public Optional<Output<Boolean>> preserveClientIpEnabled() {
         return Optional.ofNullable(this.preserveClientIpEnabled);
@@ -173,14 +173,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Project name
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -188,14 +188,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
-     *
+     * 
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
-     *
+     * 
      */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
@@ -203,14 +203,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
-     *
+     * 
      */
     @Import(name="proxyProtocolType")
     private @Nullable Output<String> proxyProtocolType;
 
     /**
      * @return Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
-     *
+     * 
      */
     public Optional<Output<String>> proxyProtocolType() {
         return Optional.ofNullable(this.proxyProtocolType);
@@ -218,14 +218,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * NLB instance associated with the server group.
-     *
+     * 
      */
     @Import(name="relatedLoadBalancerIds")
     private @Nullable Output<List<String>> relatedLoadBalancerIds;
 
     /**
      * @return NLB instance associated with the server group.
-     *
+     * 
      */
     public Optional<Output<List<String>>> relatedLoadBalancerIds() {
         return Optional.ofNullable(this.relatedLoadBalancerIds);
@@ -233,14 +233,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
-     *
+     * 
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
      * @return Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
-     *
+     * 
      */
     public Optional<Output<String>> scheduler() {
         return Optional.ofNullable(this.scheduler);
@@ -248,14 +248,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Number of backend servers in the server group.
-     *
+     * 
      */
     @Import(name="serverCount")
     private @Nullable Output<Integer> serverCount;
 
     /**
      * @return Number of backend servers in the server group.
-     *
+     * 
      */
     public Optional<Output<Integer>> serverCount() {
         return Optional.ofNullable(this.serverCount);
@@ -263,14 +263,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Server group ID
-     *
+     * 
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
      * @return Server group ID
-     *
+     * 
      */
     public Optional<Output<String>> serverGroupId() {
         return Optional.ofNullable(this.serverGroupId);
@@ -278,14 +278,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
-     *
+     * 
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
      * @return Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
-     *
+     * 
      */
     public Optional<Output<String>> serverGroupName() {
         return Optional.ofNullable(this.serverGroupName);
@@ -294,7 +294,7 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
     /**
      * Information about backend servers to be added to the server group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="servers")
     private @Nullable Output<List<NlbServerGroupServerArgs>> servers;
@@ -302,7 +302,7 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
     /**
      * @return Information about backend servers to be added to the server group
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NlbServerGroupServerArgs>>> servers() {
         return Optional.ofNullable(this.servers);
@@ -310,14 +310,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable session persistence.
-     *
+     * 
      */
     @Import(name="sessionPersistenceEnabled")
     private @Nullable Output<Boolean> sessionPersistenceEnabled;
 
     /**
      * @return Enable session persistence.
-     *
+     * 
      */
     public Optional<Output<Boolean>> sessionPersistenceEnabled() {
         return Optional.ofNullable(this.sessionPersistenceEnabled);
@@ -325,14 +325,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
-     *
+     * 
      */
     @Import(name="sessionPersistenceTimeout")
     private @Nullable Output<Integer> sessionPersistenceTimeout;
 
     /**
      * @return Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
-     *
+     * 
      */
     public Optional<Output<Integer>> sessionPersistenceTimeout() {
         return Optional.ofNullable(this.sessionPersistenceTimeout);
@@ -340,14 +340,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Server group status
-     *
+     * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Server group status
-     *
+     * 
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -356,7 +356,7 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
     /**
      * Tag
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="tags")
     private @Nullable Output<List<NlbServerGroupTagArgs>> tags;
@@ -364,7 +364,7 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
     /**
      * @return Tag
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<NlbServerGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
@@ -372,14 +372,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable removal of TCP/HTTP/HTTPS packet timestamps
-     *
+     * 
      */
     @Import(name="timestampRemoveEnabled")
     private @Nullable Output<Boolean> timestampRemoveEnabled;
 
     /**
      * @return Enable removal of TCP/HTTP/HTTPS packet timestamps
-     *
+     * 
      */
     public Optional<Output<Boolean>> timestampRemoveEnabled() {
         return Optional.ofNullable(this.timestampRemoveEnabled);
@@ -387,14 +387,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
-     *
+     * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
-     *
+     * 
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -402,14 +402,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Last update time of the backend server group.
-     *
+     * 
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Last update time of the backend server group.
-     *
+     * 
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -417,14 +417,14 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the private network to which the server group belongs
-     *
+     * 
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the private network to which the server group belongs
-     *
+     * 
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -482,9 +482,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param accountId Account ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -493,9 +493,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param accountId Account ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -503,9 +503,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param anyPortEnabled Enable all-port forwarding
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder anyPortEnabled(@Nullable Output<Boolean> anyPortEnabled) {
             $.anyPortEnabled = anyPortEnabled;
@@ -514,9 +514,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param anyPortEnabled Enable all-port forwarding
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder anyPortEnabled(Boolean anyPortEnabled) {
             return anyPortEnabled(Output.of(anyPortEnabled));
@@ -524,9 +524,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param bypassSecurityGroupEnabled Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bypassSecurityGroupEnabled(@Nullable Output<Boolean> bypassSecurityGroupEnabled) {
             $.bypassSecurityGroupEnabled = bypassSecurityGroupEnabled;
@@ -535,9 +535,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param bypassSecurityGroupEnabled Enable backend security group pass-through. This parameter can only be configured when Type is &#39;instance&#39;.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder bypassSecurityGroupEnabled(Boolean bypassSecurityGroupEnabled) {
             return bypassSecurityGroupEnabled(Output.of(bypassSecurityGroupEnabled));
@@ -545,9 +545,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param connectionDrainEnabled Enable graceful connection termination.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainEnabled(@Nullable Output<Boolean> connectionDrainEnabled) {
             $.connectionDrainEnabled = connectionDrainEnabled;
@@ -556,9 +556,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param connectionDrainEnabled Enable graceful connection termination.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainEnabled(Boolean connectionDrainEnabled) {
             return connectionDrainEnabled(Output.of(connectionDrainEnabled));
@@ -566,9 +566,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param connectionDrainTimeout Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainTimeout(@Nullable Output<Integer> connectionDrainTimeout) {
             $.connectionDrainTimeout = connectionDrainTimeout;
@@ -577,9 +577,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param connectionDrainTimeout Connection graceful shutdown timeout, range: 0–900 seconds. If ConnectionDrainEnabled is &#39;true&#39;, this parameter is required.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder connectionDrainTimeout(Integer connectionDrainTimeout) {
             return connectionDrainTimeout(Output.of(connectionDrainTimeout));
@@ -587,9 +587,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param createdTime Backend server group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -598,9 +598,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param createdTime Backend server group creation time
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -608,9 +608,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -619,9 +619,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Description of the backend server group, description of the server group. Must start with a letter, number, or Chinese character, and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period（。）. Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -629,9 +629,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param healthCheck Health check parameters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healthCheck(@Nullable Output<NlbServerGroupHealthCheckArgs> healthCheck) {
             $.healthCheck = healthCheck;
@@ -640,9 +640,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param healthCheck Health check parameters
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder healthCheck(NlbServerGroupHealthCheckArgs healthCheck) {
             return healthCheck(Output.of(healthCheck));
@@ -650,9 +650,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipAddressVersion IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressVersion(@Nullable Output<String> ipAddressVersion) {
             $.ipAddressVersion = ipAddressVersion;
@@ -661,9 +661,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipAddressVersion IP address type of the server group. Options: ipv4 (default): The server group only supports adding IPv4 type backend servers. ipv6: The server group only supports adding IPv6 type backend servers.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ipAddressVersion(String ipAddressVersion) {
             return ipAddressVersion(Output.of(ipAddressVersion));
@@ -671,9 +671,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param preserveClientIpEnabled Enable source address persistence
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder preserveClientIpEnabled(@Nullable Output<Boolean> preserveClientIpEnabled) {
             $.preserveClientIpEnabled = preserveClientIpEnabled;
@@ -682,9 +682,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param preserveClientIpEnabled Enable source address persistence
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder preserveClientIpEnabled(Boolean preserveClientIpEnabled) {
             return preserveClientIpEnabled(Output.of(preserveClientIpEnabled));
@@ -692,9 +692,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -703,9 +703,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param projectName Project name
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -713,9 +713,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param protocol Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
@@ -724,9 +724,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param protocol Communication protocol used by NLB to forward traffic to backend servers. Options: TCP. UDP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -734,9 +734,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param proxyProtocolType Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyProtocolType(@Nullable Output<String> proxyProtocolType) {
             $.proxyProtocolType = proxyProtocolType;
@@ -745,9 +745,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param proxyProtocolType Enable Proxy-Protocol. Available values: off (default): disabled. standard: enabled. NLB forwards the client source IP address to the backend server via Proxy-Protocol. Proxy-Protocol must also be configured on the backend server.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder proxyProtocolType(String proxyProtocolType) {
             return proxyProtocolType(Output.of(proxyProtocolType));
@@ -755,9 +755,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param relatedLoadBalancerIds NLB instance associated with the server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relatedLoadBalancerIds(@Nullable Output<List<String>> relatedLoadBalancerIds) {
             $.relatedLoadBalancerIds = relatedLoadBalancerIds;
@@ -766,9 +766,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param relatedLoadBalancerIds NLB instance associated with the server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relatedLoadBalancerIds(List<String> relatedLoadBalancerIds) {
             return relatedLoadBalancerIds(Output.of(relatedLoadBalancerIds));
@@ -776,9 +776,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param relatedLoadBalancerIds NLB instance associated with the server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder relatedLoadBalancerIds(String... relatedLoadBalancerIds) {
             return relatedLoadBalancerIds(List.of(relatedLoadBalancerIds));
@@ -786,9 +786,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param scheduler Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scheduler(@Nullable Output<String> scheduler) {
             $.scheduler = scheduler;
@@ -797,9 +797,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param scheduler Rules followed by NLB when forwarding traffic. Options: wrr (default): Weighted round robin. Backend servers with higher weights are selected more frequently (higher probability). wlc: Weighted least connections. Based on the least number of connections, assigns different weights to backend servers according to their processing capabilities, allowing each server to handle a corresponding number of service requests. sh: Source address hash. Uses consistent hashing based on the source IP address; requests from the same source address are routed to the same backend server.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder scheduler(String scheduler) {
             return scheduler(Output.of(scheduler));
@@ -807,9 +807,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serverCount Number of backend servers in the server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverCount(@Nullable Output<Integer> serverCount) {
             $.serverCount = serverCount;
@@ -818,9 +818,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serverCount Number of backend servers in the server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverCount(Integer serverCount) {
             return serverCount(Output.of(serverCount));
@@ -828,9 +828,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serverGroupId Server group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(@Nullable Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -839,9 +839,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serverGroupId Server group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
@@ -849,9 +849,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serverGroupName Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupName(@Nullable Output<String> serverGroupName) {
             $.serverGroupName = serverGroupName;
@@ -860,9 +860,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param serverGroupName Server group name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Limit: 1–128 characters. If not specified, defaults to the server group ID
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder serverGroupName(String serverGroupName) {
             return serverGroupName(Output.of(serverGroupName));
@@ -871,9 +871,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         /**
          * @param servers Information about backend servers to be added to the server group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder servers(@Nullable Output<List<NlbServerGroupServerArgs>> servers) {
             $.servers = servers;
@@ -883,9 +883,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         /**
          * @param servers Information about backend servers to be added to the server group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder servers(List<NlbServerGroupServerArgs> servers) {
             return servers(Output.of(servers));
@@ -894,9 +894,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         /**
          * @param servers Information about backend servers to be added to the server group
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder servers(NlbServerGroupServerArgs... servers) {
             return servers(List.of(servers));
@@ -904,9 +904,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param sessionPersistenceEnabled Enable session persistence.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionPersistenceEnabled(@Nullable Output<Boolean> sessionPersistenceEnabled) {
             $.sessionPersistenceEnabled = sessionPersistenceEnabled;
@@ -915,9 +915,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param sessionPersistenceEnabled Enable session persistence.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionPersistenceEnabled(Boolean sessionPersistenceEnabled) {
             return sessionPersistenceEnabled(Output.of(sessionPersistenceEnabled));
@@ -925,9 +925,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param sessionPersistenceTimeout Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionPersistenceTimeout(@Nullable Output<Integer> sessionPersistenceTimeout) {
             $.sessionPersistenceTimeout = sessionPersistenceTimeout;
@@ -936,9 +936,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param sessionPersistenceTimeout Session persistence timeout. Range: 1–3600 seconds, default: 1000 seconds
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder sessionPersistenceTimeout(Integer sessionPersistenceTimeout) {
             return sessionPersistenceTimeout(Output.of(sessionPersistenceTimeout));
@@ -946,9 +946,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param status Server group status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -957,9 +957,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param status Server group status
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -968,9 +968,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         /**
          * @param tags Tag
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(@Nullable Output<List<NlbServerGroupTagArgs>> tags) {
             $.tags = tags;
@@ -980,9 +980,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         /**
          * @param tags Tag
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(List<NlbServerGroupTagArgs> tags) {
             return tags(Output.of(tags));
@@ -991,9 +991,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
         /**
          * @param tags Tag
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder tags(NlbServerGroupTagArgs... tags) {
             return tags(List.of(tags));
@@ -1001,9 +1001,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timestampRemoveEnabled Enable removal of TCP/HTTP/HTTPS packet timestamps
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timestampRemoveEnabled(@Nullable Output<Boolean> timestampRemoveEnabled) {
             $.timestampRemoveEnabled = timestampRemoveEnabled;
@@ -1012,9 +1012,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param timestampRemoveEnabled Enable removal of TCP/HTTP/HTTPS packet timestamps
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder timestampRemoveEnabled(Boolean timestampRemoveEnabled) {
             return timestampRemoveEnabled(Output.of(timestampRemoveEnabled));
@@ -1022,9 +1022,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param type Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -1033,9 +1033,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param type Server group type. Available values: instance (default): server type. Supports adding cloud server instances and auxiliary network interfaces bound to cloud server instances as backend servers. ip: IP address type. Supports adding any network-accessible server in a VPC or IDC as a backend server.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -1043,9 +1043,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param updatedTime Last update time of the backend server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -1054,9 +1054,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param updatedTime Last update time of the backend server group.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -1064,9 +1064,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param vpcId ID of the private network to which the server group belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1075,9 +1075,9 @@ public final class NlbServerGroupState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param vpcId ID of the private network to which the server group belongs
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

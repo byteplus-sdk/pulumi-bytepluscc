@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Assistant is a native automated operations tool developed by Volcano Engine. You can create jobs for immediate, periodic, or scheduled execution. After creation, the Cloud Assistant client automatically starts execution according to the execution mode.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -41,12 +41,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var invocationDemo = new Invocation("invocationDemo", InvocationArgs.builder()
  *             .invocationName("InvocationDemo")
@@ -68,214 +68,214 @@ import javax.annotation.Nullable;
  *             .commandId("cmd-ye28kugp249tzrexxxxx")
  *             .parameters("{\"dirname\":\"10\"}")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:ecs/invocation:Invocation example &#34;invocation_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:ecs/invocation:Invocation")
 public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * Command content.
-     *
+     * 
      */
     @Export(name="commandContent", refs={String.class}, tree="[0]")
     private Output<String> commandContent;
 
     /**
      * @return Command content.
-     *
+     * 
      */
     public Output<String> commandContent() {
         return this.commandContent;
     }
     /**
      * Description of the invoked command.
-     *
+     * 
      */
     @Export(name="commandDescription", refs={String.class}, tree="[0]")
     private Output<String> commandDescription;
 
     /**
      * @return Description of the invoked command.
-     *
+     * 
      */
     public Output<String> commandDescription() {
         return this.commandDescription;
     }
     /**
      * Command ID.
-     *
+     * 
      */
     @Export(name="commandId", refs={String.class}, tree="[0]")
     private Output<String> commandId;
 
     /**
      * @return Command ID.
-     *
+     * 
      */
     public Output<String> commandId() {
         return this.commandId;
     }
     /**
      * Command name when the task is triggered.
-     *
+     * 
      */
     @Export(name="commandName", refs={String.class}, tree="[0]")
     private Output<String> commandName;
 
     /**
      * @return Command name when the task is triggered.
-     *
+     * 
      */
     public Output<String> commandName() {
         return this.commandName;
     }
     /**
      * Provider of the invoked command.
-     *
+     * 
      */
     @Export(name="commandProvider", refs={String.class}, tree="[0]")
     private Output<String> commandProvider;
 
     /**
      * @return Provider of the invoked command.
-     *
+     * 
      */
     public Output<String> commandProvider() {
         return this.commandProvider;
     }
     /**
      * Command type triggered by the job.
-     *
+     * 
      */
     @Export(name="commandType", refs={String.class}, tree="[0]")
     private Output<String> commandType;
 
     /**
      * @return Command type triggered by the job.
-     *
+     * 
      */
     public Output<String> commandType() {
         return this.commandType;
     }
     /**
      * Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
-     *
+     * 
      */
     @Export(name="enableParameter", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableParameter;
 
     /**
      * @return Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
-     *
+     * 
      */
     public Output<Boolean> enableParameter() {
         return this.enableParameter;
     }
     /**
      * Task end time.
-     *
+     * 
      */
     @Export(name="endTime", refs={String.class}, tree="[0]")
     private Output<String> endTime;
 
     /**
      * @return Task end time.
-     *
+     * 
      */
     public Output<String> endTime() {
         return this.endTime;
     }
     /**
      * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
-     *
+     * 
      */
     @Export(name="frequency", refs={String.class}, tree="[0]")
     private Output<String> frequency;
 
     /**
      * @return Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
-     *
+     * 
      */
     public Output<String> frequency() {
         return this.frequency;
     }
     /**
      * Instance ID list, supports up to 200 IDs.
-     *
+     * 
      */
     @Export(name="instanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> instanceIds;
 
     /**
      * @return Instance ID list, supports up to 200 IDs.
-     *
+     * 
      */
     public Output<List<String>> instanceIds() {
         return this.instanceIds;
     }
     /**
      * Number of instances executed.
-     *
+     * 
      */
     @Export(name="instanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceNumber;
 
     /**
      * @return Number of instances executed.
-     *
+     * 
      */
     public Output<Integer> instanceNumber() {
         return this.instanceNumber;
     }
     /**
      * Job description. Defaults to an empty string and must not exceed 256 characters.
-     *
+     * 
      */
     @Export(name="invocationDescription", refs={String.class}, tree="[0]")
     private Output<String> invocationDescription;
 
     /**
      * @return Job description. Defaults to an empty string and must not exceed 256 characters.
-     *
+     * 
      */
     public Output<String> invocationDescription() {
         return this.invocationDescription;
     }
     /**
      * Task execution ID.
-     *
+     * 
      */
     @Export(name="invocationId", refs={String.class}, tree="[0]")
     private Output<String> invocationId;
 
     /**
      * @return Task execution ID.
-     *
+     * 
      */
     public Output<String> invocationId() {
         return this.invocationId;
     }
     /**
      * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
-     *
+     * 
      */
     @Export(name="invocationName", refs={String.class}, tree="[0]")
     private Output<String> invocationName;
 
     /**
      * @return Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
-     *
+     * 
      */
     public Output<String> invocationName() {
         return this.invocationName;
@@ -283,7 +283,7 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * Result of command execution on a single instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="invocationResults", refs={List.class,InvocationInvocationResult.class}, tree="[0,1]")
     private Output<List<InvocationInvocationResult>> invocationResults;
@@ -291,35 +291,35 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * @return Result of command execution on a single instance.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InvocationInvocationResult>> invocationResults() {
         return this.invocationResults;
     }
     /**
      * Overall execution status of the command.
-     *
+     * 
      */
     @Export(name="invocationStatus", refs={String.class}, tree="[0]")
     private Output<String> invocationStatus;
 
     /**
      * @return Overall execution status of the command.
-     *
+     * 
      */
     public Output<String> invocationStatus() {
         return this.invocationStatus;
     }
     /**
      * Execution time.
-     *
+     * 
      */
     @Export(name="launchTime", refs={String.class}, tree="[0]")
     private Output<String> launchTime;
 
     /**
      * @return Execution time.
-     *
+     * 
      */
     public Output<String> launchTime() {
         return this.launchTime;
@@ -327,7 +327,7 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * Custom parameter definition for the command triggered by the task.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="parameterDefinitions", refs={List.class,InvocationParameterDefinition.class}, tree="[0,1]")
     private Output<List<InvocationParameterDefinition>> parameterDefinitions;
@@ -335,77 +335,77 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * @return Custom parameter definition for the command triggered by the task.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InvocationParameterDefinition>> parameterDefinitions() {
         return this.parameterDefinitions;
     }
     /**
      * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
-     *
+     * 
      */
     @Export(name="parameters", refs={String.class}, tree="[0]")
     private Output<String> parameters;
 
     /**
      * @return When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
-     *
+     * 
      */
     public Output<String> parameters() {
         return this.parameters;
     }
     /**
      * Project to which the resource belongs; each resource can belong to only one project.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs; each resource can belong to only one project.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Cycle end time, applicable only to periodic tasks (Rate).
-     *
+     * 
      */
     @Export(name="recurrenceEndTime", refs={String.class}, tree="[0]")
     private Output<String> recurrenceEndTime;
 
     /**
      * @return Cycle end time, applicable only to periodic tasks (Rate).
-     *
+     * 
      */
     public Output<String> recurrenceEndTime() {
         return this.recurrenceEndTime;
     }
     /**
      * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
-     *
+     * 
      */
     @Export(name="repeatMode", refs={String.class}, tree="[0]")
     private Output<String> repeatMode;
 
     /**
      * @return Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
-     *
+     * 
      */
     public Output<String> repeatMode() {
         return this.repeatMode;
     }
     /**
      * Task start time.
-     *
+     * 
      */
     @Export(name="startTime", refs={String.class}, tree="[0]")
     private Output<String> startTime;
 
     /**
      * @return Task start time.
-     *
+     * 
      */
     public Output<String> startTime() {
         return this.startTime;
@@ -413,7 +413,7 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * Tag key-value pair.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,InvocationTag.class}, tree="[0,1]")
     private Output<List<InvocationTag>> tags;
@@ -421,63 +421,63 @@ public class Invocation extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag key-value pair.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<InvocationTag>> tags() {
         return this.tags;
     }
     /**
      * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
-     *
+     * 
      */
     @Export(name="timeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeout;
 
     /**
      * @return Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
-     *
+     * 
      */
     public Output<Integer> timeout() {
         return this.timeout;
     }
     /**
      * User name for executing the command in the ECS instance.
-     *
+     * 
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
      * @return User name for executing the command in the ECS instance.
-     *
+     * 
      */
     public Output<String> username() {
         return this.username;
     }
     /**
      * Password for custom Windows user.
-     *
+     * 
      */
     @Export(name="windowsPassword", refs={String.class}, tree="[0]")
     private Output<String> windowsPassword;
 
     /**
      * @return Password for custom Windows user.
-     *
+     * 
      */
     public Output<String> windowsPassword() {
         return this.windowsPassword;
     }
     /**
      * Directory where the created command runs in the ECS instance.
-     *
+     * 
      */
     @Export(name="workingDir", refs={String.class}, tree="[0]")
     private Output<String> workingDir;
 
     /**
      * @return Directory where the created command runs in the ECS instance.
-     *
+     * 
      */
     public Output<String> workingDir() {
         return this.workingDir;

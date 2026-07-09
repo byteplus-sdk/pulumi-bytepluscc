@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect
 {
     /// <summary>
     /// The physical connection is a dedicated physical connection resource in the dedicated connection service, used to connect the local IDC to the Volcano Engine access point
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var example = new Bytepluscc.Directconnect.Connection("Example", new()
     ///     {
@@ -46,12 +46,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Directconnect
     ///             },
     ///         },
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:directconnect/connection:Connection example "direct_connect_connection_id"
     /// ```

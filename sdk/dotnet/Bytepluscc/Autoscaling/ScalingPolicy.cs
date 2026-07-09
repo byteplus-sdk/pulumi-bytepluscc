@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
 {
     /// <summary>
     /// Scaling rules define the conditions and methods for triggering scaling actions, including rule type, trigger time, scaling action, cooldown time. You can enable multiple scaling rules within the same scaling group. Scaling actions are executed when any rule type is met. If multiple rule types are met at the same time, manual scaling actions take priority.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var autoScalingScalingPolicyDemo = new Bytepluscc.Autoscaling.ScalingPolicy("AutoScalingScalingPolicyDemo", new()
     ///     {
@@ -40,12 +40,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Autoscaling
     ///         },
     ///         IsEnabledPolicy = false,
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:autoscaling/scalingPolicy:ScalingPolicy example "scaling_group_id|scaling_policy_id"
     /// ```

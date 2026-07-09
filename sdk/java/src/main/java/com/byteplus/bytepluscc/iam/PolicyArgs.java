@@ -22,14 +22,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Policy description, no more than 128 characters.
-     *
+     * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Policy description, no more than 128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -37,14 +37,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
-     *
+     * 
      */
     @Import(name="policyDocument", required=true)
     private Output<String> policyDocument;
 
     /**
      * @return Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
-     *
+     * 
      */
     public Output<String> policyDocument() {
         return this.policyDocument;
@@ -52,14 +52,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
-     *
+     * 
      */
     @Import(name="policyName", required=true)
     private Output<String> policyName;
 
     /**
      * @return Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
-     *
+     * 
      */
     public Output<String> policyName() {
         return this.policyName;
@@ -68,7 +68,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of roles bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="policyRoles")
     private @Nullable Output<List<PolicyPolicyRoleArgs>> policyRoles;
@@ -76,7 +76,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of roles bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PolicyPolicyRoleArgs>>> policyRoles() {
         return Optional.ofNullable(this.policyRoles);
@@ -84,14 +84,14 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Policy type. System indicates a system preset policy; Custom indicates a custom policy.
-     *
+     * 
      */
     @Import(name="policyType", required=true)
     private Output<String> policyType;
 
     /**
      * @return Policy type. System indicates a system preset policy; Custom indicates a custom policy.
-     *
+     * 
      */
     public Output<String> policyType() {
         return this.policyType;
@@ -100,7 +100,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of user groups bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="policyUserGroups")
     private @Nullable Output<List<PolicyPolicyUserGroupArgs>> policyUserGroups;
@@ -108,7 +108,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of user groups bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PolicyPolicyUserGroupArgs>>> policyUserGroups() {
         return Optional.ofNullable(this.policyUserGroups);
@@ -117,7 +117,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * List of users bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="policyUsers")
     private @Nullable Output<List<PolicyPolicyUserArgs>> policyUsers;
@@ -125,7 +125,7 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return List of users bound to the policy.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<PolicyPolicyUserArgs>>> policyUsers() {
         return Optional.ofNullable(this.policyUsers);
@@ -163,9 +163,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Policy description, no more than 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -174,9 +174,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Policy description, no more than 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -184,9 +184,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyDocument Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyDocument(Output<String> policyDocument) {
             $.policyDocument = policyDocument;
@@ -195,9 +195,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyDocument Policy syntax content, for example: {&#34;Statement&#34;:[{&#34;Effect&#34;:&#34;Allow&#34;,&#34;Action&#34;:[&#34;iam:&#34;,&#34;tag:&#34;],&#34;Resource&#34;:[&#34;*&#34;]}]}
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyDocument(String policyDocument) {
             return policyDocument(Output.of(policyDocument));
@@ -205,9 +205,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyName Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyName(Output<String> policyName) {
             $.policyName = policyName;
@@ -216,9 +216,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyName Policy name, 1–64 characters. Supports English letters, numbers, and +=,.{@literal @}-_ symbols.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyName(String policyName) {
             return policyName(Output.of(policyName));
@@ -227,9 +227,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyRoles List of roles bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyRoles(@Nullable Output<List<PolicyPolicyRoleArgs>> policyRoles) {
             $.policyRoles = policyRoles;
@@ -239,9 +239,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyRoles List of roles bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyRoles(List<PolicyPolicyRoleArgs> policyRoles) {
             return policyRoles(Output.of(policyRoles));
@@ -250,9 +250,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyRoles List of roles bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyRoles(PolicyPolicyRoleArgs... policyRoles) {
             return policyRoles(List.of(policyRoles));
@@ -260,9 +260,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType Policy type. System indicates a system preset policy; Custom indicates a custom policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyType(Output<String> policyType) {
             $.policyType = policyType;
@@ -271,9 +271,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType Policy type. System indicates a system preset policy; Custom indicates a custom policy.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));
@@ -282,9 +282,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyUserGroups List of user groups bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyUserGroups(@Nullable Output<List<PolicyPolicyUserGroupArgs>> policyUserGroups) {
             $.policyUserGroups = policyUserGroups;
@@ -294,9 +294,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyUserGroups List of user groups bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyUserGroups(List<PolicyPolicyUserGroupArgs> policyUserGroups) {
             return policyUserGroups(Output.of(policyUserGroups));
@@ -305,9 +305,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyUserGroups List of user groups bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyUserGroups(PolicyPolicyUserGroupArgs... policyUserGroups) {
             return policyUserGroups(List.of(policyUserGroups));
@@ -316,9 +316,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyUsers List of users bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyUsers(@Nullable Output<List<PolicyPolicyUserArgs>> policyUsers) {
             $.policyUsers = policyUsers;
@@ -328,9 +328,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyUsers List of users bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyUsers(List<PolicyPolicyUserArgs> policyUsers) {
             return policyUsers(Output.of(policyUsers));
@@ -339,9 +339,9 @@ public final class PolicyArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param policyUsers List of users bound to the policy.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder policyUsers(PolicyPolicyUserArgs... policyUsers) {
             return policyUsers(List.of(policyUsers));

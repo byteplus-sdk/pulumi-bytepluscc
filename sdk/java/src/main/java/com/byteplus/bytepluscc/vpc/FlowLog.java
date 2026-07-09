@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * After aggregating log data for inbound and outbound traffic on network interfaces as needed, flow logs are delivered to Log Service for storage and analysis. You can use flow log analysis to monitor network traffic, troubleshoot network issues, and optimize network architecture. VPC flow logs record detailed information about VPC network traffic for network monitoring, traffic analysis, and troubleshooting.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var vPCFlowLogDemo = new FlowLog("vPCFlowLogDemo", FlowLogArgs.builder()
  *             .aggregationInterval(10)
@@ -62,242 +62,242 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .trafficType("All")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:vpc/flowLog:FlowLog example &#34;flow_log_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:vpc/flowLog:FlowLog")
 public class FlowLog extends com.pulumi.resources.CustomResource {
     /**
      * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
-     *
+     * 
      */
     @Export(name="aggregationInterval", refs={Integer.class}, tree="[0]")
     private Output<Integer> aggregationInterval;
 
     /**
      * @return Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
-     *
+     * 
      */
     public Output<Integer> aggregationInterval() {
         return this.aggregationInterval;
     }
     /**
      * Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
-     *
+     * 
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
-     *
+     * 
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time of the flow log.
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Creation time of the flow log.
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     *
+     * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     *
+     * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
-     *
+     * 
      */
     @Export(name="enableIndex", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIndex;
 
     /**
      * @return Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
-     *
+     * 
      */
     public Output<Boolean> enableIndex() {
         return this.enableIndex;
     }
     /**
      * Stream log ID.
-     *
+     * 
      */
     @Export(name="flowLogId", refs={String.class}, tree="[0]")
     private Output<String> flowLogId;
 
     /**
      * @return Stream log ID.
-     *
+     * 
      */
     public Output<String> flowLogId() {
         return this.flowLogId;
     }
     /**
      * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
-     *
+     * 
      */
     @Export(name="flowLogName", refs={String.class}, tree="[0]")
     private Output<String> flowLogName;
 
     /**
      * @return Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
-     *
+     * 
      */
     public Output<String> flowLogName() {
         return this.flowLogName;
     }
     /**
      * Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
-     *
+     * 
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
-     *
+     * 
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Flow log project ID.
-     *
+     * 
      */
     @Export(name="logProjectId", refs={String.class}, tree="[0]")
     private Output<String> logProjectId;
 
     /**
      * @return Flow log project ID.
-     *
+     * 
      */
     public Output<String> logProjectId() {
         return this.logProjectId;
     }
     /**
      * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     *
+     * 
      */
     @Export(name="logProjectName", refs={String.class}, tree="[0]")
     private Output<String> logProjectName;
 
     /**
      * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     *
+     * 
      */
     public Output<String> logProjectName() {
         return this.logProjectName;
     }
     /**
      * Flow log topic ID.
-     *
+     * 
      */
     @Export(name="logTopicId", refs={String.class}, tree="[0]")
     private Output<String> logTopicId;
 
     /**
      * @return Flow log topic ID.
-     *
+     * 
      */
     public Output<String> logTopicId() {
         return this.logTopicId;
     }
     /**
      * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     *
+     * 
      */
     @Export(name="logTopicName", refs={String.class}, tree="[0]")
     private Output<String> logTopicName;
 
     /**
      * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     *
+     * 
      */
     public Output<String> logTopicName() {
         return this.logTopicName;
     }
     /**
      * Name of the project to which the flow log belongs.
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the flow log belongs.
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Resource ID for traffic capture.
-     *
+     * 
      */
     @Export(name="resourceId", refs={String.class}, tree="[0]")
     private Output<String> resourceId;
 
     /**
      * @return Resource ID for traffic capture.
-     *
+     * 
      */
     public Output<String> resourceId() {
         return this.resourceId;
     }
     /**
      * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
-     *
+     * 
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
      * @return Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
-     *
+     * 
      */
     public Output<String> resourceType() {
         return this.resourceType;
     }
     /**
      * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
@@ -305,7 +305,7 @@ public class FlowLog extends com.pulumi.resources.CustomResource {
     /**
      * Tag information for the flow log.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="tags", refs={List.class,FlowLogTag.class}, tree="[0,1]")
     private Output<List<FlowLogTag>> tags;
@@ -313,49 +313,49 @@ public class FlowLog extends com.pulumi.resources.CustomResource {
     /**
      * @return Tag information for the flow log.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<FlowLogTag>> tags() {
         return this.tags;
     }
     /**
      * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
-     *
+     * 
      */
     @Export(name="trafficType", refs={String.class}, tree="[0]")
     private Output<String> trafficType;
 
     /**
      * @return Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
-     *
+     * 
      */
     public Output<String> trafficType() {
         return this.trafficType;
     }
     /**
      * Time when the stream log was updated.
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Time when the stream log was updated.
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * VPC ID for the flow log.
-     *
+     * 
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID for the flow log.
-     *
+     * 
      */
     public Output<String> vpcId() {
         return this.vpcId;

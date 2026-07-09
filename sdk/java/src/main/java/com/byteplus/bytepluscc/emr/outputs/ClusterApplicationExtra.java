@@ -17,28 +17,28 @@ public final class ClusterApplicationExtra {
     /**
      * @return Custom deployment topology list for service components.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<ClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts;
     /**
      * @return Custom configuration parameter list for services.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<ClusterApplicationExtraApplicationConfig> applicationConfigs;
     /**
      * @return Application name.
-     *
+     * 
      */
     private @Nullable String applicationName;
     /**
      * @return Metadata connection ID.
-     *
+     * 
      */
     private @Nullable String connectionId;
     /**
      * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
-     *
+     * 
      */
     private @Nullable String connectionType;
 
@@ -46,7 +46,7 @@ public final class ClusterApplicationExtra {
     /**
      * @return Custom deployment topology list for service components.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<ClusterApplicationExtraApplicationComponentLayout> applicationComponentLayouts() {
         return this.applicationComponentLayouts == null ? List.of() : this.applicationComponentLayouts;
@@ -54,28 +54,28 @@ public final class ClusterApplicationExtra {
     /**
      * @return Custom configuration parameter list for services.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<ClusterApplicationExtraApplicationConfig> applicationConfigs() {
         return this.applicationConfigs == null ? List.of() : this.applicationConfigs;
     }
     /**
      * @return Application name.
-     *
+     * 
      */
     public Optional<String> applicationName() {
         return Optional.ofNullable(this.applicationName);
     }
     /**
      * @return Metadata connection ID.
-     *
+     * 
      */
     public Optional<String> connectionId() {
         return Optional.ofNullable(this.connectionId);
     }
     /**
      * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
-     *
+     * 
      */
     public Optional<String> connectionType() {
         return Optional.ofNullable(this.connectionType);

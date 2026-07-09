@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * An instance launch template is a collection of instance configuration information for quickly purchasing instances. You can store all configuration information except passwords in the template, including key pairs, compute specifications, cloud disks, networks, etc. If all configuration information is valid, you can purchase instances with one click without repeated configuration.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -43,12 +43,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var ecsLaunchTemplateDemo = new LaunchTemplate("ecsLaunchTemplateDemo", LaunchTemplateArgs.builder()
  *             .launchTemplateVersion(LaunchTemplateLaunchTemplateVersionArgs.builder()
@@ -112,102 +112,102 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:ecs/launchTemplate:LaunchTemplate example &#34;launch_template_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:ecs/launchTemplate:LaunchTemplate")
 public class LaunchTemplate extends com.pulumi.resources.CustomResource {
     /**
      * Instance launch template creation time
-     *
+     * 
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Instance launch template creation time
-     *
+     * 
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Instance launch template default version number
-     *
+     * 
      */
     @Export(name="defaultVersionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> defaultVersionNumber;
 
     /**
      * @return Instance launch template default version number
-     *
+     * 
      */
     public Output<Integer> defaultVersionNumber() {
         return this.defaultVersionNumber;
     }
     /**
      * Latest version number of the instance launch template.
-     *
+     * 
      */
     @Export(name="latestVersionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> latestVersionNumber;
 
     /**
      * @return Latest version number of the instance launch template.
-     *
+     * 
      */
     public Output<Integer> latestVersionNumber() {
         return this.latestVersionNumber;
     }
     /**
      * Instance launch template ID
-     *
+     * 
      */
     @Export(name="launchTemplateId", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateId;
 
     /**
      * @return Instance launch template ID
-     *
+     * 
      */
     public Output<String> launchTemplateId() {
         return this.launchTemplateId;
     }
     /**
      * Instance launch template name.
-     *
+     * 
      */
     @Export(name="launchTemplateName", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateName;
 
     /**
      * @return Instance launch template name.
-     *
+     * 
      */
     public Output<String> launchTemplateName() {
         return this.launchTemplateName;
     }
     /**
      * Project associated with the instance launch template.
-     *
+     * 
      */
     @Export(name="launchTemplateProjectName", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateProjectName;
 
     /**
      * @return Project associated with the instance launch template.
-     *
+     * 
      */
     public Output<String> launchTemplateProjectName() {
         return this.launchTemplateProjectName;
@@ -215,7 +215,7 @@ public class LaunchTemplate extends com.pulumi.resources.CustomResource {
     /**
      * Instance launch template tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="launchTemplateTags", refs={List.class,LaunchTemplateLaunchTemplateTag.class}, tree="[0,1]")
     private Output<List<LaunchTemplateLaunchTemplateTag>> launchTemplateTags;
@@ -223,35 +223,35 @@ public class LaunchTemplate extends com.pulumi.resources.CustomResource {
     /**
      * @return Instance launch template tag information
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<LaunchTemplateLaunchTemplateTag>> launchTemplateTags() {
         return this.launchTemplateTags;
     }
     /**
      * Instance launch template version information
-     *
+     * 
      */
     @Export(name="launchTemplateVersion", refs={LaunchTemplateLaunchTemplateVersion.class}, tree="[0]")
     private Output<LaunchTemplateLaunchTemplateVersion> launchTemplateVersion;
 
     /**
      * @return Instance launch template version information
-     *
+     * 
      */
     public Output<LaunchTemplateLaunchTemplateVersion> launchTemplateVersion() {
         return this.launchTemplateVersion;
     }
     /**
      * Instance launch template update time
-     *
+     * 
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Instance launch template update time
-     *
+     * 
      */
     public Output<String> updatedAt() {
         return this.updatedAt;

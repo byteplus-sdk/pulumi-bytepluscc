@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Account authorization management.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,86 +35,86 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var privateZoneUserVpcAuthorizationDemo = new UserVpcAuthorization("privateZoneUserVpcAuthorizationDemo", UserVpcAuthorizationArgs.builder()
  *             .accountId("21xxxx272")
  *             .authType(0)
  *             .verifyCode("sdw")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization example &#34;account_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:privatezone/userVpcAuthorization:UserVpcAuthorization")
 public class UserVpcAuthorization extends com.pulumi.resources.CustomResource {
     /**
      * Account.
-     *
+     * 
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account.
-     *
+     * 
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Verification method. 0: Use enterprise organization verification. 1: Use verification code.
-     *
+     * 
      */
     @Export(name="authType", refs={Integer.class}, tree="[0]")
     private Output<Integer> authType;
 
     /**
      * @return Verification method. 0: Use enterprise organization verification. 1: Use verification code.
-     *
+     * 
      */
     public Output<Integer> authType() {
         return this.authType;
     }
     /**
      * Account status. Normal: The account is in the enterprise organization. Exited: The account has exited the enterprise organization.
-     *
+     * 
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Account status. Normal: The account is in the enterprise organization. Exited: The account has exited the enterprise organization.
-     *
+     * 
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Verification code. This parameter is required when AuthType is set to 1.
-     *
+     * 
      */
     @Export(name="verifyCode", refs={String.class}, tree="[0]")
     private Output<String> verifyCode;
 
     /**
      * @return Verification code. This parameter is required when AuthType is set to 1.
-     *
+     * 
      */
     public Output<String> verifyCode() {
         return this.verifyCode;

@@ -14,26 +14,26 @@ import javax.annotation.Nullable;
 public final class DomainBrowserCache {
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     private @Nullable DomainBrowserCacheCacheAction cacheAction;
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     private @Nullable DomainBrowserCacheCondition condition;
 
     private DomainBrowserCache() {}
     /**
      * @return Indicates the relevant configuration for cache behavior.
-     *
+     * 
      */
     public Optional<DomainBrowserCacheCacheAction> cacheAction() {
         return Optional.ofNullable(this.cacheAction);
     }
     /**
      * @return Indicates the conditions under which this configuration module takes effect, consisting of a set of rules.
-     *
+     * 
      */
     public Optional<DomainBrowserCacheCondition> condition() {
         return Optional.ofNullable(this.condition);

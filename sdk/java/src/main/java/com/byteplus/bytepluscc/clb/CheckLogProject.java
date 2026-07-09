@@ -15,14 +15,14 @@ import javax.annotation.Nullable;
 
 /**
  * CLB provides health check log capabilities and allows you to create a log topic to store and manage CLB health check logs.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -33,40 +33,40 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var cLBCheckLogProjectDemo = new CheckLogProject("cLBCheckLogProjectDemo");
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:clb/checkLogProject:CheckLogProject example &#34;log_project_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:clb/checkLogProject:CheckLogProject")
 public class CheckLogProject extends com.pulumi.resources.CustomResource {
     /**
      * Log Project ID.
-     *
+     * 
      */
     @Export(name="logProjectId", refs={String.class}, tree="[0]")
     private Output<String> logProjectId;
 
     /**
      * @return Log Project ID.
-     *
+     * 
      */
     public Output<String> logProjectId() {
         return this.logProjectId;

@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Key Management Service (KMS) key material resource. Used to import user-provided (BYOK) encrypted key material into a specified master key with Origin=External. Users must obtain import parameters, encrypt the key material, and provide EncryptedKeyMaterial and ImportToken to the resource. The Provider then calls ImportKeyMaterial to complete the import.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var example = new KeyMaterial("example", KeyMaterialArgs.builder()
  *             .keyId("6201a360-15a7-41d2-829d-21xxxxxx")
@@ -49,130 +49,130 @@ import javax.annotation.Nullable;
  *             .expirationModel("KEY_MATERIAL_EXPIRES")
  *             .validTo(1814313600)
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:kms/keyMaterial:KeyMaterial example &#34;key_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:kms/keyMaterial:KeyMaterial")
 public class KeyMaterial extends com.pulumi.resources.CustomResource {
     /**
      * The key material obtained after the user encrypts using the import public key, encoded in Base64; this value is passed directly to the ImportKeyMaterial interface.
-     *
+     * 
      */
     @Export(name="encryptedKeyMaterial", refs={String.class}, tree="[0]")
     private Output<String> encryptedKeyMaterial;
 
     /**
      * @return The key material obtained after the user encrypts using the import public key, encoded in Base64; this value is passed directly to the ImportKeyMaterial interface.
-     *
+     * 
      */
     public Output<String> encryptedKeyMaterial() {
         return this.encryptedKeyMaterial;
     }
     /**
      * Key material expiration type. Values: KEY*MATERIAL*DOES*NOT*EXPIRE (default), KEY*MATERIAL*EXPIRES.
-     *
+     * 
      */
     @Export(name="expirationModel", refs={String.class}, tree="[0]")
     private Output<String> expirationModel;
 
     /**
      * @return Key material expiration type. Values: KEY*MATERIAL*DOES*NOT*EXPIRE (default), KEY*MATERIAL*EXPIRES.
-     *
+     * 
      */
     public Output<String> expirationModel() {
         return this.expirationModel;
     }
     /**
      * The import token obtained after the user calls the interface to retrieve import parameters; this value is passed directly to the ImportKeyMaterial interface.
-     *
+     * 
      */
     @Export(name="importToken", refs={String.class}, tree="[0]")
     private Output<String> importToken;
 
     /**
      * @return The import token obtained after the user calls the interface to retrieve import parameters; this value is passed directly to the ImportKeyMaterial interface.
-     *
+     * 
      */
     public Output<String> importToken() {
         return this.importToken;
     }
     /**
      * Unique identifier of the target master key in UUID format; the Origin of this key must be External.
-     *
+     * 
      */
     @Export(name="keyId", refs={String.class}, tree="[0]")
     private Output<String> keyId;
 
     /**
      * @return Unique identifier of the target master key in UUID format; the Origin of this key must be External.
-     *
+     * 
      */
     public Output<String> keyId() {
         return this.keyId;
     }
     /**
      * The expiration time of the key material recorded by the server after import; if the material does not expire, this field is an empty string.
-     *
+     * 
      */
     @Export(name="keyMaterialExpireTime", refs={String.class}, tree="[0]")
     private Output<String> keyMaterialExpireTime;
 
     /**
      * @return The expiration time of the key material recorded by the server after import; if the material does not expire, this field is an empty string.
-     *
+     * 
      */
     public Output<String> keyMaterialExpireTime() {
         return this.keyMaterialExpireTime;
     }
     /**
      * Current status of the target master key. Values: Enable, Disable, PendingDelete, Archived, PendingImport, PendingReplicaDelete.
-     *
+     * 
      */
     @Export(name="keyState", refs={String.class}, tree="[0]")
     private Output<String> keyState;
 
     /**
      * @return Current status of the target master key. Values: Enable, Disable, PendingDelete, Archived, PendingImport, PendingReplicaDelete.
-     *
+     * 
      */
     public Output<String> keyState() {
         return this.keyState;
     }
     /**
      * Source of the target master key. Values: CloudKMS, External, ExternalKeyStore. The KeyMaterial resource is only valid for keys with External origin.
-     *
+     * 
      */
     @Export(name="origin", refs={String.class}, tree="[0]")
     private Output<String> origin;
 
     /**
      * @return Source of the target master key. Values: CloudKMS, External, ExternalKeyStore. The KeyMaterial resource is only valid for keys with External origin.
-     *
+     * 
      */
     public Output<String> origin() {
         return this.origin;
     }
     /**
      * Key material expiration time, Unix timestamp in seconds; required when the ExpirationModel parameter is set to KEY*MATERIAL*EXPIRES. Must be a time after the current moment, based on server time.
-     *
+     * 
      */
     @Export(name="validTo", refs={Integer.class}, tree="[0]")
     private Output<Integer> validTo;
 
     /**
      * @return Key material expiration time, Unix timestamp in seconds; required when the ExpirationModel parameter is set to KEY*MATERIAL*EXPIRES. Must be a time after the current moment, based on server time.
-     *
+     * 
      */
     public Output<Integer> validTo() {
         return this.validTo;

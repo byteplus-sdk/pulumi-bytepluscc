@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 {
     /// <summary>
     /// Rule file.
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var vMPRuleFileDemo = new Bytepluscc.Vmp.RuleFile("VMPRuleFileDemo", new()
     ///     {
@@ -35,12 +35,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
     ///         WorkspaceId = "3ba7844b-e7fc-4688-a869-****",
     ///         Name = "test-rule-file",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:vmp/ruleFile:RuleFile example "workspace_id|rule_file_id"
     /// ```
@@ -66,8 +66,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file description, limited to 0–200 characters.
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:** Note
         ///   Each English letter, Chinese character, or symbol counts as one character.
         /// </summary>
@@ -82,7 +82,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file name:
-        ///
+        ///   
         ///     - Must be a valid Linux file name and less than 255 characters.
         ///     - Must be unique within the workspace.
         /// </summary>
@@ -103,7 +103,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file status:
-        ///
+        ///   
         ///     - **Creating**: Creating
         ///     - **Running**: Running
         ///     - **Updating**: Updating
@@ -184,8 +184,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file description, limited to 0–200 characters.
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:** Note
         ///   Each English letter, Chinese character, or symbol counts as one character.
         /// </summary>
@@ -194,7 +194,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file name:
-        ///
+        ///   
         ///     - Must be a valid Linux file name and less than 255 characters.
         ///     - Must be unique within the workspace.
         /// </summary>
@@ -239,8 +239,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file description, limited to 0–200 characters.
-        ///
-        ///
+        ///   
+        ///   
         ///   **Note:** Note
         ///   Each English letter, Chinese character, or symbol counts as one character.
         /// </summary>
@@ -255,7 +255,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file name:
-        ///
+        ///   
         ///     - Must be a valid Linux file name and less than 255 characters.
         ///     - Must be unique within the workspace.
         /// </summary>
@@ -276,7 +276,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vmp
 
         /// <summary>
         /// Rule file status:
-        ///
+        ///   
         ///     - **Creating**: Creating
         ///     - **Running**: Running
         ///     - **Updating**: Updating
